@@ -2,16 +2,12 @@
 
 ## Completed
 
-- [Phase 1 — Dataset validation](phases_context/Phase1.md): implementation, reproducibility details, audit outputs, findings, and current handoff gates.
+- [Phase 1 — Dataset validation](phases_outputs/Phase1.md): verified baseline, audit artifacts, results, and handoff gates.
+- [Phase 2 — Leakage-safe preprocessing](phases_outputs/Phase2.md): implementation, provenance, evaluator isolation, provisional organization split, synthetic checks, and remaining research gates.
 
-## In progress
-
-- [Phase 2 — Preprocessing specification](phases_context/Phase2.md): detailed Codex implementation instructions; implementation not yet run.
-
-## Sequence
+## Sequence and current boundary
 
 1. Phase 1 — Dataset validation: complete.
-2. Phase 2 — Leakage-safe preprocessing and organization splits: may begin for prioritization development only, within the Phase 1 handoff limits.
-3. Later modeling and evaluation work remains gated by the protocol in `PROJECT_CONTEXT.md`.
-
+2. Phase 2 — Preprocessing and leakage control: technical pipeline complete; model-visible feature view remains schema-only.
+3. Stage 3 baseline specification: drafted in phases_outputs/Phase3.md. Synthetic implementation may proceed; real-data comparisons remain gated until approved features and task-specific label/correlation gates are cleared.
 

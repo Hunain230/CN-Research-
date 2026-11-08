@@ -1,0 +1,25 @@
+{
+  "guide_rows": [
+    {"source_row_ordinal": 1, "Id": "repeat-id", "OrgId": "org-A", "IncidentId": "shared-inc", "AlertId": "alert-X", "Timestamp": "2025-01-01T00:00:00Z", "IpAddress": "2001:0db8::1", "MitreTechniques": "t1059; T1059.001"},
+    {"source_row_ordinal": 2, "Id": "repeat-id", "OrgId": "org-A", "IncidentId": "shared-inc", "AlertId": "alert-X", "Timestamp": "2025-01-01T00:00:00Z", "IpAddress": "2001:0db8::1", "MitreTechniques": "t1059; T1059.001"},
+    {"source_row_ordinal": 3, "Id": "row-3", "OrgId": "org-A", "IncidentId": "other-inc", "AlertId": "alert-X", "Timestamp": "2025-01-01T00:30:00", "IpAddress": "bad-ip", "MitreTechniques": "unknown"},
+    {"source_row_ordinal": 4, "Id": "row-4", "OrgId": "org-B", "IncidentId": "shared-inc", "AlertId": "alert-Y", "Timestamp": "bad-time", "IpAddress": "", "MitreTechniques": ""},
+    {"source_row_ordinal": 5, "Id": "", "OrgId": "org-B", "IncidentId": "", "AlertId": "", "Timestamp": "", "IpAddress": "", "MitreTechniques": ""}
+  ],
+  "queue_rows": [
+    {"OrgId": "org-A", "IncidentId": "shared-inc", "QueueRank": "1"},
+    {"OrgId": "org-A", "IncidentId": "shared-inc", "QueueRank": "1"},
+    {"OrgId": "org-A", "IncidentId": "other-inc", "QueueRank": "2"},
+    {"OrgId": "org-A", "IncidentId": "rank-gap", "QueueRank": "4"},
+    {"OrgId": "org-B", "IncidentId": "shared-inc", "QueueRank": ""}
+  ],
+  "expected": {
+    "source_row_ordinals": [1, 2, 3, 4, 5],
+    "duplicate_id": "repeat-id",
+    "conflicting_alert_assignments": 2,
+    "same_incident_different_organizations": 2,
+    "rank_keys_duplicate": true,
+    "null_rank_present": true,
+    "rank_20_missing": true
+  }
+}

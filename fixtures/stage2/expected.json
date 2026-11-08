@@ -1,6 +1,6 @@
 {
   "status": "pass",
-  "assertions": 16,
+  "assertions": 23,
   "synthetic_only": true,
   "sentinel_strings_logged": false
 }

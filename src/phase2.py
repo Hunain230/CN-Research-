@@ -191,18 +191,26 @@ def preprocess(args):
     sentinel={"SENTINEL_INCIDENT_LABEL_731","SENTINEL_QUEUE_RANK_991","SENTINEL_ACTION_OUTCOME_447"}
     with feature.open("rb") as f: feature_bytes=f.read()
     if any(x.encode() in feature_bytes for x in sentinel): raise AssertionError("synthetic leakage sentinel present in feature output")
-    leak={"status":"pass","approved_feature_fields":approved,"feature_rows":0,"feature_view_schema_only":True,"evaluator_and_lineage_columns_absent":True,"evaluator_store_separate":True,"ambiguous_mapping_count":ambiguous,"sentinel_strings_checked_not_found":sorted(sentinel),"no_pairs_or_metrics_created":True}
+    field_lineage=[]
+    for field in GUIDE_FIELDS:
+        if field in EVALUATOR_FIELDS: destination="evaluator-only store"
+        elif field in {"Id","OrgId","AlertId"}: destination="restricted lineage/control"
+        else: destination="restricted evidence ledger; feature export denied"
+        field_lineage.append({"source_field":field,"destination":destination,"model_visible":field in approved,"approval":"deny by default" if field not in approved else "approved"})
+    field_lineage.append({"source_field":"QueueRank","source_file":"GUIDE_Test_Queue_Rankings.csv","destination":"evaluator-only store","model_visible":False,"approval":"deny by default"})
+    leak={"status":"pass","field_lineage":field_lineage,"approved_feature_fields":approved,"feature_rows":0,"feature_view_schema_only":True,"evaluator_and_lineage_columns_absent":True,"evaluator_store_separate":True,"ambiguous_mapping_count":ambiguous,"sentinel_count_checked":len(sentinel),"sentinel_matches":0,"no_pairs_or_metrics_created":True,"checks":{"deny_by_default_allowlist":True,"prohibited_column_scan":True,"label_value_origin":True,"label_derived_signals_absent":True,"organization_partition_assignment":selected_rows==partitioned_rows,"sentinel_values_absent_from_feature_and_report":True}}
     (out/"leakage_audit.json").write_text(json.dumps(leak,indent=2,sort_keys=True),encoding="utf-8")
     (out/"leakage_audit.md").write_text("# Leakage audit\n\nPASS. The feature view has no approved columns and zero data rows. Evaluator labels are in a separate store. Synthetic label/outcome sentinels are absent. No pair labels or metrics were produced.\n",encoding="utf-8")
     inc_count=edb.execute("SELECT count(*) FROM (SELECT DISTINCT org,incident FROM membership_rows WHERE org<>'' AND incident<>'')").fetchone()[0]
     alert_count=edb.execute("SELECT count(*) FROM (SELECT DISTINCT org,alert FROM membership_rows WHERE org<>'' AND alert<>'')").fetchone()[0]
-    report={"status":"technical_success_research_gates_open","input_rows":{"GUIDE":parsed,"queue":qn},"source_row_ordinal":{"unique":parsed,"minimum":1,"maximum":parsed},"malformed_rows":malformed,"timestamp_parse_status_counts":ts_counts,"distinct_incident_keys":inc_count,"distinct_alert_keys":alert_count,"exact_duplicate_groups":exact_dup_groups,"ambiguous_alert_keys":ambiguous,"eligible_organizations":len(eligible),"provisional_split_counts":{"pilot":np,"development":nd,"test":nt},"selected_org_evidence_rows":selected_rows,"partition_assignment_complete":selected_rows==partitioned_rows,"feature_rows":0,"rank_scope":"unverified","top20_completeness":"unverified","correlation":"no-go","joint_evaluation":"no-go","prioritization_evaluation":"blocked"}
+    repeated_evidence_groups=edb.execute("SELECT count(*) FROM (SELECT org,alert FROM membership_rows WHERE org<>'' AND alert<>'' GROUP BY org,alert HAVING count(*)>1)").fetchone()[0]
+    report={"status":"technical_success_research_gates_open","input_rows":{"GUIDE":parsed,"queue":qn},"source_row_ordinal":{"unique":parsed,"minimum":1,"maximum":parsed},"malformed_rows":malformed,"timestamp_parse_status_counts":ts_counts,"distinct_incident_keys":inc_count,"distinct_alert_keys":alert_count,"repeated_evidence_row_groups_per_alert_key":repeated_evidence_groups,"exact_duplicate_groups":exact_dup_groups,"ambiguous_alert_keys":ambiguous,"eligible_organizations":len(eligible),"provisional_split_counts":{"pilot":np,"development":nd,"test":nt},"selected_org_evidence_rows":selected_rows,"partition_assignment_complete":selected_rows==partitioned_rows,"feature_rows":0,"rank_scope":"unverified","top20_completeness":"unverified","correlation":"no-go","joint_evaluation":"no-go","prioritization_evaluation":"blocked"}
     (out/"preprocessing.json").write_text(json.dumps(report,indent=2,sort_keys=True),encoding="utf-8")
-    md=["# Phase 2 preprocessing report","","Technical preprocessing completed; research gates remain open.","",f"- GUIDE rows with stable source ordinals: {parsed:,}.",f"- Evaluator queue labels isolated: {qn:,} rows.",f"- Ambiguous alert keys preserved with all assignment provenance: {ambiguous:,}.",f"- Qualified organizations: {len(eligible):,}; provisional split: {np}/{nd}/{nt}.","- Feature view: schema-only, zero rows; no fields approved.","- Correlation and joint evaluation: no-go. Prioritization evaluation: blocked by label semantics.","","No models, baselines, pair labels, metrics, priority scores, or test analysis were produced.",""]
+    md=["# Phase 2 preprocessing report","","Technical preprocessing completed; research gates remain open.","",f"- GUIDE rows with stable source ordinals: {parsed:,}.",f"- Evaluator queue labels isolated: {qn:,} rows.",f"- Repeated evidence-row groups (may be normal): {repeated_evidence_groups:,}; exact duplicate groups: {exact_dup_groups:,}.",f"- Ambiguous alert keys preserved with all assignment provenance: {ambiguous:,}.",f"- Qualified organizations: {len(eligible):,}; provisional split: {np}/{nd}/{nt}.","- Feature view: schema-only, zero rows; no fields approved.","- Correlation and joint evaluation: no-go. Prioritization evaluation: blocked by label semantics.","","No models, baselines, pair labels, metrics, priority scores, or test analysis were produced.",""]
     (out/"preprocessing_report.md").write_text("\n".join(md),encoding="utf-8")
     ledger.commit()
     outputs={str(p.relative_to(out)):sha256_file(p) for p in sorted(out.rglob("*")) if p.is_file() and p.name!="run_manifest.json"}
-    code={str(p):sha256_file(p) for p in (Path(__file__),Path(__file__).with_name("cli.py"),Path(__file__).with_name("evaluator_store.py"),cfgp,policy)}
+    code={str(p):sha256_file(p) for p in (Path(__file__),Path(__file__).with_name("cli.py"),Path(__file__).with_name("evaluator_store.py"),Path(__file__).resolve().parents[1]/"fixtures"/"stage2"/"synthetic_cases.json",Path(__file__).resolve().parents[1]/"fixtures"/"stage2"/"expected.json",cfgp,policy)}
     after={alerts.name:sha256_file(alerts),rankings.name:sha256_file(rankings)}
     if after!=before: raise RuntimeError("raw input changed during preprocessing")
     manifest={"command":args.command_line,"input_hashes_before":before,"input_hashes_after":after,"config_sha256":sha256_file(cfgp),"field_policy_sha256":sha256_file(policy),"code_sha256":code,"output_sha256":outputs,"python":platform.python_version(),"platform":platform.platform(),"dependencies":"standard library only","seed":args.seed,"timestamp_utc":dt.datetime.now(dt.timezone.utc).isoformat(),"normalizer_version":NORMALIZER_VERSION,"parser":"csv.reader UTF-8-SIG, ordinal by parsed data-record order","source_metadata":{"release":"unknown","license":"unknown","download_date":"unknown"}}
@@ -231,6 +239,18 @@ def inspect_ambiguity(input_path,out):
     Path(out).parent.mkdir(parents=True,exist_ok=True); Path(out).write_text("\n".join(lines)+"\n",encoding="utf-8"); return count
 
 def self_test():
+    fixture=Path(__file__).resolve().parents[1]/"fixtures"/"stage2"/"synthetic_cases.json"
+    cases=json.loads(fixture.read_text(encoding="utf-8")); fr=cases["guide_rows"]
+    assert [r["source_row_ordinal"] for r in fr]==cases["expected"]["source_row_ordinals"]
+    assert fr[0]["Id"]==fr[1]["Id"] and canonical_digest({**{c:"" for c in GUIDE_FIELDS},**fr[0]})==canonical_digest({**{c:"" for c in GUIDE_FIELDS},**fr[1]})
+    memberships={}
+    for r in fr:
+        memberships.setdefault((r["OrgId"],r["AlertId"]),set()).add(r["IncidentId"])
+    assert len(memberships[("org-A","alert-X")])==cases["expected"]["conflicting_alert_assignments"]
+    assert sum(1 for (o,_),incs in memberships.items() if "shared-inc" in incs)==cases["expected"]["same_incident_different_organizations"]
+    q=cases["queue_rows"]
+    assert len(q)>len({(r["OrgId"],r["IncidentId"]) for r in q}) and any(not r["QueueRank"] for r in q)
+    assert 20 not in {int(r["QueueRank"]) for r in q if r["QueueRank"]}
     row={c:"" for c in GUIDE_FIELDS}; row.update(Id="repeated",OrgId="A",IncidentId="SENTINEL_INCIDENT_LABEL_731",AlertId="X",Timestamp="2025-01-01T00:00:00Z")
     assert canonical_digest(row)==canonical_digest(dict(row))
     # Same Id is not consulted for row identity: two physical row ordinals remain distinct.
@@ -262,4 +282,6 @@ def self_test():
     assert 7 not in {int(x["QueueRank"]) for x in gap}
     # Missing AlertId/IncidentId remain representable as missing membership, not negative labels.
     assert mapping_status("A","","I",0)=="missing" and mapping_status("A","X","",0)=="missing"
-    return {"status":"pass","assertions":16,"synthetic_only":True,"sentinel_strings_logged":False}
+    safe_log=json.dumps({"status":"pass","sentinel_count_checked":3,"sentinel_matches":0})
+    assert not any(s in safe_log for s in ("SENTINEL_INCIDENT_LABEL_731","SENTINEL_QUEUE_RANK_991","SENTINEL_ACTION_OUTCOME_447"))
+    return {"status":"pass","assertions":23,"synthetic_only":True,"sentinel_strings_logged":False}

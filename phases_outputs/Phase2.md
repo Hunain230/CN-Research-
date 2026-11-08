@@ -13,6 +13,18 @@ The requested `phases_context/Phase1.md` was not present in this checkout. I use
 
 Run environment: project `.venv`, Python 3.12.10, Windows, seed 0, UTF-8/BOM-aware input parsing, standard library only. No dependency was installed. Normalizer version is `typed-v1`; parser version is `csv.reader-utf8-sig-v1`.
 
+Configuration and implementation SHA-256 values are recorded here and in `run_manifest.json`:
+
+| File | SHA-256 |
+|---|---|
+| `configs/preprocessing.yaml` | `a87d47e61a11721e9d41ee62df225e72040d502ff364ec603bcc15b54c979263` |
+| `configs/field_policy.yaml` | `0636d2f4e4f17edcd5402d67cac291484d3a39493b2c7377b562735771065ee5` |
+| `src/cli.py` | `1a4ec28dbc5118731e0846db1dfefe84192386116771ec6cfffc5a8922e8ca7d` |
+| `src/phase2.py` | `56fa179b1a04e54f14f3ef228bf790e60894ba7838523b4e4666c2b1dbd59129` |
+| `src/evaluator_store.py` | `b2a0c8d8792da642530ea7b708e7e0156d150f8cd3e7fa003c6e4136a0548a71` |
+| `fixtures/stage2/synthetic_cases.json` | `40109df901b378d21ac2e407d50c98bdf57726eb90f9af5980120fce94d52c2a` |
+| `fixtures/stage2/expected.json` | `895a86bd4f243e069a669920f4450362d4b0888286afe52d49cc3a10efd992e0` |
+
 ## Implementation and data boundaries
 
 - Added `src/phase2.py` and `src/evaluator_store.py`, and extended `src/cli.py` with `preprocess`, `check-leakage`, `check-splits`, `inspect-ambiguity`, and `self-test-phase2` commands. Existing Stage 1 `validate` remains available.
@@ -46,7 +58,8 @@ All preprocessing artifacts are under `data/derived/preprocessing/` (ignored by 
 - Processed 4,147,992 GUIDE data records with 4,147,992 unique source-row ordinals; zero malformed rows.
 - Preserved 303,220 composite incident keys and 637,320 composite alert keys. Queue labels remain separate: 9,980 rows.
 - Found and preserved 70,702 ambiguous composite alert keys. This matches the Phase 1 blocker. No final alert pairs or pair labels were produced.
-- Found 104 exact full-row duplicate groups. These are separately reported and were not silently removed from the evidence ledger.
+- Repeated evidence-row groups remain distinct from 104 exact full-row duplicate groups; the Phase 1 count of repeated composite alert-key groups was 623,841.
+- The 104 exact full-row duplicate groups are separately reported and were not silently removed from the evidence ledger.
 - Reconfirmed 499 eligible organizations using the specified numeric criteria; created a provisional 10/10/30 assignment. The assignment digest is `c0e6689f78d878237adb7689c0f5b39980bb547ab3bbd83efe4e7b4e639fe024`. Selected organizations contain 517,474 GUIDE evidence rows; all selected rows were confirmed partitioned.
 - Leakage checks passed: no approved features, zero feature rows, no evaluator/lineage fields in the feature schema, and no synthetic incident/rank/outcome sentinel in the feature export. The sentinel check did not print the sentinel values.
 - All 13 output hashes recorded in the run manifest matched the produced files. Raw before/after hashes matched the Phase 1 values.
@@ -68,7 +81,7 @@ Synthetic regression and boundary checks:
 .\.venv\Scripts\python.exe -m src.cli inspect-ambiguity --input data/derived/preprocessing/review/ambiguous_alert_memberships.csv --out <temporary-summary-path>
 ```
 
-`self-test-phase2` passed all 16 synthetic assertions for stable ordinals despite repeated `Id`, exact duplicates, repeated evidence and conflicting mappings, organization-scoped identities, timestamps, typed normalization, rank edge cases, sentinel isolation, and deterministic disjoint split ordering. Leakage and split CLI checks passed; ambiguity inspection counted 70,702 keys.
+`self-test-phase2` passed all 23 synthetic assertions for stable ordinals despite repeated `Id`, exact duplicates, repeated evidence and conflicting mappings, organization-scoped identities, timestamps, typed normalization, rank edge cases, sentinel isolation from both the feature output and serialized log result, and deterministic disjoint split ordering. The result matched `fixtures/stage2/expected.json`. Leakage and split CLI checks passed; ambiguity inspection counted 70,702 keys. The leakage audit records only sentinel count (3) and matches (0); it does not disclose sentinel text.
 
 ## Current research gates and Stage 3 readiness
 
