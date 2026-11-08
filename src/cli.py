@@ -176,10 +176,27 @@ def main_validate(args):
 
 def main():
     p=argparse.ArgumentParser(); sub=p.add_subparsers(dest="command",required=True)
-    v=sub.add_parser("validate"); v.add_argument("--alerts",required=True); v.add_argument("--rankings",required=True); v.add_argument("--out",required=True); v.add_argument("--chunk-rows",type=int,default=250000); v.add_argument("--config",default="configs/validation.yaml"); a=p.parse_args()
-    if a.chunk_rows<1: p.error("--chunk-rows must be positive")
-    try: return main_validate(a)
+    v=sub.add_parser("validate"); v.add_argument("--alerts",required=True); v.add_argument("--rankings",required=True); v.add_argument("--out",required=True); v.add_argument("--chunk-rows",type=int,default=250000); v.add_argument("--config",default="configs/validation.yaml")
+    q=sub.add_parser("preprocess"); q.add_argument("--alerts",required=True); q.add_argument("--rankings",required=True); q.add_argument("--audit",required=True); q.add_argument("--config",default="configs/preprocessing.yaml"); q.add_argument("--out",required=True); q.add_argument("--seed",type=int,default=0)
+    l=sub.add_parser("check-leakage"); l.add_argument("--features",required=True); l.add_argument("--policy",required=True); l.add_argument("--audit",required=True)
+    s=sub.add_parser("check-splits"); s.add_argument("--manifest",required=True); s.add_argument("--expected",default="10,10,30")
+    i=sub.add_parser("inspect-ambiguity"); i.add_argument("--input",required=True); i.add_argument("--out",required=True)
+    sub.add_parser("self-test-phase2")
+    a=p.parse_args()
+    try:
+        if a.command=="validate":
+            if a.chunk_rows<1: p.error("--chunk-rows must be positive")
+            return main_validate(a)
+        from . import phase2
+        if a.command=="preprocess":
+            import shlex
+            a.command_line=shlex.join(sys.argv)
+            result=phase2.preprocess(a); print(json.dumps(result,sort_keys=True)); return 0
+        if a.command=="check-leakage": print(json.dumps(phase2.check_leakage(a.features,a.policy,a.audit),sort_keys=True)); return 0
+        if a.command=="check-splits": print(json.dumps(phase2.check_splits(a.manifest,a.expected),sort_keys=True)); return 0
+        if a.command=="inspect-ambiguity": print(json.dumps({"ambiguous_keys":phase2.inspect_ambiguity(a.input,a.out)},sort_keys=True)); return 0
+        if a.command=="self-test-phase2": print(json.dumps(phase2.self_test(),sort_keys=True)); return 0
     except Exception as e:
-        traceback.print_exc(); return 2
+        print(f"{a.command} failed: {type(e).__name__}: {e}",file=sys.stderr); return 2
 
 if __name__=="__main__": raise SystemExit(main())

@@ -1,0 +1,15 @@
+version: field-policy-v1
+default: deny
+approved_model_fields: []
+evaluator_only:
+  - IncidentId
+  - QueueRank
+  - IncidentGrade
+  - ActionGrouped
+  - ActionGranular
+lineage_only:
+  - Id
+  - OrgId
+  - AlertId
+  - source_row_ordinal
+notes: No GUIDE field has source timing, provenance, and privacy approval for model-visible use.

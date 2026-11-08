@@ -1,0 +1,14 @@
+version: phase2-v1
+expected_inputs:
+  GUIDE_Test.csv: fdfd7523efd6e3c26bd0290ba6acbcb237196cf923dd56a28e96802035db35a3
+  GUIDE_Test_Queue_Rankings.csv: e4ea9308f45821128a3cd446ab19e6559edfc50709e72034ce957b6f0e2e65d6
+chunk_rows: 50000
+seed: 0
+split:
+  salt_version: cnet-org-split-v1
+  salt: CNET-Phase2-org-split-2026-11-08
+  sizes: [10, 10, 30]
+timestamp_policy: timezone_naive_unresolved
+normalization_version: typed-v1
+field_policy: configs/field_policy.yaml
+overwrite: false
