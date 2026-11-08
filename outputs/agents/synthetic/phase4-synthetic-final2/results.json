@@ -1,0 +1,339 @@
+{
+  "classification": "synthetic_plumbing_only_not_empirical",
+  "component_results": [
+    {
+      "component": {
+        "alert_keys": [
+          "a4"
+        ],
+        "component_key": "1af84fd074fe4268",
+        "org_key": "synthetic-org-1"
+      },
+      "final_status": "PASS",
+      "prioritization": {
+        "contradicting_evidence_ids": [],
+        "rationale": "Synthetic relative score derived only from supplied evidence count.",
+        "recommendation": "PASS",
+        "score": 0.25,
+        "supporting_evidence_ids": [
+          "ev-a4"
+        ],
+        "uncertainty": "uncalibrated_synthetic"
+      },
+      "revision_trace": [],
+      "verification": {
+        "claims": [
+          {
+            "claim": "priority_claim",
+            "evidence_ids": [
+              "ev-a4"
+            ],
+            "status": "supported"
+          }
+        ],
+        "decision": "PASS",
+        "reason": "citations_resolved",
+        "review_reason": null,
+        "revision_request": null
+      }
+    },
+    {
+      "component": {
+        "alert_keys": [
+          "a3"
+        ],
+        "component_key": "1d73204f95718538",
+        "org_key": "synthetic-org-1"
+      },
+      "final_status": "PASS",
+      "prioritization": {
+        "contradicting_evidence_ids": [],
+        "rationale": "Synthetic relative score derived only from supplied evidence count.",
+        "recommendation": "PASS",
+        "score": 0.25,
+        "supporting_evidence_ids": [
+          "ev-a3"
+        ],
+        "uncertainty": "uncalibrated_synthetic"
+      },
+      "revision_trace": [],
+      "verification": {
+        "claims": [
+          {
+            "claim": "priority_claim",
+            "evidence_ids": [
+              "ev-a3"
+            ],
+            "status": "supported"
+          }
+        ],
+        "decision": "PASS",
+        "reason": "citations_resolved",
+        "review_reason": null,
+        "revision_request": null
+      }
+    },
+    {
+      "component": {
+        "alert_keys": [
+          "a5"
+        ],
+        "component_key": "e04de3b8cbe03dcb",
+        "org_key": "synthetic-org-1"
+      },
+      "final_status": "REVIEW",
+      "prioritization": {
+        "contradicting_evidence_ids": [],
+        "rationale": "No evidence supplied.",
+        "recommendation": "REVIEW",
+        "score": null,
+        "supporting_evidence_ids": [],
+        "uncertainty": "missing_evidence"
+      },
+      "revision_trace": [
+        {
+          "attempt": 1,
+          "prioritization_original": {
+            "contradicting_evidence_ids": [],
+            "rationale": "No evidence supplied.",
+            "recommendation": "REVIEW",
+            "score": null,
+            "supporting_evidence_ids": [],
+            "uncertainty": "missing_evidence"
+          },
+          "verification": {
+            "claims": [
+              {
+                "claim": "priority_claim",
+                "evidence_ids": [],
+                "status": "unverifiable"
+              }
+            ],
+            "decision": "REVISE",
+            "reason": "unsupported_or_unverifiable_claim",
+            "review_reason": null,
+            "revision_request": "Use only supplied evidence and provide valid supporting citations."
+          }
+        },
+        {
+          "attempt": 1,
+          "prioritization_revision": {
+            "contradicting_evidence_ids": [],
+            "rationale": "No evidence supplied.",
+            "recommendation": "REVIEW",
+            "score": null,
+            "supporting_evidence_ids": [],
+            "uncertainty": "missing_evidence"
+          },
+          "verification": {
+            "claims": [
+              {
+                "claim": "priority_claim",
+                "evidence_ids": [],
+                "status": "unverifiable"
+              }
+            ],
+            "decision": "REVISE",
+            "reason": "unsupported_or_unverifiable_claim",
+            "review_reason": null,
+            "revision_request": "Use only supplied evidence and provide valid supporting citations."
+          }
+        }
+      ],
+      "verification": {
+        "claims": [
+          {
+            "claim": "priority_claim",
+            "evidence_ids": [],
+            "status": "unverifiable"
+          }
+        ],
+        "decision": "REVISE",
+        "reason": "unsupported_or_unverifiable_claim",
+        "review_reason": null,
+        "revision_request": "Use only supplied evidence and provide valid supporting citations."
+      }
+    },
+    {
+      "component": {
+        "alert_keys": [
+          "a1",
+          "a2"
+        ],
+        "component_key": "e7baf1e2d528f6ce",
+        "org_key": "synthetic-org-1"
+      },
+      "final_status": "PASS",
+      "prioritization": {
+        "contradicting_evidence_ids": [],
+        "rationale": "Synthetic relative score derived only from supplied evidence count.",
+        "recommendation": "PASS",
+        "score": 0.5,
+        "supporting_evidence_ids": [
+          "ev-a1",
+          "ev-a2"
+        ],
+        "uncertainty": "uncalibrated_synthetic"
+      },
+      "revision_trace": [],
+      "verification": {
+        "claims": [
+          {
+            "claim": "priority_claim",
+            "evidence_ids": [
+              "ev-a1",
+              "ev-a2"
+            ],
+            "status": "supported"
+          },
+          {
+            "claim": "shared_signal_within_window",
+            "evidence_ids": [
+              "ev-a1",
+              "ev-a2"
+            ],
+            "status": "supported"
+          }
+        ],
+        "decision": "PASS",
+        "reason": "citations_resolved",
+        "review_reason": null,
+        "revision_request": null
+      }
+    }
+  ],
+  "component_trace": [
+    {
+      "pair": {
+        "candidate_source": "synthetic_fixture",
+        "left": "a1",
+        "right": "a2"
+      },
+      "status": "included"
+    }
+  ],
+  "components": [
+    {
+      "alert_keys": [
+        "a4"
+      ],
+      "component_key": "1af84fd074fe4268",
+      "org_key": "synthetic-org-1"
+    },
+    {
+      "alert_keys": [
+        "a3"
+      ],
+      "component_key": "1d73204f95718538",
+      "org_key": "synthetic-org-1"
+    },
+    {
+      "alert_keys": [
+        "a5"
+      ],
+      "component_key": "e04de3b8cbe03dcb",
+      "org_key": "synthetic-org-1"
+    },
+    {
+      "alert_keys": [
+        "a1",
+        "a2"
+      ],
+      "component_key": "e7baf1e2d528f6ce",
+      "org_key": "synthetic-org-1"
+    }
+  ],
+  "correlation_edges": [
+    {
+      "attempt": 1,
+      "contradicting_evidence_ids": [],
+      "decision": "LINK",
+      "idempotency_key": "ece8232f4312f8b66b1562c3362b64a4437527749bda914d1ddaa55265623b0b",
+      "pair": {
+        "candidate_source": "synthetic_fixture",
+        "left": "a1",
+        "right": "a2"
+      },
+      "rationale": "A supplied entity or technique signal matches within its configured time window.",
+      "reason_code": "shared_signal_within_window",
+      "retry_count": 0,
+      "status": "completed",
+      "supporting_evidence_ids": [
+        "ev-a1",
+        "ev-a2"
+      ],
+      "uncertainty": 0.1
+    },
+    {
+      "attempt": 1,
+      "contradicting_evidence_ids": [
+        "ev-a1",
+        "ev-a3"
+      ],
+      "decision": "NO_LINK",
+      "idempotency_key": "d380d0aa2621f4d3feea3221621bbb7778f07b497570c04c28b9c6bf67755150",
+      "pair": {
+        "candidate_source": "synthetic_fixture",
+        "left": "a1",
+        "right": "a3"
+      },
+      "rationale": "No supplied signal supports a link.",
+      "reason_code": "no_supported_match",
+      "retry_count": 0,
+      "status": "completed",
+      "supporting_evidence_ids": [],
+      "uncertainty": 0.6
+    },
+    {
+      "attempt": 1,
+      "contradicting_evidence_ids": [
+        "ev-a1",
+        "ev-a4"
+      ],
+      "decision": "UNSURE",
+      "idempotency_key": "f2638685ac73d8d4b735473f239a950fc47c941589f6b8aa67c0aa775cff5df7",
+      "pair": {
+        "candidate_source": "synthetic_fixture",
+        "left": "a1",
+        "right": "a4"
+      },
+      "rationale": "Supplied evidence conflicts.",
+      "reason_code": "conflicting_evidence",
+      "retry_count": 0,
+      "status": "completed",
+      "supporting_evidence_ids": [],
+      "uncertainty": 0.9
+    },
+    {
+      "attempt": 1,
+      "contradicting_evidence_ids": [],
+      "decision": "UNSURE",
+      "idempotency_key": "3373d6931a603a1a3774421e1b625df8bba7285236434d92f686d929faa5441e",
+      "pair": {
+        "candidate_source": "synthetic_fixture",
+        "left": "a1",
+        "right": "a5"
+      },
+      "rationale": "Insufficient supplied evidence.",
+      "reason_code": "missing_evidence",
+      "retry_count": 0,
+      "status": "completed",
+      "supporting_evidence_ids": [],
+      "uncertainty": 1.0
+    }
+  ],
+  "run_id": "synthetic-agents-v1",
+  "schema_version": "agents-output-v1",
+  "summary": {
+    "calls": 10,
+    "candidate_pairs": 4,
+    "components": 4,
+    "estimated_tokens": 2500,
+    "failure_count": 0,
+    "live_model_calls": 0,
+    "retry_count": 0,
+    "review_components": 1,
+    "revisions": 1,
+    "truncated_records": 0
+  }
+}

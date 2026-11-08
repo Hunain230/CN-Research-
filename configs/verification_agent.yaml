@@ -1,0 +1,1 @@
+{"schema_version":"V-v1","decision_enum":["PASS","REVISE","REVIEW"],"max_revisions":1,"outside_evidence":false,"prompt":"Verify every material claim only against supplied evidence. PASS indicates citation support, not truth against labels."}

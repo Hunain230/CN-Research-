@@ -1,0 +1,59 @@
+{
+  "classification": "synthetic_plumbing_only_not_empirical",
+  "command": "C:\\Users\\surface\\Desktop\\CN-Research-\\src\\cli.py run-agents --config configs/agents.yaml --mode synthetic --out outputs/agents/synthetic/phase4-synthetic-final2",
+  "ended_utc": "2026-11-08T14:22:03.325965+00:00",
+  "live_model_calls": 0,
+  "mode": "synthetic",
+  "output_sha256": {
+    "results.json": "1b9de940e44d18845abc8342c3d5ebe3b8956e7c818a8d41a833d2d787db1827"
+  },
+  "prompt_template_sha256": {
+    "configs\\correlation_agent.yaml": "c92230a2b4331a452d1c1398f8d7a82a34110c76a40943a22f3a947634d3e982",
+    "configs\\prioritization_agent.yaml": "d0684fc108007c526b8cd164fc55b851967c0d2246094934fc483833522a9b09",
+    "configs\\verification_agent.yaml": "9882f383827dcb43787bee3662f2fee609d94ba96b2fff1e8c43540d888fbb6e"
+  },
+  "provider": "deterministic-synthetic-agent-stub",
+  "provider_version": "agent-stub-v1",
+  "python": "3.12.10",
+  "resource_totals": {
+    "calls": 10,
+    "candidate_pairs": 4,
+    "components": 4,
+    "estimated_tokens": 2500,
+    "failure_count": 0,
+    "live_model_calls": 0,
+    "retry_count": 0,
+    "review_components": 1,
+    "revisions": 1,
+    "truncated_records": 0
+  },
+  "run_id": "synthetic-agents-v1",
+  "runtime_ms": 63.264,
+  "sha256": {
+    "configs\\agent_schemas\\c_request.json": "2d54c46d025f7bdcff14659860ab5bfda621e170e8cbfed60e4be5f1c50f4149",
+    "configs\\agent_schemas\\c_response.json": "017b55d1346434f857624208bc6817fc5b6df7cc565084ac0371d09222f64318",
+    "configs\\agent_schemas\\component.json": "bc29bed96666b7640e94d7944b1cec3032fc7248a0f7222c251920215373cd00",
+    "configs\\agent_schemas\\edge_trace.json": "ee5e6bc8fe94ff722cb431a0bd3c9b6827393a622f9fe09a2e8358cef30516f2",
+    "configs\\agent_schemas\\final_output.json": "ccfd3d96f5b07fed2d1c21de28c0a356c345a9f858cd8c8e53da2c47e4c76526",
+    "configs\\agent_schemas\\p_request.json": "2ee90491b7bd521b5f7e8772c80f81e8756cd2844db9c77fd102d4e018a22957",
+    "configs\\agent_schemas\\p_response.json": "dc2d51285a2d6bd12e28cc1e2216970b875c65679eebb67cfeb596a9808035f4",
+    "configs\\agent_schemas\\trace.json": "5a50e5bf46255f86509a4efc6ecdbeaa56c837451b46acfcb02a093d6751e4fc",
+    "configs\\agent_schemas\\v_request.json": "a609928eb1c1e098d5e50eab21d68c38321773fc166bc285fe412bc2399393c8",
+    "configs\\agent_schemas\\v_response.json": "01c533179a9bc3c995611468592c2310c70041c7abd839cd604159e572308a85",
+    "configs\\agents.yaml": "206bb8b2a535adf60427b71bf0fedb3d711234ca008b3096ced32d77fabd2f04",
+    "configs\\correlation_agent.yaml": "c92230a2b4331a452d1c1398f8d7a82a34110c76a40943a22f3a947634d3e982",
+    "configs\\prioritization_agent.yaml": "d0684fc108007c526b8cd164fc55b851967c0d2246094934fc483833522a9b09",
+    "configs\\verification_agent.yaml": "9882f383827dcb43787bee3662f2fee609d94ba96b2fff1e8c43540d888fbb6e",
+    "fixtures\\stage4\\synthetic_inputs.json": "eabf025f90dd6e50132e7d36ba6649fcbc33df5fc627168260d0d54b9fcbbbae",
+    "src\\agents\\__init__.py": "c4d8a22b6f5e270372b1fcfe07f98c54df398c270b2cd7438b265dcc19f11b58",
+    "src\\agents\\common.py": "97ad5bf8b9369351b749f0e363c5d5f8862d317afc6c6f636fcac8166f18b0ab",
+    "src\\agents\\correlation.py": "66312c78ee957a8ae1a94515277006ba6e98df6bd384b428f550218d9cf836c5",
+    "src\\agents\\orchestrator.py": "fc03b946b9b498aea04f2cd9b788bd3f8c4f12f56c04ffc1f5d7784678700848",
+    "src\\agents\\prioritization.py": "3655576b237f3063b37a51360c7adc701a09d08a65e2152f8c20f780b78f46e6",
+    "src\\agents\\providers\\__init__.py": "81cb55aec3903c8cbb33248d30ecd9f69af99a43305c65c081e6ef6866a32763",
+    "src\\agents\\providers\\offline_stub.py": "9a731cef95e7b6556c5a5a5c56f26b9166b7d4668839600366959b38416a5c02",
+    "src\\agents\\verification.py": "6b808111108bbd049057403fd9b1edb754cff0c01dcc802393b34c86c2758f48",
+    "src\\cli.py": "c5836b65569d40cf89ddacaed1b9c27be73bd68e9bae66e2c93872799f863b02"
+  },
+  "started_utc": "2026-11-08T14:22:03.262215+00:00"
+}

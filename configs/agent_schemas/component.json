@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","$id":"component-v1","type":"object","additionalProperties":false,"required":["component_key","alert_keys","org_key"],"properties":{"component_key":{"type":"string"},"alert_keys":{"type":"array","items":{"type":"string"},"uniqueItems":true},"org_key":{"type":"string"}}}

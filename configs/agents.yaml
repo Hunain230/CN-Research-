@@ -1,0 +1,12 @@
+{
+  "schema_version":"agents-v1",
+  "synthetic_fixture":"fixtures/stage4/synthetic_inputs.json",
+  "allowed_fields":["synthetic.entities","synthetic.techniques","synthetic.text","synthetic.conflict"],
+  "max_component_size":3,
+  "estimated_tokens_per_call":250,
+  "provider":"deterministic-synthetic-agent-stub",
+  "live_provider_enabled":false,
+  "max_revisions":1,
+  "max_candidates":20,
+  "max_evidence_records":20
+}
