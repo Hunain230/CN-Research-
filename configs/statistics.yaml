@@ -1,0 +1,1 @@
+{"schema_version":"evaluation-statistics-v1","independent_unit":"organization","bootstrap_resamples":10000,"bootstrap_confidence":0.95,"seed":19,"permutation":"paired two-sided sign flip; exact for n<=16, seeded Monte Carlo otherwise","primary_comparator":"B3","holm_family":["proposed_vs_B0","proposed_vs_B1","proposed_vs_B2","proposed_vs_B3"]}

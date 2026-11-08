@@ -1,0 +1,35 @@
+{
+  "classification": "synthetic_evaluation_only_not_empirical",
+  "code_sha256": {
+    "src\\evaluation\\__init__.py": "62aec142a324ed2d99067175c14ba7daf13efd72f38196a6c1e2d8105953eb73",
+    "src\\evaluation\\metrics.py": "c5e077cd4ab174f52da96864b9fbd5ae7caba572cef636c54b6a98c4050ec8cc",
+    "src\\evaluation\\prediction_validation.py": "a2b24fa9fce4e624581af5655c73a2b02cde95f08815741ffe27c012d2c74920",
+    "src\\evaluation\\report.py": "fc71fc72be30331c26734d64cfb11ed7a163891fa5595c435a61c0a06c4d0fd4",
+    "src\\evaluation\\runner.py": "ba36b4d0134ab50357c8719f1b5ee74ffa6d4ad79ff136cb090c94db35d6a5fd",
+    "src\\evaluation\\statistics.py": "d1e37feef17aaeae70e2787404c02cf8ec5ee4431dd7a6160c023b24190fe0eb",
+    "src\\evaluation\\truth_reader.py": "0a8d284507b96cc258e136c4d59ada04e7a3a7c7e813d7260de455edc0663ca3"
+  },
+  "command": "C:\\Users\\surface\\Desktop\\CN-Research-\\src\\cli.py evaluate --mode synthetic --predictions fixtures/stage5/predictions.json --labels fixtures/stage5/labels.json --config configs/evaluation.yaml --out outputs/evaluation/synthetic/phase5-synthetic-final4",
+  "config_sha256": {
+    "evaluation": "2eefc41b0f4bd670b8d07a2ba1479b0a5d2a5b30b68f928459c52f70ec562d77",
+    "metrics": "4f2ca6518e75cd4f56ddeabb06648b74e36109dc451078f31a3785fd9c17a950",
+    "prediction_schema": "fac15a3c84435ba96e7f2d065c3a6799ee736ae8a906528eaae6a0d6ac211cfa",
+    "statistics": "c419636894313a19cf7d9b13415f20cebb999f941e48ecb64059c0163e47eeff"
+  },
+  "ended_utc": "2026-11-08T14:42:43.320468+00:00",
+  "evaluator_version": "evaluation-v1",
+  "gate_status": "closed_for_real_data",
+  "metric_version": "evaluation-metrics-v1",
+  "mode": "synthetic",
+  "output_sha256": {
+    "metrics.json": "0057064a3790438650f741ac7d5bf4820d077e635e60a846d174525ac8858f9f",
+    "report.md": "08d287b791ef9f8817c069d32e4b738d974a554436646ada819b9a20557c4085"
+  },
+  "prediction_sha256": "84a6f7a2c08ebb159ce16b30a15c564726aaff9c353be7732c407be723c03bac",
+  "python": "3.12.10",
+  "run_id": "phase5-synthetic-final4",
+  "runtime_ms": 40.356,
+  "seed": 19,
+  "started_utc": "2026-11-08T14:42:43.274520+00:00",
+  "synthetic_label_fixture_sha256": "3fe3a0e8c35930fb0d21dc4c48817d9821ef72bb1f97e53b3eff754f47071a0c"
+}

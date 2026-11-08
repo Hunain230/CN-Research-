@@ -1,0 +1,30 @@
+{
+  "classification": "synthetic_evaluation_only_not_empirical",
+  "code_sha256": {
+    "src\\evaluation\\__init__.py": "62aec142a324ed2d99067175c14ba7daf13efd72f38196a6c1e2d8105953eb73",
+    "src\\evaluation\\metrics.py": "d415a5c4497d08a82b7cb6a532f72f7e1e905fa97f0ab02b8180f9ceeab3663e",
+    "src\\evaluation\\prediction_validation.py": "d5335e1ad65962163c546cf5baddbd3af46d9896045586bd7717bb2b1e813019",
+    "src\\evaluation\\report.py": "fc71fc72be30331c26734d64cfb11ed7a163891fa5595c435a61c0a06c4d0fd4",
+    "src\\evaluation\\runner.py": "5941eaf75f2840bcc33a23087735e51a76723eacc1b62862f2b33bc264761a37",
+    "src\\evaluation\\statistics.py": "013b22386dd689bf37fbad74c0d6a43707c273e1e2dbd4ba375cf75a6c9b9cea",
+    "src\\evaluation\\truth_reader.py": "d65f870db3f37ac66661bb8026d5bf2163b7ead716a5e83f304dfa95618f2f0d"
+  },
+  "command": "C:\\Users\\surface\\Desktop\\CN-Research-\\src\\cli.py evaluate --mode synthetic --predictions fixtures/stage5/predictions.json --labels fixtures/stage5/labels.json --config configs/evaluation.yaml --out outputs/evaluation/synthetic/phase5-synthetic-final",
+  "config_sha256": "2eefc41b0f4bd670b8d07a2ba1479b0a5d2a5b30b68f928459c52f70ec562d77",
+  "ended_utc": "2026-11-08T14:38:06.188014+00:00",
+  "evaluator_version": "evaluation-v1",
+  "gate_status": "closed_for_real_data",
+  "metric_version": "evaluation-metrics-v1",
+  "mode": "synthetic",
+  "output_sha256": {
+    "metrics.json": "57aaf58d83609254e1ad5e2136e26678c4c52456ce504a82bb8f2a8458b1febb",
+    "report.md": "52f927b62ab1cba9a3e5ae11b0948f1405dd8d49487a4b0310268fdbede3fc07"
+  },
+  "prediction_sha256": "84a6f7a2c08ebb159ce16b30a15c564726aaff9c353be7732c407be723c03bac",
+  "python": "3.12.10",
+  "run_id": "phase5-synthetic-final",
+  "runtime_ms": 35.229,
+  "seed": 19,
+  "started_utc": "2026-11-08T14:38:06.148791+00:00",
+  "synthetic_label_fixture_sha256": "423e335240625f9a9e3698777ad281645b55b72be4d726f61e0f76e903a1524b"
+}

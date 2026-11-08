@@ -1,0 +1,1 @@
+{"schema_version":"evaluation-v1","mode":"synthetic","metrics":"configs/metrics.yaml","statistics":"configs/statistics.yaml","prediction_schema":"configs/evaluation_schema.json","seed":19,"real_gates":{"approved_features":false,"correlation_truth_resolved":false,"priority_labels_verified":false,"split_frozen":false,"predictions_exist":false}}

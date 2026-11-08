@@ -1,0 +1,13 @@
+{
+ "pair_truth":[["a","b"],["c","d"],["e","f"]],
+ "org_scoped_incident_truth":{"org-a|same-incident":"org-a|same-incident","org-b|same-incident":"org-b|same-incident"},
+ "candidate_pairs":[["a","b"],["a","c"],["c","d"],["x","y"]],
+ "full_pair_universe":[["a","b"],["a","c"],["c","d"],["x","y"],["e","f"],["x","z"]],
+ "alert_truth":{"a":"g1","b":"g1","c":"g1","d":"g1","e":"g1","x":"g2","q":"g2","f":"g3"},
+ "expert_rank":{"i01":1,"i02":2,"i03":3},
+ "rank_candidate_universe":["i01","i02","i03","i04","i05","i06","i07","i08","i09","i10","i11","i12","i13","i14","i15","i16","i17","i18","i19","i20","i21","i22","i23","i24","i25"],
+ "judgements":{"i01":1,"i02":1,"i03":1,"i04":0,"i05":0,"i06":0,"i07":0,"i08":0,"i09":0,"i10":0,"i11":0,"i12":0,"i13":0,"i14":0,"i15":0,"i16":0,"i17":0,"i18":0,"i19":0,"i20":0,"i21":0,"i22":0,"i23":0,"i24":0,"i25":0},
+ "gold_top20_groups":{"g1":["a","b","c","d","e"]},
+ "review_annotations":[{"r1":"supported","r2":"supported","gold_conflict":true,"predicted_conflict":true,"citation_supported":true},{"r1":"unsupported","r2":"supported","gold_conflict":true,"predicted_conflict":false,"citation_supported":false}],
+ "high_priority_cases":[{"auto_decided":true,"gold_high_priority":true,"recovered":false},{"auto_decided":true,"gold_high_priority":true,"recovered":true},{"auto_decided":false,"gold_high_priority":true,"recovered":false}]
+}

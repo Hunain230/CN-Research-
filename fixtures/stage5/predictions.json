@@ -1,0 +1,24 @@
+{
+ "schema_version":"evaluation-predictions-v1","classification":"synthetic_predictions_only_not_empirical","run_id":"eval-syn-fixture-v1",
+ "predictions":[
+  {"method":"demo","query_key":"q1","org_key":"syn-org","candidate_key":"i01","decision":"SCORE","score":0.9,"rank":2,"abstention":false,"failure":false,"evidence_refs":["ev1"],"latency_ms":10,"input_tokens":20,"output_tokens":5,"run_hash":"synthetic"},
+  {"method":"demo","query_key":"q1","org_key":"syn-org","candidate_key":"i02","decision":"SCORE","score":0.95,"rank":1,"abstention":false,"failure":false,"evidence_refs":["ev2"],"latency_ms":20,"input_tokens":21,"output_tokens":5,"run_hash":"synthetic"},
+  {"method":"demo","query_key":"q1","org_key":"syn-org","candidate_key":"i04","decision":"SCORE","score":0.8,"rank":3,"abstention":false,"failure":false,"evidence_refs":[],"latency_ms":30,"input_tokens":22,"output_tokens":5,"run_hash":"synthetic"},
+  {"method":"demo","query_key":"q1","org_key":"syn-org","candidate_key":"i05","decision":"SCORE","score":0.7,"rank":4,"abstention":false,"failure":false,"evidence_refs":[],"latency_ms":40,"input_tokens":23,"output_tokens":5,"run_hash":"synthetic"},
+  {"method":"demo","query_key":"q1","org_key":"syn-org","candidate_key":"i06","decision":"SCORE","score":0.6,"rank":5,"abstention":false,"failure":false,"evidence_refs":[],"latency_ms":50,"input_tokens":24,"output_tokens":5,"run_hash":"synthetic"},
+  {"method":"demo","query_key":"q1","org_key":"syn-org","candidate_key":"i07","decision":"SCORE","score":0.5,"rank":6,"abstention":false,"failure":false,"evidence_refs":[],"latency_ms":60,"input_tokens":25,"output_tokens":5,"run_hash":"synthetic"},
+  {"method":"demo","query_key":"q1","org_key":"syn-org","candidate_key":"i08","decision":"SCORE","score":0.4,"rank":7,"abstention":false,"failure":false,"evidence_refs":[],"latency_ms":70,"input_tokens":26,"output_tokens":5,"run_hash":"synthetic"},
+  {"method":"demo","query_key":"q1","org_key":"syn-org","candidate_key":"i09","decision":"SCORE","score":0.3,"rank":8,"abstention":false,"failure":false,"evidence_refs":[],"latency_ms":80,"input_tokens":27,"output_tokens":5,"run_hash":"synthetic"},
+  {"method":"demo","query_key":"q1","org_key":"syn-org","candidate_key":"i10","decision":"SCORE","score":0.2,"rank":9,"abstention":false,"failure":false,"evidence_refs":[],"latency_ms":90,"input_tokens":28,"output_tokens":5,"run_hash":"synthetic"},
+  {"method":"demo","query_key":"q1","org_key":"syn-org","candidate_key":"i11","decision":"SCORE","score":0.1,"rank":10,"abstention":false,"failure":false,"evidence_refs":[],"latency_ms":100,"input_tokens":29,"output_tokens":5,"run_hash":"synthetic"}
+ ],
+ "pair_predictions":[
+  {"left":"a","right":"b","org_key":"syn-org","left_org":"syn-org","right_org":"syn-org","decision":"LINK","abstention":false,"failure":false},
+  {"left":"a","right":"c","org_key":"syn-org","left_org":"syn-org","right_org":"syn-org","decision":"LINK","abstention":false,"failure":false},
+  {"left":"c","right":"d","org_key":"syn-org","left_org":"syn-org","right_org":"syn-org","decision":"UNSURE","abstention":true,"failure":false},
+  {"left":"x","right":"y","org_key":"syn-org","left_org":"syn-org","right_org":"syn-org","decision":"NO_LINK","abstention":false,"failure":true}
+ ],
+ "components":[["a","b","c","d","e","x"],["f"]],
+ "ranked_candidates":["i02","i01","i04","i05","i06","i07","i08","i09","i10","i11"],
+ "top20_components":[["a","b","c","d","q"]]
+}

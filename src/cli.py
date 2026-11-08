@@ -186,11 +186,18 @@ def main():
     b=sub.add_parser("run-baselines"); b.add_argument("--config",default="configs/baselines.yaml"); b.add_argument("--methods",default="rules,bm25,single_llm,repeated_single_llm"); b.add_argument("--mode",choices=("synthetic","real"),default="synthetic"); b.add_argument("--out",required=True)
     sub.add_parser("agent-self-test")
     g=sub.add_parser("run-agents"); g.add_argument("--config",default="configs/agents.yaml"); g.add_argument("--mode",choices=("synthetic","real"),default="synthetic"); g.add_argument("--out",required=True)
+    sub.add_parser("evaluation-self-test")
+    ev=sub.add_parser("evaluate"); ev.add_argument("--mode",choices=("synthetic","real"),required=True); ev.add_argument("--predictions",required=True); ev.add_argument("--labels",required=True); ev.add_argument("--config",default="configs/evaluation.yaml"); ev.add_argument("--out",required=True)
     a=p.parse_args()
     try:
         if a.command=="validate":
             if a.chunk_rows<1: p.error("--chunk-rows must be positive")
             return main_validate(a)
+        if a.command in {"evaluation-self-test","evaluate"}:
+            from .evaluation.runner import self_test, evaluate
+            if a.command=="evaluation-self-test": print(json.dumps(self_test(Path.cwd()),sort_keys=True)); return 0
+            result=evaluate(Path.cwd(),a.mode,a.predictions,a.labels,a.config,a.out,command_line=" ".join(sys.argv))
+            print(json.dumps(result,sort_keys=True)); return 0
         from . import phase2
         if a.command=="preprocess":
             import shlex
