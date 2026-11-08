@@ -1,0 +1,180 @@
+{
+  "IncidentId_read_by_predictor": false,
+  "QueueRank_read_by_predictor": false,
+  "alert_universe_sha256": "87dd23888753e66a5c44173e2a01b97c540567bc15dc09964d8cddbf331bdfe2",
+  "ambiguous_alert_keys_excluded": 70702,
+  "candidate_generation_coverage": 0.002897829078644539,
+  "candidate_pair_file_sha256": "6c6347b0a921936e42907c85f3657c8bdcdcc253d5baba0123b93d0c8bc0b1c6",
+  "candidate_pairs": 194296,
+  "classification": "exploratory_ambiguity_excluded_local_correlation_diagnostic",
+  "code_sha256": "b8a13b1c2a4e03c021a66c140fd4117571437f5bdff9c3078f81e7248c78fb54",
+  "config_sha256": "bbcf755e9f10ba7b1efd2e76e265f53c412e9642d6ff5215fd0fcd26b414fcda",
+  "coverage": {
+    "alerts_with_technique_context": 11372,
+    "ambiguous_keys_in_source": 70702,
+    "test_evidence_rows_excluded_for_ambiguity": 93583,
+    "test_rows_missing_alert_key": 0,
+    "unambiguous_test_alert_keys": 30692
+  },
+  "ended_utc": "2026-11-08T16:46:29.274380+00:00",
+  "external_calls": 0,
+  "field_policy_sha256": "5e3777312a411b37cc1dc44cbe3b0d359d3d463e8dff6b58844cafbbda0ae211",
+  "full_same_org_pair_universe": 67048813,
+  "method": "for each alert, top-20 Jaccard neighbors among same-org alerts sharing at least one ATT&CK technique; LINK each generated pair",
+  "mode": "offline_ambiguity_excluded_local_diagnostic",
+  "model_visible_fields": [
+    "DetectorId",
+    "Category",
+    "MitreTechniques",
+    "EntityType",
+    "EvidenceRole"
+  ],
+  "per_org_counts": {
+    "0798c6cebd0c3bbd6c0b1a2ae3a794b8323067ebb21831b3c4ec851c9618c73e": {
+      "alerts": 421,
+      "candidate_pairs": 1295
+    },
+    "0e3e0b6ab85f97dadde3c59a60dfa8a968304989f82d49b34627d623791ad7b8": {
+      "alerts": 811,
+      "candidate_pairs": 1854
+    },
+    "1255605c1db3a53cd4f302c2c8131594074dde1adbab45fbeff567aa6a1cc178": {
+      "alerts": 243,
+      "candidate_pairs": 4
+    },
+    "1974aa1cd2053b778654b5cf8e5d8f2bb22e61a99e869ce25a37fbcf170e513c": {
+      "alerts": 3967,
+      "candidate_pairs": 32744
+    },
+    "1dd70e4bd0db9643259d001370633d6b811f3ac2e4f73f13984a7d3d7add1a70": {
+      "alerts": 119,
+      "candidate_pairs": 1447
+    },
+    "1e411d12bf1b03311671db76d2869962b834e36612586a33f7f318fb2219fcdc": {
+      "alerts": 8906,
+      "candidate_pairs": 12631
+    },
+    "201cd2e8f932b3e8ce130f36a616722588c56dd5d771f8ea66a9ac70ae72c1af": {
+      "alerts": 240,
+      "candidate_pairs": 1591
+    },
+    "28c294a4ad66730ba8477f153225fd532838d82af8daa4c0fb6aa7528d82aa56": {
+      "alerts": 174,
+      "candidate_pairs": 711
+    },
+    "31200b306683bf6bd37ae33331497021ce0f63428c8dcc187056da8e75e804ea": {
+      "alerts": 63,
+      "candidate_pairs": 67
+    },
+    "342f71344e1238a9c2c548ae352e1569d180eec95e3662d5d32d32dda756d155": {
+      "alerts": 155,
+      "candidate_pairs": 521
+    },
+    "38a90a0e4133e4b0b61d8581f95eb418da4815629a2ea380b792be105d61ddc8": {
+      "alerts": 176,
+      "candidate_pairs": 1457
+    },
+    "444dfc4a5d9ff2d9238a9b6100df5a44951fb425ff25f4b1b096226cd89526ec": {
+      "alerts": 105,
+      "candidate_pairs": 823
+    },
+    "44d1655e85b830509537d916e005b279aa9b5e0af93cf05a8a8d3fbcf9eda230": {
+      "alerts": 1474,
+      "candidate_pairs": 24256
+    },
+    "451e3b013a3df1498ba69d8bdb7b2cbf7054ca90146c40050d72bda9c5613259": {
+      "alerts": 2269,
+      "candidate_pairs": 11724
+    },
+    "4b4b6f3b37c78e830594f20d43cb8fe0dc471fd737fa4ceb4455a55d5b5500c8": {
+      "alerts": 305,
+      "candidate_pairs": 0
+    },
+    "607478bbc731f1eed78569f1a09c975fbfefe56e10380cc41fb9d2f016be6687": {
+      "alerts": 500,
+      "candidate_pairs": 6366
+    },
+    "68f155df375d838793f75796d108e5269d43d5d2b87044cab86e7e7cb5220b10": {
+      "alerts": 85,
+      "candidate_pairs": 316
+    },
+    "73a1c2037a6c471a8ac7d819c75d49e89e7d5e800525f2c735524ba032f85122": {
+      "alerts": 4819,
+      "candidate_pairs": 51371
+    },
+    "79ccf27a0b3d8e402ecc262048d8142b3420bcb7dbad4993e5c77e52c484db00": {
+      "alerts": 1016,
+      "candidate_pairs": 15295
+    },
+    "85f736185e117763b22855d783b3e07455f03666484e0c88a4730f1bfaf9e581": {
+      "alerts": 296,
+      "candidate_pairs": 3727
+    },
+    "8d5df9ffdf52e174f1eb8e8fa1c755674b579bd183c99fd5e670f69b1c793084": {
+      "alerts": 887,
+      "candidate_pairs": 13177
+    },
+    "8e5685cfcb655c68e54449f8d2d525a0cfdbcb774bfa0c1a0dcff81f2057b075": {
+      "alerts": 366,
+      "candidate_pairs": 4240
+    },
+    "97e14ae6026d6b6ff294827bcb5e7186ffd1ddba2a030908852f644e3c4703e4": {
+      "alerts": 216,
+      "candidate_pairs": 1645
+    },
+    "9c52f7afdd561757bc02ce7e0861bc2feaab9b880be96ea64fded8ec3e823324": {
+      "alerts": 167,
+      "candidate_pairs": 2839
+    },
+    "c0883eaa266f1f2cc7f2449a9960d455e1a4ff4ebfa4a811469e8b9defd58e96": {
+      "alerts": 117,
+      "candidate_pairs": 1523
+    },
+    "d0d1c35dc7b8262d72f29e863d95871137c637d2c6c55cb976725b91926eaf93": {
+      "alerts": 300,
+      "candidate_pairs": 15
+    },
+    "e4ba05ece6ea436ecd5eff727083f6f5932b9e6ca045ea55dc70305d21a04c12": {
+      "alerts": 123,
+      "candidate_pairs": 12
+    },
+    "e98713bcf81d3aec14622a8e5049661eec71a7d12f18d3fe1d33dd8754a167cb": {
+      "alerts": 91,
+      "candidate_pairs": 45
+    },
+    "ee99b01f8b8236489aa21c3318512e64cf4169378109925d212eaefa56bbd04a": {
+      "alerts": 2206,
+      "candidate_pairs": 1753
+    },
+    "fe50b544fa9e58a9a559e6a001e5ac53e5c447cc21053cbf7355de285ac5545d": {
+      "alerts": 75,
+      "candidate_pairs": 847
+    }
+  },
+  "protocol": "empirical-correlation-v1",
+  "protocol_amendment_sha256": "7316cd32dee560eaef120ba89c94c6bf46de9f860b67c70b3c9c3a2971dcc7eb",
+  "protocol_manifest_sha256": "0f983418f316e9e4341aa07bd99aa75427697235c7bf503e1c753f81088b3865",
+  "python": "3.12.10",
+  "raw_input_sha256_after": {
+    "GUIDE_Test.csv": "fdfd7523efd6e3c26bd0290ba6acbcb237196cf923dd56a28e96802035db35a3",
+    "GUIDE_Test_Queue_Rankings.csv": "e4ea9308f45821128a3cd446ab19e6559edfc50709e72034ce957b6f0e2e65d6"
+  },
+  "raw_input_sha256_before": {
+    "GUIDE_Test.csv": "fdfd7523efd6e3c26bd0290ba6acbcb237196cf923dd56a28e96802035db35a3",
+    "GUIDE_Test_Queue_Rankings.csv": "e4ea9308f45821128a3cd446ab19e6559edfc50709e72034ce957b6f0e2e65d6"
+  },
+  "restricted_artifacts_relative_path": "data\\derived\\empirical\\correlation\\phase6-correlation-20261108-v1",
+  "runtime_seconds": 211.979,
+  "split_assignment_sha256": "c0e6689f78d878237adb7689c0f5b39980bb547ab3bbd83efe4e7b4e639fe024",
+  "split_config_sha256": "a87d47e61a11721e9d41ee62df225e72040d502ff364ec603bcc15b54c979263",
+  "split_counts": {
+    "development": 10,
+    "pilot": 10,
+    "test": 30
+  },
+  "split_manifest_sha256": "5c504d865af698833f7189628f1de12518e7f212a6ead2a1434d9b023a00ccbe",
+  "started_utc": "2026-11-08T16:42:57.295392+00:00",
+  "test_organization_count": 30,
+  "tie_policy": "seeded_hash_pseudorandom_no_label_inputs",
+  "timestamp_used": false
+}
