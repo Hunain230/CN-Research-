@@ -44,5 +44,8 @@ GUIDE_Test_Queue_Rankings.csv observed columns: OrgId, IncidentId, QueueRank; re
 ## Work sequence
 1 Dataset validation -> 2 preprocessing/splits -> 3 baselines -> 4 multi-agent workflow -> 5 evaluation -> 6 ablations, robustness, figures and discussion. Do not bypass stage gates.
 
+### Stage 1 handoff boundary (2026-11-08)
+Leakage-safe Stage 2 preprocessing development may begin for prioritization with evaluator labels kept separate. Preserve ambiguous alert-to-incident mappings for investigation. Do not create final evaluation-ready alert pairs, correlation results, or ranking evaluation results until GUIDE Id integrity and alert mapping issues are resolved and authoritative evidence verifies QueueRank meaning, query universe, and complete expert top-20 labels. Correlation and joint evaluation remain no-go while conflicting alert assignments persist.
+
 ## Repository conventions
 Raw data: data/raw (read-only); derived data: data/derived; configs: configs; implementation: src; runs: outputs/<run_id>. Each run records input/config hashes, package/model versions, seed and timestamp. Never commit secrets or raw data.

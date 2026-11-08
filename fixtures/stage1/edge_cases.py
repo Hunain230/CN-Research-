@@ -12,7 +12,8 @@ def row(**kw):
 rows=[row(Id="e1",OrgId="orgA",IncidentId="shared",AlertId="alert1",Timestamp="2025-01-01T00:00:00Z",DetectorId="d1",MitreTechniques="T1001"),
       row(Id="e1",OrgId="orgA",IncidentId="shared",AlertId="alert1",Timestamp="2025-01-01T00:00:00Z",DetectorId="d1",MitreTechniques="T1001"),
       row(Id="e2",OrgId="orgA",IncidentId="other",AlertId="alert1",Timestamp="not-a-time",DetectorId="d2"),
-      row(Id="e3",OrgId="orgB",IncidentId="shared",AlertId="alert2",Timestamp="2025-01-01T01:00:00Z",DetectorId="d3")]
+      row(Id="e3",OrgId="orgB",IncidentId="shared",AlertId="alert2",Timestamp="2025-01-01T01:00:00Z",DetectorId="d3"),
+      row(Id="",OrgId="orgB",IncidentId="extra",AlertId="alert3",Timestamp="2025-01-01T02:00:00Z",DetectorId="d4")]
 with (out/"GUIDE_Test.csv").open("w",newline="",encoding="utf-8") as f:
     w=csv.DictWriter(f,fieldnames=GUIDE); w.writeheader(); w.writerows(rows)
 labels=[{"OrgId":"orgA","IncidentId":"shared","QueueRank":"1"},{"OrgId":"orgA","IncidentId":"shared","QueueRank":"1"},{"OrgId":"orgA","IncidentId":"other","QueueRank":"3"},{"OrgId":"orgB","IncidentId":"shared","QueueRank":""}]

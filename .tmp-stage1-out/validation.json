@@ -2,15 +2,18 @@
   "audit_version": "stage1-v1",
   "checks": {
     "alert_correlation_go": "no-go",
-    "ambiguous_alert_membership_groups": 1,
-    "candidate_pair_ceiling": "not computed: rank scope and alert truth must first be verified; no labels exposed",
+    "candidate_pair_ceiling": "not computed: conflicting alert mappings block valid alert-level truth; labels remain evaluator-only",
     "composite_matched_keys": 3,
-    "duplicate_alert_key_groups": 1,
+    "conflicting_incident_assignment_groups_per_composite_alert_key": 1,
     "duplicate_rank_key_groups": 1,
-    "guide_alert_keys_distinct_composite": 2,
-    "guide_incidents_distinct_composite": 3,
+    "guide_alert_keys_distinct_composite": 3,
+    "guide_id_duplicate_rows_beyond_first": 1,
+    "guide_id_duplicate_value_groups": 1,
+    "guide_id_missing_rows": 1,
+    "guide_incidents_distinct_composite": 4,
     "incident_id_only_diagnostic_matches": 2,
-    "incident_prioritization_go": "no-go",
+    "incident_prioritization_evaluation": "blocked until rank scope and top-20 completeness are verified",
+    "incident_prioritization_preprocessing": "allowed with evaluator labels isolated and ambiguity preserved for investigation",
     "joint_evaluation_go": "no-go",
     "malformed_rows": 0,
     "null_rank_rows": 1,
@@ -21,11 +24,12 @@
     "rank_scope": "unverified; source evidence required",
     "rank_tie_groups_within_org": 1,
     "ranking_rows": 4,
+    "repeated_evidence_row_groups_per_composite_alert_key": 1,
     "required_orgs_for_split": 50,
     "schemas_match_observed": true,
     "split_feasible": false,
     "top20_completeness": "unverified; source evidence required",
-    "unmatched_guide_incidents": 0,
+    "unmatched_guide_incidents": 1,
     "unmatched_ranking_keys": 0
   },
   "guide_profile": {
@@ -36,7 +40,7 @@
       "AccountUpn": 0,
       "ActionGranular": 0,
       "ActionGrouped": 0,
-      "AlertId": 2,
+      "AlertId": 3,
       "AlertTitle": 0,
       "AntispamDirection": 0,
       "ApplicationId": 0,
@@ -44,7 +48,7 @@
       "Category": 0,
       "City": 0,
       "CountryCode": 0,
-      "DetectorId": 3,
+      "DetectorId": 4,
       "DeviceId": 0,
       "DeviceName": 0,
       "EmailClusterId": 0,
@@ -54,7 +58,7 @@
       "FolderPath": 0,
       "Id": 3,
       "IncidentGrade": 0,
-      "IncidentId": 2,
+      "IncidentId": 3,
       "IpAddress": 0,
       "LastVerdict": 0,
       "MitreTechniques": 1,
@@ -73,7 +77,7 @@
       "State": 0,
       "SuspicionLevel": 0,
       "ThreatFamily": 0,
-      "Timestamp": 3,
+      "Timestamp": 4,
       "Url": 0,
       "Usage": 0
     },
@@ -85,7 +89,7 @@
       "ActionGranular": {},
       "ActionGrouped": {},
       "AlertId": {
-        "string": 4
+        "string": 5
       },
       "AlertTitle": {},
       "AntispamDirection": {},
@@ -95,7 +99,7 @@
       "City": {},
       "CountryCode": {},
       "DetectorId": {
-        "string": 4
+        "string": 5
       },
       "DeviceId": {},
       "DeviceName": {},
@@ -109,7 +113,7 @@
       },
       "IncidentGrade": {},
       "IncidentId": {
-        "string": 4
+        "string": 5
       },
       "IpAddress": {},
       "LastVerdict": {},
@@ -121,7 +125,7 @@
       "OSFamily": {},
       "OSVersion": {},
       "OrgId": {
-        "string": 4
+        "string": 5
       },
       "RegistryKey": {},
       "RegistryValueData": {},
@@ -134,7 +138,7 @@
       "SuspicionLevel": {},
       "ThreatFamily": {},
       "Timestamp": {
-        "string": 4
+        "string": 5
       },
       "Url": {},
       "Usage": {}
@@ -164,12 +168,12 @@
       "EvidenceRole": 0.0,
       "FileName": 0.0,
       "FolderPath": 0.0,
-      "Id": 1.0,
+      "Id": 0.8,
       "IncidentGrade": 0.0,
       "IncidentId": 1.0,
       "IpAddress": 0.0,
       "LastVerdict": 0.0,
-      "MitreTechniques": 0.5,
+      "MitreTechniques": 0.4,
       "NetworkMessageId": 0.0,
       "OAuthApplicationId": 0.0,
       "OSFamily": 0.0,
@@ -190,55 +194,56 @@
       "Usage": 0.0
     },
     "null_counts": {
-      "AccountName": 4,
-      "AccountObjectId": 4,
-      "AccountSid": 4,
-      "AccountUpn": 4,
-      "ActionGranular": 4,
-      "ActionGrouped": 4,
-      "AlertTitle": 4,
-      "AntispamDirection": 4,
-      "ApplicationId": 4,
-      "ApplicationName": 4,
-      "Category": 4,
-      "City": 4,
-      "CountryCode": 4,
-      "DeviceId": 4,
-      "DeviceName": 4,
-      "EmailClusterId": 4,
-      "EntityType": 4,
-      "EvidenceRole": 4,
-      "FileName": 4,
-      "FolderPath": 4,
-      "IncidentGrade": 4,
-      "IpAddress": 4,
-      "LastVerdict": 4,
-      "MitreTechniques": 2,
-      "NetworkMessageId": 4,
-      "OAuthApplicationId": 4,
-      "OSFamily": 4,
-      "OSVersion": 4,
-      "RegistryKey": 4,
-      "RegistryValueData": 4,
-      "RegistryValueName": 4,
-      "ResourceIdName": 4,
-      "ResourceType": 4,
-      "Roles": 4,
-      "Sha256": 4,
-      "State": 4,
-      "SuspicionLevel": 4,
-      "ThreatFamily": 4,
-      "Url": 4,
-      "Usage": 4
+      "AccountName": 5,
+      "AccountObjectId": 5,
+      "AccountSid": 5,
+      "AccountUpn": 5,
+      "ActionGranular": 5,
+      "ActionGrouped": 5,
+      "AlertTitle": 5,
+      "AntispamDirection": 5,
+      "ApplicationId": 5,
+      "ApplicationName": 5,
+      "Category": 5,
+      "City": 5,
+      "CountryCode": 5,
+      "DeviceId": 5,
+      "DeviceName": 5,
+      "EmailClusterId": 5,
+      "EntityType": 5,
+      "EvidenceRole": 5,
+      "FileName": 5,
+      "FolderPath": 5,
+      "Id": 1,
+      "IncidentGrade": 5,
+      "IpAddress": 5,
+      "LastVerdict": 5,
+      "MitreTechniques": 3,
+      "NetworkMessageId": 5,
+      "OAuthApplicationId": 5,
+      "OSFamily": 5,
+      "OSVersion": 5,
+      "RegistryKey": 5,
+      "RegistryValueData": 5,
+      "RegistryValueName": 5,
+      "ResourceIdName": 5,
+      "ResourceType": 5,
+      "Roles": 5,
+      "Sha256": 5,
+      "State": 5,
+      "SuspicionLevel": 5,
+      "ThreatFamily": 5,
+      "Url": 5,
+      "Usage": 5
     },
-    "rows": 4,
+    "rows": 5,
     "whitespace_values": {}
   },
   "inputs": {
     "GUIDE": {
-      "bytes": 880,
+      "bytes": 964,
       "path": ".tmp-stage1-fixture\\GUIDE_Test.csv",
-      "sha256": "85c4d9f3dd7e4879f8567dad89ad645c08547d92fb3be440ca2464d61dafbb76"
+      "sha256": "fd22fa1aaf5607b9a4ba72d9c1abb3ddda08deedfa7e5de6235ab8253046effa"
     },
     "queue": {
       "bytes": 86,
@@ -261,8 +266,8 @@
       "top20_rank_count": 3
     },
     {
-      "distinct_detectors": 1,
-      "guide_incidents": 1,
+      "distinct_detectors": 2,
+      "guide_incidents": 2,
       "matched_label_keys": 1,
       "org_ordinal": 2,
       "phase2_eligible": false,
@@ -300,7 +305,7 @@
     "whitespace_values": {}
   },
   "rows": {
-    "GUIDE": 4,
+    "GUIDE": 5,
     "queue": 4
   },
   "source_metadata": {

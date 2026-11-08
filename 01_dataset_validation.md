@@ -68,6 +68,11 @@ Use bounded-memory deterministic processing, stable sort, UTC, explicit dtypes, 
 ## Acceptance criteria
 Pass only when required schemas parse and counts/hashes are recorded; grain and key collisions are characterized; rank scope/completeness is verified or explicitly blocked; composite join coverage is quantified without row multiplication; field allowlist and leakage audit are documented; correlation truth and candidate ceiling are assessed; qualified-org count and split feasibility are established before test analysis; and separate task go/no-go decisions cite evidence and unresolved questions.
 
+### Current handoff clarification (2026-11-08)
+The GUIDE row identifier `Id` must have explicit missing-row and duplicate-value counts; its cardinality estimate is not a uniqueness check. Distinguish repeated evidence-row groups for a composite `(OrgId, AlertId)` (which may be expected at evidence-row grain) from keys with conflicting incident assignments. Conflicting mappings keep correlation and joint evaluation at no-go.
+
+Stage 2 may start as leakage-safe preprocessing development for prioritization, with evaluator labels stored separately and ambiguous alert mappings preserved for investigation. Do not produce final evaluation-ready alert pairs or ranking evaluation results until the Stage 1 key/mapping issues and rank scope/top-20 completeness questions are resolved.
+
 ## Command contract
 ```powershell
 python -m src.cli validate --alerts data/raw/GUIDE_Test.csv --rankings data/raw/GUIDE_Test_Queue_Rankings.csv --out data/derived/audit --chunk-rows 250000 --config configs/validation.yaml

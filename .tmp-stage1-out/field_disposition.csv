@@ -1,13 +1,13 @@
 column,null_rate,cardinality_estimate,allow_decision,rationale
-Id,0.0,3,deny,Lineage key; preserve for citations only after source review; never inference input.
+Id,0.2,3,deny,Lineage key; preserve for citations only after source review; never inference input.
 OrgId,0.0,2,deny,"Partition/join key; keep in restricted control plane, never model input."
-IncidentId,0.0,2,deny,Evaluator label/outcome; prohibited from all model-visible paths.
-AlertId,0.0,2,deny,"Partition/join key; keep in restricted control plane, never model input."
-Timestamp,0.0,3,deny_pending,Temporal availability and timezone semantics require source confirmation.
-DetectorId,0.0,3,deny_pending,"Candidate evidence; point-in-time availability, provenance, and safe encoding require confirmation."
+IncidentId,0.0,3,deny,Evaluator label/outcome; prohibited from all model-visible paths.
+AlertId,0.0,3,deny,"Partition/join key; keep in restricted control plane, never model input."
+Timestamp,0.0,4,deny_pending,Temporal availability and timezone semantics require source confirmation.
+DetectorId,0.0,4,deny_pending,"Candidate evidence; point-in-time availability, provenance, and safe encoding require confirmation."
 AlertTitle,1.0,0,deny_pending,"Candidate evidence; point-in-time availability, provenance, and safe encoding require confirmation."
 Category,1.0,0,deny_pending,"Candidate evidence; point-in-time availability, provenance, and safe encoding require confirmation."
-MitreTechniques,0.5,1,deny_pending,"Candidate evidence; point-in-time availability, provenance, and safe encoding require confirmation."
+MitreTechniques,0.6,1,deny_pending,"Candidate evidence; point-in-time availability, provenance, and safe encoding require confirmation."
 IncidentGrade,1.0,0,deny,Evaluator label/outcome; prohibited from all model-visible paths.
 ActionGrouped,1.0,0,deny,Evaluator label/outcome; prohibited from all model-visible paths.
 ActionGranular,1.0,0,deny,Evaluator label/outcome; prohibited from all model-visible paths.

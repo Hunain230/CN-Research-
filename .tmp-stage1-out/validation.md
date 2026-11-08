@@ -1,28 +1,32 @@
 # Stage 1 dataset validation
 
-Inputs: GUIDE 4 rows; queue 4 rows.
+Inputs: GUIDE 5 rows; queue 4 rows.
 
 ## Decisions
 
-- Alert correlation: **no-go** (ambiguous alert memberships: 1).
-- Incident prioritization: **no-go** (0 eligible organizations; 50 required).
+- Alert correlation: **no-go** until conflicting alert mappings are understood.
+- Incident prioritization preprocessing: **allowed** with evaluator labels isolated and ambiguity preserved for investigation.
+- Incident prioritization evaluation: **blocked** until rank scope and top-20 completeness are verified.
 - Joint evaluation: **no-go**.
 
-## Integrity and joins
+## Grain and key integrity
 
-- Distinct GUIDE composite incidents: 3; distinct alert keys: 2.
-- Composite matched incidents: 3; unmatched GUIDE incidents: 0; unmatched ranking keys: 0.
+- GUIDE Id: 1 missing rows; 1 duplicated values across 1 excess rows.
+- Repeated evidence-row groups per composite alert key: 1 (may be normal at evidence-row grain).
+- Conflicting incident assignment groups per composite alert key: 1.
+- Distinct GUIDE composite incidents: 4; distinct alert keys: 3.
+
+## Joins and ranking
+
+- Composite matched incidents: 3; unmatched GUIDE incidents: 1; unmatched ranking keys: 0.
+- Qualified organizations: 0 (50 required by the proposed 10/10/30 split).
 - Duplicate ranking keys: 1; missing rank rows: 1; conversion errors: 0; rank ties: 1; rank gaps: 1.
-- Rank scope/completeness: unverified from local files; require dataset documentation or authoritative source metadata.
+- Rank direction, scope, query universe, and top-20 completeness are unverified from the local files.
 
-## Leakage and evidence
+## Leakage and Stage 2 boundary
 
-All fields default denied. IncidentId, QueueRank, IncidentGrade, ActionGrouped and ActionGranular are evaluator-only. IDs and sensitive entity values are never emitted. Candidate evidence fields need point-in-time/source review before allowlisting.
-
-## Phase 2 gate
-
-The 10/10/30 split requires 50 qualified organizations; observed qualified count is 0. No split assignments were created. Rank direction, query universe, source release/license/download date, and top-20 completeness require authoritative evidence.
+All fields default denied. IncidentId, QueueRank, IncidentGrade, ActionGrouped and ActionGranular are evaluator-only. Stage 2 may develop leakage-safe preprocessing with labels stored separately and ambiguous alert mappings preserved for investigation. Do not create final evaluation-ready alert pairs or ranking results until Stage 1 gaps and label semantics are resolved.
 
 ## Required evidence
 
-Provide the source release and license citation, download record/date, documentation that QueueRank 1 is highest and ranks 1–20 are complete expert labels for a defined query universe, and point-in-time provenance for evidence fields. Candidate feasibility remains unresolved until alert/entity and technique semantics are verified.
+Provide the source release/license citation, download record/date, documentation that QueueRank 1 is highest and ranks 1-20 are complete expert labels for a defined query universe, and point-in-time provenance for evidence fields.
