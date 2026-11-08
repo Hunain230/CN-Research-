@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Baseline prediction record v1",
+  "type": "object",
+  "required": ["run_id", "method", "query_key", "candidate_key", "score", "rank", "decision", "evidence_refs", "rationale", "uncertainty", "abstention_status", "provider", "provider_version", "prompt_hash", "inference_seed", "input_tokens", "output_tokens", "latency_ms", "retry_count", "error_class"],
+  "properties": {
+    "run_id": {"type": "string"}, "method": {"type": "string"}, "query_key": {"type": "string"}, "candidate_key": {"type": "string"},
+    "score": {"type": ["number", "null"]}, "rank": {"type": ["integer", "null"]},
+    "decision": {"enum": ["LINK", "NO_LINK", "UNSURE", null]}, "evidence_refs": {"type": "array", "items": {"type": "string"}},
+    "rationale": {"type": "string"}, "uncertainty": {"type": ["number", "null"], "minimum": 0, "maximum": 1}, "abstention_status": {"type": "string"}, "provider": {"type": "string"}, "provider_version": {"type": "string"},
+    "prompt_hash": {"type": "string"}, "inference_seed": {"type": ["integer", "null"]}, "input_tokens": {"type": "integer", "minimum": 0},
+    "output_tokens": {"type": "integer", "minimum": 0}, "latency_ms": {"type": "number", "minimum": 0}, "retry_count": {"type": "integer", "minimum": 0}, "error_class": {"type": ["string", "null"]}
+  },
+  "additionalProperties": false
+}

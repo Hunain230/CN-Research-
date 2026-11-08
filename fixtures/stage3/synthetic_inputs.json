@@ -1,0 +1,47 @@
+{
+  "schema_version": "baseline-input-v1",
+  "run_id": "synthetic-baseline-smoke-v1",
+  "request": {
+    "run_id": "synthetic-baseline-smoke-v1",
+    "query_key": "query-synthetic-01",
+    "org_partition_key": "org-synthetic-01",
+    "split_label": "synthetic",
+    "candidate_generation_version": "fixture-candidates-v1",
+    "input_hash": "synthetic-fixture-only",
+    "schema_version": "baseline-input-v1",
+    "evidence_budget": {"max_records": 20, "max_tokens": 800, "max_characters": 4000},
+    "query": {
+      "candidate_key": "query-item-01",
+      "key_origin": "opaque_synthetic",
+      "org_partition_key": "org-synthetic-01",
+      "fields": {"synthetic.text": "alpha beta"},
+      "field_sources": {"synthetic.text": ["ev-query-01"]},
+      "evidence": [{"evidence_id": "ev-query-01", "timestamp_utc": "2025-01-01T00:00:00Z", "fields": {"synthetic.text": "alpha beta"}}]
+    },
+    "candidates": [
+      {"candidate_key": "component-alpha", "key_origin": "opaque_synthetic", "org_partition_key": "org-synthetic-01", "partition": "synthetic", "fields": {"synthetic.text": "alpha alpha beta"}, "field_sources": {"synthetic.text": ["ev-alpha-01"]}, "evidence": [{"evidence_id": "ev-alpha-01", "timestamp_utc": "2025-01-01T00:01:00Z", "fields": {"synthetic.text": "alpha alpha beta"}}]},
+      {"candidate_key": "component-gamma", "key_origin": "opaque_synthetic", "org_partition_key": "org-synthetic-01", "partition": "synthetic", "fields": {"synthetic.text": "alpha gamma"}, "field_sources": {"synthetic.text": ["ev-gamma-01"]}, "evidence": [{"evidence_id": "ev-gamma-01", "timestamp_utc": "2025-01-01T00:02:00Z", "fields": {"synthetic.text": "alpha gamma"}}]}
+    ]
+  },
+  "rules_alerts": [
+    {"alert_key": "alert-A", "org_partition_key": "org-rule-1", "timestamp_utc": "2025-01-01T00:00:00Z", "entities": [{"type": "host", "value": "node-x", "evidence_id": "rule-ev-A"}], "techniques": ["T1001"], "technique_evidence": {"T1001": ["rule-ev-A"]}},
+    {"alert_key": "alert-B", "org_partition_key": "org-rule-1", "timestamp_utc": "2025-01-01T01:00:00Z", "entities": [{"type": "host", "value": "node-x", "evidence_id": "rule-ev-B"}], "techniques": [], "technique_evidence": {}},
+    {"alert_key": "alert-C", "org_partition_key": "org-rule-1", "timestamp_utc": "2025-01-01T02:00:00Z", "entities": [{"type": "host", "value": "node-x", "evidence_id": "rule-ev-C"}], "techniques": [], "technique_evidence": {}},
+    {"alert_key": "alert-D", "org_partition_key": "org-rule-1", "timestamp_utc": "2025-01-01T03:00:00Z", "entities": [{"type": "host", "value": "node-x", "evidence_id": "rule-ev-D"}], "techniques": [], "technique_evidence": {}},
+    {"alert_key": "alert-E", "org_partition_key": "org-rule-1", "timestamp_utc": "2025-01-01T00:30:00Z", "entities": [], "techniques": ["T2002"], "technique_evidence": {"T2002": ["rule-ev-E"]}},
+    {"alert_key": "alert-F", "org_partition_key": "org-rule-1", "timestamp_utc": "2025-01-01T00:45:00Z", "entities": [], "techniques": ["T2002"], "technique_evidence": {"T2002": ["rule-ev-F"]}},
+    {"alert_key": "alert-G", "org_partition_key": "org-rule-1", "timestamp_utc": "2025-01-04T00:00:00Z", "entities": [{"type": "host", "value": "node-x", "evidence_id": "rule-ev-G"}], "techniques": [], "technique_evidence": {}},
+    {"alert_key": "alert-H", "org_partition_key": "org-rule-2", "timestamp_utc": "2025-01-01T00:00:00Z", "entities": [{"type": "host", "value": "node-x", "evidence_id": "rule-ev-H"}], "techniques": ["T1001"], "technique_evidence": {"T1001": ["rule-ev-H"]}},
+    {"alert_key": "alert-I", "org_partition_key": "org-rule-2", "timestamp_utc": "2025-01-01T00:01:00Z", "entities": [{"type": "host", "value": "unknown", "evidence_id": "rule-ev-I"}], "techniques": [], "technique_evidence": {}},
+    {"alert_key": "alert-J", "org_partition_key": "org-rule-2", "timestamp_utc": "2025-01-01T00:02:00Z", "entities": [{"type": "host", "value": "unknown", "evidence_id": "rule-ev-J"}], "techniques": [], "technique_evidence": {}}
+  ],
+  "bm25_reference": {
+    "query": "alpha beta",
+    "documents": [
+      {"candidate_key": "ref-A", "partition": "synthetic", "org_partition_key": "org-synthetic-01", "text": "alpha alpha beta", "evidence": [{"evidence_id": "ref-ev-A", "fields": {"synthetic.text": "alpha alpha beta"}}]},
+      {"candidate_key": "ref-B", "partition": "synthetic", "org_partition_key": "org-synthetic-01", "text": "alpha gamma", "evidence": [{"evidence_id": "ref-ev-B", "fields": {"synthetic.text": "alpha gamma"}}]}
+    ],
+    "expected_order": ["ref-A", "ref-B"],
+    "expected_scores_rounded_6": [0.878, 0.199]
+  }
+}

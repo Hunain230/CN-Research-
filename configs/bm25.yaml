@@ -1,0 +1,16 @@
+{
+  "version": "bm25-v1",
+  "tokenizer": "unicode_nfkc_lower_word_tokens_v1",
+  "token_pattern": "[\\w.]+",
+  "stopwords": ["a", "an", "and", "of", "the", "to"],
+  "stemming": "none",
+  "k1": 1.2,
+  "b": 0.75,
+  "field_weights": {"synthetic.text": 1.0},
+  "fit_partitions": ["pilot", "development", "synthetic"],
+  "candidate_scope": "same_org_only",
+  "tie_break": "score_desc_candidate_key_asc",
+  "empty_query": "abstain_empty",
+  "no_overlap": "score_zero_stable_tie_order",
+  "citation_mapping": "token_to_source_evidence_ids"
+}

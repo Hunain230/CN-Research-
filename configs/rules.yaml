@@ -1,0 +1,15 @@
+{
+  "version": "rules-v1",
+  "entity_field": "synthetic.entities",
+  "technique_field": "synthetic.techniques",
+  "entity_window_hours": 48,
+  "technique_window_hours": 1,
+  "candidate_cap_per_alert": 20,
+  "candidate_tie_break": "alert_key_ascending",
+  "mutual_nearest_only": true,
+  "common_entity_values": ["unknown", "generic", "0.0.0.0", "localhost"],
+  "max_component_size": 3,
+  "component_edge_order": "abs_time_delta_then_alert_key_pair",
+  "severity_source": null,
+  "severity_status": "unavailable_no_verified_field_or_crosswalk"
+}

@@ -1,0 +1,14 @@
+{
+  "classification": "synthetic_stub_plumbing_only_not_empirical",
+  "b0": {
+    "severity_status": "unavailable_no_verified_field_or_crosswalk",
+    "ranking_runnable": false,
+    "same_org_only": true,
+    "max_component_size": 3,
+    "candidate_cap": 20
+  },
+  "bm25": {"expected_order": ["component-alpha", "component-gamma"], "empty_query_status": "abstain_empty_query", "no_overlap_status": "no_overlap"},
+  "b3": {"call_count": 3, "preserve_each_call": true, "median_valid_score": true, "majority_pair_vote": true, "matched_total_token_budget": true},
+  "regression_assertions": 38,
+  "gates": {"real_baselines_blocked": true, "raw_files_read_in_synthetic_mode": false, "evaluator_store_accessed": false}
+}

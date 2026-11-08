@@ -1,0 +1,91 @@
+{
+  "classification": "plumbing_only_not_empirical",
+  "code_sha256": {
+    "src\\baselines\\__init__.py": "1c664c9a196312e69f9b2c79e94f79b87e4d8e0c3e5caa74c260564e4f960934",
+    "src\\baselines\\bm25.py": "7bcc1f9389ae75343a3be97a776d888459d8d5d20dfc73e8925c38a85d7ac7f4",
+    "src\\baselines\\common.py": "788d0253b2e9248207c0c88d50db2206ca15ca7ea56db486e93eaeb049439a27",
+    "src\\baselines\\providers\\__init__.py": "64b95bf5758c12e56f199aa86508e1f2c872137ad3b09701bc6721183c7e3572",
+    "src\\baselines\\providers\\offline_stub.py": "c398990e7baf6e81c0b3f2fdf4fecaf5a33f637dea5d41ea53b34c8e1d414cac",
+    "src\\baselines\\rules.py": "30ffe47432e6f53b84a59587f3a18cd4b8367f6ec813bb5ca90701d329437a2c",
+    "src\\baselines\\runner.py": "02ea3757f6493e6ba38cd7b466e518a7f7429f590136cb9469c5822ea7e91fb9",
+    "src\\baselines\\single_llm.py": "02d86626aa6d58c22ced10f54aa4ec6cac0c262df425a940600522e4867c0d98",
+    "src\\cli.py": "4a47e218eb65f6eb256d7502fd9fabde7148c558546b5406507713e48f7937f9"
+  },
+  "command": "'C:\\Users\\surface\\Desktop\\CN-Research-\\src\\cli.py' run-baselines --config configs/baselines.yaml --methods rules,bm25,single_llm,repeated_single_llm --mode synthetic --out outputs/baselines/synthetic-final",
+  "config_sha256": {
+    "configs\\baselines.yaml": "05abc57db2759652b38cd192c05329b01e7b52e544d56de2caa6ace313ae110d",
+    "configs\\bm25.yaml": "1436f0ad10f9f58f109c62b60121703dd95fd104f5c1a8b1bc2408249f531913",
+    "configs\\llm_baseline.yaml": "91050aeb26ed981f29b4ee731a0fda2d7952c5af226ad440bb7b0d231092b76f",
+    "configs\\prediction_schema.json": "435211eaf07ee7007003ad81058687580fe9667e9f10b0c612724f6f68b99ccd",
+    "configs\\rules.yaml": "6aac339aa4dca04d864efce4b87ed70a162c7abe04b310b1dfec8c4ea23e4609",
+    "fixtures\\stage3\\synthetic_inputs.json": "cd2874b27716842d17330c2e1604fa0dc6b5d47254c9d44b93d96e94aebbd7b1"
+  },
+  "dependencies": "standard library only",
+  "ended_utc": "2026-11-08T10:27:50.087384+00:00",
+  "inference_seeds": [
+    41,
+    42,
+    44
+  ],
+  "input_fixture_sha256": "cd2874b27716842d17330c2e1604fa0dc6b5d47254c9d44b93d96e94aebbd7b1",
+  "live_model_calls": 0,
+  "methods": [
+    "rules",
+    "bm25",
+    "single_llm",
+    "repeated_single_llm"
+  ],
+  "mode": "synthetic",
+  "model": "deterministic-synthetic-stub",
+  "model_version": "stub-v1",
+  "output_sha256": {
+    "retrieval_probes.json": "c574dd36202f19fa814d2ec10c2049246faacaa35f7e168df0f8c691c0490502",
+    "synthetic_results.json": "0e7776dfbc7ff5a1913dc64779e05bbbc2cc9bf36f7151fe75f366eab33f098b"
+  },
+  "prompt_template_sha256": "691bf449fb50b8fe9547cb2502545f686e161225cf83c5389a8280a982930309",
+  "python": "3.12.10",
+  "research_gate_status": "closed_for_real_data",
+  "resource_totals": {
+    "bm25": {
+      "calls": 0,
+      "failures": 0,
+      "input_tokens_estimate": 0,
+      "latency_ms": 0,
+      "output_tokens_estimate": 0,
+      "retries": 0,
+      "truncated_evidence_records": 0
+    },
+    "repeated_single_llm": {
+      "calls": 3,
+      "failures": 0,
+      "input_tokens_estimate": 99,
+      "latency_ms": 0.09759998647496104,
+      "output_tokens_estimate": 45,
+      "retries": 0,
+      "truncated_evidence_records": 0
+    },
+    "rules": {
+      "calls": 0,
+      "failures": 0,
+      "input_tokens_estimate": 0,
+      "latency_ms": 0,
+      "output_tokens_estimate": 0,
+      "retries": 0,
+      "truncated_evidence_records": 0
+    },
+    "single_llm": {
+      "calls": 1,
+      "failures": 0,
+      "input_tokens_estimate": 33,
+      "latency_ms": 0.06009999196976423,
+      "output_tokens_estimate": 15,
+      "retries": 0,
+      "truncated_evidence_records": 0
+    }
+  },
+  "run_id": "synthetic-baseline-smoke-v1",
+  "runtime_ms": 5.047200000262819,
+  "seed": 0,
+  "started_utc": "2026-11-08T10:27:50.078075+00:00",
+  "tokenizer": "word-count estimate for stub plumbing only"
+}

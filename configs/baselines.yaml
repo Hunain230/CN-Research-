@@ -1,0 +1,14 @@
+{
+  "schema_version": "baselines-v1",
+  "methods": ["rules", "bm25", "single_llm", "repeated_single_llm"],
+  "mode": "synthetic",
+  "synthetic_fixture": "fixtures/stage3/synthetic_inputs.json",
+  "synthetic_allowed_fields": ["synthetic.entities", "synthetic.techniques", "synthetic.text"],
+  "prohibited_fields": ["IncidentId", "QueueRank", "IncidentGrade", "ActionGrouped", "ActionGranular", "rank", "rank_position", "label_present", "outcome"],
+  "budgets": {"comparison_total_tokens": 3000, "proposed_system_max_calls": 3, "b2_total_tokens": 3000, "b3_total_tokens": 3000, "b3_calls": 3, "b3_per_call_tokens": 1000, "b2_max_calls": 1},
+  "b3": {"seeds": [41, 42, 44], "unsure_policy": "ignore", "tie_policy": "UNSURE", "valid_score_policy": "median_of_all_finite_scores"},
+  "offline_provider": "deterministic-synthetic-stub",
+  "live_provider_enabled": false,
+  "output_schema": "configs/prediction_schema.json",
+  "run_seed": 0
+}

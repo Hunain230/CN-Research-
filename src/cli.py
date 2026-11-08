@@ -182,6 +182,8 @@ def main():
     s=sub.add_parser("check-splits"); s.add_argument("--manifest",required=True); s.add_argument("--expected",default="10,10,30")
     i=sub.add_parser("inspect-ambiguity"); i.add_argument("--input",required=True); i.add_argument("--out",required=True)
     sub.add_parser("self-test-phase2")
+    sub.add_parser("baseline-self-test")
+    b=sub.add_parser("run-baselines"); b.add_argument("--config",default="configs/baselines.yaml"); b.add_argument("--methods",default="rules,bm25,single_llm,repeated_single_llm"); b.add_argument("--mode",choices=("synthetic","real"),default="synthetic"); b.add_argument("--out",required=True)
     a=p.parse_args()
     try:
         if a.command=="validate":
@@ -196,7 +198,18 @@ def main():
         if a.command=="check-splits": print(json.dumps(phase2.check_splits(a.manifest,a.expected),sort_keys=True)); return 0
         if a.command=="inspect-ambiguity": print(json.dumps({"ambiguous_keys":phase2.inspect_ambiguity(a.input,a.out)},sort_keys=True)); return 0
         if a.command=="self-test-phase2": print(json.dumps(phase2.self_test(),sort_keys=True)); return 0
+        if a.command=="baseline-self-test":
+            from .baselines.runner import self_test
+            print(json.dumps(self_test(Path.cwd()),sort_keys=True)); return 0
+        if a.command=="run-baselines":
+            import shlex
+            from .baselines.runner import run_baselines
+            methods=a.methods.split(",")
+            result=run_baselines(Path.cwd(),a.config,methods,a.mode,a.out,command_line=shlex.join(sys.argv))
+            print(json.dumps(result,sort_keys=True)); return 0
     except Exception as e:
-        print(f"{a.command} failed: {type(e).__name__}: {e}",file=sys.stderr); return 2
+        from .baselines.runner import ResearchGateBlocked
+        code=3 if isinstance(e,ResearchGateBlocked) else 2
+        print(f"{a.command} failed: {type(e).__name__}: {e}",file=sys.stderr); return code
 
 if __name__=="__main__": raise SystemExit(main())

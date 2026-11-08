@@ -1,0 +1,93 @@
+{
+  "classification": "plumbing_only_not_empirical",
+  "code_sha256": {
+    "src\\baselines\\__init__.py": "1c664c9a196312e69f9b2c79e94f79b87e4d8e0c3e5caa74c260564e4f960934",
+    "src\\baselines\\bm25.py": "7bcc1f9389ae75343a3be97a776d888459d8d5d20dfc73e8925c38a85d7ac7f4",
+    "src\\baselines\\common.py": "788d0253b2e9248207c0c88d50db2206ca15ca7ea56db486e93eaeb049439a27",
+    "src\\baselines\\providers\\__init__.py": "64b95bf5758c12e56f199aa86508e1f2c872137ad3b09701bc6721183c7e3572",
+    "src\\baselines\\providers\\offline_stub.py": "c398990e7baf6e81c0b3f2fdf4fecaf5a33f637dea5d41ea53b34c8e1d414cac",
+    "src\\baselines\\rules.py": "30ffe47432e6f53b84a59587f3a18cd4b8367f6ec813bb5ca90701d329437a2c",
+    "src\\baselines\\runner.py": "d599687318d218e156bc659fdf16ace087a120ec8fdd64101bfecd2cec3c6a63",
+    "src\\baselines\\single_llm.py": "2ab254e5d9ad782a175685411c4c203cfb169498bbbd43a3335984bf116cf64c",
+    "src\\cli.py": "4a47e218eb65f6eb256d7502fd9fabde7148c558546b5406507713e48f7937f9"
+  },
+  "command": "'C:\\Users\\surface\\Desktop\\CN-Research-\\src\\cli.py' run-baselines --config configs/baselines.yaml --methods rules,bm25,single_llm,repeated_single_llm --mode synthetic --out outputs/baselines/synthetic-final2",
+  "config_sha256": {
+    "configs\\baselines.yaml": "05abc57db2759652b38cd192c05329b01e7b52e544d56de2caa6ace313ae110d",
+    "configs\\bm25.yaml": "1436f0ad10f9f58f109c62b60121703dd95fd104f5c1a8b1bc2408249f531913",
+    "configs\\llm_baseline.yaml": "91050aeb26ed981f29b4ee731a0fda2d7952c5af226ad440bb7b0d231092b76f",
+    "configs\\prediction_schema.json": "435211eaf07ee7007003ad81058687580fe9667e9f10b0c612724f6f68b99ccd",
+    "configs\\rules.yaml": "6aac339aa4dca04d864efce4b87ed70a162c7abe04b310b1dfec8c4ea23e4609",
+    "fixtures\\stage3\\README.md": "e0730e8678e3e92315808e7ed67f675406c0b18d6d54ec70f779ac5af5f51e51",
+    "fixtures\\stage3\\expected.json": "1a12c3731e7150e5e283eb44168feb7c7f2e0cf46e400096ea70137f0fa2ca32",
+    "fixtures\\stage3\\synthetic_inputs.json": "cd2874b27716842d17330c2e1604fa0dc6b5d47254c9d44b93d96e94aebbd7b1"
+  },
+  "dependencies": "standard library only",
+  "ended_utc": "2026-11-08T10:30:35.381430+00:00",
+  "inference_seeds": [
+    41,
+    42,
+    44
+  ],
+  "input_fixture_sha256": "cd2874b27716842d17330c2e1604fa0dc6b5d47254c9d44b93d96e94aebbd7b1",
+  "live_model_calls": 0,
+  "methods": [
+    "rules",
+    "bm25",
+    "single_llm",
+    "repeated_single_llm"
+  ],
+  "mode": "synthetic",
+  "model": "deterministic-synthetic-stub",
+  "model_version": "stub-v1",
+  "output_sha256": {
+    "retrieval_probes.json": "c574dd36202f19fa814d2ec10c2049246faacaa35f7e168df0f8c691c0490502",
+    "synthetic_results.json": "d5fc87a6f2445c167a86259e3836e5d227e0a040c60df00cf6592ded364b4ccc"
+  },
+  "prompt_template_sha256": "691bf449fb50b8fe9547cb2502545f686e161225cf83c5389a8280a982930309",
+  "python": "3.12.10",
+  "research_gate_status": "closed_for_real_data",
+  "resource_totals": {
+    "bm25": {
+      "calls": 0,
+      "failures": 0,
+      "input_tokens_estimate": 0,
+      "latency_ms": 0,
+      "output_tokens_estimate": 0,
+      "retries": 0,
+      "truncated_evidence_records": 0
+    },
+    "repeated_single_llm": {
+      "calls": 3,
+      "failures": 0,
+      "input_tokens_estimate": 99,
+      "latency_ms": 0.11789998097810894,
+      "output_tokens_estimate": 45,
+      "retries": 0,
+      "truncated_evidence_records": 0
+    },
+    "rules": {
+      "calls": 0,
+      "failures": 0,
+      "input_tokens_estimate": 0,
+      "latency_ms": 0,
+      "output_tokens_estimate": 0,
+      "retries": 0,
+      "truncated_evidence_records": 0
+    },
+    "single_llm": {
+      "calls": 1,
+      "failures": 0,
+      "input_tokens_estimate": 33,
+      "latency_ms": 0.10599999222904444,
+      "output_tokens_estimate": 15,
+      "retries": 0,
+      "truncated_evidence_records": 0
+    }
+  },
+  "run_id": "synthetic-baseline-smoke-v1",
+  "runtime_ms": 6.137699994724244,
+  "seed": 0,
+  "started_utc": "2026-11-08T10:30:35.369885+00:00",
+  "tokenizer": "word-count estimate for stub plumbing only"
+}

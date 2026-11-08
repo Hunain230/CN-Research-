@@ -1,0 +1,27 @@
+{
+  "empty_query": {
+    "results": [],
+    "status": "abstain_empty_query",
+    "terms": []
+  },
+  "no_overlap": {
+    "results": [
+      {
+        "candidate_key": "component-alpha",
+        "evidence_refs": [],
+        "rank": 1,
+        "score": 0.0
+      },
+      {
+        "candidate_key": "component-gamma",
+        "evidence_refs": [],
+        "rank": 2,
+        "score": 0.0
+      }
+    ],
+    "status": "no_overlap",
+    "terms": [
+      "zzzzneveroverlaps"
+    ]
+  }
+}
