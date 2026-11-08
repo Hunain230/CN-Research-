@@ -14,7 +14,7 @@ Read these records in order before changing the study pipeline:
 4. [phases_outputs/research_gate_register.csv](phases_outputs/research_gate_register.csv) — status and action for each research gate.
 5. The relevant phase record in `phases_outputs/` and its implementation specification in the repository root.
 
-The detailed authoritative-source review is [phases_outputs/readiness_evidence_review.md](phases_outputs/readiness_evidence_review.md). The research protocol and evaluator requirements are in [2-preprocessing.md](2-preprocessing.md), [03_Baselines.md](03_Baselines.md), [04-Multi-agent system.md](04-Multi-agent%20system.md), and [05-Evaluation.md](05-Evaluation.md).
+The detailed authoritative-source review is [phases_outputs/readiness_evidence_review.md](phases_outputs/readiness_evidence_review.md). The research protocol and evaluator requirements are in [02_preprocessing.md](02_preprocessing.md), [03_Baselines.md](03_Baselines.md), [04-Multi-agent system.md](04-Multi-agent%20system.md), and [05-Evaluation.md](05-Evaluation.md).
 
 ## Repository contents
 
@@ -67,7 +67,7 @@ py -3.12 -m venv .venv
 .\.venv\Scripts\python.exe -m pip install -r requirements.txt
 ```
 
-If `.venv` already exists, activate it with `\.\.venv\Scripts\Activate.ps1` or call `.\.venv\Scripts\python.exe` directly. No network/model credentials are required. No external model provider is configured.
+If `.venv` already exists, activate it with `\.venv\Scripts\Activate.ps1` or call `.\.venv\Scripts\python.exe` directly. No network/model credentials are required. No external model provider is configured.
 
 ## Commands
 
