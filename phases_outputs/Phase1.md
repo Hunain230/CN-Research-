@@ -70,3 +70,7 @@ Evidence needed to clear the gate: authoritative dataset release/license citatio
 - Validation protocol: [`01_dataset_validation.md`](../01_dataset_validation.md)
 - Overall project context and Phase 2 protocol: [`PROJECT_CONTEXT.md`](../PROJECT_CONTEXT.md)
 - Validator and config: [`src/cli.py`](../src/cli.py), [`configs/validation.yaml`](../configs/validation.yaml)
+
+## Readiness evidence update — 2026-11-08
+
+An authoritative-source review is recorded in [`readiness_evidence_review.md`](readiness_evidence_review.md). Microsoft’s publisher record and the primary AIP paper verify that the extension contains queue-relative expert top-20 labels produced from full eligible queues, and the publisher specifies CDLA-Permissive-2.0. The publisher’s version-2 local filenames and byte sizes match the repository files. This narrows the earlier source/meaning uncertainty. Numeric rank direction and exact local schema/query-universe reconciliation remain unresolved; therefore ranking evaluation is still blocked. The publisher describes the top-20 set as expert-selected but does not label every unranked incident as negative.

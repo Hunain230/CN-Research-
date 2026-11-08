@@ -91,3 +91,9 @@ Synthetic regression and boundary checks:
 - **Stage 3 modeling/baselines: not ready.** There are no approved model-visible fields, and label validity gates remain open. Do not train, calibrate, score, or evaluate priority, and do not treat provisional split assignment as permission to inspect test labels.
 
 To clear these gates, obtain authoritative source/release/license/download metadata; verify the ranking direction, query universe, and top-20 completeness; document point-in-time and privacy approval for any candidate feature; and investigate the 70,702 conflicting alert assignments and the meaning of duplicated `Id` values.
+
+## Readiness investigation update — 2026-11-08
+
+The restricted ambiguity ledger was aggregated without printing or exporting identifiers. Its 70,702 conflicting alert keys contain 150,743 distinct alert-to-incident assignment groups across 830,109 evidence rows. 149,239 assignment groups repeat across multiple evidence rows; 69,982 conflict keys have at least one repeated assignment; 720 keys have one evidence row per distinct assignment. Repeated evidence therefore does not resolve or explain the multiple-incident mapping. All assignments and source ordinals remain preserved. Correlation/joint evaluation remain no-go pending publisher/data-owner explanation or an approved exclusion/adjudication policy.
+
+Reproduction command: `\.venv\Scripts\python.exe -m src.investigate_ambiguous_memberships`. It reads only the restricted `ambiguous_alert_memberships.csv` artifact and writes aggregate counts to `conflict_investigation_aggregate.json`; it does not read raw files or emit identifier values. See [`readiness_evidence_review.md`](readiness_evidence_review.md) for source research and remaining gates.
