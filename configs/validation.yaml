@@ -1,0 +1,7 @@
+version: stage1-v1
+encoding: utf-8-sig
+chunk_rows: 250000
+seed: 0
+identifier_dtype: string
+timezone: UTC
+privacy: never_emit_identifier_or_entity_values

@@ -1,0 +1,168 @@
+"""Bounded-memory Stage 1 dataset audit for GUIDE and AIP queue labels."""
+from __future__ import annotations
+
+import argparse
+import csv
+import datetime as dt
+import hashlib
+import json
+import math
+import os
+import platform
+import sqlite3
+import sys
+import traceback
+import tempfile
+from collections import Counter, defaultdict
+from pathlib import Path
+
+GUIDE = ["Id","OrgId","IncidentId","AlertId","Timestamp","DetectorId","AlertTitle","Category","MitreTechniques","IncidentGrade","ActionGrouped","ActionGranular","EntityType","EvidenceRole","DeviceId","Sha256","IpAddress","Url","AccountSid","AccountUpn","AccountObjectId","AccountName","DeviceName","NetworkMessageId","EmailClusterId","RegistryKey","RegistryValueName","RegistryValueData","ApplicationId","ApplicationName","OAuthApplicationId","ThreatFamily","FileName","FolderPath","ResourceIdName","ResourceType","Roles","OSFamily","OSVersion","AntispamDirection","SuspicionLevel","LastVerdict","CountryCode","State","City","Usage"]
+RANK = ["OrgId","IncidentId","QueueRank"]
+LABELS = {"IncidentId","QueueRank","IncidentGrade","ActionGrouped","ActionGranular"}
+SENSITIVE = {"DeviceId","Sha256","IpAddress","Url","AccountSid","AccountUpn","AccountObjectId","AccountName","DeviceName","NetworkMessageId","EmailClusterId","RegistryKey","RegistryValueName","RegistryValueData","ApplicationId","ApplicationName","OAuthApplicationId","FileName","FolderPath","ResourceIdName","CountryCode","State","City"}
+
+def digest(path):
+    h=hashlib.sha256()
+    with open(path,"rb") as f:
+        for b in iter(lambda:f.read(1024*1024),b""): h.update(b)
+    return h.hexdigest()
+
+def parse_time(s):
+    if not s: return None
+    try:
+        x=dt.datetime.fromisoformat(s.replace("Z","+00:00"))
+        if x.tzinfo is None: x=x.replace(tzinfo=dt.timezone.utc)
+        return x.astimezone(dt.timezone.utc).isoformat()
+    except ValueError: return None
+
+def type_of(v):
+    if not v: return "null"
+    if v.lower() in ("true","false"): return "boolean_like"
+    try: int(v); return "integer_like"
+    except ValueError: pass
+    try: float(v); return "numeric_like"
+    except ValueError: return "string"
+
+def disposition(col, null_rate, cardinality):
+    if col in LABELS: return "deny", "Evaluator label/outcome; prohibited from all model-visible paths."
+    if col == "Id": return "deny", "Lineage key; preserve for citations only after source review; never inference input."
+    if col in ("OrgId","AlertId"): return "deny", "Partition/join key; keep in restricted control plane, never model input."
+    if col in SENSITIVE: return "deny", "Sensitive identifier/entity value; requires approved transformation and privacy review."
+    if col == "Timestamp": return "deny_pending", "Temporal availability and timezone semantics require source confirmation."
+    if col in {"SuspicionLevel","LastVerdict","ThreatFamily","Usage"}: return "deny", "Potentially post-event or outcome-derived; source timing/provenance unverified."
+    if col in {"DetectorId","AlertTitle","Category","MitreTechniques","EntityType","EvidenceRole","Roles","OSFamily","OSVersion","AntispamDirection"}:
+        return "deny_pending", "Candidate evidence; point-in-time availability, provenance, and safe encoding require confirmation."
+    return "deny_pending", "Default deny until source timing and feature safety are documented."
+
+def main_validate(args):
+    guide=Path(args.alerts); rank=Path(args.rankings); out=Path(args.out); out.mkdir(parents=True,exist_ok=True)
+    if not guide.is_file() or not rank.is_file(): raise RuntimeError("Required input file is missing")
+    config=Path(args.config) if args.config else None
+    config_text=config.read_text(encoding="utf-8") if config and config.exists() else "default: stage1-v1\n"
+    cfg_hash=hashlib.sha256(config_text.encode()).hexdigest()
+    # SQLite holds exact distinct-key and per-alert membership state on disk.
+    with tempfile.TemporaryDirectory(prefix="cnet-audit-") as td:
+        db=sqlite3.connect(str(Path(td)/"audit.sqlite")); db.execute("PRAGMA journal_mode=OFF")
+        db.executescript("CREATE TABLE incidents(org TEXT,inc TEXT,PRIMARY KEY(org,inc)); CREATE TABLE alerts(org TEXT,alert TEXT,inc TEXT,det TEXT,ts TEXT); CREATE TABLE ranks(org TEXT,inc TEXT,rank TEXT); CREATE TABLE vals(field TEXT,val TEXT,PRIMARY KEY(field,val));")
+        prof={}; schemas={}; rowcounts={}; malformed={}; files={}
+        for label,path,expected in (("GUIDE",guide,GUIDE),("queue",rank,RANK)):
+            files[label]={"path":str(path),"bytes":path.stat().st_size,"sha256":digest(path)}
+            nulls=Counter(); distinct={}; inferred=defaultdict(Counter); whitespace=Counter(); leading=Counter(); rows=0; bad=0; headers=None
+            # Text mode and explicit strings preserve IDs and leading zeroes.
+            with open(path,"r",encoding="utf-8-sig",newline="") as f:
+                reader=csv.reader(f)
+                try: headers=next(reader)
+                except StopIteration: raise RuntimeError(f"Empty CSV: {label}")
+                if len(headers)!=len(set(headers)): raise RuntimeError(f"Duplicate headers in {label}")
+                schemas[label]={"headers":headers,"expected_headers":expected,"missing_required":sorted(set(expected)-set(headers)),"additional_headers":sorted(set(headers)-set(expected)),"inferred_types":{}}
+                if set(expected)-set(headers): raise RuntimeError(f"Required schema absent in {label}: {sorted(set(expected)-set(headers))}")
+                # Dict reader equivalent without materializing rows.
+                for vals in reader:
+                    if len(vals)!=len(headers): bad+=1; continue
+                    rows+=1; d=dict(zip(headers,vals))
+                    for c,v in d.items():
+                        if not v: nulls[c]+=1
+                        else:
+                            inferred[c][type_of(v)]+=1
+                            if v!=v.strip(): whitespace[c]+=1
+                            if v.startswith("0") and v.isdigit() and len(v)>1: leading[c]+=1
+                            db.execute("INSERT OR IGNORE INTO vals VALUES(?,?)",(label+":"+c,v))
+                    if label=="GUIDE":
+                        org,inc,alert=d.get("OrgId",""),d.get("IncidentId",""),d.get("AlertId","")
+                        if org and inc: db.execute("INSERT OR IGNORE INTO incidents VALUES(?,?)",(org,inc))
+                        if org and alert: db.execute("INSERT INTO alerts VALUES(?,?,?,?,?)",(org,alert,inc,d.get("DetectorId",""),parse_time(d.get("Timestamp",""))))
+                    else: db.execute("INSERT INTO ranks VALUES(?,?,?)",(d.get("OrgId",""),d.get("IncidentId",""),d.get("QueueRank","")))
+                    if rows%args.chunk_rows==0: db.commit()
+            db.commit(); rowcounts[label]=rows; malformed[label]=bad
+            prof[label]={"rows":rows,"malformed_rows":bad,"null_counts":dict(nulls),"non_null_rates":{c:round((rows-nulls[c])/rows,8) if rows else 0 for c in headers},"inferred_types":{c:dict(inferred[c]) for c in headers},"whitespace_values":dict(whitespace),"leading_zero_numeric_values":dict(leading)}
+        # Exact distinct counts are held in SQLite on disk; values are never emitted.
+        for label in ("GUIDE","queue"):
+            prof[label]["cardinality"]={c:db.execute("SELECT count(*) FROM vals WHERE field=?",(label+":"+c,)).fetchone()[0] for c in schemas[label]["headers"]}
+        # relational summaries
+        inc_count=db.execute("SELECT count(*) FROM incidents").fetchone()[0]
+        alert_keys=db.execute("SELECT count(DISTINCT org||char(31)||alert) FROM alerts WHERE org<>'' AND alert<>''").fetchone()[0]
+        duplicate_alert_rows=db.execute("SELECT count(*) FROM (SELECT org,alert FROM alerts WHERE alert<>'' GROUP BY org,alert HAVING count(*)>1)").fetchone()[0]
+        ambiguous=db.execute("SELECT count(*) FROM (SELECT org,alert FROM alerts WHERE alert<>'' GROUP BY org,alert HAVING count(DISTINCT inc)>1)").fetchone()[0]
+        rank_dups=db.execute("SELECT count(*) FROM (SELECT org,inc FROM ranks GROUP BY org,inc HAVING count(*)>1)").fetchone()[0]
+        rank_null=db.execute("SELECT count(*) FROM ranks WHERE org='' OR inc='' OR rank=''").fetchone()[0]
+        rank_values=[r[0] for r in db.execute("SELECT rank FROM ranks WHERE rank<>''")]; ints=[]; conv_err=0
+        for x in rank_values:
+            try: ints.append(int(x))
+            except ValueError: conv_err+=1
+        ties=db.execute("SELECT count(*) FROM (SELECT org,rank FROM ranks WHERE rank<>'' GROUP BY org,rank HAVING count(*)>1)").fetchone()[0]
+        gaps=0; restarts=True
+        for org, in db.execute("SELECT DISTINCT org FROM ranks"):
+            vals=[]
+            for v, in db.execute("SELECT rank FROM ranks WHERE org=?",(org,)):
+                try: vals.append(int(v))
+                except ValueError: pass
+            if vals:
+                s=set(vals); gaps+=sum(1 for n in range(min(s),max(s)+1) if n not in s)
+                if min(s)!=1: restarts=False
+        # Join with distinct guide incident keys only.
+        guide_orgs={o for o, in db.execute("SELECT DISTINCT org FROM incidents")}
+        rank_orgs={o for o, in db.execute("SELECT DISTINCT org FROM ranks")}
+        matched=db.execute("SELECT count(*) FROM incidents i JOIN (SELECT DISTINCT org,inc FROM ranks) r ON i.org=r.org AND i.inc=r.inc").fetchone()[0]
+        matched_r=db.execute("SELECT count(*) FROM (SELECT DISTINCT org,inc FROM ranks) r JOIN incidents i ON i.org=r.org AND i.inc=r.inc").fetchone()[0]
+        rank_keys=db.execute("SELECT count(*) FROM (SELECT DISTINCT org,inc FROM ranks)").fetchone()[0]
+        org_rows=[]
+        for org, ninc, ndet, nlabels in db.execute("SELECT i.org,count(DISTINCT i.inc),count(DISTINCT a.det),count(DISTINCT r.inc) FROM incidents i LEFT JOIN alerts a ON i.org=a.org AND i.inc=a.inc LEFT JOIN ranks r ON i.org=r.org AND i.inc=r.inc GROUP BY i.org"):
+            top20=db.execute("SELECT count(*) FROM ranks WHERE org=? AND rank IN ('1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20')",(org,)).fetchone()[0]
+            eligible=ninc>=50 and ndet>=10 and top20==20
+            org_rows.append((org,ninc,ndet,nlabels,top20,eligible))
+        eligible=sum(bool(x[-1]) for x in org_rows)
+        # Evidence columns disposition includes cardinality/null rates and no values.
+        dispositions=[]
+        for c in schemas["GUIDE"]["headers"]:
+            allow,why=disposition(c,prof["GUIDE"]["non_null_rates"].get(c,0),prof["GUIDE"]["cardinality"].get(c,0))
+            dispositions.append({"column":c,"null_rate":round(1-prof["GUIDE"]["non_null_rates"].get(c,0),8),"cardinality":prof["GUIDE"]["cardinality"].get(c,0),"allow_decision":allow,"rationale":why})
+        for c in schemas["queue"]["headers"]:
+            dispositions.append({"column":c,"null_rate":round(1-prof["queue"]["non_null_rates"].get(c,0),8),"cardinality":prof["queue"]["cardinality"].get(c,0),"allow_decision":"deny","rationale":"Evaluator label/join key; queue data is isolated from model-visible features."})
+        # Anonymous org aggregate summary only; no org IDs in the report.
+        org_summary=[{"org_ordinal":i+1,"guide_incidents":x[1],"distinct_detectors":x[2],"matched_label_keys":x[3],"top20_rank_count":x[4],"phase2_eligible":bool(x[5])} for i,x in enumerate(sorted(org_rows,key=lambda x:(-x[1],-x[2])))]
+        checks={"schemas_match_observed":not schemas["GUIDE"]["additional_headers"] and not schemas["GUIDE"]["missing_required"] and not schemas["queue"]["additional_headers"] and not schemas["queue"]["missing_required"],"malformed_rows":sum(malformed.values()),"guide_incidents_distinct_composite":inc_count,"guide_alert_keys_distinct_composite":alert_keys,"duplicate_alert_key_groups":duplicate_alert_rows,"ambiguous_alert_membership_groups":ambiguous,"ranking_rows":rowcounts["queue"],"duplicate_rank_key_groups":rank_dups,"null_rank_rows":rank_null,"rank_integer_conversion_errors":conv_err,"rank_tie_groups_within_org":ties,"rank_gaps_within_org":gaps,"rank_numbering_restarts_at_one_each_org":restarts,"composite_matched_keys":matched,"unmatched_guide_incidents":inc_count-matched,"unmatched_ranking_keys":rank_keys-matched_r,"incident_id_only_diagnostic_matches":db.execute("SELECT count(*) FROM (SELECT DISTINCT inc FROM incidents) i JOIN (SELECT DISTINCT inc FROM ranks) r USING(inc)").fetchone()[0],"qualified_orgs":eligible,"required_orgs_for_split":50,"split_feasible":eligible>=50,"alert_correlation_go":"no-go" if ambiguous or not alert_keys else "conditional","incident_prioritization_go":"no-go" if eligible<50 or rank_null or rank_dups else "conditional","joint_evaluation_go":"no-go" if eligible<50 or ambiguous or rank_null or rank_dups else "conditional","top20_completeness":"unverified; source evidence required","rank_scope":"unverified; source evidence required","candidate_pair_ceiling":"not computed: rank scope and alert truth must first be verified; no labels exposed"}
+        for p in (guide,rank):
+            pass
+        validation={"audit_version":"stage1-v1","inputs":files,"rows":rowcounts,"checks":checks,"guide_profile":prof["GUIDE"],"queue_profile":prof["queue"],"per_organization_aggregate":org_summary,"source_metadata":{"release":"unverified","license":"unverified","download_date":"unverified"},"limitations":["The two local CSVs do not establish source release, license, download date, rank meaning, query universe, or top-20 label completeness.","All model-visible fields remain denied pending temporal provenance review.","Candidate pair recall ceiling requires verified alert-level truth and an approved entity normalization policy."]}
+        (out/"validation.json").write_text(json.dumps(validation,indent=2,sort_keys=True),encoding="utf-8")
+        (out/"schema.json").write_text(json.dumps(schemas,indent=2,sort_keys=True),encoding="utf-8")
+        with (out/"field_disposition.csv").open("w",newline="",encoding="utf-8") as f:
+            w=csv.DictWriter(f,fieldnames=dispositions[0].keys()); w.writeheader(); w.writerows(dispositions)
+        with (out/"join_summary.csv").open("w",newline="",encoding="utf-8") as f:
+            w=csv.DictWriter(f,fieldnames=org_summary[0].keys() if org_summary else ["org_ordinal","guide_incidents","distinct_detectors","matched_label_keys","top20_rank_count","phase2_eligible"]); w.writeheader(); w.writerows(org_summary)
+        manifest={"command":"python -m src.cli validate","arguments":{"alerts":str(guide),"rankings":str(rank),"out":str(out),"chunk_rows":args.chunk_rows,"config":str(config) if config else None},"input_hashes":{k:v["sha256"] for k,v in files.items()},"config_sha256":cfg_hash,"python":platform.python_version(),"platform":platform.platform(),"csv_encoding":"utf-8-sig","identifier_policy":"preserved as strings; no numeric casts","seed":0,"timestamp_utc":dt.datetime.now(dt.timezone.utc).isoformat(),"source_metadata":validation["source_metadata"]}
+        (out/"run_manifest.json").write_text(json.dumps(manifest,indent=2,sort_keys=True),encoding="utf-8")
+        md=["# Stage 1 dataset validation","",f"Inputs: GUIDE {rowcounts['GUIDE']:,} rows; queue {rowcounts['queue']:,} rows.","","## Decisions","",f"- Alert correlation: **{checks['alert_correlation_go']}** (ambiguous alert memberships: {ambiguous:,}).",f"- Incident prioritization: **{checks['incident_prioritization_go']}** ({eligible} eligible organizations; 50 required).",f"- Joint evaluation: **{checks['joint_evaluation_go']}**.","","## Integrity and joins","",f"- Distinct GUIDE composite incidents: {inc_count:,}; distinct alert keys: {alert_keys:,}.",f"- Composite matched incidents: {matched:,}; unmatched GUIDE incidents: {inc_count-matched:,}; unmatched ranking keys: {rank_keys-matched_r:,}.",f"- Duplicate ranking keys: {rank_dups:,}; missing rank rows: {rank_null:,}; conversion errors: {conv_err:,}; rank ties: {ties:,}; rank gaps: {gaps:,}.",f"- Rank scope/completeness: unverified from local files; require dataset documentation or authoritative source metadata.","","## Leakage and evidence","","All fields default denied. IncidentId, QueueRank, IncidentGrade, ActionGrouped and ActionGranular are evaluator-only. IDs and sensitive entity values are never emitted. Candidate evidence fields need point-in-time/source review before allowlisting.","","## Phase 2 gate","",f"The 10/10/30 split requires 50 qualified organizations; observed qualified count is {eligible}. No split assignments were created. Rank direction, query universe, source release/license/download date, and top-20 completeness require authoritative evidence.","","## Required evidence","","Provide the source release and license citation, download record/date, documentation that QueueRank 1 is highest and ranks 1–20 are complete expert labels for a defined query universe, and point-in-time provenance for evidence fields. Candidate feasibility remains unresolved until alert/entity and technique semantics are verified.",""]
+        (out/"validation.md").write_text("\n".join(md),encoding="utf-8")
+        db.close()
+    return 0
+
+def main():
+    p=argparse.ArgumentParser(); sub=p.add_subparsers(dest="command",required=True)
+    v=sub.add_parser("validate"); v.add_argument("--alerts",required=True); v.add_argument("--rankings",required=True); v.add_argument("--out",required=True); v.add_argument("--chunk-rows",type=int,default=250000); v.add_argument("--config",default="configs/validation.yaml"); a=p.parse_args()
+    if a.chunk_rows<1: p.error("--chunk-rows must be positive")
+    try: return main_validate(a)
+    except Exception as e:
+        traceback.print_exc(); return 2
+
+if __name__=="__main__": raise SystemExit(main())

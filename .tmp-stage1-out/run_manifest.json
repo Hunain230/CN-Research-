@@ -1,0 +1,26 @@
+{
+  "arguments": {
+    "alerts": ".tmp-stage1-fixture\\GUIDE_Test.csv",
+    "chunk_rows": 2,
+    "config": "configs\\validation.yaml",
+    "out": ".tmp-stage1-out",
+    "rankings": ".tmp-stage1-fixture\\GUIDE_Test_Queue_Rankings.csv"
+  },
+  "command": "python -m src.cli validate",
+  "config_sha256": "2d4d2b8e8c1ee7e75bc90aeb545dfbaefde6687194738a665fa5b338ad139c1b",
+  "csv_encoding": "utf-8-sig",
+  "identifier_policy": "preserved as strings; no numeric casts",
+  "input_hashes": {
+    "GUIDE": "85c4d9f3dd7e4879f8567dad89ad645c08547d92fb3be440ca2464d61dafbb76",
+    "queue": "d8c2541d0c328ca29ed3a025f773dd0c382f3ed4f00a1500550562d36bf3f367"
+  },
+  "platform": "Windows-11-10.0.26200-SP0",
+  "python": "3.12.10",
+  "seed": 0,
+  "source_metadata": {
+    "download_date": "unverified",
+    "license": "unverified",
+    "release": "unverified"
+  },
+  "timestamp_utc": "2026-11-08T08:45:16.678385+00:00"
+}

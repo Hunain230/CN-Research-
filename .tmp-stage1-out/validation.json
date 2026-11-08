@@ -1,0 +1,311 @@
+{
+  "audit_version": "stage1-v1",
+  "checks": {
+    "alert_correlation_go": "no-go",
+    "ambiguous_alert_membership_groups": 1,
+    "candidate_pair_ceiling": "not computed: rank scope and alert truth must first be verified; no labels exposed",
+    "composite_matched_keys": 3,
+    "duplicate_alert_key_groups": 1,
+    "duplicate_rank_key_groups": 1,
+    "guide_alert_keys_distinct_composite": 2,
+    "guide_incidents_distinct_composite": 3,
+    "incident_id_only_diagnostic_matches": 2,
+    "incident_prioritization_go": "no-go",
+    "joint_evaluation_go": "no-go",
+    "malformed_rows": 0,
+    "null_rank_rows": 1,
+    "qualified_orgs": 0,
+    "rank_gaps_within_org": 1,
+    "rank_integer_conversion_errors": 0,
+    "rank_numbering_restarts_at_one_each_org": true,
+    "rank_scope": "unverified; source evidence required",
+    "rank_tie_groups_within_org": 1,
+    "ranking_rows": 4,
+    "required_orgs_for_split": 50,
+    "schemas_match_observed": true,
+    "split_feasible": false,
+    "top20_completeness": "unverified; source evidence required",
+    "unmatched_guide_incidents": 0,
+    "unmatched_ranking_keys": 0
+  },
+  "guide_profile": {
+    "cardinality": {
+      "AccountName": 0,
+      "AccountObjectId": 0,
+      "AccountSid": 0,
+      "AccountUpn": 0,
+      "ActionGranular": 0,
+      "ActionGrouped": 0,
+      "AlertId": 2,
+      "AlertTitle": 0,
+      "AntispamDirection": 0,
+      "ApplicationId": 0,
+      "ApplicationName": 0,
+      "Category": 0,
+      "City": 0,
+      "CountryCode": 0,
+      "DetectorId": 3,
+      "DeviceId": 0,
+      "DeviceName": 0,
+      "EmailClusterId": 0,
+      "EntityType": 0,
+      "EvidenceRole": 0,
+      "FileName": 0,
+      "FolderPath": 0,
+      "Id": 3,
+      "IncidentGrade": 0,
+      "IncidentId": 2,
+      "IpAddress": 0,
+      "LastVerdict": 0,
+      "MitreTechniques": 1,
+      "NetworkMessageId": 0,
+      "OAuthApplicationId": 0,
+      "OSFamily": 0,
+      "OSVersion": 0,
+      "OrgId": 2,
+      "RegistryKey": 0,
+      "RegistryValueData": 0,
+      "RegistryValueName": 0,
+      "ResourceIdName": 0,
+      "ResourceType": 0,
+      "Roles": 0,
+      "Sha256": 0,
+      "State": 0,
+      "SuspicionLevel": 0,
+      "ThreatFamily": 0,
+      "Timestamp": 3,
+      "Url": 0,
+      "Usage": 0
+    },
+    "inferred_types": {
+      "AccountName": {},
+      "AccountObjectId": {},
+      "AccountSid": {},
+      "AccountUpn": {},
+      "ActionGranular": {},
+      "ActionGrouped": {},
+      "AlertId": {
+        "string": 4
+      },
+      "AlertTitle": {},
+      "AntispamDirection": {},
+      "ApplicationId": {},
+      "ApplicationName": {},
+      "Category": {},
+      "City": {},
+      "CountryCode": {},
+      "DetectorId": {
+        "string": 4
+      },
+      "DeviceId": {},
+      "DeviceName": {},
+      "EmailClusterId": {},
+      "EntityType": {},
+      "EvidenceRole": {},
+      "FileName": {},
+      "FolderPath": {},
+      "Id": {
+        "string": 4
+      },
+      "IncidentGrade": {},
+      "IncidentId": {
+        "string": 4
+      },
+      "IpAddress": {},
+      "LastVerdict": {},
+      "MitreTechniques": {
+        "string": 2
+      },
+      "NetworkMessageId": {},
+      "OAuthApplicationId": {},
+      "OSFamily": {},
+      "OSVersion": {},
+      "OrgId": {
+        "string": 4
+      },
+      "RegistryKey": {},
+      "RegistryValueData": {},
+      "RegistryValueName": {},
+      "ResourceIdName": {},
+      "ResourceType": {},
+      "Roles": {},
+      "Sha256": {},
+      "State": {},
+      "SuspicionLevel": {},
+      "ThreatFamily": {},
+      "Timestamp": {
+        "string": 4
+      },
+      "Url": {},
+      "Usage": {}
+    },
+    "leading_zero_numeric_values": {},
+    "malformed_rows": 0,
+    "non_null_rates": {
+      "AccountName": 0.0,
+      "AccountObjectId": 0.0,
+      "AccountSid": 0.0,
+      "AccountUpn": 0.0,
+      "ActionGranular": 0.0,
+      "ActionGrouped": 0.0,
+      "AlertId": 1.0,
+      "AlertTitle": 0.0,
+      "AntispamDirection": 0.0,
+      "ApplicationId": 0.0,
+      "ApplicationName": 0.0,
+      "Category": 0.0,
+      "City": 0.0,
+      "CountryCode": 0.0,
+      "DetectorId": 1.0,
+      "DeviceId": 0.0,
+      "DeviceName": 0.0,
+      "EmailClusterId": 0.0,
+      "EntityType": 0.0,
+      "EvidenceRole": 0.0,
+      "FileName": 0.0,
+      "FolderPath": 0.0,
+      "Id": 1.0,
+      "IncidentGrade": 0.0,
+      "IncidentId": 1.0,
+      "IpAddress": 0.0,
+      "LastVerdict": 0.0,
+      "MitreTechniques": 0.5,
+      "NetworkMessageId": 0.0,
+      "OAuthApplicationId": 0.0,
+      "OSFamily": 0.0,
+      "OSVersion": 0.0,
+      "OrgId": 1.0,
+      "RegistryKey": 0.0,
+      "RegistryValueData": 0.0,
+      "RegistryValueName": 0.0,
+      "ResourceIdName": 0.0,
+      "ResourceType": 0.0,
+      "Roles": 0.0,
+      "Sha256": 0.0,
+      "State": 0.0,
+      "SuspicionLevel": 0.0,
+      "ThreatFamily": 0.0,
+      "Timestamp": 1.0,
+      "Url": 0.0,
+      "Usage": 0.0
+    },
+    "null_counts": {
+      "AccountName": 4,
+      "AccountObjectId": 4,
+      "AccountSid": 4,
+      "AccountUpn": 4,
+      "ActionGranular": 4,
+      "ActionGrouped": 4,
+      "AlertTitle": 4,
+      "AntispamDirection": 4,
+      "ApplicationId": 4,
+      "ApplicationName": 4,
+      "Category": 4,
+      "City": 4,
+      "CountryCode": 4,
+      "DeviceId": 4,
+      "DeviceName": 4,
+      "EmailClusterId": 4,
+      "EntityType": 4,
+      "EvidenceRole": 4,
+      "FileName": 4,
+      "FolderPath": 4,
+      "IncidentGrade": 4,
+      "IpAddress": 4,
+      "LastVerdict": 4,
+      "MitreTechniques": 2,
+      "NetworkMessageId": 4,
+      "OAuthApplicationId": 4,
+      "OSFamily": 4,
+      "OSVersion": 4,
+      "RegistryKey": 4,
+      "RegistryValueData": 4,
+      "RegistryValueName": 4,
+      "ResourceIdName": 4,
+      "ResourceType": 4,
+      "Roles": 4,
+      "Sha256": 4,
+      "State": 4,
+      "SuspicionLevel": 4,
+      "ThreatFamily": 4,
+      "Url": 4,
+      "Usage": 4
+    },
+    "rows": 4,
+    "whitespace_values": {}
+  },
+  "inputs": {
+    "GUIDE": {
+      "bytes": 880,
+      "path": ".tmp-stage1-fixture\\GUIDE_Test.csv",
+      "sha256": "85c4d9f3dd7e4879f8567dad89ad645c08547d92fb3be440ca2464d61dafbb76"
+    },
+    "queue": {
+      "bytes": 86,
+      "path": ".tmp-stage1-fixture\\GUIDE_Test_Queue_Rankings.csv",
+      "sha256": "d8c2541d0c328ca29ed3a025f773dd0c382f3ed4f00a1500550562d36bf3f367"
+    }
+  },
+  "limitations": [
+    "The two local CSVs do not establish source release, license, download date, rank meaning, query universe, or top-20 label completeness.",
+    "All model-visible fields remain denied pending temporal provenance review.",
+    "Candidate pair recall ceiling requires verified alert-level truth and an approved entity normalization policy."
+  ],
+  "per_organization_aggregate": [
+    {
+      "distinct_detectors": 2,
+      "guide_incidents": 2,
+      "matched_label_keys": 2,
+      "org_ordinal": 1,
+      "phase2_eligible": false,
+      "top20_rank_count": 3
+    },
+    {
+      "distinct_detectors": 1,
+      "guide_incidents": 1,
+      "matched_label_keys": 1,
+      "org_ordinal": 2,
+      "phase2_eligible": false,
+      "top20_rank_count": 0
+    }
+  ],
+  "queue_profile": {
+    "cardinality": {
+      "IncidentId": 2,
+      "OrgId": 2,
+      "QueueRank": 2
+    },
+    "inferred_types": {
+      "IncidentId": {
+        "string": 4
+      },
+      "OrgId": {
+        "string": 4
+      },
+      "QueueRank": {
+        "integer_like": 3
+      }
+    },
+    "leading_zero_numeric_values": {},
+    "malformed_rows": 0,
+    "non_null_rates": {
+      "IncidentId": 1.0,
+      "OrgId": 1.0,
+      "QueueRank": 0.75
+    },
+    "null_counts": {
+      "QueueRank": 1
+    },
+    "rows": 4,
+    "whitespace_values": {}
+  },
+  "rows": {
+    "GUIDE": 4,
+    "queue": 4
+  },
+  "source_metadata": {
+    "download_date": "unverified",
+    "license": "unverified",
+    "release": "unverified"
+  }
+}

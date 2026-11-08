@@ -1,0 +1,5 @@
+Id,OrgId,IncidentId,AlertId,Timestamp,DetectorId,AlertTitle,Category,MitreTechniques,IncidentGrade,ActionGrouped,ActionGranular,EntityType,EvidenceRole,DeviceId,Sha256,IpAddress,Url,AccountSid,AccountUpn,AccountObjectId,AccountName,DeviceName,NetworkMessageId,EmailClusterId,RegistryKey,RegistryValueName,RegistryValueData,ApplicationId,ApplicationName,OAuthApplicationId,ThreatFamily,FileName,FolderPath,ResourceIdName,ResourceType,Roles,OSFamily,OSVersion,AntispamDirection,SuspicionLevel,LastVerdict,CountryCode,State,City,Usage
+e1,orgA,shared,alert1,2025-01-01T00:00:00Z,d1,,,T1001,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+e1,orgA,shared,alert1,2025-01-01T00:00:00Z,d1,,,T1001,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+e2,orgA,other,alert1,not-a-time,d2,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+e3,orgB,shared,alert2,2025-01-01T01:00:00Z,d3,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
