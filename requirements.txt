@@ -1,2 +1,4 @@
-# Stage 1 validator uses only the Python 3.12 standard library.
-# Keep third-party dependencies out until a later stage requires them.
+# Phase 1–5 core and offline empirical scoring use the Python 3.12 standard library.
+# Phase 6 figures use the already available, pinned plotting dependencies below.
+matplotlib==3.11.2
+numpy==2.5.4

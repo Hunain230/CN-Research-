@@ -111,21 +111,33 @@ This diagnostic reads only `data/derived/preprocessing/review/ambiguous_alert_me
 
 Use a new output directory for each run. Synthetic artifacts are fixtures/stubs for implementation checks, never empirical results. Real-mode commands intentionally fail closed under the current gates; do not try to bypass them.
 
-## Research and data-safety gates
+### Phase 6: offline priority-only experiment
 
-The following restrictions are active:
+This is the separate assumption-based, oracle-group ranking path described in [Phase6.md](phases_outputs/Phase6.md). Use a fresh run ID. Test labels are already accessed, so new runs are exploratory.
 
-1. **Feature view:** no model-visible fields are approved. Keep the feature view empty until point-in-time meaning, provenance, transformations, privacy, and data-use approval are documented field by field.
-2. **Correlation truth:** 70,702 composite alert keys have conflicting incident assignments. Correlation and joint evaluation are no-go until the publisher/data owner explains the semantics or the researcher approves a defensible exclusion/adjudication rule.
-3. **Prioritization labels:** task meaning and expert top-20 construction are documented. Numeric rank direction and the local schema/query-universe correspondence remain unresolved. Do not score or evaluate priority until confirmed.
-4. **Unlabeled incidents:** never assume that absence from the expert top-20 labels means irrelevant or negative.
-5. **Organization split:** the Phase 2 10/10/30 split remains provisional. Freeze the selection method, query/candidate universe, missing-label policy, metrics and denominators, method versions, and test seal before test access.
-6. **GUIDE `Id`:** it is not row-unique. Use `source_row_ordinal` as row provenance; never use `Id` as the row or citation key.
-7. **B0 severity:** no local severity field or authoritative detector crosswalk is verified. The proposed amendment removing the severity component is not approved.
-8. **Evaluator isolation:** `IncidentId`, `QueueRank`, `IncidentGrade`, `ActionGrouped`, `ActionGranular`, and outcome-derived fields remain evaluator-only. Baselines and agents may not read evaluator stores.
-9. **External calls:** no live model calls, external APIs, or data transmission are authorized by the current project protocol.
+```powershell
+.\.venv\Scripts\python.exe -m src.empirical_priority predict --root . --out outputs/phase6/priority/new-run-id
+.\.venv\Scripts\python.exe -m src.empirical_priority evaluate --root . --run outputs/phase6/priority/new-run-id
+.\.venv\Scripts\python.exe -m src.empirical_priority_tie_eval --root . --run outputs/phase6/priority/new-run-id
+.\.venv\Scripts\python.exe -m src.plot_phase6_priority --run outputs/phase6/priority/new-run-id --tie-aware
+```
 
-See the [gate register](phases_outputs/research_gate_register.csv) for exact evidence and next actions. Real evaluation and empirical comparisons remain blocked until the relevant gates are cleared and the protocol is frozen.
+Raw candidate-level predictions and opaque evaluator mappings are restricted under ignored `data/derived/empirical/`. Only aggregate reports and figures are written under `outputs/`. The plotting packages are pinned in `requirements.txt`; they were already present in the project `.venv` and were not installed during this run.
+
+## Current empirical status and limits
+
+The user directed the implementation owner to make conservative assumptions where source evidence was missing. Those decisions are documented in the [empirical protocol freeze](phases_outputs/empirical_protocol_freeze.md), and the first priority-only experiment is recorded in [Phase6.md](phases_outputs/Phase6.md). Its held-out results are exploratory, tie-aware, offline, and conditional on oracle gold groups; they are not end-to-end system results or an exact reconstruction of the publisher's active queues.
+
+1. **Local descriptor policy:** `DetectorId`, `Category`, `MitreTechniques`, `EntityType`, and `EvidenceRole` are permitted only for local offline experiments by explicit project assumption. This is not independent publisher/privacy review. Raw entities, timestamps, locations, join keys, grades, outcomes, and queue labels remain denied as model inputs.
+2. **Correlation truth:** exclude all evidence for the 70,702 conflicting composite alert keys. Full correlation and joint evaluation remain closed; do not resolve assignments by guessing.
+3. **Priority interpretation:** use the local GUIDE candidate universe as an explicit proxy. `QueueRank=1` is assumed highest; report nDCG under both directions. Unranked incidents count as nonmembers only for top-20 retrieval, not as low priority or benign.
+4. **Organization split:** freeze the existing Phase 2 10/10/30 assignment by the digest recorded in the protocol manifest. Test labels have already been accessed in the logged evaluator run; future runs are exploratory unless a new held-out dataset is obtained.
+5. **GUIDE `Id`:** it is not row-unique. Use `source_row_ordinal` as internal row provenance; never treat `Id` as a unique evidence or citation key.
+6. **B0/time:** severity baseline and timestamp-window claims are withdrawn because severity/crosswalk and exact timestamp semantics are unavailable. Any count-only gold-group ranking is an oracle diagnostic, not B0 severity or end-to-end performance.
+7. **Evaluator isolation:** labels remain confined to evaluator code/stores; never pass them to a scorer, prompt, feature, or model. The Phase 3–5 real-mode runners are still synthetic-only; the Phase 6 offline ranking path is separate.
+8. **External calls:** hosted model calls, external APIs, and data transmission remain unauthorized. Synthetic LLM stubs are not empirical LLM systems.
+
+See the [updated gate register](phases_outputs/research_gate_register.csv), [test-label access log](phases_outputs/test_evaluation_access_log.md), and [tie-metric amendment](phases_outputs/metric_tie_amendment.md) for exact evidence, limitations, and re-analysis history.
 
 ## Authoritative references
 

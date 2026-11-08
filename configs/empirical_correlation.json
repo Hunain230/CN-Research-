@@ -1,0 +1,17 @@
+{
+  "schema_version": "empirical-correlation-v1",
+  "classification": "exploratory_ambiguity_excluded_local_correlation_diagnostic",
+  "alerts": "data/raw/GUIDE_Test.csv",
+  "rankings": "data/raw/GUIDE_Test_Queue_Rankings.csv",
+  "membership_truth": "data/derived/preprocessing/evaluator/incident_membership.csv",
+  "ambiguous_memberships": "data/derived/preprocessing/review/ambiguous_alert_memberships.csv",
+  "split_manifest": "data/derived/preprocessing/split_manifest.json",
+  "fields": ["DetectorId", "Category", "MitreTechniques", "EntityType", "EvidenceRole"],
+  "candidate_generation": "same_org_shared_MitreTechnique_top20_Jaccard",
+  "max_neighbors_per_alert": 20,
+  "decision": "LINK_for_each_generated_pair; implicit_NO_LINK_for_other_pairs_in_exhaustive_within_org_universe",
+  "jaccard_similarity_ties": "seeded_hash_pseudorandom_no_label_inputs",
+  "seed": 0,
+  "bootstrap_resamples": 10000,
+  "bootstrap_seed": 20261110
+}

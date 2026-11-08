@@ -1,0 +1,15 @@
+{
+  "classification": "aggregate_only_phase6_figures",
+  "figure_sha256": {
+    "priority_ndcg_direction_sensitivity.png": "c7c8654417d4054786ebf98b4f46a4060d7a4bb58ab37fc4d91deed0191b3cbf",
+    "priority_ndcg_direction_sensitivity.svg": "e85715b6cea4c8890d5a128fd65489bd311af530e14454b2b50fbfadd6146438",
+    "priority_precision_recall.png": "48d5b5f88398c75c8636fac0b96c295fdb03902f71d2ad2483a1d7af3a33f5a0",
+    "priority_precision_recall.svg": "5a6bfe5b53dcd3f64da98dc8bd2fbfb2ec6ae746cdd3d8d8b0f3ca7e4db54a0f"
+  },
+  "matplotlib_version": "3.11.2",
+  "metrics_sha256": "291a6d31099b59a1f306f5811395a99517fe4e21ccf8e8b30ce101675578b42e",
+  "numpy_version": "2.5.4",
+  "plot_code_sha256": "1cc7e12552617772eebadd3f24a98e8b6c45cbcec38769c57afcc42b2d1c2584",
+  "python": "3.12.10",
+  "report_sha256": "aeca9cbbc8940405f01b8a04c2f402ca5d6242fecf18e42b70bf46417e092c13"
+}

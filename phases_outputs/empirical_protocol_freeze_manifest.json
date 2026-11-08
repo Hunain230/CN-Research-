@@ -1,0 +1,60 @@
+{
+  "assumptions": {
+    "A1_rank_1_is_highest": true,
+    "A2_candidate_universe_is_all_local_composite_incidents_in_eligible_labeled_orgs": true,
+    "A3_exclude_all_rows_for_conflicting_composite_alert_keys": true,
+    "A4_five_alert_descriptors_are_available_at_alert_time": [
+      "DetectorId",
+      "Category",
+      "MitreTechniques",
+      "EntityType",
+      "EvidenceRole"
+    ],
+    "A5_freeze_existing_hash_based_10_10_30_split": true,
+    "A6_remove_unavailable_severity_from_B0_and_report_count_only_oracle_group_ranking_separately": true
+  },
+  "authority": "user-directed conservative assumptions; see empirical_protocol_freeze.md",
+  "classification": "assumption_based_local_empirical",
+  "configuration_sha256": {
+    "empirical_field_policy": "configs/empirical_field_policy.yaml",
+    "empirical_field_policy_sha256": "5e3777312a411b37cc1dc44cbe3b0d359d3d463e8dff6b58844cafbbda0ae211",
+    "empirical_priority": "configs/empirical_priority.json",
+    "empirical_priority_sha256": "a4f20ad5e8ac8c702063e95930d7b002d8b17955b8272b88082d290b1a2cd4b9",
+    "preprocessing": "configs/preprocessing.yaml",
+    "preprocessing_sha256": "a87d47e61a11721e9d41ee62df225e72040d502ff364ec603bcc15b54c979263"
+  },
+  "effective_date": "2026-11-08",
+  "external_model_calls": false,
+  "offline_only": true,
+  "protocol": "empirical-protocol-freeze-v1",
+  "protocol_documents_sha256": {
+    "06-Research-experiments.md": "d44f02333e957e610fcd2bfd49f554446200f19e94469c987c17abbd48fb8a1e",
+    "empirical_protocol_freeze.md": "1f7b46be9e0256d7b4f4718c1403fccb8d76b7783fc9d4b5ea83e5f5f54a5213"
+  },
+  "raw_inputs_read_only": true,
+  "raw_inputs_sha256": {
+    "GUIDE_Test.csv": "fdfd7523efd6e3c26bd0290ba6acbcb237196cf923dd56a28e96802035db35a3",
+    "GUIDE_Test_Queue_Rankings.csv": "e4ea9308f45821128a3cd446ab19e6559edfc50709e72034ce957b6f0e2e65d6"
+  },
+  "split": {
+    "assignment_sha256": "c0e6689f78d878237adb7689c0f5b39980bb547ab3bbd83efe4e7b4e639fe024",
+    "config": "configs/preprocessing.yaml",
+    "counts": {
+      "development": 10,
+      "pilot": 10,
+      "test": 30
+    },
+    "salt": "CNET-Phase2-org-split-2026-11-08",
+    "salt_version": "cnet-org-split-v1",
+    "seed": 0
+  },
+  "still_unavailable": [
+    "publisher confirmation of numeric QueueRank direction",
+    "exact local query-snapshot and active-queue mapping",
+    "GUIDE Id semantic definition",
+    "meaning of conflicting alert memberships",
+    "authoritative detector severity or crosswalk",
+    "empirical hosted-LLM evaluation authorization"
+  ],
+  "test_access": "sealed until method/config/code hashes are frozen; thereafter evaluator-only, one-shot confirmatory run"
+}

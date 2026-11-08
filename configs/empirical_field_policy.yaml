@@ -1,0 +1,67 @@
+version: empirical-local-descriptor-policy-v1
+status: adopted_assumption_for_offline_experiments
+default: deny
+approved_model_fields:
+  - DetectorId
+  - Category
+  - MitreTechniques
+  - EntityType
+  - EvidenceRole
+transform:
+  method: deterministic_typed_normalization
+  version: typed-v1
+  null_handling: omit_missing_values
+  casefold_text: true
+  trim_whitespace: true
+  preserve_source_row_ordinal_for_internal_lineage_only: true
+  no_external_transmission: true
+evaluator_only:
+  - IncidentId
+  - QueueRank
+  - IncidentGrade
+  - ActionGrouped
+  - ActionGranular
+lineage_or_join_only:
+  - Id
+  - OrgId
+  - AlertId
+  - source_row_ordinal
+denied:
+  - Timestamp
+  - DeviceId
+  - Sha256
+  - IpAddress
+  - Url
+  - AccountSid
+  - AccountUpn
+  - AccountObjectId
+  - AccountName
+  - DeviceName
+  - NetworkMessageId
+  - EmailClusterId
+  - RegistryKey
+  - RegistryValueName
+  - RegistryValueData
+  - ApplicationId
+  - ApplicationName
+  - OAuthApplicationId
+  - ThreatFamily
+  - FileName
+  - FolderPath
+  - ResourceIdName
+  - ResourceType
+  - Roles
+  - OSFamily
+  - OSVersion
+  - AntispamDirection
+  - SuspicionLevel
+  - LastVerdict
+  - CountryCode
+  - State
+  - City
+  - Usage
+rationale: >-
+  Project-owner-directed conservative assumption for local offline descriptor experiments. It is not
+  publisher confirmation of field timing or a substitute for external privacy review. All raw entity
+  values, record/join IDs (except the explicitly allowed DetectorId descriptor), timestamps, labels,
+  outcomes, action fields, verdicts, and locations remain denied.

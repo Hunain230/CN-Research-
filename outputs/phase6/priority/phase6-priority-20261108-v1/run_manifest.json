@@ -1,0 +1,135 @@
+{
+  "candidate_universe_sha256": "de2af5fdc3064c191f5ff183be484ea709f3b199f847722b09a492e8a0e407dd",
+  "classification": "assumption_based_local_empirical_oracle_group_ceiling",
+  "code_sha256": "a767c9b965a464f68f574087f4b14f73a7e552f00c6d22fb3e5c563dde94d753",
+  "conditions": {
+    "leave_out_Category": {
+      "nonempty_test_candidates": 12939,
+      "prediction_sha256": "0b7a3cb7f1960ac4be3a1a131a78ee689c0109114e88b43b2c60e7222fc1a557",
+      "training_exemplars": 358
+    },
+    "leave_out_DetectorId": {
+      "nonempty_test_candidates": 12939,
+      "prediction_sha256": "9fd92c6c590c67de939c046dda9bbaf5a51a9f3a67e9d01d62885a979a403145",
+      "training_exemplars": 358
+    },
+    "leave_out_EntityType": {
+      "nonempty_test_candidates": 12939,
+      "prediction_sha256": "5b78461a2255f1bf7c6cfaac3e551218dd7b8bfaf3e1033498c4057a42cc1897",
+      "training_exemplars": 358
+    },
+    "leave_out_EvidenceRole": {
+      "nonempty_test_candidates": 12939,
+      "prediction_sha256": "2555355d719528d5986936df33ea89de1e9d6ad68cf541f938d3146ced24d5d6",
+      "training_exemplars": 358
+    },
+    "leave_out_MitreTechniques": {
+      "nonempty_test_candidates": 12939,
+      "prediction_sha256": "f782e26aa66cbfe7be65f5d6007279e438ced0f116e5e9df1c387e427beae679",
+      "training_exemplars": 358
+    },
+    "mask_20_seed_41": {
+      "nonempty_test_candidates": 12936,
+      "prediction_sha256": "a57fc084140016f9ff6623e143e62ca91b6c08e30042a86572c67de05e3776dc",
+      "training_exemplars": 358
+    },
+    "mask_20_seed_42": {
+      "nonempty_test_candidates": 12939,
+      "prediction_sha256": "9d02197d0cb2ce2cff4655ea6969519467c07e13ab35cffc1b00a8a30c4c61ec",
+      "training_exemplars": 358
+    },
+    "mask_20_seed_43": {
+      "nonempty_test_candidates": 12937,
+      "prediction_sha256": "9377daef123588e1855f60729a053133640668d8ebd1d86eb16dd0c2f804e3c2",
+      "training_exemplars": 358
+    },
+    "mask_20_seed_44": {
+      "nonempty_test_candidates": 12939,
+      "prediction_sha256": "3ed0b860772a981222eb335d84ee605fdf4da8a47aa53f7e12eca5b3ce0a295b",
+      "training_exemplars": 358
+    },
+    "mask_20_seed_45": {
+      "nonempty_test_candidates": 12938,
+      "prediction_sha256": "1ce92abd260b586448722cb71e9f55239ba215c389facffa7e0ab89e3f86c4c3",
+      "training_exemplars": 358
+    },
+    "mask_40_seed_41": {
+      "nonempty_test_candidates": 12918,
+      "prediction_sha256": "f2e218ba2e6592176ab8ee48f5b8cae6cfc2c65188dae366a9f06bc0091561b6",
+      "training_exemplars": 357
+    },
+    "mask_40_seed_42": {
+      "nonempty_test_candidates": 12909,
+      "prediction_sha256": "a5b55ff6c800e45aea99707ab4d5b93d2a5cc74e78139369f5d5e7f4d1fe9a6d",
+      "training_exemplars": 358
+    },
+    "mask_40_seed_43": {
+      "nonempty_test_candidates": 12911,
+      "prediction_sha256": "bfa0bf048d5ebeb8f97148e342e6ca0f3f57b24bc7d5cb2d10e4dfe0b1ad2845",
+      "training_exemplars": 358
+    },
+    "mask_40_seed_44": {
+      "nonempty_test_candidates": 12906,
+      "prediction_sha256": "d1191a325b3a6b2d367eba0626be39f5ca9514699607bdca01526407b678b014",
+      "training_exemplars": 358
+    },
+    "mask_40_seed_45": {
+      "nonempty_test_candidates": 12913,
+      "prediction_sha256": "f87ecbb1384c14fd670950cbd3be8783377ae8be9e1f4912491b89a9223854ee",
+      "training_exemplars": 358
+    },
+    "primary": {
+      "nonempty_test_candidates": 12939,
+      "prediction_sha256": "f6edb9f6dd2ba261f7cb36ed3728c1b8b398c09218855c3c18ca225f26c743d5",
+      "training_exemplars": 358
+    }
+  },
+  "config_sha256": "a4f20ad5e8ac8c702063e95930d7b002d8b17955b8272b88082d290b1a2cd4b9",
+  "coverage": {
+    "ambiguous_alert_keys_excluded": 70702,
+    "candidate_incidents": 22122,
+    "distinct_descriptor_tokens": 157492,
+    "evidence_rows_excluded_for_ambiguity": 128177,
+    "rows_missing_composite_incident_key": 0
+  },
+  "ended_utc": "2026-11-08T16:07:57.984519+00:00",
+  "evaluator_only_grouping": "gold IncidentId grouping; oracle ceiling only",
+  "external_calls": 0,
+  "field_policy_sha256": "5e3777312a411b37cc1dc44cbe3b0d359d3d463e8dff6b58844cafbbda0ae211",
+  "method": "max BM25 similarity to pilot/development expert-top20 descriptor exemplars",
+  "mode": "offline_local_empirical_oracle_group_ceiling",
+  "model_visible_fields": [
+    "DetectorId",
+    "Category",
+    "MitreTechniques",
+    "EntityType",
+    "EvidenceRole"
+  ],
+  "note": "Predictions are frozen before the evaluator reads test QueueRank labels. Index key fields are opaque hashes.",
+  "protocol": "empirical-priority-v1",
+  "protocol_document_sha256": "1f7b46be9e0256d7b4f4718c1403fccb8d76b7783fc9d4b5ea83e5f5f54a5213",
+  "protocol_manifest_sha256": "abdb8ca014dfa7b242e6f94f941ca52a334e13c411ae02203bd63085a8df793d",
+  "python": "3.12.10",
+  "rank_direction_assumption": "QueueRank 1 is highest priority",
+  "raw_input_sha256_after": {
+    "GUIDE_Test.csv": "fdfd7523efd6e3c26bd0290ba6acbcb237196cf923dd56a28e96802035db35a3",
+    "GUIDE_Test_Queue_Rankings.csv": "e4ea9308f45821128a3cd446ab19e6559edfc50709e72034ce957b6f0e2e65d6"
+  },
+  "raw_input_sha256_before": {
+    "GUIDE_Test.csv": "fdfd7523efd6e3c26bd0290ba6acbcb237196cf923dd56a28e96802035db35a3",
+    "GUIDE_Test_Queue_Rankings.csv": "e4ea9308f45821128a3cd446ab19e6559edfc50709e72034ce957b6f0e2e65d6"
+  },
+  "restricted_artifacts_relative_path": "data\\derived\\empirical\\priority\\phase6-priority-20261108-v1",
+  "runtime_seconds": 228.815,
+  "seed": 0,
+  "split_assignment_sha256": "c0e6689f78d878237adb7689c0f5b39980bb547ab3bbd83efe4e7b4e639fe024",
+  "split_config_sha256": "a87d47e61a11721e9d41ee62df225e72040d502ff364ec603bcc15b54c979263",
+  "split_counts": {
+    "development": 10,
+    "pilot": 10,
+    "test": 30
+  },
+  "split_manifest_sha256": "5c504d865af698833f7189628f1de12518e7f212a6ead2a1434d9b023a00ccbe",
+  "started_utc": "2026-11-08T16:04:09.163001+00:00",
+  "test_priority_labels_read": false
+}

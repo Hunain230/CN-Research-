@@ -1,0 +1,14 @@
+{
+  "classification": "assumption_based_local_empirical_oracle_group_ceiling",
+  "code_sha256": "33ef856f11ff27566b73170030d888489da7bbb468b0adce9b2c8b2bed849061",
+  "config_sha256": "a4f20ad5e8ac8c702063e95930d7b002d8b17955b8272b88082d290b1a2cd4b9",
+  "metrics_sha256": "291a6d31099b59a1f306f5811395a99517fe4e21ccf8e8b30ce101675578b42e",
+  "protocol": "empirical-priority-evaluation-v1",
+  "raw_input_sha256": {
+    "GUIDE_Test.csv": "fdfd7523efd6e3c26bd0290ba6acbcb237196cf923dd56a28e96802035db35a3",
+    "GUIDE_Test_Queue_Rankings.csv": "e4ea9308f45821128a3cd446ab19e6559edfc50709e72034ce957b6f0e2e65d6"
+  },
+  "report_sha256": "aeca9cbbc8940405f01b8a04c2f402ca5d6242fecf18e42b70bf46417e092c13",
+  "run_manifest_sha256": "4c032043758d34a3c44b7f24ca49c9cbb0238c0ecd49cb2933ac4c100cdde884",
+  "test_labels_read": true
+}
