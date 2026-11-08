@@ -58,7 +58,7 @@ def self_test(root):
     assert c["abstentions"]==1 and c["failures"]==1; n+=1
     assert c["pair_false_negatives"]==expected["pair_false_negatives"]; n+=1
     assert "false_splits" not in c and "false_merges" not in c; n+=1
-    assert c["pair_false_negatives"]["candidate_set"]!=metrics.false_merge_split_components(truth["alert_truth"],pred["components"])["false_splits"]; n+=1
+    assert set(c["pair_false_negatives"])=={"candidate_set","full_eligible_pair"}; n+=1
     assert c["decision_coverage"]==expected["decision_coverage"] and c["candidate_generation_coverage"]["value"]==expected["candidate_generation_coverage"]["value"]; n+=1
     assert c["candidate_generation_coverage"]["numerator_candidate_pairs_in_full_universe"]==expected["candidate_generation_coverage"]["numerator_candidate_pairs_in_full_universe"] and c["candidate_generation_coverage"]["denominator_full_eligible_pair_count"]==expected["candidate_generation_coverage"]["denominator_full_eligible_pair_count"]; n+=1
     assert truth["org_scoped_incident_truth"]["org-a|same-incident"]!="org-b|same-incident"; n+=1
@@ -71,7 +71,7 @@ def self_test(root):
     zero=metrics.correlation([], [{"left":"a","right":"b","decision":"LINK"}],[ ("a","b") ])
     assert zero["candidate_set"]["f1"]==0; n+=1
     cluster=metrics.false_merge_split_components(truth["alert_truth"],pred["components"])
-    assert cluster==expected["cluster_diagnostics"]; n+=1
+    assert cluster==expected["cluster_diagnostics"] and set(cluster)=={"false_merges","false_splits","singleton_components"}; n+=1
     r=metrics.ranking(truth["expert_rank"],pred["ranked_candidates"],truth["rank_candidate_universe"],truth["judgements"])
     for k in ("precision_at_10","recall_at_20","ndcg_at_20"):
         assert abs(r[k]-expected["ranking"][k])<1e-12; n+=1

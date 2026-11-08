@@ -18,7 +18,7 @@
   {"left":"c","right":"d","org_key":"syn-org","left_org":"syn-org","right_org":"syn-org","decision":"UNSURE","abstention":true,"failure":false},
   {"left":"x","right":"y","org_key":"syn-org","left_org":"syn-org","right_org":"syn-org","decision":"NO_LINK","abstention":false,"failure":true}
  ],
- "components":[["a","b","c","d","e","x"],["f"]],
+ "components":[["a","b","x"],["c"],["d"],["e","f"]],
  "ranked_candidates":["i02","i01","i04","i05","i06","i07","i08","i09","i10","i11"],
  "top20_components":[["a","b","c","d","q"]]
 }

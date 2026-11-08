@@ -1,0 +1,35 @@
+{
+  "classification": "synthetic_evaluation_only_not_empirical",
+  "code_sha256": {
+    "src\\evaluation\\__init__.py": "62aec142a324ed2d99067175c14ba7daf13efd72f38196a6c1e2d8105953eb73",
+    "src\\evaluation\\metrics.py": "2d03100df078cc4ccd54e04c8736ca9e500b1708023cd96707dfec84dcf3013e",
+    "src\\evaluation\\prediction_validation.py": "cd95fa118237c66dca27afdbc1619a03ea7b03cb5564ea5b085e8b9d6c8e0ac6",
+    "src\\evaluation\\report.py": "fc71fc72be30331c26734d64cfb11ed7a163891fa5595c435a61c0a06c4d0fd4",
+    "src\\evaluation\\runner.py": "1dc04f8f3483903532f3b9e797088cebbb8c8e2c727bd35cedea0acd531d3dde",
+    "src\\evaluation\\statistics.py": "d1e37feef17aaeae70e2787404c02cf8ec5ee4431dd7a6160c023b24190fe0eb",
+    "src\\evaluation\\truth_reader.py": "3446b1783fbedd48ea6405b4076ecf2122ebba846d291c884068be11a8f1ae72"
+  },
+  "command": "C:\\Users\\surface\\Desktop\\CN-Research-\\src\\cli.py evaluate --mode synthetic --predictions fixtures/stage5/predictions.json --labels fixtures/stage5/labels.json --config configs/evaluation.yaml --out outputs/evaluation/synthetic/phase5-metric-terminology-fix-final2",
+  "config_sha256": {
+    "evaluation": "2eefc41b0f4bd670b8d07a2ba1479b0a5d2a5b30b68f928459c52f70ec562d77",
+    "metrics": "8deea89b704ef21c93a1b717fd1d574dd97891abf553aeca75c1b818fd2c81ff",
+    "prediction_schema": "1e1687af527e3bc2560b1551dbceb2f987c3cdc68789c57735884f61fdf39805",
+    "statistics": "c419636894313a19cf7d9b13415f20cebb999f941e48ecb64059c0163e47eeff"
+  },
+  "ended_utc": "2026-11-08T15:13:59.821500+00:00",
+  "evaluator_version": "evaluation-v1",
+  "gate_status": "closed_for_real_data",
+  "metric_version": "evaluation-metrics-v1",
+  "mode": "synthetic",
+  "output_sha256": {
+    "metrics.json": "a4f2b25409a967ea8a429b25acb23b74aa9bcb51572912bd53d5adb3408a2488",
+    "report.md": "50b90da753a5f444de12f384765baa5e7848a50c5abf6ebdcf962422ad02aea0"
+  },
+  "prediction_sha256": "28801817f69e61a0326a8e50df7611cb33f7aa3b28d85c385ac5cf892895f870",
+  "python": "3.12.10",
+  "run_id": "phase5-metric-terminology-fix-final2",
+  "runtime_ms": 45.005,
+  "seed": 19,
+  "started_utc": "2026-11-08T15:13:59.774759+00:00",
+  "synthetic_label_fixture_sha256": "f308cdbc414679cb43e1cd0111a88879ac94d6c985d70d75712bde4a99cd10c4"
+}
