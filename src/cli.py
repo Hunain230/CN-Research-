@@ -5,6 +5,7 @@ import argparse
 import csv
 import datetime as dt
 import hashlib
+import struct
 import json
 import math
 import os
@@ -43,6 +44,18 @@ def type_of(v):
     try: float(v); return "numeric_like"
     except ValueError: return "string"
 
+class HLL:
+    """Fixed-memory cardinality estimate (p=12), keyed only by field/value hashes."""
+    def __init__(self): self.registers=bytearray(4096)
+    def add(self, value):
+        x=int.from_bytes(hashlib.blake2b(value.encode("utf-8"),digest_size=8).digest(),"big")
+        idx=x>>52; rem=x&((1<<52)-1); rank=(53-rem.bit_length()) if rem else 53
+        if rank>self.registers[idx]: self.registers[idx]=rank
+    def count(self):
+        m=4096; alpha=0.7213/(1+1.079/m); z=sum(2.0**(-r) for r in self.registers)
+        e=alpha*m*m/z; zeros=self.registers.count(0)
+        return int(round(m*math.log(m/zeros))) if e<=2.5*m and zeros else int(round(e))
+
 def disposition(col, null_rate, cardinality):
     if col in LABELS: return "deny", "Evaluator label/outcome; prohibited from all model-visible paths."
     if col == "Id": return "deny", "Lineage key; preserve for citations only after source review; never inference input."
@@ -63,11 +76,11 @@ def main_validate(args):
     # SQLite holds exact distinct-key and per-alert membership state on disk.
     with tempfile.TemporaryDirectory(prefix="cnet-audit-") as td:
         db=sqlite3.connect(str(Path(td)/"audit.sqlite")); db.execute("PRAGMA journal_mode=OFF")
-        db.executescript("CREATE TABLE incidents(org TEXT,inc TEXT,PRIMARY KEY(org,inc)); CREATE TABLE alerts(org TEXT,alert TEXT,inc TEXT,det TEXT,ts TEXT); CREATE TABLE ranks(org TEXT,inc TEXT,rank TEXT); CREATE TABLE vals(field TEXT,val TEXT,PRIMARY KEY(field,val));")
-        prof={}; schemas={}; rowcounts={}; malformed={}; files={}
+        db.executescript("CREATE TABLE incidents(org TEXT,inc TEXT,PRIMARY KEY(org,inc)); CREATE TABLE alerts(org TEXT,alert TEXT,inc TEXT,det TEXT,ts TEXT); CREATE TABLE ranks(org TEXT,inc TEXT,rank TEXT);")
+        prof={}; schemas={}; rowcounts={}; malformed={}; files={}; cards_by_label={}
         for label,path,expected in (("GUIDE",guide,GUIDE),("queue",rank,RANK)):
             files[label]={"path":str(path),"bytes":path.stat().st_size,"sha256":digest(path)}
-            nulls=Counter(); distinct={}; inferred=defaultdict(Counter); whitespace=Counter(); leading=Counter(); rows=0; bad=0; headers=None
+            nulls=Counter(); cards=defaultdict(HLL); distinct={}; inferred=defaultdict(Counter); whitespace=Counter(); leading=Counter(); rows=0; bad=0; headers=None
             # Text mode and explicit strings preserve IDs and leading zeroes.
             with open(path,"r",encoding="utf-8-sig",newline="") as f:
                 reader=csv.reader(f)
@@ -86,7 +99,7 @@ def main_validate(args):
                             inferred[c][type_of(v)]+=1
                             if v!=v.strip(): whitespace[c]+=1
                             if v.startswith("0") and v.isdigit() and len(v)>1: leading[c]+=1
-                            db.execute("INSERT OR IGNORE INTO vals VALUES(?,?)",(label+":"+c,v))
+                            cards[c].add(v)
                     if label=="GUIDE":
                         org,inc,alert=d.get("OrgId",""),d.get("IncidentId",""),d.get("AlertId","")
                         if org and inc: db.execute("INSERT OR IGNORE INTO incidents VALUES(?,?)",(org,inc))
@@ -94,10 +107,11 @@ def main_validate(args):
                     else: db.execute("INSERT INTO ranks VALUES(?,?,?)",(d.get("OrgId",""),d.get("IncidentId",""),d.get("QueueRank","")))
                     if rows%args.chunk_rows==0: db.commit()
             db.commit(); rowcounts[label]=rows; malformed[label]=bad
+            cards_by_label[label]=cards
             prof[label]={"rows":rows,"malformed_rows":bad,"null_counts":dict(nulls),"non_null_rates":{c:round((rows-nulls[c])/rows,8) if rows else 0 for c in headers},"inferred_types":{c:dict(inferred[c]) for c in headers},"whitespace_values":dict(whitespace),"leading_zero_numeric_values":dict(leading)}
-        # Exact distinct counts are held in SQLite on disk; values are never emitted.
+        # Fixed-memory HLL estimates; no distinct entity strings are retained.
         for label in ("GUIDE","queue"):
-            prof[label]["cardinality"]={c:db.execute("SELECT count(*) FROM vals WHERE field=?",(label+":"+c,)).fetchone()[0] for c in schemas[label]["headers"]}
+            prof[label]["cardinality_estimated"]={c:cards_by_label[label][c].count() for c in schemas[label]["headers"]}
         # relational summaries
         inc_count=db.execute("SELECT count(*) FROM incidents").fetchone()[0]
         alert_keys=db.execute("SELECT count(DISTINCT org||char(31)||alert) FROM alerts WHERE org<>'' AND alert<>''").fetchone()[0]
@@ -134,10 +148,10 @@ def main_validate(args):
         # Evidence columns disposition includes cardinality/null rates and no values.
         dispositions=[]
         for c in schemas["GUIDE"]["headers"]:
-            allow,why=disposition(c,prof["GUIDE"]["non_null_rates"].get(c,0),prof["GUIDE"]["cardinality"].get(c,0))
-            dispositions.append({"column":c,"null_rate":round(1-prof["GUIDE"]["non_null_rates"].get(c,0),8),"cardinality":prof["GUIDE"]["cardinality"].get(c,0),"allow_decision":allow,"rationale":why})
+            allow,why=disposition(c,prof["GUIDE"]["non_null_rates"].get(c,0),prof["GUIDE"]["cardinality_estimated"].get(c,0))
+            dispositions.append({"column":c,"null_rate":round(1-prof["GUIDE"]["non_null_rates"].get(c,0),8),"cardinality_estimate":prof["GUIDE"]["cardinality_estimated"].get(c,0),"allow_decision":allow,"rationale":why})
         for c in schemas["queue"]["headers"]:
-            dispositions.append({"column":c,"null_rate":round(1-prof["queue"]["non_null_rates"].get(c,0),8),"cardinality":prof["queue"]["cardinality"].get(c,0),"allow_decision":"deny","rationale":"Evaluator label/join key; queue data is isolated from model-visible features."})
+            dispositions.append({"column":c,"null_rate":round(1-prof["queue"]["non_null_rates"].get(c,0),8),"cardinality_estimate":prof["queue"]["cardinality_estimated"].get(c,0),"allow_decision":"deny","rationale":"Evaluator label/join key; queue data is isolated from model-visible features."})
         # Anonymous org aggregate summary only; no org IDs in the report.
         org_summary=[{"org_ordinal":i+1,"guide_incidents":x[1],"distinct_detectors":x[2],"matched_label_keys":x[3],"top20_rank_count":x[4],"phase2_eligible":bool(x[5])} for i,x in enumerate(sorted(org_rows,key=lambda x:(-x[1],-x[2])))]
         checks={"schemas_match_observed":not schemas["GUIDE"]["additional_headers"] and not schemas["GUIDE"]["missing_required"] and not schemas["queue"]["additional_headers"] and not schemas["queue"]["missing_required"],"malformed_rows":sum(malformed.values()),"guide_incidents_distinct_composite":inc_count,"guide_alert_keys_distinct_composite":alert_keys,"duplicate_alert_key_groups":duplicate_alert_rows,"ambiguous_alert_membership_groups":ambiguous,"ranking_rows":rowcounts["queue"],"duplicate_rank_key_groups":rank_dups,"null_rank_rows":rank_null,"rank_integer_conversion_errors":conv_err,"rank_tie_groups_within_org":ties,"rank_gaps_within_org":gaps,"rank_numbering_restarts_at_one_each_org":restarts,"composite_matched_keys":matched,"unmatched_guide_incidents":inc_count-matched,"unmatched_ranking_keys":rank_keys-matched_r,"incident_id_only_diagnostic_matches":db.execute("SELECT count(*) FROM (SELECT DISTINCT inc FROM incidents) i JOIN (SELECT DISTINCT inc FROM ranks) r USING(inc)").fetchone()[0],"qualified_orgs":eligible,"required_orgs_for_split":50,"split_feasible":eligible>=50,"alert_correlation_go":"no-go" if ambiguous or not alert_keys else "conditional","incident_prioritization_go":"no-go" if eligible<50 or rank_null or rank_dups else "conditional","joint_evaluation_go":"no-go" if eligible<50 or ambiguous or rank_null or rank_dups else "conditional","top20_completeness":"unverified; source evidence required","rank_scope":"unverified; source evidence required","candidate_pair_ceiling":"not computed: rank scope and alert truth must first be verified; no labels exposed"}

@@ -29,7 +29,7 @@
     "unmatched_ranking_keys": 0
   },
   "guide_profile": {
-    "cardinality": {
+    "cardinality_estimated": {
       "AccountName": 0,
       "AccountObjectId": 0,
       "AccountSid": 0,
@@ -270,7 +270,7 @@
     }
   ],
   "queue_profile": {
-    "cardinality": {
+    "cardinality_estimated": {
       "IncidentId": 2,
       "OrgId": 2,
       "QueueRank": 2
