@@ -15,3 +15,9 @@ The v2 candidate-universe SHA-256 exactly matches v1 (`de2af5fdc3064c191f5ff183b
 ## Tie-aware re-analysis
 
 The successful v2 metrics initially used opaque-key order to serialize equal BM25 scores. The post-run tie audit found primary-condition ties inside top-10 and top-20 in all 30 organizations (497 of 600 top-20 slots were tied). The tie-aware evaluator now reports expected cut-off metrics over uniform score-tie permutations. It did not change or refit any score or prediction. Its output is classified exploratory because test labels had already been opened. Primary tie-aware means: P@10 `0.4622`, Recall@20 `0.3392`, nDCG@20 `0.3924` under rank-1-highest and `0.1153` under rank-20-highest. Full intervals, robustness conditions, code and hashes are in the Phase6 output directory.
+
+## Correlation diagnostic access
+
+The separate correlation predictor froze candidate pairs without reading `IncidentId` or `QueueRank`; it used only same-org alert keys, permitted descriptors, and the ambiguity exclusion list. Its evaluator then opened the Phase 2 membership truth for the 30 test organizations. Aggregate counts: 30,692 unambiguous alert keys; 194,296 candidate links; 67,048,813 possible within-organization pairs; 6,142,793 positive pairs; 51,879 true positive links; 142,417 false positive links; and 6,090,914 full-pair false negatives.
+
+The first aggregate report included a mechanically uninformative candidate-set recall for the all-LINK rule. A versioned report correction omitted that value and used the existing per-organization counts; it did not alter candidate pairs, predictions, or reopen truth. See [`correlation_metric_report_amendment.md`](correlation_metric_report_amendment.md) and the corrected Phase 6 report.

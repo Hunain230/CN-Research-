@@ -1,0 +1,13 @@
+{
+  "classification": "aggregate_only_corrected_correlation_figure",
+  "figure_sha256": {
+    "correlation_metrics.png": "b92c49a5e98a9b48f689d3a99ef54bdbe9608ed38df9df65ebabb0801d4b8f17",
+    "correlation_metrics.svg": "9971955b589460109bb242ef6a1faef84eb6388363eabf9c9f3592365434c566"
+  },
+  "matplotlib_version": "3.11.2",
+  "metrics_sha256": "a98fbef31a2678262a8c6493e8aa13a9a631cbd4200cc2ce3ebcf60bdac2b4d7",
+  "numpy_version": "2.5.4",
+  "plot_code_sha256": "215d1e250dd3a8732f984d748190fd77faa7778575033d969e395a79a014456a",
+  "python": "3.12.10",
+  "report_sha256": "154a35888f6b54b6c0e5e36ac034ff5c9df54bfde500bb04bd7fc22ae03e964d"
+}

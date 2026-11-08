@@ -1,0 +1,108 @@
+{
+  "candidate_method": "same-org shared ATT&CK technique; top-20 Jaccard neighbors per alert; every generated candidate is LINK",
+  "candidate_pairs": 194296,
+  "classification": "exploratory_ambiguity_excluded_local_correlation_diagnostic",
+  "disclosure": "Post-test-access exploratory diagnostic; not full-data correlation and not joint or LLM performance.",
+  "excluded_ambiguous_alert_keys_dataset_wide": 70702,
+  "exclusions": "all ambiguous composite alert keys; all cross-org pairs; no timestamps",
+  "full_positive_pair_universe": 6142793,
+  "full_same_org_pair_universe": 67048813,
+  "macro_organization_metrics_with_bootstrap_ci": {
+    "candidate_generation_coverage": {
+      "bootstrap_resamples": 10000,
+      "ci95": [
+        0.035873649225013016,
+        0.09193703854778128
+      ],
+      "mean": 0.06196320127098127,
+      "median": 0.03392024604697837,
+      "n_orgs": 30,
+      "seed": 20261110
+    },
+    "candidate_set_f1": {
+      "bootstrap_resamples": 10000,
+      "ci95": [
+        0.05967256859597306,
+        0.24366946907960954
+      ],
+      "mean": 0.14253191208122667,
+      "median": 0.029165547497537827,
+      "n_orgs": 30,
+      "seed": 20261110
+    },
+    "candidate_set_precision": {
+      "bootstrap_resamples": 10000,
+      "ci95": [
+        0.035194084304308294,
+        0.2018888046837991
+      ],
+      "mean": 0.10926716112552219,
+      "median": 0.014798593903071516,
+      "n_orgs": 30,
+      "seed": 20261110
+    },
+    "candidate_set_recall": {
+      "bootstrap_resamples": 10000,
+      "ci95": [
+        0.7333333333333333,
+        0.9666666666666667
+      ],
+      "mean": 0.8666666666666667,
+      "median": 1.0,
+      "n_orgs": 30,
+      "seed": 20261110
+    },
+    "full_pair_f1": {
+      "bootstrap_resamples": 10000,
+      "ci95": [
+        0.019723593806606488,
+        0.1245418097856418
+      ],
+      "mean": 0.06027264493670647,
+      "median": 0.013339302605434328,
+      "n_orgs": 30,
+      "seed": 20261110
+    },
+    "full_pair_precision": {
+      "bootstrap_resamples": 10000,
+      "ci95": [
+        0.035194084304308294,
+        0.2018888046837991
+      ],
+      "mean": 0.10926716112552219,
+      "median": 0.014798593903071516,
+      "n_orgs": 30,
+      "seed": 20261110
+    },
+    "full_pair_recall": {
+      "bootstrap_resamples": 10000,
+      "ci95": [
+        0.15252202602755707,
+        0.36332717038503937
+      ],
+      "mean": 0.2534784289945338,
+      "median": 0.14189453762318083,
+      "n_orgs": 30,
+      "seed": 20261110
+    }
+  },
+  "mean_clustering_diagnostics": {
+    "false_merges": 4.966666666666667,
+    "false_splits": 50.46666666666667,
+    "predicted_components": 651.8,
+    "singleton_components": 646.0333333333333
+  },
+  "micro": {
+    "candidate_generation_coverage": 0.002897829078644539,
+    "f1": 0.016373132837490527,
+    "fn_full_pair": 6090914,
+    "fp": 142417,
+    "precision": 0.2670101288755301,
+    "recall": 0.008445506791454636,
+    "tp": 51879
+  },
+  "no_significance_tests": true,
+  "run_id": "phase6-correlation-20261108-v1",
+  "test_organizations": 30,
+  "unambiguous_alert_keys": 30692
+}

@@ -18,16 +18,16 @@ The user directed the implementation owner to clear gates by making conservative
 - Publisher confirmation of rank direction and exact local queue snapshot; A1/A2 are explicit assumptions.
 - Authoritative semantics for `Id` and conflicting alert keys.
 - Independent publisher/privacy review of field timing; the five-field allowlist is a project-directed local-only assumption.
-- Full-dataset correlation and joint metrics: remain closed because conflicting memberships are excluded and the empirical correlation method has not been implemented.
+- Full-dataset correlation and joint metrics: remain closed. A bounded ambiguity-excluded ATT&CK-overlap diagnostic has run, but its low pooled full-pair recall and narrow coverage do not establish full-data performance.
 - Empirical hosted-LLM comparisons: remain unavailable; no live API/model calls are authorized. Synthetic stubs are not empirical LLMs.
 - Severity-based B0, time-window conclusions, reviewer studies, and tariff-based API costs: unavailable.
 
 ## Next execution sequence
 
-1. Review the completed priority-only Phase 6 analysis in [Phase6.md](Phase6.md) and use the tie-aware aggregate result as exploratory, with its access history disclosed.
-2. Implement an ambiguity-excluded correlation diagnostic only if candidate generation can meet the same no-label/no-ID feature contract. Keep full correlation and joint evaluation closed.
-3. Continue method development on pilot/development only. Any new test run is exploratory because test labels have already been opened and the tie-aware metric amendment followed that access.
-4. If the core research question requires empirical LLM comparisons, obtain explicit provider/model authorization or identify an available local offline model; no hosted calls are made under the current protocol.
+1. Review the exploratory priority and ambiguity-excluded correlation results in [Phase6.md](Phase6.md); the correlation report's metric correction and priority tie-aware amendment are both disclosed.
+2. Keep full correlation/joint evaluation closed unless the alert-membership semantics are explained or an approved exclusion policy covers the intended claim. Current correlation results apply only to unambiguous alerts in 30 test organizations.
+3. Continue method development on pilot/development only. Any new test run is exploratory because test labels have already been opened and metric amendments followed that access.
+4. If empirical LLM comparison remains required, obtain explicit provider/model authorization or use an available local offline model; no hosted calls are made under the current protocol.
 
 ## Frozen records
 

@@ -1,0 +1,11 @@
+{
+  "classification": "exploratory_ambiguity_excluded_correlation_metric_report_correction",
+  "correction_code_sha256": "89f480bee7ea0a5a26fd32c87425cfd6bbf5af48f712cd2b23084e1fdb316b7f",
+  "figure_manifest_sha256": "60ed305f5505d6fc006aa4143b960ce893fa2de61b2ad3090af640df81c97322",
+  "historical_eval_manifest_sha256": "33c80ee00d90e0f45382f8948bcdc8d8fbf927423250a173f9c415cb80772f30",
+  "metric_amendment_sha256": "490b10b48b2dcbcf99f63101d154ca1e7247b64dec9522ef0df711f6270f7c5a",
+  "metrics_sha256": "a98fbef31a2678262a8c6493e8aa13a9a631cbd4200cc2ce3ebcf60bdac2b4d7",
+  "per_org_metric_source_sha256": "74002bf3f2b42d42920e1aa8d9d736a71a3fe99fa2cab4721191b803a021b383",
+  "protocol": "empirical-correlation-metric-report-correction-v1",
+  "report_sha256": "154a35888f6b54b6c0e5e36ac034ff5c9df54bfde500bb04bd7fc22ae03e964d"
+}

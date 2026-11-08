@@ -19,7 +19,7 @@
 
 The gates have been converted to an **assumption-based local empirical path** under the user's direction to make conservative assumptions. The exact assumptions and limits are in [the empirical protocol freeze](phases_outputs/empirical_protocol_freeze.md). The existing 10/10/30 split digest and both raw input hashes were rechecked. The priority-only BM25 exemplar experiment and Phase 6 ablations ran on 30 test organizations under a tie-aware exploratory re-analysis. See [Phase6.md](phases_outputs/Phase6.md) and its aggregate outputs. This is not a verified reproduction of the publisher's exact active queue.
 
-Full-dataset correlation and joint evaluation remain closed. There are no empirical LLM or end-to-end agent metrics. Live LLM calls remain unauthorized. Severity-based B0 and timestamp-window claims are withdrawn; any count-only oracle-group ranking must be labeled as an oracle diagnostic. Test labels have been accessed; future runs are exploratory unless a new dataset/test split is obtained. See [UNBLOCKED.md](phases_outputs/UNBLOCKED.md) for next steps and remaining limits.
+Full-dataset correlation and joint evaluation remain closed. A bounded ambiguity-excluded correlation diagnostic ran but had low pooled full-pair recall and candidate coverage. There are no empirical LLM or end-to-end agent metrics. Live LLM calls remain unauthorized. Severity-based B0 and timestamp-window claims are withdrawn; any count-only oracle-group ranking must be labeled as an oracle diagnostic. Test labels have been accessed; future runs are exploratory unless a new dataset/test split is obtained. See [UNBLOCKED.md](phases_outputs/UNBLOCKED.md) for next steps and remaining limits.
 
 ## Readiness evidence review (2026-11-08)
 

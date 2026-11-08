@@ -1,0 +1,14 @@
+{
+  "classification": "exploratory_ambiguity_excluded_local_correlation_diagnostic",
+  "code_sha256": "b8a13b1c2a4e03c021a66c140fd4117571437f5bdff9c3078f81e7248c78fb54",
+  "config_sha256": "bbcf755e9f10ba7b1efd2e76e265f53c412e9642d6ff5215fd0fcd26b414fcda",
+  "metrics_sha256": "4dac99b7168106cb99a1114d338c733b02ec229a04983a1d6b27ed40e60c6f94",
+  "protocol": "empirical-correlation-evaluation-v1",
+  "raw_input_sha256": {
+    "GUIDE_Test.csv": "fdfd7523efd6e3c26bd0290ba6acbcb237196cf923dd56a28e96802035db35a3",
+    "GUIDE_Test_Queue_Rankings.csv": "e4ea9308f45821128a3cd446ab19e6559edfc50709e72034ce957b6f0e2e65d6"
+  },
+  "report_sha256": "0d08c89435705b467f8b86e698c867b773c5d157a96cd31058ba7f1ffe0da56f",
+  "run_manifest_sha256": "29814804757059f25eeecbdeef0c891674fdc99e0e8e3090489eaf30d067f792",
+  "truth_rows_used": 30692
+}
