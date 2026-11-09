@@ -1,0 +1,18 @@
+{
+  "classification": "synthetic_only",
+  "seed": 73,
+  "cohort_ids": ["fixture-org-z", "fixture-org-a", "fixture-org-m", "fixture-org-b"],
+  "cohort_size": 2,
+  "partitions": {
+    "pilot": ["fixture-p1", "fixture-p2"],
+    "development": ["fixture-d1"],
+    "test": ["fixture-t1"]
+  },
+  "memberships": [
+    {"org": "fixture-o1", "alert": "fixture-a1", "incident_assignments": ["fixture-i1", "fixture-i2"]},
+    {"org": "fixture-o1", "alert": "fixture-a2", "incident_assignments": ["fixture-i1"]},
+    {"org": "fixture-o2", "alert": "fixture-a1", "incident_assignments": ["fixture-i9"]}
+  ],
+  "expected_ambiguous_excluded": 1,
+  "expected_eligible_memberships": 2
+}
