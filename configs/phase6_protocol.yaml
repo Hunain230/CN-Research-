@@ -1,0 +1,102 @@
+protocol_version: phase6a-study-protocol-v1
+created_date: '2026-11-09'
+project: multi-agent-llm-soc-threat-correlation-alert-prioritization
+dataset:
+  identifier: Microsoft GUIDE Test plus AIP queue rankings local release
+  status: partial_provenance
+  manifests:
+    validation: data/derived/audit/run_manifest.json
+    preprocessing: data/derived/preprocessing/run_manifest.json
+    split: data/derived/preprocessing/split_manifest.json
+  raw_input_hashes:
+    GUIDE_Test.csv: fdfd7523efd6e3c26bd0290ba6acbcb237196cf923dd56a28e96802035db35a3
+    GUIDE_Test_Queue_Rankings.csv: e4ea9308f45821128a3cd446ab19e6559edfc50709e72034ce957b6f0e2e65d6
+  provenance_status: local hashes verified against prior baseline; download receipt and byte-identical publisher checksum unresolved
+research_questions:
+  - Compare alert correlation and incident prioritization with frozen rule, retrieval, single-model, repeated-model, and multi-agent baselines, subject to data gates.
+  - Measure candidate-generation coverage/recall separately from pair classification and ranking.
+comparisons:
+  primary_comparator: B3 repeated single-LLM, only if an authorized empirical model is available
+  identical_queries_and_universes: required
+  external_model_calls: prohibited_without_separate_explicit_authorization
+cohorts:
+  existing_split_manifest: data/derived/preprocessing/split_manifest.json
+  split_assignment_sha256: c0e6689f78d878237adb7689c0f5b39980bb547ab3bbd83efe4e7b4e639fe024
+  roles: {pilot: method feasibility, development: model/prompt/feature/retrieval/threshold selection, validation: predeclared limited configuration selection only, test: evaluator only; existing cohort exploratory}
+  split_unit: organization
+  split_policy: preserve exact existing assignment; no reassignment; partitions must be disjoint
+  assigned_counts: {pilot: 10, development: 10, test: 30}
+  fresh_confirmatory_cohort: unavailable
+  fresh_selector: SHA-256(seed NUL exact OrgId) byte digest ascending, then exact OrgId; eligible unused membership must be independently documented before selection
+  seed: 0
+  eligible_organizations_reported: 499
+  assigned_organizations_in_manifest: 50
+features:
+  existing_approved_point_in_time_allowlist: configs/field_policy.yaml
+  allowlist_status: empty; blocks real-data model execution
+  assumption_only_local_fields: [DetectorId, Category, MitreTechniques, EntityType, EvidenceRole]
+  evaluator_only: [IncidentId, QueueRank, IncidentGrade, ActionGrouped, ActionGranular, all evaluator membership and ranking truth]
+  lineage_only: [Id, OrgId, AlertId, source_row_ordinal]
+  excluded: [Timestamp, entity values, direct identifiers, outcome-derived fields, all unapproved fields]
+  timestamp_requirement: retain source timestamps and prove availability at prediction time before any future approval; current timestamps excluded
+  missingness: missing is unknown; never infer negative evidence
+  leakage: labels inaccessible to candidate generation, agents, prompts, retrieval, calibration, threshold selection, and dashboard inference
+labels:
+  correlation:
+    source: data/derived/preprocessing/evaluator/incident_membership.csv
+    meaning: retrospective alert-to-incident membership; assignment conflicts unresolved
+    join_key: [OrgId, AlertId]
+    status: exploratory for unambiguous keys; full/joint claims blocked
+  ranking:
+    source: data/derived/preprocessing/evaluator/queue_labels.csv
+    meaning: expert top-20 queue-relative labels; top-20 task supported by prior source review, local scope/direction unresolved
+    join_key: [OrgId, IncidentId]
+    direction: unresolved; rank 1 highest is an existing assumption only
+    query_universe: all local composite incidents in eligible labeled organizations is an assumption, not verified publisher active-queue snapshot
+    non_top20: unjudged for graded ranking; top-20 membership may only be used under documented completeness assumptions
+ambiguity:
+  key: [OrgId, AlertId]
+  primary_policy: exclude every conflicting key and every evidence row belonging to it from primary correlation and joint metrics
+  resolution: only documented prediction-independent rule applied consistently; never majority vote, incident ordering, or model output
+  preserve_restricted_diagnostics: true
+metrics:
+  candidate_generation_recall: {formula: eligible relevant truth items retrieved / all eligible relevant truth items, report: [numerator, denominator, queries, exclusions, uncertainty_interval]}
+  pair_classification: {metrics: [precision, recall, F1], separate_denominators: [candidate_set, full_eligible_pair_universe], abstentions_and_failures: report separately; no silent drops}
+  ranking: {metrics: [Precision@10, Recall@20, nDCG@20], top20_relevance: expert top-20 membership, ndcg_gain: '2^(21-r)-1 for expert rank r=1..20; zero otherwise', uncertain_direction: show both directions; exploratory}
+  end_to_end: {metric: Recall@20, recovered_if: component completeness >= 0.8 and purity >= 0.8, status: blocked while conflicts unresolved}
+  operations: [decision coverage, review rate, abstention rate, invalid-output rate, latency, candidate-generation coverage only with full eligible universe]
+  aggregation: per-organization plus aggregate; organization independent unit
+  uncertainty: organization-level paired bootstrap 10000 resamples where feasible; report method and seed
+  candidate_recall_95_percent: target only, never guaranteed; requires valid truth universe and separate dev/confirmatory values with interval
+selection:
+  development: model, prompt, feature, retrieval, threshold, calibration choices
+  validation: only predeclared limited selection among frozen configurations
+  test: no selection or tuning; evaluator-only
+  confirmatory_run: once after configuration and hashes frozen; current cohort is exploratory and unavailable for confirmation
+test_access:
+  current_old_test_status: exploratory_labels_already_accessed
+  confirmatory_status: blocked_no_fresh_cohort
+  test_tuned_selection: forbidden
+  engineering_rerun: same frozen config only; retain failed manifest; any test-result adaptation exploratory
+  module6a_real_test_evaluation: prohibited
+determinism:
+  seed: 0
+  stable_cohort_order: SHA-256(seed NUL exact OrgId), then exact OrgId
+  ties_and_execution: method-specific frozen deterministic rule; record environment, code/config/input hashes, seed
+statistics:
+  report: per-organization, mean, median, uncertainty intervals, missing/failed queries
+  primary_phase2_outcomes: [pair-F1, end-to-end Recall@20]
+  bootstrap_unit: organization
+  resamples: 10000
+  original_holm_comparison_plan: four paired comparisons vs B0-B3; preserve only if those experiments become valid and executable
+deviations:
+  amendment_required: true
+  record: versioned dated amendment with reason, evidence, impact, hashes, and confirmatory/exploratory classification
+  historical_results: preserve and label exploratory; never overwrite prior run artifacts
+gates:
+  queue_rank_direction: unresolved
+  exact_query_snapshot: unresolved
+  feature_timing_privacy_approval: unresolved; existing real-data allowlist empty
+  alert_membership_semantics: unresolved
+  fresh_confirmatory_cohort: unavailable
+  downstream_real_data_experiments: blocked_for_confirmatory; existing prior test cohort may support exploratory descriptions only

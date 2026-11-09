@@ -8,6 +8,7 @@
 - [Phase 4 — Multi-agent system](phases_outputs/Phase4.md): C/P/V architecture, orchestration, schemas, offline provider and synthetic checks; no empirical results.
 - [Phase 5 — Evaluation pipeline](phases_outputs/Phase5.md): isolated evaluator, metrics/statistics, synthetic fixtures and report; no empirical evaluation.
 - [Phase 6 — Research experiments](phases_outputs/Phase6.md): exploratory assumption-based offline priority retrieval, five field ablations, ten masking conditions, tie-aware organization-bootstrap metrics, and aggregate figures; no empirical correlation or LLM comparison.
+- [Module 6A — Frozen study protocol](phases_outputs/Phase6A.md): prior test exposure audited; existing 10/10/30 split preserved; no fresh confirmatory cohort evidenced; confirmatory real-data work blocked.
 
 ## Implementation status
 
@@ -24,3 +25,5 @@ Full-dataset correlation and joint evaluation remain closed. A bounded ambiguity
 ## Readiness evidence review (2026-11-08)
 
 The original source review remains historical evidence for what was verified. The dated protocol amendment above now adopts assumptions for rank direction, local query universe, ambiguous-key exclusion, narrow local fields, split freeze, and B0. It does not claim those facts were independently verified. See [readiness evidence review](phases_outputs/readiness_evidence_review.md), [gate register](phases_outputs/research_gate_register.csv), and [protocol freeze](phases_outputs/empirical_protocol_freeze.md).
+
+Module 6A freezes the evaluation rules in [Phase6A_StudyProtocol.md](phases_outputs/Phase6A_StudyProtocol.md), configured by `configs/phase6_protocol.yaml`. The historical test cohort is exploratory because its labels and metrics were accessed. The existing split digest remains unchanged, but the repository does not enumerate a proven unused, label-independent remainder from which to freeze a fresh confirmatory cohort. QueueRank direction, exact queue snapshot, conflicting alert semantics, data provenance, and feature timing/privacy approval remain unresolved. Confirmatory real-data work is blocked; preserve earlier empirical results as exploratory.

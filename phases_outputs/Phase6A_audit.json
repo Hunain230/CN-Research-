@@ -1,0 +1,125 @@
+{
+  "ambiguity": {
+    "conflicting_key_count": 70702,
+    "counts_match": true,
+    "phase2_reported_count": 70702,
+    "policy": "exclude every conflicting composite (OrgId, AlertId) key from primary correlation/joint truth; retain restricted diagnostics"
+  },
+  "claims": {
+    "correlation_truth": "exploratory ambiguity-excluded diagnostic only; conflicting mapping semantics unresolved",
+    "data_release_provenance": "partial; local filenames/sizes and hashes are recorded, original download receipt unavailable",
+    "feature_provenance": "unresolved; five descriptors are an adopted local assumption, not independently approved; Phase 2 allowlist remains empty",
+    "guide_id_semantics": "unresolved",
+    "old_test_cohort": "exploratory",
+    "query_universe": "unresolved local active-queue/snapshot correspondence",
+    "queue_rank_direction": "unresolved; rank-1-highest is a prior assumption only",
+    "real_data_model_permission": "blocked until point-in-time/privacy approval and confirmatory cohort; only existing exploratory reruns can be explicitly classified exploratory"
+  },
+  "fresh_confirmatory_cohort": {
+    "membership_frozen": false,
+    "reason": "Prior test labels and metrics were accessed; only 50 of 499 eligible organization IDs are assigned in the preserved split manifest; aggregate artifacts do not identify an auditable unused remainder, and no complete prior exposure/label-independence record supports a frozen fresh cohort.",
+    "selector_specified": "SHA-256(seed NUL exact OrgId) then exact OrgId tie-break over an independently documented eligible and unused ID list",
+    "status": "unavailable"
+  },
+  "gate_records": [
+    "phases_outputs/UNBLOCKED.md",
+    "phases_outputs/readiness_evidence_review.md",
+    "phases_outputs/research_gate_register.csv",
+    "phases_outputs/test_evaluation_access_log.md",
+    "phases_outputs/empirical_protocol_freeze.md",
+    "phases_outputs/empirical_protocol_freeze_manifest.json"
+  ],
+  "manifests": {
+    "correlation_v1": {
+      "path": "outputs/phase6/correlation/phase6-correlation-20261108-v1/run_manifest.json",
+      "sha256": "29814804757059f25eeecbdeef0c891674fdc99e0e8e3090489eaf30d067f792"
+    },
+    "evaluation": {
+      "path": "outputs/phase6/priority/phase6-priority-20261108-v2/evaluation/evaluation_manifest.json",
+      "sha256": "2a190d50fd87b5538fa143a4f8e33f6a0cbfdad747537fd4aeb4f669d2e6e374"
+    },
+    "phase1": {
+      "path": "data/derived/audit/run_manifest.json",
+      "sha256": "1a5cee96f04f6ecdfc868513a2a1a84c1c768f5a9242b349499a61dde946f5f2"
+    },
+    "phase2": {
+      "path": "data/derived/preprocessing/run_manifest.json",
+      "sha256": "fb4a2ea8703edd7d34f2a3e5eed016a6a16fa99d784d900053daf17e989bf3d3"
+    },
+    "priority_v2": {
+      "path": "outputs/phase6/priority/phase6-priority-20261108-v2/run_manifest.json",
+      "sha256": "4c032043758d34a3c44b7f24ca49c9cbb0238c0ecd49cb2933ac4c100cdde884"
+    },
+    "split": {
+      "assignment_sha256": "c0e6689f78d878237adb7689c0f5b39980bb547ab3bbd83efe4e7b4e639fe024",
+      "path": "data/derived/preprocessing/split_manifest.json",
+      "sha256": "5c504d865af698833f7189628f1de12518e7f212a6ead2a1434d9b023a00ccbe"
+    }
+  },
+  "phase6_prediction_label_state": {
+    "correlation_evaluator_access_recorded": true,
+    "correlation_predictor_did_not_read_labels": true,
+    "metrics_or_amendments_after_access": true,
+    "priority_predictions_frozen_before_labels": true,
+    "priority_test_labels_read_by_evaluator": true
+  },
+  "phase6_runs": [
+    "outputs/phase6/priority/phase6-priority-20261108-v1",
+    "outputs/phase6/priority/phase6-priority-20261108-v2",
+    "outputs/phase6/correlation/phase6-correlation-20261108-v1"
+  ],
+  "source_facts": {
+    "ambiguous_key_count": 70702,
+    "feature_view_rows": 0,
+    "raw_hashes": {
+      "GUIDE": {
+        "bytes": 1087963831,
+        "path": "data\\raw\\GUIDE_Test.csv",
+        "sha256": "fdfd7523efd6e3c26bd0290ba6acbcb237196cf923dd56a28e96802035db35a3"
+      },
+      "queue": {
+        "bytes": 136325,
+        "path": "data\\raw\\GUIDE_Test_Queue_Rankings.csv",
+        "sha256": "e4ea9308f45821128a3cd446ab19e6559edfc50709e72034ce957b6f0e2e65d6"
+      }
+    },
+    "source_rows": {
+      "GUIDE": 4147992,
+      "queue": 9980
+    }
+  },
+  "specifications": [
+    "01_dataset_validation.md",
+    "02_preprocessing.md",
+    "03_Baselines.md",
+    "04-Multi-agent system.md",
+    "05-Evaluation.md",
+    "06-Research-experiments.md",
+    "phases_outputs/Phase1.md",
+    "phases_outputs/Phase2.md",
+    "phases_outputs/Phase3.md",
+    "phases_outputs/Phase4.md",
+    "phases_outputs/Phase5.md",
+    "phases_outputs/Phase6.md"
+  ],
+  "split": {
+    "assigned_count": 50,
+    "assignment_sha256": "c0e6689f78d878237adb7689c0f5b39980bb547ab3bbd83efe4e7b4e639fe024",
+    "disjoint": true,
+    "eligible_org_count": 499,
+    "eligible_unassigned_count": 449,
+    "partition_counts": {
+      "development": 10,
+      "pilot": 10,
+      "test": 30
+    },
+    "split_manifest_status": "provisional; expert top-20 semantics unverified"
+  },
+  "test_access": {
+    "confirmatory_access": "blocked",
+    "existing_test_results": "exploratory; labels already read",
+    "new_test_evaluation_during_6A": false,
+    "real_data_model_gate": "closed because configs/field_policy.yaml has empty allowlist; local five-field policy is assumption-only",
+    "test_tuned_selection": "blocked"
+  }
+}

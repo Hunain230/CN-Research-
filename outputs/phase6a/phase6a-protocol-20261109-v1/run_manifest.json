@@ -1,0 +1,12 @@
+{
+  "audit_sha256": "37cb3917cda2f4cb5ba526c04676c99e328c3127f147de22ff36fb7d69506cbf",
+  "classification": "protocol_frozen_prior_test_exploratory_fresh_confirmatory_unavailable",
+  "config_sha256": "3748fc7765b3425770ba3c262299fc9ae9be96484d2506e788aa4ca3ab4fdf99",
+  "created_date": "2026-11-09",
+  "protocol": "phase6a-study-protocol-v1",
+  "protocol_document_sha256": "7dc3e383c5ca32e205538a23869705dd9d039b6cc983d1d340fc3236d7c972b1",
+  "protocol_sha256": "0c2d39cd4f6310952634957e7fd1e7a921cbf5035f827d8d8aed0bd0ed1a9236",
+  "split_assignment_sha256": "c0e6689f78d878237adb7689c0f5b39980bb547ab3bbd83efe4e7b4e639fe024",
+  "split_manifest_sha256": "5c504d865af698833f7189628f1de12518e7f212a6ead2a1434d9b023a00ccbe",
+  "test_labels_read": false
+}

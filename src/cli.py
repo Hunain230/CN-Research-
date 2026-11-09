@@ -188,11 +188,21 @@ def main():
     g=sub.add_parser("run-agents"); g.add_argument("--config",default="configs/agents.yaml"); g.add_argument("--mode",choices=("synthetic","real"),default="synthetic"); g.add_argument("--out",required=True)
     sub.add_parser("evaluation-self-test")
     ev=sub.add_parser("evaluate"); ev.add_argument("--mode",choices=("synthetic","real"),required=True); ev.add_argument("--predictions",required=True); ev.add_argument("--labels",required=True); ev.add_argument("--config",default="configs/evaluation.yaml"); ev.add_argument("--out",required=True)
+    sub.add_parser("phase6a-self-test", help="run synthetic-only Module 6A protocol checks")
+    pa=sub.add_parser("phase6a-audit", help="audit and freeze Module 6A protocol records without model evaluation")
+    pa.add_argument("--root",default="."); pa.add_argument("--out",default="outputs/phase6a/phase6a-protocol-20261109-v1")
     a=p.parse_args()
     try:
         if a.command=="validate":
             if a.chunk_rows<1: p.error("--chunk-rows must be positive")
             return main_validate(a)
+        if a.command=="phase6a-self-test":
+            from .phase6a import self_test
+            print(json.dumps(self_test(Path.cwd()),sort_keys=True)); return 0
+        if a.command=="phase6a-audit":
+            from .phase6a import audit
+            result,manifest=audit(Path(a.root),Path(a.out))
+            print(json.dumps({"status":"protocol_audit_complete","test_cohort":"exploratory","fresh_confirmatory_cohort":"unavailable","protocol_sha256":manifest["protocol_sha256"],"audit":"phases_outputs/Phase6A_audit.json","run_manifest":str(Path(a.out)/"run_manifest.json")},sort_keys=True)); return 0
         if a.command in {"evaluation-self-test","evaluate"}:
             from .evaluation.runner import self_test, evaluate
             if a.command=="evaluation-self-test": print(json.dumps(self_test(Path.cwd()),sort_keys=True)); return 0
