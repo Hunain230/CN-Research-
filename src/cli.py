@@ -191,6 +191,13 @@ def main():
     sub.add_parser("phase6a-self-test", help="run synthetic-only Module 6A protocol checks")
     pa=sub.add_parser("phase6a-audit", help="audit and freeze Module 6A protocol records without model evaluation")
     pa.add_argument("--root",default="."); pa.add_argument("--out",default="outputs/phase6a/phase6a-protocol-20261109-v1")
+    sub.add_parser("phase6b-self-test", help="run synthetic-only Module 6B disposition checks")
+    pb=sub.add_parser("phase6b-audit", help="audit Phase 6 data/label dispositions without reading raw evidence")
+    pb.add_argument("--root",default=".")
+    pg=sub.add_parser("phase6g-dashboard", help="build the aggregate-only static Phase 6 dashboard")
+    pg.add_argument("--root",default=".")
+    pf=sub.add_parser("phase6f-package", help="freeze an aggregate-only Phase 6 handoff package")
+    pf.add_argument("--root",default="."); pf.add_argument("--run-id",required=True)
     a=p.parse_args()
     try:
         if a.command=="validate":
@@ -203,6 +210,19 @@ def main():
             from .phase6a import audit
             result,manifest=audit(Path(a.root),Path(a.out))
             print(json.dumps({"status":"protocol_audit_complete","test_cohort":"exploratory","fresh_confirmatory_cohort":"unavailable","protocol_sha256":manifest["protocol_sha256"],"audit":"phases_outputs/Phase6A_audit.json","run_manifest":str(Path(a.out)/"run_manifest.json")},sort_keys=True)); return 0
+        if a.command in {"phase6b-self-test","phase6b-audit"}:
+            from .phase6b import self_test, build, write
+            if a.command=="phase6b-self-test": print(json.dumps({"status":"phase6b_self_test_pass","assertions":self_test()},sort_keys=True)); return 0
+            result=build(Path(a.root)); write(Path(a.root).resolve(),result)
+            print(json.dumps({"status":"phase6b_audit_written","field_count":len(result["field_dispositions"]),"conflicts":result["ambiguity"]["conflicting_composite_alert_keys"]},sort_keys=True)); return 0
+        if a.command=="phase6g-dashboard":
+            from .phase6g_dashboard import payload, write_dashboard
+            target=write_dashboard(Path(a.root).resolve(),payload(Path(a.root).resolve()))
+            print(json.dumps({"status":"dashboard_built","path":target.as_posix(),"bytes":target.stat().st_size},sort_keys=True)); return 0
+        if a.command=="phase6f-package":
+            from .phase6f_package import build
+            target=build(Path(a.root),a.run_id)
+            print(json.dumps({"status":"aggregate_handoff_frozen","path":target.as_posix(),"files":len(list(target.iterdir()))},sort_keys=True)); return 0
         if a.command in {"evaluation-self-test","evaluate"}:
             from .evaluation.runner import self_test, evaluate
             if a.command=="evaluation-self-test": print(json.dumps(self_test(Path.cwd()),sort_keys=True)); return 0

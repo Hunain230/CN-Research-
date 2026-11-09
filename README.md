@@ -2,7 +2,7 @@
 
 This repository contains the implementation and audit records for a retrospective, offline research study of alert correlation and incident prioritization in Microsoft GUIDE. The proposed workflow is correlate–prioritize–verify (C/P/V), compared with rule, retrieval, and single-LLM baselines when empirical gates permit.
 
-**Current status:** validation and preprocessing have been run on the supplied files. Baselines, agents, and the evaluator have synthetic plumbing only. Empirical comparison is not ready: no model-visible features are approved, alert membership conflicts remain unresolved, priority rank direction and local query-universe mapping need confirmation, the organization split is provisional, and the evaluation protocol is not frozen. Do not interpret synthetic results as model performance.
+**Current status:** Phases 1–5 implementation and synthetic plumbing are recorded; Phase 6B–6G produced a data/label audit, an aggregate-only offline handoff, and a static dashboard over prior exploratory results. The existing test cohort was accessed, so results are exploratory. The priority experiment is an oracle-group ceiling; the bounded correlation diagnostic has very low candidate coverage and recall. No empirical LLM/C/P/V comparison or 95% recall result exists. Hosted model calls remain unauthorized, confirmatory evaluation is blocked, and the dashboard is a static report viewer rather than an operational SOC system.
 
 ## Start here
 
@@ -45,6 +45,10 @@ GUIDE rows are evidence rows; one row must not be treated as one alert. `Id` is 
 Phase 1 found 303,220 distinct composite incident keys, 637,320 composite alert keys, and 70,702 alert keys with conflicting incident assignments. The Phase 2 restricted review artifact preserves all conflicting assignments and their source-row ordinals. A later aggregate investigation counted 150,743 distinct assignments across those conflict keys and 830,109 evidence rows. Repeated evidence does not explain why one alert key maps to multiple incidents; no mapping has been selected, voted, discarded, or converted into pair truth.
 
 All 9,980 queue labels join to distinct composite incident keys. The publisher and primary AIP paper document a queue-relative expert top-20 selected from a full eligible queue, not triage outcomes. Local structure is consistent with the documented 499 queues and 20 labels per queue. Still unresolved are numeric rank direction and how the publisher's `Rank`/`Split` and full active-queue definition correspond exactly to the local `QueueRank` file, which has no `Split` column. The 293,240 unmatched GUIDE incidents are unlabeled, not negative examples. Source links and precise findings are in the [readiness evidence review](phases_outputs/readiness_evidence_review.md).
+
+## Current Phase 6 follow-on status
+
+See [the Phase 6B–6G handoff](phases_outputs/Phase6B-G.md). Module records: `Phase6B.md`, `Phase6C.md`, `Phase6D.md`, `Phase6E.md`, `Phase6F.md`, and `Phase6G.md` under `phases_outputs/`. The interactive aggregate dashboard is [dashboard/index.html](dashboard/index.html). The final offline package is under `outputs/phase6/phase6-final-offline-20261109-v3/`.
 
 ## Phase status
 

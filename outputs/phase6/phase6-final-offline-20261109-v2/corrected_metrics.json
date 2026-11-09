@@ -1,0 +1,85 @@
+{
+  "candidate_pairs": 194296,
+  "candidate_set_recall_status": "omitted_mechanically_perfect_for_all_LINK_candidate_rule",
+  "classification": "exploratory_ambiguity_excluded_correlation_metric_report_correction",
+  "disclosure": "Post-test-access aggregate-metric correction; no predictions, candidate pairs or labels changed.",
+  "full_positive_pair_universe": 6142793,
+  "full_same_org_pair_universe": 67048813,
+  "historical_metrics_sha256": "4dac99b7168106cb99a1114d338c733b02ec229a04983a1d6b27ed40e60c6f94",
+  "macro_organization_metrics": {
+    "candidate_generation_coverage": {
+      "bootstrap_resamples": 10000,
+      "ci95": [
+        0.035873649225013016,
+        0.09193703854778128
+      ],
+      "mean": 0.06196320127098127,
+      "median": 0.03392024604697837,
+      "n_orgs": 30,
+      "seed": 20261110
+    },
+    "candidate_set_precision": {
+      "bootstrap_resamples": 10000,
+      "ci95": [
+        0.035194084304308294,
+        0.2018888046837991
+      ],
+      "mean": 0.10926716112552219,
+      "median": 0.014798593903071516,
+      "n_orgs": 30,
+      "seed": 20261110
+    },
+    "full_pair_f1": {
+      "bootstrap_resamples": 10000,
+      "ci95": [
+        0.019723593806606488,
+        0.1245418097856418
+      ],
+      "mean": 0.06027264493670647,
+      "median": 0.013339302605434328,
+      "n_orgs": 30,
+      "seed": 20261110
+    },
+    "full_pair_precision": {
+      "bootstrap_resamples": 10000,
+      "ci95": [
+        0.035194084304308294,
+        0.2018888046837991
+      ],
+      "mean": 0.10926716112552219,
+      "median": 0.014798593903071516,
+      "n_orgs": 30,
+      "seed": 20261110
+    },
+    "full_pair_recall": {
+      "bootstrap_resamples": 10000,
+      "ci95": [
+        0.15252202602755707,
+        0.36332717038503937
+      ],
+      "mean": 0.2534784289945338,
+      "median": 0.14189453762318083,
+      "n_orgs": 30,
+      "seed": 20261110
+    }
+  },
+  "mean_clustering_diagnostics": {
+    "false_merges": 4.966666666666667,
+    "false_splits": 50.46666666666667,
+    "predicted_components": 651.8,
+    "singleton_components": 646.0333333333333
+  },
+  "micro": {
+    "candidate_generation_coverage": 0.002897829078644539,
+    "f1": 0.016373132837490527,
+    "fn_full_pair": 6090914,
+    "fp": 142417,
+    "precision": 0.2670101288755301,
+    "recall": 0.008445506791454636,
+    "tp": 51879
+  },
+  "run_id": "phase6-correlation-20261108-v1",
+  "source_prediction_run_manifest_sha256": "29814804757059f25eeecbdeef0c891674fdc99e0e8e3090489eaf30d067f792",
+  "test_organizations": 30,
+  "unambiguous_alert_keys": 30692
+}

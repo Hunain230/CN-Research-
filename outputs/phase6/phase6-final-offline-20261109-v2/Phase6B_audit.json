@@ -1,0 +1,490 @@
+{
+  "ambiguity": {
+    "conflicting_composite_alert_keys": 70702,
+    "policy": "exclude all conflicting keys and associated evidence from primary correlation/joint scoring; preserve restricted diagnostic records; never choose an incident assignment heuristically",
+    "source_artifact_sha256": "1355ba97e623023faa59c5e78ef90679029ccfbe8346d2ac415ccf57493135a9"
+  },
+  "assumption_only_local_offline_fields": [
+    "DetectorId",
+    "Category",
+    "MitreTechniques",
+    "EntityType",
+    "EvidenceRole"
+  ],
+  "classification": "assumption_based_local_offline_only; prior test results exploratory",
+  "created_utc": "2026-11-09T16:35:56.826093+00:00",
+  "evidence_sha256": {
+    "configs/empirical_field_policy.yaml": "5e3777312a411b37cc1dc44cbe3b0d359d3d463e8dff6b58844cafbbda0ae211",
+    "configs/field_policy.yaml": "0636d2f4e4f17edcd5402d67cac291484d3a39493b2c7377b562735771065ee5",
+    "configs/phase6_protocol.yaml": "3748fc7765b3425770ba3c262299fc9ae9be96484d2506e788aa4ca3ab4fdf99",
+    "data/derived/audit/field_disposition.csv": "c1a63867da45555d74c1c4f026505b29b99ad62563196c2b9dd31bdd60df8975",
+    "data/derived/preprocessing/evaluator/incident_membership.csv": "38cc81251c095e3ff885ee5d66cf55f53c083dcb5d8878a512294ef56a52678c",
+    "data/derived/preprocessing/evaluator/queue_labels.csv": "e4ea9308f45821128a3cd446ab19e6559edfc50709e72034ce957b6f0e2e65d6",
+    "data/derived/preprocessing/leakage_audit.json": "d420fc431cd586428c9226230e47bae5add9e27db4e0b8bf10fc659fb437b20d",
+    "data/derived/preprocessing/preprocessing.json": "0a70efa3bc07f411e78c83ddffaf6133c24c95980ed88c8804ffb2516d74889c",
+    "data/derived/preprocessing/review/ambiguous_alert_memberships.csv": "1355ba97e623023faa59c5e78ef90679029ccfbe8346d2ac415ccf57493135a9",
+    "data/derived/preprocessing/split_manifest.json": "5c504d865af698833f7189628f1de12518e7f212a6ead2a1434d9b023a00ccbe",
+    "phases_outputs/Phase6A_audit.json": "37cb3917cda2f4cb5ba526c04676c99e328c3127f147de22ff36fb7d69506cbf"
+  },
+  "feature_rows": 0,
+  "field_dispositions": [
+    {
+      "cardinality_estimate": "298435",
+      "evidence_basis": "Explicit deny/lineage policy or unresolved time semantics; not a model feature.",
+      "field": "Id",
+      "module6b_disposition": "denied_or_lineage_only",
+      "null_rate": "0.0",
+      "phase1_disposition": "deny"
+    },
+    {
+      "cardinality_estimate": "4299",
+      "evidence_basis": "Explicit deny/lineage policy or unresolved time semantics; not a model feature.",
+      "field": "OrgId",
+      "module6b_disposition": "denied_or_lineage_only",
+      "null_rate": "0.0",
+      "phase1_disposition": "deny"
+    },
+    {
+      "cardinality_estimate": "240217",
+      "evidence_basis": "Explicitly listed in local evaluator-only policy; prohibited from inference inputs.",
+      "field": "IncidentId",
+      "module6b_disposition": "evaluator_only",
+      "null_rate": "0.0",
+      "phase1_disposition": "deny"
+    },
+    {
+      "cardinality_estimate": "637742",
+      "evidence_basis": "Explicit deny/lineage policy or unresolved time semantics; not a model feature.",
+      "field": "AlertId",
+      "module6b_disposition": "denied_or_lineage_only",
+      "null_rate": "0.0",
+      "phase1_disposition": "deny"
+    },
+    {
+      "cardinality_estimate": "479128",
+      "evidence_basis": "Explicit deny/lineage policy or unresolved time semantics; not a model feature.",
+      "field": "Timestamp",
+      "module6b_disposition": "denied_or_lineage_only",
+      "null_rate": "0.0",
+      "phase1_disposition": "deny_pending"
+    },
+    {
+      "cardinality_estimate": "5780",
+      "evidence_basis": "User-directed local offline assumption; not independent timing/privacy approval and not authorized for hosted APIs.",
+      "field": "DetectorId",
+      "module6b_disposition": "assumption_only_local_offline",
+      "null_rate": "0.0",
+      "phase1_disposition": "deny_pending"
+    },
+    {
+      "cardinality_estimate": "42182",
+      "evidence_basis": "No approved provenance/timing basis in the current local policy; remain denied.",
+      "field": "AlertTitle",
+      "module6b_disposition": "unresolved_default_deny",
+      "null_rate": "0.0",
+      "phase1_disposition": "deny_pending"
+    },
+    {
+      "cardinality_estimate": "19",
+      "evidence_basis": "User-directed local offline assumption; not independent timing/privacy approval and not authorized for hosted APIs.",
+      "field": "Category",
+      "module6b_disposition": "assumption_only_local_offline",
+      "null_rate": "0.0",
+      "phase1_disposition": "deny_pending"
+    },
+    {
+      "cardinality_estimate": "989",
+      "evidence_basis": "User-directed local offline assumption; not independent timing/privacy approval and not authorized for hosted APIs.",
+      "field": "MitreTechniques",
+      "module6b_disposition": "assumption_only_local_offline",
+      "null_rate": "0.55619779",
+      "phase1_disposition": "deny_pending"
+    },
+    {
+      "cardinality_estimate": "3",
+      "evidence_basis": "Explicitly listed in local evaluator-only policy; prohibited from inference inputs.",
+      "field": "IncidentGrade",
+      "module6b_disposition": "evaluator_only",
+      "null_rate": "0.0",
+      "phase1_disposition": "deny"
+    },
+    {
+      "cardinality_estimate": "2",
+      "evidence_basis": "Explicitly listed in local evaluator-only policy; prohibited from inference inputs.",
+      "field": "ActionGrouped",
+      "module6b_disposition": "evaluator_only",
+      "null_rate": "0.99953881",
+      "phase1_disposition": "deny"
+    },
+    {
+      "cardinality_estimate": "13",
+      "evidence_basis": "Explicitly listed in local evaluator-only policy; prohibited from inference inputs.",
+      "field": "ActionGranular",
+      "module6b_disposition": "evaluator_only",
+      "null_rate": "0.99953881",
+      "phase1_disposition": "deny"
+    },
+    {
+      "cardinality_estimate": "29",
+      "evidence_basis": "User-directed local offline assumption; not independent timing/privacy approval and not authorized for hosted APIs.",
+      "field": "EntityType",
+      "module6b_disposition": "assumption_only_local_offline",
+      "null_rate": "0.0",
+      "phase1_disposition": "deny_pending"
+    },
+    {
+      "cardinality_estimate": "2",
+      "evidence_basis": "User-directed local offline assumption; not independent timing/privacy approval and not authorized for hosted APIs.",
+      "field": "EvidenceRole",
+      "module6b_disposition": "assumption_only_local_offline",
+      "null_rate": "0.0",
+      "phase1_disposition": "deny_pending"
+    },
+    {
+      "cardinality_estimate": "46487",
+      "evidence_basis": "Explicit deny/lineage policy or unresolved time semantics; not a model feature.",
+      "field": "DeviceId",
+      "module6b_disposition": "denied_or_lineage_only",
+      "null_rate": "0.0",
+      "phase1_disposition": "deny"
+    },
+    {
+      "cardinality_estimate": "60304",
+      "evidence_basis": "Explicit deny/lineage policy or unresolved time semantics; not a model feature.",
+      "field": "Sha256",
+      "module6b_disposition": "denied_or_lineage_only",
+      "null_rate": "0.0",
+      "phase1_disposition": "deny"
+    },
+    {
+      "cardinality_estimate": "172220",
+      "evidence_basis": "Explicit deny/lineage policy or unresolved time semantics; not a model feature.",
+      "field": "IpAddress",
+      "module6b_disposition": "denied_or_lineage_only",
+      "null_rate": "0.0",
+      "phase1_disposition": "deny"
+    },
+    {
+      "cardinality_estimate": "68542",
+      "evidence_basis": "Explicit deny/lineage policy or unresolved time semantics; not a model feature.",
+      "field": "Url",
+      "module6b_disposition": "denied_or_lineage_only",
+      "null_rate": "0.0",
+      "phase1_disposition": "deny"
+    },
+    {
+      "cardinality_estimate": "213572",
+      "evidence_basis": "Explicit deny/lineage policy or unresolved time semantics; not a model feature.",
+      "field": "AccountSid",
+      "module6b_disposition": "denied_or_lineage_only",
+      "null_rate": "0.0",
+      "phase1_disposition": "deny"
+    },
+    {
+      "cardinality_estimate": "311272",
+      "evidence_basis": "Explicit deny/lineage policy or unresolved time semantics; not a model feature.",
+      "field": "AccountUpn",
+      "module6b_disposition": "denied_or_lineage_only",
+      "null_rate": "0.0",
+      "phase1_disposition": "deny"
+    },
+    {
+      "cardinality_estimate": "207227",
+      "evidence_basis": "Explicit deny/lineage policy or unresolved time semantics; not a model feature.",
+      "field": "AccountObjectId",
+      "module6b_disposition": "denied_or_lineage_only",
+      "null_rate": "0.0",
+      "phase1_disposition": "deny"
+    },
+    {
+      "cardinality_estimate": "222681",
+      "evidence_basis": "Explicit deny/lineage policy or unresolved time semantics; not a model feature.",
+      "field": "AccountName",
+      "module6b_disposition": "denied_or_lineage_only",
+      "null_rate": "0.0",
+      "phase1_disposition": "deny"
+    },
+    {
+      "cardinality_estimate": "75038",
+      "evidence_basis": "Explicit deny/lineage policy or unresolved time semantics; not a model feature.",
+      "field": "DeviceName",
+      "module6b_disposition": "denied_or_lineage_only",
+      "null_rate": "0.0",
+      "phase1_disposition": "deny"
+    },
+    {
+      "cardinality_estimate": "180612",
+      "evidence_basis": "Explicit deny/lineage policy or unresolved time semantics; not a model feature.",
+      "field": "NetworkMessageId",
+      "module6b_disposition": "denied_or_lineage_only",
+      "null_rate": "0.0",
+      "phase1_disposition": "deny"
+    },
+    {
+      "cardinality_estimate": "14498",
+      "evidence_basis": "Explicit deny/lineage policy or unresolved time semantics; not a model feature.",
+      "field": "EmailClusterId",
+      "module6b_disposition": "denied_or_lineage_only",
+      "null_rate": "0.98994526",
+      "phase1_disposition": "deny"
+    },
+    {
+      "cardinality_estimate": "995",
+      "evidence_basis": "Explicit deny/lineage policy or unresolved time semantics; not a model feature.",
+      "field": "RegistryKey",
+      "module6b_disposition": "denied_or_lineage_only",
+      "null_rate": "0.0",
+      "phase1_disposition": "deny"
+    },
+    {
+      "cardinality_estimate": "258",
+      "evidence_basis": "Explicit deny/lineage policy or unresolved time semantics; not a model feature.",
+      "field": "RegistryValueName",
+      "module6b_disposition": "denied_or_lineage_only",
+      "null_rate": "0.0",
+      "phase1_disposition": "deny"
+    },
+    {
+      "cardinality_estimate": "497",
+      "evidence_basis": "Explicit deny/lineage policy or unresolved time semantics; not a model feature.",
+      "field": "RegistryValueData",
+      "module6b_disposition": "denied_or_lineage_only",
+      "null_rate": "0.0",
+      "phase1_disposition": "deny"
+    },
+    {
+      "cardinality_estimate": "946",
+      "evidence_basis": "Explicit deny/lineage policy or unresolved time semantics; not a model feature.",
+      "field": "ApplicationId",
+      "module6b_disposition": "denied_or_lineage_only",
+      "null_rate": "0.0",
+      "phase1_disposition": "deny"
+    },
+    {
+      "cardinality_estimate": "1503",
+      "evidence_basis": "Explicit deny/lineage policy or unresolved time semantics; not a model feature.",
+      "field": "ApplicationName",
+      "module6b_disposition": "denied_or_lineage_only",
+      "null_rate": "0.0",
+      "phase1_disposition": "deny"
+    },
+    {
+      "cardinality_estimate": "380",
+      "evidence_basis": "Explicit deny/lineage policy or unresolved time semantics; not a model feature.",
+      "field": "OAuthApplicationId",
+      "module6b_disposition": "denied_or_lineage_only",
+      "null_rate": "0.0",
+      "phase1_disposition": "deny"
+    },
+    {
+      "cardinality_estimate": "1160",
+      "evidence_basis": "Explicit deny/lineage policy or unresolved time semantics; not a model feature.",
+      "field": "ThreatFamily",
+      "module6b_disposition": "denied_or_lineage_only",
+      "null_rate": "0.99243538",
+      "phase1_disposition": "deny"
+    },
+    {
+      "cardinality_estimate": "121359",
+      "evidence_basis": "Explicit deny/lineage policy or unresolved time semantics; not a model feature.",
+      "field": "FileName",
+      "module6b_disposition": "denied_or_lineage_only",
+      "null_rate": "0.0",
+      "phase1_disposition": "deny"
+    },
+    {
+      "cardinality_estimate": "44220",
+      "evidence_basis": "Explicit deny/lineage policy or unresolved time semantics; not a model feature.",
+      "field": "FolderPath",
+      "module6b_disposition": "denied_or_lineage_only",
+      "null_rate": "0.0",
+      "phase1_disposition": "deny"
+    },
+    {
+      "cardinality_estimate": "1099",
+      "evidence_basis": "Explicit deny/lineage policy or unresolved time semantics; not a model feature.",
+      "field": "ResourceIdName",
+      "module6b_disposition": "denied_or_lineage_only",
+      "null_rate": "0.0",
+      "phase1_disposition": "deny"
+    },
+    {
+      "cardinality_estimate": "23",
+      "evidence_basis": "Explicit deny/lineage policy or unresolved time semantics; not a model feature.",
+      "field": "ResourceType",
+      "module6b_disposition": "denied_or_lineage_only",
+      "null_rate": "0.9992782",
+      "phase1_disposition": "deny_pending"
+    },
+    {
+      "cardinality_estimate": "9",
+      "evidence_basis": "Explicit deny/lineage policy or unresolved time semantics; not a model feature.",
+      "field": "Roles",
+      "module6b_disposition": "denied_or_lineage_only",
+      "null_rate": "0.97380058",
+      "phase1_disposition": "deny_pending"
+    },
+    {
+      "cardinality_estimate": "5",
+      "evidence_basis": "Explicit deny/lineage policy or unresolved time semantics; not a model feature.",
+      "field": "OSFamily",
+      "module6b_disposition": "denied_or_lineage_only",
+      "null_rate": "0.0",
+      "phase1_disposition": "deny_pending"
+    },
+    {
+      "cardinality_estimate": "43",
+      "evidence_basis": "Explicit deny/lineage policy or unresolved time semantics; not a model feature.",
+      "field": "OSVersion",
+      "module6b_disposition": "denied_or_lineage_only",
+      "null_rate": "0.0",
+      "phase1_disposition": "deny_pending"
+    },
+    {
+      "cardinality_estimate": "5",
+      "evidence_basis": "Explicit deny/lineage policy or unresolved time semantics; not a model feature.",
+      "field": "AntispamDirection",
+      "module6b_disposition": "denied_or_lineage_only",
+      "null_rate": "0.98155469",
+      "phase1_disposition": "deny_pending"
+    },
+    {
+      "cardinality_estimate": "2",
+      "evidence_basis": "Explicit deny/lineage policy or unresolved time semantics; not a model feature.",
+      "field": "SuspicionLevel",
+      "module6b_disposition": "denied_or_lineage_only",
+      "null_rate": "0.84333745",
+      "phase1_disposition": "deny"
+    },
+    {
+      "cardinality_estimate": "4",
+      "evidence_basis": "Explicit deny/lineage policy or unresolved time semantics; not a model feature.",
+      "field": "LastVerdict",
+      "module6b_disposition": "denied_or_lineage_only",
+      "null_rate": "0.76067167",
+      "phase1_disposition": "deny"
+    },
+    {
+      "cardinality_estimate": "213",
+      "evidence_basis": "Explicit deny/lineage policy or unresolved time semantics; not a model feature.",
+      "field": "CountryCode",
+      "module6b_disposition": "denied_or_lineage_only",
+      "null_rate": "0.0",
+      "phase1_disposition": "deny"
+    },
+    {
+      "cardinality_estimate": "1157",
+      "evidence_basis": "Explicit deny/lineage policy or unresolved time semantics; not a model feature.",
+      "field": "State",
+      "module6b_disposition": "denied_or_lineage_only",
+      "null_rate": "0.0",
+      "phase1_disposition": "deny"
+    },
+    {
+      "cardinality_estimate": "6417",
+      "evidence_basis": "Explicit deny/lineage policy or unresolved time semantics; not a model feature.",
+      "field": "City",
+      "module6b_disposition": "denied_or_lineage_only",
+      "null_rate": "0.0",
+      "phase1_disposition": "deny"
+    },
+    {
+      "cardinality_estimate": "2",
+      "evidence_basis": "Explicit deny/lineage policy or unresolved time semantics; not a model feature.",
+      "field": "Usage",
+      "module6b_disposition": "denied_or_lineage_only",
+      "null_rate": "0.0",
+      "phase1_disposition": "deny"
+    },
+    {
+      "cardinality_estimate": "491",
+      "evidence_basis": "Explicit deny/lineage policy or unresolved time semantics; not a model feature.",
+      "field": "OrgId",
+      "module6b_disposition": "denied_or_lineage_only",
+      "null_rate": "0.0",
+      "phase1_disposition": "deny"
+    },
+    {
+      "cardinality_estimate": "9685",
+      "evidence_basis": "Explicitly listed in local evaluator-only policy; prohibited from inference inputs.",
+      "field": "IncidentId",
+      "module6b_disposition": "evaluator_only",
+      "null_rate": "0.0",
+      "phase1_disposition": "deny"
+    },
+    {
+      "cardinality_estimate": "20",
+      "evidence_basis": "Explicitly listed in local evaluator-only policy; prohibited from inference inputs.",
+      "field": "QueueRank",
+      "module6b_disposition": "evaluator_only",
+      "null_rate": "0.0",
+      "phase1_disposition": "deny"
+    }
+  ],
+  "labels": [
+    {
+      "join_key": "(OrgId, AlertId)",
+      "label": "IncidentId membership",
+      "source": "data/derived/preprocessing/evaluator/incident_membership.csv",
+      "status": "evaluator_only; conflicting membership semantics unresolved",
+      "use": "Ambiguity-excluded exploratory correlation diagnostic only; never model input."
+    },
+    {
+      "join_key": "(OrgId, IncidentId)",
+      "label": "QueueRank",
+      "source": "data/derived/preprocessing/evaluator/queue_labels.csv",
+      "status": "evaluator_only; rank direction and local queue snapshot unresolved",
+      "use": "Previously accessed test cohort supports exploratory reporting only; rank-direction sensitivity required for nDCG."
+    },
+    {
+      "join_key": "incident-level source association",
+      "label": "IncidentGrade / response actions",
+      "source": "GUIDE source columns and evaluator store",
+      "status": "outcome/evaluator-only; not approved as features",
+      "use": "Excluded from candidate generation, prompts, calibration, dashboard inference, and ranking features."
+    }
+  ],
+  "module": "6B",
+  "official_field_policy_approved_fields": [],
+  "prohibited_actions": [
+    "use evaluator labels as features",
+    "resolve ambiguous keys by vote/order/model",
+    "infer QueueRank direction from score quality",
+    "tune on existing test results",
+    "send evidence to hosted services",
+    "promote assumption-only fields to approved status"
+  ],
+  "protocol": "phase6b-data-label-disposition-v1",
+  "raw_input_hashes_from_frozen_audit": {
+    "GUIDE": {
+      "bytes": 1087963831,
+      "path": "data\\raw\\GUIDE_Test.csv",
+      "sha256": "fdfd7523efd6e3c26bd0290ba6acbcb237196cf923dd56a28e96802035db35a3"
+    },
+    "queue": {
+      "bytes": 136325,
+      "path": "data\\raw\\GUIDE_Test_Queue_Rankings.csv",
+      "sha256": "e4ea9308f45821128a3cd446ab19e6559edfc50709e72034ce957b6f0e2e65d6"
+    }
+  },
+  "split": {
+    "assigned_count": 50,
+    "assignment_sha256": "c0e6689f78d878237adb7689c0f5b39980bb547ab3bbd83efe4e7b4e639fe024",
+    "disjoint": true,
+    "eligible_org_count": 499,
+    "eligible_unassigned_count": 449,
+    "partition_counts": {
+      "development": 10,
+      "pilot": 10,
+      "test": 30
+    },
+    "split_manifest_status": "provisional; expert top-20 semantics unverified"
+  },
+  "status": {
+    "confirmatory_real_data": "blocked; no fresh confirmed cohort and existing test was accessed",
+    "feature_view": "empty; no production/confirmatory model fields approved",
+    "hosted_llm_or_external_transmission": "not authorized",
+    "local_assumption_based_exploratory_runs": "permitted only under existing offline empirical protocol and descriptive classification",
+    "production_privacy_approval": "unresolved"
+  }
+}

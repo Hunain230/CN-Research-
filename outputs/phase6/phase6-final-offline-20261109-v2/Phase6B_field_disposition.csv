@@ -1,0 +1,50 @@
+field,null_rate,cardinality_estimate,phase1_disposition,module6b_disposition,evidence_basis
+Id,0.0,298435,deny,denied_or_lineage_only,Explicit deny/lineage policy or unresolved time semantics; not a model feature.
+OrgId,0.0,4299,deny,denied_or_lineage_only,Explicit deny/lineage policy or unresolved time semantics; not a model feature.
+IncidentId,0.0,240217,deny,evaluator_only,Explicitly listed in local evaluator-only policy; prohibited from inference inputs.
+AlertId,0.0,637742,deny,denied_or_lineage_only,Explicit deny/lineage policy or unresolved time semantics; not a model feature.
+Timestamp,0.0,479128,deny_pending,denied_or_lineage_only,Explicit deny/lineage policy or unresolved time semantics; not a model feature.
+DetectorId,0.0,5780,deny_pending,assumption_only_local_offline,User-directed local offline assumption; not independent timing/privacy approval and not authorized for hosted APIs.
+AlertTitle,0.0,42182,deny_pending,unresolved_default_deny,No approved provenance/timing basis in the current local policy; remain denied.
+Category,0.0,19,deny_pending,assumption_only_local_offline,User-directed local offline assumption; not independent timing/privacy approval and not authorized for hosted APIs.
+MitreTechniques,0.55619779,989,deny_pending,assumption_only_local_offline,User-directed local offline assumption; not independent timing/privacy approval and not authorized for hosted APIs.
+IncidentGrade,0.0,3,deny,evaluator_only,Explicitly listed in local evaluator-only policy; prohibited from inference inputs.
+ActionGrouped,0.99953881,2,deny,evaluator_only,Explicitly listed in local evaluator-only policy; prohibited from inference inputs.
+ActionGranular,0.99953881,13,deny,evaluator_only,Explicitly listed in local evaluator-only policy; prohibited from inference inputs.
+EntityType,0.0,29,deny_pending,assumption_only_local_offline,User-directed local offline assumption; not independent timing/privacy approval and not authorized for hosted APIs.
+EvidenceRole,0.0,2,deny_pending,assumption_only_local_offline,User-directed local offline assumption; not independent timing/privacy approval and not authorized for hosted APIs.
+DeviceId,0.0,46487,deny,denied_or_lineage_only,Explicit deny/lineage policy or unresolved time semantics; not a model feature.
+Sha256,0.0,60304,deny,denied_or_lineage_only,Explicit deny/lineage policy or unresolved time semantics; not a model feature.
+IpAddress,0.0,172220,deny,denied_or_lineage_only,Explicit deny/lineage policy or unresolved time semantics; not a model feature.
+Url,0.0,68542,deny,denied_or_lineage_only,Explicit deny/lineage policy or unresolved time semantics; not a model feature.
+AccountSid,0.0,213572,deny,denied_or_lineage_only,Explicit deny/lineage policy or unresolved time semantics; not a model feature.
+AccountUpn,0.0,311272,deny,denied_or_lineage_only,Explicit deny/lineage policy or unresolved time semantics; not a model feature.
+AccountObjectId,0.0,207227,deny,denied_or_lineage_only,Explicit deny/lineage policy or unresolved time semantics; not a model feature.
+AccountName,0.0,222681,deny,denied_or_lineage_only,Explicit deny/lineage policy or unresolved time semantics; not a model feature.
+DeviceName,0.0,75038,deny,denied_or_lineage_only,Explicit deny/lineage policy or unresolved time semantics; not a model feature.
+NetworkMessageId,0.0,180612,deny,denied_or_lineage_only,Explicit deny/lineage policy or unresolved time semantics; not a model feature.
+EmailClusterId,0.98994526,14498,deny,denied_or_lineage_only,Explicit deny/lineage policy or unresolved time semantics; not a model feature.
+RegistryKey,0.0,995,deny,denied_or_lineage_only,Explicit deny/lineage policy or unresolved time semantics; not a model feature.
+RegistryValueName,0.0,258,deny,denied_or_lineage_only,Explicit deny/lineage policy or unresolved time semantics; not a model feature.
+RegistryValueData,0.0,497,deny,denied_or_lineage_only,Explicit deny/lineage policy or unresolved time semantics; not a model feature.
+ApplicationId,0.0,946,deny,denied_or_lineage_only,Explicit deny/lineage policy or unresolved time semantics; not a model feature.
+ApplicationName,0.0,1503,deny,denied_or_lineage_only,Explicit deny/lineage policy or unresolved time semantics; not a model feature.
+OAuthApplicationId,0.0,380,deny,denied_or_lineage_only,Explicit deny/lineage policy or unresolved time semantics; not a model feature.
+ThreatFamily,0.99243538,1160,deny,denied_or_lineage_only,Explicit deny/lineage policy or unresolved time semantics; not a model feature.
+FileName,0.0,121359,deny,denied_or_lineage_only,Explicit deny/lineage policy or unresolved time semantics; not a model feature.
+FolderPath,0.0,44220,deny,denied_or_lineage_only,Explicit deny/lineage policy or unresolved time semantics; not a model feature.
+ResourceIdName,0.0,1099,deny,denied_or_lineage_only,Explicit deny/lineage policy or unresolved time semantics; not a model feature.
+ResourceType,0.9992782,23,deny_pending,denied_or_lineage_only,Explicit deny/lineage policy or unresolved time semantics; not a model feature.
+Roles,0.97380058,9,deny_pending,denied_or_lineage_only,Explicit deny/lineage policy or unresolved time semantics; not a model feature.
+OSFamily,0.0,5,deny_pending,denied_or_lineage_only,Explicit deny/lineage policy or unresolved time semantics; not a model feature.
+OSVersion,0.0,43,deny_pending,denied_or_lineage_only,Explicit deny/lineage policy or unresolved time semantics; not a model feature.
+AntispamDirection,0.98155469,5,deny_pending,denied_or_lineage_only,Explicit deny/lineage policy or unresolved time semantics; not a model feature.
+SuspicionLevel,0.84333745,2,deny,denied_or_lineage_only,Explicit deny/lineage policy or unresolved time semantics; not a model feature.
+LastVerdict,0.76067167,4,deny,denied_or_lineage_only,Explicit deny/lineage policy or unresolved time semantics; not a model feature.
+CountryCode,0.0,213,deny,denied_or_lineage_only,Explicit deny/lineage policy or unresolved time semantics; not a model feature.
+State,0.0,1157,deny,denied_or_lineage_only,Explicit deny/lineage policy or unresolved time semantics; not a model feature.
+City,0.0,6417,deny,denied_or_lineage_only,Explicit deny/lineage policy or unresolved time semantics; not a model feature.
+Usage,0.0,2,deny,denied_or_lineage_only,Explicit deny/lineage policy or unresolved time semantics; not a model feature.
+OrgId,0.0,491,deny,denied_or_lineage_only,Explicit deny/lineage policy or unresolved time semantics; not a model feature.
+IncidentId,0.0,9685,deny,evaluator_only,Explicitly listed in local evaluator-only policy; prohibited from inference inputs.
+QueueRank,0.0,20,deny,evaluator_only,Explicitly listed in local evaluator-only policy; prohibited from inference inputs.
