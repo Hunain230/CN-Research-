@@ -1,5 +1,9 @@
 # Phase context index
 
+## Latest GUIDE_Test run (2026-11-09)
+
+The [GUIDE rerun v2 report](outputs/guide_rerun_v2/report.md) supersedes older status summaries for the latest experiment. It used 334 training, 67 validation, and 68 exploratory holdout organizations from GUIDE_Test; the historical 30 test organizations stayed excluded. Candidate recall at K=500 was 97.21% on holdout, requiring up to 500 oracle-group incident candidates per queue. Final Recall@20 was 55.16% for local logistic ranking and 42.43% for 67 valid Groq GPT-OSS-120B responses plus one offline fallback. Bounded correlation sampled 500 alerts per organization and had 65.90% pair recall with 3.63% precision. The [protocol amendment](phases_outputs/GUIDE_RERUN_V2_PROTOCOL.md) records user authorization for the bounded Groq run, split, field restrictions, budget, and exploratory classification. The [new dashboard](dashboard/guide_rerun_v2.html) displays aggregate results. This is not military certification, a confirmatory benchmark, or a complete end-to-end C/P/V system.
+
 ## Completed
 
 - [Phase 1 — Dataset validation](phases_outputs/Phase1.md): verified baseline, audit artifacts, results, and handoff gates.

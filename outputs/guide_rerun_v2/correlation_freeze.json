@@ -1,0 +1,8 @@
+{
+  "K": 200,
+  "code_sha256": "99dfd488be5d644ba550304381ad352409be98e53470ca617329c8b24f2c3122",
+  "model_sha256": "8b4336f3a7634369fcd69fe7a5121f6998afc3df11c2dd2b2ce651d36cf02a70",
+  "sample_max_alerts_per_org": 500,
+  "split_sha256": "a99f53483d91e32e6872b71ae385123db71e36cb4b52c3b8eeb985c5ffb36e5d",
+  "threshold": 0.25
+}

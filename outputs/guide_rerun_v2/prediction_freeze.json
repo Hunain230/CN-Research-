@@ -1,0 +1,8 @@
+{
+  "classification": "exploratory_oracle_group_priority",
+  "fitted_model_sha256": "a5bd29caf9db09df9778e3c6c8874704db0206811a281a92cb93a7e73da91f90",
+  "holdout_labels_read": false,
+  "method_freeze_sha256": "4650581161814bfb6a8eee2b04aab365255ff54b1846fd85a401b40320bcec54",
+  "organizations": 68,
+  "predictions_sha256": "a86eda7075f753c10645c0b4a3f0ac9ecfa59d55b0d3ca65d83f35c25a497d67"
+}

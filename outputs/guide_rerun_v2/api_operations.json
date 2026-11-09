@@ -1,0 +1,1246 @@
+{
+  "actual_tokens": 176473,
+  "records": [
+    {
+      "latency_seconds": 1.6610515000065789,
+      "model": "openai/gpt-oss-120b",
+      "request_sha256": "1fbe3983b528a875d9ddb1660a600b0c702227835fceab2fdaa2c6e15786df7e",
+      "status": "ok",
+      "usage": {
+        "completion_time": 0.524737713,
+        "completion_tokens": 248,
+        "completion_tokens_details": {
+          "reasoning_tokens": 196
+        },
+        "prompt_time": 0.126205852,
+        "prompt_tokens": 1784,
+        "queue_time": 0.307572353,
+        "total_time": 0.650943565,
+        "total_tokens": 2032
+      }
+    },
+    {
+      "latency_seconds": 0.8707052000099793,
+      "model": "openai/gpt-oss-120b",
+      "request_sha256": "9bdb02ea6ee77050f3d0dcaaf5f4425c0463b432b32320a7635fc145ecc7899d",
+      "status": "ok",
+      "usage": {
+        "completion_time": 0.197664695,
+        "completion_tokens": 94,
+        "completion_tokens_details": {
+          "reasoning_tokens": 42
+        },
+        "prompt_time": 0.142700371,
+        "prompt_tokens": 2828,
+        "queue_time": 0.255251947,
+        "total_time": 0.340365066,
+        "total_tokens": 2922
+      }
+    },
+    {
+      "latency_seconds": 4.489820100017823,
+      "model": "openai/gpt-oss-120b",
+      "request_sha256": "063f836e025285531ea2156660edbf0d4c017dda92b332777236fbdfb672ec8a",
+      "status": "ok",
+      "usage": {
+        "completion_time": 0.481663912,
+        "completion_tokens": 229,
+        "completion_tokens_details": {
+          "reasoning_tokens": 177
+        },
+        "prompt_time": 0.152440644,
+        "prompt_tokens": 2828,
+        "queue_time": 0.299235784,
+        "total_time": 0.634104556,
+        "total_tokens": 3057
+      }
+    },
+    {
+      "latency_seconds": 20.25691149997874,
+      "model": "openai/gpt-oss-120b",
+      "request_sha256": "846eb2ed02880f8d00dc110e99a1e8ddfbb37f409ab076c8c6a77de3edc84c64",
+      "status": "ok",
+      "usage": {
+        "completion_time": 0.412327341,
+        "completion_tokens": 196,
+        "completion_tokens_details": {
+          "reasoning_tokens": 140
+        },
+        "prompt_time": 0.135936764,
+        "prompt_tokens": 2547,
+        "queue_time": 0.340153239,
+        "total_time": 0.548264105,
+        "total_tokens": 2743
+      }
+    },
+    {
+      "latency_seconds": 15.116498200019123,
+      "model": "openai/gpt-oss-120b",
+      "request_sha256": "ef8e5e256953c75e266426b0839c9d497d66a8e46d93cffe3210791036d73676",
+      "status": "ok",
+      "usage": {
+        "completion_time": 0.468690589,
+        "completion_tokens": 225,
+        "completion_tokens_details": {
+          "reasoning_tokens": 173
+        },
+        "prompt_time": 0.136938935,
+        "prompt_tokens": 2448,
+        "queue_time": 1.06415232,
+        "total_time": 0.605629524,
+        "total_tokens": 2673
+      }
+    },
+    {
+      "latency_seconds": 19.751164600020275,
+      "model": "openai/gpt-oss-120b",
+      "request_sha256": "4bd889a14d9f2d86211e191bfec26033718906aad7188990287bcda778b33d0a",
+      "status": "ok",
+      "usage": {
+        "completion_time": 0.341148904,
+        "completion_tokens": 164,
+        "completion_tokens_details": {
+          "reasoning_tokens": 112
+        },
+        "prompt_time": 0.153080358,
+        "prompt_tokens": 2518,
+        "queue_time": 0.37478821,
+        "total_time": 0.494229262,
+        "total_tokens": 2682
+      }
+    },
+    {
+      "latency_seconds": 20.581891400011955,
+      "model": "openai/gpt-oss-120b",
+      "request_sha256": "99163f470fec3691ad10df4c66534f4d4928a1b3338ccf0dc19012492b901b42",
+      "status": "ok",
+      "usage": {
+        "completion_time": 0.282880045,
+        "completion_tokens": 133,
+        "completion_tokens_details": {
+          "reasoning_tokens": 81
+        },
+        "prompt_time": 0.125669855,
+        "prompt_tokens": 2618,
+        "queue_time": 0.339887857,
+        "total_time": 0.4085499,
+        "total_tokens": 2751
+      }
+    },
+    {
+      "latency_seconds": 18.199675899988506,
+      "model": "openai/gpt-oss-120b",
+      "request_sha256": "cefaddcaca0ec05909c92867806ca0ad6ac8c161bea017786ea67926092b6fd9",
+      "status": "ok",
+      "usage": {
+        "completion_time": 0.42957201,
+        "completion_tokens": 208,
+        "completion_tokens_details": {
+          "reasoning_tokens": 156
+        },
+        "prompt_time": 0.110654027,
+        "prompt_tokens": 2473,
+        "queue_time": 0.374196636,
+        "total_time": 0.540226037,
+        "total_tokens": 2681
+      }
+    },
+    {
+      "latency_seconds": 18.519242699985625,
+      "model": "openai/gpt-oss-120b",
+      "request_sha256": "995e84ddebfda935fcd6cf6b77c41cc549cf5cfe7210a92b7f2519fef9e80841",
+      "status": "ok",
+      "usage": {
+        "completion_time": 0.639652389,
+        "completion_tokens": 307,
+        "completion_tokens_details": {
+          "reasoning_tokens": 255
+        },
+        "prompt_time": 0.170449088,
+        "prompt_tokens": 2140,
+        "queue_time": 0.320308608,
+        "total_time": 0.810101477,
+        "total_tokens": 2447
+      }
+    },
+    {
+      "latency_seconds": 21.174801999994088,
+      "model": "openai/gpt-oss-120b",
+      "request_sha256": "177aba870310fc07fece9774f764d50324a16e09fda92e03dd240f098a449513",
+      "status": "ok",
+      "usage": {
+        "completion_time": 0.162494864,
+        "completion_tokens": 78,
+        "completion_tokens_details": {
+          "reasoning_tokens": 26
+        },
+        "prompt_time": 0.175565265,
+        "prompt_tokens": 2604,
+        "queue_time": 0.308320724,
+        "total_time": 0.338060129,
+        "total_tokens": 2682
+      }
+    },
+    {
+      "latency_seconds": 20.180233599996427,
+      "model": "openai/gpt-oss-120b",
+      "request_sha256": "ae82211c12818b77378a3f513aa8baa4e8dc22db903e52fdbf2dbaa559320bbb",
+      "status": "ok",
+      "usage": {
+        "completion_time": 0.359582513,
+        "completion_tokens": 174,
+        "completion_tokens_details": {
+          "reasoning_tokens": 122
+        },
+        "prompt_time": 0.100158618,
+        "prompt_tokens": 2579,
+        "queue_time": 0.37415746,
+        "total_time": 0.459741131,
+        "total_tokens": 2753
+      }
+    },
+    {
+      "latency_seconds": 18.764647899981355,
+      "model": "openai/gpt-oss-120b",
+      "request_sha256": "221bf4140f5b00394f1cb4f895ae15fcde96968949a6981948dae9f066a2b51d",
+      "status": "ok",
+      "usage": {
+        "completion_time": 0.320626892,
+        "completion_tokens": 150,
+        "completion_tokens_details": {
+          "reasoning_tokens": 98
+        },
+        "prompt_time": 0.115471145,
+        "prompt_tokens": 2242,
+        "queue_time": 0.005502133,
+        "total_time": 0.436098037,
+        "total_tokens": 2392
+      }
+    },
+    {
+      "latency_seconds": 5.348477099993033,
+      "model": "openai/gpt-oss-120b",
+      "request_sha256": "47c611c14cc40cb0c29c96a2a3b3393691a4531e0c0c25aa787c2763a9514ed5",
+      "status": "ok",
+      "usage": {
+        "completion_time": 0.553393238,
+        "completion_tokens": 262,
+        "completion_tokens_details": {
+          "reasoning_tokens": 210
+        },
+        "prompt_time": 0.136864035,
+        "prompt_tokens": 2142,
+        "queue_time": 0.246807911,
+        "total_time": 0.690257273,
+        "total_tokens": 2404
+      }
+    },
+    {
+      "latency_seconds": 1.4237367999739945,
+      "model": "openai/gpt-oss-120b",
+      "request_sha256": "c61d04d6a74f8297493ff1bc83ce6a070be7829282e1545b6141a92d621be3f8",
+      "status": "ok",
+      "usage": {
+        "completion_time": 0.591766279,
+        "completion_tokens": 280,
+        "completion_tokens_details": {
+          "reasoning_tokens": 228
+        },
+        "prompt_time": 0.150191597,
+        "prompt_tokens": 2502,
+        "queue_time": 0.374430411,
+        "total_time": 0.741957876,
+        "total_tokens": 2782
+      }
+    },
+    {
+      "latency_seconds": 23.394986100000096,
+      "model": "openai/gpt-oss-120b",
+      "request_sha256": "5b1d41ee66b8babb2e2fbeb31cd0027acc7ed868375b367e19686cc6b03507c3",
+      "status": "ok",
+      "usage": {
+        "completion_time": 0.392473277,
+        "completion_tokens": 187,
+        "completion_tokens_details": {
+          "reasoning_tokens": 131
+        },
+        "prompt_time": 0.183364667,
+        "prompt_tokens": 2527,
+        "queue_time": 0.308219746,
+        "total_time": 0.575837944,
+        "total_tokens": 2714
+      }
+    },
+    {
+      "latency_seconds": 18.028008199995384,
+      "model": "openai/gpt-oss-120b",
+      "request_sha256": "05357901f5f95d76723d2da944bcee84115ffe3148289703653c1feb8e911a9b",
+      "status": "ok",
+      "usage": {
+        "completion_time": 0.234464506,
+        "completion_tokens": 110,
+        "completion_tokens_details": {
+          "reasoning_tokens": 58
+        },
+        "prompt_time": 0.134375662,
+        "prompt_tokens": 2477,
+        "queue_time": 0.340675892,
+        "total_time": 0.368840168,
+        "total_tokens": 2587
+      }
+    },
+    {
+      "latency_seconds": 16.829251199989812,
+      "model": "openai/gpt-oss-120b",
+      "request_sha256": "5ab8387e8db8342f8b980195bfd871d834899c1897a43c888a48661770d6dbd7",
+      "status": "ok",
+      "usage": {
+        "completion_time": 0.407722331,
+        "completion_tokens": 191,
+        "completion_tokens_details": {
+          "reasoning_tokens": 139
+        },
+        "prompt_time": 0.102143832,
+        "prompt_tokens": 2189,
+        "queue_time": 0.005644628,
+        "total_time": 0.509866163,
+        "total_tokens": 2380
+      }
+    },
+    {
+      "latency_seconds": 20.73076310000033,
+      "model": "openai/gpt-oss-120b",
+      "request_sha256": "6df9b79911fd56ecb19d0888d56856ab1ddfc26d8a2723daa1c8e727dfaf2197",
+      "status": "ok",
+      "usage": {
+        "completion_time": 0.368638747,
+        "completion_tokens": 176,
+        "completion_tokens_details": {
+          "reasoning_tokens": 124
+        },
+        "prompt_time": 0.116340353,
+        "prompt_tokens": 2596,
+        "queue_time": 0.374426981,
+        "total_time": 0.4849791,
+        "total_tokens": 2772
+      }
+    },
+    {
+      "latency_seconds": 28.708418299996993,
+      "model": "openai/gpt-oss-120b",
+      "request_sha256": "5b0661b99165e04c27977a8363fae5644b360c1db291c172e7be30d740df94db",
+      "status": "ok",
+      "usage": {
+        "completion_time": 0.632201157,
+        "completion_tokens": 303,
+        "completion_tokens_details": {
+          "reasoning_tokens": 251
+        },
+        "prompt_time": 0.17397242,
+        "prompt_tokens": 3466,
+        "queue_time": 0.264393361,
+        "total_time": 0.806173577,
+        "total_tokens": 3769
+      }
+    },
+    {
+      "latency_seconds": 18.93311869999161,
+      "model": "openai/gpt-oss-120b",
+      "request_sha256": "f765108cd90aefdeeae8b9471e3a399824f8b3b3d5ab5daa8cef3bc46ddc033c",
+      "status": "ok",
+      "usage": {
+        "completion_time": 0.387548805,
+        "completion_tokens": 184,
+        "completion_tokens_details": {
+          "reasoning_tokens": 132
+        },
+        "prompt_time": 0.138890635,
+        "prompt_tokens": 2366,
+        "queue_time": 0.247278765,
+        "total_time": 0.52643944,
+        "total_tokens": 2550
+      }
+    },
+    {
+      "latency_seconds": 20.315814799978398,
+      "model": "openai/gpt-oss-120b",
+      "request_sha256": "85d77ccc1995552fc49e09e8056cf3d9d8c562ce94f121fc867e8993a57b550d",
+      "status": "ok",
+      "usage": {
+        "completion_time": 0.268153005,
+        "completion_tokens": 128,
+        "completion_tokens_details": {
+          "reasoning_tokens": 72
+        },
+        "prompt_time": 0.355317662,
+        "prompt_tokens": 2583,
+        "queue_time": 0.347653537,
+        "total_time": 0.623470667,
+        "total_tokens": 2711
+      }
+    },
+    {
+      "latency_seconds": 18.086250099993777,
+      "model": "openai/gpt-oss-120b",
+      "request_sha256": "be8cfc8e739262d85b62a78551004abe125e9a01dec23a0202d40c4a897c188b",
+      "status": "ok",
+      "usage": {
+        "completion_time": 0.254180985,
+        "completion_tokens": 122,
+        "completion_tokens_details": {
+          "reasoning_tokens": 70
+        },
+        "prompt_time": 0.122618449,
+        "prompt_tokens": 2289,
+        "queue_time": 0.37452158,
+        "total_time": 0.376799434,
+        "total_tokens": 2411
+      }
+    },
+    {
+      "latency_seconds": 19.07513030001428,
+      "model": "openai/gpt-oss-120b",
+      "request_sha256": "97da2ff3b5090fc98a2f8bb4b2d1378cb8154c783d25df161e1a838144695e56",
+      "status": "ok",
+      "usage": {
+        "completion_time": 0.290703679,
+        "completion_tokens": 140,
+        "completion_tokens_details": {
+          "reasoning_tokens": 88
+        },
+        "prompt_time": 0.109791785,
+        "prompt_tokens": 2336,
+        "queue_time": 0.374274837,
+        "total_time": 0.400495464,
+        "total_tokens": 2476
+      }
+    },
+    {
+      "latency_seconds": 20.36238389997743,
+      "model": "openai/gpt-oss-120b",
+      "request_sha256": "6212eb666f2572c4dfab34a1d1c4b2f0a42eb66525a95d83bd631ea3e6e6c38d",
+      "status": "ok",
+      "usage": {
+        "completion_time": 0.339860338,
+        "completion_tokens": 158,
+        "completion_tokens_details": {
+          "reasoning_tokens": 106
+        },
+        "prompt_time": 0.272362663,
+        "prompt_tokens": 2624,
+        "queue_time": 0.381186578,
+        "total_time": 0.612223001,
+        "total_tokens": 2782
+      }
+    },
+    {
+      "latency_seconds": 21.823490599985234,
+      "model": "openai/gpt-oss-120b",
+      "request_sha256": "0f0447bcc99d32295280e175fa4a58d98a5da86f1fc48b87a8112ce26aaa74e2",
+      "status": "ok",
+      "usage": {
+        "completion_time": 0.412293271,
+        "completion_tokens": 194,
+        "completion_tokens_details": {
+          "reasoning_tokens": 142
+        },
+        "prompt_time": 0.148659486,
+        "prompt_tokens": 2501,
+        "queue_time": 0.30825867,
+        "total_time": 0.560952757,
+        "total_tokens": 2695
+      }
+    },
+    {
+      "latency_seconds": 18.265276799997082,
+      "model": "openai/gpt-oss-120b",
+      "request_sha256": "82931f166f68426eecd572c584241e46672ff30fc829e52ac5d462cb967844c5",
+      "status": "ok",
+      "usage": {
+        "completion_time": 0.431060555,
+        "completion_tokens": 185,
+        "completion_tokens_details": {
+          "reasoning_tokens": 133
+        },
+        "prompt_time": 0.128035167,
+        "prompt_tokens": 2528,
+        "queue_time": 0.005867675,
+        "total_time": 0.559095722,
+        "total_tokens": 2713
+      }
+    },
+    {
+      "latency_seconds": 22.314146799995797,
+      "model": "openai/gpt-oss-120b",
+      "request_sha256": "1bc41950510c482a21b44d1ca02ad2a5c2424cba4dc59081ab7156e645da1912",
+      "status": "ok",
+      "usage": {
+        "completion_time": 0.324344935,
+        "completion_tokens": 151,
+        "completion_tokens_details": {
+          "reasoning_tokens": 96
+        },
+        "prompt_time": 0.161964338,
+        "prompt_tokens": 2506,
+        "queue_time": 0.250888572,
+        "total_time": 0.486309273,
+        "total_tokens": 2657
+      }
+    },
+    {
+      "latency_seconds": 16.095859199995175,
+      "model": "openai/gpt-oss-120b",
+      "request_sha256": "b4837218ab37f52b6b50cd9dffcda78fc624be850cce598c53931724b40d3abf",
+      "status": "ok",
+      "usage": {
+        "completion_time": 0.34374082,
+        "completion_tokens": 165,
+        "completion_tokens_details": {
+          "reasoning_tokens": 113
+        },
+        "prompt_time": 0.142626457,
+        "prompt_tokens": 2398,
+        "queue_time": 0.308056542,
+        "total_time": 0.486367277,
+        "total_tokens": 2563
+      }
+    },
+    {
+      "latency_seconds": 20.104524900001707,
+      "model": "openai/gpt-oss-120b",
+      "request_sha256": "1999d58756b3bdf66a70a4dbf9f1f3f371cef023fc0dec261db4e1e9eee859a1",
+      "status": "ok",
+      "usage": {
+        "completion_time": 0.248197505,
+        "completion_tokens": 117,
+        "completion_tokens_details": {
+          "reasoning_tokens": 65
+        },
+        "prompt_time": 0.150317027,
+        "prompt_tokens": 2416,
+        "queue_time": 0.374338788,
+        "total_time": 0.398514532,
+        "total_tokens": 2533
+      }
+    },
+    {
+      "latency_seconds": 17.97204839999904,
+      "model": "openai/gpt-oss-120b",
+      "request_sha256": "8c59beeb6ead9be15a3d69901d2f71b25f29f54b74a6aa8c129e62e8945fc15d",
+      "status": "ok",
+      "usage": {
+        "completion_time": 1.063757581,
+        "completion_tokens": 481,
+        "completion_tokens_details": {
+          "reasoning_tokens": 429
+        },
+        "prompt_time": 0.203593789,
+        "prompt_tokens": 2280,
+        "queue_time": 0.236051171,
+        "total_time": 1.26735137,
+        "total_tokens": 2761
+      }
+    },
+    {
+      "latency_seconds": 18.236317900009453,
+      "model": "openai/gpt-oss-120b",
+      "request_sha256": "f0b7e288b88f3c75ff41c70aa4d06b36df35442f7d33fe67e1edbfadee7c53c2",
+      "status": "ok",
+      "usage": {
+        "completion_time": 0.435529494,
+        "completion_tokens": 207,
+        "completion_tokens_details": {
+          "reasoning_tokens": 155
+        },
+        "prompt_time": 0.117546483,
+        "prompt_tokens": 2009,
+        "queue_time": 0.273539688,
+        "total_time": 0.553075977,
+        "total_tokens": 2216
+      }
+    },
+    {
+      "latency_seconds": 20.534279099985724,
+      "model": "openai/gpt-oss-120b",
+      "request_sha256": "78f185661b1e5b895130e8770a5714982c44000cad08a23eeac3fa6869264357",
+      "status": "ok",
+      "usage": {
+        "completion_time": 0.493828788,
+        "completion_tokens": 233,
+        "completion_tokens_details": {
+          "reasoning_tokens": 181
+        },
+        "prompt_time": 0.120475351,
+        "prompt_tokens": 2220,
+        "queue_time": 0.374462013,
+        "total_time": 0.614304139,
+        "total_tokens": 2453
+      }
+    },
+    {
+      "latency_seconds": 17.492207999981474,
+      "model": "openai/gpt-oss-120b",
+      "request_sha256": "aef1f6251d0ea9bd1bd4f377f645b30c9321faff9e74a0e8cfb728e40c0b86e8",
+      "status": "ok",
+      "usage": {
+        "completion_time": 0.381355326,
+        "completion_tokens": 180,
+        "completion_tokens_details": {
+          "reasoning_tokens": 128
+        },
+        "prompt_time": 0.140165076,
+        "prompt_tokens": 2413,
+        "queue_time": 0.374195463,
+        "total_time": 0.521520402,
+        "total_tokens": 2593
+      }
+    },
+    {
+      "latency_seconds": 21.371052100003,
+      "model": "openai/gpt-oss-120b",
+      "request_sha256": "6b7ccb3b258346a002a39a0a9ac7cee52cfd169ddcc1ea9a418d5792f7ddb87d",
+      "status": "ok",
+      "usage": {
+        "completion_time": 0.47130623,
+        "completion_tokens": 223,
+        "completion_tokens_details": {
+          "reasoning_tokens": 171
+        },
+        "prompt_time": 0.181775622,
+        "prompt_tokens": 2315,
+        "queue_time": 0.200234322,
+        "total_time": 0.653081852,
+        "total_tokens": 2538
+      }
+    },
+    {
+      "latency_seconds": 17.968540400004713,
+      "model": "openai/gpt-oss-120b",
+      "request_sha256": "14fb862e63cb88e0f212ee51f8c2c1d812147503965d04e40337aa8086650355",
+      "status": "ok",
+      "usage": {
+        "completion_time": 0.364703369,
+        "completion_tokens": 169,
+        "completion_tokens_details": {
+          "reasoning_tokens": 117
+        },
+        "prompt_time": 0.118817926,
+        "prompt_tokens": 2534,
+        "queue_time": 0.005571116,
+        "total_time": 0.483521295,
+        "total_tokens": 2703
+      }
+    },
+    {
+      "latency_seconds": 21.186565799987875,
+      "model": "openai/gpt-oss-120b",
+      "request_sha256": "260f891bea9d56ce7449be14ebb287fb4f03b01312a34e0dc322ed7722cf7944",
+      "status": "ok",
+      "usage": {
+        "completion_time": 0.331482695,
+        "completion_tokens": 157,
+        "completion_tokens_details": {
+          "reasoning_tokens": 105
+        },
+        "prompt_time": 0.147364038,
+        "prompt_tokens": 2508,
+        "queue_time": 0.374272188,
+        "total_time": 0.478846733,
+        "total_tokens": 2665
+      }
+    },
+    {
+      "latency_seconds": 22.34410400001798,
+      "model": "openai/gpt-oss-120b",
+      "request_sha256": "445802a2691f27e1c8d37b94ccbcd84ba5a220b8fb66ff50575d5f867b9f4953",
+      "status": "ok",
+      "usage": {
+        "completion_time": 0.437541164,
+        "completion_tokens": 211,
+        "completion_tokens_details": {
+          "reasoning_tokens": 159
+        },
+        "prompt_time": 0.134973496,
+        "prompt_tokens": 2566,
+        "queue_time": 0.246601948,
+        "total_time": 0.57251466,
+        "total_tokens": 2777
+      }
+    },
+    {
+      "latency_seconds": 18.287176500016358,
+      "model": "openai/gpt-oss-120b",
+      "request_sha256": "99e2415d4c0a9eefb87682f0fc811fba2cf63212a5d749d16627220d0b5e3e56",
+      "status": "ok",
+      "usage": {
+        "completion_time": 0.652407384,
+        "completion_tokens": 311,
+        "completion_tokens_details": {
+          "reasoning_tokens": 259
+        },
+        "prompt_time": 0.165891102,
+        "prompt_tokens": 2240,
+        "prompt_tokens_details": {
+          "cached_tokens": 256
+        },
+        "queue_time": 0.005052039,
+        "total_time": 0.818298486,
+        "total_tokens": 2551
+      }
+    },
+    {
+      "latency_seconds": 20.64061390000279,
+      "model": "openai/gpt-oss-120b",
+      "request_sha256": "af62eeaf59c8fc8f7ead1bb6a50bcb4f9ae8e2cea4d94a87a8e43cb47db8d22e",
+      "status": "ok",
+      "usage": {
+        "completion_time": 0.565682047,
+        "completion_tokens": 270,
+        "completion_tokens_details": {
+          "reasoning_tokens": 218
+        },
+        "prompt_time": 0.171787356,
+        "prompt_tokens": 2608,
+        "queue_time": 0.373959472,
+        "total_time": 0.737469403,
+        "total_tokens": 2878
+      }
+    },
+    {
+      "latency_seconds": 19.189026300009573,
+      "model": "openai/gpt-oss-120b",
+      "request_sha256": "79f9a63faded3bba75a49c9a011fbab8f7120a8285a05a54c433d5c6071a921a",
+      "status": "ok",
+      "usage": {
+        "completion_time": 0.249855199,
+        "completion_tokens": 119,
+        "completion_tokens_details": {
+          "reasoning_tokens": 67
+        },
+        "prompt_time": 0.185532902,
+        "prompt_tokens": 2399,
+        "queue_time": 0.308005632,
+        "total_time": 0.435388101,
+        "total_tokens": 2518
+      }
+    },
+    {
+      "latency_seconds": 19.482932499988237,
+      "model": "openai/gpt-oss-120b",
+      "request_sha256": "ecc3fb7f9907cc340b72974e7a97bf14fa945a454e84073b65bb2c35fc687149",
+      "status": "ok",
+      "usage": {
+        "completion_time": 0.582860096,
+        "completion_tokens": 120,
+        "completion_tokens_details": {
+          "reasoning_tokens": 68
+        },
+        "prompt_time": 0.129803148,
+        "prompt_tokens": 2429,
+        "prompt_tokens_details": {
+          "cached_tokens": 256
+        },
+        "queue_time": 0.307776185,
+        "total_time": 0.712663244,
+        "total_tokens": 2549
+      }
+    },
+    {
+      "latency_seconds": 15.088960099994438,
+      "model": "openai/gpt-oss-120b",
+      "request_sha256": "7b002a855b443fd9619f00fe736f47346842efa69819e71078764d843f1f11c6",
+      "status": "ok",
+      "usage": {
+        "completion_time": 0.315207086,
+        "completion_tokens": 151,
+        "completion_tokens_details": {
+          "reasoning_tokens": 99
+        },
+        "prompt_time": 0.117147519,
+        "prompt_tokens": 2391,
+        "queue_time": 0.339221453,
+        "total_time": 0.432354605,
+        "total_tokens": 2542
+      }
+    },
+    {
+      "latency_seconds": 15.260019200009992,
+      "model": "openai/gpt-oss-120b",
+      "request_sha256": "1b8c5950e3d11fe58682b50eeae52686f1a2a7eb6d6d3f2ba4d538ccbb17f360",
+      "status": "ok",
+      "usage": {
+        "completion_time": 0.356153952,
+        "completion_tokens": 169,
+        "completion_tokens_details": {
+          "reasoning_tokens": 117
+        },
+        "prompt_time": 0.15359295,
+        "prompt_tokens": 2102,
+        "queue_time": 0.387213126,
+        "total_time": 0.509746902,
+        "total_tokens": 2271
+      }
+    },
+    {
+      "latency_seconds": 24.277853100007633,
+      "model": "openai/gpt-oss-120b",
+      "request_sha256": "33cf317d36adfd8b8df887d35493385e46068ea36ea968644e4246286a7ad7e0",
+      "status": "ok",
+      "usage": {
+        "completion_time": 0.211594313,
+        "completion_tokens": 101,
+        "completion_tokens_details": {
+          "reasoning_tokens": 49
+        },
+        "prompt_time": 0.266897183,
+        "prompt_tokens": 2823,
+        "queue_time": 0.311328342,
+        "total_time": 0.478491496,
+        "total_tokens": 2924
+      }
+    },
+    {
+      "latency_seconds": 16.295684300013818,
+      "model": "openai/gpt-oss-120b",
+      "request_sha256": "83306771dce9b3451719d46bc5a972ae61d0f7f11bc5ea31f1f1b9354c686089",
+      "status": "ok",
+      "usage": {
+        "completion_time": 0.392219653,
+        "completion_tokens": 188,
+        "completion_tokens_details": {
+          "reasoning_tokens": 136
+        },
+        "prompt_time": 0.191521294,
+        "prompt_tokens": 2296,
+        "prompt_tokens_details": {
+          "cached_tokens": 256
+        },
+        "queue_time": 0.374242364,
+        "total_time": 0.583740947,
+        "total_tokens": 2484
+      }
+    },
+    {
+      "latency_seconds": 21.49181339997449,
+      "model": "openai/gpt-oss-120b",
+      "request_sha256": "83fa3d10f5344548f8ab62aa10cc1bb13c01293214f6a0becc8baed43a54ebb1",
+      "status": "ok",
+      "usage": {
+        "completion_time": 0.419720728,
+        "completion_tokens": 201,
+        "completion_tokens_details": {
+          "reasoning_tokens": 149
+        },
+        "prompt_time": 0.122928336,
+        "prompt_tokens": 2687,
+        "queue_time": 0.606659669,
+        "total_time": 0.542649064,
+        "total_tokens": 2888
+      }
+    },
+    {
+      "latency_seconds": 21.522683899995172,
+      "model": "openai/gpt-oss-120b",
+      "request_sha256": "518e19049c03b87f4a0670f0ef1968883464eb98e13f0ae3f76fdb8aa183e904",
+      "status": "ok",
+      "usage": {
+        "completion_time": 0.445561021,
+        "completion_tokens": 213,
+        "completion_tokens_details": {
+          "reasoning_tokens": 161
+        },
+        "prompt_time": 0.138223689,
+        "prompt_tokens": 2474,
+        "queue_time": 0.444575231,
+        "total_time": 0.58378471,
+        "total_tokens": 2687
+      }
+    },
+    {
+      "latency_seconds": 16.22432030001073,
+      "model": "openai/gpt-oss-120b",
+      "request_sha256": "1131b150197331283074051c2c3f54c11ccd1c104316ee63b7db16ae325e4eec",
+      "status": "ok",
+      "usage": {
+        "completion_time": 0.302759792,
+        "completion_tokens": 143,
+        "completion_tokens_details": {
+          "reasoning_tokens": 91
+        },
+        "prompt_time": 0.130126935,
+        "prompt_tokens": 2203,
+        "queue_time": 0.37410771,
+        "total_time": 0.432886727,
+        "total_tokens": 2346
+      }
+    },
+    {
+      "latency_seconds": 20.219501200015657,
+      "model": "openai/gpt-oss-120b",
+      "request_sha256": "2af8bd425515f5a33f28715621254cac6a59951ca82e11e7fc5ce6b545896562",
+      "status": "ok",
+      "usage": {
+        "completion_time": 0.401448858,
+        "completion_tokens": 192,
+        "completion_tokens_details": {
+          "reasoning_tokens": 140
+        },
+        "prompt_time": 0.184069868,
+        "prompt_tokens": 2725,
+        "queue_time": 0.308364451,
+        "total_time": 0.585518726,
+        "total_tokens": 2917
+      }
+    },
+    {
+      "latency_seconds": 23.266246099985437,
+      "model": "openai/gpt-oss-120b",
+      "request_sha256": "da91025b71761db91d107522a963c1625037ddd59d9f402b7b985ef999182986",
+      "status": "ok",
+      "usage": {
+        "completion_time": 0.324435336,
+        "completion_tokens": 154,
+        "completion_tokens_details": {
+          "reasoning_tokens": 98
+        },
+        "prompt_time": 0.140595,
+        "prompt_tokens": 2439,
+        "queue_time": 0.250704011,
+        "total_time": 0.465030336,
+        "total_tokens": 2593
+      }
+    },
+    {
+      "latency_seconds": 15.593038400023943,
+      "model": "openai/gpt-oss-120b",
+      "request_sha256": "3892a6ba5bb32876eaa226f4b3f2d86b1c3f7c4978f82897998c5e9abd23e14e",
+      "status": "ok",
+      "usage": {
+        "completion_time": 0.663277379,
+        "completion_tokens": 313,
+        "completion_tokens_details": {
+          "reasoning_tokens": 261
+        },
+        "prompt_time": 0.110375456,
+        "prompt_tokens": 2162,
+        "queue_time": 0.339664897,
+        "total_time": 0.773652835,
+        "total_tokens": 2475
+      }
+    },
+    {
+      "latency_seconds": 22.38321659999201,
+      "model": "openai/gpt-oss-120b",
+      "request_sha256": "c94f8ecac525d42d9ec7740209dc837c6ff2cfa962309543816f0763dd25c46c",
+      "status": "invalid_output",
+      "usage": {
+        "completion_time": 0.28864484,
+        "completion_tokens": 137,
+        "completion_tokens_details": {
+          "reasoning_tokens": 21
+        },
+        "prompt_time": 0.175123631,
+        "prompt_tokens": 2552,
+        "queue_time": 0.379971458,
+        "total_time": 0.463768471,
+        "total_tokens": 2689
+      }
+    },
+    {
+      "latency_seconds": 16.599411899980623,
+      "model": "openai/gpt-oss-120b",
+      "request_sha256": "3b425452e1dfc9824481a10d77e849098dbc3ada42021ea76687bcead096d810",
+      "status": "ok",
+      "usage": {
+        "completion_time": 0.445447142,
+        "completion_tokens": 212,
+        "completion_tokens_details": {
+          "reasoning_tokens": 160
+        },
+        "prompt_time": 0.241854677,
+        "prompt_tokens": 2235,
+        "queue_time": 0.512195105,
+        "total_time": 0.687301819,
+        "total_tokens": 2447
+      }
+    },
+    {
+      "latency_seconds": 16.312061700009508,
+      "model": "openai/gpt-oss-120b",
+      "request_sha256": "47944e7b3ba4597d4eccacd4588448b8436342603a67a2a77cb9b01c8a27aaab",
+      "status": "ok",
+      "usage": {
+        "completion_time": 0.290469707,
+        "completion_tokens": 139,
+        "completion_tokens_details": {
+          "reasoning_tokens": 87
+        },
+        "prompt_time": 0.130241371,
+        "prompt_tokens": 1742,
+        "queue_time": 0.383926078,
+        "total_time": 0.420711078,
+        "total_tokens": 1881
+      }
+    },
+    {
+      "latency_seconds": 18.009843799984083,
+      "model": "openai/gpt-oss-120b",
+      "request_sha256": "9f8270ee2758af007427e229669336840910eb590c1012f9fcaeb403f577435b",
+      "status": "ok",
+      "usage": {
+        "completion_time": 0.209625205,
+        "completion_tokens": 100,
+        "completion_tokens_details": {
+          "reasoning_tokens": 48
+        },
+        "prompt_time": 0.15278511,
+        "prompt_tokens": 2788,
+        "queue_time": 0.314134165,
+        "total_time": 0.362410315,
+        "total_tokens": 2888
+      }
+    },
+    {
+      "latency_seconds": 20.145972899976186,
+      "model": "openai/gpt-oss-120b",
+      "request_sha256": "8580f0129312c20eb8bf07339fb16fe32014b5e9ef8340db69e3af9977adb77d",
+      "status": "ok",
+      "usage": {
+        "completion_time": 0.374288006,
+        "completion_tokens": 179,
+        "completion_tokens_details": {
+          "reasoning_tokens": 127
+        },
+        "prompt_time": 0.141468711,
+        "prompt_tokens": 2297,
+        "queue_time": 0.308066953,
+        "total_time": 0.515756717,
+        "total_tokens": 2476
+      }
+    },
+    {
+      "latency_seconds": 17.145344199991086,
+      "model": "openai/gpt-oss-120b",
+      "request_sha256": "396f2442a0256709fc1a0a7b86f040dbe51249aa5450750669ba9c32f3baeb45",
+      "status": "ok",
+      "usage": {
+        "completion_time": 0.396916993,
+        "completion_tokens": 188,
+        "completion_tokens_details": {
+          "reasoning_tokens": 136
+        },
+        "prompt_time": 0.13407474,
+        "prompt_tokens": 2184,
+        "queue_time": 0.24681463,
+        "total_time": 0.530991733,
+        "total_tokens": 2372
+      }
+    },
+    {
+      "latency_seconds": 19.289703599992208,
+      "model": "openai/gpt-oss-120b",
+      "request_sha256": "303dfdeac3a2ae854e962bcca1ddf63dc34c69a07b1ccae29a070a4f1f89d29d",
+      "status": "ok",
+      "usage": {
+        "completion_time": 0.408800827,
+        "completion_tokens": 192,
+        "completion_tokens_details": {
+          "reasoning_tokens": 140
+        },
+        "prompt_time": 0.190977012,
+        "prompt_tokens": 2457,
+        "queue_time": 0.381085056,
+        "total_time": 0.599777839,
+        "total_tokens": 2649
+      }
+    },
+    {
+      "latency_seconds": 21.355106700008037,
+      "model": "openai/gpt-oss-120b",
+      "request_sha256": "4001f582cb5d174d80ea061696413817869ce7b6e16be48c0bac1c4b5fa0f5fe",
+      "status": "ok",
+      "usage": {
+        "completion_time": 0.720490867,
+        "completion_tokens": 336,
+        "completion_tokens_details": {
+          "reasoning_tokens": 284
+        },
+        "prompt_time": 0.109689787,
+        "prompt_tokens": 2320,
+        "queue_time": 0.005619589,
+        "total_time": 0.830180654,
+        "total_tokens": 2656
+      }
+    },
+    {
+      "latency_seconds": 16.412390699988464,
+      "model": "openai/gpt-oss-120b",
+      "request_sha256": "f425eca9c1711acba46dcae51e992b1b5076b483ced91b6e6f6bbbd869f41862",
+      "status": "ok",
+      "usage": {
+        "completion_time": 0.370851467,
+        "completion_tokens": 166,
+        "completion_tokens_details": {
+          "reasoning_tokens": 114
+        },
+        "prompt_time": 0.18648189,
+        "prompt_tokens": 2205,
+        "queue_time": 0.388263216,
+        "total_time": 0.557333357,
+        "total_tokens": 2371
+      }
+    },
+    {
+      "latency_seconds": 16.68974210001761,
+      "model": "openai/gpt-oss-120b",
+      "request_sha256": "ccb95db605e51bd733b4482500dd8db5224af295204532c95ecc8ad57426983d",
+      "status": "ok",
+      "usage": {
+        "completion_time": 0.541410322,
+        "completion_tokens": 257,
+        "completion_tokens_details": {
+          "reasoning_tokens": 205
+        },
+        "prompt_time": 0.542834646,
+        "prompt_tokens": 2068,
+        "queue_time": 0.259392591,
+        "total_time": 1.084244968,
+        "total_tokens": 2325
+      }
+    },
+    {
+      "latency_seconds": 15.104640300007304,
+      "model": "openai/gpt-oss-120b",
+      "request_sha256": "65c8077a3a6b140c91cf403f320f6e7f6f3551d8341d0e686078a415545ddcdb",
+      "status": "ok",
+      "usage": {
+        "completion_time": 0.549507333,
+        "completion_tokens": 219,
+        "completion_tokens_details": {
+          "reasoning_tokens": 167
+        },
+        "prompt_time": 0.567290418,
+        "prompt_tokens": 1533,
+        "prompt_tokens_details": {
+          "cached_tokens": 256
+        },
+        "queue_time": 0.374497353,
+        "total_time": 1.116797751,
+        "total_tokens": 1752
+      }
+    },
+    {
+      "latency_seconds": 16.919706500018947,
+      "model": "openai/gpt-oss-120b",
+      "request_sha256": "d5814046c3b1acba47c950befd761e29d1e218e7309953b76e80ebeb42d6b898",
+      "status": "ok",
+      "usage": {
+        "completion_time": 0.56495753,
+        "completion_tokens": 266,
+        "completion_tokens_details": {
+          "reasoning_tokens": 214
+        },
+        "prompt_time": 0.183127004,
+        "prompt_tokens": 2138,
+        "queue_time": 0.348133522,
+        "total_time": 0.748084534,
+        "total_tokens": 2404
+      }
+    },
+    {
+      "latency_seconds": 23.207561799994437,
+      "model": "openai/gpt-oss-120b",
+      "request_sha256": "1a03b8cf29fb6da8796e940d7a038ad64cdecadab506d7c67f29c407d2e64dd9",
+      "status": "ok",
+      "usage": {
+        "completion_time": 1.12215613,
+        "completion_tokens": 538,
+        "completion_tokens_details": {
+          "reasoning_tokens": 486
+        },
+        "prompt_time": 0.230159903,
+        "prompt_tokens": 3137,
+        "queue_time": 0.385584437,
+        "total_time": 1.352316033,
+        "total_tokens": 3675
+      }
+    },
+    {
+      "latency_seconds": 20.998255300015444,
+      "model": "openai/gpt-oss-120b",
+      "request_sha256": "fb06ab4e556d3e578f961c122443a94990696801ad118eaf1b590deadedc6ed8",
+      "status": "ok",
+      "usage": {
+        "completion_time": 0.308406267,
+        "completion_tokens": 147,
+        "completion_tokens_details": {
+          "reasoning_tokens": 91
+        },
+        "prompt_time": 0.123968268,
+        "prompt_tokens": 2446,
+        "queue_time": 0.246740945,
+        "total_time": 0.432374535,
+        "total_tokens": 2593
+      }
+    },
+    {
+      "latency_seconds": 19.516209299996262,
+      "model": "openai/gpt-oss-120b",
+      "request_sha256": "550b6804fc3563612951c3a08e4911ad997b7679de84d962964f2f96e74fa8a7",
+      "status": "ok",
+      "usage": {
+        "completion_time": 0.303241599,
+        "completion_tokens": 145,
+        "completion_tokens_details": {
+          "reasoning_tokens": 93
+        },
+        "prompt_time": 0.156148403,
+        "prompt_tokens": 2003,
+        "queue_time": 0.558084683,
+        "total_time": 0.459390002,
+        "total_tokens": 2148
+      }
+    },
+    {
+      "latency_seconds": 16.808878699986963,
+      "model": "openai/gpt-oss-120b",
+      "request_sha256": "5671bcbeabbd794a86b51e28eeaa11db00c12eb4139d95bf1bc02cf3f772a8a2",
+      "status": "ok",
+      "usage": {
+        "completion_time": 0.224286698,
+        "completion_tokens": 106,
+        "completion_tokens_details": {
+          "reasoning_tokens": 54
+        },
+        "prompt_time": 0.158093331,
+        "prompt_tokens": 2093,
+        "queue_time": 0.572989065,
+        "total_time": 0.382380029,
+        "total_tokens": 2199
+      }
+    },
+    {
+      "latency_seconds": 16.47362949998933,
+      "model": "openai/gpt-oss-120b",
+      "request_sha256": "b4c4d31d0613c54480b43cbc64f7fd9400ba7769fca4ca3dbaa717402c587957",
+      "status": "ok",
+      "usage": {
+        "completion_time": 0.565792019,
+        "completion_tokens": 270,
+        "completion_tokens_details": {
+          "reasoning_tokens": 218
+        },
+        "prompt_time": 0.133977556,
+        "prompt_tokens": 2035,
+        "queue_time": 0.308118666,
+        "total_time": 0.699769575,
+        "total_tokens": 2305
+      }
+    }
+  ],
+  "requests": 68,
+  "statuses": {
+    "invalid_output": 1,
+    "ok": 67
+  }
+}

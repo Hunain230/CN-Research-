@@ -1,0 +1,6 @@
+{
+  "event": "open correlation holdout labels after prediction freeze",
+  "epoch": 1794243903.1764944,
+  "classification": "exploratory_sampled",
+  "prediction_freeze_exists": true
+}

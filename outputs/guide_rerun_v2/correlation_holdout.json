@@ -1,0 +1,46 @@
+{
+  "classification": "exploratory_ambiguity_excluded_sampled_500_alerts_per_org",
+  "macro": {
+    "f1": {
+      "ci95": [
+        0.03024476357979252,
+        0.0716138698540829
+      ],
+      "mean": 0.04824622506587123,
+      "organizations": 68
+    },
+    "precision": {
+      "ci95": [
+        0.015987019039692983,
+        0.05612272324563576
+      ],
+      "mean": 0.03158098334455236,
+      "organizations": 68
+    },
+    "recall": {
+      "ci95": [
+        0.8613913287651889,
+        0.9324755754910949
+      ],
+      "mean": 0.8990084910190977,
+      "organizations": 66
+    }
+  },
+  "micro": {
+    "candidate_coverage": 0.6948114424768448,
+    "candidate_positives": 54052,
+    "candidate_recall": 0.8124821501044689,
+    "candidates": 2003247,
+    "f1": 0.0688241282389591,
+    "fn": 22684,
+    "fp": 1163689,
+    "pairs": 2883152,
+    "positives": 66527,
+    "precision": 0.03630794049350245,
+    "recall": 0.6590256587550919,
+    "tp": 43843
+  },
+  "military_certification": false,
+  "organizations": 68,
+  "zero_positive_orgs": 2
+}

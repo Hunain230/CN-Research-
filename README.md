@@ -1,8 +1,8 @@
 # CNET Research: SOC Threat Correlation and Alert Prioritization
 
-This repository contains the implementation and audit records for a retrospective, offline research study of alert correlation and incident prioritization in Microsoft GUIDE. The proposed workflow is correlate–prioritize–verify (C/P/V), compared with rule, retrieval, and single-LLM baselines when empirical gates permit.
+This repository contains the implementation and audit records for a retrospective research study of alert correlation and incident prioritization in Microsoft GUIDE. The proposed workflow is correlate–prioritize–verify (C/P/V), compared with rule, retrieval, and single-LLM baselines when empirical gates permit.
 
-**Current status:** Phases 1–5 implementation and synthetic plumbing are recorded; Phase 6B–6G produced a data/label audit, an aggregate-only offline handoff, and a static dashboard over prior exploratory results. The existing test cohort was accessed, so results are exploratory. The priority experiment is an oracle-group ceiling; the bounded correlation diagnostic has very low candidate coverage and recall. No empirical LLM/C/P/V comparison or 95% recall result exists. Hosted model calls remain unauthorized, confirmatory evaluation is blocked, and the dashboard is a static report viewer rather than an operational SOC system.
+**Current status (2026-11-09):** A new GUIDE_Test exploratory run used 334 training, 67 validation, and 68 holdout organizations, excluding the historical 30 test organizations. The fused candidate retriever reached 97.21% top-20 candidate recall at K=500 on the exploratory holdout. Final Recall@20 was 55.16% for local logistic ranking and 42.43% for Groq GPT-OSS-120B; these are oracle-group priority results. A bounded 500-alert-per-organization correlation diagnostic had 65.90% pair recall and 3.63% precision. No military certification or confirmatory end-to-end C/P/V result exists. See the [new run report](outputs/guide_rerun_v2/report.md) and [interactive dashboard](dashboard/guide_rerun_v2.html). Earlier phase records remain historical; the Groq authorization applies only to this bounded new run.
 
 ## Start here
 

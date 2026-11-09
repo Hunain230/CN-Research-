@@ -110,7 +110,7 @@ def fit():
  curve={k:{'recall':bootstrap(v),'mean_fraction_of_queue':float(np.mean(volumes[k]))} for k,v in recalls.items()}
  selected=next((k for k in KS if curve[str(k)]['recall']['mean']>=.95),None)
  dump(OUT/'validation.json',{'classification':'exploratory_validation','logistic_grid':validation,'selected_C':best,'candidate_recall_curve':curve,'selected_candidate_K':selected,'target_met_on_validation':selected is not None})
- frozen={'selected_C':best,'candidate_K':selected,'llm_top_n':50,'groq_model':'openai/gpt-oss-120b','temperature':0,'max_calls':100,'max_total_tokens':150000,'code_sha256':sha256_file(Path(__file__)),'protocol_sha256':sha256_file(ROOT/'phases_outputs/GUIDE_RERUN_V2_PROTOCOL.md'),'split_sha256':sha256_file(PRIVATE/'split.json'),'validation_sha256':sha256_file(OUT/'validation.json')}
+ frozen={'selected_C':best,'candidate_K':selected,'llm_top_n':50,'groq_model':'openai/gpt-oss-120b','temperature':0,'max_calls':100,'max_total_tokens':200000,'code_sha256':sha256_file(Path(__file__)),'protocol_sha256':sha256_file(ROOT/'phases_outputs/GUIDE_RERUN_V2_PROTOCOL.md'),'split_sha256':sha256_file(PRIVATE/'split.json'),'validation_sha256':sha256_file(OUT/'validation.json')}
  dump(OUT/'method_freeze.json',frozen)
  with (PRIVATE/'fitted.pkl').open('wb') as f:pickle.dump({'vec':vec,'tf':tf,'model':models[best],'idf':idf,'profile':profile,'avgdl':avgdl},f)
  print('method frozen; candidate K',selected,flush=True)
@@ -148,7 +148,7 @@ def predict():
  for no,o in enumerate(hold,1):
   kk=sorted(k for k,d in docs.items() if d['org']==o);xx=model['vec'].transform([features(docs[k]) for k in kk]);zz=model['tf'].transform(xx);lr=model['model'].decision_function(zz);dl=np.asarray(xx.sum(axis=1)).ravel();bm=np.asarray(xx@(model['idf']*model['profile'])).ravel()*2.2/(1+1.2*(.25+.75*dl/max(model['avgdl'],1)));count=np.array([sum(len(v) for v in docs[k]['fields'].values()) for k in kk],float);rr=fusion([lr,bm,count],kk);order=ordered(kk,rr)
   shortlist=order[:50];items=[{'candidate':j,**{field:docs[kk[i]]['fields'][field][:8] for field in FIELDS if field!='DetectorId'}} for j,i in enumerate(shortlist)]
-  if calls<100 and used<140000:
+  if calls<100 and used<190000:
    response=api_rerank(items,PRIVATE/'groq_cache'/f'{key(o)}.json');used+=response.get('usage',{}).get('total_tokens',0);calls+=1
   else:response={'status':'budget_exhausted','order':[],'usage':{}}
   llorder=[shortlist[j] for j in response['order']];llorder+= [i for i in order if i not in set(llorder)]

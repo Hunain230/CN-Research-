@@ -1,0 +1,27 @@
+{
+  "classification": "exploratory",
+  "inputs": {
+    "preparation.json": "efa80bb6b24aa940df951ac932f3a503d6625b655efd1574b44bda0fc3e30677",
+    "validation.json": "e29f836c3ffe383342c19084538718efac3e82a854fff7101c28b4eb40adc14f",
+    "method_freeze.json": "4650581161814bfb6a8eee2b04aab365255ff54b1846fd85a401b40320bcec54",
+    "prediction_freeze.json": "fc59bc9c19fb74138f3aa19ef687c159bd84a41cf54720ab993d93cffa35499c",
+    "holdout_metrics.json": "607b29523a0a423e252bb5810e334c7a6561da02acbf264bf50f91bf1dcacaf8",
+    "correlation_validation.json": "6f7b2fc353f844d09ab9dcfffa9bdc721e81155daa7364f47e7d109ee64e9042",
+    "correlation_freeze.json": "bffdfc5c7ee632167ecbdb4557716e09dc73496b6a0f65a06eb30defb9ffacb9",
+    "correlation_prediction_freeze.json": "cbb9cc76d5dcc83b6c6f8bf7567a5fc0b0eb250e31cb38f888cfdacb572932c4",
+    "correlation_holdout.json": "c9b9b21ace1a8592072f593afd14151030a90009a5d9978ba6d9063bd2bf390d",
+    "api_operations.json": "df1cb0fc4263a972d385a9fb69d0226c18398ac538371a64de17858accec92fa"
+  },
+  "outputs": {
+    "report.md": "2e96c75a01bba4a00b068fdc9e93be50b5b800297092663f593931184969842f",
+    "candidate_recall_curve.png": "5763d08eb43ea212708fd792133dd436ee9c6211665521d8a7014bb72050e3f5",
+    "method_recall20.png": "7352eecd150a27c04288f07c6f864311ca7d07dcc975ec55e619f74ea4a31824"
+  },
+  "dashboard_sha256": "2cde153f69a647490e4d460a743310d704393e0800462a188383ea3d6cec1f0f",
+  "external_model": "Groq openai/gpt-oss-120b",
+  "actual_tokens": 176473,
+  "raw_hashes": {
+    "GUIDE_Test.csv": "fdfd7523efd6e3c26bd0290ba6acbcb237196cf923dd56a28e96802035db35a3",
+    "GUIDE_Test_Queue_Rankings.csv": "e4ea9308f45821128a3cd446ab19e6559edfc50709e72034ce957b6f0e2e65d6"
+  }
+}

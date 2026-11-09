@@ -1,0 +1,6 @@
+{
+  "classification": "exploratory",
+  "event": "opening holdout labels after prediction freeze",
+  "prediction_freeze_sha256": "fc59bc9c19fb74138f3aa19ef687c159bd84a41cf54720ab993d93cffa35499c",
+  "time_unix": 1794244709.3513129
+}

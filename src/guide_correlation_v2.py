@@ -58,6 +58,7 @@ def fit():
  data=load();alerts=data['alerts'];split=data['split'];train={o for o,p in split.items() if p=='train'};valid={o for o,p in split.items() if p=='validation'}
  g=truth(train|valid,alerts);by=defaultdict(list)
  for k,a in alerts.items():by[a['org']].append(k)
+ for o in by:by[o]=sorted(by[o])[:500]
  rng=np.random.default_rng(0);xx=[];yy=[]
  for o in sorted(train):
   groups=defaultdict(list)
@@ -87,9 +88,9 @@ def fit():
   report[str(k)]={'macro_candidate_recall':bootstrap(s['candidate_recall']),'micro_candidate_recall':s['tp']/s['positive'] if s['positive'] else None,'mean_pair_coverage':float(np.mean(s['coverage'])),'candidate_pairs':s['n'],'thresholds':{str(t):{'tp':v[0],'fp':v[1],'fn':v[2],'f1':2*v[0]/(2*v[0]+v[1]+v[2]) if sum(v) else 0.} for t,v in s['confusion'].items()}}
  selected=next((k for k in KS if report[str(k)]['micro_candidate_recall']>=.95),200)
  threshold=max(THRESHOLDS,key=lambda t:report[str(selected)]['thresholds'][str(t)]['f1'])
- dump(OUT/'correlation_validation.json',{'routes':'union top-K per route: five fields; ATT&CK/detector; category/entity/role','curve':report,'selected_neighbors_per_route':selected,'threshold':threshold,'target_met':report[str(selected)]['micro_candidate_recall']>=.95,'zero_positive_orgs_excluded_from_macro_recall':len(valid)-len(stats[selected]['candidate_recall'])})
+ dump(OUT/'correlation_validation.json',{'routes':'union top-K per route: five fields; ATT&CK/detector; category/entity/role','curve':report,'selected_neighbors_per_route':selected,'threshold':threshold,'target_met':report[str(selected)]['micro_candidate_recall']>=.95,'sample_max_alerts_per_org':500,'zero_positive_orgs_excluded_from_macro_recall':len(valid)-len(stats[selected]['candidate_recall'])})
  with (PRIVATE/'correlation_model.pkl').open('wb') as f:pickle.dump((model,vec),f)
- dump(OUT/'correlation_freeze.json',{'K':selected,'threshold':threshold,'code_sha256':sha256_file(Path(__file__)),'split_sha256':sha256_file(PRIVATE/'split.json'),'model_sha256':sha256_file(PRIVATE/'correlation_model.pkl')})
+ dump(OUT/'correlation_freeze.json',{'K':selected,'threshold':threshold,'sample_max_alerts_per_org':500,'code_sha256':sha256_file(Path(__file__)),'split_sha256':sha256_file(PRIVATE/'split.json'),'model_sha256':sha256_file(PRIVATE/'correlation_model.pkl')})
 
 def predict():
  freeze=read(OUT/'correlation_freeze.json');assert freeze['code_sha256']==sha256_file(Path(__file__))
@@ -99,6 +100,7 @@ def predict():
   if split[a['org']]=='holdout':by[a['org']][k]=a
  hashes={}
  for no,(o,docs) in enumerate(sorted(by.items()),1):
+  docs={k:docs[k] for k in sorted(docs)[:500]}
   keys,ee=edges(docs,vec,[freeze['K']]);e=ee[freeze['K']];n=len(keys);pf=np.array([pair_features(docs[keys[i]],docs[keys[j]]) for i,j in zip(e//n,e%n)],dtype=np.float32).reshape(-1,5);p=model.predict_proba(pf)[:,1] if len(pf) else np.array([])
   path=PRIVATE/'correlation_predictions'/f'{key(o)}.npz';path.parent.mkdir(exist_ok=True);np.savez_compressed(path,keys=np.array(keys),edges=e,probability=p);hashes[key(o)]=sha256_file(path);print('correlation predictions',no,'/',len(by),flush=True)
  dump(OUT/'correlation_prediction_freeze.json',{'hashes':hashes,'holdout_labels_read':False,'freeze_sha256':sha256_file(OUT/'correlation_freeze.json')})
@@ -112,7 +114,7 @@ def evaluate():
   a=np.load(path);keys=a['keys'].tolist();n=len(keys);e=a['edges'];y=np.array([gold[keys[i]]==gold[keys[j]] for i,j in zip(e//n,e%n)]);link=a['probability']>=freeze['threshold'];sizes=Counter(gold[k] for k in keys);pos=sum(v*(v-1)//2 for v in sizes.values());tp=int((y&link).sum());fp=int((~y&link).sum());fn=pos-tp
   results.append({'tp':tp,'fp':fp,'fn':fn,'positives':pos,'candidate_positives':int(y.sum()),'pairs':n*(n-1)//2,'candidates':len(e),'precision':tp/(tp+fp) if tp+fp else 0.,'recall':tp/pos if pos else None,'f1':2*tp/(2*tp+fp+fn) if 2*tp+fp+fn else 0.})
  sums={k:sum(r[k] for r in results) for k in ['tp','fp','fn','positives','candidate_positives','pairs','candidates']};s=sums;s.update({'precision':s['tp']/(s['tp']+s['fp']) if s['tp']+s['fp'] else 0,'recall':s['tp']/s['positives'],'f1':2*s['tp']/(2*s['tp']+s['fp']+s['fn']),'candidate_recall':s['candidate_positives']/s['positives'],'candidate_coverage':s['candidates']/s['pairs']})
- dump(OUT/'correlation_holdout.json',{'classification':'exploratory_ambiguity_excluded','organizations':len(results),'micro':s,'macro':{k:bootstrap([r[k] for r in results if r[k] is not None]) for k in ['precision','recall','f1']},'zero_positive_orgs':sum(r['recall'] is None for r in results),'military_certification':False})
+ dump(OUT/'correlation_holdout.json',{'classification':'exploratory_ambiguity_excluded_sampled_500_alerts_per_org','organizations':len(results),'micro':s,'macro':{k:bootstrap([r[k] for r in results if r[k] is not None]) for k in ['precision','recall','f1']},'zero_positive_orgs':sum(r['recall'] is None for r in results),'military_certification':False})
  print(json.dumps(s,indent=2),flush=True)
 if __name__=='__main__':
  ap=argparse.ArgumentParser();ap.add_argument('stage',choices=['fit','predict','evaluate']);a=ap.parse_args();globals()[a.stage]()
