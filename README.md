@@ -48,7 +48,7 @@ All 9,980 queue labels join to distinct composite incident keys. The publisher a
 
 ## Current Phase 6 follow-on status
 
-See [the Phase 6B–6G handoff](phases_outputs/Phase6B-G.md). Module records: `Phase6B.md`, `Phase6C.md`, `Phase6D.md`, `Phase6E.md`, `Phase6F.md`, and `Phase6G.md` under `phases_outputs/`. The interactive aggregate dashboard is [dashboard/index.html](dashboard/index.html). The final offline package is under `outputs/phase6/phase6-final-offline-20261109-v3/`.
+See [the Phase 6B–6G handoff](phases_outputs/Phase6B-G.md). Module records: `Phase6B.md`, `Phase6C.md`, `Phase6D.md`, `Phase6E.md`, `Phase6F.md`, and `Phase6G.md` under `phases_outputs/`. The interactive aggregate dashboard is [dashboard/index.html](dashboard/index.html). The final offline bundle is under `outputs/phase6/phase6-final-offline-20261109-v4/`, with a portable [ZIP archive](outputs/phase6/phase6-final-offline-20261109-v4.zip).
 
 ## Phase status
 

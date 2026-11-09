@@ -1,0 +1,13 @@
+{
+  "candidate_K": 500,
+  "code_sha256": "dc2be3ea1562db1f393452898c7b4b9710325fa78c7aefaacbc60b57ec9c5665",
+  "groq_model": "openai/gpt-oss-120b",
+  "llm_top_n": 50,
+  "max_calls": 100,
+  "max_total_tokens": 150000,
+  "protocol_sha256": "f6613e55ea8f1b8f97e594ac910bf6a5d49ff8f6f1da2605ca7a3b143c97fa37",
+  "selected_C": "0.1",
+  "split_sha256": "a99f53483d91e32e6872b71ae385123db71e36cb4b52c3b8eeb985c5ffb36e5d",
+  "temperature": 0,
+  "validation_sha256": "e29f836c3ffe383342c19084538718efac3e82a854fff7101c28b4eb40adc14f"
+}

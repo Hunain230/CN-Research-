@@ -4,6 +4,8 @@
 
 The package generator `src.phase6f_package` verifies its required inputs exist, computes their SHA-256 fingerprints, copies only aggregate reports/metrics, Module 6B–G records, and the static dashboard, then writes an immutable manifest and summary. It excludes raw evidence, row-level predictions, evaluator mappings, per-organization results, and secrets. The original Phase 6 run directories are not overwritten.
 
+The current bundle is `outputs/phase6/phase6-final-offline-20261109-v4/`; the portable archive is `outputs/phase6/phase6-final-offline-20261109-v4.zip`. Its manifest includes hashes for all bundled files and the Phase 1 raw-input hashes. The archive is checked against those hashes and contains no `data/` directory.
+
 The handoff includes a priority-retrieval oracle-group ceiling and an ambiguity-excluded correlation diagnostic. These are exploratory because the historical test cohort was accessed. It includes no empirical LLM/multi-agent comparison. Pair retrieval is far below the 95% target; priority Recall@20 is also far below 95%. No overfit-free or deployment-ready claim is made.
 
 Rebuild into a new run ID:

@@ -15,6 +15,8 @@ No result is presented as achieving the 95% recall goal. For correlation pair re
 - [6F final package](Phase6F.md): aggregate-only package builder and reproducibility fingerprints.
 - [6G dashboard](Phase6G.md): single-file interactive static dashboard.
 
+The portable aggregate-only handoff is [`phase6-final-offline-20261109-v4.zip`](../outputs/phase6/phase6-final-offline-20261109-v4.zip). Its embedded manifest records file hashes; the ZIP integrity check is recorded in the completion handoff.
+
 ## Commands
 
 From the project root:

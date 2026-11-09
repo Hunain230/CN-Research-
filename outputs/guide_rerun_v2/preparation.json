@@ -1,0 +1,21 @@
+{
+  "ambiguous_keys": 70702,
+  "cache_sha256": "2b0ab264c985e9680d1f62bd2f4e56f726b8852e71b239635ce81e31a52207c1",
+  "classification": "exploratory_oracle_group_ranking",
+  "eligibility_checked": true,
+  "excluded_evidence_rows": 562825,
+  "historical_split_sha256": "5c504d865af698833f7189628f1de12518e7f212a6ead2a1434d9b023a00ccbe",
+  "old_test_organizations_excluded": 30,
+  "ranking_candidates": 193311,
+  "raw_hashes": {
+    "GUIDE_Test.csv": "fdfd7523efd6e3c26bd0290ba6acbcb237196cf923dd56a28e96802035db35a3",
+    "GUIDE_Test_Queue_Rankings.csv": "e4ea9308f45821128a3cd446ab19e6559edfc50709e72034ce957b6f0e2e65d6"
+  },
+  "split_counts": {
+    "holdout": 68,
+    "train": 334,
+    "validation": 67
+  },
+  "split_sha256": "a99f53483d91e32e6872b71ae385123db71e36cb4b52c3b8eeb985c5ffb36e5d",
+  "unambiguous_alerts": 369347
+}
