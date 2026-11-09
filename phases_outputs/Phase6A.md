@@ -14,7 +14,7 @@
 ## Checks
 
 - `.venv` CLI help discovered supported command structure before invocation.
-- `phase6a-self-test`: **passed** (synthetic deterministic label-blind cohort selector, split disjointness, ambiguous-key exclusion, evaluator import boundary, prior test status, and blocked test-tuning status).
+- `phase6a-self-test`: **passed** against `fixtures/stage6a/protocol_cases.json` (synthetic deterministic label-blind cohort selector, split disjointness, ambiguous-key exclusion, evaluator import boundary, prior test status, and blocked test-tuning status).
 - YAML parse and required-field/schema invariants: **passed** using the project venv.
 - `phase6a-audit`: **passed**; verified recorded assignment counts, split manifest and run evidence, and 70,702 ambiguity keys without running any model/evaluator or opening raw data.
 - Existing `check-splits`: **passed**, matching the preserved digest and 10/10/30 counts.
