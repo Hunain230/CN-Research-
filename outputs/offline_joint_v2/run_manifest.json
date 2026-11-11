@@ -1,0 +1,15 @@
+{
+  "classification": "exploratory_offline_proxy_not_llm_comparison",
+  "sha256": {
+    "configs\\offline_joint_v2.json": "3cb490c7fc255558b59374f37ca00663e0527cd3ea52147b43c042c2fdb59a51",
+    "data\\derived\\offline_joint_v2\\predictions.pkl": "856f8fdf9be9e6f5ab0bf2087c7afabfaa1fa203116cf88331518ad3245ae6fb",
+    "outputs\\offline_joint_v2\\metrics.json": "8e26d530ea686ac35a7be32c67515435aab509325084d04a10e022c03f6bb3fa",
+    "outputs\\offline_joint_v2\\prediction_freeze.json": "929bedd0f4bdd5854467805121d4ceb4becd1717227f11910fdb115aa4b2d5ff",
+    "outputs\\offline_joint_v2\\report.md": "722ed10aa482cd1b48703b14fb994a5f67d7f212cec764c3ee818e8896582895",
+    "src\\offline_joint_comparison.py": "e255d7b3b33eb2ad22ca2c4c51470bb065a5d9a27c565c05caba23a8fa0dd554"
+  },
+  "source_raw_hashes": {
+    "GUIDE_Test.csv": "fdfd7523efd6e3c26bd0290ba6acbcb237196cf923dd56a28e96802035db35a3",
+    "GUIDE_Test_Queue_Rankings.csv": "e4ea9308f45821128a3cd446ab19e6559edfc50709e72034ce957b6f0e2e65d6"
+  }
+}

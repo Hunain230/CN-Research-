@@ -1,0 +1,23 @@
+{
+  "version": "offline-joint-v2",
+  "classification": "exploratory_offline_proxy_not_llm_comparison",
+  "cohort": "guide_rerun_v2_holdout_orgs_with_at_most_500_unambiguous_alerts",
+  "max_alerts_per_org": 500,
+  "candidate_source": "frozen_guide_rerun_v2_correlation_predictions",
+  "rule_link": "shared_MitreTechniques_AND_shared_Category",
+  "correlation_probability_threshold": 0.25,
+  "verifier_proxy_probability_threshold": 0.5,
+  "verifier_proxy_requires_shared_category_or_technique": true,
+  "max_predicted_component_size": 100,
+  "ranking": {
+    "B0_rule_count": "alert_count; severity_unavailable",
+    "B1_rule_bm25": "training_IDF_with_label_free_target_queue_descriptor_profile",
+    "offline_CP_proxy": "training_fitted_logistic_priority_on_predicted_groups",
+    "offline_CPV_proxy": "same_priority_model_with_deterministic_link_filter"
+  },
+  "top20_recovery_min_purity": 0.8,
+  "top20_recovery_min_completeness": 0.8,
+  "rank_direction_primary_assumption": "1_highest",
+  "ndcg_gain": "2^(21-r)-1",
+  "seed": 0
+}

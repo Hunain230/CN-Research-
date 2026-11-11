@@ -18,9 +18,9 @@ import numpy as np
 from .guide_rerun_v2 import ROOT, PRIVATE, FIELDS, features, key, labels, load, bootstrap, check_raw
 from .phase2 import sha256_file
 
-CONFIG = ROOT / "configs/offline_joint_v1.json"
-OUT = ROOT / "outputs/offline_joint_v1"
-HIDDEN = ROOT / "data/derived/offline_joint_v1"
+CONFIG = ROOT / "configs/offline_joint_v2.json"
+OUT = ROOT / "outputs/offline_joint_v2"
+HIDDEN = ROOT / "data/derived/offline_joint_v2"
 PREDICTIONS = HIDDEN / "predictions.pkl"
 METHODS = ("B0_rule_count", "B1_rule_bm25", "offline_CP_proxy", "offline_CPV_proxy")
 
@@ -99,7 +99,10 @@ def rank_components(groups, alerts, fitted):
     z = fitted["tf"].transform(x)
     logistic = np.asarray(fitted["model"].decision_function(z)).ravel()
     dl = np.asarray(x.sum(axis=1)).ravel()
-    bm25 = np.asarray(x @ (fitted["idf"] * fitted["profile"])).ravel()
+    # The query profile is built from this queue's model-visible descriptors only.
+    # The prior v1 positive-label training profile was a supervised retrieval proxy.
+    queue_profile = np.asarray(x.mean(axis=0)).ravel()
+    bm25 = np.asarray(x @ (fitted["idf"] * queue_profile)).ravel()
     bm25 *= 2.2 / (1 + 1.2 * (.25 + .75 * dl / max(fitted["avgdl"], 1)))
     return {
         "count": [float(len(g)) for g in groups],
@@ -111,7 +114,7 @@ def rank_components(groups, alerts, fitted):
 def predict():
     cfg = json.loads(CONFIG.read_text(encoding="utf-8"))
     if OUT.exists() or HIDDEN.exists():
-        raise FileExistsError("offline_joint_v1 already exists; use a new version, never overwrite")
+        raise FileExistsError("offline_joint_v2 already exists; use a new version, never overwrite")
     source = PRIVATE / "prepared.pkl"
     model_path = PRIVATE / "fitted.pkl"
     correlation_path = PRIVATE / "correlation_model.pkl"
@@ -320,7 +323,7 @@ def evaluate():
     }
     write_json(OUT / "metrics.json", report)
     lines = ["# Offline predicted-group comparison", "",
-             "**Exploratory, not a complete LLM-agent comparison.** All four runnable methods use the same small complete GUIDE_Test organization queues and frozen correlation candidate edges. Ranking consumes predicted groups, never oracle incident groups. The offline CP/CPV rows are deterministic proxies, not the proposed LLM agents.", "",
+             "**Exploratory, not a complete LLM-agent comparison.** All four runnable methods use the same small complete GUIDE_Test organization queues and frozen correlation candidate edges. Ranking consumes predicted groups, never oracle incident groups. B1 uses a label-free queue descriptor profile with training-corpus IDF. The offline CP/CPV rows are deterministic proxies, not the proposed LLM agents.", "",
              f"Organizations: {report['organizations']}; alerts: {report['alerts']}; candidate pairs: {report['candidate_pairs']}; expert top-20 labels: {report['label_count']}.", "",
              "| Method | Pair F1 micro | Pair F1 macro | P@10 macro | End-to-end Recall@20 macro | nDCG@20 rank 1 high |",
              "|---|---:|---:|---:|---:|---:|"]
@@ -330,7 +333,8 @@ def evaluate():
     lines += ["", "B2, B3, B4, and the proposed LLM C/P/V have no empirical scores in this offline run. Do not substitute synthetic stubs or deterministic proxies for them.", "",
               "Pair F1 is computed from all within-queue alert pairs implied by predicted components. End-to-end recovery requires a predicted top-20 component to contain at least 80% of a gold incident's in-scope alerts and at least 80% of its own alerts to belong to that incident. A missing gold incident has zero recovery. Precision@10 counts recovered expert incidents in the first ten predicted components divided by ten. nDCG uses the implemented exponential gain; reverse direction is in metrics.json.", "",
               "The original 30 organizations were excluded; the 68 rerun holdout organizations have already been evaluated and are exploratory. This comparison restricts further to complete queues with at most 500 unambiguous alerts, selected without outcome labels. It cannot establish performance on larger queues or a confirmatory holdout.", "",
-              "Source artifacts and their hashes are in prediction_freeze.json. Private predictions remain under ignored data/derived/offline_joint_v1/; only aggregate results are under outputs/offline_joint_v1/.", ""]
+              "The v1 prototype used a training-positive BM25 profile and must not be described as the plain B1 baseline. This v2 run corrects that definition without altering v1 artifacts. The two exploratory runs are not independent tests.", "",
+              "Source artifacts and their hashes are in prediction_freeze.json. Private predictions remain under ignored data/derived/offline_joint_v2/; only aggregate results are under outputs/offline_joint_v2/.", ""]
     (OUT / "report.md").write_text("\n".join(lines), encoding="utf-8")
     write_json(OUT / "run_manifest.json", {
         "classification": cfg["classification"],
