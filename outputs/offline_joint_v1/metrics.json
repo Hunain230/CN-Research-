@@ -1,0 +1,296 @@
+{
+  "alerts": 11219,
+  "candidate_pairs": 1216600,
+  "classification": "exploratory_offline_proxy_not_llm_comparison",
+  "label_count": 1140,
+  "limitations": [
+    "exploratory holdout previously accessed",
+    "complete small-queue subset selected by alert count; not all 68 holdout organizations",
+    "ambiguous alert keys excluded",
+    "rank direction and local active-queue snapshot unverified",
+    "offline proxy verifier checks descriptor agreement only, not citation truth",
+    "priority scorer trained on oracle incident documents; inference uses predicted components"
+  ],
+  "methods": {
+    "B0_rule_count": {
+      "end_to_end_recall_at_20": {
+        "ci95": [
+          0.04910087719298248,
+          0.10614035087719298
+        ],
+        "mean": 0.07456140350877193,
+        "organizations": 57
+      },
+      "gold_top20_with_alerts_total": 1066,
+      "micro_pair": {
+        "f1": 0.13635374250781734,
+        "fn": 34765,
+        "fp": 127914,
+        "precision": 0.09123589758163063,
+        "recall": 0.26975024681244353,
+        "tp": 12842
+      },
+      "ndcg_at_20_rank1_highest": {
+        "ci95": [
+          0.01826018993531046,
+          0.059145260575290425
+        ],
+        "mean": 0.036446190426887605,
+        "organizations": 57
+      },
+      "ndcg_at_20_rank20_highest": {
+        "ci95": [
+          0.020790577963788755,
+          0.05964569541282146
+        ],
+        "mean": 0.03857364615660066,
+        "organizations": 57
+      },
+      "pair_f1": {
+        "ci95": [
+          0.04664337530264903,
+          0.09318784182006531
+        ],
+        "mean": 0.06841867035944516,
+        "organizations": 57
+      },
+      "pair_precision": {
+        "ci95": [
+          0.04867561338692835,
+          0.16123479580358197
+        ],
+        "mean": 0.09913050649263075,
+        "organizations": 57
+      },
+      "pair_recall": {
+        "ci95": [
+          0.29814395033172547,
+          0.4709378101168444
+        ],
+        "mean": 0.38194245118176356,
+        "organizations": 57
+      },
+      "precision_at_10": {
+        "ci95": [
+          0.04210526315789474,
+          0.09824561403508772
+        ],
+        "mean": 0.06842105263157895,
+        "organizations": 57
+      },
+      "predicted_components_total": 6267
+    },
+    "B1_rule_bm25": {
+      "end_to_end_recall_at_20": {
+        "ci95": [
+          0.09824561403508772,
+          0.18508771929824563
+        ],
+        "mean": 0.1394736842105263,
+        "organizations": 57
+      },
+      "gold_top20_with_alerts_total": 1066,
+      "micro_pair": {
+        "f1": 0.13635374250781734,
+        "fn": 34765,
+        "fp": 127914,
+        "precision": 0.09123589758163063,
+        "recall": 0.26975024681244353,
+        "tp": 12842
+      },
+      "ndcg_at_20_rank1_highest": {
+        "ci95": [
+          0.05143803082538062,
+          0.12084793212843813
+        ],
+        "mean": 0.08401811928142856,
+        "organizations": 57
+      },
+      "ndcg_at_20_rank20_highest": {
+        "ci95": [
+          0.03465306641665659,
+          0.1077020730122046
+        ],
+        "mean": 0.0677915944164841,
+        "organizations": 57
+      },
+      "pair_f1": {
+        "ci95": [
+          0.04664337530264903,
+          0.09318784182006531
+        ],
+        "mean": 0.06841867035944516,
+        "organizations": 57
+      },
+      "pair_precision": {
+        "ci95": [
+          0.04867561338692835,
+          0.16123479580358197
+        ],
+        "mean": 0.09913050649263075,
+        "organizations": 57
+      },
+      "pair_recall": {
+        "ci95": [
+          0.29814395033172547,
+          0.4709378101168444
+        ],
+        "mean": 0.38194245118176356,
+        "organizations": 57
+      },
+      "precision_at_10": {
+        "ci95": [
+          0.11578947368421054,
+          0.2193421052631573
+        ],
+        "mean": 0.1649122807017544,
+        "organizations": 57
+      },
+      "predicted_components_total": 6267
+    },
+    "offline_CPV_proxy": {
+      "end_to_end_recall_at_20": {
+        "ci95": [
+          0.09473684210526315,
+          0.14210526315789473
+        ],
+        "mean": 0.11754385964912281,
+        "organizations": 57
+      },
+      "gold_top20_with_alerts_total": 1066,
+      "micro_pair": {
+        "f1": 0.08722358722358722,
+        "fn": 33691,
+        "fp": 257565,
+        "precision": 0.051259572493102645,
+        "recall": 0.29230995441846785,
+        "tp": 13916
+      },
+      "ndcg_at_20_rank1_highest": {
+        "ci95": [
+          0.11620536108598543,
+          0.25872894540470354
+        ],
+        "mean": 0.1858742348353066,
+        "organizations": 57
+      },
+      "ndcg_at_20_rank20_highest": {
+        "ci95": [
+          0.023177671512780593,
+          0.07512818305823564
+        ],
+        "mean": 0.046928934579584525,
+        "organizations": 57
+      },
+      "pair_f1": {
+        "ci95": [
+          0.03982916941132089,
+          0.08023028412263396
+        ],
+        "mean": 0.0587900567601253,
+        "organizations": 57
+      },
+      "pair_precision": {
+        "ci95": [
+          0.022214290258330483,
+          0.07964819230984733
+        ],
+        "mean": 0.04441042429261879,
+        "organizations": 57
+      },
+      "pair_recall": {
+        "ci95": [
+          0.639607082899547,
+          0.7862643532034564
+        ],
+        "mean": 0.7132605968235937,
+        "organizations": 57
+      },
+      "precision_at_10": {
+        "ci95": [
+          0.17017543859649126,
+          0.2526315789473684
+        ],
+        "mean": 0.21052631578947373,
+        "organizations": 57
+      },
+      "predicted_components_total": 1128
+    },
+    "offline_CP_proxy": {
+      "end_to_end_recall_at_20": {
+        "ci95": [
+          0.010526315789473686,
+          0.03333333333333334
+        ],
+        "mean": 0.02105263157894737,
+        "organizations": 57
+      },
+      "gold_top20_with_alerts_total": 1066,
+      "micro_pair": {
+        "f1": 0.08107713202340716,
+        "fn": 30683,
+        "fp": 352948,
+        "precision": 0.045756369771164075,
+        "recall": 0.3554939399668116,
+        "tp": 16924
+      },
+      "ndcg_at_20_rank1_highest": {
+        "ci95": [
+          0.011752030234521902,
+          0.07494295301215607
+        ],
+        "mean": 0.039493426150049395,
+        "organizations": 57
+      },
+      "ndcg_at_20_rank20_highest": {
+        "ci95": [
+          0.0006162479767535277,
+          0.018577892754676608
+        ],
+        "mean": 0.008133666889512075,
+        "organizations": 57
+      },
+      "pair_f1": {
+        "ci95": [
+          0.025717711274195868,
+          0.061005966913479176
+        ],
+        "mean": 0.04093366054338941,
+        "organizations": 57
+      },
+      "pair_precision": {
+        "ci95": [
+          0.013707710179801621,
+          0.059520250251000335
+        ],
+        "mean": 0.030983573049508745,
+        "organizations": 57
+      },
+      "pair_recall": {
+        "ci95": [
+          0.78149982944055,
+          0.8996534146964726
+        ],
+        "mean": 0.8433707864532108,
+        "organizations": 57
+      },
+      "precision_at_10": {
+        "ci95": [
+          0.02105263157894737,
+          0.06666666666666668
+        ],
+        "mean": 0.04210526315789474,
+        "organizations": 57
+      },
+      "predicted_components_total": 516
+    }
+  },
+  "organizations": 57,
+  "prediction_freeze_sha256": "a3669b0248c5f9df038aeb1648ea4c024f88d52883f01e5c02a628cfbfb3cdf0",
+  "unavailable": {
+    "B2_single_LLM": "offline-only selection; no live LLM provider or empirical predictions",
+    "B3_repeated_single_LLM": "offline-only selection; no live LLM provider or empirical predictions",
+    "B4_C_plus_P_LLM": "offline CP proxy is not an LLM role comparison",
+    "proposed_C_P_V_LLM": "offline CPV proxy is not an LLM role comparison"
+  }
+}
