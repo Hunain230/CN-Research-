@@ -1,0 +1,73 @@
+{
+  "ambiguous_alerts": {
+    "additional_validly_recoverable_needed_for_95_percent": 17,
+    "multi_membership_source_confirmed": false,
+    "optimistic_all_assignment_coverage_numerator": 1140,
+    "primary_coverage_ceiling": 0.9350877192982456,
+    "primary_coverage_numerator": 1066,
+    "primary_exclusion_policy_changed": false,
+    "primary_top20_denominator": 1140
+  },
+  "classification": "exploratory_phase_a_contract_audit",
+  "leakage_and_provenance": {
+    "entity_and_title_point_in_time_confirmed": false,
+    "evaluator_truth_loaded_after_candidate_hash_freeze": true,
+    "external_transfer_approved": false,
+    "generation_label_store_read": false,
+    "historical_ranked_orgs": 50,
+    "new_confirmatory_ranked_orgs": 0,
+    "official_approved_model_fields": [],
+    "public_identifier_bearing_output": false,
+    "rerun_ranked_orgs": 469,
+    "retrieval_organizations": {
+      "train": 20,
+      "validation": 67
+    }
+  },
+  "production_ready": false,
+  "ranking": {
+    "columns": [
+      "OrgId",
+      "IncidentId",
+      "QueueRank"
+    ],
+    "each_org_has_unique_ranks_1_to_20": true,
+    "labels": 9980,
+    "local_active_queue_snapshot_present": false,
+    "non_top20_items": "unjudged_for_graded_relevance",
+    "numeric_direction_source_confirmed": false,
+    "organizations": 499,
+    "published_schema_reconciled": false,
+    "queue_relative_top20_source_supported": true,
+    "rank1_highest": "assumption_only"
+  },
+  "raw_hashes_verified": true,
+  "retrieval_validation": {
+    "baseline_pairs": 2699442,
+    "baseline_positive": 269857,
+    "entity_union_pairs": 2704304,
+    "entity_union_positive": 270652,
+    "final_candidate_pair_coverage": 0.6698662120869845,
+    "final_micro_candidate_recall": 0.8037083449639797,
+    "organizations": 67,
+    "positive_pairs": 336754,
+    "possible_pairs": 4037136,
+    "target_99_percent_met": false,
+    "title_union_pairs": 2704341,
+    "title_union_positive": 270652
+  },
+  "runtime": {
+    "entity_generation_seconds": 40.93436949996976,
+    "full_end_to_end_latency_seconds": null,
+    "note": "Generation runtime is a local research timing, not SOC service latency.",
+    "title_generation_seconds": null
+  },
+  "source_sha256": {
+    "configs\\field_policy.yaml": "0636d2f4e4f17edcd5402d67cac291484d3a39493b2c7377b562735771065ee5",
+    "data\\derived\\guide_rerun_v2\\split.json": "a99f53483d91e32e6872b71ae385123db71e36cb4b52c3b8eeb985c5ffb36e5d",
+    "data\\derived\\preprocessing\\split_manifest.json": "5c504d865af698833f7189628f1de12518e7f212a6ead2a1434d9b023a00ccbe",
+    "data\\raw\\GUIDE_Test.csv": "fdfd7523efd6e3c26bd0290ba6acbcb237196cf923dd56a28e96802035db35a3",
+    "data\\raw\\GUIDE_Test_Queue_Rankings.csv": "e4ea9308f45821128a3cd446ab19e6559edfc50709e72034ce957b6f0e2e65d6",
+    "src\\phase_a_contract_audit.py": "cb040caf68acb78c8c50b234206c19f4cbbbc2759ec030b68b733fd95398a1b1"
+  }
+}
