@@ -1,0 +1,36 @@
+{
+  "alerts": 11219,
+  "candidate_pair_coverage": 0.8052143686354244,
+  "classification": "exploratory_full_small_queue_candidate_audit",
+  "macro_candidate_recall": {
+    "ci95": [
+      0.9599911924525487,
+      0.9969885040491818
+    ],
+    "mean": 0.9811739891479122,
+    "organizations": 57
+  },
+  "micro_candidate_recall": 0.8151532337681433,
+  "notes": [
+    "Same 57 complete small ambiguity-excluded queues as offline_joint_v2.",
+    "The frozen candidate set was previously evaluated and this is exploratory.",
+    "Candidate recall is not pair-classification recall or end-to-end Recall@20.",
+    "No organization, alert, or incident identifiers are exported."
+  ],
+  "organizations": 57,
+  "organizations_with_positive_pairs": 57,
+  "source_neighbor_cap_per_route": 200,
+  "source_sha256": {
+    "data\\derived\\offline_joint_v2\\predictions.pkl": "856f8fdf9be9e6f5ab0bf2087c7afabfaa1fa203116cf88331518ad3245ae6fb",
+    "outputs\\guide_rerun_v2\\correlation_prediction_freeze.json": "cbb9cc76d5dcc83b6c6f8bf7567a5fc0b0eb250e31cb38f888cfdacb572932c4",
+    "src\\phase_a_candidate_audit.py": "cd0ce662891b3aaf486ae93e0abb0cac2d7ea0f1c25d76dd4e9cc3752ca1d428"
+  },
+  "target_met": false,
+  "target_positive_pair_candidate_recall": 0.99,
+  "totals": {
+    "candidate_positive": 38807,
+    "candidates": 1216600,
+    "positive": 47607,
+    "possible_pairs": 1510902
+  }
+}

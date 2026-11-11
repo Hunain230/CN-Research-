@@ -1,0 +1,25 @@
+{
+  "classification": "exploratory_evaluator_only_retrieval_error_analysis",
+  "counts": {
+    "missed_positive_pairs": 8800,
+    "missed_shared_Category": 825,
+    "missed_shared_DetectorId": 168,
+    "missed_shared_EntityType": 8800,
+    "missed_shared_EvidenceRole": 8800,
+    "missed_with_shared_allowed_descriptor": 8800,
+    "retrieved_positive_pairs": 38807
+  },
+  "missed_fraction_without_any_shared_allowed_descriptor": 0.0,
+  "notes": [
+    "This evaluator-only diagnostic reads gold membership after frozen predictions.",
+    "It does not create or change model-facing retrieval features.",
+    "Only aggregate counts are exported; no identifiers or pair examples."
+  ],
+  "organizations": 57,
+  "source_sha256": {
+    "data\\derived\\guide_rerun_v2\\prepared.pkl": "2b0ab264c985e9680d1f62bd2f4e56f726b8852e71b239635ce81e31a52207c1",
+    "data\\derived\\offline_joint_v2\\predictions.pkl": "856f8fdf9be9e6f5ab0bf2087c7afabfaa1fa203116cf88331518ad3245ae6fb",
+    "outputs\\guide_rerun_v2\\correlation_prediction_freeze.json": "cbb9cc76d5dcc83b6c6f8bf7567a5fc0b0eb250e31cb38f888cfdacb572932c4",
+    "src\\phase_a_miss_analysis.py": "933ecc193d3db7096eefe99aa23360fda0a613a7e916fe6969dfa0f71499e09a"
+  }
+}
