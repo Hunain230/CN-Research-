@@ -1,0 +1,24 @@
+{
+  "additional_potentially_represented": 74,
+  "all_assignment_edges_optimistic_represented": 1140,
+  "ambiguous_alert_incident_degree_counts": {
+    "2": 998,
+    "3": 89,
+    "4": 21,
+    "5": 4
+  },
+  "ambiguous_alerts_linked_to_multiple_top20_incidents": 256,
+  "classification": "exploratory_evaluator_only_optimistic_sensitivity_not_ground_truth",
+  "current_primary_represented": 1066,
+  "expert_label_denominator": 1140,
+  "interpretation": "All reported incident memberships are considered only for an optimistic coverage bound. No ambiguous alert is assigned to one incident, passed to the model, or scored in the primary metric.",
+  "minimum_additional_for_95_percent": 17,
+  "multi_membership_semantics_confirmed": false,
+  "organizations": 57,
+  "primary_denominator_changed": false,
+  "source_sha256": {
+    "data\\derived\\offline_joint_v2\\predictions.pkl": "856f8fdf9be9e6f5ab0bf2087c7afabfaa1fa203116cf88331518ad3245ae6fb",
+    "data\\derived\\preprocessing\\evaluator\\incident_membership.csv": "38cc81251c095e3ff885ee5d66cf55f53c083dcb5d8878a512294ef56a52678c",
+    "src\\phase_a_multimembership_sensitivity.py": "98e488f7db64a27944c2ed75d94787db1c5c9eca5c7f615333c8e47094369433"
+  }
+}

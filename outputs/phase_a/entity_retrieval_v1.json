@@ -1,0 +1,114 @@
+{
+  "classification": "exploratory_train_validation_only",
+  "cohorts": {
+    "train": {
+      "organizations": 20,
+      "routes": {
+        "baseline": {
+          "macro_candidate_recall": {
+            "ci95": [
+              0.9656090216273047,
+              1.0
+            ],
+            "mean": 0.9859165847470601,
+            "organizations": 20
+          },
+          "micro_candidate_recall": 0.9593445548972458,
+          "pair_coverage": 0.6413198440236034
+        },
+        "entity": {
+          "macro_candidate_recall": {
+            "ci95": [
+              0.5345666844731779,
+              0.8152938778665328
+            ],
+            "mean": 0.6819890715004351,
+            "organizations": 20
+          },
+          "micro_candidate_recall": 0.08349240189394878,
+          "pair_coverage": 0.010306542431061324
+        },
+        "union": {
+          "macro_candidate_recall": {
+            "ci95": [
+              0.9792336357247917,
+              1.0
+            ],
+            "mean": 0.9929098010384318,
+            "organizations": 20
+          },
+          "micro_candidate_recall": 0.9613773271523836,
+          "pair_coverage": 0.6416547335929781
+        }
+      },
+      "totals": {
+        "baseline_pairs": 811968,
+        "baseline_positive": 38699,
+        "entity_pairs": 13049,
+        "entity_positive": 3368,
+        "positive": 40339,
+        "possible_pairs": 1266089,
+        "union_pairs": 812392,
+        "union_positive": 38781
+      }
+    },
+    "validation": {
+      "organizations": 67,
+      "routes": {
+        "baseline": {
+          "macro_candidate_recall": {
+            "ci95": [
+              0.9266417027213567,
+              0.9718551267996548
+            ],
+            "mean": 0.9503452405275933,
+            "organizations": 67
+          },
+          "micro_candidate_recall": 0.8013475712240983,
+          "pair_coverage": 0.6686527280725743
+        },
+        "entity": {
+          "macro_candidate_recall": {
+            "ci95": [
+              0.4473282545390105,
+              0.622317856284755
+            ],
+            "mean": 0.5356294050215423,
+            "organizations": 67
+          },
+          "micro_candidate_recall": 0.029953615992683084,
+          "pair_coverage": 0.012834841333063835
+        },
+        "union": {
+          "macro_candidate_recall": {
+            "ci95": [
+              0.9468124784123346,
+              0.9820554817256653
+            ],
+            "mean": 0.9653115771322093,
+            "organizations": 67
+          },
+          "micro_candidate_recall": 0.8037083449639797,
+          "pair_coverage": 0.6698570471740363
+        }
+      },
+      "totals": {
+        "baseline_pairs": 2699442,
+        "baseline_positive": 269857,
+        "entity_pairs": 51816,
+        "entity_positive": 10087,
+        "positive": 336754,
+        "possible_pairs": 4037136,
+        "union_pairs": 2704304,
+        "union_positive": 270652
+      }
+    }
+  },
+  "labels_in_generation": false,
+  "manifest_sha256": "c244eb2f2a3dd3eb714cef7277ef648a14bd44000fa103d74abc2a332c7dd6d5",
+  "privacy_approval_for_external_calls": false,
+  "target_met_on_validation": false,
+  "target_micro_candidate_recall": 0.99,
+  "test_cohort_used": false,
+  "timing_approval": false
+}
