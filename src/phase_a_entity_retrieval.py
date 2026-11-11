@@ -31,9 +31,12 @@ REPORT = ROOT / "outputs/phase_a/entity_retrieval_v1.json"
 
 
 def selected(data):
+    training_orgs = sorted((org for org, split in data["split"].items() if split == "train"),
+                           key=lambda org: key("phase-a-entity-train-v1", org))[:20]
+    training_orgs = set(training_orgs)
     by = defaultdict(dict)
     for alert, doc in data["alerts"].items():
-        if data["split"][doc["org"]] in ("train", "validation"):
+        if doc["org"] in training_orgs or data["split"][doc["org"]] == "validation":
             by[doc["org"]][alert] = doc
     return {org: dict(sorted(docs.items())[:LIMIT]) for org, docs in by.items()}
 
@@ -93,6 +96,7 @@ def generate():
         "cohort_counts": dict(Counter(data["split"][o] for o in by)),
         "entity_fields": ENTITY_FIELDS, "max_token_document_frequency": CAP,
         "max_alerts_per_org": LIMIT, "candidate_sha256": hashes,
+        "train_sample_orgs": 20,
         "aggregate": dict(aggregate), "seconds": time.perf_counter() - started,
         "source_sha256": {str(p.relative_to(ROOT)): sha256_file(p) for p in
                           (Path(__file__), PRIVATE / "prepared.pkl", PRIVATE / "correlation_model.pkl",
