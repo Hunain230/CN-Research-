@@ -1,0 +1,47 @@
+# Task 3 experiment register
+
+**Prepared:** 2026-11-12. **Result:** an auditable register of existing experiments; no new inference or evaluation run. All real-data measurements below are exploratory. The [data and claim audit](DATA_AND_CLAIM_AUDIT.md) states the governing data and claim limits. The current official model-input allowlist is empty, and new external model calls are not authorized. Previously accessed labels cannot supply a fresh confirmatory test.
+
+## Primary matched artifact
+
+The [v2 run manifest](../outputs/offline_joint_v2/run_manifest.json), [prediction freeze](../outputs/offline_joint_v2/prediction_freeze.json), [aggregate metrics](../outputs/offline_joint_v2/metrics.json), [report](../outputs/offline_joint_v2/report.md), [configuration](../configs/offline_joint_v2.json), and `src/offline_joint_comparison.py` define the existing bounded comparison. Its private frozen prediction file is `data/derived/offline_joint_v2/predictions.pkl` (ignored by Git; do not publish). The manifest's SHA-256 for that file is `856f8fdf9be9e6f5ab0bf2087c7afabfaa1fa203116cf88331518ad3245ae6fb`; the config is `3cb490c7fc255558b59374f37ca00663e0527cd3ea52147b43c042c2fdb59a51`; the implementation is `e255d7b3b33eb2ad22ca2c4c51470bb065a5d9a27c565c05caba23a8fa0dd554`; the freeze is `929bedd0f4bdd5854467805121d4ceb4becd1717227f11910fdb115aa4b2d5ff`; and the aggregate metrics are `8e26d530ea686ac35a7be32c67515435aab509325084d04a10e022c03f6bb3fa`. The recorded raw-input hashes and upstream fitted/correlation artifact hashes are in those manifests. The configured seed is 0.
+
+The cohort is 57 already accessed GUIDE_Test organizations from the later exploratory holdout, limited to complete queues with at most 500 unambiguous alerts. All four runnable methods receive the same **11,219 alerts**, **1,216,600 frozen candidate pairs**, and **1,140 expert top-20 labels** (57 × 20). The full within-queue pair universe has 1,510,902 pairs and 47,607 positive pairs. All ambiguous alert keys are excluded from scoring, while every top-20 label remains in the end-to-end denominator. The current local query universe and rank-1-highest direction are assumptions; the metrics file also records reverse-direction nDCG. Predictions were frozen before evaluator-only truth was read. The run cannot generalize to larger queues or a fresh cohort.
+
+These four methods are paired for cohort, candidate set, and evaluator denominator. They have different scoring rules and no matched LLM token/evidence-budget measurement, so this is a bounded offline proxy comparison rather than the proposed complete B0–B4/C/P/V study. The amended B0 count ranker is not the originally proposed detector-severity B0, because severity was unavailable. The v1 joint run used a training-positive BM25 profile, so its B1 result is a supervised proxy; [v1 artifacts](../outputs/offline_joint_v1/run_manifest.json) remain historical and are not substituted for v2's label-free B1.
+
+## Method matrix
+
+| Requested method | Actual implementation and artifact | Data/evidence status | Comparison status |
+|---|---|---|---|
+| B0 deterministic rule + detector severity | [v2 `B0_rule_count`](../outputs/offline_joint_v2/metrics.json): shared ATT&CK technique and category rule, ranked by component alert count. | Exploratory local GUIDE data; severity unavailable. | Paired with other v2 rows **as an amended rule/count baseline**, not original severity B0. |
+| B1 rule + BM25 | [v2 `B1_rule_bm25`](../outputs/offline_joint_v2/metrics.json): same rule grouping, label-free target-queue descriptor profile, training-corpus IDF. | Exploratory local GUIDE data. | Paired with other v2 rows; no claim of a fully approved model-field protocol. |
+| B2 single LLM | [Phase 3 synthetic stub](../outputs/baselines/synthetic-final2/run_manifest.json) only. | Synthetic fixture; zero live model calls. | **Unavailable** for empirical v2 comparison: no authorized provider run or frozen real-data predictions. |
+| B3 repeated single LLM | Same [Phase 3 synthetic stub](../outputs/baselines/synthetic-final2/run_manifest.json) only. | Synthetic fixture; three stub calls, not matched empirical tokens. | **Unavailable** for empirical v2 comparison. |
+| B4 C+P LLM | [v2 `offline_CP_proxy`](../outputs/offline_joint_v2/metrics.json) is a fitted local statistical proxy, not C+P LLM roles. | Exploratory local GUIDE data; separate [Phase 4 synthetic agent plumbing](../outputs/agents/synthetic/phase4-synthetic-final4/run_manifest.json). | Proxy paired within v2; **B4 LLM unavailable**. |
+| Proposed C/P/V LLM | [v2 `offline_CPV_proxy`](../outputs/offline_joint_v2/metrics.json) adds a deterministic descriptor-support link filter, not a citation verifier or LLM roles. | Exploratory local GUIDE data; Phase 4 synthetic plumbing only for the actual agent workflow. | Proxy paired within v2; **LLM C/P/V unavailable**. |
+
+The v2 prediction freeze lists exactly the four runnable names. The [aggregate metrics file](../outputs/offline_joint_v2/metrics.json) explicitly lists B2, B3, B4, and proposed LLM C/P/V as unavailable. Neither synthetic stub results nor the earlier [bounded Groq oracle-group rerun](../outputs/guide_rerun_v2/run_manifest.json) is a matched row in the v2 comparison. The Groq run used a different cohort, candidate design, and oracle groups; its historical authorization was narrow and does not authorize new calls under this plan.
+
+## Matched exploratory results
+
+Pair precision/recall/F1 below are micro values over the same 57-queue alert-pair truth. P@10, nDCG@20, and end-to-end Recall@20 are organization macro means. End-to-end recovery uses predicted top-20 components and the 80% completeness/80% purity rule; all 1,140 top-20 labels stay in the denominator. The ranking metrics use the documented local rank-direction and query-universe assumptions. Values are rounded from the [v2 metrics](../outputs/offline_joint_v2/metrics.json).
+
+| Runnable method | Pair precision | Pair recall | Pair F1 | P@10 | nDCG@20, rank 1 high | End-to-end Recall@20 |
+|---|---:|---:|---:|---:|---:|---:|
+| Amended B0 rule/count | 0.0912 | 0.2698 | 0.1364 | 0.0684 | 0.0364 | 0.0746 |
+| B1 rule/BM25 | 0.0912 | 0.2698 | 0.1364 | 0.0298 | 0.0062 | 0.0316 |
+| Offline CP proxy | 0.0458 | 0.3555 | 0.0811 | 0.0421 | 0.0395 | 0.0211 |
+| Offline CPV proxy | 0.0513 | 0.2923 | 0.0872 | 0.2105 | 0.1859 | 0.1175 |
+
+For the rule grouping, the aggregate pair confusion counts are TP 12,842, FP 127,914, FN 34,765. These are **classifier/grouping** misses across the full pair universe, not solely candidate-generator misses. A later [candidate audit on the same 57 queues](../outputs/phase_a/candidate_20261111.json) separately found 38,807/47,607 positives in the frozen candidate set, so **8,800 positive pairs were absent at candidate generation**. Micro candidate recall was 0.8152, while candidate-pair coverage was 1,216,600/1,510,902 = 0.8052. The Phase A 99% candidate-recall target failed. The [coverage audit](../outputs/phase_a/coverage_20261111.json) found only 1,066 of 1,140 labeled incidents represented by an unambiguous in-scope alert, a 93.51% structural recovery ceiling under the current exclusion rule. That ceiling is not measured recall; the 74 remaining labels are **not** removed from the denominator.
+
+The earlier [priority-only Phase 6 run](../outputs/phase6/priority/phase6-priority-20261108-v2/run_manifest.json) supplies **oracle gold groups** to the ranker and reports a different Recall@20. The [GUIDE rerun](../outputs/guide_rerun_v2/report.md) also reports oracle-group priority results and a bounded correlation diagnostic on another cohort. Neither is pooled with, ranked against, or relabeled as this predicted-group end-to-end comparison.
+
+## Reproducibility and validation record
+
+No new `outputs/submission_<run-id>/` directory was created: existing versioned artifacts answer the allowed bounded question, and new evaluation on exposed labels would add no confirmatory evidence. No prediction, metric, split, prompt, model, config, or historical output was changed. To inspect the existing method without evaluating labels, run `.\.venv\Scripts\python.exe -m src.offline_joint_comparison self-test` from the repository root; the cleanup log records seven assertions passing. The historical generation/evaluation commands are in the [comparison record](../phases_outputs/Offline_Joint_Comparison_2026-11-11.md). They are provenance, **not** instructions to overwrite or rerun the existing directories. Any future run needs a new versioned output path and a frozen manifest before evaluator access.
+
+For this register, SHA-256 checks of the local v2 config, implementation, private frozen predictions, prediction freeze, aggregate metrics, and report matched the recorded manifest values. The [candidate audit](../outputs/phase_a/candidate_20261111.json) cites the same frozen prediction SHA-256. This is an artifact-integrity check, not independent confirmation of data semantics or performance. No new test-label tuning or hosted call occurred.
+
+**Blocked next comparison:** a valid empirical B2/B3/B4/C/P/V study requires approved point-in-time model-visible fields, an authorized provider/data-use policy, actual implementations with equal alert/evidence/token budgets, resolved alert and queue semantics, and an untouched or explicitly exploratory evaluation design. The current register assigns no scores to those missing methods.

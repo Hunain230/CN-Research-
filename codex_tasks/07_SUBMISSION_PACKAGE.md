@@ -1,4 +1,4 @@
-# Task 6 Submission Package
+# Task 7 Submission Package
 
 ## Goal
 
@@ -6,7 +6,7 @@ Assemble a coherent submission from the work actually completed, with the resear
 
 ## Steps
 
-1. Read the completed cleanup record, data/claim audit, experiment register, results/discussion, and dashboard verification.
+1. Read the completed cleanup record, data/claim audit, experiment register, synthetic MVP runner record, results/discussion, and dashboard verification.
 2. Draft `submission/FINAL_REPORT.md` with a clear title, abstract, problem/topic, related work, research gap, methodology, implementation, experimental setup, results, discussion, limitations, conclusion, and references.
 3. Keep planned methodology distinct from implemented methodology. State plainly that the original C/P/V LLM study has not been empirically completed if that remains true.
 4. Include course deliverables for Phases 1–4: data validation, safe preprocessing, baseline implementation status, and agent-system implementation status. State which validations were synthetic and which analyses used real data.
@@ -30,4 +30,3 @@ Assemble a coherent submission from the work actually completed, with the resear
 - [ ] No 95% target, LLM benefit, analyst benefit, or production claim is asserted without evidence.
 - [ ] All referenced files and commands exist.
 - [ ] Final checklist identifies any unmet assignment element rather than implying it was done.
-

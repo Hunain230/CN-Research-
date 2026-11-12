@@ -2,11 +2,18 @@
 
 This repository contains the implementation and audit records for a retrospective research study of alert correlation and incident prioritization in Microsoft GUIDE. The proposed workflow is correlate–prioritize–verify (C/P/V), compared with rule, retrieval, and single-LLM baselines when empirical gates permit.
 
-**Current status (2026-11-09):** A new GUIDE_Test exploratory run used 334 training, 67 validation, and 68 holdout organizations, excluding the historical 30 test organizations. The fused candidate retriever reached 97.21% top-20 candidate recall at K=500 on the exploratory holdout. Final Recall@20 was 55.16% for local logistic ranking and 42.43% for Groq GPT-OSS-120B; these are oracle-group priority results. A bounded 500-alert-per-organization correlation diagnostic had 65.90% pair recall and 3.63% precision. No military certification or confirmatory end-to-end C/P/V result exists. See the [new run report](outputs/guide_rerun_v2/report.md) and [interactive dashboard](dashboard/guide_rerun_v2.html). Earlier phase records remain historical; the Groq authorization applies only to this bounded new run.
+**Current status (2026-11-11):** The [Phase A gate decision](phases_outputs/PhaseA_Implementation_2026-11-11.md) remains no-go for confirmatory evaluation and production use. Its validation candidate recall was 80.37% at about 67.00% pair coverage, below the stated 99% retrieval target. The [latest offline joint comparison](phases_outputs/Offline_Joint_Comparison_2026-11-11.md) is exploratory and uses deterministic/statistical proxies: its best reported end-to-end Recall@20 was 11.75%, with a 1,140-label denominator. B2, B3, B4, and the proposed LLM C/P/V workflow were not measured in that comparison. An earlier [GUIDE rerun](outputs/guide_rerun_v2/report.md) reported 97.21% **oracle-group candidate** recall at K=500, a different metric. The bounded Groq authorization recorded for that historical rerun does not authorize new hosted calls. No confirmatory end-to-end C/P/V result or military certification exists.
 
 ## Start here
 
-Read these records in order before changing the study pipeline:
+For the current handoff, use this map:
+
+1. [Repository map](cleanup/REPOSITORY_MAP.md) — source, config, data, output, and dashboard locations; [cleanup log](cleanup/CLEANUP_LOG.md) records this navigation update.
+2. [Phase A implementation and gate decision](phases_outputs/PhaseA_Implementation_2026-11-11.md) — latest readiness decision; [offline joint comparison](phases_outputs/Offline_Joint_Comparison_2026-11-11.md) — latest matched exploratory metrics.
+3. [phases_context.md](phases_context.md) — phase index; [research gate register](phases_outputs/research_gate_register.csv) — per-gate status.
+4. [dashboard/index.html](dashboard/index.html) — static aggregate Phase 6 viewer; [dashboard/guide_rerun_v2.html](dashboard/guide_rerun_v2.html) — historical exploratory rerun viewer. Neither is a live SOC dashboard.
+
+Before changing research behavior, read these records in order:
 
 1. [PROJECT_CONTEXT.md](PROJECT_CONTEXT.md) — research question, protocol, and non-negotiable safeguards.
 2. [phases_context.md](phases_context.md) — concise phase and readiness index.

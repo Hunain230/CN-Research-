@@ -1,0 +1,25 @@
+{
+  "schema_version": "agents-v1",
+  "run_id": "mvp-fixture-org-01-v1",
+  "org_key": "org-mvp-01",
+  "input_hash": "fictional-fixture-org-01-v1",
+  "evidence_budget": {
+    "max_records": 20,
+    "max_tokens": 1000
+  },
+  "alerts": [
+    {"alert_key":"org-mvp-01-a1","org_key":"org-mvp-01","minutes":0,"evidence":[{"evidence_id":"demo-01-ev-a1","org_key":"org-mvp-01","alert_key":"org-mvp-01-a1","minutes":0,"lineage":"synthetic_fixture","fields":{"synthetic.entities":["host-amber"],"synthetic.techniques":["T1001"],"synthetic.text":"fictional endpoint signal"}}]},
+    {"alert_key":"org-mvp-01-a2","org_key":"org-mvp-01","minutes":30,"evidence":[{"evidence_id":"demo-01-ev-a2","org_key":"org-mvp-01","alert_key":"org-mvp-01-a2","minutes":30,"lineage":"synthetic_fixture","fields":{"synthetic.entities":["host-amber"],"synthetic.techniques":["T1001"],"synthetic.text":"fictional related signal"}}]},
+    {"alert_key":"org-mvp-01-a3","org_key":"org-mvp-01","minutes":40,"evidence":[{"evidence_id":"demo-01-ev-a3","org_key":"org-mvp-01","alert_key":"org-mvp-01-a3","minutes":40,"lineage":"synthetic_fixture","fields":{"synthetic.entities":["host-blue"],"synthetic.techniques":["T2002"],"synthetic.text":"fictional unrelated signal"}}]},
+    {"alert_key":"org-mvp-01-a4","org_key":"org-mvp-01","minutes":45,"evidence":[{"evidence_id":"demo-01-ev-a4","org_key":"org-mvp-01","alert_key":"org-mvp-01-a4","minutes":45,"lineage":"synthetic_fixture","fields":{"synthetic.entities":["host-red"],"synthetic.techniques":[],"synthetic.text":"fictional conflicting signal","synthetic.conflict":true}}]},
+    {"alert_key":"org-mvp-01-a5","org_key":"org-mvp-01","minutes":50,"evidence":[]},
+    {"alert_key":"org-mvp-01-a6","org_key":"org-mvp-01","minutes":55,"evidence":[{"evidence_id":"demo-01-ev-a6","org_key":"org-mvp-01","alert_key":"org-mvp-01-a6","minutes":55,"lineage":"synthetic_fixture","fields":{"synthetic.entities":["host-amber"],"synthetic.techniques":["T9000"],"synthetic.text":"fictional benign shared-host signal"}}]}
+  ],
+  "pairs": [
+    {"left":"org-mvp-01-a1","right":"org-mvp-01-a2","candidate_source":"synthetic_fixture"},
+    {"left":"org-mvp-01-a1","right":"org-mvp-01-a3","candidate_source":"synthetic_fixture"},
+    {"left":"org-mvp-01-a1","right":"org-mvp-01-a4","candidate_source":"synthetic_fixture"},
+    {"left":"org-mvp-01-a1","right":"org-mvp-01-a5","candidate_source":"synthetic_fixture"},
+    {"left":"org-mvp-01-a1","right":"org-mvp-01-a6","candidate_source":"synthetic_fixture"}
+  ]
+}

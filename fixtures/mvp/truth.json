@@ -1,0 +1,28 @@
+{
+  "schema_version": "mvp-evaluator-truth-v1",
+  "classification": "evaluator_only_fictional_labels",
+  "organizations": {
+    "org-mvp-01": {
+      "alerts": {
+        "org-mvp-01-a1": "org-mvp-01-g1",
+        "org-mvp-01-a2": "org-mvp-01-g1",
+        "org-mvp-01-a3": "org-mvp-01-g2",
+        "org-mvp-01-a4": "org-mvp-01-g3",
+        "org-mvp-01-a5": "org-mvp-01-g4",
+        "org-mvp-01-a6": "org-mvp-01-g5"
+      },
+      "expert_top20_groups": ["org-mvp-01-g1", "org-mvp-01-g2", "org-mvp-01-g3", "org-mvp-01-g4", "org-mvp-01-g5"]
+    },
+    "org-mvp-02": {
+      "alerts": {
+        "org-mvp-02-a1": "org-mvp-02-g1",
+        "org-mvp-02-a2": "org-mvp-02-g1",
+        "org-mvp-02-a3": "org-mvp-02-g2",
+        "org-mvp-02-a4": "org-mvp-02-g3",
+        "org-mvp-02-a5": "org-mvp-02-g4",
+        "org-mvp-02-a6": "org-mvp-02-g5"
+      },
+      "expert_top20_groups": ["org-mvp-02-g1", "org-mvp-02-g2", "org-mvp-02-g3", "org-mvp-02-g4", "org-mvp-02-g5"]
+    }
+  }
+}

@@ -11,9 +11,10 @@ This is a research prototype. The current evidence does not establish that the p
 1. [`01_REPOSITORY_CLEANUP.md`](01_REPOSITORY_CLEANUP.md) — inventory and safely simplify the repository.
 2. [`02_DATA_AND_CLAIM_AUDIT.md`](02_DATA_AND_CLAIM_AUDIT.md) — establish what data and results can support.
 3. [`03_MATCHED_EXPERIMENTS.md`](03_MATCHED_EXPERIMENTS.md) — run only valid experiments; record blocked comparisons honestly.
-4. [`04_ANALYSIS_AND_FIGURES.md`](04_ANALYSIS_AND_FIGURES.md) — prepare metrics, error analysis, ablations, and research figures from valid outputs.
-5. [`05_LIVE_DASHBOARD_SIMULATION.md`](05_LIVE_DASHBOARD_SIMULATION.md) — implement and run a clearly marked simulated dashboard demonstration.
-6. [`06_SUBMISSION_PACKAGE.md`](06_SUBMISSION_PACKAGE.md) — assemble the final submission report and reproducibility handoff.
+4. [`04_SYNTHETIC_MVP_RUNNER.md`](04_SYNTHETIC_MVP_RUNNER.md) — connect synthetic alerts through correlation, prioritization, verification, and evaluation in one reproducible run.
+5. [`05_ANALYSIS_AND_FIGURES.md`](05_ANALYSIS_AND_FIGURES.md) — prepare metrics, error analysis, ablations, and research figures from valid outputs.
+6. [`06_LIVE_DASHBOARD_SIMULATION.md`](06_LIVE_DASHBOARD_SIMULATION.md) — implement and run a clearly marked simulated dashboard demonstration using the runner's fictional events.
+7. [`07_SUBMISSION_PACKAGE.md`](07_SUBMISSION_PACKAGE.md) — assemble the final submission report and reproducibility handoff.
 
 Complete each task's acceptance checklist and write a short completion record before starting the next. If blocked, record the evidence, produce all independent work that remains possible, and continue to the next task without inventing a result.
 
@@ -27,6 +28,7 @@ Complete each task's acceptance checklist and write a short completion record be
 - The latest offline joint comparison uses deterministic/statistical proxies. It did not run B2, B3, B4, or the proposed LLM C/P/V system.
 - The 95% end-to-end Recall@20 target has not been achieved. Never change denominators to make it appear achieved.
 - Dashboard simulation output is demonstration data and must never be mixed with research metrics.
+- The synthetic end-to-end MVP is a software demonstration, not empirical evidence about GUIDE or LLM performance.
 
 ## Operating rules
 

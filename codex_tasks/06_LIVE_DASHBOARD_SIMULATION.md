@@ -1,14 +1,14 @@
-# Task 5 Live Dashboard Simulation
+# Task 6 Live Dashboard Simulation
 
 ## Goal
 
-Build a polished interactive dashboard demo that simulates alerts arriving and moving through correlate, prioritize, verify, and review stages. This is a software demonstration, not an operational SOC and not a research result.
+Build a polished interactive dashboard demo that simulates alerts arriving and moving through correlate, prioritize, verify, and review stages. Use the event trace from Task 4 when available. This is a software demonstration, not an operational SOC and not a research result.
 
 ## Required behavior
 
 1. Inspect the current `dashboard/index.html`, `dashboard/guide_rerun_v2.html`, `dashboard/README.md`, and existing aggregate schemas before modifying the dashboard.
 2. Preserve the existing aggregate research report view. Add a clearly separated “Synthetic live demo” mode or page.
-3. Generate deterministic fictional events from a fixed seed. Never stream from raw GUIDE data, restricted derived data, actual alert identifiers, evaluator stores, or a real model/API.
+3. Generate deterministic fictional events from the Task 4 event trace or a fixed seed. Never stream from raw GUIDE data, restricted derived data, actual alert identifiers, evaluator stores, or a real model/API.
 4. Permanently display a high-visibility label such as **SIMULATION — FICTIONAL EVENTS — NOT LIVE SOC DATA** while demo mode is active. Keep this label visible on mobile and desktop.
 5. Simulate an alert feed, grouping decisions, priority queue, verifier outcomes, review routing, and basic activity counters. Include controls for start, pause, reset, playback speed, and switching between clean, missing-evidence, and conflicting-evidence scenarios.
 6. Show why an item was linked or sent for review using fictional evidence references. Show uncertainty and never imply autonomous containment or closure.

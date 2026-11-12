@@ -1,0 +1,14 @@
+{
+  "schema_version": "mvp-synthetic-scenario-v1",
+  "classification": "fictional_software_demo_only",
+  "seed": 0,
+  "organizations": [
+    "org-mvp-01",
+    "org-mvp-02"
+  ],
+  "requests": {
+    "org-mvp-01": "org_mvp_01.json",
+    "org-mvp-02": "org_mvp_02.json"
+  },
+  "truth_file": "truth.json"
+}

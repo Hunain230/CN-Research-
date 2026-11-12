@@ -1,4 +1,4 @@
-# Task 4 Analysis and Figures
+# Task 5 Analysis and Figures
 
 ## Goal
 
@@ -15,6 +15,7 @@ Turn valid experiment artifacts into clear tables, plots, ablations, and a cauti
 7. Conduct error analysis from existing aggregate artifacts or approved restricted procedures. Do not print raw identifiers or sensitive examples. If no reviewed error labels exist, report that the error review was not performed.
 8. Compare to related papers qualitatively by task, dataset, labels, and metrics. Do not compare headline numbers from different denominators as direct wins/losses.
 9. Discuss negative results and constraints, including candidate misses, false merges/splits, ambiguity exclusions, limited queues, and the absence of empirical LLM C/P/V measurements.
+10. Keep the synthetic MVP runner results in a separate subsection labeled “Software demonstration only.” Do not include them in empirical comparisons, ablation conclusions, or claims about real data.
 
 ## Required result
 
@@ -27,4 +28,5 @@ Create `submission/RESULTS_AND_DISCUSSION.md` plus clean, reproducible figures i
 - [ ] No unlabeled incident is silently treated as negative.
 - [ ] Limitations and failed targets are visible beside relevant results.
 - [ ] No dashboard demo data appears in research analysis.
+- [ ] Synthetic MVP outputs are clearly separated from empirical research findings.
 
