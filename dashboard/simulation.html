@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Synthetic live demo | SOC research prototype</title>
+  <style>
+    :root { color-scheme: dark; --bg:#081322; --panel:#102238; --panel2:#142b43; --line:#34506b; --text:#f5f9ff; --muted:#c2d4e5; --cyan:#75e3ef; --amber:#ffd17b; --red:#ffaaa3; --green:#a3ecc2; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:radial-gradient(circle at 70% -10%,#1e4760 0,transparent 40%),var(--bg); color:var(--text); font:16px/1.5 system-ui,Segoe UI,sans-serif; }
+    a { color:var(--cyan); } a:focus-visible,button:focus-visible,select:focus-visible { outline:3px solid var(--amber); outline-offset:3px; }
+    .banner { position:sticky; top:0; z-index:20; background:#ffcb65; color:#1d1b14; border-bottom:3px solid #ffe7a9; font-weight:900; letter-spacing:.04em; text-align:center; padding:10px 12px; font-size:clamp(12px,2.3vw,16px); }
+    .wrap { max-width:1340px; margin:auto; padding:22px 20px 50px; }
+    .topline { display:flex; justify-content:space-between; align-items:center; gap:16px; flex-wrap:wrap; }
+    .eyebrow { color:var(--cyan); text-transform:uppercase; letter-spacing:.14em; font-size:12px; font-weight:800; }
+    h1 { font-size:clamp(30px,4vw,50px); line-height:1.08; margin:10px 0; }
+    h2 { font-size:19px; margin:0 0 6px; }
+    h3 { font-size:16px; margin:0 0 6px; }
+    p { margin:8px 0; }
+    .muted { color:var(--muted); }
+    .hero { padding:25px 0 20px; }
+    .hero p { max-width:850px; }
+    .note { color:#ffdfab; border-left:4px solid var(--amber); background:#3e332944; padding:10px 13px; margin-top:18px; }
+    .controls { display:flex; align-items:end; flex-wrap:wrap; gap:12px; padding:18px; border:1px solid var(--line); border-radius:16px; background:var(--panel); }
+    .control { display:flex; flex-direction:column; gap:5px; min-width:155px; }
+    label { font-weight:700; font-size:13px; color:var(--muted); }
+    select,button { font:inherit; border-radius:9px; min-height:42px; }
+    select { background:#07192a; color:var(--text); border:1px solid #5b7690; padding:8px 11px; }
+    button { cursor:pointer; border:1px solid #66849a; background:#1b3a50; color:var(--text); padding:8px 15px; font-weight:700; }
+    button.primary { background:#74e4ef; color:#072435; border-color:#74e4ef; }
+    button:hover { filter:brightness(1.13); }
+    button:disabled { opacity:.47; cursor:not-allowed; }
+    .statusbar { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:8px; margin:14px 0 8px; color:var(--muted); }
+    .progress { height:8px; border-radius:99px; background:#29445a; overflow:hidden; }
+    .progress span { display:block; height:100%; width:0; background:var(--cyan); transition:width .18s ease; }
+    .stats { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:12px; margin:18px 0; }
+    .stat,.panel { border:1px solid var(--line); border-radius:15px; background:linear-gradient(145deg,var(--panel2),var(--panel)); }
+    .stat { padding:14px 17px; }
+    .stat span { display:block; color:var(--muted); font-size:12px; text-transform:uppercase; letter-spacing:.08em; }
+    .stat strong { display:block; font-size:29px; line-height:1.2; margin-top:6px; }
+    .layout { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.2fr); gap:16px; align-items:start; }
+    .stack { display:grid; gap:16px; }
+    .panel { padding:18px; min-width:0; }
+    .panelhead { display:flex; align-items:baseline; justify-content:space-between; gap:12px; flex-wrap:wrap; border-bottom:1px solid var(--line); padding-bottom:10px; margin-bottom:10px; }
+    .panelhead small { color:var(--muted); }
+    .items { display:grid; gap:9px; max-height:370px; overflow:auto; padding-right:2px; }
+    .item { border:1px solid #36536d; border-radius:11px; background:#0c2033; padding:11px 12px; overflow-wrap:anywhere; }
+    .itemhead { display:flex; align-items:center; justify-content:space-between; gap:8px; flex-wrap:wrap; }
+    .item p { color:var(--muted); margin:4px 0 0; font-size:13px; }
+    .pill { border-radius:999px; border:1px solid currentColor; padding:2px 8px; font-size:11px; font-weight:800; white-space:nowrap; }
+    .pill.link,.pill.pass { color:var(--green); }
+    .pill.unsure,.pill.review,.pill.revise { color:var(--amber); }
+    .pill.no-link { color:var(--muted); }
+    .pill.conflict { color:var(--red); }
+    .empty { border:1px dashed #59758b; color:var(--muted); text-align:center; border-radius:11px; padding:25px 14px; }
+    .queue { display:grid; gap:10px; }
+    .queue .item { border-left:4px solid var(--cyan); }
+    .queue .item.review { border-left-color:var(--amber); }
+    .queue .item p { font-size:13px; }
+    .fine { font-size:12px; color:var(--muted); }
+    footer { border-top:1px solid var(--line); color:var(--muted); margin-top:24px; padding-top:15px; font-size:13px; }
+    @media(max-width:800px) { .layout { grid-template-columns:1fr; } .stats { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+    @media(max-width:520px) { .wrap { padding:15px 12px 35px; } .controls { padding:13px; gap:9px; } .control { min-width:calc(50% - 5px); flex:1; } .controls button { flex:1; } .stats { gap:8px; } .stat { padding:11px; } .stat strong { font-size:24px; } }
+  </style>
+</head>
+<body>
+  <div class="banner" role="note">SIMULATION — FICTIONAL EVENTS — NOT LIVE SOC DATA</div>
+  <main class="wrap">
+    <div class="topline"><span class="eyebrow">Research prototype / scripted playback</span><a href="index.html">View aggregate research report</a></div>
+    <header class="hero">
+      <h1>From alert to review</h1>
+      <p class="muted">Watch a fixed, fictional event sequence move through correlation, priority ordering, verification, and human review routing. The display uses no live feed or model inference.</p>
+      <p class="note" id="scene-note">Choose a scenario, then press Start. These are presentation scenes adapted from the frozen synthetic MVP trace, not new evaluator results.</p>
+    </header>
+    <section class="controls" aria-label="Simulation controls">
+      <div class="control"><label for="scenario">Scenario</label><select id="scenario"><option value="clean">Clean evidence</option><option value="missing">Missing evidence</option><option value="conflict">Conflicting evidence</option></select></div>
+      <div class="control"><label for="speed">Playback speed</label><select id="speed"><option value="1200">Slow · 1.2 s</option><option value="700" selected>Normal · 0.7 s</option><option value="300">Fast · 0.3 s</option></select></div>
+      <button id="start" class="primary" type="button">Start</button>
+      <button id="pause" type="button" disabled>Pause</button>
+      <button id="reset" type="button">Reset</button>
+    </section>
+    <div class="statusbar"><span id="play-status" role="status" aria-live="polite">Ready. No events played.</span><span id="step-label">Step 0 of 0</span></div>
+    <div class="progress" role="progressbar" aria-label="Playback progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="progress"><span id="progress-fill"></span></div>
+    <div class="stats" aria-label="Simulation activity counters">
+      <div class="stat"><span>Fictional alerts</span><strong id="count-alerts">0</strong></div>
+      <div class="stat"><span>Link decisions</span><strong id="count-links">0</strong></div>
+      <div class="stat"><span>Queue groups</span><strong id="count-groups">0</strong></div>
+      <div class="stat"><span>Routed to review</span><strong id="count-reviews">0</strong></div>
+    </div>
+    <div class="layout">
+      <div class="stack">
+        <section class="panel" aria-labelledby="feed-title"><div class="panelhead"><h2 id="feed-title">Fictional alert feed</h2><small>Arrival order</small></div><div class="items" id="feed"></div></section>
+        <section class="panel" aria-labelledby="decisions-title"><div class="panelhead"><h2 id="decisions-title">Correlation decisions</h2><small>Evidence references shown</small></div><div class="items" id="decisions"></div></section>
+      </div>
+      <div class="stack">
+        <section class="panel" aria-labelledby="queue-title"><div class="panelhead"><h2 id="queue-title">Priority queue</h2><small>Relative stub scores only</small></div><div class="queue" id="queue"></div></section>
+        <section class="panel" aria-labelledby="review-title"><div class="panelhead"><h2 id="review-title">Human review route</h2><small>No automated containment or closure</small></div><div class="items" id="reviews"></div></section>
+      </div>
+    </div>
+    <footer>Source: frozen synthetic MVP event trace, displayed as three deterministic teaching scenes. Clean scene includes a scripted status variant to isolate a clear path. Counters here are playback activity, not research metrics. Refreshing or Reset returns the same starting state. No API, model, telemetry, or external network request is made.</footer>
+  </main>
+  <script id="demo-data" type="application/json">{"classification":"fictional_scripted_simulation_not_research_metrics","source_run":"mvp-demo-20261112-v2","scenarios":{"clean":[{"alert_key":"org-mvp-01-a1","evidence_count":1,"kind":"alert_received","org_key":"org-mvp-01","step":1},{"alert_key":"org-mvp-01-a2","evidence_count":1,"kind":"alert_received","org_key":"org-mvp-01","step":2},{"alert_key":"org-mvp-01-a3","evidence_count":1,"kind":"alert_received","org_key":"org-mvp-01","step":3},{"alert_key":"org-mvp-01-a6","evidence_count":1,"kind":"alert_received","org_key":"org-mvp-01","step":4},{"decision":"LINK","evidence_refs":["demo-01-ev-a1","demo-01-ev-a2"],"kind":"correlation_decision","left":"org-mvp-01-a1","org_key":"org-mvp-01","reason":"shared_signal_within_window","right":"org-mvp-01-a2","step":5},{"decision":"NO_LINK","evidence_refs":["demo-01-ev-a1","demo-01-ev-a3"],"kind":"correlation_decision","left":"org-mvp-01-a1","org_key":"org-mvp-01","reason":"no_supported_match","right":"org-mvp-01-a3","step":6},{"decision":"LINK","evidence_refs":["demo-01-ev-a1","demo-01-ev-a6"],"kind":"correlation_decision","left":"org-mvp-01-a1","org_key":"org-mvp-01","reason":"shared_signal_within_window","right":"org-mvp-01-a6","step":7},{"alert_keys":["org-mvp-01-a1","org-mvp-01-a2","org-mvp-01-a6"],"component_key":"4829b9fb33e6e081","evidence_refs":["demo-01-ev-a1","demo-01-ev-a2","demo-01-ev-a6"],"kind":"component_ranked","org_key":"org-mvp-01","rank":1,"review_reason":null,"score":0.75,"status":"PASS","step":8,"verification":"PASS","scripted_variant":true},{"alert_keys":["org-mvp-01-a3"],"component_key":"85eaa655d45e8965","evidence_refs":["demo-01-ev-a3"],"kind":"component_ranked","org_key":"org-mvp-01","rank":3,"review_reason":null,"score":0.25,"status":"PASS","step":9,"verification":"PASS"}],"missing":[{"alert_key":"org-mvp-01-a1","evidence_count":1,"kind":"alert_received","org_key":"org-mvp-01","step":1},{"alert_key":"org-mvp-01-a5","evidence_count":0,"kind":"alert_received","org_key":"org-mvp-01","step":2},{"decision":"UNSURE","evidence_refs":[],"kind":"correlation_decision","left":"org-mvp-01-a1","org_key":"org-mvp-01","reason":"missing_evidence","right":"org-mvp-01-a5","step":3},{"alert_keys":["org-mvp-01-a5"],"component_key":"56b2974805c115a6","evidence_refs":[],"kind":"component_ranked","org_key":"org-mvp-01","rank":4,"review_reason":"touches_unsure_or_failed_pair","score":null,"status":"REVIEW","step":4,"verification":"REVISE"}],"conflict":[{"alert_key":"org-mvp-02-a1","evidence_count":1,"kind":"alert_received","org_key":"org-mvp-02","step":1},{"alert_key":"org-mvp-02-a4","evidence_count":1,"kind":"alert_received","org_key":"org-mvp-02","step":2},{"decision":"UNSURE","evidence_refs":["demo-02-ev-a1","demo-02-ev-a4"],"kind":"correlation_decision","left":"org-mvp-02-a1","org_key":"org-mvp-02","reason":"conflicting_evidence","right":"org-mvp-02-a4","step":3},{"alert_keys":["org-mvp-02-a4"],"component_key":"ba0efb4acdcc251f","evidence_refs":["demo-02-ev-a4"],"kind":"component_ranked","org_key":"org-mvp-02","rank":2,"review_reason":"touches_unsure_or_failed_pair","score":0.25,"status":"REVIEW","step":4,"verification":"PASS"}]}}</script>
+  <script>
+    'use strict';
+    const DATA = JSON.parse(document.getElementById('demo-data').textContent);
+    const $ = id => document.getElementById(id);
+    const names = {clean:'Clean evidence',missing:'Missing evidence',conflict:'Conflicting evidence'};
+    const notes = {
+      clean:'Clean evidence: a shared fictional signal links two alerts; an unsupported match stays separate. The clear-path PASS flag is a scripted display variant of the MVP trace.',
+      missing:'Missing evidence: an alert has no supporting evidence. The pair remains UNSURE, its group is unscored, and a person receives it for review.',
+      conflict:'Conflicting evidence: the pair remains UNSURE despite cited fictional evidence. Verification passes the available component, but uncertainty still routes it to human review.'
+    };
+    const reasons = {shared_signal_within_window:'Shared fictional signal in the demo window',no_supported_match:'No supported match',missing_evidence:'Evidence absent',conflicting_evidence:'Evidence conflicts'};
+    let scenario='clean', cursor=0, timer=null, feed=[], decisions=[], queue=[];
+    const stream = () => DATA.scenarios[scenario];
+    function stop() { if(timer!==null) clearInterval(timer); timer=null; $('pause').disabled=true; }
+    function shortAlert(key) { return key.split('-').at(-1).toUpperCase(); }
+    function element(tag, className='', text='') { const n=document.createElement(tag); if(className)n.className=className; n.textContent=text; return n; }
+    function empty(node, message) { node.replaceChildren(element('div','empty',message)); }
+    function pill(text, className) { return element('span','pill '+className,text); }
+    function refs(event) { return event.evidence_refs?.length ? 'Fictional refs: '+event.evidence_refs.join(', ') : 'No supporting evidence reference'; }
+    function reasonFor(group) {
+      const touching=decisions.filter(d=>d.decision==='UNSURE' && group.alert_keys.some(k=>k===d.left || k===d.right));
+      const missing=touching.find(d=>d.reason==='missing_evidence');
+      const conflict=touching.find(d=>d.reason==='conflicting_evidence');
+      if(missing) return 'Review: missing evidence; '+refs(missing);
+      if(conflict) return 'Review: conflicting evidence; '+refs(conflict);
+      return group.review_reason ? 'Review: uncertainty remains from the fictional workflow.' : 'No review flag in this scene.';
+    }
+    function render() {
+      const feedNode=$('feed'); feedNode.replaceChildren();
+      if(!feed.length) empty(feedNode,'No alerts yet. Press Start to replay fictional arrivals.');
+      for(const e of feed) { const card=element('article','item'); const head=element('div','itemhead'); head.append(element('strong','',shortAlert(e.alert_key)),pill(e.evidence_count ? 'EVIDENCE' : 'MISSING',''+(e.evidence_count?'pass':'review'))); card.append(head,element('p','',`Fictional ${e.org_key} · ${e.evidence_count} evidence record${e.evidence_count===1?'':'s'}`)); feedNode.append(card); }
+      const decisionNode=$('decisions'); decisionNode.replaceChildren();
+      if(!decisions.length) empty(decisionNode,'No grouping decision yet.');
+      for(const e of decisions) { const card=element('article','item'); const head=element('div','itemhead'); head.append(element('strong','',`${shortAlert(e.left)} ↔ ${shortAlert(e.right)}`),pill(e.decision,e.decision.toLowerCase().replace('_','-'))); card.append(head,element('p','',reasons[e.reason]||e.reason),element('p','',refs(e))); decisionNode.append(card); }
+      const queueNode=$('queue'); queueNode.replaceChildren();
+      if(!queue.length) empty(queueNode,'No groups ranked yet.');
+      for(const e of [...queue].sort((a,b)=>(a.rank??999)-(b.rank??999))) { const card=element('article','item '+(e.status==='REVIEW'?'review':'')); const head=element('div','itemhead'); head.append(element('strong','',`#${e.rank} · ${e.alert_keys.map(shortAlert).join(' + ')}`),pill(e.status,e.status.toLowerCase())); card.append(head,element('p','',e.score===null?'Unscored · uncertainty requires review':`Relative stub score ${e.score.toFixed(2)} · uncalibrated`),element('p','',`Verifier: ${e.verification}. ${refs(e)}`)); if(e.status==='REVIEW') card.append(element('p','',reasonFor(e))); queueNode.append(card); }
+      const reviewNode=$('reviews'); reviewNode.replaceChildren(); const reviewed=queue.filter(e=>e.status==='REVIEW');
+      if(!reviewed.length) empty(reviewNode,'No group routed to human review in this scene so far.');
+      for(const e of reviewed) { const card=element('article','item'); const head=element('div','itemhead'); head.append(element('strong','',e.alert_keys.map(shortAlert).join(' + ')),pill('REVIEW','review')); card.append(head,element('p','',reasonFor(e)),element('p','',`Verifier outcome: ${e.verification}. Analyst decision is not simulated.`)); reviewNode.append(card); }
+      $('count-alerts').textContent=feed.length;
+      $('count-links').textContent=decisions.filter(e=>e.decision==='LINK').length;
+      $('count-groups').textContent=queue.length;
+      $('count-reviews').textContent=reviewed.length;
+      $('step-label').textContent=`Step ${cursor} of ${stream().length}`;
+      const pct=stream().length?100*cursor/stream().length:0;
+      $('progress-fill').style.width=pct+'%'; $('progress').setAttribute('aria-valuenow',String(Math.round(pct)));
+    }
+    function advance() {
+      if(cursor>=stream().length) { stop(); $('play-status').textContent=`${names[scenario]} scene complete. Reset or replay to watch again.`; return; }
+      const e=stream()[cursor++];
+      if(e.kind==='alert_received') feed.push(e);
+      else if(e.kind==='correlation_decision') decisions.push(e);
+      else if(e.kind==='component_ranked') queue.push(e);
+      render();
+      $('play-status').textContent=`Playing ${names[scenario]} · ${e.kind.replace('_',' ')} · step ${cursor}.`;
+      if(cursor>=stream().length) { stop(); $('play-status').textContent=`${names[scenario]} scene complete. Reset or replay to watch again.`; }
+    }
+    function start() { if(cursor>=stream().length) reset(); if(timer!==null)return; advance(); if(cursor<stream().length) { timer=setInterval(advance,Number($('speed').value)); $('pause').disabled=false; } }
+    function reset() { stop(); cursor=0; feed=[]; decisions=[]; queue=[]; render(); $('play-status').textContent=`Ready: ${names[scenario]}. No events played.`; }
+    $('start').addEventListener('click',start);
+    $('pause').addEventListener('click',()=>{stop(); $('play-status').textContent=`Paused ${names[scenario]} at step ${cursor}.`;});
+    $('reset').addEventListener('click',reset);
+    $('scenario').addEventListener('change',e=>{scenario=e.target.value; $('scene-note').textContent=notes[scenario]; reset();});
+    $('speed').addEventListener('change',()=>{if(timer!==null){stop(); timer=setInterval(advance,Number($('speed').value)); $('pause').disabled=false;}});
+    $('scene-note').textContent=notes[scenario]; reset();
+  </script>
+</body>
+</html>

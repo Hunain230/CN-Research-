@@ -1,0 +1,14 @@
+{
+  "classification": "fictional_scripted_simulation_not_research_metrics",
+  "command": ".\\.venv\\Scripts\\python.exe -m src.build_simulation_dashboard",
+  "external_calls": 0,
+  "output_sha256": "e8d87f9660e50726d86e97d3011d4490f222777503080f1ec629c2864a801d07",
+  "scenario_event_counts": {
+    "clean": 9,
+    "conflict": 4,
+    "missing": 4
+  },
+  "source_run": "mvp-demo-20261112-v2",
+  "source_trace_sha256": "15491b4bf8d6fd9106ce72e874917ac2c399c685c35d9ddf474385aeef2938dd",
+  "template_sha256": "3d8af3b5fa6ac6ee88d3d68690480d6c3533971fc4780ff2780131cdd47f90f8"
+}
