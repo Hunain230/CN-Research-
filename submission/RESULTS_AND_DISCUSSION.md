@@ -74,6 +74,11 @@ The [figure script](generate_figures.py) reads only aggregate JSON from `outputs
 
 ## Conclusion and remaining work
 
+### 2026-11-13 hybrid implementation addendum
+
+The later [Phase 3 hybrid report](FINAL_REPORT.md) records a distinct 499-organization full GUIDE_Test offline run and a bounded two-organization local `qwen2.5:3b` evaluation. They use different candidate designs and denominators from this Task 5 analysis and from each other. The full offline rule retrieved only 37,018/159,186,107 positive pairs, so candidate generation remained the limiting stage; its count and local BM25-like end-to-end Recall@20 were 0.0543 and 0.1364, respectively. The [new aggregate figure](figures/full_guide_offline.png) visualizes their ranking results. See the [full metrics](../outputs/submission_full_guide_20261112_v1/metrics.json), [local model metrics](../outputs/submission_qwen_20261112_v1/metrics.json), and [known limits](KNOWN_LIMITATIONS.md) before citing a result. These are exploratory additions; Figures 1–3 and the historical Task 5 tables are unchanged.
+
+
 The strongest comparable local result is a **bounded exploratory proxy comparison**, not an empirical LLM C/P/V test. Its pair F1 and end-to-end recall values are low, candidate retrieval missed 8,800 positive pairs, and the 95% end-to-end target was not reached. The 93.51% exclusion-policy ceiling on this selected cohort further shows why the current rule cannot support that target without a source-validated membership policy. Queue mapping, rank direction, feature timing/privacy approval, untouched evaluation data, matched real-model methods, reviewer judgments, latency, and cost remain unresolved or unmeasured. These limits should accompany any use of the figures.
 
 ## Task 5 completion record

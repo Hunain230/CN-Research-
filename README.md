@@ -1,8 +1,10 @@
 # CNET Research: SOC Threat Correlation and Alert Prioritization
 
+**Phase 3 submission update (2026-11-13):** The [hybrid implementation report](submission/FINAL_REPORT.md) now documents a full ranked GUIDE_Test offline pass and a bounded localhost `qwen2.5:3b` C/P/V prototype. The [reproduction guide](submission/REPRODUCE.md), [limitations](submission/KNOWN_LIMITATIONS.md), and [fictional dashboard simulation](dashboard/simulation.html) accompany it. Both empirical runs are exploratory; the full offline candidate rule missed the 99% recall target by a wide margin. The raw GUIDE export is retrospective research data, not a live feed.
+
 This repository contains the implementation and audit records for a retrospective research study of alert correlation and incident prioritization in Microsoft GUIDE. The proposed workflow is correlate–prioritize–verify (C/P/V), compared with rule, retrieval, and single-LLM baselines when empirical gates permit.
 
-**Current status (2026-11-11):** The [Phase A gate decision](phases_outputs/PhaseA_Implementation_2026-11-11.md) remains no-go for confirmatory evaluation and production use. Its validation candidate recall was 80.37% at about 67.00% pair coverage, below the stated 99% retrieval target. The [latest offline joint comparison](phases_outputs/Offline_Joint_Comparison_2026-11-11.md) is exploratory and uses deterministic/statistical proxies: its best reported end-to-end Recall@20 was 11.75%, with a 1,140-label denominator. B2, B3, B4, and the proposed LLM C/P/V workflow were not measured in that comparison. An earlier [GUIDE rerun](outputs/guide_rerun_v2/report.md) reported 97.21% **oracle-group candidate** recall at K=500, a different metric. The bounded Groq authorization recorded for that historical rerun does not authorize new hosted calls. No confirmatory end-to-end C/P/V result or military certification exists.
+**Earlier status (2026-11-11):** The [Phase A gate decision](phases_outputs/PhaseA_Implementation_2026-11-11.md) remains no-go for confirmatory evaluation and production use. Its validation candidate recall was 80.37% at about 67.00% pair coverage, below the stated 99% retrieval target. The [then-current offline joint comparison](phases_outputs/Offline_Joint_Comparison_2026-11-11.md) is exploratory and uses deterministic/statistical proxies: its best reported end-to-end Recall@20 was 11.75%, with a 1,140-label denominator. B2, B3, B4, and the proposed LLM C/P/V workflow were not measured in that comparison. An earlier [GUIDE rerun](outputs/guide_rerun_v2/report.md) reported 97.21% **oracle-group candidate** recall at K=500, a different metric. The bounded Groq authorization recorded for that historical rerun does not authorize new hosted calls. No confirmatory end-to-end C/P/V result or military certification exists.
 
 ## Start here
 
@@ -11,7 +13,7 @@ For the current handoff, use this map:
 1. [Repository map](cleanup/REPOSITORY_MAP.md) — source, config, data, output, and dashboard locations; [cleanup log](cleanup/CLEANUP_LOG.md) records this navigation update.
 2. [Phase A implementation and gate decision](phases_outputs/PhaseA_Implementation_2026-11-11.md) — latest readiness decision; [offline joint comparison](phases_outputs/Offline_Joint_Comparison_2026-11-11.md) — latest matched exploratory metrics.
 3. [phases_context.md](phases_context.md) — phase index; [research gate register](phases_outputs/research_gate_register.csv) — per-gate status.
-4. [dashboard/index.html](dashboard/index.html) — static aggregate Phase 6 viewer; [dashboard/guide_rerun_v2.html](dashboard/guide_rerun_v2.html) — historical exploratory rerun viewer. Neither is a live SOC dashboard.
+4. [dashboard/index.html](dashboard/index.html) — static aggregate Phase 6 viewer; [dashboard/simulation.html](dashboard/simulation.html) — separate fictional playback. Neither is a live SOC dashboard.
 
 Before changing research behavior, read these records in order:
 

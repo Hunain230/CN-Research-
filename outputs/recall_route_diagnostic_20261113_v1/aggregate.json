@@ -1,0 +1,50 @@
+{
+  "alerts": 11219,
+  "classification": "exploratory_posthoc_truth_informed_route_diagnostic_not_frozen_candidate_benchmark",
+  "limits": [
+    "previously exposed 57 small queues",
+    "truth read in same diagnostic process; not a frozen candidate run",
+    "overlap is an upper bound for exact-field retrieval before any cap or classifier",
+    "does not measure end-to-end Recall@20",
+    "field use remains local-only assumption"
+  ],
+  "organizations": 57,
+  "positive_pairs": 47607,
+  "possible_pairs": 1510902,
+  "routes": {
+    "any_three": {
+      "pair_coverage": 0.5945481573258887,
+      "pairs": 898304,
+      "positive_pair_overlap": 0.47721973659335815,
+      "positive_pairs": 22719
+    },
+    "category": {
+      "pair_coverage": 0.5918874950195314,
+      "pairs": 894284,
+      "positive_pair_overlap": 0.47629550276219884,
+      "positive_pairs": 22675
+    },
+    "category_and_technique": {
+      "pair_coverage": 0.13717368830010152,
+      "pairs": 207256,
+      "positive_pair_overlap": 0.33167391350011555,
+      "positive_pairs": 15790
+    },
+    "detector": {
+      "pair_coverage": 0.2829766589758965,
+      "pairs": 427550,
+      "positive_pair_overlap": 0.35278425441636735,
+      "positive_pairs": 16795
+    },
+    "technique": {
+      "pair_coverage": 0.13968874222153388,
+      "pairs": 211056,
+      "positive_pair_overlap": 0.33226206230176236,
+      "positive_pairs": 15818
+    }
+  },
+  "source_sha256": {
+    "data/derived/guide_rerun_v2/prepared.pkl": "2b0ab264c985e9680d1f62bd2f4e56f726b8852e71b239635ce81e31a52207c1",
+    "src/recall_route_diagnostic.py": "6c2df6c359d7d9c11d82fb148e9f126246e3af580dc5015089c9300af9572523"
+  }
+}

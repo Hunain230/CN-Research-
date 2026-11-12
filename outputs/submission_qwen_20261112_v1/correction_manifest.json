@@ -1,0 +1,12 @@
+{
+  "classification": "exploratory_bounded_local_qwen_full_membership_correction",
+  "command": "python -m src.submission_qwen_correction --run-id submission_qwen_20261112_v1",
+  "sha256": {
+    "data\\derived\\guide_rerun_v2\\prepared.pkl": "2b0ab264c985e9680d1f62bd2f4e56f726b8852e71b239635ce81e31a52207c1",
+    "data\\derived\\submission_qwen_20261112_v1\\predictions.pkl": "c74c21be2319411ba188cb0031b18465d33d92e0249b7f949fef1675eec141f2",
+    "outputs\\submission_qwen_20261112_v1\\metrics.json": "48ed263d0870ee86d0a3768e9c687d5328375cb1b2bfd76b4f5d1a94ef1bf041",
+    "outputs\\submission_qwen_20261112_v1\\metrics_full_membership_correction.json": "18ecf6a48336cec3eb193f74a49ca9ecdfbe61ca9b9bda99b36f341c958481a7",
+    "outputs\\submission_qwen_20261112_v1\\prediction_freeze.json": "44634da74e6175e8aed9ee06d50093116afdbac10f55362aaed2269d92f2848c",
+    "src\\submission_qwen_correction.py": "ee60c04430e10cbaa6f194f902e4eea2cdd1c5629d3236388623f7cc0995dcdc"
+  }
+}

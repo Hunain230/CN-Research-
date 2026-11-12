@@ -1,0 +1,22 @@
+{
+  "all_unambiguous_alerts_in_selected_organizations": 455,
+  "classification": "exploratory_bounded_local_qwen_full_membership_correction",
+  "end_to_end_recall_at_20_macro": 0.275,
+  "expert_top20_denominator": 40,
+  "limits": [
+    "two previously accessed organizations; no confidence interval",
+    "selected-alert candidate pairs contain zero positives",
+    "batch Qwen model calls, not full original C/P/V protocol",
+    "all 40 expert labels stay in denominator"
+  ],
+  "ndcg_at_20_rank1_high_macro": 0.00982966470514707,
+  "organizations": 2,
+  "original_metrics_sha256": "48ed263d0870ee86d0a3768e9c687d5328375cb1b2bfd76b4f5d1a94ef1bf041",
+  "precision_at_10_macro": 0.45,
+  "prediction_freeze_sha256": "44634da74e6175e8aed9ee06d50093116afdbac10f55362aaed2269d92f2848c",
+  "reason": "the original evaluator computed incident completeness over selected alerts, not full organization membership",
+  "recovered_labels": 11,
+  "selected_alerts": 32,
+  "supersedes": "metrics.json cpv_batched_local_qwen ranking/recovery fields only; candidate_pair_metrics and call_summary remain valid",
+  "top20_labels_with_unambiguous_alerts": 37
+}

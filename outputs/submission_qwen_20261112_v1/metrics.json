@@ -1,0 +1,70 @@
+{
+  "alerts": 32,
+  "call_summary": {
+    "failed": 0,
+    "output_tokens": 7842,
+    "prompt_tokens": 19353,
+    "total": 34
+  },
+  "candidate_pair_metrics": {
+    "B2_pair_only": {
+      "abstentions": 2,
+      "candidate_pairs": 30,
+      "f1_on_selected_candidates": 0.0,
+      "fn": 0,
+      "fp": 0,
+      "positive_pairs": 0,
+      "precision": 0.0,
+      "recall_on_selected_candidates": null,
+      "tp": 0
+    },
+    "B3_pair_only": {
+      "abstentions": 3,
+      "candidate_pairs": 30,
+      "f1_on_selected_candidates": 0.0,
+      "fn": 0,
+      "fp": 1,
+      "positive_pairs": 0,
+      "precision": 0.0,
+      "recall_on_selected_candidates": null,
+      "tp": 0
+    },
+    "C_local_qwen": {
+      "abstentions": 3,
+      "candidate_pairs": 30,
+      "f1_on_selected_candidates": 0.0,
+      "fn": 0,
+      "fp": 0,
+      "positive_pairs": 0,
+      "precision": 0.0,
+      "recall_on_selected_candidates": null,
+      "tp": 0
+    }
+  },
+  "classification": "exploratory_bounded_local_qwen_hybrid_not_full_llm_study",
+  "cpv_batched_local_qwen": {
+    "end_to_end_recall_at_20_macro": 0.275,
+    "ndcg_at_20_rank1_high_macro": 0.00982966470514707,
+    "ndcg_at_20_rank20_high_macro": 0.1905762763209717,
+    "pair_f1_full_subset_macro": 0.0,
+    "precision_at_10_macro": 0.45,
+    "predicted_groups": 32,
+    "review_fraction_macro": 0.6705882352941177
+  },
+  "expert_top20_denominator": 40,
+  "limits": [
+    "two previously accessed organizations; no confidence interval",
+    "15 deliberately score-stratified frozen candidate pairs per organization, not full pair universe",
+    "C/B2/B3 pair scores only; B2/B3 do not rank components",
+    "C/P/V roles are batched by organization, rather than one call per pair/component",
+    "V checks model-provided citations over local descriptors; no independent analyst review or revision loop",
+    "priority scores are uncalibrated",
+    "all 20 expert labels per organization stay in end-to-end denominator",
+    "local-only assumed fields; no hosted transmission",
+    "model outputs are exploratory and not a full-scale C/P/V result"
+  ],
+  "organizations": 2,
+  "prediction_freeze_sha256": "44634da74e6175e8aed9ee06d50093116afdbac10f55362aaed2269d92f2848c",
+  "selected_candidate_positive_pairs": 0,
+  "selected_pairs": 30
+}

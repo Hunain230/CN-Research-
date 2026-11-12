@@ -1,0 +1,17 @@
+{
+  "classification": "exploratory_full_ranked_guide_offline_baselines_not_llm",
+  "command_evaluate": "python -m src.submission_full_guide evaluate --run-id submission_full_guide_20261112_v1",
+  "command_predict": "python -m src.submission_full_guide predict --run-id submission_full_guide_20261112_v1",
+  "raw_sha256": {
+    "GUIDE_Test.csv": "fdfd7523efd6e3c26bd0290ba6acbcb237196cf923dd56a28e96802035db35a3",
+    "GUIDE_Test_Queue_Rankings.csv": "e4ea9308f45821128a3cd446ab19e6559edfc50709e72034ce957b6f0e2e65d6"
+  },
+  "seed": 0,
+  "sha256": {
+    "configs\\empirical_field_policy.yaml": "5e3777312a411b37cc1dc44cbe3b0d359d3d463e8dff6b58844cafbbda0ae211",
+    "data\\derived\\submission_full_guide_20261112_v1\\predictions.pkl": "f8ac447e412d37bb2a26f2431a7ab4dacd316ead426fb0429be1d9e01b439e7c",
+    "outputs\\submission_full_guide_20261112_v1\\metrics.json": "e6ac81358f6d8eef06c23b574055aa194a1b62fa09085fbca5ccbee0e97d3a94",
+    "outputs\\submission_full_guide_20261112_v1\\prediction_freeze.json": "673f70b11330b51f79ea3ac018685469471fd59818371af4d67632b7c8917aab",
+    "src\\submission_full_guide.py": "2080ab21b016638cf4cddaaa5ff93ef2fb2f28895b5703179a8dc68f2d4373f9"
+  }
+}

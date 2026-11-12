@@ -1,0 +1,20 @@
+{
+  "classification": "exploratory_bounded_local_qwen_hybrid_not_full_llm_study",
+  "command_evaluate": "python -m src.submission_local_qwen evaluate --run-id submission_qwen_20261112_v1",
+  "command_predict": "python -m src.submission_local_qwen predict --run-id submission_qwen_20261112_v1",
+  "external_calls": 0,
+  "model": "qwen2.5:3b",
+  "model_digest": "357c53fb659c5076de1d65ccb0b397446227b71a42be9d1603d46168015c9e4b",
+  "raw_sha256": {
+    "GUIDE_Test.csv": "fdfd7523efd6e3c26bd0290ba6acbcb237196cf923dd56a28e96802035db35a3",
+    "GUIDE_Test_Queue_Rankings.csv": "e4ea9308f45821128a3cd446ab19e6559edfc50709e72034ce957b6f0e2e65d6"
+  },
+  "sha256": {
+    "configs\\empirical_field_policy.yaml": "5e3777312a411b37cc1dc44cbe3b0d359d3d463e8dff6b58844cafbbda0ae211",
+    "data\\derived\\submission_qwen_20261112_v1\\calls.json": "90e773ed2e4ef77230fe86d91825a8f411127db1397739f377bd935a09cecf79",
+    "data\\derived\\submission_qwen_20261112_v1\\predictions.pkl": "c74c21be2319411ba188cb0031b18465d33d92e0249b7f949fef1675eec141f2",
+    "outputs\\submission_qwen_20261112_v1\\metrics.json": "48ed263d0870ee86d0a3768e9c687d5328375cb1b2bfd76b4f5d1a94ef1bf041",
+    "outputs\\submission_qwen_20261112_v1\\prediction_freeze.json": "44634da74e6175e8aed9ee06d50093116afdbac10f55362aaed2269d92f2848c",
+    "src\\submission_local_qwen.py": "ae3edd1033129bf318c79a8a82173294033e2cc32c758e82770fe2591b108941"
+  }
+}

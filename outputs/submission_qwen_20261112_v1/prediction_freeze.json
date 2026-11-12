@@ -1,0 +1,39 @@
+{
+  "call_summary": {
+    "failed": 0,
+    "output_tokens": 7842,
+    "prompt_tokens": 19353,
+    "total": 34
+  },
+  "calls_sha256": "90e773ed2e4ef77230fe86d91825a8f411127db1397739f377bd935a09cecf79",
+  "classification": "exploratory_bounded_local_qwen_hybrid_not_full_llm_study",
+  "labels_read_in_prediction_stage": false,
+  "localhost_only": true,
+  "model": "qwen2.5:3b",
+  "model_digest": "357c53fb659c5076de1d65ccb0b397446227b71a42be9d1603d46168015c9e4b",
+  "organizations": 2,
+  "pairs_per_organization": 15,
+  "prediction_sha256": "c74c21be2319411ba188cb0031b18465d33d92e0249b7f949fef1675eec141f2",
+  "seeds": {
+    "B2": 0,
+    "B3": [
+      41,
+      42,
+      43
+    ],
+    "C": 0,
+    "P": 0,
+    "V": 0
+  },
+  "selection": "first two complete <=500-alert holdout organizations by SHA-256(submission-qwen-v1, OrgId); each takes 10 highest and 5 lowest frozen correlation scores, label-blind",
+  "source_sha256": {
+    "configs\\empirical_field_policy.yaml": "5e3777312a411b37cc1dc44cbe3b0d359d3d463e8dff6b58844cafbbda0ae211",
+    "data\\derived\\guide_rerun_v2\\prepared.pkl": "2b0ab264c985e9680d1f62bd2f4e56f726b8852e71b239635ce81e31a52207c1",
+    "outputs\\guide_rerun_v2\\correlation_prediction_freeze.json": "cbb9cc76d5dcc83b6c6f8bf7567a5fc0b0eb250e31cb38f888cfdacb572932c4",
+    "src\\submission_local_qwen.py": "ae3edd1033129bf318c79a8a82173294033e2cc32c758e82770fe2591b108941"
+  },
+  "upstream_candidate_sha256": [
+    "1befba164dd9d61df151b923c2de22d0cfad8c1505861ff21c87c4576f6ba1f1",
+    "8bb856bc25c46c1163a00a2de515cd4b7a106549fefa78b9949e565ffbf79599"
+  ]
+}
