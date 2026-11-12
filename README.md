@@ -122,6 +122,17 @@ This diagnostic reads only `data/derived/preprocessing/review/ambiguous_alert_me
 
 Use a new output directory for each run. Synthetic artifacts are fixtures/stubs for implementation checks, never empirical results. Real-mode commands intentionally fail closed under the current gates; do not try to bypass them.
 
+### End-to-end synthetic MVP demonstration
+
+This separate fictional fixture connects the deterministic Phase 4 C/P/V stub to the existing evaluator metrics and writes a dashboard event trace. It is a software integration demonstration only; the stub scores and fixture metrics are not empirical performance.
+
+```powershell
+.\.venv\Scripts\python.exe -m src.mvp_demo self-test
+.\.venv\Scripts\python.exe -m src.mvp_demo run --run-id mvp-demo-new-id
+```
+
+The run writes predictions and a freeze file before opening the separate fictional truth fixture. Outputs go to a new directory under `outputs/mvp/`; run IDs cannot overwrite prior runs. See [the synthetic MVP fixture guide](fixtures/mvp/README.md) and [the completed run record](submission/MVP_SYNTHETIC_RUN.md).
+
 ### Phase 6: offline priority-only experiment
 
 This is the separate assumption-based, oracle-group ranking path described in [Phase6.md](phases_outputs/Phase6.md). Use a fresh run ID. Test labels are already accessed, so new runs are exploratory.

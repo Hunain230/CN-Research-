@@ -65,3 +65,7 @@ The offline provider must remain deterministic and make zero network/model calls
 - [ ] The output and every report clearly say it is synthetic and not empirical model performance.
 - [ ] No source dataset, historic output, or research protocol was changed to make the demo pass.
 
+## Completion record
+
+Completed on 2026-11-12. The implementation is `src/mvp_demo.py`; fixtures and instructions are under `fixtures/mvp/`; the reproducible run is `outputs/mvp/mvp-demo-20261112-v2/`; the summary is `submission/MVP_SYNTHETIC_RUN.md`. The new self-check passed 17 assertions. Phase 2, 3, 4, and 5 synthetic self-checks passed 23, 38, 34, and 64 assertions respectively. The output hash, evaluator-label separation, zero-call manifest, and overwrite refusal were verified. No GUIDE data or historical experiment output was changed.
+

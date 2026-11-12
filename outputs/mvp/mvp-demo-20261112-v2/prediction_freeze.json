@@ -1,0 +1,6 @@
+{
+  "classification": "synthetic_end_to_end_demo_not_empirical",
+  "method": "Phase 4 deterministic offline provider plus conservative unsure-edge review routing",
+  "prediction_frozen_before_truth_read": true,
+  "prediction_sha256": "7e36b77ae1bd4bf46f2a1e8b8b059c5ceca7e23a9c71f83fb292d7b93c89048e"
+}

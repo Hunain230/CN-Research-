@@ -1,0 +1,353 @@
+{
+  "classification": "synthetic_end_to_end_demo_not_empirical",
+  "events": [
+    {
+      "alert_key": "org-mvp-01-a1",
+      "evidence_count": 1,
+      "kind": "alert_received",
+      "org_key": "org-mvp-01",
+      "step": 1
+    },
+    {
+      "alert_key": "org-mvp-01-a2",
+      "evidence_count": 1,
+      "kind": "alert_received",
+      "org_key": "org-mvp-01",
+      "step": 2
+    },
+    {
+      "alert_key": "org-mvp-01-a3",
+      "evidence_count": 1,
+      "kind": "alert_received",
+      "org_key": "org-mvp-01",
+      "step": 3
+    },
+    {
+      "alert_key": "org-mvp-01-a4",
+      "evidence_count": 1,
+      "kind": "alert_received",
+      "org_key": "org-mvp-01",
+      "step": 4
+    },
+    {
+      "alert_key": "org-mvp-01-a5",
+      "evidence_count": 0,
+      "kind": "alert_received",
+      "org_key": "org-mvp-01",
+      "step": 5
+    },
+    {
+      "alert_key": "org-mvp-01-a6",
+      "evidence_count": 1,
+      "kind": "alert_received",
+      "org_key": "org-mvp-01",
+      "step": 6
+    },
+    {
+      "decision": "LINK",
+      "evidence_refs": [
+        "demo-01-ev-a1",
+        "demo-01-ev-a2"
+      ],
+      "kind": "correlation_decision",
+      "left": "org-mvp-01-a1",
+      "org_key": "org-mvp-01",
+      "reason": "shared_signal_within_window",
+      "right": "org-mvp-01-a2",
+      "step": 7
+    },
+    {
+      "decision": "NO_LINK",
+      "evidence_refs": [
+        "demo-01-ev-a1",
+        "demo-01-ev-a3"
+      ],
+      "kind": "correlation_decision",
+      "left": "org-mvp-01-a1",
+      "org_key": "org-mvp-01",
+      "reason": "no_supported_match",
+      "right": "org-mvp-01-a3",
+      "step": 8
+    },
+    {
+      "decision": "UNSURE",
+      "evidence_refs": [
+        "demo-01-ev-a1",
+        "demo-01-ev-a4"
+      ],
+      "kind": "correlation_decision",
+      "left": "org-mvp-01-a1",
+      "org_key": "org-mvp-01",
+      "reason": "conflicting_evidence",
+      "right": "org-mvp-01-a4",
+      "step": 9
+    },
+    {
+      "decision": "UNSURE",
+      "evidence_refs": [],
+      "kind": "correlation_decision",
+      "left": "org-mvp-01-a1",
+      "org_key": "org-mvp-01",
+      "reason": "missing_evidence",
+      "right": "org-mvp-01-a5",
+      "step": 10
+    },
+    {
+      "decision": "LINK",
+      "evidence_refs": [
+        "demo-01-ev-a1",
+        "demo-01-ev-a6"
+      ],
+      "kind": "correlation_decision",
+      "left": "org-mvp-01-a1",
+      "org_key": "org-mvp-01",
+      "reason": "shared_signal_within_window",
+      "right": "org-mvp-01-a6",
+      "step": 11
+    },
+    {
+      "alert_keys": [
+        "org-mvp-01-a1",
+        "org-mvp-01-a2",
+        "org-mvp-01-a6"
+      ],
+      "component_key": "4829b9fb33e6e081",
+      "evidence_refs": [
+        "demo-01-ev-a1",
+        "demo-01-ev-a2",
+        "demo-01-ev-a6"
+      ],
+      "kind": "component_ranked",
+      "org_key": "org-mvp-01",
+      "rank": 1,
+      "review_reason": "touches_unsure_or_failed_pair",
+      "score": 0.75,
+      "status": "REVIEW",
+      "step": 12,
+      "verification": "PASS"
+    },
+    {
+      "alert_keys": [
+        "org-mvp-01-a4"
+      ],
+      "component_key": "52a64400d08e972c",
+      "evidence_refs": [
+        "demo-01-ev-a4"
+      ],
+      "kind": "component_ranked",
+      "org_key": "org-mvp-01",
+      "rank": 2,
+      "review_reason": "touches_unsure_or_failed_pair",
+      "score": 0.25,
+      "status": "REVIEW",
+      "step": 13,
+      "verification": "PASS"
+    },
+    {
+      "alert_keys": [
+        "org-mvp-01-a3"
+      ],
+      "component_key": "85eaa655d45e8965",
+      "evidence_refs": [
+        "demo-01-ev-a3"
+      ],
+      "kind": "component_ranked",
+      "org_key": "org-mvp-01",
+      "rank": 3,
+      "review_reason": null,
+      "score": 0.25,
+      "status": "PASS",
+      "step": 14,
+      "verification": "PASS"
+    },
+    {
+      "alert_keys": [
+        "org-mvp-01-a5"
+      ],
+      "component_key": "56b2974805c115a6",
+      "evidence_refs": [],
+      "kind": "component_ranked",
+      "org_key": "org-mvp-01",
+      "rank": 4,
+      "review_reason": null,
+      "score": null,
+      "status": "REVIEW",
+      "step": 15,
+      "verification": "REVISE"
+    },
+    {
+      "alert_key": "org-mvp-02-a1",
+      "evidence_count": 1,
+      "kind": "alert_received",
+      "org_key": "org-mvp-02",
+      "step": 16
+    },
+    {
+      "alert_key": "org-mvp-02-a2",
+      "evidence_count": 1,
+      "kind": "alert_received",
+      "org_key": "org-mvp-02",
+      "step": 17
+    },
+    {
+      "alert_key": "org-mvp-02-a3",
+      "evidence_count": 1,
+      "kind": "alert_received",
+      "org_key": "org-mvp-02",
+      "step": 18
+    },
+    {
+      "alert_key": "org-mvp-02-a4",
+      "evidence_count": 1,
+      "kind": "alert_received",
+      "org_key": "org-mvp-02",
+      "step": 19
+    },
+    {
+      "alert_key": "org-mvp-02-a5",
+      "evidence_count": 0,
+      "kind": "alert_received",
+      "org_key": "org-mvp-02",
+      "step": 20
+    },
+    {
+      "alert_key": "org-mvp-02-a6",
+      "evidence_count": 1,
+      "kind": "alert_received",
+      "org_key": "org-mvp-02",
+      "step": 21
+    },
+    {
+      "decision": "LINK",
+      "evidence_refs": [
+        "demo-02-ev-a1",
+        "demo-02-ev-a2"
+      ],
+      "kind": "correlation_decision",
+      "left": "org-mvp-02-a1",
+      "org_key": "org-mvp-02",
+      "reason": "shared_signal_within_window",
+      "right": "org-mvp-02-a2",
+      "step": 22
+    },
+    {
+      "decision": "NO_LINK",
+      "evidence_refs": [
+        "demo-02-ev-a1",
+        "demo-02-ev-a3"
+      ],
+      "kind": "correlation_decision",
+      "left": "org-mvp-02-a1",
+      "org_key": "org-mvp-02",
+      "reason": "no_supported_match",
+      "right": "org-mvp-02-a3",
+      "step": 23
+    },
+    {
+      "decision": "UNSURE",
+      "evidence_refs": [
+        "demo-02-ev-a1",
+        "demo-02-ev-a4"
+      ],
+      "kind": "correlation_decision",
+      "left": "org-mvp-02-a1",
+      "org_key": "org-mvp-02",
+      "reason": "conflicting_evidence",
+      "right": "org-mvp-02-a4",
+      "step": 24
+    },
+    {
+      "decision": "UNSURE",
+      "evidence_refs": [],
+      "kind": "correlation_decision",
+      "left": "org-mvp-02-a1",
+      "org_key": "org-mvp-02",
+      "reason": "missing_evidence",
+      "right": "org-mvp-02-a5",
+      "step": 25
+    },
+    {
+      "decision": "LINK",
+      "evidence_refs": [
+        "demo-02-ev-a1",
+        "demo-02-ev-a6"
+      ],
+      "kind": "correlation_decision",
+      "left": "org-mvp-02-a1",
+      "org_key": "org-mvp-02",
+      "reason": "shared_signal_within_window",
+      "right": "org-mvp-02-a6",
+      "step": 26
+    },
+    {
+      "alert_keys": [
+        "org-mvp-02-a1",
+        "org-mvp-02-a2",
+        "org-mvp-02-a6"
+      ],
+      "component_key": "40e1897f529d94dc",
+      "evidence_refs": [
+        "demo-02-ev-a1",
+        "demo-02-ev-a2",
+        "demo-02-ev-a6"
+      ],
+      "kind": "component_ranked",
+      "org_key": "org-mvp-02",
+      "rank": 1,
+      "review_reason": "touches_unsure_or_failed_pair",
+      "score": 0.75,
+      "status": "REVIEW",
+      "step": 27,
+      "verification": "PASS"
+    },
+    {
+      "alert_keys": [
+        "org-mvp-02-a4"
+      ],
+      "component_key": "ba0efb4acdcc251f",
+      "evidence_refs": [
+        "demo-02-ev-a4"
+      ],
+      "kind": "component_ranked",
+      "org_key": "org-mvp-02",
+      "rank": 2,
+      "review_reason": "touches_unsure_or_failed_pair",
+      "score": 0.25,
+      "status": "REVIEW",
+      "step": 28,
+      "verification": "PASS"
+    },
+    {
+      "alert_keys": [
+        "org-mvp-02-a3"
+      ],
+      "component_key": "c88426f7edc069d2",
+      "evidence_refs": [
+        "demo-02-ev-a3"
+      ],
+      "kind": "component_ranked",
+      "org_key": "org-mvp-02",
+      "rank": 3,
+      "review_reason": null,
+      "score": 0.25,
+      "status": "PASS",
+      "step": 29,
+      "verification": "PASS"
+    },
+    {
+      "alert_keys": [
+        "org-mvp-02-a5"
+      ],
+      "component_key": "fec1bae5d6d31bde",
+      "evidence_refs": [],
+      "kind": "component_ranked",
+      "org_key": "org-mvp-02",
+      "rank": 4,
+      "review_reason": null,
+      "score": null,
+      "status": "REVIEW",
+      "step": 30,
+      "verification": "REVISE"
+    }
+  ]
+}
