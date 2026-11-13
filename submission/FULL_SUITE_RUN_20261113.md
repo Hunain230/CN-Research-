@@ -27,4 +27,6 @@ The fresh [fictional MVP run](../outputs/mvp/suite-offline-20261113-v1/metrics.j
 
 ## New local model result
 
-The Qwen prediction stage is running. Its result will be added here only after prediction freeze and separate truth evaluation. No paper metric is inferred from this software-check table.
+The initial interactive Qwen prediction process was stopped at the user's request for a self-run handoff. It had not written a prediction freeze or private prediction file, so no v2 metric exists yet. Run `python -m src.submission_local_qwen_v2 predict --run-id submission_qwen_v2_20261113_v1`, then `python -m src.submission_local_qwen_v2 evaluate --run-id submission_qwen_v2_20261113_v1` from the repository root. Keep the terminal open until each command exits. The result will be added to the paper only after the freeze and separate truth evaluation. No paper metric is inferred from this software-check table.
+
+For a single-command handoff, use [the PowerShell suite runner](../run_submission_suite.ps1). `-ChecksOnly` passed all included checks and reported 20 organizations, 240 selected pairs, and 391 selected alert occurrences without starting inference. The full runner also checks local Ollama availability and refuses to overwrite either run path.

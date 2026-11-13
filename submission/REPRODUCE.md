@@ -2,6 +2,16 @@
 
 Run from the repository root on Windows PowerShell. Use the existing Python environment and local raw files. The recorded runs are immutable: use **new unique run IDs** for replication, and do not overwrite their output directories. The raw GUIDE files, prediction rows, model-call audit, and evaluator stores are ignored private artifacts; do not submit them.
 
+## One-command full suite
+
+The [PowerShell runner](../run_submission_suite.ps1) checks the synthetic software cases, verifies local Ollama, reruns the 499-organization offline pipeline under a fresh run ID, and then runs the 20-organization local Qwen v2 prediction and separate evaluation. Keep the PowerShell window open until it prints both public metrics paths. The model portion can take hours on CPU.
+
+```powershell
+.\run_submission_suite.ps1 -RunTag self_20261113_v1
+```
+
+If you want to reuse the already recorded full offline run and run only checks plus the new local Qwen study, use `-SkipOffline`. Use a new `-RunTag` if either output path already exists. `-ChecksOnly` validates the software and prints the Qwen sample plan without inference. The v2 result is exploratory; it is not a full-dataset model score and must be reviewed before inclusion in the report.
+
 ## Inputs and environment
 
 - Python: the project `.venv` (the recorded environment uses Python 3.12).
