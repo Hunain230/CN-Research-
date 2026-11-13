@@ -1,0 +1,79 @@
+{
+  "call_summary": {
+    "elapsed_seconds": 5290.598,
+    "failed": 0,
+    "output_tokens": 49401,
+    "prompt_tokens": 129143,
+    "total": 188
+  },
+  "classification": "exploratory_bounded_local_qwen_v2_not_full_model_study",
+  "cpv": {
+    "end_to_end_recall_at_20_macro": {
+      "ci95": [
+        0.08,
+        0.21183333333333332
+      ],
+      "mean": 0.14433333333333334,
+      "organizations": 20
+    },
+    "ndcg_at_20_rank1_high_macro": {
+      "ci95": [
+        0.0017678524630406662,
+        0.07050309163188274
+      ],
+      "mean": 0.028132832202728504,
+      "organizations": 20
+    },
+    "precision_at_10_macro": {
+      "ci95": [
+        0.09394345238095239,
+        0.28716329365079357
+      ],
+      "mean": 0.1847777777777778,
+      "organizations": 20
+    },
+    "predicted_groups": 374,
+    "recovered_labels": 58,
+    "review_fraction_macro": 0.6004444105497411
+  },
+  "expert_top20_denominator": 400,
+  "full_unambiguous_alerts_in_selected_orgs": 4668,
+  "limits": [
+    "20 previously exposed small holdout organizations; descriptive bootstrap only",
+    "12 exact-match candidate pairs per organization, not full pair universe",
+    "C and B2 share candidate/evidence budget; B2 has pair diagnostics only",
+    "P/V applied to selected C groups with local evidence; no independent analyst review or revision loop",
+    "Qwen calls are local, model-visible fields remain unapproved for external use",
+    "unselected alerts retained in full-organization completeness counts and all 400 expert labels in ranking denominator",
+    "not a full-dataset model or matched B0-B4 comparison"
+  ],
+  "organizations": 20,
+  "pair_metrics_on_selected_exact_match_candidates": {
+    "B2": {
+      "abstentions": 34,
+      "f1": 0.09090909090909091,
+      "fn": 20,
+      "fp": 20,
+      "pairs": 240,
+      "positive_pairs": 22,
+      "precision": 0.09090909090909091,
+      "recall": 0.09090909090909091,
+      "tp": 2
+    },
+    "C": {
+      "abstentions": 18,
+      "f1": 0.05128205128205128,
+      "fn": 21,
+      "fp": 16,
+      "pairs": 240,
+      "positive_pairs": 22,
+      "precision": 0.058823529411764705,
+      "recall": 0.045454545454545456,
+      "tp": 1
+    }
+  },
+  "prediction_freeze_sha256": "0502bfe470223d85108fceedfbdb654f161a1cb91acc083057eece518eab2937",
+  "selected_alerts": 391,
+  "selected_pairs": 240,
+  "top20_with_unambiguous_alerts": 358
+}
