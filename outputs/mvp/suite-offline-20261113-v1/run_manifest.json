@@ -1,0 +1,202 @@
+{
+  "classification": "synthetic_end_to_end_demo_not_empirical",
+  "code_sha256": {
+    "src\\agents\\common.py": "18e903a522e1835dc4c57ef069bd7aae2131a116928606462bb6c0652dd837cd",
+    "src\\agents\\correlation.py": "66312c78ee957a8ae1a94515277006ba6e98df6bd384b428f550218d9cf836c5",
+    "src\\agents\\orchestrator.py": "2f20a0541abcdeafd0e9354ee1500c577dde0fef7873f3ed12288b7b765cf854",
+    "src\\agents\\prioritization.py": "3655576b237f3063b37a51360c7adc701a09d08a65e2152f8c20f780b78f46e6",
+    "src\\agents\\providers\\offline_stub.py": "9a731cef95e7b6556c5a5a5c56f26b9166b7d4668839600366959b38416a5c02",
+    "src\\agents\\verification.py": "6b808111108bbd049057403fd9b1edb754cff0c01dcc802393b34c86c2758f48",
+    "src\\evaluation\\metrics.py": "2d03100df078cc4ccd54e04c8736ca9e500b1708023cd96707dfec84dcf3013e",
+    "src\\evaluation\\prediction_validation.py": "cd95fa118237c66dca27afdbc1619a03ea7b03cb5564ea5b085e8b9d6c8e0ac6",
+    "src\\mvp_demo.py": "c11950b24a1855df206fa0ae80b7f208d6d82af4f21019bc544fc1738e298b7d"
+  },
+  "command": "python -m src.mvp_demo run --run-id suite-offline-20261113-v1",
+  "ended_utc": "2026-11-13T17:45:02.349412+00:00",
+  "evaluator_truth_sha256": "938d562811e64a6da69f336b9b3f5a0421b14497d4f7bbe86a81532a08410600",
+  "external_network_calls": 0,
+  "fixture_sha256": {
+    "configs\\agents.yaml": "206bb8b2a535adf60427b71bf0fedb3d711234ca008b3096ced32d77fabd2f04",
+    "fixtures\\mvp\\org_mvp_01.json": "111cf9ca90eaf7d89f64865f493e02e22751ce2c2610d41a36f622dabb5a8ea6",
+    "fixtures\\mvp\\org_mvp_02.json": "55655d2126576760343b5e2e61a37eb1e0ab9a03651df5337cdc139a3c5ad0f7",
+    "fixtures\\mvp\\scenario.json": "4f8adb23f855fd20930d9275e8b2df0c63e0d52bc9ae693401e7e2fa096d773a",
+    "fixtures\\mvp\\truth.json": "938d562811e64a6da69f336b9b3f5a0421b14497d4f7bbe86a81532a08410600"
+  },
+  "live_model_calls": 0,
+  "mode": "synthetic",
+  "outputs_sha256": {
+    "dashboard_events.json": "15491b4bf8d6fd9106ce72e874917ac2c399c685c35d9ddf474385aeef2938dd",
+    "metrics.json": "0085da5dd44ae45f855bdddfdbb1209c399ad6a787b33b62d4ad0ca8111ca838",
+    "prediction_freeze.json": "e7c60d5ad55db98ea69ef8c934e3c68050de05a97148df8e36fa99a9e5a2d1e3",
+    "predictions.json": "7e36b77ae1bd4bf46f2a1e8b8b059c5ceca7e23a9c71f83fb292d7b93c89048e",
+    "report.md": "6c460218894499232f2610ff98d33cc4e9bce3bffb6eb704d083e3661474693e"
+  },
+  "prediction_frozen_before_truth_read": true,
+  "provider": "deterministic-synthetic-agent-stub",
+  "python": "3.12.10",
+  "run_id": "suite-offline-20261113-v1",
+  "runtime_ms": 45.828,
+  "seed": 0,
+  "started_utc": "2026-11-13T17:45:02.303261+00:00",
+  "summary": {
+    "alert_count": 12,
+    "candidate_pair_count": 10,
+    "classification": "synthetic_end_to_end_demo_not_empirical",
+    "live_model_calls": 0,
+    "organizations": [
+      {
+        "agent_summary": {
+          "calls": 10,
+          "candidate_pairs": 5,
+          "components": 4,
+          "estimated_tokens": 2500,
+          "failure_count": 0,
+          "live_model_calls": 0,
+          "retry_count": 0,
+          "review_components": 1,
+          "revisions": 1,
+          "truncated_records": 0
+        },
+        "org_key": "org-mvp-01",
+        "queue": [
+          {
+            "alert_keys": [
+              "org-mvp-01-a1",
+              "org-mvp-01-a2",
+              "org-mvp-01-a6"
+            ],
+            "component_key": "4829b9fb33e6e081",
+            "evidence_refs": [
+              "demo-01-ev-a1",
+              "demo-01-ev-a2",
+              "demo-01-ev-a6"
+            ],
+            "org_key": "org-mvp-01",
+            "review_reason": "touches_unsure_or_failed_pair",
+            "score": 0.75,
+            "status": "REVIEW",
+            "verification": "PASS"
+          },
+          {
+            "alert_keys": [
+              "org-mvp-01-a4"
+            ],
+            "component_key": "52a64400d08e972c",
+            "evidence_refs": [
+              "demo-01-ev-a4"
+            ],
+            "org_key": "org-mvp-01",
+            "review_reason": "touches_unsure_or_failed_pair",
+            "score": 0.25,
+            "status": "REVIEW",
+            "verification": "PASS"
+          },
+          {
+            "alert_keys": [
+              "org-mvp-01-a3"
+            ],
+            "component_key": "85eaa655d45e8965",
+            "evidence_refs": [
+              "demo-01-ev-a3"
+            ],
+            "org_key": "org-mvp-01",
+            "review_reason": null,
+            "score": 0.25,
+            "status": "PASS",
+            "verification": "PASS"
+          },
+          {
+            "alert_keys": [
+              "org-mvp-01-a5"
+            ],
+            "component_key": "56b2974805c115a6",
+            "evidence_refs": [],
+            "org_key": "org-mvp-01",
+            "review_reason": "touches_unsure_or_failed_pair",
+            "score": null,
+            "status": "REVIEW",
+            "verification": "REVISE"
+          }
+        ]
+      },
+      {
+        "agent_summary": {
+          "calls": 10,
+          "candidate_pairs": 5,
+          "components": 4,
+          "estimated_tokens": 2500,
+          "failure_count": 0,
+          "live_model_calls": 0,
+          "retry_count": 0,
+          "review_components": 1,
+          "revisions": 1,
+          "truncated_records": 0
+        },
+        "org_key": "org-mvp-02",
+        "queue": [
+          {
+            "alert_keys": [
+              "org-mvp-02-a1",
+              "org-mvp-02-a2",
+              "org-mvp-02-a6"
+            ],
+            "component_key": "40e1897f529d94dc",
+            "evidence_refs": [
+              "demo-02-ev-a1",
+              "demo-02-ev-a2",
+              "demo-02-ev-a6"
+            ],
+            "org_key": "org-mvp-02",
+            "review_reason": "touches_unsure_or_failed_pair",
+            "score": 0.75,
+            "status": "REVIEW",
+            "verification": "PASS"
+          },
+          {
+            "alert_keys": [
+              "org-mvp-02-a4"
+            ],
+            "component_key": "ba0efb4acdcc251f",
+            "evidence_refs": [
+              "demo-02-ev-a4"
+            ],
+            "org_key": "org-mvp-02",
+            "review_reason": "touches_unsure_or_failed_pair",
+            "score": 0.25,
+            "status": "REVIEW",
+            "verification": "PASS"
+          },
+          {
+            "alert_keys": [
+              "org-mvp-02-a3"
+            ],
+            "component_key": "c88426f7edc069d2",
+            "evidence_refs": [
+              "demo-02-ev-a3"
+            ],
+            "org_key": "org-mvp-02",
+            "review_reason": null,
+            "score": 0.25,
+            "status": "PASS",
+            "verification": "PASS"
+          },
+          {
+            "alert_keys": [
+              "org-mvp-02-a5"
+            ],
+            "component_key": "fec1bae5d6d31bde",
+            "evidence_refs": [],
+            "org_key": "org-mvp-02",
+            "review_reason": "touches_unsure_or_failed_pair",
+            "score": null,
+            "status": "REVIEW",
+            "verification": "REVISE"
+          }
+        ]
+      }
+    ],
+    "predicted_component_count": 8,
+    "resource_note": "No model tokens or provider latency were measured; token fields are zero and latency is null.",
+    "review_component_count": 6
+  }
+}
