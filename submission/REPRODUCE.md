@@ -10,26 +10,37 @@ The [PowerShell runner](../run_submission_suite.ps1) checks the synthetic softwa
 .\run_submission_suite.ps1 -RunTag self_20261113_v1
 ```
 
-If you want to reuse the already recorded full offline run and run only checks plus the new local Qwen study, use `-SkipOffline`. Use a new `-RunTag` if either output path already exists. `-ChecksOnly` validates the software and prints the Qwen sample plan without inference. The v2 result is exploratory; it is not a full-dataset model score and must be reviewed before inclusion in the report.
+The recorded paper run used `-RunTag paper_20261113_v1`; its full offline and Qwen v2 metrics are linked below. If you want to reuse the already recorded full offline run and run only checks plus a new local Qwen study, use `-SkipOffline`. Use a new `-RunTag` if any output path already exists. `-ChecksOnly` validates the software and prints the Qwen sample plan without inference. The v2 result is exploratory; it is not a full-dataset model score.
 
 ## Inputs and environment
 
 - Python: the project `.venv` (the recorded environment uses Python 3.12).
 - Dependencies: `requirements.txt`; aggregate figures additionally need the installed `matplotlib` and `numpy` packages.
-- Raw local files: `data/raw/GUIDE_Test.csv` and `data/raw/GUIDE_Test_Queue_Rankings.csv`. Their recorded SHA-256 values are in the [full-run manifest](../outputs/submission_full_guide_20261112_v1/run_manifest.json).
-- Local model: Ollama serving `qwen2.5:3b` at `http://127.0.0.1:11434`. The [Qwen freeze](../outputs/submission_qwen_20261112_v1/prediction_freeze.json) records the exact installed model digest and call totals. No hosted provider call is part of this replication.
+- Raw local files: `data/raw/GUIDE_Test.csv` and `data/raw/GUIDE_Test_Queue_Rankings.csv`. Their recorded SHA-256 values are in the [paper-run full manifest](../outputs/submission_full_guide_paper_20261113_v1/run_manifest.json).
+- Local model: Ollama serving `qwen2.5:3b` at `http://127.0.0.1:11434`. The [Qwen v2 freeze](../outputs/submission_qwen_v2_paper_20261113_v1/prediction_freeze.json) records the exact installed model digest and call totals. No hosted provider call is part of this replication.
 - Model-visible content is restricted to five local-assumption descriptors. Review [the field policy](../configs/empirical_field_policy.yaml) before changing that boundary.
 
 ## Verify the recorded artifacts
 
 ```powershell
 .\.venv\Scripts\python.exe -m src.submission_full_guide self-test
-.\.venv\Scripts\python.exe -m src.submission_local_qwen self-test
+.\.venv\Scripts\python.exe -m src.submission_local_qwen_v2 self-test
 .\.venv\Scripts\python.exe -m submission.generate_submission_figures
+.\.venv\Scripts\python.exe -m submission.generate_qwen_v2_figure
 .\.venv\Scripts\python.exe -m submission.verify_package
+.\.venv\Scripts\python.exe -m submission.verify_run_manifests submission_full_guide_paper_20261113_v1 submission_qwen_v2_paper_20261113_v1
 ```
 
-The first two commands check local invariants. Figure generation checks the full metric hash against its manifest and writes only an aggregate PNG and hash record. Package verification checks local document links and the frozen run, correction, figure, and dashboard hashes. The [full metrics](../outputs/submission_full_guide_20261112_v1/metrics.json) and [Qwen metrics](../outputs/submission_qwen_20261112_v1/metrics.json) are the recorded results.
+The first two commands check local invariants. Figure generation checks aggregate metric hashes against run manifests and writes only PNGs and hash records. Package verification checks local document links, frozen runs, figures, and dashboard hashes. The [full metrics](../outputs/submission_full_guide_paper_20261113_v1/metrics.json) and [Qwen v2 metrics](../outputs/submission_qwen_v2_paper_20261113_v1/metrics.json) are the recorded paper-run results.
+
+To regenerate the [five-page report PDF](PHASE3_IMPLEMENTATION_REPORT.pdf) from [the editable report](FINAL_REPORT.md), install its small [PDF-only dependency list](report_pdf_requirements.txt) and run:
+
+```powershell
+.\.venv\Scripts\python.exe -m pip install -r submission/report_pdf_requirements.txt
+.\.venv\Scripts\python.exe -m submission.build_report_pdf
+```
+
+The [PDF manifest](PHASE3_REPORT_PDF_MANIFEST.json) records SHA-256 hashes of the Markdown source, embedded aggregate figures, build script, and resulting PDF. No raw or restricted row-level data enters the PDF.
 
 ## Replicate the full offline pass
 
@@ -42,17 +53,19 @@ The prediction stage scans all 4,147,992 GUIDE_Test evidence rows and may need s
 
 Expected public files: `outputs/<run-id>/prediction_freeze.json`, `metrics.json`, and `run_manifest.json`. The exact aggregate scores should be checked with the recorded input hashes and code version. The full run is deterministic apart from any change in the environment or source files.
 
-## Replicate the bounded local Qwen pass
+## Replicate the bounded local Qwen v2 pass
 
-Start Ollama locally and confirm that `qwen2.5:3b` is installed. Model calls are synchronous and can take minutes. The script refuses to reuse an existing run path. It chooses two deterministic previously accessed small queues, then 10 high-score and 5 low-score frozen candidate pairs per queue without consulting labels. Predictions and call-level token/time records remain under ignored `data/derived/`.
+Start Ollama locally and confirm that `qwen2.5:3b` is installed. Model calls are synchronous and can take hours on CPU. The script refuses to reuse an existing run path. It chooses 20 deterministic previously accessed small queues with sufficient exact Category-plus-technique candidates, then 12 hash-ordered candidate pairs per queue without consulting labels. C and B2 decide the same pairs; P/V process C groups. Predictions and call-level token/time records remain under ignored `data/derived/`.
 
 ```powershell
-.\.venv\Scripts\python.exe -m src.submission_local_qwen predict --run-id submission_qwen_REPLICATION_001
-.\.venv\Scripts\python.exe -m src.submission_local_qwen evaluate --run-id submission_qwen_REPLICATION_001
-.\.venv\Scripts\python.exe -m src.submission_qwen_correction --run-id submission_qwen_REPLICATION_001
+.\.venv\Scripts\python.exe -m src.submission_local_qwen_v2 self-test
+.\.venv\Scripts\python.exe -m src.submission_local_qwen_v2 plan
+.\.venv\Scripts\python.exe -m src.submission_local_qwen_v2 predict --run-id submission_qwen_v2_REPLICATION_001
+.\.venv\Scripts\python.exe -m src.submission_local_qwen_v2 evaluate --run-id submission_qwen_v2_REPLICATION_001
+.\.venv\Scripts\python.exe -m submission.verify_run_manifests submission_qwen_v2_REPLICATION_001
 ```
 
-The correction command computes incident completeness against all unambiguous alerts in each selected organization. The initial `metrics.json` had used selected-alert membership only; use `metrics_full_membership_correction.json` for recovery/ranking fields. The model digest, source hashes, local-only flag, seeds, call counts, and private prediction hash are written to the public freeze/manifest. Different local model versions or runtime behavior can change predictions, even with the same seed. This two-queue batch is a bounded prototype; it is not a full-dataset model evaluation. The recorded 30 selected pairs contain no positives, so pair recall is unavailable.
+The v2 evaluator computes incident completeness against all unambiguous alerts in each selected organization and retains all 400 expert labels in the end-to-end denominator. The model digest, source hashes, local-only flag, call counts, and private prediction hash are written to the public freeze/manifest. Different local model versions or runtime behavior can change predictions. This 20-queue batch is a bounded prototype; it is not a full-dataset model evaluation. The recorded sample contained 22 positive pairs out of 240 exact-match candidates. The earlier [two-queue v1 run](../outputs/submission_qwen_20261112_v1/metrics_full_membership_correction.json) remains historical and used an additive completeness correction.
 
 ## Dashboard
 

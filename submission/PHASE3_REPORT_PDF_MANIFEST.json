@@ -1,0 +1,11 @@
+{
+  "classification": "exploratory_phase3_report_pdf",
+  "command": ".\\.venv\\Scripts\\python.exe -m submission.build_report_pdf",
+  "sha256": {
+    "submission/FINAL_REPORT.md": "873f869712c9d5f56de9e23cdd966924e2fa1b7f20ca029df0a4c43dff1e3bc3",
+    "submission/PHASE3_IMPLEMENTATION_REPORT.pdf": "0168d43f75c34d8f92a8b7176d2a383ece93e91bf6a8098d461f33ee028561e8",
+    "submission/build_report_pdf.py": "876e392cdf296cc657f1be9f7cd3b73b46c5ec8da8db2e93bf7f648e2eb742ba",
+    "submission/figures/full_guide_offline.png": "f848e74c9ca5adbcf9b5fd81a34799fdc96a32ac79ed943d3e483ce90db729c1",
+    "submission/figures/qwen_v2_pair_diagnostic.png": "50ead7de392c7b847d9c2575b51fd16a7e65a8f18e713d76dd6e4455b191b2a2"
+  }
+}
