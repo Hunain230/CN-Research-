@@ -1,0 +1,138 @@
+{
+  "alerts": 400039,
+  "candidate_coverage_micro": 8.942893414510784e-05,
+  "candidate_pairs": 314576,
+  "candidate_positive_pairs": 37018,
+  "candidate_recall_micro": 0.00023254541930596995,
+  "classification": "exploratory_full_ranked_guide_offline_baselines_not_llm",
+  "expert_top20_denominator": 9980,
+  "limits": [
+    "previously exposed cohort and labels",
+    "ambiguous alert keys excluded but all 9980 expert labels retained",
+    "local query universe and numeric rank direction unverified",
+    "five descriptor fields are local-only assumptions",
+    "rule/count and label-free local BM25-like baselines, not empirical LLM C/P/V",
+    "no time or raw entity links because timing/privacy approval is absent"
+  ],
+  "methods": {
+    "full_rule_count": {
+      "end_to_end_recall_at_20_macro": {
+        "ci95": [
+          0.04755024882411665,
+          0.061465447649655475
+        ],
+        "mean": 0.05433653012980221,
+        "organizations": 499,
+        "resamples": 10000
+      },
+      "gold_top20_with_alerts_total": 9125,
+      "micro_pair": {
+        "f1": 0.009095043086278794,
+        "fn": 158431996,
+        "fp": 5888793,
+        "precision": 0.11352128526921358,
+        "recall": 0.00473729155271069,
+        "tp": 754111
+      },
+      "ndcg_at_20_rank1_high_macro": {
+        "ci95": [
+          0.02942603240901847,
+          0.04388174888807583
+        ],
+        "mean": 0.03637985148585743,
+        "organizations": 499,
+        "resamples": 10000
+      },
+      "ndcg_at_20_rank20_high_macro": {
+        "ci95": [
+          0.015547247646601965,
+          0.022152091408190824
+        ],
+        "mean": 0.01872427587110936,
+        "organizations": 499,
+        "resamples": 10000
+      },
+      "pair_f1_macro": {
+        "ci95": [
+          0.05806776610072727,
+          0.07987680752938002
+        ],
+        "mean": 0.06868784516600569,
+        "organizations": 499,
+        "resamples": 10000
+      },
+      "precision_at_10_macro": {
+        "ci95": [
+          0.042756458534272845,
+          0.05592660251139663
+        ],
+        "mean": 0.04923565455565845,
+        "organizations": 499,
+        "resamples": 10000
+      },
+      "top20_slots_in_tied_blocks": 8037
+    },
+    "full_rule_local_bm25": {
+      "end_to_end_recall_at_20_macro": {
+        "ci95": [
+          0.12438469847782588,
+          0.1488139633947094
+        ],
+        "mean": 0.13639034951003826,
+        "organizations": 499,
+        "resamples": 10000
+      },
+      "gold_top20_with_alerts_total": 9125,
+      "micro_pair": {
+        "f1": 0.009095043086278794,
+        "fn": 158431996,
+        "fp": 5888793,
+        "precision": 0.11352128526921358,
+        "recall": 0.00473729155271069,
+        "tp": 754111
+      },
+      "ndcg_at_20_rank1_high_macro": {
+        "ci95": [
+          0.1350020464695897,
+          0.17356661852437022
+        ],
+        "mean": 0.1541698094198136,
+        "organizations": 499,
+        "resamples": 10000
+      },
+      "ndcg_at_20_rank20_high_macro": {
+        "ci95": [
+          0.02904299543699051,
+          0.042281969860169306
+        ],
+        "mean": 0.03552222762040239,
+        "organizations": 499,
+        "resamples": 10000
+      },
+      "pair_f1_macro": {
+        "ci95": [
+          0.05806776610072727,
+          0.07987680752938002
+        ],
+        "mean": 0.06868784516600569,
+        "organizations": 499,
+        "resamples": 10000
+      },
+      "precision_at_10_macro": {
+        "ci95": [
+          0.15718094522378093,
+          0.18610547285046286
+        ],
+        "mean": 0.1714489051362799,
+        "organizations": 499,
+        "resamples": 10000
+      },
+      "top20_slots_in_tied_blocks": 4645
+    }
+  },
+  "organizations": 499,
+  "positive_pairs": 159186107,
+  "possible_pairs": 3517608736,
+  "prediction_freeze_sha256": "673f70b11330b51f79ea3ac018685469471fd59818371af4d67632b7c8917aab",
+  "tie_policy": "uniform expected ranking within equal-score blocks"
+}
