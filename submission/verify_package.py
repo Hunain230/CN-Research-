@@ -12,8 +12,8 @@ from urllib.parse import unquote
 ROOT = Path(__file__).resolve().parents[1]
 DOCS = [
     ROOT / "README.md",
-    ROOT / "dashboard/README.md",
-    ROOT / "dashboard/SIMULATION_README.md",
+    ROOT / "CONTEXT.md",
+    ROOT / "PROJECT_ITERATIONS.md",
     ROOT / "submission/FINAL_REPORT.md",
     ROOT / "submission/REPRODUCE.md",
     ROOT / "submission/KNOWN_LIMITATIONS.md",

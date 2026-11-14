@@ -1,0 +1,37 @@
+# Project iteration record
+
+This is the chronological account of what was proposed, implemented, measured, and left open. Dated phase records and frozen output reports remain as reproducibility evidence.
+
+| Iteration | What happened | Evidence and decision |
+|---|---|---|
+| Phase 1: research question | Selected joint alert correlation and expert incident prioritization; identified evidence quality, baseline matching, and operational cost as gaps. | Supplied Phase 1–2 methodology PDF; live analyst benefit reserved for later field study. |
+| Phase 2: protocol | Defined organization split, evidence ledger, entity/time or ATT&CK/time candidates, C/P/V, B0–B4, 80/80 end-to-end recovery, perturbations, statistics, and output artifacts. | [CONTEXT.md](CONTEXT.md) records the method and implementation deviations. |
+| Stage 1: dataset validation | Counted 4,147,992 GUIDE evidence rows, 499 ranked organizations, 9,980 expert labels, and 70,702 ambiguous alert keys. | [Phase 1 record](phases_outputs/Phase1.md); membership and rank semantics became gates. |
+| Stage 2: preprocessing | Built restricted row provenance, evaluator-only labels, leakage controls, and frozen 10/10/30 organization assignment. | [Phase 2 record](phases_outputs/Phase2.md); official model-input allowlist stayed empty. |
+| Stage 3: baselines | Implemented rule/BM25 and single/repeated-model interfaces, schemas, and synthetic checks. | [Phase 3 record](phases_outputs/Phase3.md); no empirical model result at this stage. |
+| Stage 4: C/P/V | Implemented correlation, priority, verification, citation checks, and offline orchestration with synthetic adapters. | [Phase 4 record](phases_outputs/Phase4.md); fictional software checks only. |
+| Stage 5: evaluation | Implemented isolated pair, ranking, end-to-end, and uncertainty functions with fixtures. | [Phase 5 record](phases_outputs/Phase5.md); no confirmatory GUIDE inference. |
+| Stage 6: exploratory research | Ran oracle-group priority, bounded correlation, field ablations, missingness, tie-aware corrections, and figures. Later GUIDE rerun used a distinct task/cohort. | [Phase 6 record](phases_outputs/Phase6.md), [rerun report](outputs/guide_rerun_v2/report.md); do not pool metrics. |
+| Modules 6A–6G | Audited test-label exposure and field gates, retained the split, assembled a historical offline package and aggregate dashboard. | [6A protocol](phases_outputs/Phase6A_StudyProtocol.md), [6B–6G record](phases_outputs/Phase6B-G.md); no fresh confirmatory cohort. |
+| Phase A diagnostic | Tested local entity/title retrieval on exposed validation organizations and optimistic ambiguous-membership sensitivity. | [Phase A record](phases_outputs/PhaseA_Implementation_2026-11-11.md); candidate recall 80.37% at about 67% pair coverage, below 99% target. |
+| Tasks 1–3: handoff and matched analysis | Mapped repository, audited data/claims, and compared matched offline statistical proxies. | [Data audit](submission/DATA_AND_CLAIM_AUDIT.md), [results discussion](submission/RESULTS_AND_DISCUSSION.md); proxies are not LLM C/P/V. |
+| Task 4: synthetic MVP | Ran fictional alerts through C/P/V, froze predictions, evaluated a separate answer key, and emitted dashboard events. | [MVP record](submission/MVP_SYNTHETIC_RUN.md); software demonstration only. |
+| Task 5: analysis and figures | Added metric denominators, candidate misses, oracle ablations, and reproducible charts. | [Figure manifest](submission/figures/figure_manifest.json), [discussion](submission/RESULTS_AND_DISCUSSION.md). |
+| Dashboard task | Built saved aggregate viewer and fictional playback with Start, Pause, Reset, speed, and scenario controls. | [Verification](submission/DASHBOARD_VERIFICATION.md); static checks passed, interactive browser QA open. |
+| Full offline submission run | Scanned all 4,147,992 evidence rows; evaluated 499 ranked organizations, 400,039 unambiguous alerts, and two rankers. | [Frozen metrics](outputs/submission_full_guide_paper_20261113_v1/metrics.json): candidate recall 37,018/159,186,107 (0.0233%); BM25-like end-to-end Recall@20 0.1364. |
+| Local Qwen submission run | Called localhost `qwen2.5:3b` for C and paired B2 on 240 selected pairs from 20 previously accessed organizations, then P/V on C groups. | [Frozen metrics](outputs/submission_qwen_v2_paper_20261113_v1/metrics.json): 22 positives, C TP 1, B2 TP 2, C+P Recall@20 0.1443; V flagged 60.0% of groups. No model superiority shown. |
+| Operations and Phase 3 package | Aggregated frozen local call timing; prepared editable report, figures, reproduction guide, and PDF. | [Batch diagnostic](outputs/submission_qwen_v2_paper_20261113_v1/operational_diagnostics.json), [report](submission/FINAL_REPORT.md), [PDF](submission/PHASE3_IMPLEMENTATION_REPORT.pdf). Exploratory partial submission, not operational SOC. |
+
+## Current decision
+
+The repository demonstrates a runnable research pipeline and honest exploratory results. The full proposed matched held-out study, complete model ablations, blinded citation review, and live SOC service measurements are incomplete. The [delivery checklist](submission/DELIVERY_CHECKLIST.md) marks the partial Phase 3 requirements. The 95% target is structurally impossible under the current truth rule because only 9,125/9,980 expert labels have unambiguous in-scope alert evidence. A post-hoc score increase on previously accessed labels would not make the study confirmatory.
+
+## Documentation retention
+
+README and CONTEXT are the canonical navigation and methodology documents. Historical phase specifications, dated decisions, fixture descriptions required by manifests, and immutable run reports have independent reproducibility value and remain in place. Temporary notes and duplicate navigation pages were removed after their useful content and links were carried here.
+
+## Documentation consolidation (2026-11-14)
+
+The root README was shortened to the current navigation, results, commands, and submission verdict. CONTEXT combines the former project protocol brief and phase-status index with current implementation amendments. This iteration record replaces the old cleanup navigation map and log as the project timeline. The deleted Markdown files are `.tmp-phase2-ambiguity.md`, `PROJECT_CONTEXT.md`, `phases_context.md`, `cleanup/REPOSITORY_MAP.md`, `cleanup/CLEANUP_LOG.md`, `dashboard/README.md`, and `dashboard/SIMULATION_README.md`. Their useful methodological, repository-map, dashboard, and dated status information was incorporated into the three root documents and linked submission record. References in active documents and the package verifier were updated.
+
+No raw or derived data, historical run output, phase report, fixture description, split, prompt, model prediction, or metric file was removed for this cleanup. The Stage 3 fixture README remains because a recorded baseline manifest hashes it; other fixture guides and frozen output reports retain reproducibility value. Checks for this consolidation: package link/manifests verification, reference search for removed pages outside immutable outputs, and `git diff --check`. The earlier operational-diagnostics addition is a separate additive analysis of an already frozen Qwen call trace.

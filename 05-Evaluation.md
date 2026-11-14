@@ -1,6 +1,6 @@
 # Phase 5 — Evaluation: metrics, statistical comparison, and reporting
 
-Status: Codex implementation specification. Read PROJECT_CONTEXT.md, phases_outputs/Phase1.md through Phase4.md, and 05-Evaluation.md before implementing. This phase may build evaluator code and test it on synthetic fixtures. It must not calculate or report empirical metrics on GUIDE/AIP until the research gates below are cleared.
+Status: Codex implementation specification. Read CONTEXT.md, phases_outputs/Phase1.md through Phase4.md, and 05-Evaluation.md before implementing. This phase may build evaluator code and test it on synthetic fixtures. It must not calculate or report empirical metrics on GUIDE/AIP until the research gates below are cleared.
 
 ## 1. Purpose
 

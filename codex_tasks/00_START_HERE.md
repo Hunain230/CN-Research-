@@ -32,7 +32,7 @@ Complete each task's acceptance checklist and write a short completion record be
 
 ## Operating rules
 
-- Read `PROJECT_CONTEXT.md`, `phases_context.md`, the latest relevant phase reports, and existing configs before changing research behavior.
+- Read `CONTEXT.md`, `PROJECT_ITERATIONS.md`, the latest relevant phase reports, and existing configs before changing research behavior.
 - Preserve raw data, restricted derived data, historical run outputs, and original reports. Do not delete or rewrite them as cleanup.
 - Never expose `IncidentId`, `QueueRank`, `IncidentGrade`, action/outcome fields, raw identifiers, or restricted row-level data to a model or public dashboard.
 - Do not make external model/API calls. No current approval exists for hosted inference.

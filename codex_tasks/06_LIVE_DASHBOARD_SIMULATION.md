@@ -6,7 +6,7 @@ Build a polished interactive dashboard demo that simulates alerts arriving and m
 
 ## Required behavior
 
-1. Inspect the current `dashboard/index.html`, `dashboard/guide_rerun_v2.html`, `dashboard/README.md`, and existing aggregate schemas before modifying the dashboard.
+1. Inspect the current `dashboard/index.html`, `dashboard/guide_rerun_v2.html`, `README.md`, and existing aggregate schemas before modifying the dashboard.
 2. Preserve the existing aggregate research report view. Add a clearly separated “Synthetic live demo” mode or page.
 3. Generate deterministic fictional events from the Task 4 event trace or a fixed seed. Never stream from raw GUIDE data, restricted derived data, actual alert identifiers, evaluator stores, or a real model/API.
 4. Permanently display a high-visibility label such as **SIMULATION — FICTIONAL EVENTS — NOT LIVE SOC DATA** while demo mode is active. Keep this label visible on mobile and desktop.
@@ -20,7 +20,7 @@ Build a polished interactive dashboard demo that simulates alerts arriving and m
 ## Required result
 
 - Updated dashboard entry point and supporting assets.
-- `dashboard/SIMULATION_README.md` describing that events are fictional, controls, and local run instructions.
+- `submission/DASHBOARD_VERIFICATION.md` describing that events are fictional, controls, and local run instructions.
 - `submission/DASHBOARD_VERIFICATION.md` recording viewports, tested interactions, and any known limits.
 
 ## Acceptance checklist

@@ -1,6 +1,6 @@
 # Stage 3 — Baseline systems: rules, BM25, and single-LLM comparisons
 
-Status: Codex implementation specification. Read PROJECT_CONTEXT.md, phases_outputs/Phase1.md, and phases_outputs/Phase2.md first. This stage specifies baselines and their interfaces. The current Phase 2 feature view is empty and all source fields remain unapproved, so implement and validate baseline plumbing with synthetic fixtures only until explicit data gates are cleared. Do not present synthetic/stub outputs as research performance.
+Status: Codex implementation specification. Read CONTEXT.md, phases_outputs/Phase1.md, and phases_outputs/Phase2.md first. This stage specifies baselines and their interfaces. The current Phase 2 feature view is empty and all source fields remain unapproved, so implement and validate baseline plumbing with synthetic fixtures only until explicit data gates are cleared. Do not present synthetic/stub outputs as research performance.
 
 ## 1. Purpose and research role
 
@@ -183,7 +183,7 @@ Implement under project conventions, without modifying raw data:
 - fixtures/stage3/ synthetic inputs, expected outputs, and regression assertions.
 - output schemas and manifest documentation.
 - outputs/baselines/<run_id>/ only for legitimate completed runs; synthetic runs clearly named synthetic.
-- phases_outputs/Phase3.md run record after implementation, and update phases_context.md status.
+- phases_outputs/Phase3.md run record after implementation, and update PROJECT_ITERATIONS.md status.
 
 Do not add model dependencies if a standard-library implementation suffices. If an external BM25 library or provider SDK is added, justify why, pin exact version, and record installation in requirements. Keep credentials in environment/secret storage and out of manifests/logs.
 

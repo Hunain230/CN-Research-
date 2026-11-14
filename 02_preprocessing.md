@@ -1,6 +1,6 @@
 # Phase 2 — Preprocessing, leakage control, and alert-pair preparation
 
-Status: Codex implementation specification based on the completed Phase 1 findings in Phase1.md and the protocol in PROJECT_CONTEXT.md. This stage permits leakage-safe prioritization preprocessing development. Correlation and joint evaluation remain blocked while conflicting alert membership and label semantics remain unresolved.
+Status: Codex implementation specification based on the completed Phase 1 findings in Phase1.md and the protocol in CONTEXT.md. This stage permits leakage-safe prioritization preprocessing development. Correlation and joint evaluation remain blocked while conflicting alert membership and label semantics remain unresolved.
 
 ## 1. Objective and scope
 
@@ -29,7 +29,7 @@ Re-read current audit files before running. If input hashes or counts differ, st
 
 ## 3. Protocol authority
 
-Use PROJECT_CONTEXT.md and FINAL (1) (1).pdf for the project-specific protocol; use Phase 03 - Implementation (1).pdf for course deliverables. If the actual data conflicts with assumptions in the PDFs, report the discrepancy and propose an explicit amendment. Do not silently change the study design.
+Use CONTEXT.md and FINAL (1) (1).pdf for the project-specific protocol; use Phase 03 - Implementation (1).pdf for course deliverables. If the actual data conflicts with assumptions in the PDFs, report the discrepancy and propose an explicit amendment. Do not silently change the study design.
 
 Phase 2 target split: 10 pilot, 10 development, and 30 final-test organizations selected by a published deterministic hash of OrgId, not outcomes. Require at least 50 eligible organizations; keep all alerts for selected orgs. If eligibility or label requirements fail, stop and propose an amendment rather than changing counts.
 

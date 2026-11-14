@@ -13,7 +13,7 @@ Implemented B0 deterministic rule clustering, B1 BM25 retrieval, B2 single-call 
 - `configs/baselines.yaml`, `configs/rules.yaml`, `configs/bm25.yaml`, `configs/llm_baseline.yaml`, `configs/prediction_schema.json`.
 - `fixtures/stage3/`: synthetic inputs, expected assertions and usage notes.
 - `outputs/baselines/synthetic-final2/`: synthetic results, retrieval probes and run manifest.
-- `phases_outputs/Phase3.md`, `phases_context.md`.
+- `phases_outputs/Phase3.md`, `PROJECT_ITERATIONS.md`.
 
 ## Synthetic implementation behavior
 

@@ -68,7 +68,7 @@ Evidence needed to clear the gate: authoritative dataset release/license citatio
 ## Related project records
 
 - Validation protocol: [`01_dataset_validation.md`](../01_dataset_validation.md)
-- Overall project context and Phase 2 protocol: [`PROJECT_CONTEXT.md`](../PROJECT_CONTEXT.md)
+- Overall project context and Phase 2 protocol: [`CONTEXT.md`](../CONTEXT.md)
 - Validator and config: [`src/cli.py`](../src/cli.py), [`configs/validation.yaml`](../configs/validation.yaml)
 
 ## Readiness evidence update — 2026-11-08

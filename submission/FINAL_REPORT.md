@@ -89,7 +89,7 @@ The supplied Phase 2 methodology defines an **offline retrospective study**, wit
 
 ## Dashboard and deliverables
 
-The [aggregate research dashboard](../dashboard/index.html) reads saved metrics; the [fictional simulation](../dashboard/simulation.html) replays synthetic MVP events with Start, Pause, Reset, speed, and scenario controls. The simulation is not a GUIDE data or Qwen result viewer. Its [build manifest](../dashboard/simulation_manifest.json) and [documentation](../dashboard/SIMULATION_README.md) identify the trace and UI boundary. Reproduction commands are in [REPRODUCE.md](REPRODUCE.md); the [delivery checklist](DELIVERY_CHECKLIST.md) maps these artifacts to Phase 3 assignment requirements.
+The [aggregate research dashboard](../dashboard/index.html) reads saved metrics; the [fictional simulation](../dashboard/simulation.html) replays synthetic MVP events with Start, Pause, Reset, speed, and scenario controls. The simulation is not a GUIDE data or Qwen result viewer. Its [build manifest](../dashboard/simulation_manifest.json) and [dashboard verification](DASHBOARD_VERIFICATION.md) identify the trace and UI boundary. Reproduction commands are in [REPRODUCE.md](REPRODUCE.md); the [delivery checklist](DELIVERY_CHECKLIST.md) maps these artifacts to Phase 3 assignment requirements.
 
 ## Conclusion
 
@@ -99,4 +99,4 @@ The hybrid work is runnable and auditable, but the full-data offline rule misses
 
 - [Microsoft GUIDE dataset paper](https://arxiv.org/abs/2407.09017).
 - [Adaptive Incident Prioritization paper](https://arxiv.org/abs/2607.16963).
-- [Local research protocol and phase index](../PROJECT_CONTEXT.md).
+- [Local research methodology and implementation context](../CONTEXT.md).

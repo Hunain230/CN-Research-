@@ -1,6 +1,6 @@
 # Phase 4 — Multi-agent system: Correlation, Prioritization, and Verification
 
-Status: Codex implementation specification. Read PROJECT_CONTEXT.md and phases_outputs/Phase1.md, Phase2.md, and Phase3.md first. This phase permits architecture, typed interfaces, orchestration, deterministic offline adapters, and synthetic tests only. It does not permit agent runs on real GUIDE data.
+Status: Codex implementation specification. Read CONTEXT.md and phases_outputs/Phase1.md, Phase2.md, and Phase3.md first. This phase permits architecture, typed interfaces, orchestration, deterministic offline adapters, and synthetic tests only. It does not permit agent runs on real GUIDE data.
 
 ## 1. Goal
 
@@ -166,7 +166,7 @@ Add project files such as:
 - configs/agent_schemas/*.json;
 - fixtures/stage4/ inputs, expected assertions, README;
 - outputs/agents/synthetic/<unique_run_id>/ traces, results and manifest;
-- phases_outputs/Phase4.md after implementation; update phases_context.md.
+- phases_outputs/Phase4.md after implementation; update PROJECT_ITERATIONS.md.
 
 Do not modify raw data or Phase 1–3 derived artifacts. Prefer standard library; justify and pin any dependency. Never overwrite outputs silently. Manifest records input fixture/config/code/prompt/schema hashes, environment, seed, role calls, failure/retry counts, estimated-token accounting, and live_model_calls: 0.
 

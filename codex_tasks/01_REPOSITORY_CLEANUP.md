@@ -6,9 +6,9 @@ Make the project easier to navigate before running or extending experiments, whi
 
 ## Steps
 
-1. Read `README.md`, `PROJECT_CONTEXT.md`, `phases_context.md`, `.gitignore`, and all phase specifications before moving or changing anything.
+1. Read `README.md`, `CONTEXT.md`, `PROJECT_ITERATIONS.md`, `.gitignore`, and all phase specifications before moving or changing anything.
 2. Inventory tracked and untracked files, imports, CLI entry points, configs, fixtures, outputs, and dashboards. Identify duplicates by content hash and references, not by filename or age alone.
-3. Produce `cleanup/REPOSITORY_MAP.md` describing the active source modules, configs, fixtures, authoritative records, historical outputs, restricted data locations, and dashboard entry points.
+3. Produce `PROJECT_ITERATIONS.md` describing the active source modules, configs, fixtures, authoritative records, historical outputs, restricted data locations, and dashboard entry points.
 4. Identify genuinely unused code only with static reference/import checks. Do not infer that a file is unnecessary because it is old, repeated in a run bundle, or not imported by the main CLI.
 5. Make only low-risk organizational/refactoring changes: improve names or docs, consolidate repeated utilities only when behavior and callers are understood, and add compatibility shims if a referenced path changes.
 6. Do not delete raw files, `data/derived`, prior outputs, phase records, fixtures, or archived bundle contents. If duplicate material is confusing, document canonical versus historical copies; move only when all links and scripts are updated and the move is reversible.
@@ -17,8 +17,8 @@ Make the project easier to navigate before running or extending experiments, whi
 
 ## Required result
 
-- `cleanup/REPOSITORY_MAP.md`
-- `cleanup/CLEANUP_LOG.md` listing every changed/moved file, reason, evidence, and validation command
+- `PROJECT_ITERATIONS.md`
+- A dated cleanup section in `PROJECT_ITERATIONS.md` listing changed or moved files, reasons, evidence, and validation commands
 - focused, reviewable cleanup changes in source/docs only
 
 ## Acceptance checklist
