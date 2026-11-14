@@ -30,6 +30,7 @@ The recorded paper run used `-RunTag paper_20261113_v1`; its full offline and Qw
 .\.venv\Scripts\python.exe -m submission.generate_qwen_v2_figure
 .\.venv\Scripts\python.exe -m submission.verify_package
 .\.venv\Scripts\python.exe -m submission.verify_run_manifests submission_full_guide_paper_20261113_v1 submission_qwen_v2_paper_20261113_v1
+.\.venv\Scripts\python.exe -m submission.verify_run_manifests submission_rank_fusion_20261114_v1 submission_trained_ranker_20261114_v1
 ```
 
 The first two commands check local invariants. Figure generation checks aggregate metric hashes against run manifests and writes only PNGs and hash records. Package verification checks local document links, frozen runs, figures, and dashboard hashes. The [full metrics](../outputs/submission_full_guide_paper_20261113_v1/metrics.json) and [Qwen v2 metrics](../outputs/submission_qwen_v2_paper_20261113_v1/metrics.json) are the recorded paper-run results.
@@ -69,6 +70,23 @@ Start Ollama locally and confirm that `qwen2.5:3b` is installed. Model calls are
 ```
 
 The v2 evaluator computes incident completeness against all unambiguous alerts in each selected organization and retains all 400 expert labels in the end-to-end denominator. The model digest, source hashes, local-only flag, call counts, and private prediction hash are written to the public freeze/manifest. Different local model versions or runtime behavior can change predictions. This 20-queue batch is a bounded prototype; it is not a full-dataset model evaluation. The recorded sample contained 22 positive pairs out of 240 exact-match candidates. The earlier [two-queue v1 run](../outputs/submission_qwen_20261112_v1/metrics_full_membership_correction.json) remains historical and used an additive completeness correction.
+
+## Replicate the matched ranking extension
+
+The [baseline study](PERFORMANCE_BASELINE_STUDY.md) reuses frozen full-GUIDE groups. It performs no new model inference or candidate generation. It records an unsuccessful fixed RRF control on all 499 organizations and an organization-split trained logistic ranker on 334 training/135 evaluation organizations. Use new IDs; predictions are frozen before the evaluation command reads evaluation labels.
+
+```powershell
+.\.venv\Scripts\python.exe -m src.submission_rank_fusion self-test
+.\.venv\Scripts\python.exe -m src.submission_rank_fusion predict --run-id submission_rank_fusion_REPLICATION_001
+.\.venv\Scripts\python.exe -m src.submission_rank_fusion evaluate --run-id submission_rank_fusion_REPLICATION_001
+.\.venv\Scripts\python.exe -m src.submission_trained_ranker self-test
+.\.venv\Scripts\python.exe -m src.submission_trained_ranker predict --run-id submission_trained_ranker_REPLICATION_001
+.\.venv\Scripts\python.exe -m src.submission_trained_ranker evaluate --run-id submission_trained_ranker_REPLICATION_001
+```
+
+The recorded [RRF](../outputs/submission_rank_fusion_20261114_v1/metrics.json) and [trained-ranker](../outputs/submission_trained_ranker_20261114_v1/metrics.json) artifacts use different evaluation cohorts, so compare each only with its own matched baselines. Both remain exploratory because GUIDE_Test labels were previously accessed.
+
+The additive [capacity diagnostic](../outputs/submission_retrieval_bounds_20261114_v1.json) reads the frozen parent predictions and evaluator truth, then outputs aggregate upper bounds only. Its one-time command is `.\.venv\Scripts\python.exe -m submission.diagnose_retrieval_bounds`. It refuses to overwrite the recorded output; reproduce in a separate checkout or with an explicitly versioned new output path.
 
 ## Dashboard
 

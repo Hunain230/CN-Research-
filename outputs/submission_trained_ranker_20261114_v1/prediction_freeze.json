@@ -1,0 +1,26 @@
+{
+  "candidate_pairs_and_groups": "identical to parent run",
+  "classification": "exploratory_organization_disjoint_trained_ranker_post_exposure",
+  "evaluation_labels_read_in_prediction_stage": false,
+  "evaluation_organizations": 135,
+  "features": [
+    "log_alert_count",
+    "log_bm25_like",
+    "count_rank_percentile",
+    "bm25_rank_percentile",
+    "log_queue_groups"
+  ],
+  "model": "standard_scaler_plus_balanced_logistic_C1_liblinear_seed0",
+  "model_sha256": "bd9f4c1af48289d652662aea88413a13f3dca5ebeb7d5f58f18564b568cf1d4c",
+  "parent_freeze_sha256": "673f70b11330b51f79ea3ac018685469471fd59818371af4d67632b7c8917aab",
+  "parent_prediction_sha256": "f8ac447e412d37bb2a26f2431a7ab4dacd316ead426fb0429be1d9e01b439e7c",
+  "parent_run": "submission_full_guide_paper_20261113_v1",
+  "positive_training_groups": 1522,
+  "prediction_sha256": "2f7cc264324bf9d5f390288a8ca6250895a317d834fbc8723824846c3aa81a4e",
+  "run": "submission_trained_ranker_20261114_v1",
+  "source_sha256": "1f5070ae7a3b47dacd1bd56505077bfdd248955858501e489ebdad709d02dee1",
+  "split_sha256": "a99f53483d91e32e6872b71ae385123db71e36cb4b52c3b8eeb985c5ffb36e5d",
+  "training_groups": 124433,
+  "training_labels_read": true,
+  "training_organizations": 334
+}

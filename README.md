@@ -9,6 +9,8 @@ This repository is a **retrospective research implementation**, not a deployed S
 3. [Phase 3 report PDF](submission/PHASE3_IMPLEMENTATION_REPORT.pdf), [editable report](submission/FINAL_REPORT.md), [delivery checklist](submission/DELIVERY_CHECKLIST.md), and [known limits](submission/KNOWN_LIMITATIONS.md).
 4. [Reproduction instructions](submission/REPRODUCE.md) and [experiment register](submission/EXPERIMENT_REGISTER.md).
 
+The [matched ranking-baseline extension](submission/PERFORMANCE_BASELINE_STUDY.md) records the later 334/135 organization-split study and its negative rank-fusion control.
+
 ## Current evidence
 
 | Evaluation | Scope | Observed result |
@@ -16,8 +18,9 @@ This repository is a **retrospective research implementation**, not a deployed S
 | Full offline baselines | 499 GUIDE_Test organizations; 400,039 unambiguous alerts | Candidate recall 37,018/159,186,107 = 0.0233%; best end-to-end Recall@20 0.1364 |
 | Local `qwen2.5:3b` C/P/V | 20 previously accessed organizations; 240 selected pairs, 22 positives | C pair recall 1/22; B2 single-model recall 2/22; C+P end-to-end Recall@20 0.1443 on 400 expert labels |
 | Local model operations | 188 localhost calls | Per-call p50 27.125 s, p95 43.617 s; 60.0% group review fraction |
+| Trained offline ranker | Same frozen groups on 135 separate evaluation organizations | Recall@20 0.1542 vs matched BM25-like 0.1507; P@10 0.2351 vs 0.1971; candidate and pair metrics unchanged |
 
-The full offline and Qwen cohorts and candidate policies differ; their scores are not a paired contest. Predictions were frozen before the separate evaluator read labels, but earlier work had already accessed those labels. The proposed 95% end-to-end target was not met. The current ambiguous-key exclusion leaves a 9,125/9,980 = 91.43% structural upper bound.
+The full offline, trained ranking, and Qwen evaluations have different cohorts or candidate policies; compare only methods within the same recorded cohort. Predictions were frozen before the separate evaluator read evaluation labels, but earlier work had already accessed those labels. The proposed 95% end-to-end target was not met. The [capacity audit](outputs/submission_retrieval_bounds_20261114_v1.json) finds a 9,063/9,980 = 90.81% optimistic ceiling under the current exclusion and 100-alert component cap, and shows that the 20-neighbor rule cannot reach 99% positive-pair candidate recall on this dataset.
 
 ## Repository map
 

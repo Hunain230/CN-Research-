@@ -1,0 +1,13 @@
+{
+  "classification": "exploratory_post_exposure_new_baseline_not_confirmatory",
+  "command_evaluate": "python -m src.submission_rank_fusion evaluate --run-id submission_rank_fusion_20261114_v1",
+  "command_predict": "python -m src.submission_rank_fusion predict --run-id submission_rank_fusion_20261114_v1",
+  "method": "equal_weight_rrf_of_count_and_local_bm25_like",
+  "parent_prediction_sha256": "f8ac447e412d37bb2a26f2431a7ab4dacd316ead426fb0429be1d9e01b439e7c",
+  "sha256": {
+    "data\\derived\\submission_rank_fusion_20261114_v1\\scores.pkl": "d646025b9541d0c37ce09a3ca8791e64bad7f9b9d824986e8adfe8a4aa45fdbc",
+    "outputs\\submission_rank_fusion_20261114_v1\\metrics.json": "837a49240cfe98a5a90b136fb038c52dc6d73ebe0287c2ce7f7a4b23562e3e4f",
+    "outputs\\submission_rank_fusion_20261114_v1\\prediction_freeze.json": "587d57247ca70ba6b132b18085ad7666a520aac4c61efdf2e8d6beaa71c6fd47",
+    "src\\submission_rank_fusion.py": "859cc2252da83e487591628e4b874ee9fe8610b561b7d97a6a63adc4ac92ef87"
+  }
+}

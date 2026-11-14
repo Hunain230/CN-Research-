@@ -1,0 +1,14 @@
+{
+  "candidate_pairs_and_groups": "identical to offline_joint_v2 parent",
+  "classification": "exploratory_transfer_ranker_on_frozen_small_queue_groups",
+  "evaluation_labels_read_in_prediction_stage": false,
+  "local_descriptor_fields_only": true,
+  "model_training_organizations": 334,
+  "organizations": 57,
+  "parent_prediction_sha256": "856f8fdf9be9e6f5ab0bf2087c7afabfaa1fa203116cf88331518ad3245ae6fb",
+  "prediction_sha256": "e38434572022681314c140147d658fd436184cf19640b00598a7669e4a0c1d4a",
+  "raw_scan_rows": 4147992,
+  "run": "submission_transfer_ranker_20261114_v1",
+  "source_code_sha256": "f45172c48a4672207c863ec671e5629f8c5a595cc2717c4fc80f24f9f044bd4f",
+  "trained_model_sha256": "bd9f4c1af48289d652662aea88413a13f3dca5ebeb7d5f58f18564b568cf1d4c"
+}

@@ -1,5 +1,9 @@
 # Task 3 experiment register
 
+## 2026-11-14 matched ranking extension
+
+The [fixed RRF run](../outputs/submission_rank_fusion_20261114_v1/run_manifest.json) reorders frozen full-GUIDE groups on all 499 organizations and slightly underperforms BM25-like Recall@20 (0.1352 versus 0.1364). The separate [trained ranker run](../outputs/submission_trained_ranker_20261114_v1/run_manifest.json) fits on 334 historical training organizations and evaluates 135 organization-disjoint validation/holdout queues. On that exact cohort, trained versus BM25-like P@10 was 0.2351 versus 0.1971, nDCG@20 0.1776 versus 0.1480, and end-to-end Recall@20 0.1542 versus 0.1507. The paired recall interval includes zero. Both studies reuse weak parent candidates and groups, so pair/candidate metrics do not change. [Full method and denominators](PERFORMANCE_BASELINE_STUDY.md). Prior label exposure makes the results exploratory.
+
 **Prepared:** 2026-11-12. **Result:** an auditable register of existing experiments; no new inference or evaluation run. All real-data measurements below are exploratory. The [data and claim audit](DATA_AND_CLAIM_AUDIT.md) states the governing data and claim limits. The current official model-input allowlist is empty, and new external model calls are not authorized. Previously accessed labels cannot supply a fresh confirmatory test.
 
 ## 2026-11-13 submission addendum

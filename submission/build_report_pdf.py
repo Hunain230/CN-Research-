@@ -115,14 +115,14 @@ def footer(canvas, doc) -> None:
 def build() -> None:
     register_fonts()
     styles = getSampleStyleSheet()
-    body = ParagraphStyle("Body", parent=styles["Normal"], fontName="DejaVu", fontSize=9, leading=13, textColor=colors.HexColor("#1d2933"), spaceAfter=7)
-    heading1 = ParagraphStyle("H1", parent=body, fontName="DejaVu-Bold", fontSize=16, leading=21, textColor=colors.HexColor("#153b53"), spaceBefore=16, spaceAfter=7)
-    heading2 = ParagraphStyle("H2", parent=body, fontName="DejaVu-Bold", fontSize=11.5, leading=16, textColor=colors.HexColor("#20506b"), spaceBefore=12, spaceAfter=6)
+    body = ParagraphStyle("Body", parent=styles["Normal"], fontName="DejaVu", fontSize=8.8, leading=11.5, textColor=colors.HexColor("#1d2933"), spaceAfter=4)
+    heading1 = ParagraphStyle("H1", parent=body, fontName="DejaVu-Bold", fontSize=16, leading=20, textColor=colors.HexColor("#153b53"), spaceBefore=10, spaceAfter=5)
+    heading2 = ParagraphStyle("H2", parent=body, fontName="DejaVu-Bold", fontSize=11.5, leading=15, textColor=colors.HexColor("#20506b"), spaceBefore=10, spaceAfter=5)
     title = ParagraphStyle("Title", parent=body, fontName="DejaVu-Bold", fontSize=20, leading=27, textColor=colors.HexColor("#122e42"), alignment=TA_CENTER, spaceAfter=16)
     table_cell = ParagraphStyle("Cell", parent=body, fontSize=7.3, leading=10.2, spaceAfter=0)
-    caption = ParagraphStyle("Caption", parent=body, fontSize=8, leading=11.5, textColor=colors.HexColor("#4b5d68"), alignment=TA_LEFT, spaceBefore=5, spaceAfter=11)
+    caption = ParagraphStyle("Caption", parent=body, fontSize=8, leading=11.5, textColor=colors.HexColor("#4b5d68"), alignment=TA_LEFT, spaceBefore=5, spaceAfter=9)
     code = ParagraphStyle("Code", parent=body, fontName="DejaVu", fontSize=7.2, leading=10.5, textColor=colors.HexColor("#273d4c"), leftIndent=8, spaceAfter=9)
-    doc = SimpleDocTemplate(str(OUTPUT), pagesize=A4, leftMargin=1.8 * cm, rightMargin=1.8 * cm, topMargin=1.6 * cm, bottomMargin=1.65 * cm, title="Phase 3 GUIDE_Test Hybrid Implementation", author="CNET Research")
+    doc = SimpleDocTemplate(str(OUTPUT), pagesize=A4, leftMargin=1.8 * cm, rightMargin=1.8 * cm, topMargin=1.3 * cm, bottomMargin=1.45 * cm, title="Phase 3 GUIDE_Test Hybrid Implementation", author="CNET Research")
     usable = A4[0] - doc.leftMargin - doc.rightMargin
     lines = SOURCE.read_text(encoding="utf-8").splitlines()
     story = []
@@ -150,7 +150,7 @@ def build() -> None:
             if match:
                 path = (SOURCE.parent / match.group(1)).resolve()
                 image = Image(str(path))
-                scale = min(usable / image.imageWidth, 10.3 * cm / image.imageHeight, 1.0)
+                scale = min(usable / image.imageWidth, 9.0 * cm / image.imageHeight, 1.0)
                 image.drawWidth *= scale
                 image.drawHeight *= scale
                 story.append(image)

@@ -1,0 +1,15 @@
+{
+  "classification": "exploratory_frozen_group_label_free_rank_fusion",
+  "grouping_and_candidate_pairs": "identical to parent run",
+  "labels_read_in_prediction_stage": false,
+  "method": "equal_weight_rrf_of_count_and_local_bm25_like",
+  "organizations": 499,
+  "parent_freeze_sha256": "673f70b11330b51f79ea3ac018685469471fd59818371af4d67632b7c8917aab",
+  "parent_prediction_sha256": "f8ac447e412d37bb2a26f2431a7ab4dacd316ead426fb0429be1d9e01b439e7c",
+  "parent_run": "submission_full_guide_paper_20261113_v1",
+  "prediction_sha256": "d646025b9541d0c37ce09a3ca8791e64bad7f9b9d824986e8adfe8a4aa45fdbc",
+  "raw_score_ties": "average one-based rank positions",
+  "rrf_k": 60,
+  "run": "submission_rank_fusion_20261114_v1",
+  "source_sha256": "859cc2252da83e487591628e4b874ee9fe8610b561b7d97a6a63adc4ac92ef87"
+}

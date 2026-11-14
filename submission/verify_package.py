@@ -22,6 +22,7 @@ DOCS = [
     ROOT / "submission/EXPERIMENT_REGISTER.md",
     ROOT / "submission/RESULTS_AND_DISCUSSION.md",
     ROOT / "submission/FULL_SUITE_RUN_20261113.md",
+    ROOT / "submission/PERFORMANCE_BASELINE_STUDY.md",
 ]
 
 
@@ -43,7 +44,7 @@ def main() -> None:
                 missing.append((str(doc.relative_to(ROOT)), target))
     if missing:
         raise ValueError(f"Broken local links: {missing}")
-    for name in ("submission_full_guide_20261112_v1", "submission_qwen_20261112_v1", "submission_full_guide_paper_20261113_v1", "submission_qwen_v2_paper_20261113_v1"):
+    for name in ("submission_full_guide_20261112_v1", "submission_qwen_20261112_v1", "submission_full_guide_paper_20261113_v1", "submission_qwen_v2_paper_20261113_v1", "submission_rank_fusion_20261114_v1", "submission_trained_ranker_20261114_v1"):
         manifest = json.loads((ROOT / "outputs" / name / "run_manifest.json").read_text(encoding="utf-8"))
         for relative, expected in manifest["sha256"].items():
             source = ROOT / relative
@@ -61,6 +62,11 @@ def main() -> None:
     for relative, expected in (qwen_figure["source_sha256"] | qwen_figure["figure_sha256"]).items():
         if digest(ROOT / relative) != expected:
             raise ValueError(f"Qwen figure manifest mismatch: {relative}")
+    capacity = json.loads((ROOT / "outputs/submission_retrieval_bounds_20261114_v1.json").read_text(encoding="utf-8"))
+    if digest(ROOT / "submission/diagnose_retrieval_bounds.py") != capacity["source_sha256"]["source_code"]:
+        raise ValueError("Capacity audit source mismatch")
+    if digest(ROOT / "outputs/submission_full_guide_paper_20261113_v1/metrics.json") != capacity["source_sha256"]["parent_metrics"]:
+        raise ValueError("Capacity audit parent mismatch")
     pdf = json.loads((ROOT / "submission/PHASE3_REPORT_PDF_MANIFEST.json").read_text(encoding="utf-8"))
     for relative, expected in pdf["sha256"].items():
         if digest(ROOT / relative) != expected:
@@ -68,7 +74,7 @@ def main() -> None:
     dashboard = json.loads((ROOT / "dashboard/simulation_manifest.json").read_text(encoding="utf-8"))
     if digest(ROOT / "dashboard/simulation.html") != dashboard["output_sha256"]:
         raise ValueError("Dashboard output hash mismatch")
-    print(f"Submission verification passed: {links} local links, four run manifests, one correction, two new figures, report PDF, and dashboard hash")
+    print(f"Submission verification passed: {links} local links, six run manifests, one correction, two new figures, report PDF, and dashboard hash")
 
 
 if __name__ == "__main__":

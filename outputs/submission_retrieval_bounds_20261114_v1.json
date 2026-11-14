@@ -1,0 +1,33 @@
+{
+  "classification": "exploratory_evaluator_only_mathematical_upper_bounds_not_measured_recall",
+  "expert_labels_with_any_unambiguous_alert": 9125,
+  "expert_labels_with_more_than_125_unambiguous_alerts": 62,
+  "expert_labels_with_no_unambiguous_alert": 855,
+  "expert_top20_denominator": 9980,
+  "implemented_max_component_alerts": 100,
+  "implemented_max_undirected_degree_per_alert": 20,
+  "interpretation": [
+    "The 20-degree positive-pair recall bound assumes every emitted pair is positive; actual recall is lower.",
+    "The directed-union bound is sensitivity for a different 20-proposals-per-alert interpretation, not the implemented mutual degree cap.",
+    "A gold incident with >125 in-scope alerts cannot meet 80% completeness in a component capped at 100.",
+    "The end-to-end ceiling assumes perfect grouping and ranking for all remaining labels; purity and other errors can lower it.",
+    "Sparse candidate links can still form a complete component by transitivity, so low positive-pair candidate recall alone is not an end-to-end recall bound."
+  ],
+  "mathematical_candidate_recall_upper_bound_degree20": 0.025130270947577103,
+  "mathematical_candidate_recall_upper_bound_directed20_union_sensitivity": 0.05026054189515421,
+  "mathematical_pair_capacity_degree20": 4000390,
+  "mathematical_pair_capacity_directed20_union_sensitivity": 8000780,
+  "measured_candidate_positive_pairs": 37018,
+  "measured_candidate_recall": 0.00023254541930596995,
+  "optimistic_end_to_end_recall20_ceiling_under_exclusion_and_component_cap": 0.9081162324649299,
+  "optimistic_recoverable_labels_under_100_alert_component_cap": 9063,
+  "organizations": 499,
+  "parent_run": "submission_full_guide_paper_20261113_v1",
+  "positive_pair_denominator": 159186107,
+  "source_sha256": {
+    "parent_metrics": "e6ac81358f6d8eef06c23b574055aa194a1b62fa09085fbca5ccbee0e97d3a94",
+    "parent_predictions": "f8ac447e412d37bb2a26f2431a7ab4dacd316ead426fb0429be1d9e01b439e7c",
+    "source_code": "910a65b87669ee2c8e494d961e16b6dbfd1932b8620481a5320808c8ca5104d1"
+  },
+  "unambiguous_alerts": 400039
+}

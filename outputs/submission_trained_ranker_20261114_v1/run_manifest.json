@@ -1,0 +1,14 @@
+{
+  "classification": "exploratory_organization_disjoint_trained_ranker_post_exposure_not_confirmatory",
+  "command_evaluate": "python -m src.submission_trained_ranker evaluate --run-id submission_trained_ranker_20261114_v1",
+  "command_predict": "python -m src.submission_trained_ranker predict --run-id submission_trained_ranker_20261114_v1",
+  "parent_prediction_sha256": "f8ac447e412d37bb2a26f2431a7ab4dacd316ead426fb0429be1d9e01b439e7c",
+  "sha256": {
+    "data\\derived\\guide_rerun_v2\\split.json": "a99f53483d91e32e6872b71ae385123db71e36cb4b52c3b8eeb985c5ffb36e5d",
+    "data\\derived\\submission_trained_ranker_20261114_v1\\model.pkl": "bd9f4c1af48289d652662aea88413a13f3dca5ebeb7d5f58f18564b568cf1d4c",
+    "data\\derived\\submission_trained_ranker_20261114_v1\\scores.pkl": "2f7cc264324bf9d5f390288a8ca6250895a317d834fbc8723824846c3aa81a4e",
+    "outputs\\submission_trained_ranker_20261114_v1\\metrics.json": "dd427e953c376c7f8baaf29fc2c118cecf41520fd53fc3ca6d68044188452e8c",
+    "outputs\\submission_trained_ranker_20261114_v1\\prediction_freeze.json": "09a7238823c8956e69b82225cd447a4248ffd153e87bf397753f5cf9ece901cc",
+    "src\\submission_trained_ranker.py": "1f5070ae7a3b47dacd1bd56505077bfdd248955858501e489ebdad709d02dee1"
+  }
+}
