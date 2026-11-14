@@ -1,0 +1,82 @@
+{
+  "all_calls": {
+    "call_latency_seconds_max": 64.485,
+    "call_latency_seconds_p50": 27.125,
+    "call_latency_seconds_p95": 43.617,
+    "calls": 188,
+    "failed_or_invalid_json_calls": 0,
+    "output_tokens": 49401,
+    "prompt_tokens": 129143,
+    "sum_call_elapsed_seconds": 5290.598
+  },
+  "by_role": {
+    "B2": {
+      "call_latency_seconds_max": 64.485,
+      "call_latency_seconds_p50": 26.852,
+      "call_latency_seconds_p95": 43.794,
+      "calls": 40,
+      "failed_or_invalid_json_calls": 0,
+      "output_tokens": 9793,
+      "prompt_tokens": 34228,
+      "sum_call_elapsed_seconds": 1146.065
+    },
+    "C": {
+      "call_latency_seconds_max": 48.188,
+      "call_latency_seconds_p50": 27.867,
+      "call_latency_seconds_p95": 41.255,
+      "calls": 40,
+      "failed_or_invalid_json_calls": 0,
+      "output_tokens": 9620,
+      "prompt_tokens": 34108,
+      "sum_call_elapsed_seconds": 1138.203
+    },
+    "P": {
+      "call_latency_seconds_max": 44.203,
+      "call_latency_seconds_p50": 26.898,
+      "call_latency_seconds_p95": 38.115,
+      "calls": 54,
+      "failed_or_invalid_json_calls": 0,
+      "output_tokens": 14747,
+      "prompt_tokens": 28816,
+      "sum_call_elapsed_seconds": 1450.485
+    },
+    "V": {
+      "call_latency_seconds_max": 59.375,
+      "call_latency_seconds_p50": 27.836,
+      "call_latency_seconds_p95": 46.143,
+      "calls": 54,
+      "failed_or_invalid_json_calls": 0,
+      "output_tokens": 15241,
+      "prompt_tokens": 31991,
+      "sum_call_elapsed_seconds": 1555.845
+    }
+  },
+  "classification": "retrospective_local_batch_diagnostics_not_operational_soc_sla",
+  "observed_batch_work": {
+    "c_abstention_fraction_of_selected_pairs": 0.075,
+    "c_selected_pairs_per_sum_call_hour": 759.091,
+    "cpv_selected_pairs_per_sum_call_hour": 208.467,
+    "cpv_sum_call_elapsed_seconds_excluding_paired_b2": 4144.533,
+    "organizations": 20,
+    "predicted_groups": 374,
+    "review_fraction_of_predicted_groups_macro": 0.6004444105497411,
+    "selected_alerts": 391,
+    "selected_pairs": 240
+  },
+  "provenance": {
+    "evaluation_metrics_sha256": "2a04db8d908fb6a0acb5ea4732c44f5f924f9631a08340fe96564980b32c5f73",
+    "localhost_only": true,
+    "model": "qwen2.5:3b",
+    "model_digest": "357c53fb659c5076de1d65ccb0b397446227b71a42be9d1603d46168015c9e4b",
+    "prediction_freeze_sha256": "0502bfe470223d85108fceedfbdb654f161a1cb91acc083057eece518eab2937",
+    "private_call_audit_sha256": "7cfeaf9c362e69bbdab27d047cefb874198103b5fbd61827dbb47e81692f6d72"
+  },
+  "run": "submission_qwen_v2_paper_20261113_v1",
+  "unmeasured": [
+    "end-to-end alert-to-decision p50/p95 latency",
+    "live arrival-rate and sustained throughput under concurrent load",
+    "semantic invalid-output rate and independently adjudicated citation support",
+    "analyst handling time, false-merge impact, and high-priority misses among auto-decided cases",
+    "uptime, recovery from local-model failure, and production cost"
+  ]
+}

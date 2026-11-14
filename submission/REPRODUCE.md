@@ -25,6 +25,7 @@ The recorded paper run used `-RunTag paper_20261113_v1`; its full offline and Qw
 ```powershell
 .\.venv\Scripts\python.exe -m src.submission_full_guide self-test
 .\.venv\Scripts\python.exe -m src.submission_local_qwen_v2 self-test
+.\.venv\Scripts\python.exe -m submission.measure_local_operations
 .\.venv\Scripts\python.exe -m submission.generate_submission_figures
 .\.venv\Scripts\python.exe -m submission.generate_qwen_v2_figure
 .\.venv\Scripts\python.exe -m submission.verify_package
@@ -32,6 +33,8 @@ The recorded paper run used `-RunTag paper_20261113_v1`; its full offline and Qw
 ```
 
 The first two commands check local invariants. Figure generation checks aggregate metric hashes against run manifests and writes only PNGs and hash records. Package verification checks local document links, frozen runs, figures, and dashboard hashes. The [full metrics](../outputs/submission_full_guide_paper_20261113_v1/metrics.json) and [Qwen v2 metrics](../outputs/submission_qwen_v2_paper_20261113_v1/metrics.json) are the recorded paper-run results.
+
+The operations command reads the ignored local call audit, verifies its SHA-256 against the prediction freeze, and writes only [aggregate local batch diagnostics](../outputs/submission_qwen_v2_paper_20261113_v1/operational_diagnostics.json). It makes no model call and does not change frozen predictions or accuracy metrics. Per-call p95 is not an alert-to-decision p95.
 
 To regenerate the [five-page report PDF](PHASE3_IMPLEMENTATION_REPORT.pdf) from [the editable report](FINAL_REPORT.md), install its small [PDF-only dependency list](report_pdf_requirements.txt) and run:
 
