@@ -1,0 +1,12 @@
+{
+  "analysis_code_sha256": "cb63760c2fbbf3ce445f1393bb536bf6d3b67ffaabc93c27848689198c3e8edf",
+  "classification": "evaluator_only_aggregate_rank_scope_audit_not_metric_redefinition",
+  "counts": {
+    "absent_unambiguous_but_present_raw": 855,
+    "expert_top20_labels": 9980,
+    "present_unambiguous": 9125
+  },
+  "denominator_policy": "retain_all_9980_expert_labels_in_recall20",
+  "raw_sha256": "fdfd7523efd6e3c26bd0290ba6acbcb237196cf923dd56a28e96802035db35a3",
+  "resolution": "retain_ambiguous_alert_exclusion_until_authoritative_assignment_rule_is_available_without_evaluation_labels"
+}

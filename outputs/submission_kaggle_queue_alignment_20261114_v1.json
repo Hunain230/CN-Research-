@@ -1,0 +1,38 @@
+{
+  "absent_by_rank": {
+    "1": 0,
+    "10": 0,
+    "11": 0,
+    "12": 0,
+    "13": 0,
+    "14": 0,
+    "15": 0,
+    "16": 0,
+    "17": 0,
+    "18": 0,
+    "19": 0,
+    "2": 0,
+    "20": 0,
+    "3": 0,
+    "4": 0,
+    "5": 0,
+    "6": 0,
+    "7": 0,
+    "8": 0,
+    "9": 0
+  },
+  "analysis_code_sha256": "1c46b22c21b5dd83a3a441a00e32fc58df54c462e5a03c7ad65fe2c987211eb4",
+  "classification": "publisher_file_identity_and_aggregate_rank_scope_audit_not_metric_revision",
+  "counts": {
+    "expert_labels": 9980
+  },
+  "denominator_policy": "retain_all_9980_expert_labels",
+  "download_command": "python -m kaggle datasets download Microsoft/microsoft-security-incident-prediction -f GUIDE_Test_Queue_Rankings.csv --unzip",
+  "downloaded_ranking_sha256": "e4ea9308f45821128a3cd446ab19e6559edfc50709e72034ce957b6f0e2e65d6",
+  "local_ranking_sha256": "e4ea9308f45821128a3cd446ab19e6559edfc50709e72034ce957b6f0e2e65d6",
+  "publisher_url": "https://www.kaggle.com/datasets/Microsoft/microsoft-security-incident-prediction/data",
+  "rank_direction_note": "Rank-position counts are descriptive; numeric direction remains a local assumption until confirmed.",
+  "ranking_file_byte_identical": true,
+  "raw_local_bytes": 1087963831,
+  "raw_local_sha256": "fdfd7523efd6e3c26bd0290ba6acbcb237196cf923dd56a28e96802035db35a3"
+}

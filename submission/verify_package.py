@@ -128,10 +128,21 @@ def main() -> None:
     for filename, script in (("submission_development_candidate_expansion_20261114_v1.json", "development_candidate_expansion.py"),
                              ("submission_development_group_merge_20261114_v1.json", "development_group_merge.py"),
                              ("submission_ambiguous_provenance_audit_20261114_v1.json", "audit_ambiguous_alert_provenance.py"),
-                             ("submission_absent_rank_scope_audit_20261114_v1.json", "audit_absent_rank_scope.py")):
+                             ("submission_absent_rank_scope_audit_20261114_v1.json", "audit_absent_rank_scope.py"),
+                             ("submission_ambiguous_provenance_audit_20261114_v2.json", "audit_ambiguous_alert_provenance_v2.py"),
+                             ("submission_absent_rank_scope_audit_20261114_v2.json", "audit_absent_rank_scope_v2.py"),
+                             ("submission_kaggle_queue_alignment_20261114_v1.json", "audit_kaggle_queue_alignment.py")):
         record = json.loads((ROOT / "outputs" / filename).read_text(encoding="utf-8"))
         if digest(ROOT / "submission" / script) != record["analysis_code_sha256"]:
             raise ValueError(f"Development or provenance audit mismatch: {filename}")
+    corrected_scope = json.loads((ROOT / "outputs/submission_absent_rank_scope_audit_20261114_v2.json").read_text(encoding="utf-8"))
+    if corrected_scope["counts"].get("absent_unambiguous_but_present_raw") != 855 or corrected_scope["counts"].get("absent_from_raw_test_incidents", 0):
+        raise ValueError("Corrected rank-scope audit failed")
+    published_rank = json.loads((ROOT / "outputs/submission_kaggle_queue_alignment_20261114_v1.json").read_text(encoding="utf-8"))
+    if digest(ROOT / "data/raw/GUIDE_Test_Queue_Rankings.csv") != published_rank["local_ranking_sha256"]:
+        raise ValueError("Local ranking source changed")
+    if digest(ROOT / "data/derived/publisher_queue_audit_20261114/GUIDE_Test_Queue_Rankings.csv") != published_rank["downloaded_ranking_sha256"]:
+        raise ValueError("Publisher ranking download changed")
     for run, field, prefix in (("submission_group_ranker_v4_20261114_v1", "score_sha256", "scores"), ("submission_bridge_group_v5_20261114_v1", "prediction_sha256", "v5")):
         freeze = json.loads((ROOT / "outputs" / run / "prediction_freeze.json").read_text(encoding="utf-8"))
         if len(freeze[field]) != 499:

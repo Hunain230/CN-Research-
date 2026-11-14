@@ -1,0 +1,27 @@
+{
+  "absent_top20_label_counts": {
+    "all_absent_from_unambiguous_scope": 855,
+    "has_ambiguous_source_rows": 855,
+    "no_ambiguous_source_rows": 0
+  },
+  "ambiguous_key_counts": {
+    "ambiguous_keys": 70702,
+    "evidence_rows": 830109,
+    "multiple_categories": 0,
+    "multiple_detectors": 0,
+    "multiple_incident_assignments": 70702,
+    "multiple_techniques": 0,
+    "multiple_timestamps": 0,
+    "multiple_titles": 0,
+    "single_detector": 70702,
+    "single_timestamp": 70702,
+    "single_title": 70702,
+    "source_id_distinguishes_assignments": 70702
+  },
+  "ambiguous_review_sha256": "1355ba97e623023faa59c5e78ef90679029ccfbe8346d2ac415ccf57493135a9",
+  "analysis_code_sha256": "0fc228acc5f5982d34320e3ba7e52930b6367b99ab43f28f2eb5746586a50f96",
+  "classification": "aggregate_evaluator_only_ambiguous_alert_provenance_no_label_based_resolution",
+  "raw_sha256": "fdfd7523efd6e3c26bd0290ba6acbcb237196cf923dd56a28e96802035db35a3",
+  "resolution_decision": "retain_exclusion_until_alert_identity_or_assignment_is_authoritatively_disambiguated_without_using_evaluation_labels",
+  "source_ordinals_note": "Source row ordinals identify evidence rows, but do not provide a unique prediction-time alert-to-incident assignment."
+}

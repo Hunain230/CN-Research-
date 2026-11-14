@@ -25,6 +25,8 @@ The local files are Microsoft GUIDE evidence records and a queue-ranking file as
 
 Phase 1 recorded local SHA-256 values of `fdfd7523efd6e3c26bd0290ba6acbcb237196cf923dd56a28e96802035db35a3` for `GUIDE_Test.csv` and `e4ea9308f45821128a3cd446ab19e6559edfc50709e72034ce957b6f0e2e65d6` for `GUIDE_Test_Queue_Rankings.csv`. The source review found publisher information for the dataset/release, but the original download receipt and publisher byte-checksum record are not available in the repository. Keep that provenance limitation explicit.
 
+**2026-11-14 addendum:** A [fresh Kaggle download of the ranking file](../outputs/submission_kaggle_queue_alignment_20261114_v1.json) is byte-identical to the local copy. The original download receipt remains unavailable, but current publisher-file identity is now verified for that ranking file. A corrected raw join found all 855 top-20 labels missing from the unambiguous model scope in raw GUIDE_Test through ambiguous alert assignments; they are not absent from the raw file. The erroneous [v1 source-scope audit](../outputs/submission_absent_rank_scope_audit_20261114_v1.json) is superseded by the [v2 audit](../outputs/submission_absent_rank_scope_audit_20261114_v2.json). No performance metric or denominator changed.
+
 The ranking file has one local column named `QueueRank` and no `Split` column or exact active-queue snapshot. The numeric direction—whether rank 1 or 20 is highest—and exact mapping to the publisher’s queue definition remain unresolved. Treating rank 1 as highest and all local composite incidents as the candidate universe were declared implementation assumptions, not confirmed source facts.
 
 ## Evidence status
