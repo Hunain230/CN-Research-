@@ -1,0 +1,35 @@
+version: entity-time-sensitivity-v1
+status: local_offline_research_only_not_operationally_approved
+source:
+  dataset: https://www.kaggle.com/datasets/Microsoft/microsoft-security-incident-prediction/data
+  guide_paper: https://arxiv.org/html/2407.09017v4
+  notes:
+    - Publisher describes Timestamp as alert creation time and says timestamps were noised.
+    - Publisher describes entity fields as anonymized alert evidence.
+    - No source establishes when each evidence row became available to a live analyst.
+allowed_only_in_local_sensitivity:
+  - Timestamp
+  - DeviceId
+  - AccountObjectId
+  - Sha256
+  - IpAddress
+  - NetworkMessageId
+  - EmailClusterId
+  - DetectorId
+  - Category
+  - MitreTechniques
+  - EntityType
+  - EvidenceRole
+excluded_as_evaluator_or_outcome_fields:
+  - IncidentId
+  - QueueRank
+  - IncidentGrade
+  - ActionGrouped
+  - ActionGranular
+handling:
+  scope_entity_equality_to_organization: true
+  exclude_probable_modal_numeric_missing_sentinels: true
+  keep_entity_values_in_private_local_projection_only: true
+  export_raw_entity_values: false
+  hosted_model_transmission: false
+  operational_model_input_approval: false

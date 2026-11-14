@@ -1,0 +1,14 @@
+{
+  "classification": "evaluator_only_oracle_order_ceiling_for_frozen_groups_not_model_performance",
+  "expert_top20_denominator": 9980,
+  "frozen_prediction_sha256": "f8ac447e412d37bb2a26f2431a7ab4dacd316ead426fb0429be1d9e01b439e7c",
+  "labels_used": true,
+  "note": "Diagnostic oracle bound only; it cannot be claimed as achieved operational performance.",
+  "oracle_order_recall_at_20_upper_bound": 0.231563126252505,
+  "organizations": 499,
+  "recovery_rule": "at_least_80_percent_gold_alerts_and_80_percent_group_purity",
+  "top20_absent_after_ambiguous_key_exclusion": 855,
+  "top20_present_but_not_recoverable": 6814,
+  "top20_recoverable_in_any_predicted_group": 2311,
+  "top20_with_unambiguous_alerts": 9125
+}

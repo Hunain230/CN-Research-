@@ -1,0 +1,59 @@
+{
+  "analysis_code_sha256": "41d6b2f660aa4fdb5c4633f322d8db4c767cb3ba9ae8ff8494b7cf45d1612a10",
+  "candidate_connected_upper_bound_recall20": 0.8655310621242485,
+  "classification": "evaluator_only_oracle_candidate_connectivity_bound_not_model_performance",
+  "counts": {
+    "absent": 855,
+    "candidate_connected_80": 8638,
+    "candidate_disconnected": 487,
+    "cap_impossible": 62,
+    "group_impure": 603,
+    "group_recoverable": 6143,
+    "group_split_below_80": 2379,
+    "labels": 9980,
+    "present": 9125
+  },
+  "note": "Candidate bound assumes oracle same-incident link decisions and ignores purity; size cap remains a separate restriction.",
+  "observed_group_oracle_order_ceiling": 0.6155310621242485,
+  "prediction_freeze_sha256": "eaa81a87b0e639d93671ccc8a128be5ac6270a4d8c4be19e985acb836ffcd4f8",
+  "run": "submission_full_entity_time_20261114_v1",
+  "size_buckets": {
+    "1": {
+      "candidate_connected_80": 6342,
+      "group_impure": 446,
+      "group_recoverable": 5896,
+      "labels": 6342,
+      "present": 6342
+    },
+    "11-100": {
+      "candidate_connected_80": 177,
+      "candidate_disconnected": 112,
+      "group_impure": 4,
+      "group_recoverable": 4,
+      "group_split_below_80": 281,
+      "labels": 289,
+      "present": 289
+    },
+    "2-10": {
+      "candidate_connected_80": 2070,
+      "candidate_disconnected": 350,
+      "group_impure": 153,
+      "group_recoverable": 243,
+      "group_split_below_80": 2024,
+      "labels": 2420,
+      "present": 2420
+    },
+    ">100": {
+      "candidate_connected_80": 49,
+      "candidate_disconnected": 25,
+      "cap_impossible": 62,
+      "group_split_below_80": 74,
+      "labels": 74,
+      "present": 74
+    },
+    "absent": {
+      "absent": 855,
+      "labels": 855
+    }
+  }
+}

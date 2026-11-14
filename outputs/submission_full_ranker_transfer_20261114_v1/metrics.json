@@ -1,0 +1,323 @@
+{
+  "alerts": 400039,
+  "classification": "exploratory_post_exposure_full_guide_ranker_transfer_not_confirmatory",
+  "cohorts": {
+    "all_499_descriptive": {
+      "expert_top20_denominator": 9980,
+      "methods": {
+        "bm25_like": {
+          "ndcg_at_20": {
+            "ci95": [
+              0.13497482121062038,
+              0.1746197153554811
+            ],
+            "mean": 0.1541698094198136,
+            "organizations": 499,
+            "resamples": 10000
+          },
+          "precision_at_10": {
+            "ci95": [
+              0.15730688941986537,
+              0.18618671592268787
+            ],
+            "mean": 0.1714489051362799,
+            "organizations": 499,
+            "resamples": 10000
+          },
+          "recall_at_20": {
+            "ci95": [
+              0.1245171347941761,
+              0.14846898272028383
+            ],
+            "mean": 0.13639034951003826,
+            "organizations": 499,
+            "resamples": 10000
+          }
+        },
+        "count": {
+          "ndcg_at_20": {
+            "ci95": [
+              0.029468549427675197,
+              0.044280135737988696
+            ],
+            "mean": 0.03637985148585743,
+            "organizations": 499,
+            "resamples": 10000
+          },
+          "precision_at_10": {
+            "ci95": [
+              0.042691357145784745,
+              0.055919466356551
+            ],
+            "mean": 0.04923565455565845,
+            "organizations": 499,
+            "resamples": 10000
+          },
+          "recall_at_20": {
+            "ci95": [
+              0.04756877623973819,
+              0.06144015954648559
+            ],
+            "mean": 0.05433653012980221,
+            "organizations": 499,
+            "resamples": 10000
+          }
+        },
+        "transferred_ranker": {
+          "ndcg_at_20": {
+            "ci95": [
+              0.1635914879788328,
+              0.2098238970695506
+            ],
+            "mean": 0.18587120259475887,
+            "organizations": 499,
+            "resamples": 10000
+          },
+          "precision_at_10": {
+            "ci95": [
+              0.1884235890195309,
+              0.22193784438674222
+            ],
+            "mean": 0.20494834157158806,
+            "organizations": 499,
+            "resamples": 10000
+          },
+          "recall_at_20": {
+            "ci95": [
+              0.12858502156750654,
+              0.15398757622318146
+            ],
+            "mean": 0.14125313023783692,
+            "organizations": 499,
+            "resamples": 10000
+          }
+        }
+      },
+      "organizations": 499,
+      "paired_ranker_minus": {
+        "bm25_like": {
+          "ndcg_at_20": {
+            "ci95": [
+              0.021478317697094424,
+              0.041959368699493335
+            ],
+            "mean": 0.031701393174945316,
+            "organizations": 499,
+            "resamples": 10000
+          },
+          "precision_at_10": {
+            "ci95": [
+              0.026339272284162066,
+              0.04098656111757314
+            ],
+            "mean": 0.03349943643530817,
+            "organizations": 499,
+            "resamples": 10000
+          },
+          "recall_at_20": {
+            "ci95": [
+              0.0025938365327485393,
+              0.007360207593962995
+            ],
+            "mean": 0.004862780727798655,
+            "organizations": 499,
+            "resamples": 10000
+          }
+        },
+        "count": {
+          "ndcg_at_20": {
+            "ci95": [
+              0.1286738214517833,
+              0.17166525124981485
+            ],
+            "mean": 0.14949135110890147,
+            "organizations": 499,
+            "resamples": 10000
+          },
+          "precision_at_10": {
+            "ci95": [
+              0.1408217996681856,
+              0.17118281870341884
+            ],
+            "mean": 0.1557126870159296,
+            "organizations": 499,
+            "resamples": 10000
+          },
+          "recall_at_20": {
+            "ci95": [
+              0.07688883946875959,
+              0.097568357913463
+            ],
+            "mean": 0.08691660010803469,
+            "organizations": 499,
+            "resamples": 10000
+          }
+        }
+      }
+    },
+    "disjoint_135": {
+      "expert_top20_denominator": 2700,
+      "methods": {
+        "bm25_like": {
+          "ndcg_at_20": {
+            "ci95": [
+              0.11201843804333152,
+              0.18617513507937453
+            ],
+            "mean": 0.14796527768244927,
+            "organizations": 135,
+            "resamples": 10000
+          },
+          "precision_at_10": {
+            "ci95": [
+              0.16654320987654322,
+              0.22943209876543208
+            ],
+            "mean": 0.19706172839506172,
+            "organizations": 135,
+            "resamples": 10000
+          },
+          "recall_at_20": {
+            "ci95": [
+              0.1260287117203784,
+              0.17681939768050875
+            ],
+            "mean": 0.15069755758644648,
+            "organizations": 135,
+            "resamples": 10000
+          }
+        },
+        "count": {
+          "ndcg_at_20": {
+            "ci95": [
+              0.021616447294453195,
+              0.04911020435560475
+            ],
+            "mean": 0.03449249033932078,
+            "organizations": 135,
+            "resamples": 10000
+          },
+          "precision_at_10": {
+            "ci95": [
+              0.038533936705695306,
+              0.06624712034815362
+            ],
+            "mean": 0.05176141781951779,
+            "organizations": 135,
+            "resamples": 10000
+          },
+          "recall_at_20": {
+            "ci95": [
+              0.04175787065617304,
+              0.07004506660344942
+            ],
+            "mean": 0.05516956865233269,
+            "organizations": 135,
+            "resamples": 10000
+          }
+        },
+        "transferred_ranker": {
+          "ndcg_at_20": {
+            "ci95": [
+              0.13636771892314561,
+              0.22081666888930354
+            ],
+            "mean": 0.17759643133886652,
+            "organizations": 135,
+            "resamples": 10000
+          },
+          "precision_at_10": {
+            "ci95": [
+              0.20034579124579124,
+              0.2713614478114478
+            ],
+            "mean": 0.2350639730639731,
+            "organizations": 135,
+            "resamples": 10000
+          },
+          "recall_at_20": {
+            "ci95": [
+              0.12859349534210646,
+              0.18162031893004113
+            ],
+            "mean": 0.15418425812870257,
+            "organizations": 135,
+            "resamples": 10000
+          }
+        }
+      },
+      "organizations": 135,
+      "paired_ranker_minus": {
+        "bm25_like": {
+          "ndcg_at_20": {
+            "ci95": [
+              0.011877244479062802,
+              0.047301454627991624
+            ],
+            "mean": 0.029631153656417275,
+            "organizations": 135,
+            "resamples": 10000
+          },
+          "precision_at_10": {
+            "ci95": [
+              0.02318686868686869,
+              0.05477048260381592
+            ],
+            "mean": 0.038002244668911334,
+            "organizations": 135,
+            "resamples": 10000
+          },
+          "recall_at_20": {
+            "ci95": [
+              -5.567079525412731e-05,
+              0.0075675716259049584
+            ],
+            "mean": 0.0034867005422560982,
+            "organizations": 135,
+            "resamples": 10000
+          }
+        },
+        "count": {
+          "ndcg_at_20": {
+            "ci95": [
+              0.10594401930492632,
+              0.1825841177102846
+            ],
+            "mean": 0.14310394099954576,
+            "organizations": 135,
+            "resamples": 10000
+          },
+          "precision_at_10": {
+            "ci95": [
+              0.15147014570910705,
+              0.21755289003716266
+            ],
+            "mean": 0.18330255524445527,
+            "organizations": 135,
+            "resamples": 10000
+          },
+          "recall_at_20": {
+            "ci95": [
+              0.07721725474822312,
+              0.12263407111357605
+            ],
+            "mean": 0.0990146894763699,
+            "organizations": 135,
+            "resamples": 10000
+          }
+        }
+      }
+    }
+  },
+  "limits": [
+    "All GUIDE_Test labels were previously accessed during project development",
+    "The model was trained on 334 organizations from a different frozen grouping run",
+    "The 135 comparison organizations are disjoint from model training, but method selection followed earlier label exposure",
+    "All-499 aggregate includes training organizations and is descriptive only",
+    "Candidate and group predictions are unchanged; this experiment tests ordering only",
+    "No local Qwen calls; field and active-queue assumptions remain unresolved"
+  ],
+  "prediction_freeze_sha256": "c9dcd6b172d2444da657052cc42ee111c214e265e156e7b723c491a5587e8861",
+  "run": "submission_full_ranker_transfer_20261114_v1",
+  "unchanged_candidate_pairs_and_groups": true
+}

@@ -1,0 +1,19 @@
+{
+  "all_499_includes_training_organizations": true,
+  "classification": "exploratory_full_guide_frozen_group_ranker_transfer",
+  "code_sha256": "7f4e9fe8c52a9c56b5fcd6562049ddb64ae54bd5852aaa7ab1d958e6d92f1614",
+  "disjoint_evaluation_organizations": 135,
+  "evaluation_labels_read_in_prediction_stage": false,
+  "organizations": 499,
+  "prediction_sha256": "b33b6849af1a9856db4ba7e2e761c7cc30cb3285c361b99be894bd06a6a51d41",
+  "run": "submission_full_ranker_transfer_20261114_v1",
+  "source_hashes": {
+    "data\\derived\\guide_rerun_v2\\split.json": "a99f53483d91e32e6872b71ae385123db71e36cb4b52c3b8eeb985c5ffb36e5d",
+    "data\\derived\\submission_full_guide_paper_20261113_v1\\predictions.pkl": "f8ac447e412d37bb2a26f2431a7ab4dacd316ead426fb0429be1d9e01b439e7c",
+    "data\\derived\\submission_trained_ranker_20261114_v1\\model.pkl": "bd9f4c1af48289d652662aea88413a13f3dca5ebeb7d5f58f18564b568cf1d4c",
+    "outputs\\submission_full_guide_paper_20261113_v1\\prediction_freeze.json": "673f70b11330b51f79ea3ac018685469471fd59818371af4d67632b7c8917aab",
+    "outputs\\submission_trained_ranker_20261114_v1\\prediction_freeze.json": "09a7238823c8956e69b82225cd447a4248ffd153e87bf397753f5cf9ece901cc"
+  },
+  "training_organizations": 334,
+  "unchanged_candidate_pairs_and_groups": true
+}

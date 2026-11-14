@@ -1,0 +1,97 @@
+{
+  "alerts": 11219,
+  "candidate_pairs": 1216600,
+  "classification": "exploratory_previously_exposed_57_queue_pair_model_grouping_not_confirmatory",
+  "expert_top20_denominator": 1140,
+  "limits": [
+    "Previously exposed 57 complete small queues",
+    "Fitted pair model uses 334 historical training organizations only",
+    "Frozen candidates are unchanged and cover 80.52% of possible pairs",
+    "Five descriptor fields are local-only assumptions, not officially approved model inputs",
+    "Transferred ranker is fitted on different frozen groups",
+    "No Qwen inference or live SOC evaluation"
+  ],
+  "methods": {
+    "frozen_rule_bm25": {
+      "end_to_end_recall_at_20_macro": {
+        "ci95": [
+          0.009191863036005873,
+          0.059000170074986175
+        ],
+        "mean": 0.029630724250622343,
+        "organizations": 57,
+        "resamples": 10000
+      },
+      "ndcg_at_20_macro": {
+        "ci95": [
+          8.245928162326269e-05,
+          0.016521102323959605
+        ],
+        "mean": 0.0060469407936890405,
+        "organizations": 57,
+        "resamples": 10000
+      },
+      "oracle_order_recall20_ceiling": 0.2517543859649123,
+      "oracle_order_recoverable_labels": 287,
+      "pair_confusion_micro": {
+        "f1": 0.13635374250781734,
+        "fn": 34765,
+        "fp": 127914,
+        "precision": 0.09123589758163063,
+        "recall": 0.26975024681244353,
+        "tp": 12842
+      },
+      "precision_at_10_macro": {
+        "ci95": [
+          0.004650515176830967,
+          0.06058504581885621
+        ],
+        "mean": 0.026214888009301333,
+        "organizations": 57,
+        "resamples": 10000
+      }
+    },
+    "new_pair_grouping": {
+      "end_to_end_recall_at_20_macro": {
+        "ci95": [
+          0.0017543859649122807,
+          0.017894736842105262
+        ],
+        "mean": 0.008640350877192983,
+        "organizations": 57,
+        "resamples": 10000
+      },
+      "ndcg_at_20_macro": {
+        "ci95": [
+          2.2245378448575037e-06,
+          0.012147739939372345
+        ],
+        "mean": 0.004654138292482006,
+        "organizations": 57,
+        "resamples": 10000
+      },
+      "oracle_order_recall20_ceiling": 0.008771929824561403,
+      "oracle_order_recoverable_labels": 10,
+      "pair_confusion_micro": {
+        "f1": 0.06425433149102652,
+        "fn": 31052,
+        "fp": 451134,
+        "precision": 0.03539745429120634,
+        "recall": 0.34774297897368034,
+        "tp": 16555
+      },
+      "precision_at_10_macro": {
+        "ci95": [
+          0.0035087719298245615,
+          0.028157894736842104
+        ],
+        "mean": 0.014649122807017545,
+        "organizations": 57,
+        "resamples": 10000
+      }
+    }
+  },
+  "organizations": 57,
+  "prediction_freeze_sha256": "ec101165c5e5c741a820ce4668d23add820b6cd3791c1ba4d9af32aa4039841c",
+  "run": "submission_pair_model_grouping_20261114_v1"
+}

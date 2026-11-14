@@ -1,0 +1,11 @@
+{
+  "classification": "exploratory_previously_exposed_57_queue_validation_selected_grouping_not_confirmatory",
+  "command_evaluate": "python -m src.submission_pair_grouping_v2 evaluate --run-id submission_pair_grouping_v2_20261114_v1",
+  "command_predict": "python -m src.submission_pair_grouping_v2 predict --run-id submission_pair_grouping_v2_20261114_v1",
+  "sha256": {
+    "data\\derived\\submission_pair_grouping_v2_20261114_v1\\predictions.pkl": "9822e7b25c37dc615b1c299bd07af1006e461d598b3db17d83a8dcdb066f81a5",
+    "outputs\\submission_pair_grouping_v2_20261114_v1\\metrics.json": "d0361e8faa7955f0dd3e8d13a344755918bc2bffebd22ce832e9f36f87b06945",
+    "outputs\\submission_pair_grouping_v2_20261114_v1\\prediction_freeze.json": "3336eeeadc330e49528340aadf26c6f186a7bc7798401bd93e9dc5e9dfb12d01",
+    "src\\submission_pair_grouping_v2.py": "d50dee762d1f94c45d04b04ab43550c18f5ced87132d33dc8ba9369bd1906fa2"
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "claims_blocked_until_data_and_approval": [
+    "confirmatory_superiority",
+    "85_percent_absolute_recall_at_20",
+    "operational_point_in_time_validity",
+    "live_soc_readiness"
+  ],
+  "classification": "prospective_plan_not_an_evaluation_or_field_approval",
+  "cohort_requirements": [
+    "new top-20 expert ranking labels with a documented queue snapshot",
+    "evidence and alert membership source independent of prior project tuning",
+    "documented alert creation and evidence availability times",
+    "source hashes and cohort membership frozen before evaluation labels are opened",
+    "ambiguous memberships retained in denominator or handled by a predeclared adjudication rule"
+  ],
+  "labels_opened_for_this_contract": false,
+  "method_source_sha256": {
+    "configs/entity_time_sensitivity_policy.yaml": "17a4202c977806b990340b2119663b5fece87f081688b9e48987ec5e9ff7c4f5",
+    "configs/field_policy.yaml": "0636d2f4e4f17edcd5402d67cac291484d3a39493b2c7377b562735771065ee5",
+    "data/derived/submission_pair_model_grouping_20261114_v1/pair_model.pkl": "3bf655d03bc879ef9ca2da5c097d8f30aba081b29e9b10401c3a7b26952226c9",
+    "data/derived/submission_trained_ranker_20261114_v1/model.pkl": "bd9f4c1af48289d652662aea88413a13f3dca5ebeb7d5f58f18564b568cf1d4c",
+    "outputs/submission_pair_group_calibration_20261114_v1.json": "930bf33bdf6a6eda8d25ab906593ddcb59742deaf3a2ac171b8d6a6f32cedd88",
+    "src/submission_full_entity_time.py": "de975c7c8701de715890624fb71b99798026729dcfd17b26f70fe164e37b6355",
+    "src/submission_pair_group_calibrate.py": "3751125f3e6ef878a22e0de0adf2973a5a9a4831ade0ea53da788295648cf43a",
+    "src/submission_pair_model_grouping.py": "fc4da695846108a17af6ab91afd1288f3594607e4f5c6302fe1e3a8c29b36020",
+    "submission/freeze_future_study.py": "7174b188ebf2f68a232ae1a22a38323dde2d01b08b0e406e201a57a2f272bdcf"
+  },
+  "new_cohort_available": false,
+  "objective": "independent_top20_incident_recovery_study",
+  "primary_endpoint": {
+    "comparison": "same_queue_frozen_rule_plus_transferred_ranker",
+    "denominator": "20 expert labels per eligible organization, including missing-evidence labels",
+    "metric": "organization_macro_end_to_end_recall_at_20",
+    "ranking_ties": "uniform_expected_order_within_equal_score_blocks",
+    "recovery_rule": "predicted_top20_group_contains_at_least_80_percent_of_gold_alerts_and_at_least_80_percent_group_purity"
+  },
+  "secondary_endpoints": [
+    "precision_at_10",
+    "ndcg_at_20_rank1_high",
+    "candidate_positive_pair_recall_and_coverage",
+    "pair_precision_recall_f1_and_false_merges",
+    "high_priority_misses",
+    "review_load",
+    "prediction_wall_time_and_peak_rss"
+  ],
+  "uncertainty": "paired_organization_bootstrap_10000_resamples_fixed_seed29"
+}

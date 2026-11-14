@@ -1,0 +1,9 @@
+{
+  "classification": "aggregate_exploratory_figure_not_confirmatory",
+  "expert_top20_denominator": 1140,
+  "figure_sha256": "f2504aa4c964ae79beb26b7ab75bbfb3e430e010f7978aa5b11e162dc7f7b84d",
+  "organizations": 57,
+  "source_code_sha256": "a7b6e669a6d38458c397bd84acba6b7cfd2b99801a9ca079f3f9ed8ef3e5274c",
+  "source_metrics_sha256": "4a6da87856effadefd822b122471c48d3a5a223ffacd4dbcc2ce521f485d3560",
+  "source_paired_analysis_sha256": "03c25b2f8d3bf07b704e826b9cb8a2e031cff6858de950767f1a6d7e8ac0bfe9"
+}

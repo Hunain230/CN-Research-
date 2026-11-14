@@ -1,0 +1,322 @@
+{
+  "candidate": "identical_to_submission_full_entity_time_20261114_v1",
+  "classification": "exploratory_full_guide_post_exposure_component_cap_v3_not_confirmatory",
+  "cohorts": {
+    "all_499_descriptive": {
+      "expert_top20_denominator": 9980,
+      "methods": {
+        "v2_model": {
+          "ndcg20": {
+            "ci95": [
+              0.2950294300809693,
+              0.34548656650800325
+            ],
+            "mean": 0.31983265199603494,
+            "organizations": 499,
+            "resamples": 10000
+          },
+          "p10": {
+            "ci95": [
+              0.39871570237424747,
+              0.44866665896286906
+            ],
+            "mean": 0.423302529864772,
+            "organizations": 499,
+            "resamples": 10000
+          },
+          "recall20": {
+            "ci95": [
+              0.32024781659095247,
+              0.35982517893336197
+            ],
+            "mean": 0.3396821129483077,
+            "organizations": 499,
+            "resamples": 10000
+          }
+        },
+        "v3_cap_selected": {
+          "ndcg20": {
+            "ci95": [
+              0.30302207515679985,
+              0.35314851985844387
+            ],
+            "mean": 0.32743945727709484,
+            "organizations": 499,
+            "resamples": 10000
+          },
+          "p10": {
+            "ci95": [
+              0.41125269805467,
+              0.4603507116670539
+            ],
+            "mean": 0.43551196531018077,
+            "organizations": 499,
+            "resamples": 10000
+          },
+          "recall20": {
+            "ci95": [
+              0.3224142611958529,
+              0.36121380577014206
+            ],
+            "mean": 0.3415464833117425,
+            "organizations": 499,
+            "resamples": 10000
+          }
+        }
+      },
+      "organizations": 499,
+      "paired_v3_minus_v2": {
+        "ndcg20": {
+          "ci95": [
+            0.00016937754186927925,
+            0.015052348996052891
+          ],
+          "mean": 0.0076068052810598745,
+          "organizations": 499,
+          "resamples": 10000
+        },
+        "p10": {
+          "ci95": [
+            0.0031483959579483313,
+            0.02148131702542354
+          ],
+          "mean": 0.012209435445408767,
+          "organizations": 499,
+          "resamples": 10000
+        },
+        "recall20": {
+          "ci95": [
+            -0.005141339024862015,
+            0.008658775298779293
+          ],
+          "mean": 0.0018643703634348,
+          "organizations": 499,
+          "resamples": 10000
+        }
+      }
+    },
+    "holdout_68_previously_exposed": {
+      "expert_top20_denominator": 1360,
+      "methods": {
+        "v2_model": {
+          "ndcg20": {
+            "ci95": [
+              0.28925431001383334,
+              0.4360754786680426
+            ],
+            "mean": 0.36137513317431463,
+            "organizations": 68,
+            "resamples": 10000
+          },
+          "p10": {
+            "ci95": [
+              0.4018137254901961,
+              0.5415196078431374
+            ],
+            "mean": 0.4709313725490196,
+            "organizations": 68,
+            "resamples": 10000
+          },
+          "recall20": {
+            "ci95": [
+              0.33688830961511396,
+              0.4449951876683688
+            ],
+            "mean": 0.3902328473255331,
+            "organizations": 68,
+            "resamples": 10000
+          }
+        },
+        "v3_cap_selected": {
+          "ndcg20": {
+            "ci95": [
+              0.3037424361880114,
+              0.4503517622608895
+            ],
+            "mean": 0.3755232416178934,
+            "organizations": 68,
+            "resamples": 10000
+          },
+          "p10": {
+            "ci95": [
+              0.40722794117647065,
+              0.542844975490196
+            ],
+            "mean": 0.47526960784313727,
+            "organizations": 68,
+            "resamples": 10000
+          },
+          "recall20": {
+            "ci95": [
+              0.33393147181121247,
+              0.4426026327097824
+            ],
+            "mean": 0.3876615000067012,
+            "organizations": 68,
+            "resamples": 10000
+          }
+        }
+      },
+      "organizations": 68,
+      "paired_v3_minus_v2": {
+        "ndcg20": {
+          "ci95": [
+            -0.00971682300771466,
+            0.03882956781252831
+          ],
+          "mean": 0.014148108443578757,
+          "organizations": 68,
+          "resamples": 10000
+        },
+        "p10": {
+          "ci95": [
+            -0.01941176470588235,
+            0.026911764705882347
+          ],
+          "mean": 0.0043382352941176445,
+          "organizations": 68,
+          "resamples": 10000
+        },
+        "recall20": {
+          "ci95": [
+            -0.021750887600853745,
+            0.015505439316875059
+          ],
+          "mean": -0.00257134731883184,
+          "organizations": 68,
+          "resamples": 10000
+        }
+      }
+    },
+    "training_disjoint_135": {
+      "expert_top20_denominator": 2700,
+      "methods": {
+        "v2_model": {
+          "ndcg20": {
+            "ci95": [
+              0.2737254909669228,
+              0.3753553158916762
+            ],
+            "mean": 0.3235450805495065,
+            "organizations": 135,
+            "resamples": 10000
+          },
+          "p10": {
+            "ci95": [
+              0.3651412894375857,
+              0.46446047365448234
+            ],
+            "mean": 0.4145401436294683,
+            "organizations": 135,
+            "resamples": 10000
+          },
+          "recall20": {
+            "ci95": [
+              0.30281271133327803,
+              0.3830372377083033
+            ],
+            "mean": 0.34200630334832255,
+            "organizations": 135,
+            "resamples": 10000
+          }
+        },
+        "v3_cap_selected": {
+          "ndcg20": {
+            "ci95": [
+              0.28901763612751985,
+              0.38765317412029493
+            ],
+            "mean": 0.33735545832172376,
+            "organizations": 135,
+            "resamples": 10000
+          },
+          "p10": {
+            "ci95": [
+              0.37617989417989417,
+              0.47160621693121685
+            ],
+            "mean": 0.42411816578483247,
+            "organizations": 135,
+            "resamples": 10000
+          },
+          "recall20": {
+            "ci95": [
+              0.3057209087762862,
+              0.381912807743482
+            ],
+            "mean": 0.34334009047056835,
+            "organizations": 135,
+            "resamples": 10000
+          }
+        }
+      },
+      "organizations": 135,
+      "paired_v3_minus_v2": {
+        "ndcg20": {
+          "ci95": [
+            -0.0033084114973598914,
+            0.03134166958395431
+          ],
+          "mean": 0.013810377772217297,
+          "organizations": 135,
+          "resamples": 10000
+        },
+        "p10": {
+          "ci95": [
+            -0.008162761236181716,
+            0.027664990605295606
+          ],
+          "mean": 0.009578022155364203,
+          "organizations": 135,
+          "resamples": 10000
+        },
+        "recall20": {
+          "ci95": [
+            -0.014524913802132581,
+            0.016903000233948487
+          ],
+          "mean": 0.00133378712224569,
+          "organizations": 135,
+          "resamples": 10000
+        }
+      }
+    }
+  },
+  "limits": [
+    "All GUIDE_Test labels previously accessed",
+    "Threshold and component cap selected on 42 development queues",
+    "Entity evidence availability at alert creation and operational field approval unresolved",
+    "No independent cohort or live SOC evaluation"
+  ],
+  "organizations": 499,
+  "pair_and_group": {
+    "v2_model": {
+      "f1": 0.003383801232903163,
+      "fn": 158916275,
+      "fp": 28606,
+      "oracle_order_recall20_ceiling": 0.6982965931863727,
+      "precision": 0.9041475951453903,
+      "recall": 0.0016950725480082253,
+      "recoverable_top20_oracle_order": 6969,
+      "tp": 269832
+    },
+    "v3_cap_selected": {
+      "f1": 0.002397863775398099,
+      "fn": 158994884,
+      "fp": 117135,
+      "oracle_order_recall20_ceiling": 0.6668336673346693,
+      "precision": 0.6201330920553383,
+      "recall": 0.0012012543280551487,
+      "recoverable_top20_oracle_order": 6655,
+      "tp": 191223
+    }
+  },
+  "prediction_freeze_sha256": "6be10046254dde5f56e4e170e470dc24d4bd32f6bc2bba692fdda1625a2cb981",
+  "prediction_resource": {
+    "organization_seconds_p50": 0.08725310000227182,
+    "organization_seconds_p95": 0.5366709600017197,
+    "peak_process_rss_bytes": 516243456,
+    "wall_seconds": 101.61122350000005
+  },
+  "run": "submission_entity_time_cap_v3_20261114_v1"
+}

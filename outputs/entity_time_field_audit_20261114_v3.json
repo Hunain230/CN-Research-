@@ -1,0 +1,146 @@
+{
+  "alerts_with_any_entity_field": 636140,
+  "alerts_with_inconsistent_timestamp_across_evidence_rows": 0,
+  "analysis_code_sha256": "ffb5d27b0013700d1f7179330331700c9e95d21b8ab265030f6704ae3a3b0da8",
+  "classification": "aggregate_only_local_field_inventory_not_point_in_time_approval",
+  "composite_alert_keys": 637320,
+  "evidence_rows": 4147992,
+  "field_alert_nonempty": {
+    "AccountName": 566921,
+    "AccountObjectId": 549788,
+    "AccountSid": 551882,
+    "AccountUpn": 562176,
+    "ApplicationId": 54554,
+    "DeviceId": 129130,
+    "DeviceName": 156762,
+    "EmailClusterId": 35224,
+    "IpAddress": 401581,
+    "NetworkMessageId": 107226,
+    "OAuthApplicationId": 725,
+    "Sha256": 141596,
+    "Timestamp": 637320,
+    "Url": 112205
+  },
+  "field_row_nonempty": {
+    "AccountName": 1008673,
+    "AccountObjectId": 951296,
+    "AccountSid": 965544,
+    "AccountUpn": 1454547,
+    "ApplicationId": 63383,
+    "DeviceId": 150836,
+    "DeviceName": 345332,
+    "EmailClusterId": 41707,
+    "IpAddress": 922886,
+    "NetworkMessageId": 475711,
+    "OAuthApplicationId": 804,
+    "Sha256": 306616,
+    "Timestamp": 4147992,
+    "Url": 291242
+  },
+  "field_row_placeholder_or_missing": {
+    "AccountName": 3139319,
+    "AccountObjectId": 3196696,
+    "AccountSid": 3182448,
+    "AccountUpn": 2693445,
+    "ApplicationId": 4084609,
+    "DeviceId": 3997156,
+    "DeviceName": 3802660,
+    "EmailClusterId": 4106285,
+    "IpAddress": 3225106,
+    "NetworkMessageId": 3672281,
+    "OAuthApplicationId": 4147188,
+    "Sha256": 3841376,
+    "Timestamp": 0,
+    "Url": 3856750
+  },
+  "modal_sentinel_sample_evidence": {
+    "AccountName": {
+      "excluded_as_probable_sentinel": true,
+      "modal_value_sha256": "b09d4f9b15b2762951572b417a2815528d64206f6857ccb60ca93ca3ba68aa3a",
+      "sample_modal_fraction": 0.75693,
+      "sample_modal_is_numeric_max": true
+    },
+    "AccountObjectId": {
+      "excluded_as_probable_sentinel": true,
+      "modal_value_sha256": "bceb812327ad45b47e4140371c2c203ea084cb8e70fd76e5111404ca1336f3d7",
+      "sample_modal_fraction": 0.77123,
+      "sample_modal_is_numeric_max": true
+    },
+    "AccountSid": {
+      "excluded_as_probable_sentinel": true,
+      "modal_value_sha256": "4312030b789107ba482dacb13b75c9483ebd807f6301704df714baef2d3b9c39",
+      "sample_modal_fraction": 0.76747,
+      "sample_modal_is_numeric_max": true
+    },
+    "AccountUpn": {
+      "excluded_as_probable_sentinel": true,
+      "modal_value_sha256": "fb12569a8d1a1af0d883ccab47d5bf34a40cb3a1c347fcfb3327c941f7016998",
+      "sample_modal_fraction": 0.64873,
+      "sample_modal_is_numeric_max": true
+    },
+    "ApplicationId": {
+      "excluded_as_probable_sentinel": true,
+      "modal_value_sha256": "5a9788c1434d2653d2d6ed7eda409a5af5d196f29b9da89c52ff83a94490445f",
+      "sample_modal_fraction": 0.977,
+      "sample_modal_is_numeric_max": true
+    },
+    "DeviceId": {
+      "excluded_as_probable_sentinel": true,
+      "modal_value_sha256": "d04a2ce9be72a4549d08a437625d199897cdfe564574d9a670705df3c98a82f3",
+      "sample_modal_fraction": 0.96333,
+      "sample_modal_is_numeric_max": true
+    },
+    "DeviceName": {
+      "excluded_as_probable_sentinel": true,
+      "modal_value_sha256": "e52f3ae4bd22017fae8eefcd96998a69fc1ed8fec71a1d060c70e0e655934b0b",
+      "sample_modal_fraction": 0.91622,
+      "sample_modal_is_numeric_max": true
+    },
+    "EmailClusterId": {
+      "excluded_as_probable_sentinel": false,
+      "modal_value_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "sample_modal_fraction": 0.9899,
+      "sample_modal_is_numeric_max": false
+    },
+    "IpAddress": {
+      "excluded_as_probable_sentinel": true,
+      "modal_value_sha256": "74353c91b04dd31ca1e49fbb490046526bdbc5374e4bd88ae2ab5be98eb79b41",
+      "sample_modal_fraction": 0.77517,
+      "sample_modal_is_numeric_max": true
+    },
+    "NetworkMessageId": {
+      "excluded_as_probable_sentinel": true,
+      "modal_value_sha256": "8a6cb6223f981b72833c2065b4a99acf7743766bd9e313ff61a85e266eddc79f",
+      "sample_modal_fraction": 0.88432,
+      "sample_modal_is_numeric_max": true
+    },
+    "OAuthApplicationId": {
+      "excluded_as_probable_sentinel": true,
+      "modal_value_sha256": "28096b238fafbfd5abdb8ddf4e7f5a2c67196cfd8b5d49a196012d0269a2189f",
+      "sample_modal_fraction": 0.99974,
+      "sample_modal_is_numeric_max": true
+    },
+    "Sha256": {
+      "excluded_as_probable_sentinel": true,
+      "modal_value_sha256": "c7d7eaa8d5476a6553ad8a9fae83c092c076194f8810c21ed0ed0c2e1b36cc84",
+      "sample_modal_fraction": 0.92126,
+      "sample_modal_is_numeric_max": true
+    },
+    "Url": {
+      "excluded_as_probable_sentinel": true,
+      "modal_value_sha256": "a047febe21d32cca92fec7e125238486b10eab034128ea7c596725ef09621dd9",
+      "sample_modal_fraction": 0.92935,
+      "sample_modal_is_numeric_max": true
+    }
+  },
+  "notes": [
+    "Counts include ambiguous alert keys and all source organizations",
+    "Publisher describes Timestamp as alert creation time but says noise was added",
+    "Local CSV cannot prove when each evidence field became available to an analyst",
+    "Literal 0 and other declared placeholders are treated as missing",
+    "Dominant numeric-maximum values are conservatively excluded as probable per-field missing sentinels; this is an inference, not publisher confirmation",
+    "No field is approved for operational model input by this inventory"
+  ],
+  "source_sha256": "fdfd7523efd6e3c26bd0290ba6acbcb237196cf923dd56a28e96802035db35a3",
+  "timestamp_parseable_rows": 4147992
+}

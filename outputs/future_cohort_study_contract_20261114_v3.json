@@ -1,0 +1,49 @@
+{
+  "chosen_method": "v2_entity_time_pair_groups_threshold_0.75_cap100_plus_v4_train_only_priority_model",
+  "claims_not_yet_supported": [
+    "80_percent_absolute_recall_at_20",
+    "confirmatory_superiority",
+    "operational_soc_readiness"
+  ],
+  "classification": "prospective_method_freeze_not_new_cohort_evaluation_or_operational_approval",
+  "denominator": "all_20_expert_labels_per_eligible_organization",
+  "gates": [
+    "new_untouched_expert_ranked_cohort",
+    "alert_and_evidence_availability_timing_confirmed",
+    "operational_field_policy_approved_before_live_use",
+    "queue_snapshot_and_rank_direction_documented"
+  ],
+  "matched_baselines": [
+    "v2_groups_plus_prior_transferred_ranker",
+    "frozen_rule_groups_plus_transferred_ranker"
+  ],
+  "method_source_sha256": {
+    "configs/entity_time_sensitivity_policy.yaml": "17a4202c977806b990340b2119663b5fece87f081688b9e48987ec5e9ff7c4f5",
+    "configs/field_policy.yaml": "0636d2f4e4f17edcd5402d67cac291484d3a39493b2c7377b562735771065ee5",
+    "data/derived/submission_entity_time_pair_v2_20261114_v1/pair_model.pkl": "1f383e2db24f3c3d0eb8103ef760021b0c6c86df632b61a3471f77b19bfe9db9",
+    "data/derived/submission_group_ranker_v4_20261114_v1/rank_model.pkl": "b7179a9065729a01a596fcb6ecd6875ae21285eb9883ba61e194f229bf7ef1d6",
+    "outputs/submission_entity_time_pair_v2_20261114_v1/calibration.json": "43db1ea2693090df319e37092f1ee7c3d495a9fe66306adb6ab8dee41558bca7",
+    "outputs/submission_entity_time_pair_v2_20261114_v1/prediction_freeze.json": "819fde15fbf744ee1fd2c0f347c375a40a917bed1dc9b3a074fe66b325fb9b4e",
+    "outputs/submission_group_ranker_v4_20261114_v1/prediction_freeze.json": "bbb58e9ef13227951c1ba527a20f443bad56cea93ce0246a8926bc57594e8098",
+    "src/submission_entity_time_pair_v2.py": "0b4e54efdd6e9ddf7588eb7a14bd7f685de653f031aea16fd17170ac0055d7cb",
+    "src/submission_full_entity_time.py": "de975c7c8701de715890624fb71b99798026729dcfd17b26f70fe164e37b6355",
+    "src/submission_group_ranker_v4.py": "8e7eaedd5283055117e0070e015798c15f5e3c025fb31ccd3d78e684d563c8d9",
+    "submission/freeze_future_study_v3.py": "95d8b1708a09c1d72dd6e4dbd6d46f040195db05c664f7fc1ecf05c000222e8d"
+  },
+  "new_cohort_available": false,
+  "new_cohort_labels_opened": false,
+  "paired_unit": "organization",
+  "primary_metric": "organization_macro_end_to_end_recall_at_20",
+  "ranking_ties": "uniform_expected_order_within_equal_score_blocks",
+  "reason": "V4 improved matched ranking on training-disjoint historical organizations; bridge grouping gain was uncertain and historical holdout worsened",
+  "recovery_rule": "predicted_top20_group_80_percent_gold_completeness_and_80_percent_group_purity",
+  "secondary_metrics": [
+    "candidate_recall_and_coverage",
+    "pair_precision_recall_f1",
+    "false_merges_and_splits",
+    "precision_at_10",
+    "ndcg_at_20",
+    "review_load",
+    "resource_use"
+  ]
+}

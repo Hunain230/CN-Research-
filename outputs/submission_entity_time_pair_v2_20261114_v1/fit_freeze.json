@@ -1,0 +1,37 @@
+{
+  "classification": "exploratory_train_only_entity_time_pair_model",
+  "features": "15_descriptor_overlap_plus_entity_type_overlap_rarity_time_gap_and_candidate_route",
+  "model": "hist_gradient_boosting_180_leaf31_depth6_lr0.05_seed37",
+  "model_sha256": "1f383e2db24f3c3d0eb8103ef760021b0c6c86df632b61a3471f77b19bfe9db9",
+  "run": "submission_entity_time_pair_v2_20261114_v1",
+  "sampling": "up_to_200_positive_and_400_negative_candidate_pairs_per_training_organization",
+  "source_sha256": {
+    "data\\derived\\guide_rerun_v2\\split.json": "a99f53483d91e32e6872b71ae385123db71e36cb4b52c3b8eeb985c5ffb36e5d",
+    "data\\derived\\submission_full_guide_paper_20261113_v1\\predictions.pkl": "f8ac447e412d37bb2a26f2431a7ab4dacd316ead426fb0429be1d9e01b439e7c",
+    "data\\derived\\submission_full_ranker_transfer_20261114_v1\\scores.pkl": "b33b6849af1a9856db4ba7e2e761c7cc30cb3285c361b99be894bd06a6a51d41",
+    "data\\derived\\submission_pair_model_grouping_20261114_v1\\pair_model.pkl": "3bf655d03bc879ef9ca2da5c097d8f30aba081b29e9b10401c3a7b26952226c9",
+    "data\\derived\\submission_trained_ranker_20261114_v1\\model.pkl": "bd9f4c1af48289d652662aea88413a13f3dca5ebeb7d5f58f18564b568cf1d4c",
+    "outputs\\entity_time_field_audit_20261114_v3.json": "2c4b5c3728c1a735fc9f476d7abad0efeda7dcfee263d35c4a4391adf4b9ff5f",
+    "outputs\\submission_entity_time_shards_20261114_v1.json": "7ed27c44153d09fb7f1de5f86231b7b7f4beb9841feb2c6658008a815b47ca31",
+    "outputs\\submission_full_entity_time_20261114_v1\\prediction_freeze.json": "eaa81a87b0e639d93671ccc8a128be5ac6270a4d8c4be19e985acb836ffcd4f8",
+    "outputs\\submission_full_guide_paper_20261113_v1\\prediction_freeze.json": "673f70b11330b51f79ea3ac018685469471fd59818371af4d67632b7c8917aab",
+    "outputs\\submission_full_ranker_transfer_20261114_v1\\prediction_freeze.json": "c9dcd6b172d2444da657052cc42ee111c214e265e156e7b723c491a5587e8861",
+    "outputs\\submission_pair_group_calibration_20261114_v1.json": "930bf33bdf6a6eda8d25ab906593ddcb59742deaf3a2ac171b8d6a6f32cedd88",
+    "outputs\\submission_pair_model_grouping_20261114_v1\\fit_freeze.json": "c0bcb84f6e73066696f5031d41972f7e31877c1c99fe6d30131918efd3742742",
+    "outputs\\submission_trained_ranker_20261114_v1\\prediction_freeze.json": "09a7238823c8956e69b82225cd447a4248ffd153e87bf397753f5cf9ece901cc",
+    "src\\submission_entity_time_pair_v2.py": "0b4e54efdd6e9ddf7588eb7a14bd7f685de653f031aea16fd17170ac0055d7cb",
+    "src\\submission_full_entity_time.py": "de975c7c8701de715890624fb71b99798026729dcfd17b26f70fe164e37b6355",
+    "src\\submission_pair_model_grouping.py": "fc4da695846108a17af6ab91afd1288f3594607e4f5c6302fe1e3a8c29b36020",
+    "submission\\audit_entity_time_fields_v3.py": "ffb5d27b0013700d1f7179330331700c9e95d21b8ab265030f6704ae3a3b0da8"
+  },
+  "training_census": {
+    "alerts": 172661,
+    "candidates_seen": 597242,
+    "negative_train_pairs": 92466,
+    "organizations": 334,
+    "positive_train_pairs": 31294
+  },
+  "training_labels_read": true,
+  "validation_or_holdout_labels_read": false,
+  "wall_seconds": 27.38468880000073
+}

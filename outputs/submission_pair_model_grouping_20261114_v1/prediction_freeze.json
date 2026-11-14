@@ -1,0 +1,14 @@
+{
+  "alerts": 11219,
+  "candidate_pairs": 1216600,
+  "classification": "exploratory_pair_model_grouping_on_frozen_57_candidates",
+  "evaluation_labels_read_in_prediction_stage": false,
+  "fit_freeze_sha256": "c0bcb84f6e73066696f5031d41972f7e31877c1c99fe6d30131918efd3742742",
+  "organizations": 57,
+  "prediction_sha256": "18670bea5bd7156253610494fe7304d357d36335cee499eb18e9a78590fcb005",
+  "raw_scan_rows": 4147992,
+  "run": "submission_pair_model_grouping_20261114_v1",
+  "strong_edges": 758141,
+  "threshold": 0.5,
+  "unchanged_candidate_pairs": true
+}

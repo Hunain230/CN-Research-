@@ -1,0 +1,14 @@
+{
+  "classification": "exploratory_previously_exposed_57_queue_pair_model_grouping_not_confirmatory",
+  "command_evaluate": "python -m src.submission_pair_model_grouping evaluate --run-id submission_pair_model_grouping_20261114_v1",
+  "command_fit": "python -m src.submission_pair_model_grouping fit --run-id submission_pair_model_grouping_20261114_v1",
+  "command_predict": "python -m src.submission_pair_model_grouping predict --run-id submission_pair_model_grouping_20261114_v1",
+  "sha256": {
+    "data\\derived\\submission_pair_model_grouping_20261114_v1\\pair_model.pkl": "3bf655d03bc879ef9ca2da5c097d8f30aba081b29e9b10401c3a7b26952226c9",
+    "data\\derived\\submission_pair_model_grouping_20261114_v1\\predictions.pkl": "18670bea5bd7156253610494fe7304d357d36335cee499eb18e9a78590fcb005",
+    "outputs\\submission_pair_model_grouping_20261114_v1\\fit_freeze.json": "c0bcb84f6e73066696f5031d41972f7e31877c1c99fe6d30131918efd3742742",
+    "outputs\\submission_pair_model_grouping_20261114_v1\\metrics.json": "c99aa7499edd4502b4797b5c612825fefb793ad1f6801324c6f2f2b49ad0995d",
+    "outputs\\submission_pair_model_grouping_20261114_v1\\prediction_freeze.json": "ec101165c5e5c741a820ce4668d23add820b6cd3791c1ba4d9af32aa4039841c",
+    "src\\submission_pair_model_grouping.py": "fc4da695846108a17af6ab91afd1288f3594607e4f5c6302fe1e3a8c29b36020"
+  }
+}

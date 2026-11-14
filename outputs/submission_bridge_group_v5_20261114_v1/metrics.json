@@ -1,0 +1,313 @@
+{
+  "classification": "exploratory_post_exposure_bridge_group_not_confirmatory",
+  "cohorts": {
+    "all_499_descriptive": {
+      "expert_top20_denominator": 9980,
+      "methods": {
+        "v2_base_group": {
+          "ndcg20": {
+            "ci95": [
+              0.29473085545382727,
+              0.3456150618376579
+            ],
+            "mean": 0.31983265199603494,
+            "organizations": 499,
+            "resamples": 5000
+          },
+          "p10": {
+            "ci95": [
+              0.39813736452078585,
+              0.44823059278517985
+            ],
+            "mean": 0.423302529864772,
+            "organizations": 499,
+            "resamples": 5000
+          },
+          "recall20": {
+            "ci95": [
+              0.3197228484437901,
+              0.3597585550704666
+            ],
+            "mean": 0.3396821129483077,
+            "organizations": 499,
+            "resamples": 5000
+          }
+        },
+        "v5_bridge_group": {
+          "ndcg20": {
+            "ci95": [
+              0.2963278763990621,
+              0.3472178389245781
+            ],
+            "mean": 0.32142744243060256,
+            "organizations": 499,
+            "resamples": 5000
+          },
+          "p10": {
+            "ci95": [
+              0.3999181281198772,
+              0.45020310542667014
+            ],
+            "mean": 0.4252980593853516,
+            "organizations": 499,
+            "resamples": 5000
+          },
+          "recall20": {
+            "ci95": [
+              0.3219082023691357,
+              0.36212586282079556
+            ],
+            "mean": 0.34210089187948445,
+            "organizations": 499,
+            "resamples": 5000
+          }
+        }
+      },
+      "organizations": 499,
+      "paired_v5_minus_v2": {
+        "ndcg20": {
+          "ci95": [
+            -4.271392698484099e-05,
+            0.003327318626439923
+          ],
+          "mean": 0.0015947904345676163,
+          "organizations": 499,
+          "resamples": 5000
+        },
+        "p10": {
+          "ci95": [
+            -0.0024213530846797383,
+            0.006327899388520629
+          ],
+          "mean": 0.0019955295205796196,
+          "organizations": 499,
+          "resamples": 5000
+        },
+        "recall20": {
+          "ci95": [
+            -0.0003945116844582576,
+            0.005425328318654445
+          ],
+          "mean": 0.002418778931176792,
+          "organizations": 499,
+          "resamples": 5000
+        }
+      }
+    },
+    "holdout_68_previously_exposed": {
+      "expert_top20_denominator": 1360,
+      "methods": {
+        "v2_base_group": {
+          "ndcg20": {
+            "ci95": [
+              0.29006405668079216,
+              0.4314139547970309
+            ],
+            "mean": 0.36137513317431463,
+            "organizations": 68,
+            "resamples": 5000
+          },
+          "p10": {
+            "ci95": [
+              0.3995955882352941,
+              0.5393137254901961
+            ],
+            "mean": 0.4709313725490196,
+            "organizations": 68,
+            "resamples": 5000
+          },
+          "recall20": {
+            "ci95": [
+              0.3355607492997199,
+              0.4457650602106871
+            ],
+            "mean": 0.3902328473255331,
+            "organizations": 68,
+            "resamples": 5000
+          }
+        },
+        "v5_bridge_group": {
+          "ndcg20": {
+            "ci95": [
+              0.29211935226128916,
+              0.43387823613224713
+            ],
+            "mean": 0.36349075552112925,
+            "organizations": 68,
+            "resamples": 5000
+          },
+          "p10": {
+            "ci95": [
+              0.40151838235294113,
+              0.5378970588235293
+            ],
+            "mean": 0.47034313725490196,
+            "organizations": 68,
+            "resamples": 5000
+          },
+          "recall20": {
+            "ci95": [
+              0.33425554465207136,
+              0.44497897777532064
+            ],
+            "mean": 0.38868817263747607,
+            "organizations": 68,
+            "resamples": 5000
+          }
+        }
+      },
+      "organizations": 68,
+      "paired_v5_minus_v2": {
+        "ndcg20": {
+          "ci95": [
+            -2.2100292909595343e-05,
+            0.004889045658617534
+          ],
+          "mean": 0.0021156223468145993,
+          "organizations": 68,
+          "resamples": 5000
+        },
+        "p10": {
+          "ci95": [
+            -0.017058823529411765,
+            0.014117647058823528
+          ],
+          "mean": -0.0005882352941176468,
+          "organizations": 68,
+          "resamples": 5000
+        },
+        "recall20": {
+          "ci95": [
+            -0.011373175690730838,
+            0.007352941176470588
+          ],
+          "mean": -0.0015446746880570402,
+          "organizations": 68,
+          "resamples": 5000
+        }
+      }
+    },
+    "training_disjoint_135": {
+      "expert_top20_denominator": 2700,
+      "methods": {
+        "v2_base_group": {
+          "ndcg20": {
+            "ci95": [
+              0.27503472099657567,
+              0.3746648342382214
+            ],
+            "mean": 0.3235450805495065,
+            "organizations": 135,
+            "resamples": 5000
+          },
+          "p10": {
+            "ci95": [
+              0.36569876543209884,
+              0.4626507141128054
+            ],
+            "mean": 0.4145401436294683,
+            "organizations": 135,
+            "resamples": 5000
+          },
+          "recall20": {
+            "ci95": [
+              0.3025275940478383,
+              0.3840827044897349
+            ],
+            "mean": 0.34200630334832255,
+            "organizations": 135,
+            "resamples": 5000
+          }
+        },
+        "v5_bridge_group": {
+          "ndcg20": {
+            "ci95": [
+              0.2769812701738211,
+              0.3755118725538564
+            ],
+            "mean": 0.3249335282409778,
+            "organizations": 135,
+            "resamples": 5000
+          },
+          "p10": {
+            "ci95": [
+              0.3659419470668926,
+              0.46260704429920113
+            ],
+            "mean": 0.41399693375292507,
+            "organizations": 135,
+            "resamples": 5000
+          },
+          "recall20": {
+            "ci95": [
+              0.3037024535947051,
+              0.3850839805950143
+            ],
+            "mean": 0.34338925489269484,
+            "organizations": 135,
+            "resamples": 5000
+          }
+        }
+      },
+      "organizations": 135,
+      "paired_v5_minus_v2": {
+        "ndcg20": {
+          "ci95": [
+            -0.0006718234758572353,
+            0.003555913162671591
+          ],
+          "mean": 0.001388447691471358,
+          "organizations": 135,
+          "resamples": 5000
+        },
+        "p10": {
+          "ci95": [
+            -0.009629629629629629,
+            0.007359259259259242
+          ],
+          "mean": -0.0005432098765432101,
+          "organizations": 135,
+          "resamples": 5000
+        },
+        "recall20": {
+          "ci95": [
+            -0.004778722917042057,
+            0.007213369736813147
+          ],
+          "mean": 0.0013829515443722548,
+          "organizations": 135,
+          "resamples": 5000
+        }
+      }
+    }
+  },
+  "limits": [
+    "GUIDE_Test labels previously accessed",
+    "No untouched cohort",
+    "Entity/time availability and operational approval unresolved"
+  ],
+  "pair_and_group": {
+    "v2_base_group": {
+      "f1": 0.003383801232903163,
+      "fn": 158916275,
+      "fp": 28606,
+      "oracle_order_recall20_ceiling": 0.6982965931863727,
+      "precision": 0.9041475951453903,
+      "recall": 0.0016950725480082253,
+      "recoverable_top20_oracle_order": 6969,
+      "tp": 269832
+    },
+    "v5_bridge_group": {
+      "f1": 0.0034146891789464,
+      "fn": 158913805,
+      "fp": 30192,
+      "oracle_order_recall20_ceiling": 0.6947895791583166,
+      "precision": 0.9001897558298677,
+      "recall": 0.001710588977466482,
+      "recoverable_top20_oracle_order": 6934,
+      "tp": 272302
+    }
+  },
+  "prediction_freeze_sha256": "24176783b1b0546764184731613fc2f6be904a18e24de1aa347000b7bd12ac3c",
+  "run": "submission_bridge_group_v5_20261114_v1"
+}

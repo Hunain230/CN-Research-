@@ -1,0 +1,38 @@
+{
+  "analysis_code_sha256": "b4d26dcdcc081583d1247dbbb2f826e2480522cfa277fa84ff24583b31375aed",
+  "classification": "development_only_candidate_expansion_oracle_bound_not_model_performance",
+  "configs": {
+    "current_5_48h_1h": {
+      "candidate_oracle_connectivity_recall20": 0.8511904761904762,
+      "candidate_pairs": 23397,
+      "expert_top20_labels": 840,
+      "generation_ms": 52,
+      "oracle_connected_top20_labels": 715,
+      "positive_candidate_pairs": 7845
+    },
+    "moderate_10_72h_2h": {
+      "candidate_oracle_connectivity_recall20": 0.8523809523809524,
+      "candidate_pairs": 34234,
+      "expert_top20_labels": 840,
+      "generation_ms": 50,
+      "oracle_connected_top20_labels": 716,
+      "positive_candidate_pairs": 11654
+    },
+    "wide_20_96h_4h": {
+      "candidate_oracle_connectivity_recall20": 0.8547619047619047,
+      "candidate_pairs": 49943,
+      "expert_top20_labels": 840,
+      "generation_ms": 62,
+      "oracle_connected_top20_labels": 718,
+      "positive_candidate_pairs": 17296
+    }
+  },
+  "notes": [
+    "Oracle connectivity ignores group purity and ranking",
+    "No holdout labels read",
+    "Generation times exclude parquet loading and model scoring"
+  ],
+  "organizations": 42,
+  "source_projection_manifest_sha256": "7ed27c44153d09fb7f1de5f86231b7b7f4beb9841feb2c6658008a815b47ca31",
+  "wall_seconds": 1.891335700001946
+}

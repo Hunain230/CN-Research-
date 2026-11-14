@@ -1,0 +1,81 @@
+{
+  "analysis_code_sha256": "157764a2a48926f1379c3cfd3b0aab62acd0bc36a07f4f3686a8bca1b136c948",
+  "by_historical_split": {
+    "holdout": {
+      "absent_from_unambiguous_scope": 80,
+      "candidate_disconnected": 47,
+      "impure_group": 26,
+      "recoverable_but_ranked_below_20": 505,
+      "recovered_deterministic_order": 531,
+      "split_by_linker_or_cap": 171
+    },
+    "train": {
+      "absent_from_unambiguous_scope": 566,
+      "candidate_disconnected": 342,
+      "impure_group": 155,
+      "recoverable_but_ranked_below_20": 2362,
+      "recovered_deterministic_order": 2262,
+      "split_by_linker_or_cap": 993
+    },
+    "unknown": {
+      "absent_from_unambiguous_scope": 52,
+      "candidate_disconnected": 32,
+      "impure_group": 17,
+      "recoverable_but_ranked_below_20": 197,
+      "recovered_deterministic_order": 203,
+      "split_by_linker_or_cap": 99
+    },
+    "validation": {
+      "absent_from_unambiguous_scope": 157,
+      "candidate_disconnected": 66,
+      "impure_group": 20,
+      "recoverable_but_ranked_below_20": 514,
+      "recovered_deterministic_order": 395,
+      "split_by_linker_or_cap": 188
+    }
+  },
+  "by_incident_size": {
+    "1": {
+      "impure_group": 138,
+      "recoverable_but_ranked_below_20": 3006,
+      "recovered_deterministic_order": 3198
+    },
+    "11-100": {
+      "candidate_disconnected": 112,
+      "impure_group": 3,
+      "recoverable_but_ranked_below_20": 13,
+      "recovered_deterministic_order": 3,
+      "split_by_linker_or_cap": 158
+    },
+    "2-10": {
+      "candidate_disconnected": 350,
+      "impure_group": 77,
+      "recoverable_but_ranked_below_20": 559,
+      "recovered_deterministic_order": 190,
+      "split_by_linker_or_cap": 1244
+    },
+    ">100": {
+      "candidate_disconnected": 25,
+      "split_by_linker_or_cap": 49
+    },
+    "absent": {
+      "absent_from_unambiguous_scope": 855
+    }
+  },
+  "candidate_prediction_freeze_sha256": "eaa81a87b0e639d93671ccc8a128be5ac6270a4d8c4be19e985acb836ffcd4f8",
+  "classification": "evaluator_only_aggregate_frozen_v2_miss_audit_not_new_model_evaluation",
+  "counts": {
+    "absent_from_unambiguous_scope": 855,
+    "candidate_disconnected": 487,
+    "impure_group": 218,
+    "recoverable_but_ranked_below_20": 3578,
+    "recovered_deterministic_order": 3391,
+    "split_by_linker_or_cap": 1451
+  },
+  "gold_top20_labels": 9980,
+  "organizations": 499,
+  "ranking_tie_note": "Deterministic score/index order is diagnostic; official Recall@20 uses tie-aware expected ordering.",
+  "reasons_are_mutually_exclusive": true,
+  "run": "submission_entity_time_pair_v2_20261114_v1",
+  "v2_prediction_freeze_sha256": "819fde15fbf744ee1fd2c0f347c375a40a917bed1dc9b3a074fe66b325fb9b4e"
+}
