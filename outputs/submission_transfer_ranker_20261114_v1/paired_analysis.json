@@ -1,0 +1,106 @@
+{
+  "classification": "additive_exploratory_paired_organization_analysis_not_confirmatory",
+  "comparisons": {
+    "transfer_rule_minus_B0_rule_count": {
+      "ndcg1": {
+        "ci95": [
+          0.09529180231379183,
+          0.22424557197989767
+        ],
+        "mean": 0.156613822434618,
+        "organizations": 57,
+        "resamples": 10000
+      },
+      "p10": {
+        "ci95": [
+          0.1704987927342834,
+          0.2668164001135698
+        ],
+        "mean": 0.21677088936273786,
+        "organizations": 57,
+        "resamples": 10000
+      },
+      "recall20": {
+        "ci95": [
+          0.07390918377199472,
+          0.1307945700465407
+        ],
+        "mean": 0.1008653927539012,
+        "organizations": 57,
+        "resamples": 10000
+      }
+    },
+    "transfer_rule_minus_B1_rule_bm25": {
+      "ndcg1": {
+        "ci95": [
+          0.12170311828639485,
+          0.2597077893329588
+        ],
+        "mean": 0.18797715399166334,
+        "organizations": 57,
+        "resamples": 10000
+      },
+      "p10": {
+        "ci95": [
+          0.19655923029263697,
+          0.308657710449742
+        ],
+        "mean": 0.25097809444683905,
+        "organizations": 57,
+        "resamples": 10000
+      },
+      "recall20": {
+        "ci95": [
+          0.10321554958558841,
+          0.17628216702069072
+        ],
+        "mean": 0.13819578647062522,
+        "organizations": 57,
+        "resamples": 10000
+      }
+    },
+    "transfer_rule_minus_offline_CPV_proxy": {
+      "ndcg1": {
+        "ci95": [
+          -0.03546098799764486,
+          0.05245214806871663
+        ],
+        "mean": 0.00814985995004575,
+        "organizations": 57,
+        "resamples": 10000
+      },
+      "p10": {
+        "ci95": [
+          0.026315789473684216,
+          0.10877192982456141
+        ],
+        "mean": 0.06666666666666668,
+        "organizations": 57,
+        "resamples": 10000
+      },
+      "recall20": {
+        "ci95": [
+          0.021929824561403508,
+          0.08203776803118909
+        ],
+        "mean": 0.050282651072124755,
+        "organizations": 57,
+        "resamples": 10000
+      }
+    }
+  },
+  "expert_top20_denominator": 1140,
+  "limits": [
+    "previously accessed 57-organization cohort",
+    "method transfer and comparator choice postdate earlier project label exposure",
+    "shared rule groups for transfer_rule, B0, and B1; offline CPV has different predicted groups",
+    "paired bootstrap descriptive only"
+  ],
+  "organizations": 57,
+  "run": "submission_transfer_ranker_20261114_v1",
+  "source_sha256": {
+    "analysis_code": "fd381e1a4eed625ae128a9c6e58e7095477141336c5d6584fd8583a59df2a5e9",
+    "metrics": "4a6da87856effadefd822b122471c48d3a5a223ffacd4dbcc2ce521f485d3560",
+    "prediction_freeze": "e43923ecc32b103cdabf6a60a04d7b6ae6f32d2bfd2fcbb922a363cc0fe9316c"
+  }
+}
