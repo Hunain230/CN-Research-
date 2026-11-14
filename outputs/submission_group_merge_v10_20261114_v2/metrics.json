@@ -1,0 +1,318 @@
+{
+  "classification": "exploratory_post_exposure_group_merge_not_confirmatory",
+  "cohorts": {
+    "all_499_descriptive": {
+      "expert_top20_denominator": 9980,
+      "methods": {
+        "v10_selected": {
+          "ndcg20": {
+            "ci95": [
+              0.40928832744377963,
+              0.465951868652253
+            ],
+            "mean": 0.4371010591339347,
+            "organizations": 499,
+            "resamples": 5000
+          },
+          "p10": {
+            "ci95": [
+              0.5887725450901803,
+              0.6414829659318638
+            ],
+            "mean": 0.6158316633266533,
+            "organizations": 499,
+            "resamples": 5000
+          },
+          "recall20": {
+            "ci95": [
+              0.47685370741482963,
+              0.5195390781563126
+            ],
+            "mean": 0.4981963927855712,
+            "organizations": 499,
+            "resamples": 5000
+          }
+        },
+        "v2_groups_v7_ranker": {
+          "ndcg20": {
+            "ci95": [
+              0.40928832744377963,
+              0.465951868652253
+            ],
+            "mean": 0.4371010591339347,
+            "organizations": 499,
+            "resamples": 5000
+          },
+          "p10": {
+            "ci95": [
+              0.5887725450901803,
+              0.6414829659318638
+            ],
+            "mean": 0.6158316633266533,
+            "organizations": 499,
+            "resamples": 5000
+          },
+          "recall20": {
+            "ci95": [
+              0.47685370741482963,
+              0.5195390781563126
+            ],
+            "mean": 0.4981963927855712,
+            "organizations": 499,
+            "resamples": 5000
+          }
+        }
+      },
+      "organizations": 499,
+      "paired_v10_minus_v7": {
+        "ndcg20": {
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "mean": 0.0,
+          "organizations": 499,
+          "resamples": 5000
+        },
+        "p10": {
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "mean": 0.0,
+          "organizations": 499,
+          "resamples": 5000
+        },
+        "recall20": {
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "mean": 0.0,
+          "organizations": 499,
+          "resamples": 5000
+        }
+      }
+    },
+    "holdout_68_previously_exposed": {
+      "expert_top20_denominator": 1360,
+      "methods": {
+        "v10_selected": {
+          "ndcg20": {
+            "ci95": [
+              0.36577328252080227,
+              0.5171537904757075
+            ],
+            "mean": 0.438877930341432,
+            "organizations": 68,
+            "resamples": 5000
+          },
+          "p10": {
+            "ci95": [
+              0.536764705882353,
+              0.6808823529411764
+            ],
+            "mean": 0.6102941176470589,
+            "organizations": 68,
+            "resamples": 5000
+          },
+          "recall20": {
+            "ci95": [
+              0.4345588235294118,
+              0.5529411764705882
+            ],
+            "mean": 0.49338235294117655,
+            "organizations": 68,
+            "resamples": 5000
+          }
+        },
+        "v2_groups_v7_ranker": {
+          "ndcg20": {
+            "ci95": [
+              0.36577328252080227,
+              0.5171537904757075
+            ],
+            "mean": 0.438877930341432,
+            "organizations": 68,
+            "resamples": 5000
+          },
+          "p10": {
+            "ci95": [
+              0.536764705882353,
+              0.6808823529411764
+            ],
+            "mean": 0.6102941176470589,
+            "organizations": 68,
+            "resamples": 5000
+          },
+          "recall20": {
+            "ci95": [
+              0.4345588235294118,
+              0.5529411764705882
+            ],
+            "mean": 0.49338235294117655,
+            "organizations": 68,
+            "resamples": 5000
+          }
+        }
+      },
+      "organizations": 68,
+      "paired_v10_minus_v7": {
+        "ndcg20": {
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "mean": 0.0,
+          "organizations": 68,
+          "resamples": 5000
+        },
+        "p10": {
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "mean": 0.0,
+          "organizations": 68,
+          "resamples": 5000
+        },
+        "recall20": {
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "mean": 0.0,
+          "organizations": 68,
+          "resamples": 5000
+        }
+      }
+    },
+    "training_disjoint_135": {
+      "expert_top20_denominator": 2700,
+      "methods": {
+        "v10_selected": {
+          "ndcg20": {
+            "ci95": [
+              0.3611489609592327,
+              0.47131910446408826
+            ],
+            "mean": 0.4164826478070984,
+            "organizations": 135,
+            "resamples": 5000
+          },
+          "p10": {
+            "ci95": [
+              0.5029444444444445,
+              0.6074074074074073
+            ],
+            "mean": 0.5555555555555556,
+            "organizations": 135,
+            "resamples": 5000
+          },
+          "recall20": {
+            "ci95": [
+              0.41222222222222227,
+              0.4981481481481482
+            ],
+            "mean": 0.4551851851851852,
+            "organizations": 135,
+            "resamples": 5000
+          }
+        },
+        "v2_groups_v7_ranker": {
+          "ndcg20": {
+            "ci95": [
+              0.3611489609592327,
+              0.47131910446408826
+            ],
+            "mean": 0.4164826478070984,
+            "organizations": 135,
+            "resamples": 5000
+          },
+          "p10": {
+            "ci95": [
+              0.5029444444444445,
+              0.6074074074074073
+            ],
+            "mean": 0.5555555555555556,
+            "organizations": 135,
+            "resamples": 5000
+          },
+          "recall20": {
+            "ci95": [
+              0.41222222222222227,
+              0.4981481481481482
+            ],
+            "mean": 0.4551851851851852,
+            "organizations": 135,
+            "resamples": 5000
+          }
+        }
+      },
+      "organizations": 135,
+      "paired_v10_minus_v7": {
+        "ndcg20": {
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "mean": 0.0,
+          "organizations": 135,
+          "resamples": 5000
+        },
+        "p10": {
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "mean": 0.0,
+          "organizations": 135,
+          "resamples": 5000
+        },
+        "recall20": {
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "mean": 0.0,
+          "organizations": 135,
+          "resamples": 5000
+        }
+      }
+    }
+  },
+  "limits": [
+    "GUIDE_Test labels previously accessed",
+    "No untouched cohort",
+    "Point-in-time entity availability unresolved"
+  ],
+  "pair_and_group": {
+    "v10_selected": {
+      "f1": 0.003383801232903163,
+      "fn": 158916275,
+      "fp": 28606,
+      "oracle_order_recall20_ceiling": 0.6982965931863727,
+      "precision": 0.9041475951453903,
+      "recall": 0.0016950725480082253,
+      "recoverable_top20_oracle_order": 6969,
+      "tp": 269832
+    },
+    "v2_groups_v7_ranker": {
+      "f1": 0.003383801232903163,
+      "fn": 158916275,
+      "fp": 28606,
+      "oracle_order_recall20_ceiling": 0.6982965931863727,
+      "precision": 0.9041475951453903,
+      "recall": 0.0016950725480082253,
+      "recoverable_top20_oracle_order": 6969,
+      "tp": 269832
+    }
+  },
+  "prediction_freeze_sha256": "64e2e1672e45e3163f38a49787f28a18e7ba25460fe6a9105b17b1dac193d92e",
+  "resource": {
+    "peak_process_rss_bytes": 669356032,
+    "wall_seconds": 115.07163799999398
+  },
+  "run": "submission_group_merge_v10_20261114_v2",
+  "selected_config": "base"
+}

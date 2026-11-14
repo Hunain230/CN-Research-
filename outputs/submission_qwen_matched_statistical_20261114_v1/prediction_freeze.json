@@ -1,0 +1,23 @@
+{
+  "census": {
+    "accepted_edges": 0,
+    "organizations": 20,
+    "selected_alerts": 391,
+    "selected_pairs": 240
+  },
+  "classification": "exploratory_five_descriptor_statistical_control_on_frozen_qwen_pair_sample",
+  "evaluation_labels_read_in_prediction_stage": false,
+  "model_calls": 0,
+  "prediction_sha256": "fdcf4092564c95dfbb6d42e80cbc9abb964831ad56ec93addaa1e7d54d183492",
+  "run": "submission_qwen_matched_statistical_20261114_v1",
+  "source_sha256": {
+    "data\\derived\\guide_rerun_v2\\prepared.pkl": "2b0ab264c985e9680d1f62bd2f4e56f726b8852e71b239635ce81e31a52207c1",
+    "data\\derived\\submission_pair_model_grouping_20261114_v1\\pair_model.pkl": "3bf655d03bc879ef9ca2da5c097d8f30aba081b29e9b10401c3a7b26952226c9",
+    "data\\derived\\submission_qwen_v2_paper_20261113_v1\\predictions.pkl": "875bc5775e98be5854658d3aa55bdea3f6f35d2b5f1ccc58af5e24946258e974",
+    "outputs\\submission_pair_group_calibration_20261114_v1.json": "930bf33bdf6a6eda8d25ab906593ddcb59742deaf3a2ac171b8d6a6f32cedd88",
+    "outputs\\submission_qwen_v2_paper_20261113_v1\\prediction_freeze.json": "0502bfe470223d85108fceedfbdb654f161a1cb91acc083057eece518eab2937",
+    "src\\submission_pair_model_grouping.py": "fc4da695846108a17af6ab91afd1288f3594607e4f5c6302fe1e3a8c29b36020",
+    "src\\submission_qwen_matched_statistical.py": "7fb83d2c39213c07a6bd79ab416dea7d4e3f35d7292a703fb3580c6373b6f7af"
+  },
+  "threshold": 0.995
+}

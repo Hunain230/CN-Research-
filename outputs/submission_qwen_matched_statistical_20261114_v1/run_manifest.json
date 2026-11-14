@@ -1,0 +1,9 @@
+{
+  "classification": "exploratory_20_queue_matched_statistical_control_not_CPV_superiority",
+  "sha256": {
+    "data\\derived\\submission_qwen_matched_statistical_20261114_v1\\predictions.pkl": "fdcf4092564c95dfbb6d42e80cbc9abb964831ad56ec93addaa1e7d54d183492",
+    "outputs\\submission_qwen_matched_statistical_20261114_v1\\metrics.json": "cac80695f54efb0745f5714aeceafe1e0ac0c615cec9c573d709968aac50bd7b",
+    "outputs\\submission_qwen_matched_statistical_20261114_v1\\prediction_freeze.json": "769a244bec0c142824a4aae21c073d760f5fd8136821534b764cd62de7955b2e",
+    "src\\submission_qwen_matched_statistical.py": "7fb83d2c39213c07a6bd79ab416dea7d4e3f35d7292a703fb3580c6373b6f7af"
+  }
+}

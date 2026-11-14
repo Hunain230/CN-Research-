@@ -1,0 +1,95 @@
+{
+  "classification": "exploratory_development_only_adaptive_link_group_study",
+  "development_organizations": 42,
+  "holdout_labels_read": false,
+  "selected_config": "base",
+  "selection_rule": "maximize_development_recall20_subject_to_pair_precision_0.8_and_p10_at_least_base_with_strict_recall_gain",
+  "source_sha256": {
+    "data\\derived\\guide_rerun_v2\\split.json": "a99f53483d91e32e6872b71ae385123db71e36cb4b52c3b8eeb985c5ffb36e5d",
+    "data\\derived\\submission_descriptor_ranker_v7_20261114_v1\\descriptor_rank_model.pkl": "3eb0e27f297ece4fc07a26db14e54ebc9dc75da879b3aa0c290d224fc54205b5",
+    "data\\derived\\submission_entity_time_pair_v2_20261114_v1\\pair_model.pkl": "1f383e2db24f3c3d0eb8103ef760021b0c6c86df632b61a3471f77b19bfe9db9",
+    "data\\derived\\submission_group_ranker_v4_20261114_v1\\rank_model.pkl": "b7179a9065729a01a596fcb6ecd6875ae21285eb9883ba61e194f229bf7ef1d6",
+    "outputs\\submission_descriptor_ranker_v7_20261114_v1\\prediction_freeze.json": "40255fe6061fb9febbfebe0acfc184b4976c2480a29e09264b8ba9d098de9743",
+    "outputs\\submission_entity_time_pair_v2_20261114_v1\\prediction_freeze.json": "819fde15fbf744ee1fd2c0f347c375a40a917bed1dc9b3a074fe66b325fb9b4e",
+    "submission\\development_adaptive_links_v9.py": "367ff67b8e200330b60919257ab47787a3139926c222562af0d650f44246ed17"
+  },
+  "table": {
+    "base": {
+      "ndcg20_macro": 0.4632954830869975,
+      "p10_macro": 0.5833333333333333,
+      "pair_f1_micro": 0.07231069961965662,
+      "pair_false_positives": 340,
+      "pair_precision_micro": 0.8752751283932502,
+      "pair_recall_micro": 0.03771318380830449,
+      "predicted_groups": 6375,
+      "recall20_macro": 0.4773809523809524,
+      "recoverable_labels": 610
+    },
+    "floor50_cap3": {
+      "ndcg20_macro": 0.4522848658922238,
+      "p10_macro": 0.5404761904761903,
+      "pair_f1_micro": 0.08617932353864319,
+      "pair_false_positives": 757,
+      "pair_precision_micro": 0.792032967032967,
+      "pair_recall_micro": 0.045568779932666316,
+      "predicted_groups": 5688,
+      "recall20_macro": 0.44642857142857145,
+      "recoverable_labels": 569
+    },
+    "floor50_cap5": {
+      "ndcg20_macro": 0.46480013210966314,
+      "p10_macro": 0.5499999999999999,
+      "pair_f1_micro": 0.0972398899505961,
+      "pair_false_positives": 1052,
+      "pair_precision_micro": 0.75754782207882,
+      "pair_recall_micro": 0.05195441541403891,
+      "predicted_groups": 5550,
+      "recall20_macro": 0.45595238095238094,
+      "recoverable_labels": 572
+    },
+    "floor50_cap5_descriptor": {
+      "ndcg20_macro": 0.4557132329366486,
+      "p10_macro": 0.5547619047619047,
+      "pair_f1_micro": 0.0948146830865899,
+      "pair_false_positives": 1013,
+      "pair_precision_micro": 0.7594966761633428,
+      "pair_recall_micro": 0.05056348491314588,
+      "predicted_groups": 5607,
+      "recall20_macro": 0.45714285714285713,
+      "recoverable_labels": 579
+    },
+    "floor60_cap5": {
+      "ndcg20_macro": 0.4666623272950742,
+      "p10_macro": 0.5714285714285714,
+      "pair_f1_micro": 0.08542313868503594,
+      "pair_false_positives": 520,
+      "pair_precision_micro": 0.845513963161022,
+      "pair_recall_micro": 0.044983956881154474,
+      "predicted_groups": 6057,
+      "recall20_macro": 0.4797619047619047,
+      "recoverable_labels": 597
+    },
+    "floor60_cap8_descriptor": {
+      "ndcg20_macro": 0.4633299924839519,
+      "p10_macro": 0.569047619047619,
+      "pair_f1_micro": 0.09301839152585421,
+      "pair_false_positives": 553,
+      "pair_precision_micro": 0.8491543917075832,
+      "pair_recall_micro": 0.04920416646909131,
+      "predicted_groups": 6056,
+      "recall20_macro": 0.475,
+      "recoverable_labels": 594
+    },
+    "floor65_cap5": {
+      "ndcg20_macro": 0.47288307759369674,
+      "p10_macro": 0.5833333333333333,
+      "pair_f1_micro": 0.08273495009709615,
+      "pair_false_positives": 414,
+      "pair_precision_micro": 0.8690702087286527,
+      "pair_recall_micro": 0.04343496609606904,
+      "predicted_groups": 6168,
+      "recall20_macro": 0.4761904761904763,
+      "recoverable_labels": 604
+    }
+  }
+}

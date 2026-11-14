@@ -33,6 +33,13 @@ DOCS = [
     ROOT / "submission/INCIDENT_MISS_AND_PRIORITY_ITERATION_20261114.md",
     ROOT / "submission/POINT_IN_TIME_EVIDENCE_STATUS_20261114.md",
     ROOT / "submission/PRIORITY_GROUP_CANDIDATE_FOLLOWUP_20261114.md",
+    ROOT / "submission/BASELINE_PAPER_STUDY_CONTRACT_20261114.md",
+    ROOT / "submission/MATCHED_20_QUEUE_CONTROL_STUDY_20261114.md",
+    ROOT / "submission/PUBLISHER_CLARIFICATION_REQUEST_20261114.md",
+    ROOT / "submission/DESCRIPTOR_RANKER_ITERATION_20261114.md",
+    ROOT / "submission/SPECIALIST_RANKER_NEGATIVE_CONTROL_20261114.md",
+    ROOT / "submission/ADAPTIVE_LINKS_NEGATIVE_CONTROL_20261114.md",
+    ROOT / "submission/GROUP_MERGE_MODEL_STUDY_20261114.md",
 ]
 
 
@@ -54,7 +61,7 @@ def main() -> None:
                 missing.append((str(doc.relative_to(ROOT)), target))
     if missing:
         raise ValueError(f"Broken local links: {missing}")
-    for name in ("submission_full_guide_20261112_v1", "submission_qwen_20261112_v1", "submission_full_guide_paper_20261113_v1", "submission_qwen_v2_paper_20261113_v1", "submission_rank_fusion_20261114_v1", "submission_trained_ranker_20261114_v1", "submission_transfer_ranker_20261114_v1", "submission_full_ranker_transfer_20261114_v1", "submission_pair_model_grouping_20261114_v1", "submission_pair_grouping_v2_20261114_v1", "submission_full_entity_time_20261114_v1", "submission_entity_time_pair_v2_20261114_v1", "submission_entity_time_cap_v3_20261114_v1", "submission_group_ranker_v4_20261114_v1", "submission_bridge_group_v5_20261114_v1", "submission_priority_focus_v6_20261114_v1"):
+    for name in ("submission_full_guide_20261112_v1", "submission_qwen_20261112_v1", "submission_full_guide_paper_20261113_v1", "submission_qwen_v2_paper_20261113_v1", "submission_rank_fusion_20261114_v1", "submission_trained_ranker_20261114_v1", "submission_transfer_ranker_20261114_v1", "submission_full_ranker_transfer_20261114_v1", "submission_pair_model_grouping_20261114_v1", "submission_pair_grouping_v2_20261114_v1", "submission_full_entity_time_20261114_v1", "submission_entity_time_pair_v2_20261114_v1", "submission_entity_time_cap_v3_20261114_v1", "submission_group_ranker_v4_20261114_v1", "submission_bridge_group_v5_20261114_v1", "submission_priority_focus_v6_20261114_v1", "submission_qwen_matched_statistical_20261114_v1", "submission_descriptor_ranker_v7_20261114_v1", "submission_specialist_ranker_v8_20261114_v1", "submission_group_merge_v10_20261114_v2"):
         manifest = json.loads((ROOT / "outputs" / name / "run_manifest.json").read_text(encoding="utf-8"))
         for relative, expected in manifest["sha256"].items():
             source = ROOT / relative
@@ -143,6 +150,17 @@ def main() -> None:
         raise ValueError("Local ranking source changed")
     if digest(ROOT / "data/derived/publisher_queue_audit_20261114/GUIDE_Test_Queue_Rankings.csv") != published_rank["downloaded_ranking_sha256"]:
         raise ValueError("Publisher ranking download changed")
+    qwen_controls = json.loads((ROOT / "outputs/submission_qwen_matched_offline_controls_20261114_v1.json").read_text(encoding="utf-8"))
+    if digest(ROOT / "submission/qwen_matched_offline_controls.py") != qwen_controls["analysis_code_sha256"]:
+        raise ValueError("Qwen matched offline-control code mismatch")
+    if digest(ROOT / "outputs/submission_qwen_v2_paper_20261113_v1/prediction_freeze.json") != qwen_controls["qwen_prediction_freeze_sha256"]:
+        raise ValueError("Qwen matched offline-control parent mismatch")
+    adaptive = json.loads((ROOT / "outputs/submission_development_adaptive_links_v9_20261114_v1.json").read_text(encoding="utf-8"))
+    for relative, expected in adaptive["source_sha256"].items():
+        if digest(ROOT / relative) != expected:
+            raise ValueError(f"Adaptive-link study source mismatch: {relative}")
+    if adaptive["selected_config"] != "base":
+        raise ValueError("Adaptive-link development selection changed")
     for run, field, prefix in (("submission_group_ranker_v4_20261114_v1", "score_sha256", "scores"), ("submission_bridge_group_v5_20261114_v1", "prediction_sha256", "v5")):
         freeze = json.loads((ROOT / "outputs" / run / "prediction_freeze.json").read_text(encoding="utf-8"))
         if len(freeze[field]) != 499:
@@ -156,6 +174,24 @@ def main() -> None:
     for org_hash, expected in v6["score_sha256"].items():
         if digest(ROOT / "data/derived/submission_priority_focus_v6_20261114_v1" / f"scores_{org_hash}.pkl") != expected:
             raise ValueError(f"V6 score mismatch: {org_hash}")
+    v7 = json.loads((ROOT / "outputs/submission_descriptor_ranker_v7_20261114_v1/prediction_freeze.json").read_text(encoding="utf-8"))
+    if len(v7["score_sha256"]) != 499:
+        raise ValueError("V7 score count changed")
+    for org_hash, expected in v7["score_sha256"].items():
+        if digest(ROOT / "data/derived/submission_descriptor_ranker_v7_20261114_v1" / f"scores_{org_hash}.pkl") != expected:
+            raise ValueError(f"V7 score mismatch: {org_hash}")
+    v8 = json.loads((ROOT / "outputs/submission_specialist_ranker_v8_20261114_v1/prediction_freeze.json").read_text(encoding="utf-8"))
+    if len(v8["score_sha256"]) != 499:
+        raise ValueError("V8 score count changed")
+    for org_hash, expected in v8["score_sha256"].items():
+        if digest(ROOT / "data/derived/submission_specialist_ranker_v8_20261114_v1" / f"scores_{org_hash}.pkl") != expected:
+            raise ValueError(f"V8 score mismatch: {org_hash}")
+    v10 = json.loads((ROOT / "outputs/submission_group_merge_v10_20261114_v2/prediction_freeze.json").read_text(encoding="utf-8"))
+    if len(v10["prediction_sha256"]) != 499:
+        raise ValueError("V10 prediction count changed")
+    for org_hash, expected in v10["prediction_sha256"].items():
+        if digest(ROOT / "data/derived/submission_group_merge_v10_20261114_v2" / f"v10_{org_hash}.pkl") != expected:
+            raise ValueError(f"V10 prediction mismatch: {org_hash}")
     future = json.loads((ROOT / "outputs/future_cohort_study_contract_20261114_v1.json").read_text(encoding="utf-8"))
     for relative, expected in future["method_source_sha256"].items():
         if digest(ROOT / relative) != expected:
@@ -181,7 +217,7 @@ def main() -> None:
     dashboard = json.loads((ROOT / "dashboard/simulation_manifest.json").read_text(encoding="utf-8"))
     if digest(ROOT / "dashboard/simulation.html") != dashboard["output_sha256"]:
         raise ValueError("Dashboard output hash mismatch")
-    print(f"Submission verification passed: {links} local links, sixteen run manifests, 2,994 frozen entity/time group or score files, three future study contracts, report PDF, and dashboard hash")
+    print(f"Submission verification passed: {links} local links, twenty run manifests, 4,491 frozen entity/time group or score files, three future study contracts, report PDF, and dashboard hash")
 
 
 if __name__ == "__main__":

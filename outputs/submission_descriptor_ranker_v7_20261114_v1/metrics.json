@@ -1,0 +1,293 @@
+{
+  "classification": "exploratory_post_exposure_descriptor_ranker_not_confirmatory",
+  "cohorts": {
+    "all_499_descriptive": {
+      "expert_top20_denominator": 9980,
+      "methods": {
+        "v4_reference": {
+          "ndcg20": {
+            "ci95": [
+              0.3889229753379951,
+              0.4446160880011169
+            ],
+            "mean": 0.4162277821774063,
+            "organizations": 499,
+            "resamples": 5000
+          },
+          "p10": {
+            "ci95": [
+              0.502828595098694,
+              0.5542774077566898
+            ],
+            "mean": 0.5283971865299225,
+            "organizations": 499,
+            "resamples": 5000
+          },
+          "recall20": {
+            "ci95": [
+              0.4019725997092807,
+              0.44291518780498196
+            ],
+            "mean": 0.4223445743606487,
+            "organizations": 499,
+            "resamples": 5000
+          }
+        },
+        "v7_selected": {
+          "ndcg20": {
+            "ci95": [
+              0.40928832744377963,
+              0.465951868652253
+            ],
+            "mean": 0.4371010591339347,
+            "organizations": 499,
+            "resamples": 5000
+          },
+          "p10": {
+            "ci95": [
+              0.5887725450901803,
+              0.6414829659318638
+            ],
+            "mean": 0.6158316633266533,
+            "organizations": 499,
+            "resamples": 5000
+          },
+          "recall20": {
+            "ci95": [
+              0.47685370741482963,
+              0.5195390781563126
+            ],
+            "mean": 0.4981963927855712,
+            "organizations": 499,
+            "resamples": 5000
+          }
+        }
+      },
+      "organizations": 499,
+      "paired_v7_minus_v4": {
+        "ndcg20": {
+          "ci95": [
+            0.006132429932471075,
+            0.03486788517279955
+          ],
+          "mean": 0.0208732769565283,
+          "organizations": 499,
+          "resamples": 5000
+        },
+        "p10": {
+          "ci95": [
+            0.07195637189411502,
+            0.10272536740146958
+          ],
+          "mean": 0.08743447679673072,
+          "organizations": 499,
+          "resamples": 5000
+        },
+        "recall20": {
+          "ci95": [
+            0.0641381910885456,
+            0.08772802050291269
+          ],
+          "mean": 0.07585181842492245,
+          "organizations": 499,
+          "resamples": 5000
+        }
+      }
+    },
+    "holdout_68_previously_exposed": {
+      "expert_top20_denominator": 1360,
+      "methods": {
+        "v4_reference": {
+          "ndcg20": {
+            "ci95": [
+              0.39879349729938673,
+              0.5528779763050141
+            ],
+            "mean": 0.47543937783510587,
+            "organizations": 68,
+            "resamples": 5000
+          },
+          "p10": {
+            "ci95": [
+              0.4938039215686275,
+              0.6352124183006536
+            ],
+            "mean": 0.5644771241830066,
+            "organizations": 68,
+            "resamples": 5000
+          },
+          "recall20": {
+            "ci95": [
+              0.4138787039655606,
+              0.5271074765376235
+            ],
+            "mean": 0.469705987095693,
+            "organizations": 68,
+            "resamples": 5000
+          }
+        },
+        "v7_selected": {
+          "ndcg20": {
+            "ci95": [
+              0.36577328252080227,
+              0.5171537904757075
+            ],
+            "mean": 0.438877930341432,
+            "organizations": 68,
+            "resamples": 5000
+          },
+          "p10": {
+            "ci95": [
+              0.536764705882353,
+              0.6808823529411764
+            ],
+            "mean": 0.6102941176470589,
+            "organizations": 68,
+            "resamples": 5000
+          },
+          "recall20": {
+            "ci95": [
+              0.4345588235294118,
+              0.5529411764705882
+            ],
+            "mean": 0.49338235294117655,
+            "organizations": 68,
+            "resamples": 5000
+          }
+        }
+      },
+      "organizations": 68,
+      "paired_v7_minus_v4": {
+        "ndcg20": {
+          "ci95": [
+            -0.07957345384243603,
+            0.0034640327402088752
+          ],
+          "mean": -0.036561447493673876,
+          "organizations": 68,
+          "resamples": 5000
+        },
+        "p10": {
+          "ci95": [
+            0.008314950980392163,
+            0.08411764705882352
+          ],
+          "mean": 0.04581699346405229,
+          "organizations": 68,
+          "resamples": 5000
+        },
+        "recall20": {
+          "ci95": [
+            -0.0014426402505446619,
+            0.049111547102815435
+          ],
+          "mean": 0.023676365845483483,
+          "organizations": 68,
+          "resamples": 5000
+        }
+      }
+    },
+    "training_disjoint_135": {
+      "expert_top20_denominator": 2700,
+      "methods": {
+        "v4_reference": {
+          "ndcg20": {
+            "ci95": [
+              0.37300589806097745,
+              0.4842942367153789
+            ],
+            "mean": 0.42900775513662137,
+            "organizations": 135,
+            "resamples": 5000
+          },
+          "p10": {
+            "ci95": [
+              0.452932304526749,
+              0.5527493827160493
+            ],
+            "mean": 0.5035637860082305,
+            "organizations": 135,
+            "resamples": 5000
+          },
+          "recall20": {
+            "ci95": [
+              0.369333408273676,
+              0.4530314168963826
+            ],
+            "mean": 0.410637503875024,
+            "organizations": 135,
+            "resamples": 5000
+          }
+        },
+        "v7_selected": {
+          "ndcg20": {
+            "ci95": [
+              0.3611489609592327,
+              0.47131910446408826
+            ],
+            "mean": 0.4164826478070984,
+            "organizations": 135,
+            "resamples": 5000
+          },
+          "p10": {
+            "ci95": [
+              0.5029444444444445,
+              0.6074074074074073
+            ],
+            "mean": 0.5555555555555556,
+            "organizations": 135,
+            "resamples": 5000
+          },
+          "recall20": {
+            "ci95": [
+              0.41222222222222227,
+              0.4981481481481482
+            ],
+            "mean": 0.4551851851851852,
+            "organizations": 135,
+            "resamples": 5000
+          }
+        }
+      },
+      "organizations": 135,
+      "paired_v7_minus_v4": {
+        "ndcg20": {
+          "ci95": [
+            -0.04028721015338857,
+            0.01325181580792186
+          ],
+          "mean": -0.012525107329522884,
+          "organizations": 135,
+          "resamples": 5000
+        },
+        "p10": {
+          "ci95": [
+            0.024805967078189304,
+            0.08059259259259262
+          ],
+          "mean": 0.05199176954732511,
+          "organizations": 135,
+          "resamples": 5000
+        },
+        "recall20": {
+          "ci95": [
+            0.024615095856460593,
+            0.06632079925278396
+          ],
+          "mean": 0.04454768131016118,
+          "organizations": 135,
+          "resamples": 5000
+        }
+      }
+    }
+  },
+  "groups_and_candidates": "identical_to_v2",
+  "limits": [
+    "GUIDE_Test labels previously accessed",
+    "No untouched cohort",
+    "Point-in-time field availability and operational approval unresolved"
+  ],
+  "prediction_freeze_sha256": "40255fe6061fb9febbfebe0acfc184b4976c2480a29e09264b8ba9d098de9743",
+  "run": "submission_descriptor_ranker_v7_20261114_v1",
+  "selected_blend": 0.75
+}

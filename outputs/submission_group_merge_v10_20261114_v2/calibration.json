@@ -1,0 +1,99 @@
+{
+  "classification": "exploratory_development_group_merge_selection",
+  "development_organizations": 42,
+  "fit_freeze_sha256": "cfb5c32130f990b67e00b8b94e1062d7360af737063fc17f371d1e10383de8c6",
+  "holdout_labels_read": false,
+  "run": "submission_group_merge_v10_20261114_v2",
+  "selected_config": "base",
+  "selection_rule": "strict_recall_and_recoverability_gain_with_no_worse_pair_precision_false_merges_or_p10",
+  "source_sha256": {
+    "data\\derived\\guide_rerun_v2\\split.json": "a99f53483d91e32e6872b71ae385123db71e36cb4b52c3b8eeb985c5ffb36e5d",
+    "data\\derived\\submission_descriptor_ranker_v7_20261114_v1\\descriptor_rank_model.pkl": "3eb0e27f297ece4fc07a26db14e54ebc9dc75da879b3aa0c290d224fc54205b5",
+    "data\\derived\\submission_entity_time_pair_v2_20261114_v1\\pair_model.pkl": "1f383e2db24f3c3d0eb8103ef760021b0c6c86df632b61a3471f77b19bfe9db9",
+    "data\\derived\\submission_group_ranker_v4_20261114_v1\\rank_model.pkl": "b7179a9065729a01a596fcb6ecd6875ae21285eb9883ba61e194f229bf7ef1d6",
+    "outputs\\submission_descriptor_ranker_v7_20261114_v1\\prediction_freeze.json": "40255fe6061fb9febbfebe0acfc184b4976c2480a29e09264b8ba9d098de9743",
+    "outputs\\submission_entity_time_pair_v2_20261114_v1\\prediction_freeze.json": "819fde15fbf744ee1fd2c0f347c375a40a917bed1dc9b3a074fe66b325fb9b4e",
+    "outputs\\submission_entity_time_shards_20261114_v1.json": "7ed27c44153d09fb7f1de5f86231b7b7f4beb9841feb2c6658008a815b47ca31",
+    "outputs\\submission_group_ranker_v4_20261114_v1\\prediction_freeze.json": "bbb58e9ef13227951c1ba527a20f443bad56cea93ce0246a8926bc57594e8098",
+    "src\\submission_group_merge_v10_v2.py": "2d19d333b160c5e9daec0caedcb07fbbb1ccc33a16a3408c1b28b0af32ddad25"
+  },
+  "table": {
+    "0.5:4": {
+      "ndcg20": 0.4522211862534924,
+      "p10": 0.5714285714285714,
+      "pair_f1": 0.07757984610519658,
+      "pair_false_positives": 566,
+      "pair_precision": 0.8198599618077658,
+      "pair_recall": 0.040716329207959916,
+      "predicted_groups": 6132,
+      "recall20": 0.4583333333333334,
+      "recoverable_labels": 584
+    },
+    "0.5:8": {
+      "ndcg20": 0.4512980446062644,
+      "p10": 0.5738095238095238,
+      "pair_f1": 0.08326723634785471,
+      "pair_false_positives": 772,
+      "pair_precision": 0.7827799662352279,
+      "pair_recall": 0.04397237106232317,
+      "predicted_groups": 6091,
+      "recall20": 0.46071428571428574,
+      "recoverable_labels": 581
+    },
+    "0.6:4": {
+      "ndcg20": 0.4582452109706796,
+      "p10": 0.5785714285714285,
+      "pair_f1": 0.0731962039685783,
+      "pair_false_positives": 384,
+      "pair_precision": 0.8629550321199143,
+      "pair_recall": 0.038218976717720135,
+      "predicted_groups": 6332,
+      "recall20": 0.47380952380952385,
+      "recoverable_labels": 608
+    },
+    "0.6:8": {
+      "ndcg20": 0.4582102831722562,
+      "p10": 0.5785714285714285,
+      "pair_f1": 0.07414238846136402,
+      "pair_false_positives": 424,
+      "pair_precision": 0.8525730180806675,
+      "pair_recall": 0.038756381683974266,
+      "predicted_groups": 6324,
+      "recall20": 0.47380952380952385,
+      "recoverable_labels": 608
+    },
+    "0.7:4": {
+      "ndcg20": 0.46311195153386686,
+      "p10": 0.5857142857142856,
+      "pair_f1": 0.07253006937922259,
+      "pair_false_positives": 353,
+      "pair_precision": 0.8714961776483436,
+      "pair_recall": 0.0378396320356584,
+      "predicted_groups": 6362,
+      "recall20": 0.475,
+      "recoverable_labels": 610
+    },
+    "0.7:8": {
+      "ndcg20": 0.4631074653590421,
+      "p10": 0.5857142857142856,
+      "pair_f1": 0.07260556127703399,
+      "pair_false_positives": 364,
+      "pair_precision": 0.868163708801159,
+      "pair_recall": 0.037887050120916116,
+      "predicted_groups": 6360,
+      "recall20": 0.475,
+      "recoverable_labels": 610
+    },
+    "base": {
+      "ndcg20": 0.46310642077001196,
+      "p10": 0.5833333333333333,
+      "pair_f1": 0.07231069961965662,
+      "pair_false_positives": 340,
+      "pair_precision": 0.8752751283932502,
+      "pair_recall": 0.03771318380830449,
+      "predicted_groups": 6375,
+      "recall20": 0.47619047619047616,
+      "recoverable_labels": 610
+    }
+  }
+}

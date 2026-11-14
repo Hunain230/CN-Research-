@@ -1,0 +1,152 @@
+{
+  "classification": "exploratory_20_queue_matched_statistical_control_not_CPV_superiority",
+  "expert_top20_denominator": 400,
+  "limits": [
+    "Previously accessed 20 queues",
+    "Same 240 selected exact-match candidate pairs and five descriptors",
+    "B2/B3 group-priority outputs unavailable",
+    "V did not revise Qwen C/P predictions"
+  ],
+  "methods": {
+    "qwen_c_p": {
+      "ndcg20": {
+        "ci95": [
+          0.0017678524630406662,
+          0.07050309163188274
+        ],
+        "mean": 0.028132832202728504,
+        "organizations": 20
+      },
+      "p10": {
+        "ci95": [
+          0.09394345238095239,
+          0.28716329365079357
+        ],
+        "mean": 0.1847777777777778,
+        "organizations": 20
+      },
+      "recall20": {
+        "ci95": [
+          0.08,
+          0.21183333333333332
+        ],
+        "mean": 0.14433333333333334,
+        "organizations": 20
+      }
+    },
+    "statistical_bm25": {
+      "ndcg20": {
+        "ci95": [
+          0.0034024747724671458,
+          0.13193685569725994
+        ],
+        "mean": 0.05084855381521334,
+        "organizations": 20
+      },
+      "p10": {
+        "ci95": [
+          0.11333333333333333,
+          0.375
+        ],
+        "mean": 0.23833333333333337,
+        "organizations": 20
+      },
+      "recall20": {
+        "ci95": [
+          0.0875,
+          0.2375
+        ],
+        "mean": 0.15999999999999998,
+        "organizations": 20
+      }
+    },
+    "statistical_count": {
+      "ndcg20": {
+        "ci95": [
+          0.0025273773871297765,
+          0.07630913474109224
+        ],
+        "mean": 0.031654854277249844,
+        "organizations": 20
+      },
+      "p10": {
+        "ci95": [
+          0.09715826417029262,
+          0.3119175825611604
+        ],
+        "mean": 0.19675142467013848,
+        "organizations": 20
+      },
+      "recall20": {
+        "ci95": [
+          0.08462735271974403,
+          0.23507623988330506
+        ],
+        "mean": 0.15769339356295878,
+        "organizations": 20
+      }
+    }
+  },
+  "paired_statistical_minus_qwen": {
+    "statistical_bm25": {
+      "ndcg20": {
+        "ci95": [
+          0.0015267513739465426,
+          0.06129542555355239
+        ],
+        "mean": 0.02271572161248483,
+        "organizations": 20
+      },
+      "p10": {
+        "ci95": [
+          -0.008087896825396828,
+          0.12056249999999989
+        ],
+        "mean": 0.05355555555555556,
+        "organizations": 20
+      },
+      "recall20": {
+        "ci95": [
+          0.0,
+          0.04
+        ],
+        "mean": 0.01566666666666667,
+        "organizations": 20
+      }
+    },
+    "statistical_count": {
+      "ndcg20": {
+        "ci95": [
+          0.000778888284206083,
+          0.00707554057285181
+        ],
+        "mean": 0.003522022074521345,
+        "organizations": 20
+      },
+      "p10": {
+        "ci95": [
+          -0.014187723640701007,
+          0.03789464745028792
+        ],
+        "mean": 0.011973646892360705,
+        "organizations": 20
+      },
+      "recall20": {
+        "ci95": [
+          -0.002477602108036892,
+          0.03839676030491246
+        ],
+        "mean": 0.013360060229625445,
+        "organizations": 20
+      }
+    }
+  },
+  "prediction_freeze_sha256": "769a244bec0c142824a4aae21c073d760f5fd8136821534b764cd62de7955b2e",
+  "run": "submission_qwen_matched_statistical_20261114_v1",
+  "scope": {
+    "accepted_edges": 0,
+    "organizations": 20,
+    "selected_alerts": 391,
+    "selected_pairs": 240
+  }
+}

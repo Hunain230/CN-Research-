@@ -1,0 +1,28 @@
+{
+  "classification": "exploratory_train_only_group_merge_model",
+  "development_or_holdout_labels_read": false,
+  "model_sha256": "19e4839a161aafcb132dd22efe9f7361270e48284879a55ea4e8641394a205ef",
+  "positive_train_rows": 16876,
+  "proposal_probability_floor": 0.4,
+  "run": "submission_group_merge_v10_20261114_v2",
+  "source_sha256": {
+    "data\\derived\\guide_rerun_v2\\split.json": "a99f53483d91e32e6872b71ae385123db71e36cb4b52c3b8eeb985c5ffb36e5d",
+    "data\\derived\\submission_descriptor_ranker_v7_20261114_v1\\descriptor_rank_model.pkl": "3eb0e27f297ece4fc07a26db14e54ebc9dc75da879b3aa0c290d224fc54205b5",
+    "data\\derived\\submission_entity_time_pair_v2_20261114_v1\\pair_model.pkl": "1f383e2db24f3c3d0eb8103ef760021b0c6c86df632b61a3471f77b19bfe9db9",
+    "data\\derived\\submission_group_ranker_v4_20261114_v1\\rank_model.pkl": "b7179a9065729a01a596fcb6ecd6875ae21285eb9883ba61e194f229bf7ef1d6",
+    "outputs\\submission_descriptor_ranker_v7_20261114_v1\\prediction_freeze.json": "40255fe6061fb9febbfebe0acfc184b4976c2480a29e09264b8ba9d098de9743",
+    "outputs\\submission_entity_time_pair_v2_20261114_v1\\prediction_freeze.json": "819fde15fbf744ee1fd2c0f347c375a40a917bed1dc9b3a074fe66b325fb9b4e",
+    "outputs\\submission_entity_time_shards_20261114_v1.json": "7ed27c44153d09fb7f1de5f86231b7b7f4beb9841feb2c6658008a815b47ca31",
+    "outputs\\submission_group_ranker_v4_20261114_v1\\prediction_freeze.json": "bbb58e9ef13227951c1ba527a20f443bad56cea93ce0246a8926bc57594e8098",
+    "src\\submission_group_merge_v10_v2.py": "2d19d333b160c5e9daec0caedcb07fbbb1ccc33a16a3408c1b28b0af32ddad25"
+  },
+  "train_rows": 43133,
+  "training_census": {
+    "candidate_group_pairs": 99464,
+    "organizations": 334,
+    "sample_negative": 26257,
+    "sample_positive": 16876
+  },
+  "training_organizations": 334,
+  "wall_seconds": 43.396688699998776
+}

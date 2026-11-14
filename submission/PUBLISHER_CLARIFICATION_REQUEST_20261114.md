@@ -1,0 +1,10 @@
+# Questions needed for an independent GUIDE priority study
+
+This is a prepared research clarification, not a message sent to the publisher. The [current Kaggle release](https://www.kaggle.com/datasets/Microsoft/microsoft-security-incident-prediction/data) supplies `GUIDE_Train.csv`, `GUIDE_Test.csv`, and `GUIDE_Test_Queue_Rankings.csv`; only the test file has published top-20 queue rankings. The local ranking file is [byte-identical to the current download](../outputs/submission_kaggle_queue_alignment_20261114_v1.json).
+
+1. Can one `(OrgId, AlertId)` legitimately belong to multiple incidents? The local GUIDE_Test file contains **70,702** such keys, and 855 of the 9,980 expert-ranked incidents have only these ambiguous alert assignments under our current exclusion. Is the intended prediction-time alert identity `(OrgId, AlertId)`, or is another non-label identifier required? May incident groups overlap in this benchmark?
+2. Which fields and evidence rows are available when an alert first enters a SOC queue? `Timestamp` is alert creation time, but the CSV has no separate evidence-arrival or revision time. Please identify point-in-time safe entity fields and whether alert title and evidence role may be used in a live correlation model.
+3. What is the exact queue snapshot and rank direction for `GUIDE_Test_Queue_Rankings.csv`? The [AIP paper](https://arxiv.org/html/2607.16963v1) describes `OrgId, IncidentId, Rank, Split`, while the current release has `OrgId, IncidentId, QueueRank` and no `Split`. Please provide the intended organization split or a versioned mapping, and confirm whether rank 1 is highest priority.
+4. Is a new expert-ranked cohort or evaluation service available? All 499 currently published queues have already been accessed for development in this project. A new untouched cohort is needed to test a frozen method without reuse of the current labels.
+
+Until these points are resolved, retain all 9,980 labels in current denominators, exclude ambiguous alert keys from the primary predicted-group metric, and label existing results exploratory. Do not use `IncidentId` or its derivative `Id` as a prediction feature.
