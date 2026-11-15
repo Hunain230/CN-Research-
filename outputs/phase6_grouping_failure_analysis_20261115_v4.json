@@ -1,0 +1,355 @@
+{
+  "alerts": 400039,
+  "all_alert_feature_missing": {
+    "alerts": 400039,
+    "no_Category": 0,
+    "no_DetectorId": 0,
+    "no_EntityType": 0,
+    "no_EvidenceRole": 0,
+    "no_MitreTechniques": 240440,
+    "no_entity": 12549
+  },
+  "anonymized_examples": {
+    "disconnected_eligible_pair": {
+      "alerts_in_gold_incident": 10,
+      "case_type": "disconnected_route_eligible_pair_not_proposed",
+      "entity_within_48h": true,
+      "oracle_candidate_component_sizes": [
+        6,
+        1,
+        1,
+        1,
+        1
+      ],
+      "predicted_fragment_gold_alert_counts": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "shared_entity": true,
+      "shared_technique": false,
+      "technique_within_1h": false
+    },
+    "disconnected_no_shared": {
+      "alerts_in_gold_incident": 5,
+      "case_type": "disconnected_no_entity_or_technique",
+      "oracle_candidate_component_sizes": [
+        3,
+        2
+      ],
+      "predicted_fragment_gold_alert_counts": [
+        3,
+        2
+      ],
+      "shared_category": true,
+      "shared_detector": true,
+      "span_over_48h": true
+    },
+    "impure_direct_edge": {
+      "alerts_in_gold_incident": 1,
+      "case_type": "complete_incident_contaminated_by_unrelated_alerts",
+      "direct_high_score_cross_incident_edges": 1,
+      "oracle_candidate_component_sizes": [
+        1
+      ],
+      "predicted_fragment_gold_alert_counts": [
+        1
+      ],
+      "selected_group_gold_alerts": 1,
+      "selected_group_size": 2,
+      "strongest_false_edge_entity_route": true,
+      "strongest_false_edge_probability": 0.8328
+    },
+    "incomplete_2_to_10": {
+      "alerts_in_gold_incident": 8,
+      "case_type": "candidate_connected_but_v2_split",
+      "cross_fragment_positive_candidate_edges": 22,
+      "oracle_candidate_component_sizes": [
+        8
+      ],
+      "predicted_fragment_gold_alert_counts": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "strongest_cross_fragment_pair_probability": 0.4957,
+      "strongest_edge_entity_route": true,
+      "strongest_edge_technique_route": false
+    }
+  },
+  "by_historical_split": {
+    "holdout": {
+      "absent": 80,
+      "candidate_disconnected": 47,
+      "impure": 26,
+      "incomplete": 171,
+      "recoverable": 1036
+    },
+    "train": {
+      "absent": 566,
+      "candidate_disconnected": 342,
+      "impure": 155,
+      "incomplete": 993,
+      "recoverable": 4624
+    },
+    "unassigned": {
+      "absent": 52,
+      "candidate_disconnected": 32,
+      "impure": 17,
+      "incomplete": 99,
+      "recoverable": 400
+    },
+    "validation": {
+      "absent": 157,
+      "candidate_disconnected": 66,
+      "impure": 20,
+      "incomplete": 188,
+      "recoverable": 909
+    }
+  },
+  "by_incident_size": {
+    "1": {
+      "impure": 138,
+      "recoverable": 6204
+    },
+    "11-100": {
+      "candidate_disconnected": 112,
+      "impure": 3,
+      "incomplete": 158,
+      "recoverable": 16
+    },
+    "2-10": {
+      "candidate_disconnected": 350,
+      "impure": 77,
+      "incomplete": 1244,
+      "recoverable": 749
+    },
+    ">100": {
+      "candidate_disconnected": 25,
+      "incomplete": 49
+    },
+    "absent": {
+      "absent": 855
+    }
+  },
+  "by_queue_alert_count": {
+    "501-2000": {
+      "absent": 184,
+      "candidate_disconnected": 141,
+      "impure": 37,
+      "incomplete": 341,
+      "recoverable": 1237
+    },
+    "<=500": {
+      "absent": 601,
+      "candidate_disconnected": 248,
+      "impure": 157,
+      "incomplete": 928,
+      "recoverable": 5426
+    },
+    ">2000": {
+      "absent": 70,
+      "candidate_disconnected": 98,
+      "impure": 24,
+      "incomplete": 182,
+      "recoverable": 306
+    }
+  },
+  "candidate_disconnected_2_to_10_cross_component_signals": {
+    "entity_beyond_48h": 39,
+    "entity_only_over_frequency_cap": 9,
+    "entity_prefilter_eligible": 40,
+    "entity_within_48h": 48,
+    "incidents": 350,
+    "shared_category": 290,
+    "shared_detector": 244,
+    "shared_entity": 87,
+    "shared_evidence_role": 350,
+    "shared_technique": 128,
+    "technique_beyond_1h": 126,
+    "technique_within_1h": 2,
+    "within_48h": 312
+  },
+  "candidate_disconnected_2_to_10_pattern_counts": {
+    "no_shared_entity_or_technique": 159,
+    "route_eligible_pair_missing_from_graph": 40,
+    "shared_entity_only_beyond_48h": 39,
+    "shared_technique_only_beyond_1h": 126
+  },
+  "candidate_pairs": 1942648,
+  "categories": {
+    "absent": 855,
+    "candidate_disconnected": 487,
+    "impure": 218,
+    "incomplete": 1451,
+    "recoverable": 6969
+  },
+  "classification": "exploratory_evaluator_only_frozen_grouping_failure_analysis",
+  "expert_top20_denominator": 9980,
+  "failure_incident_feature_missing": {
+    "candidate_disconnected": {
+      "all_alerts_no_Category": 0,
+      "all_alerts_no_DetectorId": 0,
+      "all_alerts_no_EntityType": 0,
+      "all_alerts_no_EvidenceRole": 0,
+      "all_alerts_no_MitreTechniques": 203,
+      "all_alerts_no_entity": 40,
+      "labels": 487,
+      "more_than_one_oracle_component": 487,
+      "span_over_48h": 97,
+      "span_over_7d": 46
+    },
+    "impure": {
+      "all_alerts_no_Category": 0,
+      "all_alerts_no_DetectorId": 0,
+      "all_alerts_no_EntityType": 0,
+      "all_alerts_no_EvidenceRole": 0,
+      "all_alerts_no_MitreTechniques": 58,
+      "all_alerts_no_entity": 0,
+      "labels": 218,
+      "span_over_48h": 0,
+      "span_over_7d": 0
+    },
+    "incomplete": {
+      "all_alerts_no_Category": 0,
+      "all_alerts_no_DetectorId": 0,
+      "all_alerts_no_EntityType": 0,
+      "all_alerts_no_EvidenceRole": 0,
+      "all_alerts_no_MitreTechniques": 440,
+      "all_alerts_no_entity": 14,
+      "labels": 1451,
+      "span_over_48h": 108,
+      "span_over_7d": 24
+    }
+  },
+  "impure_group_diagnostics": {
+    "direct_high_score_false_edges_total": 916,
+    "group_has_direct_high_score_false_edge": 218,
+    "group_size_over_10": 17,
+    "impure_gold_labels": 218,
+    "single_direct_high_score_false_edge": 125,
+    "singleton_gold_incident": 138,
+    "unrelated_alerts_in_selected_group": 636
+  },
+  "impure_strongest_false_edge_signals": {
+    "baseline": 46,
+    "entity": 215,
+    "entity_beyond_48h": 0,
+    "entity_only_over_frequency_cap": 0,
+    "entity_prefilter_eligible": 218,
+    "entity_within_48h": 218,
+    "shared_category": 138,
+    "shared_detector": 77,
+    "shared_entity": 218,
+    "shared_evidence_role": 218,
+    "shared_technique": 90,
+    "technique": 21,
+    "technique_beyond_1h": 69,
+    "technique_prefilter_eligible": 21,
+    "technique_within_1h": 21,
+    "within_48h": 218
+  },
+  "incomplete_best_cross_positive_edge_score": {
+    "best_0.25_to_0.5": 639,
+    "best_0.5_to_0.65": 430,
+    "best_0.65_to_0.75": 238,
+    "best_ge_0.75_cap_blocked": 6,
+    "best_lt_0.25": 138
+  },
+  "incomplete_cross_positive_edge_support": {
+    "cross_positive_candidate_edges_total": 287392,
+    "with_at_least_one_cross_positive_edge": 1451,
+    "with_at_least_two_cross_positive_edges": 827
+  },
+  "incomplete_fragment_histograms": {
+    "fragments_2+": 714,
+    "fragments_3+": 230,
+    "fragments_4+": 115,
+    "fragments_5+": 89,
+    "fragments_6+": 303,
+    "incidents_2_to_10_alerts": 1244,
+    "largest_fragment_1+": 1143,
+    "largest_fragment_10+": 39,
+    "largest_fragment_2+": 138,
+    "largest_fragment_3+": 64,
+    "largest_fragment_4+": 23,
+    "largest_fragment_5+": 14,
+    "largest_fragment_6+": 9,
+    "largest_fragment_7+": 8,
+    "largest_fragment_8+": 8,
+    "largest_fragment_9+": 5
+  },
+  "incomplete_strongest_cross_edge_signals": {
+    "baseline": 247,
+    "entity": 1378,
+    "entity_beyond_48h": 7,
+    "entity_only_over_frequency_cap": 1,
+    "entity_prefilter_eligible": 1395,
+    "entity_within_48h": 1395,
+    "shared_category": 1177,
+    "shared_detector": 829,
+    "shared_entity": 1402,
+    "shared_evidence_role": 1451,
+    "shared_technique": 611,
+    "technique": 113,
+    "technique_beyond_1h": 468,
+    "technique_prefilter_eligible": 114,
+    "technique_within_1h": 122,
+    "within_48h": 1442
+  },
+  "method_notes": [
+    "Candidate components use only same-incident frozen edges to define an oracle bound; labels are evaluator-only.",
+    "Small disconnected incidents (2-10 alerts) have exhaustive cross-component pair signal checks; larger incidents receive field-missing and span summaries only.",
+    "For disconnected cross-component pairs only, prefilter eligibility plus graph absence is consistent with the nearest-five posting rule. Prefilter eligibility on existing candidate edges has no 'unproposed' meaning.",
+    "The strongest incomplete-edge diagnostics recompute probabilities with the frozen v2 pair model; no model is fitted or threshold selected.",
+    "V2 groups_at uses the shared DSU, whose MAX_COMPONENT=100 can reject an edge even when its probability is at least 0.75; recomputed groups are asserted equal to the frozen partition.",
+    "Examples disclose counts, Boolean signals and rounded scores only; no alert, incident, organization or entity identifiers."
+  ],
+  "organization_patterns": {
+    "candidate_disconnected": {
+      "maximum_labels_one_organization": 18,
+      "median_labels_per_organization": 0.0,
+      "organizations_with_at_least_one": 198,
+      "p90_labels_per_organization": 3.0,
+      "share_in_top_50_organizations": 0.5831622176591376
+    },
+    "impure": {
+      "maximum_labels_one_organization": 10,
+      "median_labels_per_organization": 0.0,
+      "organizations_with_at_least_one": 107,
+      "p90_labels_per_organization": 2.0,
+      "share_in_top_50_organizations": 0.6926605504587156
+    },
+    "incomplete": {
+      "maximum_labels_one_organization": 17,
+      "median_labels_per_organization": 2.0,
+      "organizations_with_at_least_one": 408,
+      "p90_labels_per_organization": 7.0,
+      "share_in_top_50_organizations": 0.31633356305995863
+    }
+  },
+  "organizations": 499,
+  "resource": {
+    "peak_process_rss_bytes": 720666624,
+    "wall_seconds": 95.00585499999579
+  },
+  "source_sha256": {
+    "configs\\entity_time_sensitivity_policy.yaml": "17a4202c977806b990340b2119663b5fece87f081688b9e48987ec5e9ff7c4f5",
+    "outputs\\submission_entity_time_pair_v2_20261114_v1\\fit_freeze.json": "1d348b1d07eadc6e8430c355c9c7b626adaec31ecc164de4fce39e33eb5fd1ce",
+    "outputs\\submission_entity_time_pair_v2_20261114_v1\\prediction_freeze.json": "819fde15fbf744ee1fd2c0f347c375a40a917bed1dc9b3a074fe66b325fb9b4e",
+    "outputs\\submission_full_entity_time_20261114_v1\\prediction_freeze.json": "eaa81a87b0e639d93671ccc8a128be5ac6270a4d8c4be19e985acb836ffcd4f8",
+    "src\\submission_entity_time_pair_v2.py": "0b4e54efdd6e9ddf7588eb7a14bd7f685de653f031aea16fd17170ac0055d7cb",
+    "src\\submission_full_entity_time.py": "de975c7c8701de715890624fb71b99798026729dcfd17b26f70fe164e37b6355",
+    "submission\\diagnose_phase6_grouping_failures.py": "b7fd1e1486e428f525d60ade935f42c696f1559f2de8f8dbb077cfb84c57a576"
+  }
+}

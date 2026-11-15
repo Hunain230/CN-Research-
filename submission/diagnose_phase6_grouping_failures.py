@@ -25,7 +25,7 @@ from src.submission_full_entity_time import (
     PARENT, ENTITY_FIELDS, TIME_ENTITY_SECONDS, TIME_TECHNIQUE_SECONDS,
     MAX_TOKEN_FREQUENCY, generate, read_docs)
 from src.submission_entity_time_pair_v2 import (
-    PRIOR, PRIOR_FREEZE, SPLIT, shard_map, predict_probability)
+    PRIOR, PRIOR_FREEZE, SPLIT, shard_map, predict_probability, groups_at)
 from submission.audit_entity_time_fields_v3 import detect_modal_sentinels
 
 
@@ -33,7 +33,7 @@ V2_RUN = "submission_entity_time_pair_v2_20261114_v1"
 V2_FREEZE = ROOT / "outputs" / V2_RUN / "prediction_freeze.json"
 FIT_FREEZE = ROOT / "outputs" / V2_RUN / "fit_freeze.json"
 MODEL = ROOT / "data/derived" / V2_RUN / "pair_model.pkl"
-OUTPUT = ROOT / "outputs/phase6_grouping_failure_analysis_20261115_v1.json"
+OUTPUT = ROOT / "outputs/phase6_grouping_failure_analysis_20261115_v4.json"
 FIELDS = ("DetectorId", "Category", "MitreTechniques", "EntityType", "EvidenceRole")
 
 
@@ -45,20 +45,23 @@ def size_bucket(n: int) -> str:
     return "absent" if n == 0 else "1" if n == 1 else "2-10" if n <= 10 else "11-100" if n <= 100 else ">100"
 
 
-def route_signals(a: dict, b: dict, frequency: Counter) -> dict[str, bool]:
+def route_signals(a: dict, b: dict, frequency: Counter,
+                  technique_frequency: Counter) -> dict[str, bool]:
     gap = abs(a["stamp"] - b["stamp"])
     shared_entity = a["entities"] & b["entities"]
     shared_technique = a["fields"]["MitreTechniques"] & b["fields"]["MitreTechniques"]
     bounded_entity = any(frequency[token] <= MAX_TOKEN_FREQUENCY for token in shared_entity)
-    bounded_technique = bool(shared_technique)
+    bounded_technique = any(technique_frequency[token] <= MAX_TOKEN_FREQUENCY
+                            for token in shared_technique)
     return {
         "shared_entity": bool(shared_entity),
         "entity_within_48h": bool(shared_entity) and gap <= TIME_ENTITY_SECONDS,
         "entity_beyond_48h": bool(shared_entity) and gap > TIME_ENTITY_SECONDS,
         "entity_only_over_frequency_cap": bool(shared_entity) and not bounded_entity,
-        "entity_eligible_but_unproposed": bounded_entity and gap <= TIME_ENTITY_SECONDS,
+        "entity_prefilter_eligible": bounded_entity and gap <= TIME_ENTITY_SECONDS,
         "shared_technique": bool(shared_technique),
-        "technique_within_1h": bounded_technique and gap <= TIME_TECHNIQUE_SECONDS,
+        "technique_within_1h": bool(shared_technique) and gap <= TIME_TECHNIQUE_SECONDS,
+        "technique_prefilter_eligible": bounded_technique and gap <= TIME_TECHNIQUE_SECONDS,
         "technique_beyond_1h": bounded_technique and gap > TIME_TECHNIQUE_SECONDS,
         "shared_detector": bool(a["fields"]["DetectorId"] & b["fields"]["DetectorId"]),
         "shared_category": bool(a["fields"]["Category"] & b["fields"]["Category"]),
@@ -138,6 +141,8 @@ def audit() -> dict:
         if not np.array_equal(edges, candidate["candidate_edges"]):
             raise ValueError("Candidate graph changed")
         probability = predict_probability(keys, docs, edges, flags, model)
+        if groups_at(keys, edges, probability, .75) != predicted["groups"]:
+            raise ValueError("Recomputed threshold groups differ from frozen v2 groups")
         n = len(keys)
         all_alerts += n
         all_candidate_pairs += len(edges)
@@ -148,6 +153,8 @@ def audit() -> dict:
             for field in FIELDS:
                 feature_missing[f"no_{field}"] += not bool(doc["fields"][field])
         frequency = Counter(token for doc in docs.values() for token in doc["entities"])
+        technique_frequency = Counter(token for doc in docs.values()
+                                      for token in doc["fields"]["MitreTechniques"])
         parent = list(range(n))
 
         def root(i: int) -> int:
@@ -248,7 +255,7 @@ def audit() -> dict:
                     for a, b in combinations(indices, 2):
                         if root(a) == root(b):
                             continue
-                        found.update(k for k, value in route_signals(docs[keys[a]], docs[keys[b]], frequency).items() if value)
+                        found.update(k for k, value in route_signals(docs[keys[a]], docs[keys[b]], frequency, technique_frequency).items() if value)
                     for signal in found:
                         disconnected_small_signals[signal] += 1
                     if not any(s in found for s in ("shared_entity", "shared_technique")):
@@ -257,8 +264,8 @@ def audit() -> dict:
                         disconnected_small_combinations["shared_entity_only_beyond_48h"] += 1
                     if "shared_technique" in found and "technique_within_1h" not in found:
                         disconnected_small_combinations["shared_technique_only_beyond_1h"] += 1
-                    if ("entity_eligible_but_unproposed" in found
-                            or "technique_within_1h" in found):
+                    if ("entity_prefilter_eligible" in found
+                            or "technique_prefilter_eligible" in found):
                         disconnected_small_combinations["route_eligible_pair_missing_from_graph"] += 1
                     if "disconnected_no_shared" not in cases and not any(
                             s in found for s in ("shared_entity", "shared_technique")):
@@ -271,7 +278,7 @@ def audit() -> dict:
                     if ("disconnected_eligible_pair" not in cases
                             and "route_eligible_pair_missing_from_graph" in
                             {key for key, val in disconnected_small_combinations.items() if val}
-                            and ("entity_eligible_but_unproposed" in found or "technique_within_1h" in found)):
+                            and ("entity_prefilter_eligible" in found or "technique_prefilter_eligible" in found)):
                         cases["disconnected_eligible_pair"] = example(
                             "disconnected_route_eligible_pair_not_proposed", size, components,
                             [overlap for _, overlap, _ in parts],
@@ -296,12 +303,12 @@ def audit() -> dict:
                 elif record["max"] < .75:
                     incomplete_cross_score["best_0.65_to_0.75"] += 1
                 else:
-                    incomplete_cross_score["best_ge_0.75_unexpected"] += 1
+                    incomplete_cross_score["best_ge_0.75_cap_blocked"] += 1
                 for route, bit in (("baseline", 1), ("entity", 6), ("technique", 8)):
                     incomplete_strongest_route[route] += bool(record["flag"] & bit)
                 if record["best_pair"]:
                     a, b = record["best_pair"]
-                    signals = route_signals(docs[a], docs[b], frequency)
+                    signals = route_signals(docs[a], docs[b], frequency, technique_frequency)
                     for signal, value in signals.items():
                         incomplete_strongest_route[signal] += value
                 if ("incomplete_2_to_10" not in cases and size <= 10
@@ -327,7 +334,7 @@ def audit() -> dict:
                     impure_false_route[route] += bool(false_record["flag"] & bit)
                 if false_record["best_pair"]:
                     a, b = false_record["best_pair"]
-                    signals = route_signals(docs[a], docs[b], frequency)
+                    signals = route_signals(docs[a], docs[b], frequency, technique_frequency)
                     for signal, value in signals.items():
                         impure_false_route[signal] += value
                 if "impure_direct_edge" not in cases and false_record["count"] > 0:
@@ -381,8 +388,9 @@ def audit() -> dict:
         "method_notes": [
             "Candidate components use only same-incident frozen edges to define an oracle bound; labels are evaluator-only.",
             "Small disconnected incidents (2-10 alerts) have exhaustive cross-component pair signal checks; larger incidents receive field-missing and span summaries only.",
-            "Route-eligible-but-unproposed means an entity or technique token satisfies this generator's frequency/time prefilter but a cross-component pair is absent; the nearest-five neighbor rule is a plausible cause, not a verified exclusive cause.",
+            "For disconnected cross-component pairs only, prefilter eligibility plus graph absence is consistent with the nearest-five posting rule. Prefilter eligibility on existing candidate edges has no 'unproposed' meaning.",
             "The strongest incomplete-edge diagnostics recompute probabilities with the frozen v2 pair model; no model is fitted or threshold selected.",
+            "V2 groups_at uses the shared DSU, whose MAX_COMPONENT=100 can reject an edge even when its probability is at least 0.75; recomputed groups are asserted equal to the frozen partition.",
             "Examples disclose counts, Boolean signals and rounded scores only; no alert, incident, organization or entity identifiers."
         ],
         "source_sha256": {str(path.relative_to(ROOT)): sha256_file(path) for path in
