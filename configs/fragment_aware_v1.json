@@ -1,0 +1,31 @@
+{
+  "classification": "fixed_label_free_exploratory_grouping_rule",
+  "description": "Single-pass mutual-best fragment merge with two independent edges, rare entity corroboration, descriptor agreement and a size guard.",
+  "candidate_run": "submission_full_entity_time_20261114_v1",
+  "group_run": "submission_entity_time_pair_v2_20261114_v1",
+  "rank_run": "submission_descriptor_ranker_v7_20261114_v1",
+  "proposal_pair_probability_floor": 0.5,
+  "minimum_independent_cross_edges": 2,
+  "minimum_distinct_alerts_on_larger_side": 2,
+  "minimum_max_pair_probability": 0.65,
+  "maximum_combined_alerts": 10,
+  "maximum_entity_group_frequency": 10,
+  "require_shared_entity": true,
+  "require_shared_category_or_technique": true,
+  "mutual_best_only": true,
+  "single_pass_only": true,
+  "model_fitting": false,
+  "run_time_parameter_selection": false,
+  "historical_method_design_informed_by_previously_exposed_guide_analyses": true,
+  "recovery_min_completeness": 0.8,
+  "recovery_min_purity": 0.8,
+  "acceptance": {
+    "group_recoverable_labels_strictly_greater": true,
+    "recall20_strictly_greater": true,
+    "pair_precision_minimum_fraction_of_baseline": 0.99,
+    "false_positive_pairs_maximum_fraction_of_baseline": 1.05,
+    "impure_top20_labels_maximum_fraction_of_baseline": 1.05,
+    "p10_minimum_fraction_of_baseline": 0.99,
+    "ndcg20_minimum_fraction_of_baseline": 0.99
+  }
+}

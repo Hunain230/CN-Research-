@@ -1,0 +1,9 @@
+{
+  "classification": "post_freeze_evaluator_accounting_correction",
+  "corrected_evaluator_sha256": "588b47531c36174f0ed7d93179bfc4e6619dd4a023b954ab804dde6295b4d68f",
+  "correction": "Keep the recoverable count from pair_group_metrics and omit its duplicate from incident_outcomes",
+  "metrics_sha256": "f96c88dfcd2148b75555c892617d07ab0c8fd6573630143af794932aa8022aab",
+  "predictor_source_sha256": "e07c1f457c06a8cf9d3df5350e101a39bbf9bc008a5220b5e3d3b84a0cdad757",
+  "predictor_source_unchanged": true,
+  "reason": "The original evaluator counted recoverable labels twice in its aggregate Counter"
+}
