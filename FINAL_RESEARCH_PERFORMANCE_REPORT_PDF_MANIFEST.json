@@ -1,0 +1,9 @@
+{
+  "classification": "exploratory_phase3_report_pdf",
+  "command": ".\\.venv\\Scripts\\python.exe -m submission.build_report_pdf",
+  "sha256": {
+    "FINAL_RESEARCH_PERFORMANCE_REPORT.md": "4fb34fbc99fc56956c14ffff54a5e751411feb6a9d1add57b529ef0abc45d2c2",
+    "FINAL_RESEARCH_PERFORMANCE_REPORT.pdf": "9ef893f6697db98038c2da0f76009aa61e948f2a04a82eccfcb6d9004bcc84b3",
+    "submission/build_report_pdf.py": "21fce0eb9f414e5618daf3a6aa7535cd6afe2e5df4c0ba3410cddf42743abceb"
+  }
+}

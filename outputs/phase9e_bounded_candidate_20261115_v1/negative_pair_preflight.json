@@ -1,0 +1,18 @@
+{
+  "added_candidate_positive_fraction": 0.2854514204832676,
+  "classification": "exploratory_post_prediction_label_side_collision_audit",
+  "counts": {
+    "budget_excluded": 176001,
+    "cross_existing_group": 47777,
+    "high_score_negative": 31,
+    "high_score_positive": 938,
+    "negative": 35338,
+    "positive": 14117,
+    "queues": 499,
+    "raw_sixth_neighbor_pairs": 225456
+  },
+  "note": "This audit does not select another budget or threshold; final grouping safety gate is evaluated separately.",
+  "prediction_freeze_sha256": "7f5d2d0b3372546d0d2028529f107038c04ea77da160d1f9cbf39907e8098f82",
+  "run": "phase9e_bounded_candidate_20261115_v1",
+  "wall_seconds": 12.30418340000324
+}

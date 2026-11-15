@@ -1,0 +1,24 @@
+{
+  "run_id": "phase9e_bounded_candidate_20261115_v1",
+  "change": "add only the sixth forward time-neighbor per eligible entity or technique posting",
+  "neighbor_before": 5,
+  "neighbor_after": 6,
+  "posting_cap": 500,
+  "entity_window_seconds": 172800,
+  "technique_window_seconds": 3600,
+  "max_new_edges_per_alert": 4,
+  "max_new_edges_per_queue": 500,
+  "max_new_edges_fraction_of_original_queue": 0.10,
+  "selection": "sort new encoded edges ascending, then enforce all three budgets deterministically",
+  "pair_threshold": 0.75,
+  "component_cap": 100,
+  "safety": {
+    "minimum_group_recoverability_gain": 1,
+    "minimum_recall20_gain": 0.0,
+    "maximum_added_false_positive_grouped_pairs": 0,
+    "maximum_added_mixed_groups": 0,
+    "minimum_pair_precision": 0.9041475951453903,
+    "minimum_p10_change": 0.0
+  },
+  "classification": "prespecified_one_variant_exploratory_GUIDE_Test_not_confirmatory"
+}

@@ -1,0 +1,40 @@
+{
+  "classification": "predeclared_exploratory_retrospective_heuristic_not_independent_evidence",
+  "run_id": "phase9c_small_fragment_heuristic_20261115_v1",
+  "candidate_run": "submission_full_entity_time_20261114_v1",
+  "group_run": "submission_entity_time_pair_v2_20261114_v1",
+  "rank_run": "submission_descriptor_ranker_v7_20261114_v1",
+  "proposal_run": "submission_fragment_matching_ml_v1_20261115_v2",
+  "proposal_floor_inherited": 0.40,
+  "selection_timing": "fixed_before_phase9c_evaluator_run; historical_phase8_diagnostics_already_exposed",
+  "policy": {
+    "minimum_phase7_boundary_probability": 0.70,
+    "minimum_cross_candidate_edges": 2,
+    "minimum_touched_alerts_each_side": 2,
+    "maximum_shared_entity_group_frequency": 10,
+    "require_shared_category_or_technique": true,
+    "reject_joint_category_and_technique_conflict": true,
+    "maximum_combined_group_size": 10,
+    "hard_component_cap": 100,
+    "maximum_intergroup_gap_hours": 48,
+    "maximum_structural_proposals_per_queue": 1000,
+    "minimum_mutual_best_margin": 0.05,
+    "one_merge_per_original_group": true,
+    "non_cascading_single_pass": true,
+    "single_edge_action": "review_only"
+  },
+  "acceptance": {
+    "require_group_recoverability_gain": true,
+    "require_recall20_gain": true,
+    "minimum_pair_precision": 0.90,
+    "maximum_added_false_positive_grouped_pairs": 0,
+    "maximum_added_mixed_groups": 0,
+    "minimum_p10_change": 0.0
+  },
+  "notes": [
+    "This is one fixed heuristic, not a threshold search.",
+    "Different endpoints, entity keys, detectors, or CSV rows are not verified independent observations.",
+    "All GUIDE results are exploratory; local fields are not approved operational inputs.",
+    "The 0.40 Phase 7 proposal floor excludes 429 historical small-incident cases from this first experiment."
+  ]
+}

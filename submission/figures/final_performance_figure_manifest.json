@@ -1,0 +1,16 @@
+{
+  "classification": "aggregate_only_exploratory_phase3_figures",
+  "source_sha256": {
+    "outputs/phase6_grouping_failure_analysis_20261115_v4.json": "7ef7abe816c6ed3b3532e87bfd79bc0d1a89b8d5cbb3714429dec52806339af4",
+    "outputs/submission_entity_time_pair_v2_20261114_v1/metrics.json": "9de5354e033fadf1c8cb16c8397eb4187b6a540c7310b7fdf1ad202fd5867079",
+    "outputs/submission_group_ranker_v4_20261114_v1/metrics.json": "b6984330db208bec182f513e622c17fceaaed1b31a44e731c4d89b8401a7865c",
+    "outputs/phase9c_small_fragment_heuristic_20261115_v1/metrics.json": "794a02d115d78f6a8a944e0e3c5090ffd962daeabc0b23909d40628d9b279c19",
+    "outputs/phase9e_bounded_candidate_20261115_v1/metrics.json": "47c741e32f6588fae30b8e453f0d9473d1b0dfdeb1b314dbf82c31abab0bb178"
+  },
+  "figure_sha256": {
+    "final_loss_decomposition.png": "f033388487fff1d15c7e0ed2f0a210659597c439cd22803b1ee0a07f340eff52",
+    "final_recovery_funnel.png": "376908d0d5c9a05c20d959ddd2ee0761b1d099f77878030618c917e26025cc92",
+    "final_grouping_controls.png": "b5788d86f8f8788fa2c7efcf5b631410e0409941dda5493ba043cf5fb499d491"
+  },
+  "script_sha256": "d9973ac6c042b2599bb6998e5b4b76f583e91a4a4d6d817c8c4a0bf046c0b39e"
+}

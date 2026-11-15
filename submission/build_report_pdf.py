@@ -6,6 +6,7 @@ import html
 import hashlib
 import json
 import re
+import argparse
 from pathlib import Path
 
 import matplotlib
@@ -24,9 +25,6 @@ from reportlab.platypus import (
 
 
 ROOT = Path(__file__).resolve().parents[1]
-SOURCE = ROOT / "submission/FINAL_REPORT.md"
-OUTPUT = ROOT / "submission/PHASE3_IMPLEMENTATION_REPORT.pdf"
-MANIFEST = ROOT / "submission/PHASE3_REPORT_PDF_MANIFEST.json"
 
 
 def digest(path: Path) -> str:
@@ -112,7 +110,11 @@ def footer(canvas, doc) -> None:
     canvas.restoreState()
 
 
-def build() -> None:
+def build(
+    source: Path = ROOT / "submission/FINAL_REPORT.md",
+    output: Path = ROOT / "submission/PHASE3_IMPLEMENTATION_REPORT.pdf",
+    manifest: Path = ROOT / "submission/PHASE3_REPORT_PDF_MANIFEST.json",
+) -> None:
     register_fonts()
     styles = getSampleStyleSheet()
     body = ParagraphStyle("Body", parent=styles["Normal"], fontName="DejaVu", fontSize=8.8, leading=11.5, textColor=colors.HexColor("#1d2933"), spaceAfter=4)
@@ -122,9 +124,9 @@ def build() -> None:
     table_cell = ParagraphStyle("Cell", parent=body, fontSize=7.3, leading=10.2, spaceAfter=0)
     caption = ParagraphStyle("Caption", parent=body, fontSize=8, leading=11.5, textColor=colors.HexColor("#4b5d68"), alignment=TA_LEFT, spaceBefore=5, spaceAfter=9)
     code = ParagraphStyle("Code", parent=body, fontName="DejaVu", fontSize=7.2, leading=10.5, textColor=colors.HexColor("#273d4c"), leftIndent=8, spaceAfter=9)
-    doc = SimpleDocTemplate(str(OUTPUT), pagesize=A4, leftMargin=1.8 * cm, rightMargin=1.8 * cm, topMargin=1.3 * cm, bottomMargin=1.45 * cm, title="Phase 3 GUIDE_Test Hybrid Implementation", author="CNET Research")
+    doc = SimpleDocTemplate(str(output), pagesize=A4, leftMargin=1.8 * cm, rightMargin=1.8 * cm, topMargin=1.3 * cm, bottomMargin=1.45 * cm, title="GUIDE_Test Research Performance Report", author="CNET Research")
     usable = A4[0] - doc.leftMargin - doc.rightMargin
-    lines = SOURCE.read_text(encoding="utf-8").splitlines()
+    lines = source.read_text(encoding="utf-8").splitlines()
     story = []
     i = 0
     while i < len(lines):
@@ -148,7 +150,7 @@ def build() -> None:
         if line.startswith("!["):
             match = re.match(r"!\[[^]]*\]\(([^)]+)\)", line)
             if match:
-                path = (SOURCE.parent / match.group(1)).resolve()
+                path = (source.parent / match.group(1)).resolve()
                 image = Image(str(path))
                 scale = min(usable / image.imageWidth, 9.0 * cm / image.imageHeight, 1.0)
                 image.drawWidth *= scale
@@ -185,7 +187,7 @@ def build() -> None:
             i += 1
         combined = " ".join(paragraph)
         story.append(Paragraph(inline_markup(combined), caption if combined.startswith("**Figure ") else body))
-    OUTPUT.parent.mkdir(parents=True, exist_ok=True)
+    output.parent.mkdir(parents=True, exist_ok=True)
     doc.build(story, onFirstPage=footer, onLaterPages=footer)
     record = {
         "classification": "exploratory_phase3_report_pdf",
@@ -193,17 +195,24 @@ def build() -> None:
         "sha256": {
             str(path.relative_to(ROOT)).replace("\\", "/"): digest(path)
             for path in (
-                SOURCE,
-                ROOT / "submission/figures/full_guide_offline.png",
-                ROOT / "submission/figures/qwen_v2_pair_diagnostic.png",
+                source,
                 Path(__file__),
-                OUTPUT,
+                output,
             )
         },
     }
-    MANIFEST.write_text(json.dumps(record, indent=2, sort_keys=True) + "\n", encoding="utf-8")
-    print(f"Wrote {OUTPUT.relative_to(ROOT)}")
+    manifest.write_text(json.dumps(record, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    print(f"Wrote {output.relative_to(ROOT)}")
 
 
 if __name__ == "__main__":
-    build()
+    parser = argparse.ArgumentParser(description="Render a Markdown research report as PDF.")
+    parser.add_argument("--source", type=Path, default=ROOT / "submission/FINAL_REPORT.md")
+    parser.add_argument("--output", type=Path, default=ROOT / "submission/PHASE3_IMPLEMENTATION_REPORT.pdf")
+    parser.add_argument("--manifest", type=Path, default=ROOT / "submission/PHASE3_REPORT_PDF_MANIFEST.json")
+    args = parser.parse_args()
+    build(
+        source=args.source.resolve(),
+        output=args.output.resolve(),
+        manifest=args.manifest.resolve(),
+    )
