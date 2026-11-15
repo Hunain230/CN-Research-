@@ -1,0 +1,11 @@
+{
+  "all_499_metrics_unchanged": true,
+  "classification": "subgroup_accounting_correction_after_prediction_freeze",
+  "corrected_metrics_sha256": "d5f53147e09f9760e37dc7461801be66f41893c9c8d89f7346b7384a649f4ed9",
+  "correction_source_sha256": "1b60706fce77dd9527d073b4e8c5282d953173ba430af0cb2e2355b22faf62b8",
+  "original_metrics_sha256": "61f1031997d4f6bebfd713436b1387d11dee0f5477554e7d5b00ee6e424b6695",
+  "predictor_and_original_metrics_unchanged": true,
+  "run": "submission_fragment_matching_ml_v1_20261115_v2",
+  "unassigned_label_denominator": 600,
+  "unassigned_organizations": 30
+}

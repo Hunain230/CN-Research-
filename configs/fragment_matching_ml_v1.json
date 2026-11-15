@@ -1,0 +1,41 @@
+{
+  "classification": "prespecified_exploratory_fragment_matching_ml",
+  "candidate_run": "submission_full_entity_time_20261114_v1",
+  "group_run": "submission_entity_time_pair_v2_20261114_v1",
+  "rank_run": "submission_descriptor_ranker_v7_20261114_v1",
+  "training_split": "train",
+  "training_organizations_expected": 334,
+  "seed": 2718,
+  "proposal_pair_score_floor": 0.4,
+  "training_max_positive_per_organization": 200,
+  "training_max_hard_negative_per_organization": 200,
+  "training_max_random_negative_per_organization": 200,
+  "model": {
+    "n_estimators": 120,
+    "num_leaves": 15,
+    "max_depth": 5,
+    "learning_rate": 0.05,
+    "min_child_samples": 40,
+    "reg_lambda": 2.0,
+    "subsample": 1.0,
+    "colsample_bytree": 1.0,
+    "n_jobs": 4,
+    "verbosity": -1
+  },
+  "decision": {
+    "accept_probability": 0.95,
+    "review_probability": 0.7,
+    "minimum_independent_cross_edges": 2,
+    "minimum_touched_alerts_larger_fragment": 2,
+    "maximum_entity_group_frequency": 10,
+    "require_shared_category_or_technique": true,
+    "block_disjoint_category_and_technique": true,
+    "maximum_combined_alerts": 100,
+    "mutual_best_only": true,
+    "single_non_cascading_pass": true
+  },
+  "recovery_min_completeness": 0.8,
+  "recovery_min_purity": 0.8,
+  "no_guide_test_parameter_selection": true,
+  "operational_feature_approval": false
+}
