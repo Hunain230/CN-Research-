@@ -1,0 +1,31 @@
+{
+  "classification": "exploratory_post_exposure_matched_sampling_ablation",
+  "run_prefix": "submission_hard_negative_ablation_v1_",
+  "frozen_feature_run": "submission_ranking_ltr_v1_20261115_v1",
+  "group_run": "submission_entity_time_pair_v2_20261114_v1",
+  "reference_rank_run": "submission_descriptor_ranker_v7_20261114_v1",
+  "objective": "lambdarank",
+  "n_estimators": 80,
+  "num_leaves": 15,
+  "learning_rate": 0.05,
+  "lambdarank_truncation_level": 25,
+  "random_seed": 181,
+  "n_jobs": 4,
+  "feature_columns": 4109,
+  "matched_min_child_samples": [40, 60],
+  "sampling": {
+    "full": "all_training_groups",
+    "hard": {
+      "all_positives": true,
+      "highest_old_v2_score_negatives_per_organization": 40,
+      "seeded_random_negatives_per_organization": 40
+    }
+  },
+  "training_organizations": 334,
+  "evaluation_organizations": 499,
+  "expert_top20_denominator": 9980,
+  "recovery_min_completeness": 0.8,
+  "recovery_min_purity": 0.8,
+  "tie_policy": "uniform_expected_order_within_equal_score_blocks",
+  "no_model_selection_from_full_499": true
+}
