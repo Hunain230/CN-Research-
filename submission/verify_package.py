@@ -40,6 +40,7 @@ DOCS = [
     ROOT / "submission/SPECIALIST_RANKER_NEGATIVE_CONTROL_20261114.md",
     ROOT / "submission/ADAPTIVE_LINKS_NEGATIVE_CONTROL_20261114.md",
     ROOT / "submission/GROUP_MERGE_MODEL_STUDY_20261114.md",
+    ROOT / "submission/EXHIBITION_METRICS_BRIEF_20261115.md",
 ]
 
 
@@ -161,6 +162,12 @@ def main() -> None:
             raise ValueError(f"Adaptive-link study source mismatch: {relative}")
     if adaptive["selected_config"] != "base":
         raise ValueError("Adaptive-link development selection changed")
+    for filename in ("submission_candidate_pair_classification_20261115_v1.json",
+                     "submission_candidate_pair_operating_points_20261115_v1.json"):
+        pair_audit = json.loads((ROOT / "outputs" / filename).read_text(encoding="utf-8"))
+        for relative, expected in pair_audit["source_sha256"].items():
+            if digest(ROOT / relative) != expected:
+                raise ValueError(f"Candidate-pair audit source mismatch: {filename}/{relative}")
     for run, field, prefix in (("submission_group_ranker_v4_20261114_v1", "score_sha256", "scores"), ("submission_bridge_group_v5_20261114_v1", "prediction_sha256", "v5")):
         freeze = json.loads((ROOT / "outputs" / run / "prediction_freeze.json").read_text(encoding="utf-8"))
         if len(freeze[field]) != 499:

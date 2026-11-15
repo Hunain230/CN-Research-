@@ -1,0 +1,68 @@
+{
+  "all_499_descriptive": {
+    "candidate_pairs": 1942648,
+    "f1": 0.13091027875138136,
+    "fn": 650096,
+    "fp": 9723,
+    "fpr": 0.007823098053035826,
+    "positive_pairs": 699790,
+    "positive_prevalence": 0.3602248065527054,
+    "pr_auc_average_precision": 0.6366557763103229,
+    "precision": 0.8363599643199757,
+    "recall": 0.07101273239114592,
+    "roc_auc": 0.7801919412700474,
+    "threshold": 0.75,
+    "tn": 1233135,
+    "tp": 49694
+  },
+  "classification": "exploratory_frozen_pair_model_conditional_on_candidate_retrieval",
+  "dataset": "GUIDE_Test",
+  "historical_holdout_68_previously_exposed": {
+    "candidate_pairs": 129965,
+    "f1": 0.2647241440482526,
+    "fn": 30295,
+    "fp": 2863,
+    "fpr": 0.030554636556706972,
+    "positive_pairs": 36264,
+    "positive_prevalence": 0.27902896933789867,
+    "pr_auc_average_precision": 0.567633188778899,
+    "precision": 0.6758378623188406,
+    "recall": 0.16459849988969777,
+    "roc_auc": 0.793167163405154,
+    "threshold": 0.75,
+    "tn": 90838,
+    "tp": 5969
+  },
+  "limits": [
+    "Conditional on the frozen 1,942,648 candidate pairs; misses outside retrieval are excluded",
+    "All GUIDE_Test labels were previously accessed elsewhere in the project",
+    "Candidate pair classification is not group co-membership or end-to-end Recall@20",
+    "Entity/time availability at alert creation remains unconfirmed"
+  ],
+  "organizations": 499,
+  "outside_training_135": {
+    "candidate_pairs": 1173862,
+    "f1": 0.05207113193483122,
+    "fn": 440808,
+    "fp": 4292,
+    "fpr": 0.005954255447547199,
+    "positive_pairs": 453033,
+    "positive_prevalence": 0.38593378097255043,
+    "pr_auc_average_precision": 0.6094900398404317,
+    "precision": 0.7401465157110856,
+    "recall": 0.02698478918754263,
+    "roc_auc": 0.7605206753719704,
+    "threshold": 0.75,
+    "tn": 716537,
+    "tp": 12225
+  },
+  "source_sha256": {
+    "data\\derived\\guide_rerun_v2\\split.json": "a99f53483d91e32e6872b71ae385123db71e36cb4b52c3b8eeb985c5ffb36e5d",
+    "data\\derived\\submission_entity_time_pair_v2_20261114_v1\\pair_model.pkl": "1f383e2db24f3c3d0eb8103ef760021b0c6c86df632b61a3471f77b19bfe9db9",
+    "outputs\\submission_entity_time_pair_v2_20261114_v1\\calibration.json": "43db1ea2693090df319e37092f1ee7c3d495a9fe66306adb6ab8dee41558bca7",
+    "outputs\\submission_entity_time_pair_v2_20261114_v1\\fit_freeze.json": "1d348b1d07eadc6e8430c355c9c7b626adaec31ecc164de4fce39e33eb5fd1ce",
+    "outputs\\submission_entity_time_shards_20261114_v1.json": "7ed27c44153d09fb7f1de5f86231b7b7f4beb9841feb2c6658008a815b47ca31",
+    "submission\\evaluate_candidate_pair_classification.py": "1dde123ee4545488761ab623c5a9f3fd08ae0a6b29eec64f9bd30589bdb81888"
+  },
+  "wall_seconds": 88.48591010000382
+}

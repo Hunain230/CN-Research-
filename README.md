@@ -23,6 +23,7 @@ The [descriptor-aware ranking iteration](submission/DESCRIPTOR_RANKER_ITERATION_
 The [singleton/multi-alert control](submission/SPECIALIST_RANKER_NEGATIVE_CONTROL_20261114.md) records a later specialist-model test that retained v7 after no development gain.
 The [adaptive-link control](submission/ADAPTIVE_LINKS_NEGATIVE_CONTROL_20261114.md) tests small-component link expansion with v7 ranking and retains the original v2 groups after a recall/purity tradeoff.
 The [group-level merge model study](submission/GROUP_MERGE_MODEL_STUDY_20261114.md) trains a corroborated group-pair decision on historical training queues, freezes development selection, and reports its matched 499-queue negative result.
+The [exhibition metrics brief](submission/EXHIBITION_METRICS_BRIEF_20261115.md) gives a stage-separated result table and a validation-selected pair-threshold sensitivity with its false-positive tradeoff.
 
 ## Current evidence
 
