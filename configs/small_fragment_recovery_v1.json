@@ -1,0 +1,33 @@
+{
+  "status": "infrastructure_only_no_empirical_predictions",
+  "frozen_candidate_run": "submission_full_entity_time_20261114_v1",
+  "frozen_group_run": "submission_entity_time_pair_v2_20261114_v1",
+  "frozen_rank_run": "submission_descriptor_ranker_v7_20261114_v1",
+  "hard_component_cap": 100,
+  "single_pass": true,
+  "mutual_best": true,
+  "one_merge_per_original_group": true,
+  "required_independent_paths": 2,
+  "provenance": {
+    "verified_source": null,
+    "observation_id_semantics_approved": false,
+    "arrival_time_contract_approved": false
+  },
+  "parameters_requiring_authorized_development_data": {
+    "maximum_boundaries_per_queue": null,
+    "maximum_boundaries_per_group": null,
+    "maximum_entity_group_frequency": null,
+    "acceptance_score": null,
+    "minimum_mutual_best_margin": null,
+    "maximum_temporal_gap_seconds": null
+  },
+  "guide_test_prediction_enabled": false,
+  "model_fitting_enabled": false,
+  "threshold_selection_enabled": false,
+  "operational_field_approval": false,
+  "notes": [
+    "Null values are required placeholders, not defaults.",
+    "The existing projection has no authoritative observation provenance or evidence-arrival timestamp.",
+    "Synthetic tests may supply fixture-only policy values and provenance IDs."
+  ]
+}
