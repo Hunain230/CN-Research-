@@ -1,0 +1,533 @@
+{
+  "classification": "exploratory_post_exposure_candidate_route_ablation",
+  "cohorts": {
+    "all_499_descriptive": {
+      "expert_top20_denominator": 9980,
+      "methods": {
+        "drop_descriptor": {
+          "ndcg20": {
+            "ci95": [
+              0.40977700794008143,
+              0.4666304472289729
+            ],
+            "mean": 0.4377038910584393,
+            "organizations": 499,
+            "resamples": 5000
+          },
+          "p10": {
+            "ci95": [
+              0.5919839679358717,
+              0.6444889779559119
+            ],
+            "mean": 0.6190380761523046,
+            "organizations": 499,
+            "resamples": 5000
+          },
+          "recall20": {
+            "ci95": [
+              0.47725450901803607,
+              0.5198396793587174
+            ],
+            "mean": 0.49849699398797603,
+            "organizations": 499,
+            "resamples": 5000
+          }
+        },
+        "drop_entity": {
+          "ndcg20": {
+            "ci95": [
+              0.30496246413029876,
+              0.3603706883629919
+            ],
+            "mean": 0.33213956530366084,
+            "organizations": 499,
+            "resamples": 5000
+          },
+          "p10": {
+            "ci95": [
+              0.5242484969939879,
+              0.5797595190380762
+            ],
+            "mean": 0.5519038076152304,
+            "organizations": 499,
+            "resamples": 5000
+          },
+          "recall20": {
+            "ci95": [
+              0.4208391783567134,
+              0.4653306613226453
+            ],
+            "mean": 0.44328657314629255,
+            "organizations": 499,
+            "resamples": 5000
+          }
+        },
+        "drop_technique": {
+          "ndcg20": {
+            "ci95": [
+              0.4092099692649273,
+              0.4659351777458169
+            ],
+            "mean": 0.43709166087943563,
+            "organizations": 499,
+            "resamples": 5000
+          },
+          "p10": {
+            "ci95": [
+              0.5893787575150301,
+              0.6424849699398797
+            ],
+            "mean": 0.6166332665330663,
+            "organizations": 499,
+            "resamples": 5000
+          },
+          "recall20": {
+            "ci95": [
+              0.476751002004008,
+              0.519438877755511
+            ],
+            "mean": 0.49809619238476954,
+            "organizations": 499,
+            "resamples": 5000
+          }
+        },
+        "full": {
+          "ndcg20": {
+            "ci95": [
+              0.40928832744377963,
+              0.465951868652253
+            ],
+            "mean": 0.4371010591339347,
+            "organizations": 499,
+            "resamples": 5000
+          },
+          "p10": {
+            "ci95": [
+              0.5887725450901803,
+              0.6414829659318638
+            ],
+            "mean": 0.6158316633266533,
+            "organizations": 499,
+            "resamples": 5000
+          },
+          "recall20": {
+            "ci95": [
+              0.47685370741482963,
+              0.5195390781563126
+            ],
+            "mean": 0.4981963927855712,
+            "organizations": 499,
+            "resamples": 5000
+          }
+        }
+      },
+      "organizations": 499,
+      "paired_drop_minus_full_recall20": {
+        "drop_descriptor": {
+          "ci95": [
+            -0.0014028056112224449,
+            0.0019038076152304607
+          ],
+          "mean": 0.0003006012024048096,
+          "organizations": 499,
+          "resamples": 5000
+        },
+        "drop_entity": {
+          "ci95": [
+            -0.06452905811623247,
+            -0.04579158316633267
+          ],
+          "mean": -0.05490981963927855,
+          "organizations": 499,
+          "resamples": 5000
+        },
+        "drop_technique": {
+          "ci95": [
+            -0.001302605210420842,
+            0.0009018036072144293
+          ],
+          "mean": -0.00010020040080160302,
+          "organizations": 499,
+          "resamples": 5000
+        }
+      }
+    },
+    "historical_holdout_68_previously_exposed": {
+      "expert_top20_denominator": 1360,
+      "methods": {
+        "drop_descriptor": {
+          "ndcg20": {
+            "ci95": [
+              0.3669500284420849,
+              0.5192628827810931
+            ],
+            "mean": 0.4402754486949148,
+            "organizations": 68,
+            "resamples": 5000
+          },
+          "p10": {
+            "ci95": [
+              0.5455882352941177,
+              0.6867647058823528
+            ],
+            "mean": 0.6176470588235294,
+            "organizations": 68,
+            "resamples": 5000
+          },
+          "recall20": {
+            "ci95": [
+              0.4360294117647059,
+              0.5536764705882353
+            ],
+            "mean": 0.49485294117647066,
+            "organizations": 68,
+            "resamples": 5000
+          }
+        },
+        "drop_entity": {
+          "ndcg20": {
+            "ci95": [
+              0.2626275316315912,
+              0.4069530027893035
+            ],
+            "mean": 0.33222763790474363,
+            "organizations": 68,
+            "resamples": 5000
+          },
+          "p10": {
+            "ci95": [
+              0.5029411764705882,
+              0.6470588235294118
+            ],
+            "mean": 0.5750000000000001,
+            "organizations": 68,
+            "resamples": 5000
+          },
+          "recall20": {
+            "ci95": [
+              0.39632352941176463,
+              0.5139705882352942
+            ],
+            "mean": 0.45441176470588235,
+            "organizations": 68,
+            "resamples": 5000
+          }
+        },
+        "drop_technique": {
+          "ndcg20": {
+            "ci95": [
+              0.3656217049154969,
+              0.5169757731058383
+            ],
+            "mean": 0.43880837513049153,
+            "organizations": 68,
+            "resamples": 5000
+          },
+          "p10": {
+            "ci95": [
+              0.536764705882353,
+              0.6808823529411764
+            ],
+            "mean": 0.6102941176470589,
+            "organizations": 68,
+            "resamples": 5000
+          },
+          "recall20": {
+            "ci95": [
+              0.43308823529411766,
+              0.5514705882352942
+            ],
+            "mean": 0.4919117647058824,
+            "organizations": 68,
+            "resamples": 5000
+          }
+        },
+        "full": {
+          "ndcg20": {
+            "ci95": [
+              0.36577328252080227,
+              0.5171537904757075
+            ],
+            "mean": 0.438877930341432,
+            "organizations": 68,
+            "resamples": 5000
+          },
+          "p10": {
+            "ci95": [
+              0.536764705882353,
+              0.6808823529411764
+            ],
+            "mean": 0.6102941176470589,
+            "organizations": 68,
+            "resamples": 5000
+          },
+          "recall20": {
+            "ci95": [
+              0.4345588235294118,
+              0.5529411764705882
+            ],
+            "mean": 0.49338235294117655,
+            "organizations": 68,
+            "resamples": 5000
+          }
+        }
+      },
+      "organizations": 68,
+      "paired_drop_minus_full_recall20": {
+        "drop_descriptor": {
+          "ci95": [
+            -0.0022058823529411743,
+            0.005882352941176475
+          ],
+          "mean": 0.0014705882352941202,
+          "organizations": 68,
+          "resamples": 5000
+        },
+        "drop_entity": {
+          "ci95": [
+            -0.06029411764705882,
+            -0.019852941176470587
+          ],
+          "mean": -0.03897058823529411,
+          "organizations": 68,
+          "resamples": 5000
+        },
+        "drop_technique": {
+          "ci95": [
+            -0.004411764705882352,
+            0.001470588235294118
+          ],
+          "mean": -0.0014705882352941165,
+          "organizations": 68,
+          "resamples": 5000
+        }
+      }
+    },
+    "outside_training_135": {
+      "expert_top20_denominator": 2700,
+      "methods": {
+        "drop_descriptor": {
+          "ndcg20": {
+            "ci95": [
+              0.3621632343892442,
+              0.4717881056645651
+            ],
+            "mean": 0.41716361544513514,
+            "organizations": 135,
+            "resamples": 5000
+          },
+          "p10": {
+            "ci95": [
+              0.5081481481481481,
+              0.6111111111111112
+            ],
+            "mean": 0.5599999999999999,
+            "organizations": 135,
+            "resamples": 5000
+          },
+          "recall20": {
+            "ci95": [
+              0.4122222222222222,
+              0.4985185185185186
+            ],
+            "mean": 0.4555555555555556,
+            "organizations": 135,
+            "resamples": 5000
+          }
+        },
+        "drop_entity": {
+          "ndcg20": {
+            "ci95": [
+              0.2511010004337025,
+              0.3521962881542784
+            ],
+            "mean": 0.30130606027063433,
+            "organizations": 135,
+            "resamples": 5000
+          },
+          "p10": {
+            "ci95": [
+              0.45333333333333337,
+              0.5577777777777778
+            ],
+            "mean": 0.5059259259259259,
+            "organizations": 135,
+            "resamples": 5000
+          },
+          "recall20": {
+            "ci95": [
+              0.36592592592592593,
+              0.4507407407407407
+            ],
+            "mean": 0.4081481481481481,
+            "organizations": 135,
+            "resamples": 5000
+          }
+        },
+        "drop_technique": {
+          "ndcg20": {
+            "ci95": [
+              0.3611681381674568,
+              0.4712643695084136
+            ],
+            "mean": 0.41644694638074414,
+            "organizations": 135,
+            "resamples": 5000
+          },
+          "p10": {
+            "ci95": [
+              0.5037037037037037,
+              0.6074259259259256
+            ],
+            "mean": 0.5562962962962963,
+            "organizations": 135,
+            "resamples": 5000
+          },
+          "recall20": {
+            "ci95": [
+              0.41148148148148145,
+              0.49741666666666656
+            ],
+            "mean": 0.45481481481481484,
+            "organizations": 135,
+            "resamples": 5000
+          }
+        },
+        "full": {
+          "ndcg20": {
+            "ci95": [
+              0.3611489609592327,
+              0.47131910446408826
+            ],
+            "mean": 0.4164826478070984,
+            "organizations": 135,
+            "resamples": 5000
+          },
+          "p10": {
+            "ci95": [
+              0.5029444444444445,
+              0.6074074074074073
+            ],
+            "mean": 0.5555555555555556,
+            "organizations": 135,
+            "resamples": 5000
+          },
+          "recall20": {
+            "ci95": [
+              0.41222222222222227,
+              0.4981481481481482
+            ],
+            "mean": 0.4551851851851852,
+            "organizations": 135,
+            "resamples": 5000
+          }
+        }
+      },
+      "organizations": 135,
+      "paired_drop_minus_full_recall20": {
+        "drop_descriptor": {
+          "ci95": [
+            -0.001851851851851852,
+            0.002962962962962965
+          ],
+          "mean": 0.00037037037037037154,
+          "organizations": 135,
+          "resamples": 5000
+        },
+        "drop_entity": {
+          "ci95": [
+            -0.06296296296296296,
+            -0.03259259259259258
+          ],
+          "mean": -0.04703703703703704,
+          "organizations": 135,
+          "resamples": 5000
+        },
+        "drop_technique": {
+          "ci95": [
+            -0.001851851851851852,
+            0.0011111111111111126
+          ],
+          "mean": -0.0003703703703703695,
+          "organizations": 135,
+          "resamples": 5000
+        }
+      }
+    }
+  },
+  "limits": [
+    "GUIDE_Test labels previously accessed",
+    "Entity/time point-in-time availability unconfirmed",
+    "Full variant reuses frozen v2 groups and v7 rank scores",
+    "Removed routes change candidate flags used by the fixed pair model"
+  ],
+  "positive_pair_denominator": 159186107,
+  "prediction_freeze_sha256": "0724b6d25ccf15b2d0ac62b672fdc8303309b2ff5921346d0fe8267346df8f41",
+  "resource": {
+    "peak_process_rss_bytes": 632193024,
+    "wall_seconds": 249.8404875999986
+  },
+  "run": "submission_candidate_route_ablation_v11_20261115_v1",
+  "stages": {
+    "drop_descriptor": {
+      "candidate_connected_top20": 8551,
+      "candidate_connectivity_ceiling": 0.856813627254509,
+      "candidate_pair_recall_all_pairs": 0.004187130476153927,
+      "candidate_pairs": 1637457,
+      "group_ceiling": 0.7,
+      "pair_f1": 0.002914173710201206,
+      "pair_fn": 158953780,
+      "pair_fp": 27792,
+      "pair_precision": 0.8931565937128776,
+      "pair_recall": 0.001459467816497328,
+      "pair_tp": 232327,
+      "positive_candidate_pairs": 666533,
+      "recoverable_top20": 6986
+    },
+    "drop_entity": {
+      "candidate_connected_top20": 6657,
+      "candidate_connectivity_ceiling": 0.6670340681362725,
+      "candidate_pair_recall_all_pairs": 0.00037221841225126514,
+      "candidate_pairs": 387414,
+      "group_ceiling": 0.6368737474949899,
+      "pair_f1": 0.0007632366301939812,
+      "pair_fn": 159125335,
+      "pair_fp": 1243,
+      "pair_precision": 0.979956462146255,
+      "pair_recall": 0.0003817669842255769,
+      "pair_tp": 60772,
+      "positive_candidate_pairs": 59252,
+      "recoverable_top20": 6356
+    },
+    "drop_technique": {
+      "candidate_connected_top20": 8618,
+      "candidate_connectivity_ceiling": 0.8635270541082164,
+      "candidate_pair_recall_all_pairs": 0.004335962559848266,
+      "candidate_pairs": 1893668,
+      "group_ceiling": 0.6982965931863727,
+      "pair_f1": 0.003383250940256097,
+      "pair_fn": 158916319,
+      "pair_fp": 28580,
+      "pair_precision": 0.904212247962248,
+      "pair_recall": 0.00169479614197739,
+      "pair_tp": 269788,
+      "positive_candidate_pairs": 690225,
+      "recoverable_top20": 6969
+    },
+    "full": {
+      "candidate_connected_top20": 8638,
+      "candidate_connectivity_ceiling": 0.8655310621242485,
+      "candidate_pair_recall_all_pairs": 0.004396049461778722,
+      "candidate_pairs": 1942648,
+      "group_ceiling": 0.6982965931863727,
+      "pair_f1": 0.003383801232903163,
+      "pair_fn": 158916275,
+      "pair_fp": 28606,
+      "pair_precision": 0.9041475951453903,
+      "pair_recall": 0.0016950725480082253,
+      "pair_tp": 269832,
+      "positive_candidate_pairs": 699790,
+      "recoverable_top20": 6969
+    }
+  }
+}

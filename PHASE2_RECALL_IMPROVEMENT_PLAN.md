@@ -1,0 +1,89 @@
+# Phase 2: Recall@20 bottleneck analysis and improvement plan
+
+**Status, 15 November 2026:** Read-only diagnosis from frozen artifacts and an experiment plan. No source code, dataset, model, prediction, or frozen result was changed. GUIDE_Test labels had already been accessed; all historical findings here are **exploratory**, not confirmatory or operational.
+
+## 1. Exact recall-loss decomposition
+
+The reference uses entity-enabled candidate proposals, v2 pair-model grouping at threshold 0.75, and v7 ranking with its selected 0.75 blend. It covers **499 organization queues, 400,039 unambiguous alerts, and 9,980 expert top-20 incident labels** (20 per queue). A predicted group recovers a gold incident only when it contains at least **80% of that incident's in-scope alerts** and at least **80% of its own alerts belong to that incident**. The official ranking evaluator handles ties by expected position. Its frozen results are **Recall@20 = 4,972/9,980 = 49.82%**, **P@10 = 61.58%**, and **nDCG@20 = 0.4371**. nDCG is unitless, not 0.4371%.
+
+I classified each gold top-20 label once, using already frozen candidate edges, v2 groups, and v7 scores. The evaluator-side sequence is: absent from unambiguous scope; insufficient oracle same-incident candidate connectivity; incomplete predicted group; complete but impure group; pure/complete group ranked below 20; recovered. The read-only calculation verified every organization's candidate, group, and v7-score file against its freeze hash. It was computed in memory and exported no identifiers. Counts are **incident-label counts**, not pair counts.
+
+| Mutually exclusive outcome | Labels / 9,980 | Share | Meaning |
+|---|---:|---:|---|
+| Absent from unambiguous alert scope | **855** | 8.57% | No usable alert for this expert label under the current ambiguous-key exclusion. |
+| Candidate disconnected | **487** | 4.88% | Even an oracle choosing correct existing edges cannot connect 80% of this incident. |
+| Group incomplete despite candidate connectivity | **1,451** | 14.54% | The candidate graph could connect 80%, but v2's predicted groups do not. |
+| Complete group impure | **218** | 2.18% | An 80%-complete group contains more than 20% unrelated alerts. |
+| Pure, complete group ranked below 20 | **1,997** | 20.01% | Recoverable by grouping, missed by v7 ordering. |
+| Recovered in top 20 | **4,972** | 49.82% | This deterministic diagnostic count matches the saved tie-aware aggregate here. |
+| **Total** | **9,980** | **100%** | Every expert top-20 label appears once. |
+
+The loss cascade is **9,980 total → 9,125 with unambiguous alert evidence → 8,638 oracle candidate-connected (86.55% of total) → 6,969 recoverable from actual v2 groups with ideal ordering (69.83%) → 4,972 reached by v7 (49.82%)**. The first two ceilings assume gold-aware choices and are not achieved performance. The connected-group loss is **1,451 incomplete + 218 impure = 1,669**. The fixed-group ranking loss is **1,997**.
+
+Size stratification sharpens the target. The 1,451 incomplete incidents include **1,244 with 2–10 alerts**, 158 with 11–100, and 49 with more than 100. The 1,997 ranking misses include **1,831 singleton incidents**, 161 with 2–10 alerts, and 5 with 11–100. Of the 218 impure cases, 138 are singletons, 77 have 2–10 alerts, and 3 have 11–100. The 487 disconnected cases comprise 350 incidents with 2–10 alerts, 112 with 11–100, and 25 with more than 100. These evaluator-side strata are diagnostic, never model inputs.
+
+The frozen graph contains **1,942,648 candidate pairs**, of which **699,790** are positive among **159,186,107** exhaustive positive within-organization alert pairs: candidate positive-pair recall is **0.4396%**. V2 predicts **269,832 true-positive pairs, 28,606 false-positive pairs, and 158,916,275 false-negative positive pairs**. Micro pair precision is **90.41%** and micro pair recall **0.1695%**. Large incidents produce many possible positive pairs; the 0.4396% exhaustive pair recall must not be equated with the **86.55% incident-connectivity bound**. The 28,606 false positives are **alert-pair errors**, not distinct incident false merges; the 218 impure labels are an incident-level measure. Similarly, 1,451 incomplete labels are not pair false negatives.
+
+### Supporting artifacts
+
+- Candidate construction and frozen edges: [entity/time source](src/submission_full_entity_time.py), [candidate freeze](outputs/submission_full_entity_time_20261114_v1/prediction_freeze.json), [candidate oracle diagnostic](outputs/submission_full_candidate_bound_20261114_v1.json), and [route ablation](outputs/submission_candidate_route_ablation_v11_20261115_v1/metrics.json). Candidate-freeze SHA-256: eaa81a87b0e639d93671ccc8a128be5ac6270a4d8c4be19e985acb836ffcd4f8.
+- Grouping and pair counts: [v2 source](src/submission_entity_time_pair_v2.py), [v2 freeze](outputs/submission_entity_time_pair_v2_20261114_v1/prediction_freeze.json), and [v2 metrics](outputs/submission_entity_time_pair_v2_20261114_v1/metrics.json). V2-freeze SHA-256: 819fde15fbf744ee1fd2c0f347c375a40a917bed1dc9b3a074fe66b325fb9b4e.
+- Scores and official ranking: [v7 source](src/submission_descriptor_ranker_v7.py), [v7 freeze](outputs/submission_descriptor_ranker_v7_20261114_v1/prediction_freeze.json), [v7 metrics](outputs/submission_descriptor_ranker_v7_20261114_v1/metrics.json), and [tie-aware evaluator](src/submission_full_guide.py). V7-freeze SHA-256: 40255fe6061fb9febbfebe0acfc184b4976c2480a29e09264b8ba9d098de9743.
+- [Earlier miss-audit code](submission/audit_v2_incident_misses.py) and [earlier output](outputs/submission_v2_incident_miss_audit_20261114_v1.json) define the same evaluator-side category order but use an **older v2 rank order**: 3,578 ranked below 20 and 3,391 deterministic recovered. Those ranking counts do **not** describe v7. The in-memory v7 substitution yields the 1,997 and 4,972 counts above. This plan documents that read-only calculation rather than adding an experiment output.
+- The [independent component ablation](submission/INDEPENDENT_COMPONENT_ABLATION_20261115.md) contains matched historical contrasts. The v2 full prediction records **101.5 seconds and approximately 522 MB peak RSS**; the v7 fit/predict path records about **106 seconds**. These are batch resource measures, not alert-arrival latency.
+
+## 2. Highest-impact grouping weaknesses
+
+**Connected incidents are often split.** The **1,451** candidate-connected but incomplete incidents exceed the 487 disconnected and 218 impure incidents. The **1,244 with 2–10 alerts** are the highest-value grouping target. A useful bridge must create an 80%-complete group while keeping at least 80% purity; raising pair recall alone is insufficient.
+
+**Single-link transitivity can contaminate groups.** V2 sorts edges with pair probability at least 0.75 and unions their endpoints. One bad bridge can pull unrelated alerts into a component. There is no corroboration check, conflict veto, or size cap in the actual v2 grouping function. Older documentation and the future-cohort contract name a 100-alert cap; that is a contract/source mismatch to resolve for future registration, not a reason to alter the historical v2 result.
+
+**Bounded entity retrieval has both value and risk.** The generator uses near-time entity/technique postings, with bounded neighbors and high-frequency-token exclusion. A matched route ablation removes entity proposals and lowers candidate-connected labels from **8,638 to 6,657** and descriptive Recall@20 from **49.82% to 44.33%**. Wider routes may connect some of the 487 missing labels, but add pair volume, high-degree noise, false merges, and runtime. Entity evidence availability at alert arrival remains unproven; the operational feature allowlist is empty.
+
+**Prior negative controls matter.** A lower-threshold bridge, an adaptive small-component rule, and a learned group-pair merge study failed to improve recoverability while preserving purity and ranking utility. The learned merge selected unchanged v2 groups. A threshold-only sweep is a weak first experiment. See [bridge study](submission/INCIDENT_MISS_AND_PRIORITY_ITERATION_20261114.md), [adaptive-link study](submission/ADAPTIVE_LINKS_NEGATIVE_CONTROL_20261114.md), [group-merge study](submission/GROUP_MERGE_MODEL_STUDY_20261114.md), and [component-cap sensitivity](submission/ENTITY_TIME_MODEL_REEVALUATION_20261114.md).
+
+## 3. Grouping hypotheses and proposed experiments
+
+These are **unmeasured hypotheses**. Use the historical training organizations for error/feature design, the development organizations for a small prespecified choice, and label all resulting GUIDE_Test comparisons exploratory. Repeatedly selecting parameters on the 499-queue aggregate would weaken the research claim.
+
+| Approach | Hypothesis | Expected trade-off |
+|---|---|---|
+| Alternative graph partition, such as a supported maximum-spanning forest or correlation clustering | Multiple supporting edges may distinguish true 2–10-alert fragments from accidental transitive bridges. | More compute; strict support can create additional splits. |
+| Conservative bridge handling | Require independent cross-group paths, rare-entity agreement, and no strong conflict before using a subthreshold edge. | Could recover split incidents; prior bridge and merge variants were negative, so a new approach needs materially different evidence or incident-level objective. |
+| Conflict-aware component splitting | Cut weak articulation edges where component evidence contradicts itself. | May reduce impurity and false-positive pairs but increase false splits. |
+| High-degree alert/entity control | Discount generic entities and require stronger corroboration for high-degree alerts. | Protects purity and candidate budget but may fragment large legitimate campaigns. |
+| Adaptive size control | Set component limits from evidence density and diversity rather than one hard cap. | Contains runaway merges but can suppress real large incidents; the earlier fixed-cap trial harmed precision/group ceiling. |
+| Stronger entity candidate proposals | Add one bounded route for currently disconnected incidents. | At most 487 current disconnected top-20 labels are directly addressable; pair volume, false merges, runtime, and point-in-time approval are limiting. |
+| Route-specific thresholds | Calibrate rare-entity, common-entity, descriptor, and technique decisions separately. | May suppress noisy routes while retaining reliable ones; route overlap and parameter multiplicity increase overfitting risk. |
+
+### Small controlled experiment set
+
+**Experiment 1: fragment-aware group decision on the existing candidate graph.** Preserve all **1,942,648** candidate pairs and the frozen v2+v7 reference. In a future versioned exploratory run, change **only grouping**: fit a group-boundary decision on historical training queues with hard positive examples from candidate-connected 2–10-alert fragments and hard negatives from unrelated nearby groups. Require independent cross-group support and a conflict veto. This differs from the prior v10 pilot by optimizing incident recoverability and false-merge cost rather than sampled group-pair classification alone. Prespecify a small decision grid and purity/P@10 gates on development organizations. Use the **same fitted v7 ranking model and blend** to score newly formed groups; group features and scores must be recalculated when groups change, so this is not the same exact score vector. If recoverability does not rise while pair precision, false-positive pairs, impure labels, and P@10 remain acceptable, retain v2. This is a proposal, not an experiment performed in this phase.
+
+**Experiment 2: conflict-aware edge veto.** Keep candidates and fitted pair/ranking models fixed. Change only the component formation rule: remove low-support articulation edges that produce contradictory component evidence. Compare purity gains with additional incomplete incidents and the resulting group oracle ceiling. Do not combine this with Experiment 1 in its first comparison.
+
+**Experiment 3: bounded candidate-route expansion.** Only after a grouping rule is fixed, change candidate generation alone. Add one prespecified entity route with per-alert, per-entity, and per-queue pair budgets. Keep the fitted v2 pair scorer, grouping method, and fitted v7 ranking model fixed; recalculate features/scores for changed groups. Report marginal positive candidates, incident connectivity, false merges, pair volume, and resources. Do not call a route better solely because candidate recall increases.
+
+### Matched evaluation controls
+
+Every experiment starts from the frozen v2+v7 reference and changes **one component at a time**. Preserve the **same 499 queues, 400,039-alert scope, 9,980-label denominator, 80% completeness/purity rule, and tie-aware evaluator**. Freeze predictions with source/parameter hashes before evaluator-only scoring; use new run IDs and preserve all historical outputs. Report the 135 queues outside model fitting separately as exploratory; 67 of these were used for v7 blend selection and the other 68 historical holdout labels were previously accessed.
+
+The required report for each variant is: candidate pairs, positive-pair recall, oracle incident connectivity, group oracle recovery, pair TP/FP/FN and precision/recall, explicit **false-positive pair** and incident-level **false-merge** definitions, incomplete and impure top-20 labels, Recall@20, P@10, nDCG@20, per-organization paired differences/uncertainty, wall time, peak RSS, and candidate/group counts. Model code must not read IncidentId, expert rank, grade, or outcomes as inputs. Local experimental fields must remain separate from production approval.
+
+## 4. Ranking opportunities
+
+On the **same frozen v2 groups**, **1,997** recoverable labels miss top 20. Ranking work is therefore useful, but no ranker can exceed the **6,969/9,980 = 69.83% fixed-group ceiling**. V7 already combines v4 numeric group features with sparse hashed detector, category, technique, entity-type, and evidence-role identities. Its logistic model was fitted on **157,072 groups from 334 organizations**, including **4,624 positive recoverable-top-20 groups**, with tenfold positive weighting. The blend was selected on 67 development organizations. V7's historical 68-queue nDCG point estimate is below v4's, so added complexity has no guaranteed benefit.
+
+**LambdaMART or XGBoost ranking is technically plausible**, because each organization queue is a query and its predicted incident groups are items to order. Pairwise/listwise learning can target within-queue top positions more directly than a separate binary prediction per group. A plain XGBoost classifier would not use the query structure. Neither LightGBM nor XGBoost is currently installed in this project's environment; no such model was trained here.
+
+- **Objective:** Begin with the existing binary 80%-complete/80%-pure top-20 recovery target; test a top-heavy pairwise or NDCG-oriented objective against Recall@20, P@10, and nDCG@20. If expert rank is used for graded training relevance, specify it separately and never expose test rank during fitting or inference.
+- **Features:** Reuse label-free v7 group size, prior score, within-queue positions, descriptor identities, field/entity diversity, and time span under local policy. A dense 131,072-feature tree matrix should not be assumed practical; choose a controlled compact encoding. No evaluator-only feature and no unapproved operational entity/time field.
+- **Negatives:** Preserve organization/query grouping. Include hard negatives near the current top 20, singleton negatives, descriptor-similar negatives, and reproducible background samples; cap each organization's training contribution. Validate and evaluate on **full queues**, never only sampled pairs. Include queues with no recoverable positives.
+- **Validation:** Fit and select on organization-disjoint historical partitions, with a small prespecified objective/model grid. Treat all GUIDE_Test results as exploratory. A new untouched cohort is needed for a confirmatory comparison.
+- **Fairness:** Fix the exact v2 candidates and groups, train/development organization IDs, relevance rule, feature policy, tie evaluator, and top-20 denominator for v7 and the candidate ranker. Compare paired Recall@20, P@10, nDCG@20, training/inference time, memory, and stability. Do not choose a winner from the all-499 historical result.
+
+## 5. Risks and recommended first experiment
+
+The main validity risk is **selection on previously accessed GUIDE_Test labels**. A higher retrospective score can be reported as exploratory, but cannot prove generalization. The official operational model-field allowlist is empty. The **855** labels with only ambiguous alert assignments need an authoritative source rule; no model may infer their assignments from evaluation labels. Wider retrieval can create false merges or exceed resource budgets. The 69.83% and 86.55% figures are optimistic bounds, not promised attainable results. The prospective contract's cap/v4 wording also differs from the descriptive v2+v7 reference and must be reconciled before any new-cohort registration.
+
+**Recommended first experiment when implementation is authorized:** the **fragment-aware grouping decision on the existing frozen candidate graph**. It targets the **1,451 candidate-connected yet incomplete incidents**, especially the **1,244 with 2–10 alerts**, while explicitly gating false-positive pairs, impure labels, group recoverability, and P@10. Begin with the v2 cap-contract clarification and field-timing review. Develop on designated training/development organizations, preregister the rule and gates, and keep the frozen v2+v7 outputs intact. Without a newly untouched labeled cohort, its eventual result remains exploratory.

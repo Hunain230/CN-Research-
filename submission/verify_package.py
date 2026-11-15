@@ -41,6 +41,7 @@ DOCS = [
     ROOT / "submission/ADAPTIVE_LINKS_NEGATIVE_CONTROL_20261114.md",
     ROOT / "submission/GROUP_MERGE_MODEL_STUDY_20261114.md",
     ROOT / "submission/EXHIBITION_METRICS_BRIEF_20261115.md",
+    ROOT / "submission/INDEPENDENT_COMPONENT_ABLATION_20261115.md",
 ]
 
 
@@ -62,7 +63,7 @@ def main() -> None:
                 missing.append((str(doc.relative_to(ROOT)), target))
     if missing:
         raise ValueError(f"Broken local links: {missing}")
-    for name in ("submission_full_guide_20261112_v1", "submission_qwen_20261112_v1", "submission_full_guide_paper_20261113_v1", "submission_qwen_v2_paper_20261113_v1", "submission_rank_fusion_20261114_v1", "submission_trained_ranker_20261114_v1", "submission_transfer_ranker_20261114_v1", "submission_full_ranker_transfer_20261114_v1", "submission_pair_model_grouping_20261114_v1", "submission_pair_grouping_v2_20261114_v1", "submission_full_entity_time_20261114_v1", "submission_entity_time_pair_v2_20261114_v1", "submission_entity_time_cap_v3_20261114_v1", "submission_group_ranker_v4_20261114_v1", "submission_bridge_group_v5_20261114_v1", "submission_priority_focus_v6_20261114_v1", "submission_qwen_matched_statistical_20261114_v1", "submission_descriptor_ranker_v7_20261114_v1", "submission_specialist_ranker_v8_20261114_v1", "submission_group_merge_v10_20261114_v2"):
+    for name in ("submission_full_guide_20261112_v1", "submission_qwen_20261112_v1", "submission_full_guide_paper_20261113_v1", "submission_qwen_v2_paper_20261113_v1", "submission_rank_fusion_20261114_v1", "submission_trained_ranker_20261114_v1", "submission_transfer_ranker_20261114_v1", "submission_full_ranker_transfer_20261114_v1", "submission_pair_model_grouping_20261114_v1", "submission_pair_grouping_v2_20261114_v1", "submission_full_entity_time_20261114_v1", "submission_entity_time_pair_v2_20261114_v1", "submission_entity_time_cap_v3_20261114_v1", "submission_group_ranker_v4_20261114_v1", "submission_bridge_group_v5_20261114_v1", "submission_priority_focus_v6_20261114_v1", "submission_qwen_matched_statistical_20261114_v1", "submission_descriptor_ranker_v7_20261114_v1", "submission_specialist_ranker_v8_20261114_v1", "submission_group_merge_v10_20261114_v2", "submission_candidate_route_ablation_v11_20261115_v1"):
         manifest = json.loads((ROOT / "outputs" / name / "run_manifest.json").read_text(encoding="utf-8"))
         for relative, expected in manifest["sha256"].items():
             source = ROOT / relative
@@ -199,6 +200,12 @@ def main() -> None:
     for org_hash, expected in v10["prediction_sha256"].items():
         if digest(ROOT / "data/derived/submission_group_merge_v10_20261114_v2" / f"v10_{org_hash}.pkl") != expected:
             raise ValueError(f"V10 prediction mismatch: {org_hash}")
+    v11 = json.loads((ROOT / "outputs/submission_candidate_route_ablation_v11_20261115_v1/prediction_freeze.json").read_text(encoding="utf-8"))
+    if len(v11["prediction_sha256"]) != 499:
+        raise ValueError("V11 prediction count changed")
+    for org_hash, expected in v11["prediction_sha256"].items():
+        if digest(ROOT / "data/derived/submission_candidate_route_ablation_v11_20261115_v1" / f"routes_{org_hash}.pkl") != expected:
+            raise ValueError(f"V11 prediction mismatch: {org_hash}")
     future = json.loads((ROOT / "outputs/future_cohort_study_contract_20261114_v1.json").read_text(encoding="utf-8"))
     for relative, expected in future["method_source_sha256"].items():
         if digest(ROOT / relative) != expected:
@@ -224,7 +231,7 @@ def main() -> None:
     dashboard = json.loads((ROOT / "dashboard/simulation_manifest.json").read_text(encoding="utf-8"))
     if digest(ROOT / "dashboard/simulation.html") != dashboard["output_sha256"]:
         raise ValueError("Dashboard output hash mismatch")
-    print(f"Submission verification passed: {links} local links, twenty run manifests, 4,491 frozen entity/time group or score files, three future study contracts, report PDF, and dashboard hash")
+    print(f"Submission verification passed: {links} local links, twenty-one run manifests, 4,990 frozen entity/time group or score files, three future study contracts, report PDF, and dashboard hash")
 
 
 if __name__ == "__main__":
