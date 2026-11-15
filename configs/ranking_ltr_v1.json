@@ -1,0 +1,46 @@
+{
+  "classification": "exploratory_post_exposure_fixed_v2_group_learning_to_rank",
+  "run_prefix": "submission_ranking_ltr_v1_",
+  "group_run": "submission_entity_time_pair_v2_20261114_v1",
+  "reference_rank_run": "submission_descriptor_ranker_v7_20261114_v1",
+  "seed": 181,
+  "descriptor_hash_bins": 4096,
+  "methods": {
+    "lightgbm_full": {
+      "objective": "lambdarank",
+      "n_estimators": 80,
+      "num_leaves": 15,
+      "learning_rate": 0.05,
+      "min_child_samples": 60,
+      "lambdarank_truncation_level": 25
+    },
+    "xgboost_full": {
+      "objective": "rank:ndcg",
+      "n_estimators": 80,
+      "max_depth": 4,
+      "learning_rate": 0.05,
+      "min_child_weight": 10,
+      "lambdarank_num_pair_per_sample": 4,
+      "tree_method": "hist"
+    },
+    "lightgbm_hardneg": {
+      "objective": "lambdarank",
+      "n_estimators": 80,
+      "num_leaves": 15,
+      "learning_rate": 0.05,
+      "min_child_samples": 40,
+      "lambdarank_truncation_level": 25,
+      "hard_negatives_per_queue": 40,
+      "random_negatives_per_queue": 40
+    }
+  },
+  "development_selection": {
+    "minimum_recall20_absolute_gain": 0.01,
+    "maximum_p10_absolute_loss": 0.005,
+    "maximum_ndcg20_absolute_loss": 0.005,
+    "fallback": "frozen_v7"
+  },
+  "recovery_min_completeness": 0.8,
+  "recovery_min_purity": 0.8,
+  "guide_test_classification": "exploratory_only"
+}
