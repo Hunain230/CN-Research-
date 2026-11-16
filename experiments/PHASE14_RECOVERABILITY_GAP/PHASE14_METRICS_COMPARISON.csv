@@ -1,0 +1,2 @@
+experiment,queues,expert_top20_denominator,incident_recall20_count,incident_recall20,group_recoverability_count,group_recoverability,p10,ndcg20,grouped_pair_precision,false_grouped_pairs,mixed_predicted_groups,phase14_candidate,difference
+E1_reproduced,499,9980,5066,0.5076653306613225,6969,0.6982965931863727,0.6387775551102207,0.46974709650295865,0.9041475951453903,28606,4841,none_evidence_gate_no_go,not_measured

@@ -1,0 +1,23 @@
+# Phase 14 final report — NO-GO
+
+## Measured E1 reproduction
+
+The Phase 10 evaluator, reconstruction code, config, and 500 frozen prediction files were copied into this separate Phase 14 directory. The evaluator ran over all 499 queues and its E1 method object matched the original Phase 10 object field-for-field. Frozen parents were hash-checked. E1 remains the comparator: 6,969/9,980 group recoverability (69.8297%), exact tie-aware Recall@20 **50.7665%**, P@10 **63.8778%**, nDCG@20 **0.469747**, grouped-pair precision **90.4148%**, **28,606** false grouped pairs, and **4,841** mixed groups. The legacy integer recall count is 5,066; the rate equals **5,066.5 expected labels / 9,980** because of rank ties. The reported `5,066/9,980` fraction is arithmetically inconsistent with the exact rate. No frozen metric was altered.
+
+## Upper bound and the 1,514-label gap
+
+The Phase 13 8,596 count was independently reproduced, but **86.13% is not a valid universal upper bound** for the actual 80% complete / 80% pure group definition. It excludes 487 true-edge-disconnected incidents, although a group may use up to 20% cross-incident alerts as candidate-graph bridges and still pass purity. The defensible cap-and-scope upper bound from the row data is **9,063/9,980 = 90.81%**: 855 expert incidents have no eligible alerts, and 62 nonempty incidents need more than 100 alerts to reach 80% completeness. This is still optimistic and does not prove graph, evidence, purity, or simultaneous assignment feasibility. The 85% target requires 8,483 recoverable labels, or **1,514 net more than E1**. It is not ruled out by cap and scope alone; practical attainability is unestablished.
+
+The 9,980-row classification has 855 outside scope, 62 cap-limited, 467 cap-feasible true-edge-disconnected, 1,409 cap-feasible connected but fragmented, 218 complete but impure, and 6,969 recoverable groups. These categories are exclusive. The 6,969 have an aggregate expected 1,902.5 ranking-only misses and 5,066.5 recovered top-20 labels; exact per-row rank outcomes cannot be inferred from Phase 13's deterministic positions. The original structural cascade is reconciled in `PHASE14_FAILURE_CASCADE.md`.
+
+## Recovery opportunities and evidence
+
+The opportunity and edge audit tables cover all 3,011 structurally missed labels. They identify candidate connectivity, fragment counts, maximum true/false cross-fragment scores, and scope or cap limitations. **Zero labels are proven safely recoverable with permitted decision-time evidence.** The count requiring additional source observations is **unknown**; the count fundamentally ambiguous or unsafe is also **unknown**. The 218 impure rows already exhibit false unions; they cannot justify additional merges. The 467 disconnected and 1,409 fragmented cap-feasible rows warrant source-provenance investigation, but diagnostic true/false edge scores use evaluator truth and are not model inputs. No individual cross-fragment source-observation IDs or evidence-arrival timestamps are available in this audit, so a safe merge cannot be established. The 855 out-of-scope and 62 cap-limited rows are impossible under current scope or cap. Phase 13's 1,445/1,451 incomplete incidents without a genuine score ≥0.75 further cautions against threshold lowering.
+
+## C, P, and V decision
+
+No legitimate C-stage rule was identified, so no new grouping or end-to-end candidate metric was produced. Safety metric changes versus E1 are **not measured**, and E1 is retained. Phase 10 E2–E5 added false pairs and lost net recoverability; Phase 13 stricter thresholds and bridge splitting improved safety counts but lost net recoverability. The prior 50/50 rank blend gained 26 displayed top-20 labels and raised P@10 retrospectively, but lowered nDCG@20 and was not the validation-selected ranker. Ranking cannot raise fixed-group recoverability above 6,969. Further tuning on exposed GUIDE_Test labels is not justified as independent validation.
+
+The operational model-field allowlist remains empty. GUIDE's noised alert creation `Timestamp` is not evidence-availability time. Collection, detector, evidence-arrival, processing, and analyst-decision times are unverified. No V-stage effectiveness is claimed. The next highest-value research step is an authorized cohort with original source-observation IDs, derivation links, receiver-side evidence-arrival timestamps, and sealed independent labels. Freeze a label-blind fragment rule on development data before one end-to-end evaluation on untouched data.
+
+**Final status: NO-GO.** Research targets were not achieved or demonstrated. All GUIDE_Test analysis here is retrospective exploratory.

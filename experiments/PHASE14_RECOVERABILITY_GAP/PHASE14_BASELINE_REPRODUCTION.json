@@ -1,0 +1,35 @@
+{
+  "status": "exact_match",
+  "methods": {
+    "E1": {
+      "queues": 499,
+      "expert_top20_denominator": 9980,
+      "incident_recall20_count": 5066,
+      "incident_recall20": 0.5076653306613225,
+      "group_recoverability_count": 6969,
+      "group_recoverability": 0.6982965931863727,
+      "p10": 0.6387775551102207,
+      "ndcg20": 0.46974709650295865,
+      "grouped_pair_precision": 0.9041475951453903,
+      "grouped_pair_tp": 269832,
+      "false_grouped_pairs": 28606,
+      "mixed_predicted_groups": 4841,
+      "reconstructed_incidents": 0,
+      "additional_correctly_recovered_alerts": 0,
+      "incorrect_cross_incident_merges": 0,
+      "rejected_fragment_merges": 0,
+      "oversized_components": 0,
+      "predicted_groups": 370850,
+      "error_cascade": {
+        "outside_unambiguous_alert_scope": 855,
+        "candidate_disconnected": 487,
+        "candidate_connected_incomplete": 1451,
+        "complete_but_impure": 218,
+        "recoverable_ranked_below20": 1903,
+        "successfully_recovered": 5066
+      }
+    }
+  },
+  "source_evaluation": "PHASE10_EVALUATION.json",
+  "comparison": "Phase10 E1 method object identical"
+}

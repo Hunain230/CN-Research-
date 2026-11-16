@@ -1,0 +1,7 @@
+clock,guide_field_or_source,point_in_time_provenance,operational_allowlist,research_use
+event_time,Timestamp (noised alert creation),unverified,no,retrospective_only
+collection_time,not established,unverified,no,none
+detector_time,"DetectorId is an identifier, no detector clock",unverified,no,none
+evidence_availability_time,not established,unverified,no,none
+processing_time,not established,unverified,no,none
+analyst_decision_time,not established,unverified,no,none

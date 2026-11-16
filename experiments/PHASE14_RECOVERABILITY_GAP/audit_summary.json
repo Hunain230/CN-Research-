@@ -1,0 +1,16 @@
+{
+  "rows": 9980,
+  "queues": 499,
+  "categories": {
+    "C_candidate_connected_fragmented": 1409,
+    "E_component_cap": 62,
+    "B_candidate_disconnected": 467,
+    "A_outside_scope": 855,
+    "G_ranking_only_or_success": 6969,
+    "D_impure_predicted_group": 218
+  },
+  "original_bound": 8596,
+  "corrected_cap_scope_upper_bound": 9063,
+  "source_sha256": "60918e1f9da5109c97e150201fb3fcc05bf177a6d6ddb295dff882483ac4b108",
+  "baseline_sha256": "d269787d0997f3b6d6cd4e893be7a52c9133c4fe5e0e88974064b4fc4cd65237"
+}
