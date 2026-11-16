@@ -1,0 +1,861 @@
+{
+  "schema": "phase19-multisensor-synthetic-v1",
+  "templates": {
+    "train": [
+      "initial_access:v0",
+      "initial_access:v1",
+      "initial_access:v2",
+      "initial_access:v3",
+      "credential_compromise:v0",
+      "credential_compromise:v1",
+      "credential_compromise:v2",
+      "credential_compromise:v3",
+      "suspicious_authentication:v0",
+      "suspicious_authentication:v1",
+      "suspicious_authentication:v2",
+      "suspicious_authentication:v3",
+      "lateral_movement:v0",
+      "lateral_movement:v1",
+      "lateral_movement:v2",
+      "lateral_movement:v3",
+      "privilege_escalation:v0",
+      "privilege_escalation:v1",
+      "privilege_escalation:v2",
+      "privilege_escalation:v3",
+      "persistence:v0",
+      "persistence:v1",
+      "persistence:v2",
+      "persistence:v3",
+      "command_control:v0",
+      "command_control:v1",
+      "command_control:v2",
+      "command_control:v3",
+      "data_staging:v0",
+      "data_staging:v1",
+      "data_staging:v2",
+      "data_staging:v3",
+      "exfiltration:v0",
+      "exfiltration:v1",
+      "exfiltration:v2",
+      "exfiltration:v3",
+      "multi_stage_chain:v0",
+      "multi_stage_chain:v1",
+      "multi_stage_chain:v2",
+      "multi_stage_chain:v3"
+    ],
+    "development": [
+      "initial_access:v4",
+      "credential_compromise:v4",
+      "suspicious_authentication:v4",
+      "lateral_movement:v4",
+      "privilege_escalation:v4",
+      "persistence:v4",
+      "command_control:v4",
+      "data_staging:v4",
+      "exfiltration:v4",
+      "multi_stage_chain:v4"
+    ],
+    "locked_test": [
+      "initial_access:v5",
+      "credential_compromise:v5",
+      "suspicious_authentication:v5",
+      "lateral_movement:v5",
+      "privilege_escalation:v5",
+      "persistence:v5",
+      "command_control:v5",
+      "data_staging:v5",
+      "exfiltration:v5",
+      "multi_stage_chain:v5"
+    ]
+  },
+  "queues": {
+    "train": [
+      {
+        "queue_id": "phase19a_train_q000",
+        "alerts": 842,
+        "source_observations": 842,
+        "field_ledger_rows": 8420,
+        "incidents": 25
+      },
+      {
+        "queue_id": "phase19a_train_q001",
+        "alerts": 833,
+        "source_observations": 833,
+        "field_ledger_rows": 8330,
+        "incidents": 25
+      },
+      {
+        "queue_id": "phase19a_train_q002",
+        "alerts": 855,
+        "source_observations": 855,
+        "field_ledger_rows": 8550,
+        "incidents": 25
+      },
+      {
+        "queue_id": "phase19a_train_q003",
+        "alerts": 864,
+        "source_observations": 864,
+        "field_ledger_rows": 8640,
+        "incidents": 25
+      },
+      {
+        "queue_id": "phase19a_train_q004",
+        "alerts": 829,
+        "source_observations": 829,
+        "field_ledger_rows": 8290,
+        "incidents": 25
+      },
+      {
+        "queue_id": "phase19a_train_q005",
+        "alerts": 844,
+        "source_observations": 844,
+        "field_ledger_rows": 8440,
+        "incidents": 25
+      },
+      {
+        "queue_id": "phase19a_train_q006",
+        "alerts": 850,
+        "source_observations": 850,
+        "field_ledger_rows": 8500,
+        "incidents": 25
+      },
+      {
+        "queue_id": "phase19a_train_q007",
+        "alerts": 851,
+        "source_observations": 851,
+        "field_ledger_rows": 8510,
+        "incidents": 25
+      },
+      {
+        "queue_id": "phase19a_train_q008",
+        "alerts": 859,
+        "source_observations": 859,
+        "field_ledger_rows": 8590,
+        "incidents": 25
+      },
+      {
+        "queue_id": "phase19a_train_q009",
+        "alerts": 840,
+        "source_observations": 840,
+        "field_ledger_rows": 8400,
+        "incidents": 25
+      },
+      {
+        "queue_id": "phase19a_train_q010",
+        "alerts": 851,
+        "source_observations": 851,
+        "field_ledger_rows": 8510,
+        "incidents": 25
+      },
+      {
+        "queue_id": "phase19a_train_q011",
+        "alerts": 825,
+        "source_observations": 825,
+        "field_ledger_rows": 8250,
+        "incidents": 25
+      },
+      {
+        "queue_id": "phase19a_train_q012",
+        "alerts": 868,
+        "source_observations": 868,
+        "field_ledger_rows": 8680,
+        "incidents": 25
+      },
+      {
+        "queue_id": "phase19a_train_q013",
+        "alerts": 849,
+        "source_observations": 849,
+        "field_ledger_rows": 8490,
+        "incidents": 25
+      },
+      {
+        "queue_id": "phase19a_train_q014",
+        "alerts": 835,
+        "source_observations": 835,
+        "field_ledger_rows": 8350,
+        "incidents": 25
+      }
+    ],
+    "development": [
+      {
+        "queue_id": "phase19a_development_q000",
+        "alerts": 826,
+        "source_observations": 826,
+        "field_ledger_rows": 8260,
+        "incidents": 25
+      },
+      {
+        "queue_id": "phase19a_development_q001",
+        "alerts": 845,
+        "source_observations": 845,
+        "field_ledger_rows": 8450,
+        "incidents": 25
+      },
+      {
+        "queue_id": "phase19a_development_q002",
+        "alerts": 855,
+        "source_observations": 855,
+        "field_ledger_rows": 8550,
+        "incidents": 25
+      },
+      {
+        "queue_id": "phase19a_development_q003",
+        "alerts": 828,
+        "source_observations": 828,
+        "field_ledger_rows": 8280,
+        "incidents": 25
+      },
+      {
+        "queue_id": "phase19a_development_q004",
+        "alerts": 848,
+        "source_observations": 848,
+        "field_ledger_rows": 8480,
+        "incidents": 25
+      },
+      {
+        "queue_id": "phase19a_development_q005",
+        "alerts": 823,
+        "source_observations": 823,
+        "field_ledger_rows": 8230,
+        "incidents": 25
+      },
+      {
+        "queue_id": "phase19a_development_q006",
+        "alerts": 835,
+        "source_observations": 835,
+        "field_ledger_rows": 8350,
+        "incidents": 25
+      },
+      {
+        "queue_id": "phase19a_development_q007",
+        "alerts": 834,
+        "source_observations": 834,
+        "field_ledger_rows": 8340,
+        "incidents": 25
+      },
+      {
+        "queue_id": "phase19a_development_q008",
+        "alerts": 847,
+        "source_observations": 847,
+        "field_ledger_rows": 8470,
+        "incidents": 25
+      },
+      {
+        "queue_id": "phase19a_development_q009",
+        "alerts": 824,
+        "source_observations": 824,
+        "field_ledger_rows": 8240,
+        "incidents": 25
+      },
+      {
+        "queue_id": "phase19a_development_q010",
+        "alerts": 853,
+        "source_observations": 853,
+        "field_ledger_rows": 8530,
+        "incidents": 25
+      },
+      {
+        "queue_id": "phase19a_development_q011",
+        "alerts": 846,
+        "source_observations": 846,
+        "field_ledger_rows": 8460,
+        "incidents": 25
+      },
+      {
+        "queue_id": "phase19a_development_q012",
+        "alerts": 823,
+        "source_observations": 823,
+        "field_ledger_rows": 8230,
+        "incidents": 25
+      },
+      {
+        "queue_id": "phase19a_development_q013",
+        "alerts": 833,
+        "source_observations": 833,
+        "field_ledger_rows": 8330,
+        "incidents": 25
+      },
+      {
+        "queue_id": "phase19a_development_q014",
+        "alerts": 831,
+        "source_observations": 831,
+        "field_ledger_rows": 8310,
+        "incidents": 25
+      }
+    ],
+    "locked_test": [
+      {
+        "queue_id": "phase19a_locked_test_q000",
+        "alerts": 840,
+        "source_observations": 840,
+        "field_ledger_rows": 8400,
+        "incidents": 25
+      },
+      {
+        "queue_id": "phase19a_locked_test_q001",
+        "alerts": 838,
+        "source_observations": 838,
+        "field_ledger_rows": 8380,
+        "incidents": 25
+      },
+      {
+        "queue_id": "phase19a_locked_test_q002",
+        "alerts": 854,
+        "source_observations": 854,
+        "field_ledger_rows": 8540,
+        "incidents": 25
+      },
+      {
+        "queue_id": "phase19a_locked_test_q003",
+        "alerts": 841,
+        "source_observations": 841,
+        "field_ledger_rows": 8410,
+        "incidents": 25
+      },
+      {
+        "queue_id": "phase19a_locked_test_q004",
+        "alerts": 808,
+        "source_observations": 808,
+        "field_ledger_rows": 8080,
+        "incidents": 25
+      },
+      {
+        "queue_id": "phase19a_locked_test_q005",
+        "alerts": 860,
+        "source_observations": 860,
+        "field_ledger_rows": 8600,
+        "incidents": 25
+      },
+      {
+        "queue_id": "phase19a_locked_test_q006",
+        "alerts": 848,
+        "source_observations": 848,
+        "field_ledger_rows": 8480,
+        "incidents": 25
+      },
+      {
+        "queue_id": "phase19a_locked_test_q007",
+        "alerts": 839,
+        "source_observations": 839,
+        "field_ledger_rows": 8390,
+        "incidents": 25
+      },
+      {
+        "queue_id": "phase19a_locked_test_q008",
+        "alerts": 823,
+        "source_observations": 823,
+        "field_ledger_rows": 8230,
+        "incidents": 25
+      },
+      {
+        "queue_id": "phase19a_locked_test_q009",
+        "alerts": 830,
+        "source_observations": 830,
+        "field_ledger_rows": 8300,
+        "incidents": 25
+      },
+      {
+        "queue_id": "phase19a_locked_test_q010",
+        "alerts": 846,
+        "source_observations": 846,
+        "field_ledger_rows": 8460,
+        "incidents": 25
+      },
+      {
+        "queue_id": "phase19a_locked_test_q011",
+        "alerts": 840,
+        "source_observations": 840,
+        "field_ledger_rows": 8400,
+        "incidents": 25
+      },
+      {
+        "queue_id": "phase19a_locked_test_q012",
+        "alerts": 833,
+        "source_observations": 833,
+        "field_ledger_rows": 8330,
+        "incidents": 25
+      },
+      {
+        "queue_id": "phase19a_locked_test_q013",
+        "alerts": 859,
+        "source_observations": 859,
+        "field_ledger_rows": 8590,
+        "incidents": 25
+      },
+      {
+        "queue_id": "phase19a_locked_test_q014",
+        "alerts": 827,
+        "source_observations": 827,
+        "field_ledger_rows": 8270,
+        "incidents": 25
+      },
+      {
+        "queue_id": "phase19a_locked_test_q015",
+        "alerts": 834,
+        "source_observations": 834,
+        "field_ledger_rows": 8340,
+        "incidents": 25
+      },
+      {
+        "queue_id": "phase19a_locked_test_q016",
+        "alerts": 859,
+        "source_observations": 859,
+        "field_ledger_rows": 8590,
+        "incidents": 25
+      },
+      {
+        "queue_id": "phase19a_locked_test_q017",
+        "alerts": 819,
+        "source_observations": 819,
+        "field_ledger_rows": 8190,
+        "incidents": 25
+      },
+      {
+        "queue_id": "phase19a_locked_test_q018",
+        "alerts": 840,
+        "source_observations": 840,
+        "field_ledger_rows": 8400,
+        "incidents": 25
+      },
+      {
+        "queue_id": "phase19a_locked_test_q019",
+        "alerts": 836,
+        "source_observations": 836,
+        "field_ledger_rows": 8360,
+        "incidents": 25
+      },
+      {
+        "queue_id": "phase19a_locked_test_q020",
+        "alerts": 832,
+        "source_observations": 832,
+        "field_ledger_rows": 8320,
+        "incidents": 25
+      },
+      {
+        "queue_id": "phase19a_locked_test_q021",
+        "alerts": 849,
+        "source_observations": 849,
+        "field_ledger_rows": 8490,
+        "incidents": 25
+      },
+      {
+        "queue_id": "phase19a_locked_test_q022",
+        "alerts": 840,
+        "source_observations": 840,
+        "field_ledger_rows": 8400,
+        "incidents": 25
+      },
+      {
+        "queue_id": "phase19a_locked_test_q023",
+        "alerts": 820,
+        "source_observations": 820,
+        "field_ledger_rows": 8200,
+        "incidents": 25
+      },
+      {
+        "queue_id": "phase19a_locked_test_q024",
+        "alerts": 836,
+        "source_observations": 836,
+        "field_ledger_rows": 8360,
+        "incidents": 25
+      },
+      {
+        "queue_id": "phase19a_locked_test_q025",
+        "alerts": 837,
+        "source_observations": 837,
+        "field_ledger_rows": 8370,
+        "incidents": 25
+      },
+      {
+        "queue_id": "phase19a_locked_test_q026",
+        "alerts": 878,
+        "source_observations": 878,
+        "field_ledger_rows": 8780,
+        "incidents": 25
+      },
+      {
+        "queue_id": "phase19a_locked_test_q027",
+        "alerts": 851,
+        "source_observations": 851,
+        "field_ledger_rows": 8510,
+        "incidents": 25
+      },
+      {
+        "queue_id": "phase19a_locked_test_q028",
+        "alerts": 848,
+        "source_observations": 848,
+        "field_ledger_rows": 8480,
+        "incidents": 25
+      },
+      {
+        "queue_id": "phase19a_locked_test_q029",
+        "alerts": 871,
+        "source_observations": 871,
+        "field_ledger_rows": 8710,
+        "incidents": 25
+      }
+    ]
+  },
+  "sensor_process_seeds": {
+    "phase19a_train_q000": {
+      "auth": 101911,
+      "endpoint": 201911,
+      "network": 301911,
+      "identity": 401911
+    },
+    "phase19a_train_q001": {
+      "auth": 102920,
+      "endpoint": 202920,
+      "network": 302920,
+      "identity": 402920
+    },
+    "phase19a_train_q002": {
+      "auth": 103929,
+      "endpoint": 203929,
+      "network": 303929,
+      "identity": 403929
+    },
+    "phase19a_train_q003": {
+      "auth": 104938,
+      "endpoint": 204938,
+      "network": 304938,
+      "identity": 404938
+    },
+    "phase19a_train_q004": {
+      "auth": 105947,
+      "endpoint": 205947,
+      "network": 305947,
+      "identity": 405947
+    },
+    "phase19a_train_q005": {
+      "auth": 106956,
+      "endpoint": 206956,
+      "network": 306956,
+      "identity": 406956
+    },
+    "phase19a_train_q006": {
+      "auth": 107965,
+      "endpoint": 207965,
+      "network": 307965,
+      "identity": 407965
+    },
+    "phase19a_train_q007": {
+      "auth": 108974,
+      "endpoint": 208974,
+      "network": 308974,
+      "identity": 408974
+    },
+    "phase19a_train_q008": {
+      "auth": 109983,
+      "endpoint": 209983,
+      "network": 309983,
+      "identity": 409983
+    },
+    "phase19a_train_q009": {
+      "auth": 110992,
+      "endpoint": 210992,
+      "network": 310992,
+      "identity": 410992
+    },
+    "phase19a_train_q010": {
+      "auth": 112001,
+      "endpoint": 212001,
+      "network": 312001,
+      "identity": 412001
+    },
+    "phase19a_train_q011": {
+      "auth": 113010,
+      "endpoint": 213010,
+      "network": 313010,
+      "identity": 413010
+    },
+    "phase19a_train_q012": {
+      "auth": 114019,
+      "endpoint": 214019,
+      "network": 314019,
+      "identity": 414019
+    },
+    "phase19a_train_q013": {
+      "auth": 115028,
+      "endpoint": 215028,
+      "network": 315028,
+      "identity": 415028
+    },
+    "phase19a_train_q014": {
+      "auth": 116037,
+      "endpoint": 216037,
+      "network": 316037,
+      "identity": 416037
+    },
+    "phase19a_development_q000": {
+      "auth": 101912,
+      "endpoint": 201912,
+      "network": 301912,
+      "identity": 401912
+    },
+    "phase19a_development_q001": {
+      "auth": 102921,
+      "endpoint": 202921,
+      "network": 302921,
+      "identity": 402921
+    },
+    "phase19a_development_q002": {
+      "auth": 103930,
+      "endpoint": 203930,
+      "network": 303930,
+      "identity": 403930
+    },
+    "phase19a_development_q003": {
+      "auth": 104939,
+      "endpoint": 204939,
+      "network": 304939,
+      "identity": 404939
+    },
+    "phase19a_development_q004": {
+      "auth": 105948,
+      "endpoint": 205948,
+      "network": 305948,
+      "identity": 405948
+    },
+    "phase19a_development_q005": {
+      "auth": 106957,
+      "endpoint": 206957,
+      "network": 306957,
+      "identity": 406957
+    },
+    "phase19a_development_q006": {
+      "auth": 107966,
+      "endpoint": 207966,
+      "network": 307966,
+      "identity": 407966
+    },
+    "phase19a_development_q007": {
+      "auth": 108975,
+      "endpoint": 208975,
+      "network": 308975,
+      "identity": 408975
+    },
+    "phase19a_development_q008": {
+      "auth": 109984,
+      "endpoint": 209984,
+      "network": 309984,
+      "identity": 409984
+    },
+    "phase19a_development_q009": {
+      "auth": 110993,
+      "endpoint": 210993,
+      "network": 310993,
+      "identity": 410993
+    },
+    "phase19a_development_q010": {
+      "auth": 112002,
+      "endpoint": 212002,
+      "network": 312002,
+      "identity": 412002
+    },
+    "phase19a_development_q011": {
+      "auth": 113011,
+      "endpoint": 213011,
+      "network": 313011,
+      "identity": 413011
+    },
+    "phase19a_development_q012": {
+      "auth": 114020,
+      "endpoint": 214020,
+      "network": 314020,
+      "identity": 414020
+    },
+    "phase19a_development_q013": {
+      "auth": 115029,
+      "endpoint": 215029,
+      "network": 315029,
+      "identity": 415029
+    },
+    "phase19a_development_q014": {
+      "auth": 116038,
+      "endpoint": 216038,
+      "network": 316038,
+      "identity": 416038
+    },
+    "phase19a_locked_test_q000": {
+      "auth": 101913,
+      "endpoint": 201913,
+      "network": 301913,
+      "identity": 401913
+    },
+    "phase19a_locked_test_q001": {
+      "auth": 102922,
+      "endpoint": 202922,
+      "network": 302922,
+      "identity": 402922
+    },
+    "phase19a_locked_test_q002": {
+      "auth": 103931,
+      "endpoint": 203931,
+      "network": 303931,
+      "identity": 403931
+    },
+    "phase19a_locked_test_q003": {
+      "auth": 104940,
+      "endpoint": 204940,
+      "network": 304940,
+      "identity": 404940
+    },
+    "phase19a_locked_test_q004": {
+      "auth": 105949,
+      "endpoint": 205949,
+      "network": 305949,
+      "identity": 405949
+    },
+    "phase19a_locked_test_q005": {
+      "auth": 106958,
+      "endpoint": 206958,
+      "network": 306958,
+      "identity": 406958
+    },
+    "phase19a_locked_test_q006": {
+      "auth": 107967,
+      "endpoint": 207967,
+      "network": 307967,
+      "identity": 407967
+    },
+    "phase19a_locked_test_q007": {
+      "auth": 108976,
+      "endpoint": 208976,
+      "network": 308976,
+      "identity": 408976
+    },
+    "phase19a_locked_test_q008": {
+      "auth": 109985,
+      "endpoint": 209985,
+      "network": 309985,
+      "identity": 409985
+    },
+    "phase19a_locked_test_q009": {
+      "auth": 110994,
+      "endpoint": 210994,
+      "network": 310994,
+      "identity": 410994
+    },
+    "phase19a_locked_test_q010": {
+      "auth": 112003,
+      "endpoint": 212003,
+      "network": 312003,
+      "identity": 412003
+    },
+    "phase19a_locked_test_q011": {
+      "auth": 113012,
+      "endpoint": 213012,
+      "network": 313012,
+      "identity": 413012
+    },
+    "phase19a_locked_test_q012": {
+      "auth": 114021,
+      "endpoint": 214021,
+      "network": 314021,
+      "identity": 414021
+    },
+    "phase19a_locked_test_q013": {
+      "auth": 115030,
+      "endpoint": 215030,
+      "network": 315030,
+      "identity": 415030
+    },
+    "phase19a_locked_test_q014": {
+      "auth": 116039,
+      "endpoint": 216039,
+      "network": 316039,
+      "identity": 416039
+    },
+    "phase19a_locked_test_q015": {
+      "auth": 117048,
+      "endpoint": 217048,
+      "network": 317048,
+      "identity": 417048
+    },
+    "phase19a_locked_test_q016": {
+      "auth": 118057,
+      "endpoint": 218057,
+      "network": 318057,
+      "identity": 418057
+    },
+    "phase19a_locked_test_q017": {
+      "auth": 119066,
+      "endpoint": 219066,
+      "network": 319066,
+      "identity": 419066
+    },
+    "phase19a_locked_test_q018": {
+      "auth": 120075,
+      "endpoint": 220075,
+      "network": 320075,
+      "identity": 420075
+    },
+    "phase19a_locked_test_q019": {
+      "auth": 121084,
+      "endpoint": 221084,
+      "network": 321084,
+      "identity": 421084
+    },
+    "phase19a_locked_test_q020": {
+      "auth": 122093,
+      "endpoint": 222093,
+      "network": 322093,
+      "identity": 422093
+    },
+    "phase19a_locked_test_q021": {
+      "auth": 123102,
+      "endpoint": 223102,
+      "network": 323102,
+      "identity": 423102
+    },
+    "phase19a_locked_test_q022": {
+      "auth": 124111,
+      "endpoint": 224111,
+      "network": 324111,
+      "identity": 424111
+    },
+    "phase19a_locked_test_q023": {
+      "auth": 125120,
+      "endpoint": 225120,
+      "network": 325120,
+      "identity": 425120
+    },
+    "phase19a_locked_test_q024": {
+      "auth": 126129,
+      "endpoint": 226129,
+      "network": 326129,
+      "identity": 426129
+    },
+    "phase19a_locked_test_q025": {
+      "auth": 127138,
+      "endpoint": 227138,
+      "network": 327138,
+      "identity": 427138
+    },
+    "phase19a_locked_test_q026": {
+      "auth": 128147,
+      "endpoint": 228147,
+      "network": 328147,
+      "identity": 428147
+    },
+    "phase19a_locked_test_q027": {
+      "auth": 129156,
+      "endpoint": 229156,
+      "network": 329156,
+      "identity": 429156
+    },
+    "phase19a_locked_test_q028": {
+      "auth": 130165,
+      "endpoint": 230165,
+      "network": 330165,
+      "identity": 430165
+    },
+    "phase19a_locked_test_q029": {
+      "auth": 131174,
+      "endpoint": 231174,
+      "network": 331174,
+      "identity": 431174
+    }
+  }
+}

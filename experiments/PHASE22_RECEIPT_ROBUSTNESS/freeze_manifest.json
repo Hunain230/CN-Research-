@@ -1,0 +1,17 @@
+{
+  "status": "development_only_predictions_frozen_before_private_audit",
+  "phase19_locked_truth_read": false,
+  "phase19_locked_predictions_created": false,
+  "phase22_locked_truth_read": false,
+  "phase22_locked_predictions_created": false,
+  "dataset_manifest_sha256": "b7c2062cb30ed4f462718f993e1e725067b64e92994e378fc7b140b33ab2642b",
+  "generator_code_sha256": "5fe47d04c0ed76446661fd21717e268c72b40bf1dd3612d23a00a0dc9787e986",
+  "study_code_sha256": "2e3e73777f29f5d6797ff746f6b696a6a08b859462b6b95210f5653da743de0b",
+  "partial_code_sha256": "a5a8c6a72626c6de8815b09dd3c3c80a9cd4ce8e749b170982fc1a0f3a3bcd2e",
+  "prediction_sha256": {
+    "causal_roots": "9cf98b4c3cf667e80275c28caabc55cb2ea6f5a55ebedc06272a8ccd0581cd3d",
+    "sensor_labels_only": "502cda043efc651561bda013511e0f9a04ce0d060763788fd60d003d7bac605e",
+    "verified_edges": "c372e606efc96a0e3b611f1986e71d8d072d4f25bf6ad14f17a234f5eeb75643",
+    "partial_verified": "f7058db28dce74f40d970f1bb38594ec75858f7c5b0e7137f5a185ed8bc83afb"
+  }
+}

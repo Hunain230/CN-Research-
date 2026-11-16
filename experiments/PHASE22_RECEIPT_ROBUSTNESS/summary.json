@@ -1,0 +1,114 @@
+{
+  "causal_roots": {
+    "train": {
+      "queues": 4,
+      "incidents": 48,
+      "recoverable": 19,
+      "false_pairs": 1366,
+      "true_pairs": 10154,
+      "accepted_unions": 36,
+      "accepted_invalid_unions": 4,
+      "abstained_proposals": 40,
+      "valid_causal_claims": 99,
+      "corrupt_receipts": 1,
+      "common_mode_claims": 52
+    },
+    "development": {
+      "queues": 10,
+      "incidents": 120,
+      "recoverable": 41,
+      "false_pairs": 3224,
+      "true_pairs": 24692,
+      "accepted_unions": 87,
+      "accepted_invalid_unions": 10,
+      "abstained_proposals": 116,
+      "valid_causal_claims": 277,
+      "corrupt_receipts": 6,
+      "common_mode_claims": 130
+    }
+  },
+  "sensor_labels_only": {
+    "train": {
+      "queues": 4,
+      "incidents": 48,
+      "recoverable": 0,
+      "false_pairs": 7817,
+      "true_pairs": 10154,
+      "accepted_unions": 56,
+      "accepted_invalid_unions": 24,
+      "abstained_proposals": 20,
+      "valid_causal_claims": 99,
+      "corrupt_receipts": 1,
+      "common_mode_claims": 52
+    },
+    "development": {
+      "queues": 10,
+      "incidents": 120,
+      "recoverable": 1,
+      "false_pairs": 18321,
+      "true_pairs": 24692,
+      "accepted_unions": 137,
+      "accepted_invalid_unions": 60,
+      "abstained_proposals": 66,
+      "valid_causal_claims": 277,
+      "corrupt_receipts": 6,
+      "common_mode_claims": 130
+    }
+  },
+  "verified_edges": {
+    "train": {
+      "queues": 4,
+      "incidents": 48,
+      "recoverable": 19,
+      "false_pairs": 0,
+      "true_pairs": 9644,
+      "accepted_unions": 28,
+      "accepted_invalid_unions": 0,
+      "abstained_proposals": 25,
+      "valid_causal_claims": 99,
+      "corrupt_receipts": 1,
+      "common_mode_claims": 52
+    },
+    "development": {
+      "queues": 10,
+      "incidents": 120,
+      "recoverable": 44,
+      "false_pairs": 300,
+      "true_pairs": 23708,
+      "accepted_unions": 72,
+      "accepted_invalid_unions": 2,
+      "abstained_proposals": 69,
+      "valid_causal_claims": 277,
+      "corrupt_receipts": 6,
+      "common_mode_claims": 130
+    }
+  },
+  "partial_verified": {
+    "train": {
+      "queues": 4,
+      "incidents": 48,
+      "recoverable": 38,
+      "false_pairs": 506,
+      "true_pairs": 12548,
+      "accepted_unions": 53,
+      "accepted_invalid_unions": 1,
+      "abstained_proposals": 0,
+      "valid_causal_claims": 99,
+      "corrupt_receipts": 1,
+      "common_mode_claims": 52
+    },
+    "development": {
+      "queues": 10,
+      "incidents": 120,
+      "recoverable": 95,
+      "false_pairs": 1724,
+      "true_pairs": 32027,
+      "accepted_unions": 141,
+      "accepted_invalid_unions": 4,
+      "abstained_proposals": 0,
+      "valid_causal_claims": 277,
+      "corrupt_receipts": 6,
+      "common_mode_claims": 130
+    }
+  }
+}

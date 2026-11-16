@@ -1,0 +1,12 @@
+{
+  "status": "development_only_predictions_frozen_before_private_audit",
+  "phase19_locked_truth_read": false,
+  "phase19_locked_predictions_created": false,
+  "dataset_manifest_sha256": "a47b8c95eeb24d15a0d8cd48309e48c879671d1db09a116568de2e24fd343497",
+  "study_code_sha256": "f32bdfd30287a6f83ba0bf5e8509d7f52df0117ed1a2dbbcfbf3c614361b9af4",
+  "prediction_sha256": {
+    "causal_roots": "ef5449bc52058ead8f08ecb4e7cb828ec2be42f7fda4868fdb425f15313f9b0d",
+    "sensor_labels_only": "4a552bcd0a5b4100f0abc68b7bf7dcd84124405153e166cbcf08d65f4c65860e",
+    "verified_edges": "0a75f1b43f0ff0bcba31ece67d30d6fc8d009d4c15b13509ea55bf2c49b19be1"
+  }
+}

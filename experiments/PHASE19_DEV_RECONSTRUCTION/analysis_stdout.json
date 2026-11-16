@@ -1,0 +1,35 @@
+{
+  "baseline_readiness": {
+    "train": {
+      "queues": 15,
+      "queues_with_recoverable": 15,
+      "recoverable_top20": 132
+    },
+    "development": {
+      "queues": 15,
+      "queues_with_recoverable": 15,
+      "recoverable_top20": 123
+    }
+  },
+  "development_hard_negatives": {
+    "candidate_fragment_pairs": 1662,
+    "disjoint_truth_pairs": 363,
+    "disjoint_shared_host_account": 2,
+    "disjoint_shared_context_single_lineage": 2
+  },
+  "baseline_dev_merge_totals": {
+    "accepted_merges": 624,
+    "added_true_pairs": 50829,
+    "added_false_pairs": 0,
+    "abstained": 1037,
+    "rejected": 0
+  },
+  "locked_truth_opened": false,
+  "locked_prediction_count": 0,
+  "source_hashes": {
+    "experiments\\PHASE19_DEV_RECONSTRUCTION\\reconstruct.py": "bd1e41afcb127aae51963bb5ba4a04125732cec6a6485bec561eb99546668f35",
+    "experiments\\PHASE19_DEV_RECONSTRUCTION\\model.py": "3be961925a59719e25fef60e63f60f61dfa647cd58614b22c52e6d544c7a64c1",
+    "experiments\\PHASE19_DEV_RECONSTRUCTION\\configs\\study.json": "1dd08c762638790ab4d8f7388c8898961c787f0785c92b2ba9568858bbe231e3",
+    "experiments\\PHASE19_DEV_RECONSTRUCTION\\METRIC_AND_ACCEPTANCE_CONTRACT.md": "90fb017c41d438014cacf49c8ea0a33d1914e9e20ee5779c12913959a900b601"
+  }
+}

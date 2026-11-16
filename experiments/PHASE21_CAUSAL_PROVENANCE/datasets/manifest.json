@@ -1,0 +1,95 @@
+{
+  "schema": "phase21-causal-provenance-v1",
+  "namespace": "phase21a",
+  "splits": {
+    "train": [
+      {
+        "queue_id": "phase21a_train_q000",
+        "alerts": 350,
+        "claims": 33,
+        "incidents": 12,
+        "collision_pairs": 6
+      },
+      {
+        "queue_id": "phase21a_train_q001",
+        "alerts": 370,
+        "claims": 33,
+        "incidents": 12,
+        "collision_pairs": 6
+      },
+      {
+        "queue_id": "phase21a_train_q002",
+        "alerts": 365,
+        "claims": 32,
+        "incidents": 12,
+        "collision_pairs": 6
+      }
+    ],
+    "development": [
+      {
+        "queue_id": "phase21a_development_q000",
+        "alerts": 365,
+        "claims": 32,
+        "incidents": 12,
+        "collision_pairs": 6
+      },
+      {
+        "queue_id": "phase21a_development_q001",
+        "alerts": 366,
+        "claims": 34,
+        "incidents": 12,
+        "collision_pairs": 6
+      },
+      {
+        "queue_id": "phase21a_development_q002",
+        "alerts": 363,
+        "claims": 34,
+        "incidents": 12,
+        "collision_pairs": 6
+      },
+      {
+        "queue_id": "phase21a_development_q003",
+        "alerts": 375,
+        "claims": 34,
+        "incidents": 12,
+        "collision_pairs": 6
+      },
+      {
+        "queue_id": "phase21a_development_q004",
+        "alerts": 356,
+        "claims": 29,
+        "incidents": 12,
+        "collision_pairs": 6
+      },
+      {
+        "queue_id": "phase21a_development_q005",
+        "alerts": 354,
+        "claims": 27,
+        "incidents": 12,
+        "collision_pairs": 6
+      },
+      {
+        "queue_id": "phase21a_development_q006",
+        "alerts": 367,
+        "claims": 33,
+        "incidents": 12,
+        "collision_pairs": 6
+      },
+      {
+        "queue_id": "phase21a_development_q007",
+        "alerts": 374,
+        "claims": 32,
+        "incidents": 12,
+        "collision_pairs": 6
+      }
+    ]
+  },
+  "decision_minute": 100,
+  "sensor_processes": [
+    "auth",
+    "endpoint",
+    "network",
+    "identity"
+  ],
+  "classification": "controlled_synthetic_development_not_independent_validation"
+}

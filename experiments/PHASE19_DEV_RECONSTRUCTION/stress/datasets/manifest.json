@@ -1,0 +1,28 @@
+{
+  "queues": {
+    "development": [
+      {
+        "queue_id": "phase19a_development_q000",
+        "alerts": 826,
+        "source_observations": 826,
+        "field_ledger_rows": 8260,
+        "incidents": 25
+      },
+      {
+        "queue_id": "phase19a_development_q001",
+        "alerts": 845,
+        "source_observations": 845,
+        "field_ledger_rows": 8450,
+        "incidents": 25
+      },
+      {
+        "queue_id": "phase19a_development_q002",
+        "alerts": 855,
+        "source_observations": 855,
+        "field_ledger_rows": 8550,
+        "incidents": 25
+      }
+    ]
+  },
+  "construction": "retrospective_controller-designed_shared_context_and_auth_ref"
+}

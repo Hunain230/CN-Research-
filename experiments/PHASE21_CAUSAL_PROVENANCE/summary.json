@@ -1,0 +1,74 @@
+{
+  "causal_roots": {
+    "train": {
+      "queues": 3,
+      "incidents": 36,
+      "recoverable": 13,
+      "false_pairs": 1183,
+      "accepted_unions": 20,
+      "accepted_invalid_unions": 3,
+      "abstained_proposals": 30,
+      "valid_causal_claims": 62,
+      "common_mode_claims": 39
+    },
+    "development": {
+      "queues": 8,
+      "incidents": 96,
+      "recoverable": 37,
+      "false_pairs": 3288,
+      "accepted_unions": 54,
+      "accepted_invalid_unions": 8,
+      "abstained_proposals": 79,
+      "valid_causal_claims": 159,
+      "common_mode_claims": 104
+    }
+  },
+  "sensor_labels_only": {
+    "train": {
+      "queues": 3,
+      "incidents": 36,
+      "recoverable": 0,
+      "false_pairs": 5910,
+      "accepted_unions": 35,
+      "accepted_invalid_unions": 18,
+      "abstained_proposals": 15,
+      "valid_causal_claims": 62,
+      "common_mode_claims": 39
+    },
+    "development": {
+      "queues": 8,
+      "incidents": 96,
+      "recoverable": 0,
+      "false_pairs": 16391,
+      "accepted_unions": 94,
+      "accepted_invalid_unions": 48,
+      "abstained_proposals": 39,
+      "valid_causal_claims": 159,
+      "common_mode_claims": 104
+    }
+  },
+  "verified_edges": {
+    "train": {
+      "queues": 3,
+      "incidents": 36,
+      "recoverable": 17,
+      "false_pairs": 0,
+      "accepted_unions": 17,
+      "accepted_invalid_unions": 0,
+      "abstained_proposals": 15,
+      "valid_causal_claims": 62,
+      "common_mode_claims": 39
+    },
+    "development": {
+      "queues": 8,
+      "incidents": 96,
+      "recoverable": 46,
+      "false_pairs": 0,
+      "accepted_unions": 46,
+      "accepted_invalid_unions": 0,
+      "abstained_proposals": 39,
+      "valid_causal_claims": 159,
+      "common_mode_claims": 104
+    }
+  }
+}

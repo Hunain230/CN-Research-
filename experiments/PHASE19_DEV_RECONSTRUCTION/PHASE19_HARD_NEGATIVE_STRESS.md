@@ -1,0 +1,7 @@
+# Common-mode hard-negative stress result
+
+Natural development data had only **two** disjoint-incident candidate fragment pairs with both host and account agreement. That is inadequate to claim safety against the Phase 18 failure mode. The separate stress set changed **13** incident-pair contexts across three development queues, making unrelated incidents share host, account and a controlled auth reference while preserving their evaluator-only membership. This construction uses truth **only to design the adversarial fixture**; the predictor still receives label-free alerts and field ledgers. It is not independent validation and was not used to select a model.
+
+On those same three queues, the frozen baseline's false pairs rose **0→1,181** and recoverable top-20 incidents fell **24→18**. Replay of all 118 accepted stress unions attributes **1,181 new false pairs to 17 unions**; the worst created 171 and the top five 667. `PHASE19_STRESS_INJECTIONS.csv`, `PHASE19_STRESS_PAIR_INCREMENTS.csv`, and the two JSON summaries provide the exact records and reconciliation. The 250-pair pre-merge exposure rule limits an individual risky union but **does not bound cumulative false-pair growth** across multiple unions.
+
+This baseline passes the ordinary train/development readiness gate but fails the common-mode robustness purpose of Phase 19. It must not be promoted to a locked test as a safe candidate. The locked cohort remains untouched.

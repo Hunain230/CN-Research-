@@ -1,0 +1,82 @@
+{
+  "classification": "retrospective_mechanism_audit_no_model_selection",
+  "split_summary": {
+    "train": {
+      "queues": 15,
+      "top20_labels": 300,
+      "baseline_recoverable": 0,
+      "complete_80pct": 0,
+      "raw_all_fields_complete_80pct": 0,
+      "largest_overlap_fraction": {
+        "min": 0.25806451612903225,
+        "p25": 0.3333333333333333,
+        "median": 0.35714285714285715,
+        "p75": 0.38461538461538464,
+        "max": 0.4782608695652174
+      },
+      "mean_eligible_alerts_per_top20": 28.31,
+      "mean_baseline_fragments_per_top20": 4.88,
+      "mean_visible_alerts_per_queue": 835.8666666666667,
+      "actions_with_2plus_sensors": 3927
+    },
+    "development": {
+      "queues": 15,
+      "top20_labels": 300,
+      "baseline_recoverable": 0,
+      "complete_80pct": 0,
+      "raw_all_fields_complete_80pct": 0,
+      "largest_overlap_fraction": {
+        "min": 0.2647058823529412,
+        "p25": 0.3333333333333333,
+        "median": 0.35714285714285715,
+        "p75": 0.3793103448275862,
+        "max": 0.4583333333333333
+      },
+      "mean_eligible_alerts_per_top20": 28.366666666666667,
+      "mean_baseline_fragments_per_top20": 4.916666666666667,
+      "mean_visible_alerts_per_queue": 833.2,
+      "actions_with_2plus_sensors": 3888
+    },
+    "locked_test": {
+      "queues": 30,
+      "top20_labels": 600,
+      "baseline_recoverable": 0,
+      "complete_80pct": 0,
+      "raw_all_fields_complete_80pct": 0,
+      "largest_overlap_fraction": {
+        "min": 0.25,
+        "p25": 0.3333333333333333,
+        "median": 0.35714285714285715,
+        "p75": 0.3793103448275862,
+        "max": 0.4583333333333333
+      },
+      "mean_eligible_alerts_per_top20": 28.411666666666665,
+      "mean_baseline_fragments_per_top20": 4.961666666666667,
+      "mean_visible_alerts_per_queue": 835.6333333333333,
+      "actions_with_2plus_sensors": 7820
+    }
+  },
+  "false_pair_replay": {
+    "accepted_merges": 953,
+    "merges_creating_false_pairs": 12,
+    "new_false_pairs": 986,
+    "new_true_pairs": 82646,
+    "top_1_false_pairs": 299,
+    "top_5_false_pairs": 781,
+    "top_10_false_pairs": 967,
+    "false_pairs_from_nonrare_ref": 944,
+    "false_pairs_with_auth_and_flow": 0,
+    "false_pairs_with_host_account_agreement": 986
+  },
+  "phase16_ranking_only_count": 44,
+  "phase16_ranking_median_qualifying_position": 24,
+  "input_sha256": {
+    "experiments\\PHASE17_INDEPENDENT_PROVENANCE\\model.py": "3be961925a59719e25fef60e63f60f61dfa647cd58614b22c52e6d544c7a64c1",
+    "experiments\\PHASE17_INDEPENDENT_PROVENANCE\\generate.py": "61ffe04a4367f6aefb929df6a9144c5c9132d2be14261e149a8a02016ff209f1",
+    "experiments\\PHASE17_INDEPENDENT_PROVENANCE\\configs\\study.json": "3856c9f77c67a2f53e5e8ad6806b4cb581ed31cec92945a86dffb9f5194169f2",
+    "experiments\\PHASE17_INDEPENDENT_PROVENANCE\\experiments\\selection_freeze.json": "2ebdeac5c8d4de20134f10c4f9603d9d70131c57431cc4e9195e09497ac4084d",
+    "experiments\\PHASE17_INDEPENDENT_PROVENANCE\\experiments\\evaluations\\development_baseline.json": "462018a688cc14dcfda1d55faae1f826f31264a85a2b0d8760710551d614e2fc",
+    "experiments\\PHASE17_INDEPENDENT_PROVENANCE\\experiments\\evaluations\\development_t0p8_progression.json": "7f6a7e6c1f31e8f6cc3297e272c2acad510385de5acdb4516fabb26353309aeb",
+    "experiments\\PHASE17_INDEPENDENT_PROVENANCE\\experiments\\evaluations\\locked_test_baseline.json": "e56a049e10d69ef3b66ff6e8d0d2919d0b667cf132ed74c1a32fa6e4c123d48e"
+  }
+}

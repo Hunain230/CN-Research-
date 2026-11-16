@@ -1,0 +1,10 @@
+{
+  "classification": "adversarial_development_stress_not_validation",
+  "injected_incident_pairs": 103,
+  "queues": 15,
+  "original_false_pairs": 0,
+  "stress_false_pairs": 2560,
+  "additional_false_pairs": 2560,
+  "original_recoverable": 123,
+  "stress_recoverable": 73
+}

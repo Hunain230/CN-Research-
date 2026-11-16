@@ -45,12 +45,19 @@ def baseline_and_sensor_audit(manifest, cutoff):
             truth = {x["alert_id"]: x["incident_id"] for x in lines(folder / "ground_truth_private" / f"{queue}.jsonl")}
             oracle = lines(folder / "ground_truth_private" / f"{queue}_priority.jsonl")
             groups = fragments(a, 100)
+            raw_groups = fragments(raw, 100)  # retrospective upper diagnostic, never inference
             sizes = Counter(truth[x["alert_id"]] for x in a)
+            raw_sizes = Counter(truth[x["alert_id"]] for x in raw)
             by_incident = defaultdict(list)
             for group in groups:
                 counts = Counter(truth[a[i]["alert_id"]] for i in group)
                 for incident, hits in counts.items():
                     by_incident[incident].append((hits, len(group)))
+            raw_best = defaultdict(int)
+            for group in raw_groups:
+                counts = Counter(truth[raw[i]["alert_id"]] for i in group)
+                for incident, hits in counts.items():
+                    raw_best[incident] = max(raw_best[incident], hits)
             qualifying = 0
             for item_oracle in oracle:
                 if item_oracle["priority_rank"] > 20:
@@ -68,6 +75,8 @@ def baseline_and_sensor_audit(manifest, cutoff):
                              "family": item_oracle["family"], "eligible_alerts": incident_size,
                              "baseline_fragments": len(parts), "largest_overlap": best,
                              "largest_overlap_fraction": best/incident_size,
+                             "raw_all_fields_largest_fraction": raw_best[incident]/raw_sizes[incident],
+                             "raw_all_fields_complete": int(raw_best[incident]/raw_sizes[incident] >= .8),
                              "has_80pct_complete_group": int(complete),
                              "recoverable": int(recoverable)})
             by_action = defaultdict(set)
@@ -94,6 +103,10 @@ def baseline_and_sensor_audit(manifest, cutoff):
                 frozen = next(x for x in lines(pred) if x["queue_id"] == queue)
                 if set(frozen["eligible_alert_ids"]) != {x["alert_id"] for x in a}:
                     raise AssertionError("Frozen prediction differs from point-in-time replay")
+                replay_groups = {frozenset(a[i]["alert_id"] for i in group) for group in groups}
+                frozen_groups = {frozenset(group) for group in frozen["groups_ranked"]}
+                if replay_groups != frozen_groups:
+                    raise AssertionError("Frozen baseline partition differs from code replay")
     write_csv("PHASE18_BASELINE_INCIDENT_AUDIT.csv", rows)
     write_csv("PHASE18_QUEUE_DISTRIBUTION.csv", queue_rows)
     write_csv("PHASE18_FIELD_AVAILABILITY.csv", sensor_rows)
@@ -172,6 +185,7 @@ def main():
         split_summary[split] = {"queues": len(q), "top20_labels": len(incidents),
             "baseline_recoverable": sum(x["recoverable"] for x in incidents),
             "complete_80pct": sum(x["has_80pct_complete_group"] for x in incidents),
+            "raw_all_fields_complete_80pct": sum(x["raw_all_fields_complete"] for x in incidents),
             "largest_overlap_fraction": quantiles([x["largest_overlap_fraction"] for x in incidents]),
             "mean_eligible_alerts_per_top20": statistics.mean(x["eligible_alerts"] for x in incidents),
             "mean_baseline_fragments_per_top20": statistics.mean(x["baseline_fragments"] for x in incidents),

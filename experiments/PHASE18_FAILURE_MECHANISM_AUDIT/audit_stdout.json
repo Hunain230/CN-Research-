@@ -1,0 +1,70 @@
+{
+  "split_summary": {
+    "train": {
+      "queues": 15,
+      "top20_labels": 300,
+      "baseline_recoverable": 0,
+      "complete_80pct": 0,
+      "raw_all_fields_complete_80pct": 0,
+      "largest_overlap_fraction": {
+        "min": 0.25806451612903225,
+        "p25": 0.3333333333333333,
+        "median": 0.35714285714285715,
+        "p75": 0.38461538461538464,
+        "max": 0.4782608695652174
+      },
+      "mean_eligible_alerts_per_top20": 28.31,
+      "mean_baseline_fragments_per_top20": 4.88,
+      "mean_visible_alerts_per_queue": 835.8666666666667,
+      "actions_with_2plus_sensors": 3927
+    },
+    "development": {
+      "queues": 15,
+      "top20_labels": 300,
+      "baseline_recoverable": 0,
+      "complete_80pct": 0,
+      "raw_all_fields_complete_80pct": 0,
+      "largest_overlap_fraction": {
+        "min": 0.2647058823529412,
+        "p25": 0.3333333333333333,
+        "median": 0.35714285714285715,
+        "p75": 0.3793103448275862,
+        "max": 0.4583333333333333
+      },
+      "mean_eligible_alerts_per_top20": 28.366666666666667,
+      "mean_baseline_fragments_per_top20": 4.916666666666667,
+      "mean_visible_alerts_per_queue": 833.2,
+      "actions_with_2plus_sensors": 3888
+    },
+    "locked_test": {
+      "queues": 30,
+      "top20_labels": 600,
+      "baseline_recoverable": 0,
+      "complete_80pct": 0,
+      "raw_all_fields_complete_80pct": 0,
+      "largest_overlap_fraction": {
+        "min": 0.25,
+        "p25": 0.3333333333333333,
+        "median": 0.35714285714285715,
+        "p75": 0.3793103448275862,
+        "max": 0.4583333333333333
+      },
+      "mean_eligible_alerts_per_top20": 28.411666666666665,
+      "mean_baseline_fragments_per_top20": 4.961666666666667,
+      "mean_visible_alerts_per_queue": 835.6333333333333,
+      "actions_with_2plus_sensors": 7820
+    }
+  },
+  "false_pair_replay": {
+    "accepted_merges": 953,
+    "merges_creating_false_pairs": 12,
+    "new_false_pairs": 986,
+    "new_true_pairs": 82646,
+    "top_1_false_pairs": 299,
+    "top_5_false_pairs": 781,
+    "top_10_false_pairs": 967,
+    "false_pairs_from_nonrare_ref": 944,
+    "false_pairs_with_auth_and_flow": 0,
+    "false_pairs_with_host_account_agreement": 986
+  }
+}

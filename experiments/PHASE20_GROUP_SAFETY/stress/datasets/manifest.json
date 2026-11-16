@@ -1,0 +1,112 @@
+{
+  "queues": {
+    "development": [
+      {
+        "queue_id": "phase19a_development_q000",
+        "alerts": 826,
+        "source_observations": 826,
+        "field_ledger_rows": 8260,
+        "incidents": 25
+      },
+      {
+        "queue_id": "phase19a_development_q001",
+        "alerts": 845,
+        "source_observations": 845,
+        "field_ledger_rows": 8450,
+        "incidents": 25
+      },
+      {
+        "queue_id": "phase19a_development_q002",
+        "alerts": 855,
+        "source_observations": 855,
+        "field_ledger_rows": 8550,
+        "incidents": 25
+      },
+      {
+        "queue_id": "phase19a_development_q003",
+        "alerts": 828,
+        "source_observations": 828,
+        "field_ledger_rows": 8280,
+        "incidents": 25
+      },
+      {
+        "queue_id": "phase19a_development_q004",
+        "alerts": 848,
+        "source_observations": 848,
+        "field_ledger_rows": 8480,
+        "incidents": 25
+      },
+      {
+        "queue_id": "phase19a_development_q005",
+        "alerts": 823,
+        "source_observations": 823,
+        "field_ledger_rows": 8230,
+        "incidents": 25
+      },
+      {
+        "queue_id": "phase19a_development_q006",
+        "alerts": 835,
+        "source_observations": 835,
+        "field_ledger_rows": 8350,
+        "incidents": 25
+      },
+      {
+        "queue_id": "phase19a_development_q007",
+        "alerts": 834,
+        "source_observations": 834,
+        "field_ledger_rows": 8340,
+        "incidents": 25
+      },
+      {
+        "queue_id": "phase19a_development_q008",
+        "alerts": 847,
+        "source_observations": 847,
+        "field_ledger_rows": 8470,
+        "incidents": 25
+      },
+      {
+        "queue_id": "phase19a_development_q009",
+        "alerts": 824,
+        "source_observations": 824,
+        "field_ledger_rows": 8240,
+        "incidents": 25
+      },
+      {
+        "queue_id": "phase19a_development_q010",
+        "alerts": 853,
+        "source_observations": 853,
+        "field_ledger_rows": 8530,
+        "incidents": 25
+      },
+      {
+        "queue_id": "phase19a_development_q011",
+        "alerts": 846,
+        "source_observations": 846,
+        "field_ledger_rows": 8460,
+        "incidents": 25
+      },
+      {
+        "queue_id": "phase19a_development_q012",
+        "alerts": 823,
+        "source_observations": 823,
+        "field_ledger_rows": 8230,
+        "incidents": 25
+      },
+      {
+        "queue_id": "phase19a_development_q013",
+        "alerts": 833,
+        "source_observations": 833,
+        "field_ledger_rows": 8330,
+        "incidents": 25
+      },
+      {
+        "queue_id": "phase19a_development_q014",
+        "alerts": 831,
+        "source_observations": 831,
+        "field_ledger_rows": 8310,
+        "incidents": 25
+      }
+    ]
+  },
+  "construction": "retrospective_controller-designed_shared_context_and_auth_ref"
+}

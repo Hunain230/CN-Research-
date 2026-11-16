@@ -1,0 +1,8 @@
+{
+  "seed_false_pairs": 0,
+  "accepted_merges": 118,
+  "false_pair_creating_merges": 17,
+  "new_false_pairs": 1181,
+  "top_1_false_pairs": 171,
+  "top_5_false_pairs": 667
+}

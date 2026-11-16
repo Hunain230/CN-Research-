@@ -1,0 +1,13 @@
+{
+  "schema": "phase19-multisensor-synthetic-v1",
+  "namespace": "phase19a",
+  "seeds": {"train": 1911, "development": 1912, "locked_test": 1913},
+  "queues": {"train": 15, "development": 15, "locked_test": 30},
+  "incidents_per_queue": 25,
+  "benign_actions_per_queue": 50,
+  "decision_minute": 100,
+  "component_cap": 100,
+  "methods": ["dual", "dual_plus_rare_guarded", "dual_plus_rare"],
+  "baseline_method": "dual_plus_rare_guarded",
+  "selection_rule": "Baseline readiness first: nonzero recoverability in every train and development queue and >=90% pair precision. Development candidates require higher recoverability, >=90% pair precision, false pairs and mixed groups no higher than the ready baseline, and 100-alert cap. Freeze selected or NO-GO; locked truth remains unopened."
+}
