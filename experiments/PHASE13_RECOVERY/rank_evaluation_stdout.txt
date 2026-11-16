@@ -1,0 +1,51 @@
+Phase13 rank evaluated 50/499
+Phase13 rank evaluated 100/499
+Phase13 rank evaluated 150/499
+Phase13 rank evaluated 200/499
+Phase13 rank evaluated 250/499
+Phase13 rank evaluated 300/499
+Phase13 rank evaluated 350/499
+Phase13 rank evaluated 400/499
+Phase13 rank evaluated 450/499
+{
+  "v7": {
+    "queues": 499,
+    "expert_top20_denominator": 9980,
+    "incident_recall20_count": 4972,
+    "incident_recall20": 0.49819639278557093,
+    "p10": 0.6158316633266535,
+    "ndcg20": 0.43710105913393477
+  },
+  "blend_0.25": {
+    "queues": 499,
+    "expert_top20_denominator": 9980,
+    "incident_recall20_count": 5035,
+    "incident_recall20": 0.5045257181028721,
+    "p10": 0.6357715430861721,
+    "ndcg20": 0.4468950981367392
+  },
+  "blend_0.5": {
+    "queues": 499,
+    "expert_top20_denominator": 9980,
+    "incident_recall20_count": 5092,
+    "incident_recall20": 0.5102538410153639,
+    "p10": 0.6430527722110888,
+    "ndcg20": 0.45829700185219
+  },
+  "blend_0.75": {
+    "queues": 499,
+    "expert_top20_denominator": 9980,
+    "incident_recall20_count": 5066,
+    "incident_recall20": 0.5076653306613225,
+    "p10": 0.6387775551102207,
+    "ndcg20": 0.46974709650295865
+  },
+  "child40": {
+    "queues": 499,
+    "expert_top20_denominator": 9980,
+    "incident_recall20_count": 5008,
+    "incident_recall20": 0.5018313726000293,
+    "p10": 0.6276196258942028,
+    "ndcg20": 0.474352343518006
+  }
+}

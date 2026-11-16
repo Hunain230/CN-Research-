@@ -1,0 +1,15 @@
+{
+  "schema": "one-shot-evidence-graph-v1",
+  "classification": "retrospective_research_only",
+  "seed": 1317,
+  "cap": 100,
+  "boundary_max_records_per_queue": 500000,
+  "minimum_viable_max_pair": 0.55,
+  "policies": {
+    "strict": {"min_max_pair": 0.70, "min_edges": 3, "min_coverage_each": 0.50, "min_distinct_endpoints_each": 2, "min_score": 0.75, "require_route_diversity": false},
+    "relaxed": {"min_max_pair": 0.60, "min_edges": 2, "min_coverage_each": 0.50, "min_distinct_endpoints_each": 1, "min_score": 0.68, "require_route_diversity": false}
+  },
+  "score": {"max_pair": 0.30, "mean_pair": 0.20, "min_reciprocal_coverage": 0.20, "shared_entity": 0.10, "descriptor_agreement": 0.10, "route_diversity": 0.05, "time_support": 0.05, "joint_conflict_penalty": 0.30},
+  "merge": "one noncascading mutual-best matching; direct evidence required; no transitive union",
+  "feature_policy": "GUIDE descriptor/entity/time features are local retrospective proxies; official production allowlist empty"
+}

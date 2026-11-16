@@ -1,0 +1,36 @@
+{
+  "dataset": "AIT Alert Data Set",
+  "record": "https://zenodo.org/api/records/8263181",
+  "zenodo_record_id": 8263181,
+  "zenodo_version": "1",
+  "license": "cc-by-4.0",
+  "attribution": "Landauer, Skopik, Wurzenberger; AIT Alert Data Set; DOI 10.5281/zenodo.8263181",
+  "missing_dependencies": [
+    "AIT-LDSv2 original labeled source logs (approximately 130.6 GB packed; not downloaded)",
+    "AIT-NDS original netflows (size not established in this audit; not downloaded)"
+  ],
+  "files": [
+    {
+      "name": "ait_ads.zip",
+      "source_url": "https://zenodo.org/api/records/8263181/files/ait_ads.zip/content",
+      "published_size_bytes": 96202946,
+      "downloaded_size_bytes": 96202946,
+      "published_md5": "md5:43db6b1f0996e0024befd617706c50e9",
+      "verified_md5": "43db6b1f0996e0024befd617706c50e9",
+      "sha256": "9f0595c4ebe56ac9223763881f55369dd4f249a8108064e4ae108eb3309aeeb9",
+      "downloaded": true,
+      "downloaded_at_utc": "2026-11-16T18:16:16.982193+00:00"
+    },
+    {
+      "name": "labels.csv",
+      "source_url": "https://zenodo.org/api/records/8263181/files/labels.csv/content",
+      "published_size_bytes": 3703,
+      "downloaded_size_bytes": 3703,
+      "published_md5": "md5:60ff33796c77fd2136c4d1a4bc841bd9",
+      "verified_md5": "60ff33796c77fd2136c4d1a4bc841bd9",
+      "sha256": "633e09b42772eabbbe5b48598220860eead60b7352efb01973fc45a5034290c0",
+      "downloaded": true,
+      "downloaded_at_utc": "2026-11-16T18:16:17.817821+00:00"
+    }
+  ]
+}

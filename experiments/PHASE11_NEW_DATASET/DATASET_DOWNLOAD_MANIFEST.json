@@ -1,0 +1,38 @@
+{
+  "status": "audit_gate_failed_no_dataset_download",
+  "audit_date_local": "2026-11-16",
+  "source_repository": "https://huggingface.co/datasets/witfoo/precinct6-cybersecurity",
+  "pinned_revision_sha": "96311c2e29611d8ddbf1c0d59f531f6a362b8233",
+  "publisher_version": "2.1.0",
+  "repository_last_modified_utc": "2026-09-22T10:50:16.000Z",
+  "license": "Apache-2.0",
+  "attribution": "WitFoo, Inc., WitFoo Precinct6 Cybersecurity Dataset, version 2.1.0, Hugging Face repository URL",
+  "metadata_source": "Hugging Face dataset API info and non-recursive tree at pinned revision; no data file content fetched",
+  "repository_file_count_reported_by_api": 51390,
+  "repository_size_advertised_bytes_approx": 8410000000,
+  "local_free_disk_bytes_at_audit": 55765819392,
+  "local_downloaded_files": [],
+  "local_raw_directory": "experiments/PHASE11_NEW_DATASET/data/raw/ (not created)",
+  "local_processed_directory": "experiments/PHASE11_NEW_DATASET/data/processed/ (not created)",
+  "checksums_verified_locally": false,
+  "representative_remote_files": [
+    {"path": "README.md", "size_bytes": 26087, "remote_lfs_sha256": null},
+    {"path": "signals/signals.parquet", "size_bytes": 117056748, "remote_lfs_sha256": "20d01fd225636e9b95a30bfe88c3c6faeb49e8595d4e784c96ea7fa62c6a746c"},
+    {"path": "signals/incident_signals.parquet", "size_bytes": 10518589, "remote_lfs_sha256": "378f0a3fe6ad22a46215c66440d1e33fbb41a68668319678d96b400d8de404c6"},
+    {"path": "graph/edges-00000.parquet", "size_bytes": 35821982, "remote_lfs_sha256": "a7c7a9e5c9834262675258e718c523db612bd175168d81378b9ca1e9bb3d4c6c"},
+    {"path": "graph/nodes.parquet", "size_bytes": 4325154, "remote_lfs_sha256": "8615ca94964b5537340e37efbfb3709ad7c57da278d322a9f62c66ac0105ecfe"},
+    {"path": "graph/attack_reports.parquet", "size_bytes": 4177754, "remote_lfs_sha256": "fe727e82eec05a0f4e4c7ee52d1838662a04bbf6448d99ed0081567d590785c5"},
+    {"path": "graph/incidents.jsonl", "size_bytes": 4490700959, "remote_lfs_sha256": "caffe32100182b66507a94c54266b2ac1f812fc4ff0f0bf4c6e0f091903554ec"},
+    {"path": "graph/edges.jsonl", "size_bytes": 1708598363, "remote_lfs_sha256": "4519a09f90a32b698379e6976ed9a40d6ee5f8b1ed22508b3e5c9efba6edd226"},
+    {"path": "graph/graph.graphml", "size_bytes": 1396249103, "remote_lfs_sha256": "f2b4cf1d928351cdb3edd876bd7d10743fc718d076f696d7949470be1bf07175"}
+  ],
+  "resource_assessment": {
+    "ram_bytes": 17179869184,
+    "smaller_repository_advertised_bytes": 8410000000,
+    "minimum_duplicate_cache_plus_copy_bytes_approx": 16820000000,
+    "processing_peak_unknown_without_subset_audit": true,
+    "large_114m_repository_advertised_bytes": 13400000000,
+    "large_repository_downloaded": false
+  },
+  "download_decision": "No download: incident labels and provenance graphs are outputs of the same correlation engine and no independent ranking or membership reference is supplied."
+}

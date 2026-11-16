@@ -1,0 +1,21 @@
+{
+  "schema": "phase10-v1",
+  "seed": 1010,
+  "classification": "retrospective_exploratory_only",
+  "candidate_run": "submission_full_entity_time_20261114_v1",
+  "group_run": "submission_entity_time_pair_v2_20261114_v1",
+  "v7_run": "submission_descriptor_ranker_v7_20261114_v1",
+  "hard_run": "submission_hard_negative_ablation_v1_20261115_v1",
+  "blend_run": "sprint_rank_fusion_v1_20261116",
+  "cap": 100,
+  "maximum_fragments_per_reconstruction": 3,
+  "maximum_boundary_records_per_queue": 500000,
+  "scoring": {"max_pair": 0.20, "mean_pair": 0.20, "coverage": 0.25, "shared_entity": 0.15, "descriptor": 0.10, "time": 0.10, "joint_conflict_penalty": 0.30},
+  "policies": {
+    "E2": {"min_score": 0.68, "min_max_pair": 0.60, "min_edges": 3, "min_coverage_each": 0.5, "require_mutual_best": true, "hierarchical": false, "verify": false},
+    "E3": {"min_score": 0.62, "min_max_pair": 0.55, "min_edges": 2, "min_coverage_each": 0.5, "require_mutual_best": false, "hierarchical": true, "verify": false},
+    "E4": {"min_score": 0.62, "min_max_pair": 0.55, "min_edges": 2, "min_coverage_each": 0.5, "require_mutual_best": false, "hierarchical": true, "verify": true}
+  },
+  "verification": {"minimum_coverage_each": 0.67, "maximum_time_gap_hours": 24, "reject_joint_descriptor_conflict": true, "minimum_distinct_endpoints_each": 2},
+  "feature_policy": {"production_permitted": [], "research_only": ["frozen_pair_probability", "candidate_edges", "group_size", "shared_entity", "Category", "MitreTechniques", "Timestamp", "fragment_coverage"], "evaluator_only": ["IncidentId", "QueueRank", "IncidentGrade", "ActionGrouped", "ActionGranular"]}
+}

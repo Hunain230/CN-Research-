@@ -1,0 +1,6273 @@
+{
+  "source_zip_sha256": "9f0595c4ebe56ac9223763881f55369dd4f249a8108064e4ae108eb3309aeeb9",
+  "attack_windows_sha256": "633e09b42772eabbbe5b48598220860eead60b7352efb01973fc45a5034290c0",
+  "window_counts_by_scenario": {
+    "russellmitchell": 10,
+    "fox": 10,
+    "harrison": 10,
+    "santos": 10,
+    "shaw": 10,
+    "wardbeck": 10,
+    "wheeler": 9,
+    "wilson": 10
+  },
+  "members": {
+    "fox_aminer.json": {
+      "compressed_bytes": 244738,
+      "uncompressed_bytes": 8879125,
+      "rows": 10581,
+      "malformed_rows": 0,
+      "top_level_presence": {
+        "AnalysisComponent": 10581,
+        "LogData": 10581,
+        "AMiner": 10581,
+        "CountData": 229,
+        "FrequencyData": 46
+      },
+      "nested_path_presence": {
+        "AnalysisComponent": 10581,
+        "AnalysisComponent.AnalysisComponentIdentifier": 10581,
+        "AnalysisComponent.AnalysisComponentType": 10581,
+        "AnalysisComponent.AnalysisComponentName": 10581,
+        "AnalysisComponent.Message": 10581,
+        "AnalysisComponent.PersistenceFileName": 10581,
+        "AnalysisComponent.TrainingMode": 10581,
+        "AnalysisComponent.AffectedLogAtomPaths": 10581,
+        "LogData": 10581,
+        "LogData.RawLogData": 10581,
+        "LogData.Timestamps": 10581,
+        "LogData.DetectionTimestamp": 10581,
+        "LogData.LogLinesCount": 10581,
+        "LogData.LogResources": 10581,
+        "AMiner": 10581,
+        "AMiner.ID": 10581,
+        "AnalysisComponent.AffectedLogAtomValues": 8998,
+        "AnalysisComponent.CriticalValue": 457,
+        "AnalysisComponent.ProbabilityThreshold": 457,
+        "AnalysisComponent.Range": 28,
+        "AnalysisComponent.IDpaths": 28,
+        "AnalysisComponent.IDvalues": 28,
+        "AnalysisComponent.AffectedLogAtomFrequencies": 229,
+        "AnalysisComponent.AffectedIdValues": 229,
+        "CountData": 229,
+        "CountData.ConfidenceFactor": 229,
+        "CountData.Confidence": 229,
+        "AnalysisComponent.MissingCharacters": 2562,
+        "AnalysisComponent.AnomalyScores": 17,
+        "AnalysisComponent.MinBinElements": 17,
+        "AnalysisComponent.MinBinTime": 17,
+        "AnalysisComponent.DebugMode": 17,
+        "FrequencyData": 46,
+        "FrequencyData.ExpectedLogAtomValuesFrequency": 46,
+        "FrequencyData.ExpectedLogAtomValuesFrequencyRange": 46,
+        "FrequencyData.LogAtomValuesFrequency": 46,
+        "FrequencyData.WindowSize": 46,
+        "FrequencyData.ConfidenceFactor": 46,
+        "FrequencyData.Confidence": 28
+      },
+      "nested_path_types": {
+        "AnalysisComponent": {
+          "dict": 10581
+        },
+        "AnalysisComponent.AnalysisComponentIdentifier": {
+          "int": 10581
+        },
+        "AnalysisComponent.AnalysisComponentType": {
+          "str": 10581
+        },
+        "AnalysisComponent.AnalysisComponentName": {
+          "str": 10581
+        },
+        "AnalysisComponent.Message": {
+          "str": 10581
+        },
+        "AnalysisComponent.PersistenceFileName": {
+          "str": 10581
+        },
+        "AnalysisComponent.TrainingMode": {
+          "bool": 10581
+        },
+        "AnalysisComponent.AffectedLogAtomPaths": {
+          "list": 10581
+        },
+        "LogData": {
+          "dict": 10581
+        },
+        "LogData.RawLogData": {
+          "list": 10581
+        },
+        "LogData.Timestamps": {
+          "list": 10581
+        },
+        "LogData.DetectionTimestamp": {
+          "list": 10581
+        },
+        "LogData.LogLinesCount": {
+          "int": 10581
+        },
+        "LogData.LogResources": {
+          "list": 10581
+        },
+        "AMiner": {
+          "dict": 10581
+        },
+        "AMiner.ID": {
+          "str": 10581
+        },
+        "AnalysisComponent.AffectedLogAtomValues": {
+          "list": 8998
+        },
+        "AnalysisComponent.CriticalValue": {
+          "float": 457
+        },
+        "AnalysisComponent.ProbabilityThreshold": {
+          "float": 457
+        },
+        "AnalysisComponent.Range": {
+          "list": 28
+        },
+        "AnalysisComponent.IDpaths": {
+          "list": 28
+        },
+        "AnalysisComponent.IDvalues": {
+          "list": 28
+        },
+        "AnalysisComponent.AffectedLogAtomFrequencies": {
+          "list": 229
+        },
+        "AnalysisComponent.AffectedIdValues": {
+          "list": 229
+        },
+        "CountData": {
+          "dict": 229
+        },
+        "CountData.ConfidenceFactor": {
+          "float": 229
+        },
+        "CountData.Confidence": {
+          "int": 4,
+          "float": 225
+        },
+        "AnalysisComponent.MissingCharacters": {
+          "list": 2562
+        },
+        "AnalysisComponent.AnomalyScores": {
+          "list": 17
+        },
+        "AnalysisComponent.MinBinElements": {
+          "int": 17
+        },
+        "AnalysisComponent.MinBinTime": {
+          "int": 17
+        },
+        "AnalysisComponent.DebugMode": {
+          "bool": 17
+        },
+        "FrequencyData": {
+          "dict": 46
+        },
+        "FrequencyData.ExpectedLogAtomValuesFrequency": {
+          "float": 46
+        },
+        "FrequencyData.ExpectedLogAtomValuesFrequencyRange": {
+          "list": 46
+        },
+        "FrequencyData.LogAtomValuesFrequency": {
+          "int": 46
+        },
+        "FrequencyData.WindowSize": {
+          "int": 46
+        },
+        "FrequencyData.ConfidenceFactor": {
+          "float": 46
+        },
+        "FrequencyData.Confidence": {
+          "float": 28
+        }
+      },
+      "missing": {
+        "alert_id": 10581,
+        "source_line": 10581,
+        "flow_id": 10581,
+        "collection_time": 10581
+      },
+      "duplicate_alert_ids": 0,
+      "timestamp_min": {
+        "event_time": 1642204801.16,
+        "detector_time": 1642204801.16
+      },
+      "timestamp_max": {
+        "event_time": 1642636516.0,
+        "detector_time": 1642636516.0
+      }
+    },
+    "fox_wazuh.json": {
+      "compressed_bytes": 13823903,
+      "uncompressed_bytes": 491410473,
+      "rows": 462523,
+      "malformed_rows": 0,
+      "top_level_presence": {
+        "predecoder": 40706,
+        "agent": 462523,
+        "manager": 462523,
+        "rule": 462523,
+        "decoder": 462523,
+        "full_log": 451439,
+        "input": 462523,
+        "@timestamp": 462523,
+        "location": 462523,
+        "id": 462523,
+        "data": 433359,
+        "GeoLocation": 5324,
+        "previous_output": 29331
+      },
+      "nested_path_presence": {
+        "predecoder": 40706,
+        "predecoder.hostname": 29622,
+        "predecoder.program_name": 29622,
+        "predecoder.timestamp": 40706,
+        "agent": 462523,
+        "agent.ip": 462523,
+        "agent.name": 462523,
+        "agent.id": 462523,
+        "manager": 462523,
+        "manager.name": 462523,
+        "rule": 462523,
+        "rule.firedtimes": 462523,
+        "rule.mail": 462523,
+        "rule.level": 462523,
+        "rule.pci_dss": 440600,
+        "rule.tsc": 440580,
+        "rule.description": 462523,
+        "rule.groups": 462523,
+        "rule.id": 462523,
+        "rule.nist_800_53": 440580,
+        "rule.gpg13": 29620,
+        "rule.gdpr": 440600,
+        "decoder": 462523,
+        "decoder.name": 462481,
+        "full_log": 451439,
+        "input": 462523,
+        "input.type": 462523,
+        "@timestamp": 462523,
+        "location": 462523,
+        "id": 462523,
+        "data": 433359,
+        "data.srcip": 422204,
+        "data.dstip": 11285,
+        "data.id": 421793,
+        "decoder.parent": 39965,
+        "data.tx_id": 11084,
+        "data.app_proto": 11078,
+        "data.in_iface": 11084,
+        "data.src_ip": 11084,
+        "data.src_port": 11084,
+        "data.event_type": 11084,
+        "data.alert": 11084,
+        "data.alert.severity": 11084,
+        "data.alert.signature_id": 11084,
+        "data.alert.rev": 11084,
+        "data.alert.metadata": 460,
+        "data.alert.metadata.updated_at": 460,
+        "data.alert.metadata.former_category": 460,
+        "data.alert.metadata.created_at": 460,
+        "data.alert.gid": 11084,
+        "data.alert.signature": 11084,
+        "data.alert.action": 11084,
+        "data.alert.category": 11084,
+        "data.flow_id": 11084,
+        "data.dest_ip": 11084,
+        "data.proto": 11084,
+        "data.http": 445,
+        "data.http.hostname": 412,
+        "data.http.protocol": 412,
+        "data.http.http_method": 412,
+        "data.http.length": 445,
+        "data.http.url": 445,
+        "data.http.http_user_agent": 412,
+        "data.http.status": 160,
+        "data.dest_port": 11084,
+        "data.flow": 11078,
+        "data.flow.pkts_toserver": 11078,
+        "data.flow.start": 11078,
+        "data.flow.bytes_toclient": 11078,
+        "data.flow.bytes_toserver": 11078,
+        "data.flow.pkts_toclient": 11078,
+        "data.timestamp": 11084,
+        "rule.hipaa": 29402,
+        "rule.frequency": 29588,
+        "data.audit": 24,
+        "data.audit.uid": 24,
+        "data.audit.auid": 24,
+        "data.audit.gid": 24,
+        "data.audit.exe": 24,
+        "data.audit.euid": 24,
+        "data.audit.session": 24,
+        "data.audit.pid": 24,
+        "data.audit.id": 24,
+        "data.audit.type": 24,
+        "data.audit.command": 24,
+        "data.metadata": 10619,
+        "data.metadata.flowints": 10619,
+        "data.metadata.flowints.tls": 10580,
+        "data.tls": 10587,
+        "data.tls.version": 10587,
+        "data.tls.ja3": 10583,
+        "data.tls.ja3.string": 10583,
+        "data.tls.ja3.hash": 10583,
+        "data.tls.sni": 10583,
+        "GeoLocation": 5324,
+        "GeoLocation.city_name": 2718,
+        "GeoLocation.country_name": 5216,
+        "GeoLocation.region_name": 2718,
+        "GeoLocation.location": 5324,
+        "GeoLocation.location.lon": 5324,
+        "GeoLocation.location.lat": 5324,
+        "rule.mitre": 58233,
+        "rule.mitre.technique": 58233,
+        "rule.mitre.id": 58233,
+        "rule.mitre.tactic": 58233,
+        "data.dstuser": 250,
+        "data.srcport": 673,
+        "data.uid": 218,
+        "data.srcuser": 406,
+        "data.tty": 201,
+        "data.pwd": 6,
+        "data.command": 6,
+        "decoder.ftscomment": 6,
+        "data.protocol": 410051,
+        "data.url": 410051,
+        "data.euid": 195,
+        "previous_output": 29331,
+        "data.dns": 48,
+        "data.dns.query": 48,
+        "data.alert.metadata.affected_product": 69,
+        "data.alert.metadata.attack_target": 69,
+        "data.alert.metadata.signature_severity": 69,
+        "data.alert.metadata.deployment": 69,
+        "data.metadata.flowints.http": 37,
+        "data.http.http_port": 33,
+        "data.http.http_content_type": 34,
+        "data.files": 18,
+        "data.tls.ja3s": 3,
+        "data.tls.ja3s.string": 3,
+        "data.tls.ja3s.hash": 3,
+        "data.metadata.flowints.smtp": 2,
+        "data.app_proto_tc": 1,
+        "data.alert.metadata.performance_impact": 24
+      },
+      "nested_path_types": {
+        "predecoder": {
+          "dict": 40706
+        },
+        "predecoder.hostname": {
+          "str": 29622
+        },
+        "predecoder.program_name": {
+          "str": 29622
+        },
+        "predecoder.timestamp": {
+          "str": 40706
+        },
+        "agent": {
+          "dict": 462523
+        },
+        "agent.ip": {
+          "str": 462523
+        },
+        "agent.name": {
+          "str": 462523
+        },
+        "agent.id": {
+          "str": 462523
+        },
+        "manager": {
+          "dict": 462523
+        },
+        "manager.name": {
+          "str": 462523
+        },
+        "rule": {
+          "dict": 462523
+        },
+        "rule.firedtimes": {
+          "int": 462523
+        },
+        "rule.mail": {
+          "bool": 462523
+        },
+        "rule.level": {
+          "int": 462523
+        },
+        "rule.pci_dss": {
+          "list": 440600
+        },
+        "rule.tsc": {
+          "list": 440580
+        },
+        "rule.description": {
+          "str": 462523
+        },
+        "rule.groups": {
+          "list": 462523
+        },
+        "rule.id": {
+          "str": 462523
+        },
+        "rule.nist_800_53": {
+          "list": 440580
+        },
+        "rule.gpg13": {
+          "list": 29620
+        },
+        "rule.gdpr": {
+          "list": 440600
+        },
+        "decoder": {
+          "dict": 462523
+        },
+        "decoder.name": {
+          "str": 462481
+        },
+        "full_log": {
+          "str": 451439
+        },
+        "input": {
+          "dict": 462523
+        },
+        "input.type": {
+          "str": 462523
+        },
+        "@timestamp": {
+          "str": 462523
+        },
+        "location": {
+          "str": 462523
+        },
+        "id": {
+          "str": 462523
+        },
+        "data": {
+          "dict": 433359
+        },
+        "data.srcip": {
+          "str": 422204
+        },
+        "data.dstip": {
+          "str": 11285
+        },
+        "data.id": {
+          "str": 421793
+        },
+        "decoder.parent": {
+          "str": 39965
+        },
+        "data.tx_id": {
+          "str": 11084
+        },
+        "data.app_proto": {
+          "str": 11078
+        },
+        "data.in_iface": {
+          "str": 11084
+        },
+        "data.src_ip": {
+          "str": 11084
+        },
+        "data.src_port": {
+          "str": 11084
+        },
+        "data.event_type": {
+          "str": 11084
+        },
+        "data.alert": {
+          "dict": 11084
+        },
+        "data.alert.severity": {
+          "str": 11084
+        },
+        "data.alert.signature_id": {
+          "str": 11084
+        },
+        "data.alert.rev": {
+          "str": 11084
+        },
+        "data.alert.metadata": {
+          "dict": 460
+        },
+        "data.alert.metadata.updated_at": {
+          "list": 460
+        },
+        "data.alert.metadata.former_category": {
+          "list": 460
+        },
+        "data.alert.metadata.created_at": {
+          "list": 460
+        },
+        "data.alert.gid": {
+          "str": 11084
+        },
+        "data.alert.signature": {
+          "str": 11084
+        },
+        "data.alert.action": {
+          "str": 11084
+        },
+        "data.alert.category": {
+          "str": 11084
+        },
+        "data.flow_id": {
+          "str": 11084
+        },
+        "data.dest_ip": {
+          "str": 11084
+        },
+        "data.proto": {
+          "str": 11084
+        },
+        "data.http": {
+          "dict": 445
+        },
+        "data.http.hostname": {
+          "str": 412
+        },
+        "data.http.protocol": {
+          "str": 412
+        },
+        "data.http.http_method": {
+          "str": 412
+        },
+        "data.http.length": {
+          "str": 445
+        },
+        "data.http.url": {
+          "str": 445
+        },
+        "data.http.http_user_agent": {
+          "str": 412
+        },
+        "data.http.status": {
+          "str": 160
+        },
+        "data.dest_port": {
+          "str": 11084
+        },
+        "data.flow": {
+          "dict": 11078
+        },
+        "data.flow.pkts_toserver": {
+          "str": 11078
+        },
+        "data.flow.start": {
+          "str": 11078
+        },
+        "data.flow.bytes_toclient": {
+          "str": 11078
+        },
+        "data.flow.bytes_toserver": {
+          "str": 11078
+        },
+        "data.flow.pkts_toclient": {
+          "str": 11078
+        },
+        "data.timestamp": {
+          "str": 11084
+        },
+        "rule.hipaa": {
+          "list": 29402
+        },
+        "rule.frequency": {
+          "int": 29588
+        },
+        "data.audit": {
+          "dict": 24
+        },
+        "data.audit.uid": {
+          "str": 24
+        },
+        "data.audit.auid": {
+          "str": 24
+        },
+        "data.audit.gid": {
+          "str": 24
+        },
+        "data.audit.exe": {
+          "str": 24
+        },
+        "data.audit.euid": {
+          "str": 24
+        },
+        "data.audit.session": {
+          "str": 24
+        },
+        "data.audit.pid": {
+          "str": 24
+        },
+        "data.audit.id": {
+          "str": 24
+        },
+        "data.audit.type": {
+          "str": 24
+        },
+        "data.audit.command": {
+          "str": 24
+        },
+        "data.metadata": {
+          "dict": 10619
+        },
+        "data.metadata.flowints": {
+          "dict": 10619
+        },
+        "data.metadata.flowints.tls": {
+          "dict": 10580
+        },
+        "data.tls": {
+          "dict": 10587
+        },
+        "data.tls.version": {
+          "str": 10587
+        },
+        "data.tls.ja3": {
+          "dict": 10583
+        },
+        "data.tls.ja3.string": {
+          "str": 10583
+        },
+        "data.tls.ja3.hash": {
+          "str": 10583
+        },
+        "data.tls.sni": {
+          "str": 10583
+        },
+        "GeoLocation": {
+          "dict": 5324
+        },
+        "GeoLocation.city_name": {
+          "str": 2718
+        },
+        "GeoLocation.country_name": {
+          "str": 5216
+        },
+        "GeoLocation.region_name": {
+          "str": 2718
+        },
+        "GeoLocation.location": {
+          "dict": 5324
+        },
+        "GeoLocation.location.lon": {
+          "float": 5216,
+          "int": 108
+        },
+        "GeoLocation.location.lat": {
+          "float": 5216,
+          "int": 108
+        },
+        "rule.mitre": {
+          "dict": 58233
+        },
+        "rule.mitre.technique": {
+          "list": 58233
+        },
+        "rule.mitre.id": {
+          "list": 58233
+        },
+        "rule.mitre.tactic": {
+          "list": 58233
+        },
+        "data.dstuser": {
+          "str": 250
+        },
+        "data.srcport": {
+          "str": 673
+        },
+        "data.uid": {
+          "str": 218
+        },
+        "data.srcuser": {
+          "str": 406
+        },
+        "data.tty": {
+          "str": 201
+        },
+        "data.pwd": {
+          "str": 6
+        },
+        "data.command": {
+          "str": 6
+        },
+        "decoder.ftscomment": {
+          "str": 6
+        },
+        "data.protocol": {
+          "str": 410051
+        },
+        "data.url": {
+          "str": 410051
+        },
+        "data.euid": {
+          "str": 195
+        },
+        "previous_output": {
+          "str": 29331
+        },
+        "data.dns": {
+          "dict": 48
+        },
+        "data.dns.query": {
+          "list": 48
+        },
+        "data.alert.metadata.affected_product": {
+          "list": 69
+        },
+        "data.alert.metadata.attack_target": {
+          "list": 69
+        },
+        "data.alert.metadata.signature_severity": {
+          "list": 69
+        },
+        "data.alert.metadata.deployment": {
+          "list": 69
+        },
+        "data.metadata.flowints.http": {
+          "dict": 37
+        },
+        "data.http.http_port": {
+          "str": 33
+        },
+        "data.http.http_content_type": {
+          "str": 34
+        },
+        "data.files": {
+          "list": 18
+        },
+        "data.tls.ja3s": {
+          "dict": 3
+        },
+        "data.tls.ja3s.string": {
+          "str": 3
+        },
+        "data.tls.ja3s.hash": {
+          "str": 3
+        },
+        "data.metadata.flowints.smtp": {
+          "dict": 2
+        },
+        "data.app_proto_tc": {
+          "str": 1
+        },
+        "data.alert.metadata.performance_impact": {
+          "list": 24
+        }
+      },
+      "missing": {
+        "source_line": 462523,
+        "flow_id": 451439,
+        "detector_time": 462523,
+        "collection_time": 462523
+      },
+      "duplicate_alert_ids": 0,
+      "timestamp_min": {
+        "event_time": 1642213952.0
+      },
+      "timestamp_max": {
+        "event_time": 1642636536.0
+      }
+    },
+    "harrison_aminer.json": {
+      "compressed_bytes": 232289,
+      "uncompressed_bytes": 8693273,
+      "rows": 10194,
+      "malformed_rows": 0,
+      "top_level_presence": {
+        "AnalysisComponent": 10194,
+        "LogData": 10194,
+        "AMiner": 10194,
+        "CountData": 78,
+        "FrequencyData": 39
+      },
+      "nested_path_presence": {
+        "AnalysisComponent": 10194,
+        "AnalysisComponent.AnalysisComponentIdentifier": 10194,
+        "AnalysisComponent.AnalysisComponentType": 10194,
+        "AnalysisComponent.AnalysisComponentName": 10194,
+        "AnalysisComponent.Message": 10194,
+        "AnalysisComponent.PersistenceFileName": 10194,
+        "AnalysisComponent.TrainingMode": 10194,
+        "AnalysisComponent.AffectedLogAtomPaths": 10194,
+        "LogData": 10194,
+        "LogData.RawLogData": 10194,
+        "LogData.Timestamps": 10194,
+        "LogData.DetectionTimestamp": 10194,
+        "LogData.LogLinesCount": 10194,
+        "LogData.LogResources": 10194,
+        "AMiner": 10194,
+        "AMiner.ID": 10194,
+        "AnalysisComponent.AffectedLogAtomValues": 8605,
+        "AnalysisComponent.CriticalValue": 158,
+        "AnalysisComponent.ProbabilityThreshold": 158,
+        "AnalysisComponent.MissingCharacters": 2540,
+        "AnalysisComponent.Range": 32,
+        "AnalysisComponent.IDpaths": 32,
+        "AnalysisComponent.IDvalues": 32,
+        "AnalysisComponent.AffectedLogAtomFrequencies": 78,
+        "AnalysisComponent.AffectedIdValues": 78,
+        "CountData": 78,
+        "CountData.ConfidenceFactor": 78,
+        "CountData.Confidence": 78,
+        "AnalysisComponent.AnomalyScores": 73,
+        "AnalysisComponent.MinBinElements": 73,
+        "AnalysisComponent.MinBinTime": 73,
+        "AnalysisComponent.DebugMode": 73,
+        "FrequencyData": 39,
+        "FrequencyData.ExpectedLogAtomValuesFrequency": 39,
+        "FrequencyData.ExpectedLogAtomValuesFrequencyRange": 39,
+        "FrequencyData.LogAtomValuesFrequency": 39,
+        "FrequencyData.WindowSize": 39,
+        "FrequencyData.ConfidenceFactor": 39,
+        "FrequencyData.Confidence": 23
+      },
+      "nested_path_types": {
+        "AnalysisComponent": {
+          "dict": 10194
+        },
+        "AnalysisComponent.AnalysisComponentIdentifier": {
+          "int": 10194
+        },
+        "AnalysisComponent.AnalysisComponentType": {
+          "str": 10194
+        },
+        "AnalysisComponent.AnalysisComponentName": {
+          "str": 10194
+        },
+        "AnalysisComponent.Message": {
+          "str": 10194
+        },
+        "AnalysisComponent.PersistenceFileName": {
+          "str": 10194
+        },
+        "AnalysisComponent.TrainingMode": {
+          "bool": 10194
+        },
+        "AnalysisComponent.AffectedLogAtomPaths": {
+          "list": 10194
+        },
+        "LogData": {
+          "dict": 10194
+        },
+        "LogData.RawLogData": {
+          "list": 10194
+        },
+        "LogData.Timestamps": {
+          "list": 10194
+        },
+        "LogData.DetectionTimestamp": {
+          "list": 10194
+        },
+        "LogData.LogLinesCount": {
+          "int": 10194
+        },
+        "LogData.LogResources": {
+          "list": 10194
+        },
+        "AMiner": {
+          "dict": 10194
+        },
+        "AMiner.ID": {
+          "str": 10194
+        },
+        "AnalysisComponent.AffectedLogAtomValues": {
+          "list": 8605
+        },
+        "AnalysisComponent.CriticalValue": {
+          "float": 158
+        },
+        "AnalysisComponent.ProbabilityThreshold": {
+          "float": 158
+        },
+        "AnalysisComponent.MissingCharacters": {
+          "list": 2540
+        },
+        "AnalysisComponent.Range": {
+          "list": 32
+        },
+        "AnalysisComponent.IDpaths": {
+          "list": 32
+        },
+        "AnalysisComponent.IDvalues": {
+          "list": 32
+        },
+        "AnalysisComponent.AffectedLogAtomFrequencies": {
+          "list": 78
+        },
+        "AnalysisComponent.AffectedIdValues": {
+          "list": 78
+        },
+        "CountData": {
+          "dict": 78
+        },
+        "CountData.ConfidenceFactor": {
+          "float": 78
+        },
+        "CountData.Confidence": {
+          "int": 4,
+          "float": 74
+        },
+        "AnalysisComponent.AnomalyScores": {
+          "list": 73
+        },
+        "AnalysisComponent.MinBinElements": {
+          "int": 73
+        },
+        "AnalysisComponent.MinBinTime": {
+          "int": 73
+        },
+        "AnalysisComponent.DebugMode": {
+          "bool": 73
+        },
+        "FrequencyData": {
+          "dict": 39
+        },
+        "FrequencyData.ExpectedLogAtomValuesFrequency": {
+          "float": 39
+        },
+        "FrequencyData.ExpectedLogAtomValuesFrequencyRange": {
+          "list": 39
+        },
+        "FrequencyData.LogAtomValuesFrequency": {
+          "int": 39
+        },
+        "FrequencyData.WindowSize": {
+          "int": 39
+        },
+        "FrequencyData.ConfidenceFactor": {
+          "float": 39
+        },
+        "FrequencyData.Confidence": {
+          "float": 23
+        }
+      },
+      "missing": {
+        "alert_id": 10194,
+        "source_line": 10194,
+        "flow_id": 10194,
+        "collection_time": 10194
+      },
+      "duplicate_alert_ids": 0,
+      "timestamp_min": {
+        "event_time": 1643932801.88,
+        "detector_time": 1643932801.88
+      },
+      "timestamp_max": {
+        "event_time": 1644364786.13,
+        "detector_time": 1644364786.13
+      }
+    },
+    "harrison_wazuh.json": {
+      "compressed_bytes": 23105851,
+      "uncompressed_bytes": 632912134,
+      "rows": 583754,
+      "malformed_rows": 0,
+      "top_level_presence": {
+        "agent": 583754,
+        "manager": 583754,
+        "data": 550490,
+        "rule": 583754,
+        "decoder": 583754,
+        "input": 583754,
+        "@timestamp": 583754,
+        "location": 583754,
+        "id": 583754,
+        "predecoder": 100852,
+        "full_log": 516370,
+        "previous_output": 30252,
+        "GeoLocation": 6957
+      },
+      "nested_path_presence": {
+        "agent": 583754,
+        "agent.ip": 583754,
+        "agent.name": 583754,
+        "agent.id": 583754,
+        "manager": 583754,
+        "manager.name": 583754,
+        "data": 550490,
+        "data.dns": 47285,
+        "data.dns.query": 47285,
+        "data.tx_id": 67384,
+        "data.app_proto": 67377,
+        "data.in_iface": 67384,
+        "data.src_ip": 67384,
+        "data.src_port": 67384,
+        "data.event_type": 67384,
+        "data.alert": 67384,
+        "data.alert.severity": 67384,
+        "data.alert.signature_id": 67384,
+        "data.alert.rev": 67384,
+        "data.alert.metadata": 47867,
+        "data.alert.metadata.affected_product": 47296,
+        "data.alert.metadata.attack_target": 47296,
+        "data.alert.metadata.updated_at": 47867,
+        "data.alert.metadata.former_category": 47867,
+        "data.alert.metadata.created_at": 47867,
+        "data.alert.metadata.signature_severity": 47296,
+        "data.alert.metadata.deployment": 47296,
+        "data.alert.gid": 67384,
+        "data.alert.signature": 67384,
+        "data.alert.action": 67384,
+        "data.alert.category": 67383,
+        "data.flow_id": 67384,
+        "data.dest_ip": 67384,
+        "data.proto": 67384,
+        "data.dest_port": 67384,
+        "data.flow": 67377,
+        "data.flow.pkts_toserver": 67377,
+        "data.flow.start": 67377,
+        "data.flow.bytes_toclient": 67377,
+        "data.flow.bytes_toserver": 67377,
+        "data.flow.pkts_toclient": 67377,
+        "data.timestamp": 67384,
+        "rule": 583754,
+        "rule.firedtimes": 583754,
+        "rule.mail": 583754,
+        "rule.level": 583754,
+        "rule.description": 583754,
+        "rule.groups": 583754,
+        "rule.id": 583754,
+        "decoder": 583754,
+        "decoder.name": 583696,
+        "input": 583754,
+        "input.type": 583754,
+        "@timestamp": 583754,
+        "location": 583754,
+        "id": 583754,
+        "predecoder": 100852,
+        "predecoder.timestamp": 100852,
+        "data.srcip": 483089,
+        "data.dstip": 67519,
+        "data.id": 482925,
+        "decoder.parent": 100427,
+        "full_log": 516370,
+        "rule.pci_dss": 452423,
+        "rule.hipaa": 36064,
+        "rule.tsc": 451793,
+        "rule.nist_800_53": 451793,
+        "rule.frequency": 33099,
+        "rule.gdpr": 452423,
+        "predecoder.hostname": 33441,
+        "predecoder.program_name": 33441,
+        "rule.gpg13": 33440,
+        "previous_output": 30252,
+        "rule.mitre": 62749,
+        "rule.mitre.technique": 62749,
+        "rule.mitre.id": 62749,
+        "rule.mitre.tactic": 62749,
+        "data.metadata": 19510,
+        "data.metadata.flowints": 19510,
+        "data.metadata.flowints.tls": 19464,
+        "data.tls": 19469,
+        "data.tls.version": 19469,
+        "data.tls.ja3": 19465,
+        "data.tls.ja3.string": 19465,
+        "data.tls.ja3.hash": 19465,
+        "data.tls.sni": 19463,
+        "data.http": 625,
+        "data.http.hostname": 585,
+        "data.http.protocol": 585,
+        "data.http.http_method": 585,
+        "data.http.length": 625,
+        "data.http.url": 625,
+        "data.http.http_user_agent": 585,
+        "data.metadata.flowints.http": 44,
+        "data.http.http_port": 40,
+        "GeoLocation": 6957,
+        "GeoLocation.city_name": 3552,
+        "GeoLocation.country_name": 6817,
+        "GeoLocation.region_name": 3540,
+        "GeoLocation.location": 6957,
+        "GeoLocation.location.lon": 6957,
+        "GeoLocation.location.lat": 6957,
+        "data.audit": 4,
+        "data.audit.uid": 4,
+        "data.audit.auid": 4,
+        "data.audit.gid": 4,
+        "data.audit.exe": 4,
+        "data.audit.euid": 4,
+        "data.audit.session": 4,
+        "data.audit.pid": 4,
+        "data.audit.id": 4,
+        "data.audit.type": 4,
+        "data.audit.command": 4,
+        "data.http.status": 146,
+        "data.srcuser": 167,
+        "data.uid": 59,
+        "data.euid": 54,
+        "data.dstuser": 67,
+        "data.tty": 58,
+        "data.protocol": 414861,
+        "data.url": 414861,
+        "data.http.http_content_type": 16,
+        "data.files": 8,
+        "data.srcport": 655,
+        "data.metadata.flowints.smtp": 2,
+        "data.app_proto_tc": 1,
+        "data.alert.metadata.performance_impact": 12,
+        "data.tls.serial": 2,
+        "data.tls.notbefore": 2,
+        "data.tls.subject": 2,
+        "data.tls.issuerdn": 2,
+        "data.tls.ja3s": 2,
+        "data.tls.ja3s.string": 2,
+        "data.tls.ja3s.hash": 2,
+        "data.tls.notafter": 2,
+        "data.tls.fingerprint": 2,
+        "data.pwd": 4,
+        "data.command": 4,
+        "decoder.ftscomment": 4
+      },
+      "nested_path_types": {
+        "agent": {
+          "dict": 583754
+        },
+        "agent.ip": {
+          "str": 583754
+        },
+        "agent.name": {
+          "str": 583754
+        },
+        "agent.id": {
+          "str": 583754
+        },
+        "manager": {
+          "dict": 583754
+        },
+        "manager.name": {
+          "str": 583754
+        },
+        "data": {
+          "dict": 550490
+        },
+        "data.dns": {
+          "dict": 47285
+        },
+        "data.dns.query": {
+          "list": 47285
+        },
+        "data.tx_id": {
+          "str": 67384
+        },
+        "data.app_proto": {
+          "str": 67377
+        },
+        "data.in_iface": {
+          "str": 67384
+        },
+        "data.src_ip": {
+          "str": 67384
+        },
+        "data.src_port": {
+          "str": 67384
+        },
+        "data.event_type": {
+          "str": 67384
+        },
+        "data.alert": {
+          "dict": 67384
+        },
+        "data.alert.severity": {
+          "str": 67384
+        },
+        "data.alert.signature_id": {
+          "str": 67384
+        },
+        "data.alert.rev": {
+          "str": 67384
+        },
+        "data.alert.metadata": {
+          "dict": 47867
+        },
+        "data.alert.metadata.affected_product": {
+          "list": 47296
+        },
+        "data.alert.metadata.attack_target": {
+          "list": 47296
+        },
+        "data.alert.metadata.updated_at": {
+          "list": 47867
+        },
+        "data.alert.metadata.former_category": {
+          "list": 47867
+        },
+        "data.alert.metadata.created_at": {
+          "list": 47867
+        },
+        "data.alert.metadata.signature_severity": {
+          "list": 47296
+        },
+        "data.alert.metadata.deployment": {
+          "list": 47296
+        },
+        "data.alert.gid": {
+          "str": 67384
+        },
+        "data.alert.signature": {
+          "str": 67384
+        },
+        "data.alert.action": {
+          "str": 67384
+        },
+        "data.alert.category": {
+          "str": 67383
+        },
+        "data.flow_id": {
+          "str": 67384
+        },
+        "data.dest_ip": {
+          "str": 67384
+        },
+        "data.proto": {
+          "str": 67384
+        },
+        "data.dest_port": {
+          "str": 67384
+        },
+        "data.flow": {
+          "dict": 67377
+        },
+        "data.flow.pkts_toserver": {
+          "str": 67377
+        },
+        "data.flow.start": {
+          "str": 67377
+        },
+        "data.flow.bytes_toclient": {
+          "str": 67377
+        },
+        "data.flow.bytes_toserver": {
+          "str": 67377
+        },
+        "data.flow.pkts_toclient": {
+          "str": 67377
+        },
+        "data.timestamp": {
+          "str": 67384
+        },
+        "rule": {
+          "dict": 583754
+        },
+        "rule.firedtimes": {
+          "int": 583754
+        },
+        "rule.mail": {
+          "bool": 583754
+        },
+        "rule.level": {
+          "int": 583754
+        },
+        "rule.description": {
+          "str": 583754
+        },
+        "rule.groups": {
+          "list": 583754
+        },
+        "rule.id": {
+          "str": 583754
+        },
+        "decoder": {
+          "dict": 583754
+        },
+        "decoder.name": {
+          "str": 583696
+        },
+        "input": {
+          "dict": 583754
+        },
+        "input.type": {
+          "str": 583754
+        },
+        "@timestamp": {
+          "str": 583754
+        },
+        "location": {
+          "str": 583754
+        },
+        "id": {
+          "str": 583754
+        },
+        "predecoder": {
+          "dict": 100852
+        },
+        "predecoder.timestamp": {
+          "str": 100852
+        },
+        "data.srcip": {
+          "str": 483089
+        },
+        "data.dstip": {
+          "str": 67519
+        },
+        "data.id": {
+          "str": 482925
+        },
+        "decoder.parent": {
+          "str": 100427
+        },
+        "full_log": {
+          "str": 516370
+        },
+        "rule.pci_dss": {
+          "list": 452423
+        },
+        "rule.hipaa": {
+          "list": 36064
+        },
+        "rule.tsc": {
+          "list": 451793
+        },
+        "rule.nist_800_53": {
+          "list": 451793
+        },
+        "rule.frequency": {
+          "int": 33099
+        },
+        "rule.gdpr": {
+          "list": 452423
+        },
+        "predecoder.hostname": {
+          "str": 33441
+        },
+        "predecoder.program_name": {
+          "str": 33441
+        },
+        "rule.gpg13": {
+          "list": 33440
+        },
+        "previous_output": {
+          "str": 30252
+        },
+        "rule.mitre": {
+          "dict": 62749
+        },
+        "rule.mitre.technique": {
+          "list": 62749
+        },
+        "rule.mitre.id": {
+          "list": 62749
+        },
+        "rule.mitre.tactic": {
+          "list": 62749
+        },
+        "data.metadata": {
+          "dict": 19510
+        },
+        "data.metadata.flowints": {
+          "dict": 19510
+        },
+        "data.metadata.flowints.tls": {
+          "dict": 19464
+        },
+        "data.tls": {
+          "dict": 19469
+        },
+        "data.tls.version": {
+          "str": 19469
+        },
+        "data.tls.ja3": {
+          "dict": 19465
+        },
+        "data.tls.ja3.string": {
+          "str": 19465
+        },
+        "data.tls.ja3.hash": {
+          "str": 19465
+        },
+        "data.tls.sni": {
+          "str": 19463
+        },
+        "data.http": {
+          "dict": 625
+        },
+        "data.http.hostname": {
+          "str": 585
+        },
+        "data.http.protocol": {
+          "str": 585
+        },
+        "data.http.http_method": {
+          "str": 585
+        },
+        "data.http.length": {
+          "str": 625
+        },
+        "data.http.url": {
+          "str": 625
+        },
+        "data.http.http_user_agent": {
+          "str": 585
+        },
+        "data.metadata.flowints.http": {
+          "dict": 44
+        },
+        "data.http.http_port": {
+          "str": 40
+        },
+        "GeoLocation": {
+          "dict": 6957
+        },
+        "GeoLocation.city_name": {
+          "str": 3552
+        },
+        "GeoLocation.country_name": {
+          "str": 6817
+        },
+        "GeoLocation.region_name": {
+          "str": 3540
+        },
+        "GeoLocation.location": {
+          "dict": 6957
+        },
+        "GeoLocation.location.lon": {
+          "float": 6817,
+          "int": 140
+        },
+        "GeoLocation.location.lat": {
+          "float": 6817,
+          "int": 140
+        },
+        "data.audit": {
+          "dict": 4
+        },
+        "data.audit.uid": {
+          "str": 4
+        },
+        "data.audit.auid": {
+          "str": 4
+        },
+        "data.audit.gid": {
+          "str": 4
+        },
+        "data.audit.exe": {
+          "str": 4
+        },
+        "data.audit.euid": {
+          "str": 4
+        },
+        "data.audit.session": {
+          "str": 4
+        },
+        "data.audit.pid": {
+          "str": 4
+        },
+        "data.audit.id": {
+          "str": 4
+        },
+        "data.audit.type": {
+          "str": 4
+        },
+        "data.audit.command": {
+          "str": 4
+        },
+        "data.http.status": {
+          "str": 146
+        },
+        "data.srcuser": {
+          "str": 167
+        },
+        "data.uid": {
+          "str": 59
+        },
+        "data.euid": {
+          "str": 54
+        },
+        "data.dstuser": {
+          "str": 67
+        },
+        "data.tty": {
+          "str": 58
+        },
+        "data.protocol": {
+          "str": 414861
+        },
+        "data.url": {
+          "str": 414861
+        },
+        "data.http.http_content_type": {
+          "str": 16
+        },
+        "data.files": {
+          "list": 8
+        },
+        "data.srcport": {
+          "str": 655
+        },
+        "data.metadata.flowints.smtp": {
+          "dict": 2
+        },
+        "data.app_proto_tc": {
+          "str": 1
+        },
+        "data.alert.metadata.performance_impact": {
+          "list": 12
+        },
+        "data.tls.serial": {
+          "str": 2
+        },
+        "data.tls.notbefore": {
+          "str": 2
+        },
+        "data.tls.subject": {
+          "str": 2
+        },
+        "data.tls.issuerdn": {
+          "str": 2
+        },
+        "data.tls.ja3s": {
+          "dict": 2
+        },
+        "data.tls.ja3s.string": {
+          "str": 2
+        },
+        "data.tls.ja3s.hash": {
+          "str": 2
+        },
+        "data.tls.notafter": {
+          "str": 2
+        },
+        "data.tls.fingerprint": {
+          "str": 2
+        },
+        "data.pwd": {
+          "str": 4
+        },
+        "data.command": {
+          "str": 4
+        },
+        "decoder.ftscomment": {
+          "str": 4
+        }
+      },
+      "missing": {
+        "source_line": 583754,
+        "detector_time": 583754,
+        "collection_time": 583754,
+        "flow_id": 516370
+      },
+      "duplicate_alert_ids": 0,
+      "timestamp_min": {
+        "event_time": 1643932807.756748
+      },
+      "timestamp_max": {
+        "event_time": 1644364044.0
+      }
+    },
+    "russellmitchell_aminer.json": {
+      "compressed_bytes": 89364,
+      "uncompressed_bytes": 3411024,
+      "rows": 4056,
+      "malformed_rows": 0,
+      "top_level_presence": {
+        "AnalysisComponent": 4056,
+        "LogData": 4056,
+        "AMiner": 4056,
+        "CountData": 41,
+        "FrequencyData": 32
+      },
+      "nested_path_presence": {
+        "AnalysisComponent": 4056,
+        "AnalysisComponent.AnalysisComponentIdentifier": 4056,
+        "AnalysisComponent.AnalysisComponentType": 4056,
+        "AnalysisComponent.AnalysisComponentName": 4056,
+        "AnalysisComponent.Message": 4056,
+        "AnalysisComponent.PersistenceFileName": 4056,
+        "AnalysisComponent.TrainingMode": 4056,
+        "AnalysisComponent.AffectedLogAtomPaths": 4056,
+        "LogData": 4056,
+        "LogData.RawLogData": 4056,
+        "LogData.Timestamps": 4056,
+        "LogData.DetectionTimestamp": 4056,
+        "LogData.LogLinesCount": 4056,
+        "LogData.LogResources": 4056,
+        "AMiner": 4056,
+        "AMiner.ID": 4056,
+        "AnalysisComponent.AffectedLogAtomValues": 3571,
+        "AnalysisComponent.CriticalValue": 44,
+        "AnalysisComponent.ProbabilityThreshold": 44,
+        "AnalysisComponent.MissingCharacters": 70,
+        "AnalysisComponent.Range": 18,
+        "AnalysisComponent.IDpaths": 18,
+        "AnalysisComponent.IDvalues": 18,
+        "AnalysisComponent.AffectedLogAtomFrequencies": 41,
+        "AnalysisComponent.AffectedIdValues": 41,
+        "CountData": 41,
+        "CountData.ConfidenceFactor": 41,
+        "CountData.Confidence": 41,
+        "AnalysisComponent.AnomalyScores": 8,
+        "AnalysisComponent.MinBinElements": 8,
+        "AnalysisComponent.MinBinTime": 8,
+        "AnalysisComponent.DebugMode": 8,
+        "FrequencyData": 32,
+        "FrequencyData.ExpectedLogAtomValuesFrequency": 32,
+        "FrequencyData.ExpectedLogAtomValuesFrequencyRange": 32,
+        "FrequencyData.LogAtomValuesFrequency": 32,
+        "FrequencyData.WindowSize": 32,
+        "FrequencyData.ConfidenceFactor": 32,
+        "FrequencyData.Confidence": 21
+      },
+      "nested_path_types": {
+        "AnalysisComponent": {
+          "dict": 4056
+        },
+        "AnalysisComponent.AnalysisComponentIdentifier": {
+          "int": 4056
+        },
+        "AnalysisComponent.AnalysisComponentType": {
+          "str": 4056
+        },
+        "AnalysisComponent.AnalysisComponentName": {
+          "str": 4056
+        },
+        "AnalysisComponent.Message": {
+          "str": 4056
+        },
+        "AnalysisComponent.PersistenceFileName": {
+          "str": 4056
+        },
+        "AnalysisComponent.TrainingMode": {
+          "bool": 4056
+        },
+        "AnalysisComponent.AffectedLogAtomPaths": {
+          "list": 4056
+        },
+        "LogData": {
+          "dict": 4056
+        },
+        "LogData.RawLogData": {
+          "list": 4056
+        },
+        "LogData.Timestamps": {
+          "list": 4056
+        },
+        "LogData.DetectionTimestamp": {
+          "list": 4056
+        },
+        "LogData.LogLinesCount": {
+          "int": 4056
+        },
+        "LogData.LogResources": {
+          "list": 4056
+        },
+        "AMiner": {
+          "dict": 4056
+        },
+        "AMiner.ID": {
+          "str": 4056
+        },
+        "AnalysisComponent.AffectedLogAtomValues": {
+          "list": 3571
+        },
+        "AnalysisComponent.CriticalValue": {
+          "float": 44
+        },
+        "AnalysisComponent.ProbabilityThreshold": {
+          "float": 44
+        },
+        "AnalysisComponent.MissingCharacters": {
+          "list": 70
+        },
+        "AnalysisComponent.Range": {
+          "list": 18
+        },
+        "AnalysisComponent.IDpaths": {
+          "list": 18
+        },
+        "AnalysisComponent.IDvalues": {
+          "list": 18
+        },
+        "AnalysisComponent.AffectedLogAtomFrequencies": {
+          "list": 41
+        },
+        "AnalysisComponent.AffectedIdValues": {
+          "list": 41
+        },
+        "CountData": {
+          "dict": 41
+        },
+        "CountData.ConfidenceFactor": {
+          "float": 41
+        },
+        "CountData.Confidence": {
+          "int": 4,
+          "float": 37
+        },
+        "AnalysisComponent.AnomalyScores": {
+          "list": 8
+        },
+        "AnalysisComponent.MinBinElements": {
+          "int": 8
+        },
+        "AnalysisComponent.MinBinTime": {
+          "int": 8
+        },
+        "AnalysisComponent.DebugMode": {
+          "bool": 8
+        },
+        "FrequencyData": {
+          "dict": 32
+        },
+        "FrequencyData.ExpectedLogAtomValuesFrequency": {
+          "float": 32
+        },
+        "FrequencyData.ExpectedLogAtomValuesFrequencyRange": {
+          "list": 32
+        },
+        "FrequencyData.LogAtomValuesFrequency": {
+          "int": 32
+        },
+        "FrequencyData.WindowSize": {
+          "int": 32
+        },
+        "FrequencyData.ConfidenceFactor": {
+          "float": 32
+        },
+        "FrequencyData.Confidence": {
+          "float": 21
+        }
+      },
+      "missing": {
+        "alert_id": 4056,
+        "source_line": 4056,
+        "flow_id": 4056,
+        "collection_time": 4056
+      },
+      "duplicate_alert_ids": 0,
+      "timestamp_min": {
+        "event_time": 1642723201.0,
+        "detector_time": 1642723201.0
+      },
+      "timestamp_max": {
+        "event_time": 1643065505.0,
+        "detector_time": 1643065505.0
+      }
+    },
+    "russellmitchell_wazuh.json": {
+      "compressed_bytes": 1713409,
+      "uncompressed_bytes": 45282051,
+      "rows": 41488,
+      "malformed_rows": 0,
+      "top_level_presence": {
+        "predecoder": 24582,
+        "agent": 41488,
+        "manager": 41488,
+        "rule": 41488,
+        "decoder": 41488,
+        "full_log": 32302,
+        "input": 41488,
+        "@timestamp": 41488,
+        "location": 41488,
+        "id": 41488,
+        "data": 26246,
+        "GeoLocation": 3385,
+        "previous_output": 562
+      },
+      "nested_path_presence": {
+        "predecoder": 24582,
+        "predecoder.hostname": 15396,
+        "predecoder.program_name": 15396,
+        "predecoder.timestamp": 24582,
+        "agent": 41488,
+        "agent.ip": 41488,
+        "agent.name": 41488,
+        "agent.id": 41488,
+        "manager": 41488,
+        "manager.name": 41488,
+        "rule": 41488,
+        "rule.firedtimes": 41488,
+        "rule.mail": 41488,
+        "rule.level": 41488,
+        "rule.pci_dss": 23296,
+        "rule.tsc": 23289,
+        "rule.description": 41488,
+        "rule.groups": 41488,
+        "rule.id": 41488,
+        "rule.nist_800_53": 23289,
+        "rule.gpg13": 15396,
+        "rule.gdpr": 23296,
+        "decoder": 41488,
+        "decoder.name": 41458,
+        "full_log": 32302,
+        "input": 41488,
+        "input.type": 41488,
+        "@timestamp": 41488,
+        "location": 41488,
+        "id": 41488,
+        "data": 26246,
+        "data.tx_id": 9186,
+        "data.app_proto": 9174,
+        "data.in_iface": 9186,
+        "data.src_ip": 9186,
+        "data.src_port": 9186,
+        "data.event_type": 9186,
+        "data.alert": 9186,
+        "data.alert.severity": 9186,
+        "data.alert.signature_id": 9186,
+        "data.alert.rev": 9186,
+        "data.alert.metadata": 355,
+        "data.alert.metadata.updated_at": 355,
+        "data.alert.metadata.former_category": 355,
+        "data.alert.metadata.created_at": 355,
+        "data.alert.gid": 9186,
+        "data.alert.signature": 9186,
+        "data.alert.action": 9186,
+        "data.alert.category": 9186,
+        "data.flow_id": 9186,
+        "data.dest_ip": 9186,
+        "data.proto": 9186,
+        "data.http": 356,
+        "data.http.hostname": 340,
+        "data.http.protocol": 340,
+        "data.http.http_method": 340,
+        "data.http.length": 356,
+        "data.http.url": 356,
+        "data.http.http_user_agent": 339,
+        "data.http.status": 144,
+        "data.dest_port": 9186,
+        "data.flow": 9174,
+        "data.flow.pkts_toserver": 9174,
+        "data.flow.start": 9174,
+        "data.flow.bytes_toclient": 9174,
+        "data.flow.bytes_toserver": 9174,
+        "data.flow.pkts_toclient": 9174,
+        "data.timestamp": 9186,
+        "data.srcip": 17009,
+        "data.dstip": 9282,
+        "data.id": 16882,
+        "decoder.parent": 23799,
+        "rule.hipaa": 14840,
+        "rule.mitre": 15048,
+        "rule.mitre.technique": 15048,
+        "rule.mitre.id": 15048,
+        "rule.mitre.tactic": 15048,
+        "data.metadata": 8819,
+        "data.metadata.flowints": 8819,
+        "data.metadata.flowints.tls": 8796,
+        "data.tls": 8804,
+        "data.tls.version": 8804,
+        "data.tls.ja3": 8796,
+        "data.tls.ja3.string": 8796,
+        "data.tls.ja3.hash": 8796,
+        "data.tls.sni": 8792,
+        "GeoLocation": 3385,
+        "GeoLocation.city_name": 1792,
+        "GeoLocation.country_name": 3345,
+        "GeoLocation.region_name": 1792,
+        "GeoLocation.location": 3385,
+        "GeoLocation.location.lon": 3385,
+        "GeoLocation.location.lat": 3385,
+        "rule.frequency": 736,
+        "data.audit": 24,
+        "data.audit.uid": 24,
+        "data.audit.auid": 24,
+        "data.audit.gid": 24,
+        "data.audit.exe": 24,
+        "data.audit.euid": 24,
+        "data.audit.session": 24,
+        "data.audit.pid": 24,
+        "data.audit.id": 24,
+        "data.audit.type": 24,
+        "data.audit.command": 24,
+        "data.dstuser": 48,
+        "data.uid": 29,
+        "data.srcport": 48,
+        "previous_output": 562,
+        "data.srcuser": 114,
+        "data.euid": 15,
+        "data.tty": 17,
+        "data.metadata.flowints.http": 19,
+        "data.http.http_port": 16,
+        "data.http.http_content_type": 42,
+        "data.files": 24,
+        "data.dns": 18,
+        "data.dns.query": 18,
+        "data.alert.metadata.affected_product": 45,
+        "data.alert.metadata.attack_target": 45,
+        "data.alert.metadata.signature_severity": 45,
+        "data.alert.metadata.deployment": 45,
+        "data.protocol": 7664,
+        "data.url": 7664,
+        "data.metadata.flowints.smtp": 4,
+        "data.app_proto_tc": 2,
+        "data.alert.metadata.performance_impact": 27,
+        "data.http.redirect": 3,
+        "data.tls.serial": 4,
+        "data.tls.notbefore": 4,
+        "data.tls.subject": 4,
+        "data.tls.issuerdn": 4,
+        "data.tls.ja3s": 4,
+        "data.tls.ja3s.string": 4,
+        "data.tls.ja3s.hash": 4,
+        "data.tls.notafter": 4,
+        "data.tls.fingerprint": 4,
+        "data.pwd": 2,
+        "data.command": 2,
+        "decoder.ftscomment": 2
+      },
+      "nested_path_types": {
+        "predecoder": {
+          "dict": 24582
+        },
+        "predecoder.hostname": {
+          "str": 15396
+        },
+        "predecoder.program_name": {
+          "str": 15396
+        },
+        "predecoder.timestamp": {
+          "str": 24582
+        },
+        "agent": {
+          "dict": 41488
+        },
+        "agent.ip": {
+          "str": 41488
+        },
+        "agent.name": {
+          "str": 41488
+        },
+        "agent.id": {
+          "str": 41488
+        },
+        "manager": {
+          "dict": 41488
+        },
+        "manager.name": {
+          "str": 41488
+        },
+        "rule": {
+          "dict": 41488
+        },
+        "rule.firedtimes": {
+          "int": 41488
+        },
+        "rule.mail": {
+          "bool": 41488
+        },
+        "rule.level": {
+          "int": 41488
+        },
+        "rule.pci_dss": {
+          "list": 23296
+        },
+        "rule.tsc": {
+          "list": 23289
+        },
+        "rule.description": {
+          "str": 41488
+        },
+        "rule.groups": {
+          "list": 41488
+        },
+        "rule.id": {
+          "str": 41488
+        },
+        "rule.nist_800_53": {
+          "list": 23289
+        },
+        "rule.gpg13": {
+          "list": 15396
+        },
+        "rule.gdpr": {
+          "list": 23296
+        },
+        "decoder": {
+          "dict": 41488
+        },
+        "decoder.name": {
+          "str": 41458
+        },
+        "full_log": {
+          "str": 32302
+        },
+        "input": {
+          "dict": 41488
+        },
+        "input.type": {
+          "str": 41488
+        },
+        "@timestamp": {
+          "str": 41488
+        },
+        "location": {
+          "str": 41488
+        },
+        "id": {
+          "str": 41488
+        },
+        "data": {
+          "dict": 26246
+        },
+        "data.tx_id": {
+          "str": 9186
+        },
+        "data.app_proto": {
+          "str": 9174
+        },
+        "data.in_iface": {
+          "str": 9186
+        },
+        "data.src_ip": {
+          "str": 9186
+        },
+        "data.src_port": {
+          "str": 9186
+        },
+        "data.event_type": {
+          "str": 9186
+        },
+        "data.alert": {
+          "dict": 9186
+        },
+        "data.alert.severity": {
+          "str": 9186
+        },
+        "data.alert.signature_id": {
+          "str": 9186
+        },
+        "data.alert.rev": {
+          "str": 9186
+        },
+        "data.alert.metadata": {
+          "dict": 355
+        },
+        "data.alert.metadata.updated_at": {
+          "list": 355
+        },
+        "data.alert.metadata.former_category": {
+          "list": 355
+        },
+        "data.alert.metadata.created_at": {
+          "list": 355
+        },
+        "data.alert.gid": {
+          "str": 9186
+        },
+        "data.alert.signature": {
+          "str": 9186
+        },
+        "data.alert.action": {
+          "str": 9186
+        },
+        "data.alert.category": {
+          "str": 9186
+        },
+        "data.flow_id": {
+          "str": 9186
+        },
+        "data.dest_ip": {
+          "str": 9186
+        },
+        "data.proto": {
+          "str": 9186
+        },
+        "data.http": {
+          "dict": 356
+        },
+        "data.http.hostname": {
+          "str": 340
+        },
+        "data.http.protocol": {
+          "str": 340
+        },
+        "data.http.http_method": {
+          "str": 340
+        },
+        "data.http.length": {
+          "str": 356
+        },
+        "data.http.url": {
+          "str": 356
+        },
+        "data.http.http_user_agent": {
+          "str": 339
+        },
+        "data.http.status": {
+          "str": 144
+        },
+        "data.dest_port": {
+          "str": 9186
+        },
+        "data.flow": {
+          "dict": 9174
+        },
+        "data.flow.pkts_toserver": {
+          "str": 9174
+        },
+        "data.flow.start": {
+          "str": 9174
+        },
+        "data.flow.bytes_toclient": {
+          "str": 9174
+        },
+        "data.flow.bytes_toserver": {
+          "str": 9174
+        },
+        "data.flow.pkts_toclient": {
+          "str": 9174
+        },
+        "data.timestamp": {
+          "str": 9186
+        },
+        "data.srcip": {
+          "str": 17009
+        },
+        "data.dstip": {
+          "str": 9282
+        },
+        "data.id": {
+          "str": 16882
+        },
+        "decoder.parent": {
+          "str": 23799
+        },
+        "rule.hipaa": {
+          "list": 14840
+        },
+        "rule.mitre": {
+          "dict": 15048
+        },
+        "rule.mitre.technique": {
+          "list": 15048
+        },
+        "rule.mitre.id": {
+          "list": 15048
+        },
+        "rule.mitre.tactic": {
+          "list": 15048
+        },
+        "data.metadata": {
+          "dict": 8819
+        },
+        "data.metadata.flowints": {
+          "dict": 8819
+        },
+        "data.metadata.flowints.tls": {
+          "dict": 8796
+        },
+        "data.tls": {
+          "dict": 8804
+        },
+        "data.tls.version": {
+          "str": 8804
+        },
+        "data.tls.ja3": {
+          "dict": 8796
+        },
+        "data.tls.ja3.string": {
+          "str": 8796
+        },
+        "data.tls.ja3.hash": {
+          "str": 8796
+        },
+        "data.tls.sni": {
+          "str": 8792
+        },
+        "GeoLocation": {
+          "dict": 3385
+        },
+        "GeoLocation.city_name": {
+          "str": 1792
+        },
+        "GeoLocation.country_name": {
+          "str": 3345
+        },
+        "GeoLocation.region_name": {
+          "str": 1792
+        },
+        "GeoLocation.location": {
+          "dict": 3385
+        },
+        "GeoLocation.location.lon": {
+          "float": 3345,
+          "int": 40
+        },
+        "GeoLocation.location.lat": {
+          "float": 3345,
+          "int": 40
+        },
+        "rule.frequency": {
+          "int": 736
+        },
+        "data.audit": {
+          "dict": 24
+        },
+        "data.audit.uid": {
+          "str": 24
+        },
+        "data.audit.auid": {
+          "str": 24
+        },
+        "data.audit.gid": {
+          "str": 24
+        },
+        "data.audit.exe": {
+          "str": 24
+        },
+        "data.audit.euid": {
+          "str": 24
+        },
+        "data.audit.session": {
+          "str": 24
+        },
+        "data.audit.pid": {
+          "str": 24
+        },
+        "data.audit.id": {
+          "str": 24
+        },
+        "data.audit.type": {
+          "str": 24
+        },
+        "data.audit.command": {
+          "str": 24
+        },
+        "data.dstuser": {
+          "str": 48
+        },
+        "data.uid": {
+          "str": 29
+        },
+        "data.srcport": {
+          "str": 48
+        },
+        "previous_output": {
+          "str": 562
+        },
+        "data.srcuser": {
+          "str": 114
+        },
+        "data.euid": {
+          "str": 15
+        },
+        "data.tty": {
+          "str": 17
+        },
+        "data.metadata.flowints.http": {
+          "dict": 19
+        },
+        "data.http.http_port": {
+          "str": 16
+        },
+        "data.http.http_content_type": {
+          "str": 42
+        },
+        "data.files": {
+          "list": 24
+        },
+        "data.dns": {
+          "dict": 18
+        },
+        "data.dns.query": {
+          "list": 18
+        },
+        "data.alert.metadata.affected_product": {
+          "list": 45
+        },
+        "data.alert.metadata.attack_target": {
+          "list": 45
+        },
+        "data.alert.metadata.signature_severity": {
+          "list": 45
+        },
+        "data.alert.metadata.deployment": {
+          "list": 45
+        },
+        "data.protocol": {
+          "str": 7664
+        },
+        "data.url": {
+          "str": 7664
+        },
+        "data.metadata.flowints.smtp": {
+          "dict": 4
+        },
+        "data.app_proto_tc": {
+          "str": 2
+        },
+        "data.alert.metadata.performance_impact": {
+          "list": 27
+        },
+        "data.http.redirect": {
+          "str": 3
+        },
+        "data.tls.serial": {
+          "str": 4
+        },
+        "data.tls.notbefore": {
+          "str": 4
+        },
+        "data.tls.subject": {
+          "str": 4
+        },
+        "data.tls.issuerdn": {
+          "str": 4
+        },
+        "data.tls.ja3s": {
+          "dict": 4
+        },
+        "data.tls.ja3s.string": {
+          "str": 4
+        },
+        "data.tls.ja3s.hash": {
+          "str": 4
+        },
+        "data.tls.notafter": {
+          "str": 4
+        },
+        "data.tls.fingerprint": {
+          "str": 4
+        },
+        "data.pwd": {
+          "str": 2
+        },
+        "data.command": {
+          "str": 2
+        },
+        "decoder.ftscomment": {
+          "str": 2
+        }
+      },
+      "missing": {
+        "source_line": 41488,
+        "flow_id": 32302,
+        "detector_time": 41488,
+        "collection_time": 41488
+      },
+      "duplicate_alert_ids": 0,
+      "timestamp_min": {
+        "event_time": 1642723347.0
+      },
+      "timestamp_max": {
+        "event_time": 1643067553.0
+      }
+    },
+    "santos_aminer.json": {
+      "compressed_bytes": 104779,
+      "uncompressed_bytes": 3634879,
+      "rows": 4266,
+      "malformed_rows": 0,
+      "top_level_presence": {
+        "AnalysisComponent": 4266,
+        "LogData": 4266,
+        "AMiner": 4266,
+        "CountData": 123,
+        "FrequencyData": 30
+      },
+      "nested_path_presence": {
+        "AnalysisComponent": 4266,
+        "AnalysisComponent.AnalysisComponentIdentifier": 4266,
+        "AnalysisComponent.AnalysisComponentType": 4266,
+        "AnalysisComponent.AnalysisComponentName": 4266,
+        "AnalysisComponent.Message": 4266,
+        "AnalysisComponent.PersistenceFileName": 4266,
+        "AnalysisComponent.TrainingMode": 4266,
+        "AnalysisComponent.AffectedLogAtomPaths": 4266,
+        "LogData": 4266,
+        "LogData.RawLogData": 4266,
+        "LogData.Timestamps": 4266,
+        "LogData.DetectionTimestamp": 4266,
+        "LogData.LogLinesCount": 4266,
+        "LogData.LogResources": 4266,
+        "AMiner": 4266,
+        "AMiner.ID": 4266,
+        "AnalysisComponent.AffectedLogAtomValues": 4021,
+        "AnalysisComponent.CriticalValue": 176,
+        "AnalysisComponent.ProbabilityThreshold": 176,
+        "AnalysisComponent.Range": 19,
+        "AnalysisComponent.IDpaths": 19,
+        "AnalysisComponent.IDvalues": 19,
+        "AnalysisComponent.AffectedLogAtomFrequencies": 123,
+        "AnalysisComponent.AffectedIdValues": 123,
+        "CountData": 123,
+        "CountData.ConfidenceFactor": 123,
+        "CountData.Confidence": 123,
+        "AnalysisComponent.MissingCharacters": 135,
+        "FrequencyData": 30,
+        "FrequencyData.ExpectedLogAtomValuesFrequency": 30,
+        "FrequencyData.ExpectedLogAtomValuesFrequencyRange": 30,
+        "FrequencyData.LogAtomValuesFrequency": 30,
+        "FrequencyData.WindowSize": 30,
+        "FrequencyData.ConfidenceFactor": 30,
+        "FrequencyData.Confidence": 17,
+        "AnalysisComponent.AnomalyScores": 7,
+        "AnalysisComponent.MinBinElements": 7,
+        "AnalysisComponent.MinBinTime": 7,
+        "AnalysisComponent.DebugMode": 7
+      },
+      "nested_path_types": {
+        "AnalysisComponent": {
+          "dict": 4266
+        },
+        "AnalysisComponent.AnalysisComponentIdentifier": {
+          "int": 4266
+        },
+        "AnalysisComponent.AnalysisComponentType": {
+          "str": 4266
+        },
+        "AnalysisComponent.AnalysisComponentName": {
+          "str": 4266
+        },
+        "AnalysisComponent.Message": {
+          "str": 4266
+        },
+        "AnalysisComponent.PersistenceFileName": {
+          "str": 4266
+        },
+        "AnalysisComponent.TrainingMode": {
+          "bool": 4266
+        },
+        "AnalysisComponent.AffectedLogAtomPaths": {
+          "list": 4266
+        },
+        "LogData": {
+          "dict": 4266
+        },
+        "LogData.RawLogData": {
+          "list": 4266
+        },
+        "LogData.Timestamps": {
+          "list": 4266
+        },
+        "LogData.DetectionTimestamp": {
+          "list": 4266
+        },
+        "LogData.LogLinesCount": {
+          "int": 4266
+        },
+        "LogData.LogResources": {
+          "list": 4266
+        },
+        "AMiner": {
+          "dict": 4266
+        },
+        "AMiner.ID": {
+          "str": 4266
+        },
+        "AnalysisComponent.AffectedLogAtomValues": {
+          "list": 4021
+        },
+        "AnalysisComponent.CriticalValue": {
+          "float": 176
+        },
+        "AnalysisComponent.ProbabilityThreshold": {
+          "float": 176
+        },
+        "AnalysisComponent.Range": {
+          "list": 19
+        },
+        "AnalysisComponent.IDpaths": {
+          "list": 19
+        },
+        "AnalysisComponent.IDvalues": {
+          "list": 19
+        },
+        "AnalysisComponent.AffectedLogAtomFrequencies": {
+          "list": 123
+        },
+        "AnalysisComponent.AffectedIdValues": {
+          "list": 123
+        },
+        "CountData": {
+          "dict": 123
+        },
+        "CountData.ConfidenceFactor": {
+          "float": 123
+        },
+        "CountData.Confidence": {
+          "int": 4,
+          "float": 119
+        },
+        "AnalysisComponent.MissingCharacters": {
+          "list": 135
+        },
+        "FrequencyData": {
+          "dict": 30
+        },
+        "FrequencyData.ExpectedLogAtomValuesFrequency": {
+          "float": 30
+        },
+        "FrequencyData.ExpectedLogAtomValuesFrequencyRange": {
+          "list": 30
+        },
+        "FrequencyData.LogAtomValuesFrequency": {
+          "int": 30
+        },
+        "FrequencyData.WindowSize": {
+          "int": 30
+        },
+        "FrequencyData.ConfidenceFactor": {
+          "float": 30
+        },
+        "FrequencyData.Confidence": {
+          "float": 17
+        },
+        "AnalysisComponent.AnomalyScores": {
+          "list": 7
+        },
+        "AnalysisComponent.MinBinElements": {
+          "int": 7
+        },
+        "AnalysisComponent.MinBinTime": {
+          "int": 7
+        },
+        "AnalysisComponent.DebugMode": {
+          "bool": 7
+        }
+      },
+      "missing": {
+        "alert_id": 4266,
+        "source_line": 4266,
+        "flow_id": 4266,
+        "collection_time": 4266
+      },
+      "duplicate_alert_ids": 0,
+      "timestamp_min": {
+        "event_time": 1642118401.75,
+        "detector_time": 1642118401.75
+      },
+      "timestamp_max": {
+        "event_time": 1642463502.0,
+        "detector_time": 1642463502.0
+      }
+    },
+    "santos_wazuh.json": {
+      "compressed_bytes": 8325661,
+      "uncompressed_bytes": 145438925,
+      "rows": 126513,
+      "malformed_rows": 0,
+      "top_level_presence": {
+        "agent": 126513,
+        "manager": 126513,
+        "data": 96146,
+        "rule": 126513,
+        "decoder": 126513,
+        "input": 126513,
+        "@timestamp": 126513,
+        "location": 126513,
+        "id": 126513,
+        "predecoder": 74641,
+        "full_log": 82401,
+        "previous_output": 899,
+        "GeoLocation": 7153
+      },
+      "nested_path_presence": {
+        "agent": 126513,
+        "agent.ip": 126513,
+        "agent.name": 126513,
+        "agent.id": 126513,
+        "manager": 126513,
+        "manager.name": 126513,
+        "data": 96146,
+        "data.dns": 25793,
+        "data.dns.query": 25793,
+        "data.tx_id": 44112,
+        "data.app_proto": 44105,
+        "data.in_iface": 44112,
+        "data.src_ip": 44112,
+        "data.src_port": 44112,
+        "data.event_type": 44112,
+        "data.alert": 44112,
+        "data.alert.severity": 44112,
+        "data.alert.signature_id": 44112,
+        "data.alert.rev": 44112,
+        "data.alert.metadata": 26193,
+        "data.alert.metadata.affected_product": 25874,
+        "data.alert.metadata.attack_target": 25874,
+        "data.alert.metadata.updated_at": 26193,
+        "data.alert.metadata.former_category": 26098,
+        "data.alert.metadata.created_at": 26193,
+        "data.alert.metadata.signature_severity": 25874,
+        "data.alert.metadata.deployment": 25874,
+        "data.alert.gid": 44112,
+        "data.alert.signature": 44112,
+        "data.alert.action": 44112,
+        "data.alert.category": 44111,
+        "data.flow_id": 44112,
+        "data.dest_ip": 44112,
+        "data.proto": 44112,
+        "data.dest_port": 44112,
+        "data.flow": 44105,
+        "data.flow.pkts_toserver": 44105,
+        "data.flow.start": 44105,
+        "data.flow.bytes_toclient": 44105,
+        "data.flow.bytes_toserver": 44105,
+        "data.flow.pkts_toclient": 44105,
+        "data.timestamp": 44112,
+        "rule": 126513,
+        "rule.firedtimes": 126513,
+        "rule.mail": 126513,
+        "rule.level": 126513,
+        "rule.description": 126513,
+        "rule.groups": 126513,
+        "rule.id": 126513,
+        "decoder": 126513,
+        "decoder.name": 126453,
+        "input": 126513,
+        "input.type": 126513,
+        "@timestamp": 126513,
+        "location": 126513,
+        "id": 126513,
+        "predecoder": 74641,
+        "predecoder.timestamp": 74641,
+        "data.srcip": 52009,
+        "data.dstip": 44208,
+        "data.id": 51868,
+        "decoder.parent": 73798,
+        "full_log": 82401,
+        "data.http": 388,
+        "data.http.hostname": 334,
+        "data.http.protocol": 334,
+        "data.http.http_method": 334,
+        "data.http.length": 388,
+        "data.http.url": 388,
+        "data.http.http_user_agent": 334,
+        "data.http.status": 129,
+        "rule.pci_dss": 40294,
+        "rule.hipaa": 31454,
+        "rule.tsc": 39947,
+        "rule.nist_800_53": 39947,
+        "rule.frequency": 2563,
+        "rule.gdpr": 40294,
+        "previous_output": 899,
+        "predecoder.hostname": 30529,
+        "predecoder.program_name": 30529,
+        "rule.gpg13": 30527,
+        "data.metadata": 17912,
+        "data.metadata.flowints": 17912,
+        "data.metadata.flowints.tls": 17852,
+        "data.tls": 17926,
+        "data.tls.version": 17926,
+        "data.tls.ja3": 17922,
+        "data.tls.ja3.string": 17922,
+        "data.tls.ja3.hash": 17922,
+        "data.tls.sni": 17918,
+        "GeoLocation": 7153,
+        "GeoLocation.city_name": 3718,
+        "GeoLocation.country_name": 7083,
+        "GeoLocation.region_name": 3774,
+        "GeoLocation.location": 7153,
+        "GeoLocation.location.lon": 7153,
+        "GeoLocation.location.lat": 7153,
+        "data.srcuser": 140,
+        "data.uid": 47,
+        "data.euid": 38,
+        "data.dstuser": 61,
+        "data.tty": 42,
+        "rule.mitre": 30188,
+        "rule.mitre.technique": 30188,
+        "rule.mitre.id": 30188,
+        "rule.mitre.tactic": 30188,
+        "data.metadata.flowints.http": 58,
+        "data.http.http_port": 54,
+        "data.audit": 4,
+        "data.audit.uid": 4,
+        "data.audit.auid": 4,
+        "data.audit.gid": 4,
+        "data.audit.exe": 4,
+        "data.audit.euid": 4,
+        "data.audit.session": 4,
+        "data.audit.pid": 4,
+        "data.audit.id": 4,
+        "data.audit.type": 4,
+        "data.audit.command": 4,
+        "data.http.http_content_type": 26,
+        "data.files": 16,
+        "data.tls.ja3s": 76,
+        "data.tls.ja3s.string": 76,
+        "data.tls.ja3s.hash": 76,
+        "data.protocol": 7748,
+        "data.url": 7748,
+        "data.http.http_refer": 4,
+        "data.tls.session_resumed": 24,
+        "data.tls.serial": 51,
+        "data.tls.notbefore": 51,
+        "data.tls.subject": 51,
+        "data.tls.issuerdn": 51,
+        "data.tls.notafter": 51,
+        "data.tls.fingerprint": 51,
+        "data.srcport": 15,
+        "data.pwd": 4,
+        "data.command": 4,
+        "decoder.ftscomment": 4,
+        "data.metadata.flowints.smtp": 2,
+        "data.app_proto_tc": 1,
+        "data.alert.metadata.performance_impact": 15,
+        "data.http.redirect": 3
+      },
+      "nested_path_types": {
+        "agent": {
+          "dict": 126513
+        },
+        "agent.ip": {
+          "str": 126513
+        },
+        "agent.name": {
+          "str": 126513
+        },
+        "agent.id": {
+          "str": 126513
+        },
+        "manager": {
+          "dict": 126513
+        },
+        "manager.name": {
+          "str": 126513
+        },
+        "data": {
+          "dict": 96146
+        },
+        "data.dns": {
+          "dict": 25793
+        },
+        "data.dns.query": {
+          "list": 25793
+        },
+        "data.tx_id": {
+          "str": 44112
+        },
+        "data.app_proto": {
+          "str": 44105
+        },
+        "data.in_iface": {
+          "str": 44112
+        },
+        "data.src_ip": {
+          "str": 44112
+        },
+        "data.src_port": {
+          "str": 44112
+        },
+        "data.event_type": {
+          "str": 44112
+        },
+        "data.alert": {
+          "dict": 44112
+        },
+        "data.alert.severity": {
+          "str": 44112
+        },
+        "data.alert.signature_id": {
+          "str": 44112
+        },
+        "data.alert.rev": {
+          "str": 44112
+        },
+        "data.alert.metadata": {
+          "dict": 26193
+        },
+        "data.alert.metadata.affected_product": {
+          "list": 25874
+        },
+        "data.alert.metadata.attack_target": {
+          "list": 25874
+        },
+        "data.alert.metadata.updated_at": {
+          "list": 26193
+        },
+        "data.alert.metadata.former_category": {
+          "list": 26098
+        },
+        "data.alert.metadata.created_at": {
+          "list": 26193
+        },
+        "data.alert.metadata.signature_severity": {
+          "list": 25874
+        },
+        "data.alert.metadata.deployment": {
+          "list": 25874
+        },
+        "data.alert.gid": {
+          "str": 44112
+        },
+        "data.alert.signature": {
+          "str": 44112
+        },
+        "data.alert.action": {
+          "str": 44112
+        },
+        "data.alert.category": {
+          "str": 44111
+        },
+        "data.flow_id": {
+          "str": 44112
+        },
+        "data.dest_ip": {
+          "str": 44112
+        },
+        "data.proto": {
+          "str": 44112
+        },
+        "data.dest_port": {
+          "str": 44112
+        },
+        "data.flow": {
+          "dict": 44105
+        },
+        "data.flow.pkts_toserver": {
+          "str": 44105
+        },
+        "data.flow.start": {
+          "str": 44105
+        },
+        "data.flow.bytes_toclient": {
+          "str": 44105
+        },
+        "data.flow.bytes_toserver": {
+          "str": 44105
+        },
+        "data.flow.pkts_toclient": {
+          "str": 44105
+        },
+        "data.timestamp": {
+          "str": 44112
+        },
+        "rule": {
+          "dict": 126513
+        },
+        "rule.firedtimes": {
+          "int": 126513
+        },
+        "rule.mail": {
+          "bool": 126513
+        },
+        "rule.level": {
+          "int": 126513
+        },
+        "rule.description": {
+          "str": 126513
+        },
+        "rule.groups": {
+          "list": 126513
+        },
+        "rule.id": {
+          "str": 126513
+        },
+        "decoder": {
+          "dict": 126513
+        },
+        "decoder.name": {
+          "str": 126453
+        },
+        "input": {
+          "dict": 126513
+        },
+        "input.type": {
+          "str": 126513
+        },
+        "@timestamp": {
+          "str": 126513
+        },
+        "location": {
+          "str": 126513
+        },
+        "id": {
+          "str": 126513
+        },
+        "predecoder": {
+          "dict": 74641
+        },
+        "predecoder.timestamp": {
+          "str": 74641
+        },
+        "data.srcip": {
+          "str": 52009
+        },
+        "data.dstip": {
+          "str": 44208
+        },
+        "data.id": {
+          "str": 51868
+        },
+        "decoder.parent": {
+          "str": 73798
+        },
+        "full_log": {
+          "str": 82401
+        },
+        "data.http": {
+          "dict": 388
+        },
+        "data.http.hostname": {
+          "str": 334
+        },
+        "data.http.protocol": {
+          "str": 334
+        },
+        "data.http.http_method": {
+          "str": 334
+        },
+        "data.http.length": {
+          "str": 388
+        },
+        "data.http.url": {
+          "str": 388
+        },
+        "data.http.http_user_agent": {
+          "str": 334
+        },
+        "data.http.status": {
+          "str": 129
+        },
+        "rule.pci_dss": {
+          "list": 40294
+        },
+        "rule.hipaa": {
+          "list": 31454
+        },
+        "rule.tsc": {
+          "list": 39947
+        },
+        "rule.nist_800_53": {
+          "list": 39947
+        },
+        "rule.frequency": {
+          "int": 2563
+        },
+        "rule.gdpr": {
+          "list": 40294
+        },
+        "previous_output": {
+          "str": 899
+        },
+        "predecoder.hostname": {
+          "str": 30529
+        },
+        "predecoder.program_name": {
+          "str": 30529
+        },
+        "rule.gpg13": {
+          "list": 30527
+        },
+        "data.metadata": {
+          "dict": 17912
+        },
+        "data.metadata.flowints": {
+          "dict": 17912
+        },
+        "data.metadata.flowints.tls": {
+          "dict": 17852
+        },
+        "data.tls": {
+          "dict": 17926
+        },
+        "data.tls.version": {
+          "str": 17926
+        },
+        "data.tls.ja3": {
+          "dict": 17922
+        },
+        "data.tls.ja3.string": {
+          "str": 17922
+        },
+        "data.tls.ja3.hash": {
+          "str": 17922
+        },
+        "data.tls.sni": {
+          "str": 17918
+        },
+        "GeoLocation": {
+          "dict": 7153
+        },
+        "GeoLocation.city_name": {
+          "str": 3718
+        },
+        "GeoLocation.country_name": {
+          "str": 7083
+        },
+        "GeoLocation.region_name": {
+          "str": 3774
+        },
+        "GeoLocation.location": {
+          "dict": 7153
+        },
+        "GeoLocation.location.lon": {
+          "float": 7083,
+          "int": 70
+        },
+        "GeoLocation.location.lat": {
+          "float": 7083,
+          "int": 70
+        },
+        "data.srcuser": {
+          "str": 140
+        },
+        "data.uid": {
+          "str": 47
+        },
+        "data.euid": {
+          "str": 38
+        },
+        "data.dstuser": {
+          "str": 61
+        },
+        "data.tty": {
+          "str": 42
+        },
+        "rule.mitre": {
+          "dict": 30188
+        },
+        "rule.mitre.technique": {
+          "list": 30188
+        },
+        "rule.mitre.id": {
+          "list": 30188
+        },
+        "rule.mitre.tactic": {
+          "list": 30188
+        },
+        "data.metadata.flowints.http": {
+          "dict": 58
+        },
+        "data.http.http_port": {
+          "str": 54
+        },
+        "data.audit": {
+          "dict": 4
+        },
+        "data.audit.uid": {
+          "str": 4
+        },
+        "data.audit.auid": {
+          "str": 4
+        },
+        "data.audit.gid": {
+          "str": 4
+        },
+        "data.audit.exe": {
+          "str": 4
+        },
+        "data.audit.euid": {
+          "str": 4
+        },
+        "data.audit.session": {
+          "str": 4
+        },
+        "data.audit.pid": {
+          "str": 4
+        },
+        "data.audit.id": {
+          "str": 4
+        },
+        "data.audit.type": {
+          "str": 4
+        },
+        "data.audit.command": {
+          "str": 4
+        },
+        "data.http.http_content_type": {
+          "str": 26
+        },
+        "data.files": {
+          "list": 16
+        },
+        "data.tls.ja3s": {
+          "dict": 76
+        },
+        "data.tls.ja3s.string": {
+          "str": 76
+        },
+        "data.tls.ja3s.hash": {
+          "str": 76
+        },
+        "data.protocol": {
+          "str": 7748
+        },
+        "data.url": {
+          "str": 7748
+        },
+        "data.http.http_refer": {
+          "str": 4
+        },
+        "data.tls.session_resumed": {
+          "str": 24
+        },
+        "data.tls.serial": {
+          "str": 51
+        },
+        "data.tls.notbefore": {
+          "str": 51
+        },
+        "data.tls.subject": {
+          "str": 51
+        },
+        "data.tls.issuerdn": {
+          "str": 51
+        },
+        "data.tls.notafter": {
+          "str": 51
+        },
+        "data.tls.fingerprint": {
+          "str": 51
+        },
+        "data.srcport": {
+          "str": 15
+        },
+        "data.pwd": {
+          "str": 4
+        },
+        "data.command": {
+          "str": 4
+        },
+        "decoder.ftscomment": {
+          "str": 4
+        },
+        "data.metadata.flowints.smtp": {
+          "dict": 2
+        },
+        "data.app_proto_tc": {
+          "str": 1
+        },
+        "data.alert.metadata.performance_impact": {
+          "list": 15
+        },
+        "data.http.redirect": {
+          "str": 3
+        }
+      },
+      "missing": {
+        "source_line": 126513,
+        "detector_time": 126513,
+        "collection_time": 126513,
+        "flow_id": 82401
+      },
+      "duplicate_alert_ids": 0,
+      "timestamp_min": {
+        "event_time": 1642118409.728242
+      },
+      "timestamp_max": {
+        "event_time": 1642459133.0
+      }
+    },
+    "shaw_aminer.json": {
+      "compressed_bytes": 88198,
+      "uncompressed_bytes": 1944470,
+      "rows": 2243,
+      "malformed_rows": 0,
+      "top_level_presence": {
+        "AnalysisComponent": 2243,
+        "LogData": 2243,
+        "AMiner": 2243,
+        "CountData": 81,
+        "FrequencyData": 41
+      },
+      "nested_path_presence": {
+        "AnalysisComponent": 2243,
+        "AnalysisComponent.AnalysisComponentIdentifier": 2243,
+        "AnalysisComponent.AnalysisComponentType": 2243,
+        "AnalysisComponent.AnalysisComponentName": 2243,
+        "AnalysisComponent.Message": 2243,
+        "AnalysisComponent.PersistenceFileName": 2243,
+        "AnalysisComponent.TrainingMode": 2243,
+        "AnalysisComponent.AffectedLogAtomPaths": 2243,
+        "LogData": 2243,
+        "LogData.RawLogData": 2243,
+        "LogData.Timestamps": 2243,
+        "LogData.DetectionTimestamp": 2243,
+        "LogData.LogLinesCount": 2243,
+        "LogData.LogResources": 2243,
+        "AMiner": 2243,
+        "AMiner.ID": 2243,
+        "AnalysisComponent.AffectedLogAtomValues": 2006,
+        "AnalysisComponent.Range": 16,
+        "AnalysisComponent.IDpaths": 16,
+        "AnalysisComponent.IDvalues": 16,
+        "AnalysisComponent.CriticalValue": 16,
+        "AnalysisComponent.ProbabilityThreshold": 16,
+        "AnalysisComponent.MissingCharacters": 194,
+        "AnalysisComponent.AffectedLogAtomFrequencies": 81,
+        "AnalysisComponent.AffectedIdValues": 81,
+        "CountData": 81,
+        "CountData.ConfidenceFactor": 81,
+        "CountData.Confidence": 81,
+        "AnalysisComponent.AnomalyScores": 38,
+        "AnalysisComponent.MinBinElements": 38,
+        "AnalysisComponent.MinBinTime": 38,
+        "AnalysisComponent.DebugMode": 38,
+        "FrequencyData": 41,
+        "FrequencyData.ExpectedLogAtomValuesFrequency": 41,
+        "FrequencyData.ExpectedLogAtomValuesFrequencyRange": 41,
+        "FrequencyData.LogAtomValuesFrequency": 41,
+        "FrequencyData.WindowSize": 41,
+        "FrequencyData.ConfidenceFactor": 41,
+        "FrequencyData.Confidence": 23
+      },
+      "nested_path_types": {
+        "AnalysisComponent": {
+          "dict": 2243
+        },
+        "AnalysisComponent.AnalysisComponentIdentifier": {
+          "int": 2243
+        },
+        "AnalysisComponent.AnalysisComponentType": {
+          "str": 2243
+        },
+        "AnalysisComponent.AnalysisComponentName": {
+          "str": 2243
+        },
+        "AnalysisComponent.Message": {
+          "str": 2243
+        },
+        "AnalysisComponent.PersistenceFileName": {
+          "str": 2243
+        },
+        "AnalysisComponent.TrainingMode": {
+          "bool": 2243
+        },
+        "AnalysisComponent.AffectedLogAtomPaths": {
+          "list": 2243
+        },
+        "LogData": {
+          "dict": 2243
+        },
+        "LogData.RawLogData": {
+          "list": 2243
+        },
+        "LogData.Timestamps": {
+          "list": 2243
+        },
+        "LogData.DetectionTimestamp": {
+          "list": 2243
+        },
+        "LogData.LogLinesCount": {
+          "int": 2243
+        },
+        "LogData.LogResources": {
+          "list": 2243
+        },
+        "AMiner": {
+          "dict": 2243
+        },
+        "AMiner.ID": {
+          "str": 2243
+        },
+        "AnalysisComponent.AffectedLogAtomValues": {
+          "list": 2006
+        },
+        "AnalysisComponent.Range": {
+          "list": 16
+        },
+        "AnalysisComponent.IDpaths": {
+          "list": 16
+        },
+        "AnalysisComponent.IDvalues": {
+          "list": 16
+        },
+        "AnalysisComponent.CriticalValue": {
+          "float": 16
+        },
+        "AnalysisComponent.ProbabilityThreshold": {
+          "float": 16
+        },
+        "AnalysisComponent.MissingCharacters": {
+          "list": 194
+        },
+        "AnalysisComponent.AffectedLogAtomFrequencies": {
+          "list": 81
+        },
+        "AnalysisComponent.AffectedIdValues": {
+          "list": 81
+        },
+        "CountData": {
+          "dict": 81
+        },
+        "CountData.ConfidenceFactor": {
+          "float": 81
+        },
+        "CountData.Confidence": {
+          "int": 4,
+          "float": 77
+        },
+        "AnalysisComponent.AnomalyScores": {
+          "list": 38
+        },
+        "AnalysisComponent.MinBinElements": {
+          "int": 38
+        },
+        "AnalysisComponent.MinBinTime": {
+          "int": 38
+        },
+        "AnalysisComponent.DebugMode": {
+          "bool": 38
+        },
+        "FrequencyData": {
+          "dict": 41
+        },
+        "FrequencyData.ExpectedLogAtomValuesFrequency": {
+          "float": 41
+        },
+        "FrequencyData.ExpectedLogAtomValuesFrequencyRange": {
+          "list": 41
+        },
+        "FrequencyData.LogAtomValuesFrequency": {
+          "int": 41
+        },
+        "FrequencyData.WindowSize": {
+          "int": 41
+        },
+        "FrequencyData.ConfidenceFactor": {
+          "float": 41
+        },
+        "FrequencyData.Confidence": {
+          "float": 23
+        }
+      },
+      "missing": {
+        "alert_id": 2243,
+        "source_line": 2243,
+        "flow_id": 2243,
+        "collection_time": 2243
+      },
+      "duplicate_alert_ids": 0,
+      "timestamp_min": {
+        "event_time": 1643068801.0,
+        "detector_time": 1643068801.0
+      },
+      "timestamp_max": {
+        "event_time": 1643581247.0,
+        "detector_time": 1643581247.0
+      }
+    },
+    "shaw_wazuh.json": {
+      "compressed_bytes": 2841043,
+      "uncompressed_bytes": 74755213,
+      "rows": 68539,
+      "malformed_rows": 0,
+      "top_level_presence": {
+        "predecoder": 46588,
+        "agent": 68539,
+        "manager": 68539,
+        "rule": 68539,
+        "decoder": 68539,
+        "full_log": 51847,
+        "input": 68539,
+        "@timestamp": 68539,
+        "location": 68539,
+        "id": 68539,
+        "data": 39110,
+        "GeoLocation": 8038,
+        "previous_output": 428
+      },
+      "nested_path_presence": {
+        "predecoder": 46588,
+        "predecoder.hostname": 29880,
+        "predecoder.program_name": 29880,
+        "predecoder.timestamp": 46588,
+        "agent": 68539,
+        "agent.ip": 68539,
+        "agent.name": 68539,
+        "agent.id": 68539,
+        "manager": 68539,
+        "manager.name": 68539,
+        "rule": 68539,
+        "rule.firedtimes": 68539,
+        "rule.mail": 68539,
+        "rule.level": 68539,
+        "rule.pci_dss": 35547,
+        "rule.tsc": 35514,
+        "rule.description": 68539,
+        "rule.groups": 68539,
+        "rule.id": 68539,
+        "rule.nist_800_53": 35514,
+        "rule.gpg13": 29879,
+        "rule.gdpr": 35547,
+        "decoder": 68539,
+        "decoder.name": 68481,
+        "full_log": 51847,
+        "input": 68539,
+        "input.type": 68539,
+        "@timestamp": 68539,
+        "location": 68539,
+        "id": 68539,
+        "data": 39110,
+        "data.tx_id": 16690,
+        "data.app_proto": 16690,
+        "data.in_iface": 16692,
+        "data.src_ip": 16692,
+        "data.src_port": 16692,
+        "data.event_type": 16692,
+        "data.alert": 16692,
+        "data.alert.severity": 16692,
+        "data.alert.signature_id": 16692,
+        "data.alert.rev": 16692,
+        "data.alert.metadata": 636,
+        "data.alert.metadata.updated_at": 636,
+        "data.alert.metadata.former_category": 636,
+        "data.alert.metadata.created_at": 636,
+        "data.alert.gid": 16692,
+        "data.alert.signature": 16692,
+        "data.alert.action": 16692,
+        "data.alert.category": 16692,
+        "data.flow_id": 16692,
+        "data.dest_ip": 16692,
+        "data.proto": 16692,
+        "data.http": 520,
+        "data.http.hostname": 520,
+        "data.http.protocol": 520,
+        "data.http.http_method": 520,
+        "data.http.length": 520,
+        "data.http.url": 520,
+        "data.http.http_user_agent": 520,
+        "data.http.status": 156,
+        "data.dest_port": 16692,
+        "data.flow": 16692,
+        "data.flow.pkts_toserver": 16692,
+        "data.flow.start": 16692,
+        "data.flow.bytes_toclient": 16692,
+        "data.flow.bytes_toserver": 16692,
+        "data.flow.pkts_toclient": 16692,
+        "data.timestamp": 16692,
+        "data.srcip": 22396,
+        "data.dstip": 16942,
+        "data.id": 21963,
+        "decoder.parent": 45084,
+        "rule.hipaa": 28980,
+        "rule.mitre": 28687,
+        "rule.mitre.technique": 28687,
+        "rule.mitre.id": 28687,
+        "rule.mitre.tactic": 28687,
+        "rule.frequency": 806,
+        "data.audit": 4,
+        "data.audit.uid": 4,
+        "data.audit.auid": 4,
+        "data.audit.gid": 4,
+        "data.audit.exe": 4,
+        "data.audit.euid": 4,
+        "data.audit.session": 4,
+        "data.audit.pid": 4,
+        "data.audit.id": 4,
+        "data.audit.type": 4,
+        "data.audit.command": 4,
+        "data.metadata": 16056,
+        "data.metadata.flowints": 16056,
+        "data.metadata.flowints.tls": 16052,
+        "data.tls": 16056,
+        "data.tls.version": 16056,
+        "data.tls.ja3": 16056,
+        "data.tls.ja3.string": 16056,
+        "data.tls.ja3.hash": 16056,
+        "data.tls.sni": 16056,
+        "GeoLocation": 8038,
+        "GeoLocation.city_name": 3906,
+        "GeoLocation.country_name": 7828,
+        "GeoLocation.region_name": 3916,
+        "GeoLocation.location": 8038,
+        "GeoLocation.location.lon": 8038,
+        "GeoLocation.location.lat": 8038,
+        "data.dns": 114,
+        "data.dns.query": 114,
+        "data.alert.metadata.affected_product": 110,
+        "data.alert.metadata.attack_target": 110,
+        "data.alert.metadata.signature_severity": 110,
+        "data.alert.metadata.deployment": 110,
+        "previous_output": 428,
+        "data.protocol": 5247,
+        "data.url": 5247,
+        "data.srcuser": 433,
+        "data.uid": 203,
+        "data.euid": 195,
+        "data.dstuser": 216,
+        "data.tty": 198,
+        "data.metadata.flowints.http": 4,
+        "data.http.http_content_type": 4,
+        "data.http.http_refer": 4,
+        "data.files": 4,
+        "data.srcport": 12,
+        "data.pwd": 3,
+        "data.command": 3,
+        "decoder.ftscomment": 3
+      },
+      "nested_path_types": {
+        "predecoder": {
+          "dict": 46588
+        },
+        "predecoder.hostname": {
+          "str": 29880
+        },
+        "predecoder.program_name": {
+          "str": 29880
+        },
+        "predecoder.timestamp": {
+          "str": 46588
+        },
+        "agent": {
+          "dict": 68539
+        },
+        "agent.ip": {
+          "str": 68539
+        },
+        "agent.name": {
+          "str": 68539
+        },
+        "agent.id": {
+          "str": 68539
+        },
+        "manager": {
+          "dict": 68539
+        },
+        "manager.name": {
+          "str": 68539
+        },
+        "rule": {
+          "dict": 68539
+        },
+        "rule.firedtimes": {
+          "int": 68539
+        },
+        "rule.mail": {
+          "bool": 68539
+        },
+        "rule.level": {
+          "int": 68539
+        },
+        "rule.pci_dss": {
+          "list": 35547
+        },
+        "rule.tsc": {
+          "list": 35514
+        },
+        "rule.description": {
+          "str": 68539
+        },
+        "rule.groups": {
+          "list": 68539
+        },
+        "rule.id": {
+          "str": 68539
+        },
+        "rule.nist_800_53": {
+          "list": 35514
+        },
+        "rule.gpg13": {
+          "list": 29879
+        },
+        "rule.gdpr": {
+          "list": 35547
+        },
+        "decoder": {
+          "dict": 68539
+        },
+        "decoder.name": {
+          "str": 68481
+        },
+        "full_log": {
+          "str": 51847
+        },
+        "input": {
+          "dict": 68539
+        },
+        "input.type": {
+          "str": 68539
+        },
+        "@timestamp": {
+          "str": 68539
+        },
+        "location": {
+          "str": 68539
+        },
+        "id": {
+          "str": 68539
+        },
+        "data": {
+          "dict": 39110
+        },
+        "data.tx_id": {
+          "str": 16690
+        },
+        "data.app_proto": {
+          "str": 16690
+        },
+        "data.in_iface": {
+          "str": 16692
+        },
+        "data.src_ip": {
+          "str": 16692
+        },
+        "data.src_port": {
+          "str": 16692
+        },
+        "data.event_type": {
+          "str": 16692
+        },
+        "data.alert": {
+          "dict": 16692
+        },
+        "data.alert.severity": {
+          "str": 16692
+        },
+        "data.alert.signature_id": {
+          "str": 16692
+        },
+        "data.alert.rev": {
+          "str": 16692
+        },
+        "data.alert.metadata": {
+          "dict": 636
+        },
+        "data.alert.metadata.updated_at": {
+          "list": 636
+        },
+        "data.alert.metadata.former_category": {
+          "list": 636
+        },
+        "data.alert.metadata.created_at": {
+          "list": 636
+        },
+        "data.alert.gid": {
+          "str": 16692
+        },
+        "data.alert.signature": {
+          "str": 16692
+        },
+        "data.alert.action": {
+          "str": 16692
+        },
+        "data.alert.category": {
+          "str": 16692
+        },
+        "data.flow_id": {
+          "str": 16692
+        },
+        "data.dest_ip": {
+          "str": 16692
+        },
+        "data.proto": {
+          "str": 16692
+        },
+        "data.http": {
+          "dict": 520
+        },
+        "data.http.hostname": {
+          "str": 520
+        },
+        "data.http.protocol": {
+          "str": 520
+        },
+        "data.http.http_method": {
+          "str": 520
+        },
+        "data.http.length": {
+          "str": 520
+        },
+        "data.http.url": {
+          "str": 520
+        },
+        "data.http.http_user_agent": {
+          "str": 520
+        },
+        "data.http.status": {
+          "str": 156
+        },
+        "data.dest_port": {
+          "str": 16692
+        },
+        "data.flow": {
+          "dict": 16692
+        },
+        "data.flow.pkts_toserver": {
+          "str": 16692
+        },
+        "data.flow.start": {
+          "str": 16692
+        },
+        "data.flow.bytes_toclient": {
+          "str": 16692
+        },
+        "data.flow.bytes_toserver": {
+          "str": 16692
+        },
+        "data.flow.pkts_toclient": {
+          "str": 16692
+        },
+        "data.timestamp": {
+          "str": 16692
+        },
+        "data.srcip": {
+          "str": 22396
+        },
+        "data.dstip": {
+          "str": 16942
+        },
+        "data.id": {
+          "str": 21963
+        },
+        "decoder.parent": {
+          "str": 45084
+        },
+        "rule.hipaa": {
+          "list": 28980
+        },
+        "rule.mitre": {
+          "dict": 28687
+        },
+        "rule.mitre.technique": {
+          "list": 28687
+        },
+        "rule.mitre.id": {
+          "list": 28687
+        },
+        "rule.mitre.tactic": {
+          "list": 28687
+        },
+        "rule.frequency": {
+          "int": 806
+        },
+        "data.audit": {
+          "dict": 4
+        },
+        "data.audit.uid": {
+          "str": 4
+        },
+        "data.audit.auid": {
+          "str": 4
+        },
+        "data.audit.gid": {
+          "str": 4
+        },
+        "data.audit.exe": {
+          "str": 4
+        },
+        "data.audit.euid": {
+          "str": 4
+        },
+        "data.audit.session": {
+          "str": 4
+        },
+        "data.audit.pid": {
+          "str": 4
+        },
+        "data.audit.id": {
+          "str": 4
+        },
+        "data.audit.type": {
+          "str": 4
+        },
+        "data.audit.command": {
+          "str": 4
+        },
+        "data.metadata": {
+          "dict": 16056
+        },
+        "data.metadata.flowints": {
+          "dict": 16056
+        },
+        "data.metadata.flowints.tls": {
+          "dict": 16052
+        },
+        "data.tls": {
+          "dict": 16056
+        },
+        "data.tls.version": {
+          "str": 16056
+        },
+        "data.tls.ja3": {
+          "dict": 16056
+        },
+        "data.tls.ja3.string": {
+          "str": 16056
+        },
+        "data.tls.ja3.hash": {
+          "str": 16056
+        },
+        "data.tls.sni": {
+          "str": 16056
+        },
+        "GeoLocation": {
+          "dict": 8038
+        },
+        "GeoLocation.city_name": {
+          "str": 3906
+        },
+        "GeoLocation.country_name": {
+          "str": 7828
+        },
+        "GeoLocation.region_name": {
+          "str": 3916
+        },
+        "GeoLocation.location": {
+          "dict": 8038
+        },
+        "GeoLocation.location.lon": {
+          "float": 7768,
+          "int": 270
+        },
+        "GeoLocation.location.lat": {
+          "float": 7768,
+          "int": 270
+        },
+        "data.dns": {
+          "dict": 114
+        },
+        "data.dns.query": {
+          "list": 114
+        },
+        "data.alert.metadata.affected_product": {
+          "list": 110
+        },
+        "data.alert.metadata.attack_target": {
+          "list": 110
+        },
+        "data.alert.metadata.signature_severity": {
+          "list": 110
+        },
+        "data.alert.metadata.deployment": {
+          "list": 110
+        },
+        "previous_output": {
+          "str": 428
+        },
+        "data.protocol": {
+          "str": 5247
+        },
+        "data.url": {
+          "str": 5247
+        },
+        "data.srcuser": {
+          "str": 433
+        },
+        "data.uid": {
+          "str": 203
+        },
+        "data.euid": {
+          "str": 195
+        },
+        "data.dstuser": {
+          "str": 216
+        },
+        "data.tty": {
+          "str": 198
+        },
+        "data.metadata.flowints.http": {
+          "dict": 4
+        },
+        "data.http.http_content_type": {
+          "str": 4
+        },
+        "data.http.http_refer": {
+          "str": 4
+        },
+        "data.files": {
+          "list": 4
+        },
+        "data.srcport": {
+          "str": 12
+        },
+        "data.pwd": {
+          "str": 3
+        },
+        "data.command": {
+          "str": 3
+        },
+        "decoder.ftscomment": {
+          "str": 3
+        }
+      },
+      "missing": {
+        "source_line": 68539,
+        "flow_id": 51847,
+        "detector_time": 68539,
+        "collection_time": 68539
+      },
+      "duplicate_alert_ids": 0,
+      "timestamp_min": {
+        "event_time": 1643069179.0
+      },
+      "timestamp_max": {
+        "event_time": 1643585466.0
+      }
+    },
+    "wardbeck_aminer.json": {
+      "compressed_bytes": 116885,
+      "uncompressed_bytes": 2583498,
+      "rows": 3053,
+      "malformed_rows": 0,
+      "top_level_presence": {
+        "AnalysisComponent": 3053,
+        "LogData": 3053,
+        "AMiner": 3053,
+        "CountData": 150,
+        "FrequencyData": 45
+      },
+      "nested_path_presence": {
+        "AnalysisComponent": 3053,
+        "AnalysisComponent.AnalysisComponentIdentifier": 3053,
+        "AnalysisComponent.AnalysisComponentType": 3053,
+        "AnalysisComponent.AnalysisComponentName": 3053,
+        "AnalysisComponent.Message": 3053,
+        "AnalysisComponent.PersistenceFileName": 3053,
+        "AnalysisComponent.TrainingMode": 3053,
+        "AnalysisComponent.AffectedLogAtomPaths": 3053,
+        "LogData": 3053,
+        "LogData.RawLogData": 3053,
+        "LogData.Timestamps": 3053,
+        "LogData.DetectionTimestamp": 3053,
+        "LogData.LogLinesCount": 3053,
+        "LogData.LogResources": 3053,
+        "AMiner": 3053,
+        "AMiner.ID": 3053,
+        "AnalysisComponent.AffectedLogAtomValues": 2755,
+        "AnalysisComponent.CriticalValue": 519,
+        "AnalysisComponent.ProbabilityThreshold": 519,
+        "AnalysisComponent.MissingCharacters": 65,
+        "AnalysisComponent.Range": 21,
+        "AnalysisComponent.IDpaths": 21,
+        "AnalysisComponent.IDvalues": 21,
+        "AnalysisComponent.AffectedLogAtomFrequencies": 150,
+        "AnalysisComponent.AffectedIdValues": 150,
+        "CountData": 150,
+        "CountData.ConfidenceFactor": 150,
+        "CountData.Confidence": 150,
+        "AnalysisComponent.AnomalyScores": 16,
+        "AnalysisComponent.MinBinElements": 16,
+        "AnalysisComponent.MinBinTime": 16,
+        "AnalysisComponent.DebugMode": 16,
+        "FrequencyData": 45,
+        "FrequencyData.ExpectedLogAtomValuesFrequency": 45,
+        "FrequencyData.ExpectedLogAtomValuesFrequencyRange": 45,
+        "FrequencyData.LogAtomValuesFrequency": 45,
+        "FrequencyData.WindowSize": 45,
+        "FrequencyData.ConfidenceFactor": 45,
+        "FrequencyData.Confidence": 31
+      },
+      "nested_path_types": {
+        "AnalysisComponent": {
+          "dict": 3053
+        },
+        "AnalysisComponent.AnalysisComponentIdentifier": {
+          "int": 3053
+        },
+        "AnalysisComponent.AnalysisComponentType": {
+          "str": 3053
+        },
+        "AnalysisComponent.AnalysisComponentName": {
+          "str": 3053
+        },
+        "AnalysisComponent.Message": {
+          "str": 3053
+        },
+        "AnalysisComponent.PersistenceFileName": {
+          "str": 3053
+        },
+        "AnalysisComponent.TrainingMode": {
+          "bool": 3053
+        },
+        "AnalysisComponent.AffectedLogAtomPaths": {
+          "list": 3053
+        },
+        "LogData": {
+          "dict": 3053
+        },
+        "LogData.RawLogData": {
+          "list": 3053
+        },
+        "LogData.Timestamps": {
+          "list": 3053
+        },
+        "LogData.DetectionTimestamp": {
+          "list": 3053
+        },
+        "LogData.LogLinesCount": {
+          "int": 3053
+        },
+        "LogData.LogResources": {
+          "list": 3053
+        },
+        "AMiner": {
+          "dict": 3053
+        },
+        "AMiner.ID": {
+          "str": 3053
+        },
+        "AnalysisComponent.AffectedLogAtomValues": {
+          "list": 2755
+        },
+        "AnalysisComponent.CriticalValue": {
+          "float": 519
+        },
+        "AnalysisComponent.ProbabilityThreshold": {
+          "float": 519
+        },
+        "AnalysisComponent.MissingCharacters": {
+          "list": 65
+        },
+        "AnalysisComponent.Range": {
+          "list": 21
+        },
+        "AnalysisComponent.IDpaths": {
+          "list": 21
+        },
+        "AnalysisComponent.IDvalues": {
+          "list": 21
+        },
+        "AnalysisComponent.AffectedLogAtomFrequencies": {
+          "list": 150
+        },
+        "AnalysisComponent.AffectedIdValues": {
+          "list": 150
+        },
+        "CountData": {
+          "dict": 150
+        },
+        "CountData.ConfidenceFactor": {
+          "float": 150
+        },
+        "CountData.Confidence": {
+          "int": 4,
+          "float": 146
+        },
+        "AnalysisComponent.AnomalyScores": {
+          "list": 16
+        },
+        "AnalysisComponent.MinBinElements": {
+          "int": 16
+        },
+        "AnalysisComponent.MinBinTime": {
+          "int": 16
+        },
+        "AnalysisComponent.DebugMode": {
+          "bool": 16
+        },
+        "FrequencyData": {
+          "dict": 45
+        },
+        "FrequencyData.ExpectedLogAtomValuesFrequency": {
+          "float": 45
+        },
+        "FrequencyData.ExpectedLogAtomValuesFrequencyRange": {
+          "list": 45
+        },
+        "FrequencyData.LogAtomValuesFrequency": {
+          "int": 45
+        },
+        "FrequencyData.WindowSize": {
+          "int": 45
+        },
+        "FrequencyData.ConfidenceFactor": {
+          "float": 45
+        },
+        "FrequencyData.Confidence": {
+          "float": 31
+        }
+      },
+      "missing": {
+        "alert_id": 3053,
+        "source_line": 3053,
+        "flow_id": 3053,
+        "collection_time": 3053
+      },
+      "duplicate_alert_ids": 0,
+      "timestamp_min": {
+        "event_time": 1642550401.0,
+        "detector_time": 1642550401.0
+      },
+      "timestamp_max": {
+        "event_time": 1642982359.17,
+        "detector_time": 1642982359.17
+      }
+    },
+    "wardbeck_wazuh.json": {
+      "compressed_bytes": 3802392,
+      "uncompressed_bytes": 96564119,
+      "rows": 88204,
+      "malformed_rows": 0,
+      "top_level_presence": {
+        "predecoder": 58236,
+        "agent": 88204,
+        "manager": 88204,
+        "rule": 88204,
+        "decoder": 88204,
+        "full_log": 63694,
+        "input": 88204,
+        "@timestamp": 88204,
+        "location": 88204,
+        "id": 88204,
+        "data": 54643,
+        "GeoLocation": 11148,
+        "previous_output": 422
+      },
+      "nested_path_presence": {
+        "predecoder": 58236,
+        "predecoder.hostname": 33726,
+        "predecoder.program_name": 33726,
+        "predecoder.timestamp": 58236,
+        "agent": 88204,
+        "agent.ip": 88204,
+        "agent.name": 88204,
+        "agent.id": 88204,
+        "manager": 88204,
+        "manager.name": 88204,
+        "rule": 88204,
+        "rule.firedtimes": 88204,
+        "rule.mail": 88204,
+        "rule.level": 88204,
+        "rule.pci_dss": 39717,
+        "rule.tsc": 39666,
+        "rule.description": 88204,
+        "rule.groups": 88204,
+        "rule.id": 88204,
+        "rule.nist_800_53": 39666,
+        "rule.gpg13": 33724,
+        "rule.gdpr": 39717,
+        "decoder": 88204,
+        "decoder.name": 88156,
+        "full_log": 63694,
+        "input": 88204,
+        "input.type": 88204,
+        "@timestamp": 88204,
+        "location": 88204,
+        "id": 88204,
+        "data": 54643,
+        "data.tx_id": 24496,
+        "data.app_proto": 24504,
+        "data.in_iface": 24510,
+        "data.src_ip": 24510,
+        "data.src_port": 24510,
+        "data.event_type": 24510,
+        "data.alert": 24510,
+        "data.alert.severity": 24510,
+        "data.alert.signature_id": 24510,
+        "data.alert.rev": 24510,
+        "data.alert.metadata": 486,
+        "data.alert.metadata.updated_at": 486,
+        "data.alert.metadata.former_category": 479,
+        "data.alert.metadata.created_at": 486,
+        "data.alert.gid": 24510,
+        "data.alert.signature": 24510,
+        "data.alert.action": 24510,
+        "data.alert.category": 24510,
+        "data.flow_id": 24510,
+        "data.dest_ip": 24510,
+        "data.proto": 24510,
+        "data.http": 468,
+        "data.http.hostname": 424,
+        "data.http.protocol": 424,
+        "data.http.http_method": 424,
+        "data.http.length": 468,
+        "data.http.url": 468,
+        "data.http.http_user_agent": 424,
+        "data.http.status": 147,
+        "data.dest_port": 24510,
+        "data.flow": 24504,
+        "data.flow.pkts_toserver": 24504,
+        "data.flow.start": 24504,
+        "data.flow.bytes_toclient": 24504,
+        "data.flow.bytes_toserver": 24504,
+        "data.flow.pkts_toclient": 24504,
+        "data.timestamp": 24510,
+        "data.srcip": 30075,
+        "data.dstip": 24582,
+        "data.id": 29964,
+        "decoder.parent": 57159,
+        "data.metadata": 24019,
+        "data.metadata.flowints": 24019,
+        "data.metadata.flowints.tls": 23966,
+        "data.tls": 23981,
+        "data.tls.version": 23981,
+        "data.tls.ja3": 23977,
+        "data.tls.ja3.string": 23977,
+        "data.tls.ja3.hash": 23977,
+        "data.tls.sni": 23973,
+        "GeoLocation": 11148,
+        "GeoLocation.city_name": 5393,
+        "GeoLocation.country_name": 11030,
+        "GeoLocation.region_name": 5447,
+        "GeoLocation.location": 11148,
+        "GeoLocation.location.lon": 11148,
+        "GeoLocation.location.lat": 11148,
+        "rule.hipaa": 33247,
+        "rule.frequency": 908,
+        "rule.mitre": 33000,
+        "rule.mitre.technique": 33000,
+        "rule.mitre.id": 33000,
+        "rule.mitre.tactic": 33000,
+        "data.audit": 4,
+        "data.audit.uid": 4,
+        "data.audit.auid": 4,
+        "data.audit.gid": 4,
+        "data.audit.exe": 4,
+        "data.audit.euid": 4,
+        "data.audit.session": 4,
+        "data.audit.pid": 4,
+        "data.audit.id": 4,
+        "data.audit.type": 4,
+        "data.audit.command": 4,
+        "previous_output": 422,
+        "data.srcuser": 104,
+        "data.uid": 52,
+        "data.euid": 24,
+        "data.dstuser": 89,
+        "data.tty": 29,
+        "data.alert.metadata.attack_target": 66,
+        "data.alert.metadata.signature_severity": 66,
+        "data.alert.metadata.deployment": 66,
+        "data.protocol": 5446,
+        "data.url": 5446,
+        "data.dns": 56,
+        "data.dns.query": 56,
+        "data.alert.metadata.affected_product": 57,
+        "data.metadata.flowints.http": 51,
+        "data.http.http_content_type": 17,
+        "data.http.http_refer": 4,
+        "data.files": 11,
+        "data.http.http_port": 44,
+        "data.srcport": 23,
+        "data.pwd": 5,
+        "data.command": 5,
+        "decoder.ftscomment": 5,
+        "data.metadata.flowints.smtp": 2,
+        "data.app_proto_tc": 1,
+        "data.alert.metadata.performance_impact": 9,
+        "data.http.redirect": 3,
+        "data.tls.serial": 4,
+        "data.tls.notbefore": 4,
+        "data.tls.subject": 4,
+        "data.tls.issuerdn": 4,
+        "data.tls.ja3s": 6,
+        "data.tls.ja3s.string": 6,
+        "data.tls.ja3s.hash": 6,
+        "data.tls.notafter": 4,
+        "data.tls.fingerprint": 4
+      },
+      "nested_path_types": {
+        "predecoder": {
+          "dict": 58236
+        },
+        "predecoder.hostname": {
+          "str": 33726
+        },
+        "predecoder.program_name": {
+          "str": 33726
+        },
+        "predecoder.timestamp": {
+          "str": 58236
+        },
+        "agent": {
+          "dict": 88204
+        },
+        "agent.ip": {
+          "str": 88204
+        },
+        "agent.name": {
+          "str": 88204
+        },
+        "agent.id": {
+          "str": 88204
+        },
+        "manager": {
+          "dict": 88204
+        },
+        "manager.name": {
+          "str": 88204
+        },
+        "rule": {
+          "dict": 88204
+        },
+        "rule.firedtimes": {
+          "int": 88204
+        },
+        "rule.mail": {
+          "bool": 88204
+        },
+        "rule.level": {
+          "int": 88204
+        },
+        "rule.pci_dss": {
+          "list": 39717
+        },
+        "rule.tsc": {
+          "list": 39666
+        },
+        "rule.description": {
+          "str": 88204
+        },
+        "rule.groups": {
+          "list": 88204
+        },
+        "rule.id": {
+          "str": 88204
+        },
+        "rule.nist_800_53": {
+          "list": 39666
+        },
+        "rule.gpg13": {
+          "list": 33724
+        },
+        "rule.gdpr": {
+          "list": 39717
+        },
+        "decoder": {
+          "dict": 88204
+        },
+        "decoder.name": {
+          "str": 88156
+        },
+        "full_log": {
+          "str": 63694
+        },
+        "input": {
+          "dict": 88204
+        },
+        "input.type": {
+          "str": 88204
+        },
+        "@timestamp": {
+          "str": 88204
+        },
+        "location": {
+          "str": 88204
+        },
+        "id": {
+          "str": 88204
+        },
+        "data": {
+          "dict": 54643
+        },
+        "data.tx_id": {
+          "str": 24496
+        },
+        "data.app_proto": {
+          "str": 24504
+        },
+        "data.in_iface": {
+          "str": 24510
+        },
+        "data.src_ip": {
+          "str": 24510
+        },
+        "data.src_port": {
+          "str": 24510
+        },
+        "data.event_type": {
+          "str": 24510
+        },
+        "data.alert": {
+          "dict": 24510
+        },
+        "data.alert.severity": {
+          "str": 24510
+        },
+        "data.alert.signature_id": {
+          "str": 24510
+        },
+        "data.alert.rev": {
+          "str": 24510
+        },
+        "data.alert.metadata": {
+          "dict": 486
+        },
+        "data.alert.metadata.updated_at": {
+          "list": 486
+        },
+        "data.alert.metadata.former_category": {
+          "list": 479
+        },
+        "data.alert.metadata.created_at": {
+          "list": 486
+        },
+        "data.alert.gid": {
+          "str": 24510
+        },
+        "data.alert.signature": {
+          "str": 24510
+        },
+        "data.alert.action": {
+          "str": 24510
+        },
+        "data.alert.category": {
+          "str": 24510
+        },
+        "data.flow_id": {
+          "str": 24510
+        },
+        "data.dest_ip": {
+          "str": 24510
+        },
+        "data.proto": {
+          "str": 24510
+        },
+        "data.http": {
+          "dict": 468
+        },
+        "data.http.hostname": {
+          "str": 424
+        },
+        "data.http.protocol": {
+          "str": 424
+        },
+        "data.http.http_method": {
+          "str": 424
+        },
+        "data.http.length": {
+          "str": 468
+        },
+        "data.http.url": {
+          "str": 468
+        },
+        "data.http.http_user_agent": {
+          "str": 424
+        },
+        "data.http.status": {
+          "str": 147
+        },
+        "data.dest_port": {
+          "str": 24510
+        },
+        "data.flow": {
+          "dict": 24504
+        },
+        "data.flow.pkts_toserver": {
+          "str": 24504
+        },
+        "data.flow.start": {
+          "str": 24504
+        },
+        "data.flow.bytes_toclient": {
+          "str": 24504
+        },
+        "data.flow.bytes_toserver": {
+          "str": 24504
+        },
+        "data.flow.pkts_toclient": {
+          "str": 24504
+        },
+        "data.timestamp": {
+          "str": 24510
+        },
+        "data.srcip": {
+          "str": 30075
+        },
+        "data.dstip": {
+          "str": 24582
+        },
+        "data.id": {
+          "str": 29964
+        },
+        "decoder.parent": {
+          "str": 57159
+        },
+        "data.metadata": {
+          "dict": 24019
+        },
+        "data.metadata.flowints": {
+          "dict": 24019
+        },
+        "data.metadata.flowints.tls": {
+          "dict": 23966
+        },
+        "data.tls": {
+          "dict": 23981
+        },
+        "data.tls.version": {
+          "str": 23981
+        },
+        "data.tls.ja3": {
+          "dict": 23977
+        },
+        "data.tls.ja3.string": {
+          "str": 23977
+        },
+        "data.tls.ja3.hash": {
+          "str": 23977
+        },
+        "data.tls.sni": {
+          "str": 23973
+        },
+        "GeoLocation": {
+          "dict": 11148
+        },
+        "GeoLocation.city_name": {
+          "str": 5393
+        },
+        "GeoLocation.country_name": {
+          "str": 11030
+        },
+        "GeoLocation.region_name": {
+          "str": 5447
+        },
+        "GeoLocation.location": {
+          "dict": 11148
+        },
+        "GeoLocation.location.lon": {
+          "float": 11018,
+          "int": 130
+        },
+        "GeoLocation.location.lat": {
+          "float": 11018,
+          "int": 130
+        },
+        "rule.hipaa": {
+          "list": 33247
+        },
+        "rule.frequency": {
+          "int": 908
+        },
+        "rule.mitre": {
+          "dict": 33000
+        },
+        "rule.mitre.technique": {
+          "list": 33000
+        },
+        "rule.mitre.id": {
+          "list": 33000
+        },
+        "rule.mitre.tactic": {
+          "list": 33000
+        },
+        "data.audit": {
+          "dict": 4
+        },
+        "data.audit.uid": {
+          "str": 4
+        },
+        "data.audit.auid": {
+          "str": 4
+        },
+        "data.audit.gid": {
+          "str": 4
+        },
+        "data.audit.exe": {
+          "str": 4
+        },
+        "data.audit.euid": {
+          "str": 4
+        },
+        "data.audit.session": {
+          "str": 4
+        },
+        "data.audit.pid": {
+          "str": 4
+        },
+        "data.audit.id": {
+          "str": 4
+        },
+        "data.audit.type": {
+          "str": 4
+        },
+        "data.audit.command": {
+          "str": 4
+        },
+        "previous_output": {
+          "str": 422
+        },
+        "data.srcuser": {
+          "str": 104
+        },
+        "data.uid": {
+          "str": 52
+        },
+        "data.euid": {
+          "str": 24
+        },
+        "data.dstuser": {
+          "str": 89
+        },
+        "data.tty": {
+          "str": 29
+        },
+        "data.alert.metadata.attack_target": {
+          "list": 66
+        },
+        "data.alert.metadata.signature_severity": {
+          "list": 66
+        },
+        "data.alert.metadata.deployment": {
+          "list": 66
+        },
+        "data.protocol": {
+          "str": 5446
+        },
+        "data.url": {
+          "str": 5446
+        },
+        "data.dns": {
+          "dict": 56
+        },
+        "data.dns.query": {
+          "list": 56
+        },
+        "data.alert.metadata.affected_product": {
+          "list": 57
+        },
+        "data.metadata.flowints.http": {
+          "dict": 51
+        },
+        "data.http.http_content_type": {
+          "str": 17
+        },
+        "data.http.http_refer": {
+          "str": 4
+        },
+        "data.files": {
+          "list": 11
+        },
+        "data.http.http_port": {
+          "str": 44
+        },
+        "data.srcport": {
+          "str": 23
+        },
+        "data.pwd": {
+          "str": 5
+        },
+        "data.command": {
+          "str": 5
+        },
+        "decoder.ftscomment": {
+          "str": 5
+        },
+        "data.metadata.flowints.smtp": {
+          "dict": 2
+        },
+        "data.app_proto_tc": {
+          "str": 1
+        },
+        "data.alert.metadata.performance_impact": {
+          "list": 9
+        },
+        "data.http.redirect": {
+          "str": 3
+        },
+        "data.tls.serial": {
+          "str": 4
+        },
+        "data.tls.notbefore": {
+          "str": 4
+        },
+        "data.tls.subject": {
+          "str": 4
+        },
+        "data.tls.issuerdn": {
+          "str": 4
+        },
+        "data.tls.ja3s": {
+          "dict": 6
+        },
+        "data.tls.ja3s.string": {
+          "str": 6
+        },
+        "data.tls.ja3s.hash": {
+          "str": 6
+        },
+        "data.tls.notafter": {
+          "str": 4
+        },
+        "data.tls.fingerprint": {
+          "str": 4
+        }
+      },
+      "missing": {
+        "source_line": 88204,
+        "flow_id": 63694,
+        "detector_time": 88204,
+        "collection_time": 88204
+      },
+      "duplicate_alert_ids": 0,
+      "timestamp_min": {
+        "event_time": 1642552682.0
+      },
+      "timestamp_max": {
+        "event_time": 1642980673.0
+      }
+    },
+    "wheeler_aminer.json": {
+      "compressed_bytes": 255381,
+      "uncompressed_bytes": 10220678,
+      "rows": 12222,
+      "malformed_rows": 0,
+      "top_level_presence": {
+        "AnalysisComponent": 12222,
+        "LogData": 12222,
+        "AMiner": 12222,
+        "CountData": 130,
+        "FrequencyData": 40
+      },
+      "nested_path_presence": {
+        "AnalysisComponent": 12222,
+        "AnalysisComponent.AnalysisComponentIdentifier": 12222,
+        "AnalysisComponent.AnalysisComponentType": 12222,
+        "AnalysisComponent.AnalysisComponentName": 12222,
+        "AnalysisComponent.Message": 12222,
+        "AnalysisComponent.PersistenceFileName": 12222,
+        "AnalysisComponent.TrainingMode": 12222,
+        "AnalysisComponent.AffectedLogAtomPaths": 12222,
+        "LogData": 12222,
+        "LogData.RawLogData": 12222,
+        "LogData.Timestamps": 12222,
+        "LogData.DetectionTimestamp": 12222,
+        "LogData.LogLinesCount": 12222,
+        "LogData.LogResources": 12222,
+        "AMiner": 12222,
+        "AMiner.ID": 12222,
+        "AnalysisComponent.AffectedLogAtomValues": 10458,
+        "AnalysisComponent.CriticalValue": 178,
+        "AnalysisComponent.ProbabilityThreshold": 178,
+        "AnalysisComponent.MissingCharacters": 2523,
+        "AnalysisComponent.Range": 19,
+        "AnalysisComponent.IDpaths": 19,
+        "AnalysisComponent.IDvalues": 19,
+        "AnalysisComponent.AffectedLogAtomFrequencies": 130,
+        "AnalysisComponent.AffectedIdValues": 130,
+        "CountData": 130,
+        "CountData.ConfidenceFactor": 130,
+        "CountData.Confidence": 130,
+        "FrequencyData": 40,
+        "FrequencyData.ExpectedLogAtomValuesFrequency": 40,
+        "FrequencyData.ExpectedLogAtomValuesFrequencyRange": 40,
+        "FrequencyData.LogAtomValuesFrequency": 40,
+        "FrequencyData.WindowSize": 40,
+        "FrequencyData.ConfidenceFactor": 40,
+        "FrequencyData.Confidence": 23,
+        "AnalysisComponent.AnomalyScores": 11,
+        "AnalysisComponent.MinBinElements": 11,
+        "AnalysisComponent.MinBinTime": 11,
+        "AnalysisComponent.DebugMode": 11
+      },
+      "nested_path_types": {
+        "AnalysisComponent": {
+          "dict": 12222
+        },
+        "AnalysisComponent.AnalysisComponentIdentifier": {
+          "int": 12222
+        },
+        "AnalysisComponent.AnalysisComponentType": {
+          "str": 12222
+        },
+        "AnalysisComponent.AnalysisComponentName": {
+          "str": 12222
+        },
+        "AnalysisComponent.Message": {
+          "str": 12222
+        },
+        "AnalysisComponent.PersistenceFileName": {
+          "str": 12222
+        },
+        "AnalysisComponent.TrainingMode": {
+          "bool": 12222
+        },
+        "AnalysisComponent.AffectedLogAtomPaths": {
+          "list": 12222
+        },
+        "LogData": {
+          "dict": 12222
+        },
+        "LogData.RawLogData": {
+          "list": 12222
+        },
+        "LogData.Timestamps": {
+          "list": 12222
+        },
+        "LogData.DetectionTimestamp": {
+          "list": 12222
+        },
+        "LogData.LogLinesCount": {
+          "int": 12222
+        },
+        "LogData.LogResources": {
+          "list": 12222
+        },
+        "AMiner": {
+          "dict": 12222
+        },
+        "AMiner.ID": {
+          "str": 12222
+        },
+        "AnalysisComponent.AffectedLogAtomValues": {
+          "list": 10458
+        },
+        "AnalysisComponent.CriticalValue": {
+          "float": 178
+        },
+        "AnalysisComponent.ProbabilityThreshold": {
+          "float": 178
+        },
+        "AnalysisComponent.MissingCharacters": {
+          "list": 2523
+        },
+        "AnalysisComponent.Range": {
+          "list": 19
+        },
+        "AnalysisComponent.IDpaths": {
+          "list": 19
+        },
+        "AnalysisComponent.IDvalues": {
+          "list": 19
+        },
+        "AnalysisComponent.AffectedLogAtomFrequencies": {
+          "list": 130
+        },
+        "AnalysisComponent.AffectedIdValues": {
+          "list": 130
+        },
+        "CountData": {
+          "dict": 130
+        },
+        "CountData.ConfidenceFactor": {
+          "float": 130
+        },
+        "CountData.Confidence": {
+          "int": 4,
+          "float": 126
+        },
+        "FrequencyData": {
+          "dict": 40
+        },
+        "FrequencyData.ExpectedLogAtomValuesFrequency": {
+          "float": 40
+        },
+        "FrequencyData.ExpectedLogAtomValuesFrequencyRange": {
+          "list": 40
+        },
+        "FrequencyData.LogAtomValuesFrequency": {
+          "int": 40
+        },
+        "FrequencyData.WindowSize": {
+          "int": 40
+        },
+        "FrequencyData.ConfidenceFactor": {
+          "float": 40
+        },
+        "FrequencyData.Confidence": {
+          "float": 23
+        },
+        "AnalysisComponent.AnomalyScores": {
+          "list": 11
+        },
+        "AnalysisComponent.MinBinElements": {
+          "int": 11
+        },
+        "AnalysisComponent.MinBinTime": {
+          "int": 11
+        },
+        "AnalysisComponent.DebugMode": {
+          "bool": 11
+        }
+      },
+      "missing": {
+        "alert_id": 12222,
+        "source_line": 12222,
+        "flow_id": 12222,
+        "collection_time": 12222
+      },
+      "duplicate_alert_ids": 0,
+      "timestamp_min": {
+        "event_time": 1643155201.0,
+        "detector_time": 1643155201.0
+      },
+      "timestamp_max": {
+        "event_time": 1643586855.0,
+        "detector_time": 1643586855.0
+      }
+    },
+    "wheeler_wazuh.json": {
+      "compressed_bytes": 20791263,
+      "uncompressed_bytes": 650679741,
+      "rows": 603939,
+      "malformed_rows": 0,
+      "top_level_presence": {
+        "predecoder": 115938,
+        "agent": 603939,
+        "manager": 603939,
+        "rule": 603939,
+        "decoder": 603939,
+        "full_log": 535310,
+        "input": 603939,
+        "@timestamp": 603939,
+        "location": 603939,
+        "id": 603939,
+        "data": 556956,
+        "GeoLocation": 10891,
+        "previous_output": 30778
+      },
+      "nested_path_presence": {
+        "predecoder": 115938,
+        "predecoder.hostname": 47264,
+        "predecoder.program_name": 47264,
+        "predecoder.timestamp": 115938,
+        "agent": 603939,
+        "agent.ip": 603939,
+        "agent.name": 603939,
+        "agent.id": 603939,
+        "manager": 603939,
+        "manager.name": 603939,
+        "rule": 603939,
+        "rule.firedtimes": 603939,
+        "rule.mail": 603939,
+        "rule.level": 603939,
+        "rule.pci_dss": 468625,
+        "rule.tsc": 468356,
+        "rule.description": 603939,
+        "rule.groups": 603939,
+        "rule.id": 603939,
+        "rule.nist_800_53": 468356,
+        "rule.gpg13": 47263,
+        "rule.gdpr": 468625,
+        "decoder": 603939,
+        "decoder.name": 603867,
+        "full_log": 535310,
+        "input": 603939,
+        "input.type": 603939,
+        "@timestamp": 603939,
+        "location": 603939,
+        "id": 603939,
+        "data": 556956,
+        "data.metadata": 49167,
+        "data.metadata.flowints": 49167,
+        "data.metadata.flowints.tls": 49148,
+        "data.tx_id": 68628,
+        "data.app_proto": 68623,
+        "data.in_iface": 68629,
+        "data.src_ip": 68629,
+        "data.src_port": 68629,
+        "data.event_type": 68629,
+        "data.alert": 68629,
+        "data.alert.severity": 68629,
+        "data.alert.signature_id": 68629,
+        "data.alert.rev": 68629,
+        "data.alert.gid": 68629,
+        "data.alert.signature": 68629,
+        "data.alert.action": 68629,
+        "data.alert.category": 68629,
+        "data.flow_id": 68629,
+        "data.dest_ip": 68629,
+        "data.proto": 68629,
+        "data.tls": 49153,
+        "data.tls.version": 49153,
+        "data.tls.ja3": 49149,
+        "data.tls.ja3.string": 49149,
+        "data.tls.ja3.hash": 49149,
+        "data.tls.sni": 49149,
+        "data.dest_port": 68629,
+        "data.flow": 68623,
+        "data.flow.pkts_toserver": 68623,
+        "data.flow.start": 68623,
+        "data.flow.bytes_toclient": 68623,
+        "data.flow.bytes_toserver": 68623,
+        "data.flow.pkts_toclient": 68623,
+        "data.timestamp": 68629,
+        "data.srcip": 488292,
+        "data.dstip": 68836,
+        "data.id": 488022,
+        "decoder.parent": 115236,
+        "GeoLocation": 10891,
+        "GeoLocation.city_name": 5630,
+        "GeoLocation.country_name": 10657,
+        "GeoLocation.region_name": 5669,
+        "GeoLocation.location": 10891,
+        "GeoLocation.location.lon": 10891,
+        "GeoLocation.location.lat": 10891,
+        "data.alert.metadata": 19456,
+        "data.alert.metadata.updated_at": 19456,
+        "data.alert.metadata.former_category": 19456,
+        "data.alert.metadata.created_at": 19456,
+        "data.http": 470,
+        "data.http.hostname": 459,
+        "data.http.protocol": 459,
+        "data.http.http_method": 459,
+        "data.http.length": 470,
+        "data.http.url": 470,
+        "data.http.http_user_agent": 459,
+        "data.http.status": 156,
+        "rule.hipaa": 48481,
+        "rule.frequency": 32504,
+        "data.dns": 19002,
+        "data.dns.query": 19002,
+        "data.alert.metadata.affected_product": 19026,
+        "data.alert.metadata.attack_target": 19027,
+        "data.alert.metadata.signature_severity": 19027,
+        "data.alert.metadata.deployment": 19027,
+        "rule.mitre": 77042,
+        "rule.mitre.technique": 77042,
+        "rule.mitre.id": 77042,
+        "rule.mitre.tactic": 77042,
+        "data.srcuser": 267,
+        "data.uid": 106,
+        "data.euid": 101,
+        "data.dstuser": 113,
+        "data.tty": 104,
+        "data.audit": 24,
+        "data.audit.uid": 24,
+        "data.audit.auid": 24,
+        "data.audit.gid": 24,
+        "data.audit.exe": 24,
+        "data.audit.euid": 24,
+        "data.audit.session": 24,
+        "data.audit.pid": 24,
+        "data.audit.id": 24,
+        "data.audit.type": 24,
+        "data.audit.command": 24,
+        "data.srcport": 670,
+        "previous_output": 30778,
+        "data.protocol": 418685,
+        "data.url": 418685,
+        "data.metadata.flowints.http": 17,
+        "data.http.http_content_type": 30,
+        "data.files": 14,
+        "data.http.http_port": 11,
+        "data.metadata.flowints.smtp": 2,
+        "data.app_proto_tc": 1,
+        "data.alert.metadata.performance_impact": 24,
+        "data.pwd": 3,
+        "data.command": 3,
+        "decoder.ftscomment": 3
+      },
+      "nested_path_types": {
+        "predecoder": {
+          "dict": 115938
+        },
+        "predecoder.hostname": {
+          "str": 47264
+        },
+        "predecoder.program_name": {
+          "str": 47264
+        },
+        "predecoder.timestamp": {
+          "str": 115938
+        },
+        "agent": {
+          "dict": 603939
+        },
+        "agent.ip": {
+          "str": 603939
+        },
+        "agent.name": {
+          "str": 603939
+        },
+        "agent.id": {
+          "str": 603939
+        },
+        "manager": {
+          "dict": 603939
+        },
+        "manager.name": {
+          "str": 603939
+        },
+        "rule": {
+          "dict": 603939
+        },
+        "rule.firedtimes": {
+          "int": 603939
+        },
+        "rule.mail": {
+          "bool": 603939
+        },
+        "rule.level": {
+          "int": 603939
+        },
+        "rule.pci_dss": {
+          "list": 468625
+        },
+        "rule.tsc": {
+          "list": 468356
+        },
+        "rule.description": {
+          "str": 603939
+        },
+        "rule.groups": {
+          "list": 603939
+        },
+        "rule.id": {
+          "str": 603939
+        },
+        "rule.nist_800_53": {
+          "list": 468356
+        },
+        "rule.gpg13": {
+          "list": 47263
+        },
+        "rule.gdpr": {
+          "list": 468625
+        },
+        "decoder": {
+          "dict": 603939
+        },
+        "decoder.name": {
+          "str": 603867
+        },
+        "full_log": {
+          "str": 535310
+        },
+        "input": {
+          "dict": 603939
+        },
+        "input.type": {
+          "str": 603939
+        },
+        "@timestamp": {
+          "str": 603939
+        },
+        "location": {
+          "str": 603939
+        },
+        "id": {
+          "str": 603939
+        },
+        "data": {
+          "dict": 556956
+        },
+        "data.metadata": {
+          "dict": 49167
+        },
+        "data.metadata.flowints": {
+          "dict": 49167
+        },
+        "data.metadata.flowints.tls": {
+          "dict": 49148
+        },
+        "data.tx_id": {
+          "str": 68628
+        },
+        "data.app_proto": {
+          "str": 68623
+        },
+        "data.in_iface": {
+          "str": 68629
+        },
+        "data.src_ip": {
+          "str": 68629
+        },
+        "data.src_port": {
+          "str": 68629
+        },
+        "data.event_type": {
+          "str": 68629
+        },
+        "data.alert": {
+          "dict": 68629
+        },
+        "data.alert.severity": {
+          "str": 68629
+        },
+        "data.alert.signature_id": {
+          "str": 68629
+        },
+        "data.alert.rev": {
+          "str": 68629
+        },
+        "data.alert.gid": {
+          "str": 68629
+        },
+        "data.alert.signature": {
+          "str": 68629
+        },
+        "data.alert.action": {
+          "str": 68629
+        },
+        "data.alert.category": {
+          "str": 68629
+        },
+        "data.flow_id": {
+          "str": 68629
+        },
+        "data.dest_ip": {
+          "str": 68629
+        },
+        "data.proto": {
+          "str": 68629
+        },
+        "data.tls": {
+          "dict": 49153
+        },
+        "data.tls.version": {
+          "str": 49153
+        },
+        "data.tls.ja3": {
+          "dict": 49149
+        },
+        "data.tls.ja3.string": {
+          "str": 49149
+        },
+        "data.tls.ja3.hash": {
+          "str": 49149
+        },
+        "data.tls.sni": {
+          "str": 49149
+        },
+        "data.dest_port": {
+          "str": 68629
+        },
+        "data.flow": {
+          "dict": 68623
+        },
+        "data.flow.pkts_toserver": {
+          "str": 68623
+        },
+        "data.flow.start": {
+          "str": 68623
+        },
+        "data.flow.bytes_toclient": {
+          "str": 68623
+        },
+        "data.flow.bytes_toserver": {
+          "str": 68623
+        },
+        "data.flow.pkts_toclient": {
+          "str": 68623
+        },
+        "data.timestamp": {
+          "str": 68629
+        },
+        "data.srcip": {
+          "str": 488292
+        },
+        "data.dstip": {
+          "str": 68836
+        },
+        "data.id": {
+          "str": 488022
+        },
+        "decoder.parent": {
+          "str": 115236
+        },
+        "GeoLocation": {
+          "dict": 10891
+        },
+        "GeoLocation.city_name": {
+          "str": 5630
+        },
+        "GeoLocation.country_name": {
+          "str": 10657
+        },
+        "GeoLocation.region_name": {
+          "str": 5669
+        },
+        "GeoLocation.location": {
+          "dict": 10891
+        },
+        "GeoLocation.location.lon": {
+          "float": 10641,
+          "int": 250
+        },
+        "GeoLocation.location.lat": {
+          "float": 10641,
+          "int": 250
+        },
+        "data.alert.metadata": {
+          "dict": 19456
+        },
+        "data.alert.metadata.updated_at": {
+          "list": 19456
+        },
+        "data.alert.metadata.former_category": {
+          "list": 19456
+        },
+        "data.alert.metadata.created_at": {
+          "list": 19456
+        },
+        "data.http": {
+          "dict": 470
+        },
+        "data.http.hostname": {
+          "str": 459
+        },
+        "data.http.protocol": {
+          "str": 459
+        },
+        "data.http.http_method": {
+          "str": 459
+        },
+        "data.http.length": {
+          "str": 470
+        },
+        "data.http.url": {
+          "str": 470
+        },
+        "data.http.http_user_agent": {
+          "str": 459
+        },
+        "data.http.status": {
+          "str": 156
+        },
+        "rule.hipaa": {
+          "list": 48481
+        },
+        "rule.frequency": {
+          "int": 32504
+        },
+        "data.dns": {
+          "dict": 19002
+        },
+        "data.dns.query": {
+          "list": 19002
+        },
+        "data.alert.metadata.affected_product": {
+          "list": 19026
+        },
+        "data.alert.metadata.attack_target": {
+          "list": 19027
+        },
+        "data.alert.metadata.signature_severity": {
+          "list": 19027
+        },
+        "data.alert.metadata.deployment": {
+          "list": 19027
+        },
+        "rule.mitre": {
+          "dict": 77042
+        },
+        "rule.mitre.technique": {
+          "list": 77042
+        },
+        "rule.mitre.id": {
+          "list": 77042
+        },
+        "rule.mitre.tactic": {
+          "list": 77042
+        },
+        "data.srcuser": {
+          "str": 267
+        },
+        "data.uid": {
+          "str": 106
+        },
+        "data.euid": {
+          "str": 101
+        },
+        "data.dstuser": {
+          "str": 113
+        },
+        "data.tty": {
+          "str": 104
+        },
+        "data.audit": {
+          "dict": 24
+        },
+        "data.audit.uid": {
+          "str": 24
+        },
+        "data.audit.auid": {
+          "str": 24
+        },
+        "data.audit.gid": {
+          "str": 24
+        },
+        "data.audit.exe": {
+          "str": 24
+        },
+        "data.audit.euid": {
+          "str": 24
+        },
+        "data.audit.session": {
+          "str": 24
+        },
+        "data.audit.pid": {
+          "str": 24
+        },
+        "data.audit.id": {
+          "str": 24
+        },
+        "data.audit.type": {
+          "str": 24
+        },
+        "data.audit.command": {
+          "str": 24
+        },
+        "data.srcport": {
+          "str": 670
+        },
+        "previous_output": {
+          "str": 30778
+        },
+        "data.protocol": {
+          "str": 418685
+        },
+        "data.url": {
+          "str": 418685
+        },
+        "data.metadata.flowints.http": {
+          "dict": 17
+        },
+        "data.http.http_content_type": {
+          "str": 30
+        },
+        "data.files": {
+          "list": 14
+        },
+        "data.http.http_port": {
+          "str": 11
+        },
+        "data.metadata.flowints.smtp": {
+          "dict": 2
+        },
+        "data.app_proto_tc": {
+          "str": 1
+        },
+        "data.alert.metadata.performance_impact": {
+          "list": 24
+        },
+        "data.pwd": {
+          "str": 3
+        },
+        "data.command": {
+          "str": 3
+        },
+        "decoder.ftscomment": {
+          "str": 3
+        }
+      },
+      "missing": {
+        "source_line": 603939,
+        "flow_id": 535310,
+        "detector_time": 603939,
+        "collection_time": 603939
+      },
+      "duplicate_alert_ids": 0,
+      "timestamp_min": {
+        "event_time": 1643156730.0
+      },
+      "timestamp_max": {
+        "event_time": 1643585466.0
+      }
+    },
+    "wilson_aminer.json": {
+      "compressed_bytes": 220048,
+      "uncompressed_bytes": 7570675,
+      "rows": 8943,
+      "malformed_rows": 0,
+      "top_level_presence": {
+        "AnalysisComponent": 8943,
+        "LogData": 8943,
+        "AMiner": 8943,
+        "CountData": 211,
+        "FrequencyData": 49
+      },
+      "nested_path_presence": {
+        "AnalysisComponent": 8943,
+        "AnalysisComponent.AnalysisComponentIdentifier": 8943,
+        "AnalysisComponent.AnalysisComponentType": 8943,
+        "AnalysisComponent.AnalysisComponentName": 8943,
+        "AnalysisComponent.Message": 8943,
+        "AnalysisComponent.PersistenceFileName": 8943,
+        "AnalysisComponent.TrainingMode": 8943,
+        "AnalysisComponent.AffectedLogAtomPaths": 8943,
+        "LogData": 8943,
+        "LogData.RawLogData": 8943,
+        "LogData.Timestamps": 8943,
+        "LogData.DetectionTimestamp": 8943,
+        "LogData.LogLinesCount": 8943,
+        "LogData.LogResources": 8943,
+        "AMiner": 8943,
+        "AMiner.ID": 8943,
+        "AnalysisComponent.AffectedLogAtomValues": 7308,
+        "AnalysisComponent.CriticalValue": 343,
+        "AnalysisComponent.ProbabilityThreshold": 343,
+        "AnalysisComponent.MissingCharacters": 2523,
+        "AnalysisComponent.Range": 13,
+        "AnalysisComponent.IDpaths": 13,
+        "AnalysisComponent.IDvalues": 13,
+        "AnalysisComponent.AffectedLogAtomFrequencies": 211,
+        "AnalysisComponent.AffectedIdValues": 211,
+        "CountData": 211,
+        "CountData.ConfidenceFactor": 211,
+        "CountData.Confidence": 211,
+        "AnalysisComponent.AnomalyScores": 6,
+        "AnalysisComponent.MinBinElements": 6,
+        "AnalysisComponent.MinBinTime": 6,
+        "AnalysisComponent.DebugMode": 6,
+        "FrequencyData": 49,
+        "FrequencyData.ExpectedLogAtomValuesFrequency": 49,
+        "FrequencyData.ExpectedLogAtomValuesFrequencyRange": 49,
+        "FrequencyData.LogAtomValuesFrequency": 49,
+        "FrequencyData.WindowSize": 49,
+        "FrequencyData.ConfidenceFactor": 49,
+        "FrequencyData.Confidence": 33
+      },
+      "nested_path_types": {
+        "AnalysisComponent": {
+          "dict": 8943
+        },
+        "AnalysisComponent.AnalysisComponentIdentifier": {
+          "int": 8943
+        },
+        "AnalysisComponent.AnalysisComponentType": {
+          "str": 8943
+        },
+        "AnalysisComponent.AnalysisComponentName": {
+          "str": 8943
+        },
+        "AnalysisComponent.Message": {
+          "str": 8943
+        },
+        "AnalysisComponent.PersistenceFileName": {
+          "str": 8943
+        },
+        "AnalysisComponent.TrainingMode": {
+          "bool": 8943
+        },
+        "AnalysisComponent.AffectedLogAtomPaths": {
+          "list": 8943
+        },
+        "LogData": {
+          "dict": 8943
+        },
+        "LogData.RawLogData": {
+          "list": 8943
+        },
+        "LogData.Timestamps": {
+          "list": 8943
+        },
+        "LogData.DetectionTimestamp": {
+          "list": 8943
+        },
+        "LogData.LogLinesCount": {
+          "int": 8943
+        },
+        "LogData.LogResources": {
+          "list": 8943
+        },
+        "AMiner": {
+          "dict": 8943
+        },
+        "AMiner.ID": {
+          "str": 8943
+        },
+        "AnalysisComponent.AffectedLogAtomValues": {
+          "list": 7308
+        },
+        "AnalysisComponent.CriticalValue": {
+          "float": 343
+        },
+        "AnalysisComponent.ProbabilityThreshold": {
+          "float": 343
+        },
+        "AnalysisComponent.MissingCharacters": {
+          "list": 2523
+        },
+        "AnalysisComponent.Range": {
+          "list": 13
+        },
+        "AnalysisComponent.IDpaths": {
+          "list": 13
+        },
+        "AnalysisComponent.IDvalues": {
+          "list": 13
+        },
+        "AnalysisComponent.AffectedLogAtomFrequencies": {
+          "list": 211
+        },
+        "AnalysisComponent.AffectedIdValues": {
+          "list": 211
+        },
+        "CountData": {
+          "dict": 211
+        },
+        "CountData.ConfidenceFactor": {
+          "float": 211
+        },
+        "CountData.Confidence": {
+          "int": 4,
+          "float": 207
+        },
+        "AnalysisComponent.AnomalyScores": {
+          "list": 6
+        },
+        "AnalysisComponent.MinBinElements": {
+          "int": 6
+        },
+        "AnalysisComponent.MinBinTime": {
+          "int": 6
+        },
+        "AnalysisComponent.DebugMode": {
+          "bool": 6
+        },
+        "FrequencyData": {
+          "dict": 49
+        },
+        "FrequencyData.ExpectedLogAtomValuesFrequency": {
+          "float": 49
+        },
+        "FrequencyData.ExpectedLogAtomValuesFrequencyRange": {
+          "list": 49
+        },
+        "FrequencyData.LogAtomValuesFrequency": {
+          "int": 49
+        },
+        "FrequencyData.WindowSize": {
+          "int": 49
+        },
+        "FrequencyData.ConfidenceFactor": {
+          "float": 49
+        },
+        "FrequencyData.Confidence": {
+          "float": 33
+        }
+      },
+      "missing": {
+        "alert_id": 8943,
+        "source_line": 8943,
+        "flow_id": 8943,
+        "collection_time": 8943
+      },
+      "duplicate_alert_ids": 0,
+      "timestamp_min": {
+        "event_time": 1643846401.0,
+        "detector_time": 1643846401.0
+      },
+      "timestamp_max": {
+        "event_time": 1644364214.0,
+        "detector_time": 1644364214.0
+      }
+    },
+    "wilson_wazuh.json": {
+      "compressed_bytes": 20445332,
+      "uncompressed_bytes": 673722526,
+      "rows": 625303,
+      "malformed_rows": 0,
+      "top_level_presence": {
+        "predecoder": 133091,
+        "agent": 625303,
+        "manager": 625303,
+        "rule": 625303,
+        "decoder": 625303,
+        "full_log": 560265,
+        "input": 625303,
+        "@timestamp": 625303,
+        "location": 625303,
+        "id": 625303,
+        "data": 557625,
+        "GeoLocation": 11479,
+        "previous_output": 30872
+      },
+      "nested_path_presence": {
+        "predecoder": 133091,
+        "predecoder.hostname": 68053,
+        "predecoder.program_name": 68053,
+        "predecoder.timestamp": 133091,
+        "agent": 625303,
+        "agent.ip": 625303,
+        "agent.name": 625303,
+        "agent.id": 625303,
+        "manager": 625303,
+        "manager.name": 625303,
+        "rule": 625303,
+        "rule.firedtimes": 625303,
+        "rule.mail": 625303,
+        "rule.level": 625303,
+        "rule.pci_dss": 497388,
+        "rule.tsc": 497078,
+        "rule.description": 625303,
+        "rule.groups": 625303,
+        "rule.id": 625303,
+        "rule.nist_800_53": 497078,
+        "rule.gpg13": 68049,
+        "rule.gdpr": 497388,
+        "decoder": 625303,
+        "decoder.name": 625245,
+        "full_log": 560265,
+        "input": 625303,
+        "input.type": 625303,
+        "@timestamp": 625303,
+        "location": 625303,
+        "id": 625303,
+        "rule.hipaa": 69591,
+        "rule.mitre": 98079,
+        "rule.mitre.technique": 98079,
+        "rule.mitre.id": 98079,
+        "rule.mitre.tactic": 98079,
+        "decoder.parent": 132465,
+        "data": 557625,
+        "data.tx_id": 65025,
+        "data.app_proto": 65025,
+        "data.in_iface": 65038,
+        "data.src_ip": 65038,
+        "data.src_port": 65038,
+        "data.event_type": 65038,
+        "data.alert": 65038,
+        "data.alert.severity": 65038,
+        "data.alert.signature_id": 65038,
+        "data.alert.rev": 65038,
+        "data.alert.metadata": 635,
+        "data.alert.metadata.updated_at": 635,
+        "data.alert.metadata.former_category": 620,
+        "data.alert.metadata.created_at": 635,
+        "data.alert.gid": 65038,
+        "data.alert.signature": 65038,
+        "data.alert.action": 65038,
+        "data.alert.category": 65037,
+        "data.flow_id": 65038,
+        "data.dest_ip": 65038,
+        "data.proto": 65038,
+        "data.http": 706,
+        "data.http.hostname": 525,
+        "data.http.protocol": 525,
+        "data.http.http_method": 525,
+        "data.http.length": 706,
+        "data.http.url": 706,
+        "data.http.http_user_agent": 524,
+        "data.http.status": 193,
+        "data.dest_port": 65038,
+        "data.flow": 65025,
+        "data.flow.pkts_toserver": 65025,
+        "data.flow.start": 65025,
+        "data.flow.bytes_toclient": 65025,
+        "data.flow.bytes_toserver": 65025,
+        "data.flow.pkts_toclient": 65025,
+        "data.timestamp": 65038,
+        "data.srcip": 492482,
+        "data.dstip": 65203,
+        "data.id": 492188,
+        "rule.frequency": 32738,
+        "data.metadata": 64410,
+        "data.metadata.flowints": 64410,
+        "data.metadata.flowints.tls": 64196,
+        "data.tls": 64213,
+        "data.tls.version": 64213,
+        "data.tls.ja3": 64205,
+        "data.tls.ja3.string": 64205,
+        "data.tls.ja3.hash": 64205,
+        "data.tls.sni": 64201,
+        "GeoLocation": 11479,
+        "GeoLocation.city_name": 5607,
+        "GeoLocation.country_name": 11303,
+        "GeoLocation.region_name": 5617,
+        "GeoLocation.location": 11479,
+        "GeoLocation.location.lon": 11479,
+        "GeoLocation.location.lat": 11479,
+        "data.metadata.flowints.http": 210,
+        "data.http.http_port": 181,
+        "previous_output": 30872,
+        "data.audit": 24,
+        "data.audit.uid": 24,
+        "data.audit.auid": 24,
+        "data.audit.gid": 24,
+        "data.audit.exe": 24,
+        "data.audit.euid": 24,
+        "data.audit.session": 24,
+        "data.audit.pid": 24,
+        "data.audit.id": 24,
+        "data.audit.type": 24,
+        "data.audit.command": 24,
+        "data.dstuser": 201,
+        "data.protocol": 426489,
+        "data.url": 426489,
+        "data.dns": 99,
+        "data.dns.query": 99,
+        "data.alert.metadata.affected_product": 114,
+        "data.alert.metadata.attack_target": 116,
+        "data.alert.metadata.signature_severity": 116,
+        "data.alert.metadata.deployment": 116,
+        "data.uid": 144,
+        "data.srcport": 685,
+        "data.srcuser": 284,
+        "data.euid": 105,
+        "data.tty": 113,
+        "data.pwd": 8,
+        "data.command": 8,
+        "decoder.ftscomment": 8,
+        "data.http.http_content_type": 37,
+        "data.http.http_refer": 8,
+        "data.files": 19,
+        "data.metadata.flowints.smtp": 4,
+        "data.app_proto_tc": 2,
+        "data.alert.metadata.performance_impact": 27,
+        "data.http.redirect": 3,
+        "data.tls.serial": 4,
+        "data.tls.notbefore": 4,
+        "data.tls.subject": 4,
+        "data.tls.issuerdn": 4,
+        "data.tls.ja3s": 4,
+        "data.tls.ja3s.string": 4,
+        "data.tls.ja3s.hash": 4,
+        "data.tls.notafter": 4,
+        "data.tls.fingerprint": 4
+      },
+      "nested_path_types": {
+        "predecoder": {
+          "dict": 133091
+        },
+        "predecoder.hostname": {
+          "str": 68053
+        },
+        "predecoder.program_name": {
+          "str": 68053
+        },
+        "predecoder.timestamp": {
+          "str": 133091
+        },
+        "agent": {
+          "dict": 625303
+        },
+        "agent.ip": {
+          "str": 625303
+        },
+        "agent.name": {
+          "str": 625303
+        },
+        "agent.id": {
+          "str": 625303
+        },
+        "manager": {
+          "dict": 625303
+        },
+        "manager.name": {
+          "str": 625303
+        },
+        "rule": {
+          "dict": 625303
+        },
+        "rule.firedtimes": {
+          "int": 625303
+        },
+        "rule.mail": {
+          "bool": 625303
+        },
+        "rule.level": {
+          "int": 625303
+        },
+        "rule.pci_dss": {
+          "list": 497388
+        },
+        "rule.tsc": {
+          "list": 497078
+        },
+        "rule.description": {
+          "str": 625303
+        },
+        "rule.groups": {
+          "list": 625303
+        },
+        "rule.id": {
+          "str": 625303
+        },
+        "rule.nist_800_53": {
+          "list": 497078
+        },
+        "rule.gpg13": {
+          "list": 68049
+        },
+        "rule.gdpr": {
+          "list": 497388
+        },
+        "decoder": {
+          "dict": 625303
+        },
+        "decoder.name": {
+          "str": 625245
+        },
+        "full_log": {
+          "str": 560265
+        },
+        "input": {
+          "dict": 625303
+        },
+        "input.type": {
+          "str": 625303
+        },
+        "@timestamp": {
+          "str": 625303
+        },
+        "location": {
+          "str": 625303
+        },
+        "id": {
+          "str": 625303
+        },
+        "rule.hipaa": {
+          "list": 69591
+        },
+        "rule.mitre": {
+          "dict": 98079
+        },
+        "rule.mitre.technique": {
+          "list": 98079
+        },
+        "rule.mitre.id": {
+          "list": 98079
+        },
+        "rule.mitre.tactic": {
+          "list": 98079
+        },
+        "decoder.parent": {
+          "str": 132465
+        },
+        "data": {
+          "dict": 557625
+        },
+        "data.tx_id": {
+          "str": 65025
+        },
+        "data.app_proto": {
+          "str": 65025
+        },
+        "data.in_iface": {
+          "str": 65038
+        },
+        "data.src_ip": {
+          "str": 65038
+        },
+        "data.src_port": {
+          "str": 65038
+        },
+        "data.event_type": {
+          "str": 65038
+        },
+        "data.alert": {
+          "dict": 65038
+        },
+        "data.alert.severity": {
+          "str": 65038
+        },
+        "data.alert.signature_id": {
+          "str": 65038
+        },
+        "data.alert.rev": {
+          "str": 65038
+        },
+        "data.alert.metadata": {
+          "dict": 635
+        },
+        "data.alert.metadata.updated_at": {
+          "list": 635
+        },
+        "data.alert.metadata.former_category": {
+          "list": 620
+        },
+        "data.alert.metadata.created_at": {
+          "list": 635
+        },
+        "data.alert.gid": {
+          "str": 65038
+        },
+        "data.alert.signature": {
+          "str": 65038
+        },
+        "data.alert.action": {
+          "str": 65038
+        },
+        "data.alert.category": {
+          "str": 65037
+        },
+        "data.flow_id": {
+          "str": 65038
+        },
+        "data.dest_ip": {
+          "str": 65038
+        },
+        "data.proto": {
+          "str": 65038
+        },
+        "data.http": {
+          "dict": 706
+        },
+        "data.http.hostname": {
+          "str": 525
+        },
+        "data.http.protocol": {
+          "str": 525
+        },
+        "data.http.http_method": {
+          "str": 525
+        },
+        "data.http.length": {
+          "str": 706
+        },
+        "data.http.url": {
+          "str": 706
+        },
+        "data.http.http_user_agent": {
+          "str": 524
+        },
+        "data.http.status": {
+          "str": 193
+        },
+        "data.dest_port": {
+          "str": 65038
+        },
+        "data.flow": {
+          "dict": 65025
+        },
+        "data.flow.pkts_toserver": {
+          "str": 65025
+        },
+        "data.flow.start": {
+          "str": 65025
+        },
+        "data.flow.bytes_toclient": {
+          "str": 65025
+        },
+        "data.flow.bytes_toserver": {
+          "str": 65025
+        },
+        "data.flow.pkts_toclient": {
+          "str": 65025
+        },
+        "data.timestamp": {
+          "str": 65038
+        },
+        "data.srcip": {
+          "str": 492482
+        },
+        "data.dstip": {
+          "str": 65203
+        },
+        "data.id": {
+          "str": 492188
+        },
+        "rule.frequency": {
+          "int": 32738
+        },
+        "data.metadata": {
+          "dict": 64410
+        },
+        "data.metadata.flowints": {
+          "dict": 64410
+        },
+        "data.metadata.flowints.tls": {
+          "dict": 64196
+        },
+        "data.tls": {
+          "dict": 64213
+        },
+        "data.tls.version": {
+          "str": 64213
+        },
+        "data.tls.ja3": {
+          "dict": 64205
+        },
+        "data.tls.ja3.string": {
+          "str": 64205
+        },
+        "data.tls.ja3.hash": {
+          "str": 64205
+        },
+        "data.tls.sni": {
+          "str": 64201
+        },
+        "GeoLocation": {
+          "dict": 11479
+        },
+        "GeoLocation.city_name": {
+          "str": 5607
+        },
+        "GeoLocation.country_name": {
+          "str": 11303
+        },
+        "GeoLocation.region_name": {
+          "str": 5617
+        },
+        "GeoLocation.location": {
+          "dict": 11479
+        },
+        "GeoLocation.location.lon": {
+          "float": 11175,
+          "int": 304
+        },
+        "GeoLocation.location.lat": {
+          "float": 11175,
+          "int": 304
+        },
+        "data.metadata.flowints.http": {
+          "dict": 210
+        },
+        "data.http.http_port": {
+          "str": 181
+        },
+        "previous_output": {
+          "str": 30872
+        },
+        "data.audit": {
+          "dict": 24
+        },
+        "data.audit.uid": {
+          "str": 24
+        },
+        "data.audit.auid": {
+          "str": 24
+        },
+        "data.audit.gid": {
+          "str": 24
+        },
+        "data.audit.exe": {
+          "str": 24
+        },
+        "data.audit.euid": {
+          "str": 24
+        },
+        "data.audit.session": {
+          "str": 24
+        },
+        "data.audit.pid": {
+          "str": 24
+        },
+        "data.audit.id": {
+          "str": 24
+        },
+        "data.audit.type": {
+          "str": 24
+        },
+        "data.audit.command": {
+          "str": 24
+        },
+        "data.dstuser": {
+          "str": 201
+        },
+        "data.protocol": {
+          "str": 426489
+        },
+        "data.url": {
+          "str": 426489
+        },
+        "data.dns": {
+          "dict": 99
+        },
+        "data.dns.query": {
+          "list": 99
+        },
+        "data.alert.metadata.affected_product": {
+          "list": 114
+        },
+        "data.alert.metadata.attack_target": {
+          "list": 116
+        },
+        "data.alert.metadata.signature_severity": {
+          "list": 116
+        },
+        "data.alert.metadata.deployment": {
+          "list": 116
+        },
+        "data.uid": {
+          "str": 144
+        },
+        "data.srcport": {
+          "str": 685
+        },
+        "data.srcuser": {
+          "str": 284
+        },
+        "data.euid": {
+          "str": 105
+        },
+        "data.tty": {
+          "str": 113
+        },
+        "data.pwd": {
+          "str": 8
+        },
+        "data.command": {
+          "str": 8
+        },
+        "decoder.ftscomment": {
+          "str": 8
+        },
+        "data.http.http_content_type": {
+          "str": 37
+        },
+        "data.http.http_refer": {
+          "str": 8
+        },
+        "data.files": {
+          "list": 19
+        },
+        "data.metadata.flowints.smtp": {
+          "dict": 4
+        },
+        "data.app_proto_tc": {
+          "str": 2
+        },
+        "data.alert.metadata.performance_impact": {
+          "list": 27
+        },
+        "data.http.redirect": {
+          "str": 3
+        },
+        "data.tls.serial": {
+          "str": 4
+        },
+        "data.tls.notbefore": {
+          "str": 4
+        },
+        "data.tls.subject": {
+          "str": 4
+        },
+        "data.tls.issuerdn": {
+          "str": 4
+        },
+        "data.tls.ja3s": {
+          "dict": 4
+        },
+        "data.tls.ja3s.string": {
+          "str": 4
+        },
+        "data.tls.ja3s.hash": {
+          "str": 4
+        },
+        "data.tls.notafter": {
+          "str": 4
+        },
+        "data.tls.fingerprint": {
+          "str": 4
+        }
+      },
+      "missing": {
+        "source_line": 625303,
+        "flow_id": 560265,
+        "detector_time": 625303,
+        "collection_time": 625303
+      },
+      "duplicate_alert_ids": 0,
+      "timestamp_min": {
+        "event_time": 1643849106.0
+      },
+      "timestamp_max": {
+        "event_time": 1644364042.0
+      }
+    }
+  },
+  "global_counts": {
+    "alerts": 2655821,
+    "stable_alert_ids": 2600263,
+    "duplicate_alert_ids": 0,
+    "embedded_raw": 2349186,
+    "source_path_present": 2655821,
+    "structural_source_reference": 306635,
+    "verified_source_observation": 0,
+    "verified_event_level_label": 0,
+    "duplicate_structural_source_references": 173230
+  },
+  "by_detector": {
+    "AMiner": 55558,
+    "Wazuh": 2293628,
+    "Suricata via Wazuh": 306635
+  },
+  "by_scenario": {
+    "fox": 473104,
+    "harrison": 593948,
+    "russellmitchell": 45544,
+    "santos": 130779,
+    "shaw": 70782,
+    "wardbeck": 91257,
+    "wheeler": 616161,
+    "wilson": 634246
+  },
+  "by_window_phase": {
+    "service_stop": 21,
+    "dnsteal": 8630,
+    "service_scans": 2354,
+    "wpscan": 54931,
+    "dirb": 1691090,
+    "webshell": 121,
+    "cracking": 5402,
+    "reverse_shell": 82,
+    "privilege_escalation": 371,
+    "network_scans": 1579
+  },
+  "by_window_status": {
+    "outside_window": 891240,
+    "in_one_window": 1764581
+  },
+  "by_reference_status": {
+    "path_only": 2349186,
+    "path_and_flow_id": 306635
+  },
+  "by_resolution_status": {
+    "unresolved_external_source": 2655821
+  },
+  "timestamps": {},
+  "audit_seconds": 154.65817789998255,
+  "source_reference_csv_bytes": 568624488,
+  "source_reference_csv_sha256": "cf7dc02b2ab3e83583a56c599880a03dab37b166d023a5a862ac74f0ea6d189e"
+}

@@ -1,0 +1,28 @@
+{
+  "classification": "retrospective_exploratory_C_only",
+  "prediction_freeze_sha256": "50c54f04a1166554a57b114f07a945ed76fcbf7e213ed877804a172de1f1329b",
+  "metrics": {
+    "tp": 251348,
+    "fp": 23720,
+    "mixed": 3347,
+    "groups": 375515,
+    "oversized": 0,
+    "bridges_cut": 4665,
+    "newly_recoverable": 59,
+    "lost_recoverability": 125,
+    "gained_alerts": 109,
+    "lost_alerts": 331,
+    "absent": 855,
+    "candidate_disconnected": 487,
+    "incomplete": 1582,
+    "impure": 153,
+    "recoverable": 6903,
+    "pair_precision": 0.9137667776695217,
+    "recoverability": 0.691683366733467,
+    "net_recoverability": -66
+  },
+  "resource": {
+    "wall_seconds": 13.19101700000465,
+    "peak_process_rss_bytes": 449581056
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "phase12-stage3b-ground-truth-v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "track", "run_id", "observations", "alerts", "derivations", "availability_events", "incidents", "memberships", "actions", "priority_judgments", "splits"],
+  "properties": {
+    "schema_version": {"const": "phase12-stage3b-v1"},
+    "track": {"enum": ["soc_export", "controlled_lab"]},
+    "run_id": {"type": "string", "minLength": 1},
+    "observations": {"type": "array", "items": {"type": "object", "additionalProperties": false, "required": ["observation_id", "source_system", "native_ref", "event_time", "collected_at", "payload_sha256"], "properties": {"observation_id": {"type": "string"}, "source_system": {"type": "string"}, "native_ref": {"type": "string"}, "event_time": {"type": "string", "format": "date-time"}, "collected_at": {"type": "string", "format": "date-time"}, "payload_sha256": {"$ref": "#/$defs/hash"}}}},
+    "alerts": {"type": "array", "items": {"type": "object", "additionalProperties": false, "required": ["alert_id", "detector", "detector_version", "generated_at", "payload_sha256"], "properties": {"alert_id": {"type": "string"}, "detector": {"type": "string"}, "detector_version": {"type": "string"}, "generated_at": {"type": "string", "format": "date-time"}, "payload_sha256": {"$ref": "#/$defs/hash"}}}},
+    "derivations": {"type": "array", "items": {"type": "object", "additionalProperties": false, "required": ["alert_id", "observation_id", "method", "status"], "properties": {"alert_id": {"type": "string"}, "observation_id": {"type": "string"}, "method": {"type": "string"}, "status": {"enum": ["verified", "unverified", "ambiguous"]}}}},
+    "availability_events": {"type": "array", "items": {"type": "object", "additionalProperties": false, "required": ["artifact_type", "artifact_id", "kind", "available_at", "version", "payload_sha256", "sequence"], "properties": {"artifact_type": {"enum": ["observation", "alert"]}, "artifact_id": {"type": "string"}, "kind": {"enum": ["available", "corrected", "retracted"]}, "available_at": {"type": "string", "format": "date-time"}, "version": {"type": "integer", "minimum": 1}, "payload_sha256": {"$ref": "#/$defs/hash"}, "sequence": {"type": "integer", "minimum": 1}}}},
+    "incidents": {"type": "array", "items": {"type": "object", "additionalProperties": false, "required": ["incident_id", "truth_origin", "truth_status"], "properties": {"incident_id": {"type": "string"}, "truth_origin": {"enum": ["soc_adjudication", "lab_oracle"]}, "truth_status": {"enum": ["confirmed", "ambiguous"]}}}},
+    "memberships": {"type": "array", "items": {"type": "object", "additionalProperties": false, "required": ["alert_id", "incident_id", "judgment", "adjudicator_ref", "decided_at"], "properties": {"alert_id": {"type": "string"}, "incident_id": {"type": ["string", "null"]}, "judgment": {"enum": ["positive", "negative", "ambiguous"]}, "adjudicator_ref": {"type": "string"}, "decided_at": {"type": "string", "format": "date-time"}}}},
+    "actions": {"type": "array", "items": {"type": "object", "additionalProperties": false, "required": ["action_id", "incident_id", "started_at", "ended_at", "observation_ids"], "properties": {"action_id": {"type": "string"}, "incident_id": {"type": "string"}, "started_at": {"type": "string", "format": "date-time"}, "ended_at": {"type": "string", "format": "date-time"}, "observation_ids": {"type": "array", "items": {"type": "string"}}}}},
+    "priority_judgments": {"type": "array", "items": {"type": "object", "additionalProperties": false, "required": ["queue_id", "cutoff_at", "incident_id", "rank", "adjudicator_ref", "rationale_ref"], "properties": {"queue_id": {"type": "string"}, "cutoff_at": {"type": "string", "format": "date-time"}, "incident_id": {"type": "string"}, "rank": {"type": "integer", "minimum": 1}, "adjudicator_ref": {"type": "string"}, "rationale_ref": {"type": "string"}}}},
+    "splits": {"type": "array", "items": {"type": "object", "additionalProperties": false, "required": ["incident_id", "scenario_family", "partition"], "properties": {"incident_id": {"type": "string"}, "scenario_family": {"type": "string"}, "partition": {"enum": ["development", "validation", "sealed_test"]}}}}
+  },
+  "$defs": {"hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}
+}

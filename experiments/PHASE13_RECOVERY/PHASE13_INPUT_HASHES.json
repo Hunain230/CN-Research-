@@ -1,0 +1,26 @@
+{
+  "git_head": "cd6efb7377d69c04386516a7574396208abd110b",
+  "frozen_inputs": {
+    "outputs/submission_full_entity_time_20261114_v1/prediction_freeze.json": "eaa81a87b0e639d93671ccc8a128be5ac6270a4d8c4be19e985acb836ffcd4f8",
+    "outputs/submission_entity_time_pair_v2_20261114_v1/prediction_freeze.json": "819fde15fbf744ee1fd2c0f347c375a40a917bed1dc9b3a074fe66b325fb9b4e",
+    "outputs/submission_descriptor_ranker_v7_20261114_v1/prediction_freeze.json": "40255fe6061fb9febbfebe0acfc184b4976c2480a29e09264b8ba9d098de9743",
+    "outputs/submission_hard_negative_ablation_v1_20261115_v1/prediction_freeze.json": "98af72e2080bf5ab3c4c39d84fe07321d3cab43e7517f056885e5a9e2ae4a285",
+    "outputs/sprint_rank_fusion_v1_20261116/prediction_freeze.json": "6068fabdc254bbde151be57b8a6dde31207aa4ad5a824c642dbad6c27085862b",
+    "experiments/PHASE10_FRAGMENT_RECONSTRUCTION/PHASE10_EXPERIMENT_CONFIG.json": "12722969ce26a7c137c4851fc5ed4dfc26654982cc833e140d0a4ae8fa0d2024",
+    "experiments/PHASE10_FRAGMENT_RECONSTRUCTION/reconstruct.py": "7987d0c374c70fd31330a6bbfefd9adfffa489a649b97fff06c70201216f30e4",
+    "experiments/PHASE10_FRAGMENT_RECONSTRUCTION/evaluate.py": "51750e6b8e5d356dbeba577734c10239b071530abc6c6a9abaea4418864a91b5",
+    "experiments/PHASE10_FRAGMENT_RECONSTRUCTION/predictions/prediction_freeze.json": "db5d116962d129d45537649191a3ebaaef28bf6001a41fd1f0794b3822ac2e5e"
+  },
+  "phase13_code": {
+    "compare_c_status.py": "2b6dada5ddc607687eeb045226e3b67e21c6e690276799fcc66f12df8441ea8a",
+    "evaluate.py": "51750e6b8e5d356dbeba577734c10239b071530abc6c6a9abaea4418864a91b5",
+    "evaluate_bridge_split.py": "ab753d673a24dc31761645e8bf6ac80c287c976a2128f9dc29277857657cb401",
+    "evaluate_c_sensitivity.py": "d3022a39fc607aa391204d69c26ac75ccdd68c10e430e46c99fd5e446c043b8f",
+    "evaluate_rank_matrix.py": "67f77ffd78c2d95d2d705ad44d95b0ac1a723230d5e5cfe6e775b1e58c0066dd",
+    "reconstruct.py": "7987d0c374c70fd31330a6bbfefd9adfffa489a649b97fff06c70201216f30e4",
+    "run_bridge_split.py": "af550f083ce6afe9d50789a776b21ebe49f99b8a0ae1dde2390c8d9b217a7c9d",
+    "run_c_sensitivity.py": "edf8d4911e5bad1bf707782e9ffe0150680dfbc9b23c04707891d70215612f2c",
+    "test_phase13.py": "0d2fc8fc0ae43f22de1ca9b6db77af1171a3586ea2c077c902e3157887277c13",
+    "write_phase13_reports.py": "963e7b9567786619c28b32b069e6df7c649737ff9ecfcf96ccd49e2a6d12d3b0"
+  }
+}

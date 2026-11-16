@@ -1,0 +1,20 @@
+Bridge split 25/499
+Bridge split 50/499
+Bridge split 75/499
+Bridge split 100/499
+Bridge split 125/499
+Bridge split 150/499
+Bridge split 175/499
+Bridge split 200/499
+Bridge split 225/499
+Bridge split 250/499
+Bridge split 275/499
+Bridge split 300/499
+Bridge split 325/499
+Bridge split 350/499
+Bridge split 375/499
+Bridge split 400/499
+Bridge split 425/499
+Bridge split 450/499
+Bridge split 475/499
+{"status": "frozen", "queues": 499, "bridges_cut": 4665, "resource": {"wall_seconds": 29.004468500002986, "peak_process_rss_bytes": 88879104}}

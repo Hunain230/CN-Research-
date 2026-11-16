@@ -1,0 +1,14 @@
+{
+  "schema": "phase13-v1",
+  "classification": "retrospective_exploratory_only",
+  "seed": 1313,
+  "population": {"queues": 499, "alerts": 400039, "expert_top20_labels": 9980},
+  "parent_candidate_run": "submission_full_entity_time_20261114_v1",
+  "parent_group_run": "submission_entity_time_pair_v2_20261114_v1",
+  "parent_rank_run": "sprint_rank_fusion_v1_20261116",
+  "component_cap": 100,
+  "group_thresholds": [0.75, 0.8, 0.85, 0.9],
+  "candidate_route_diagnostics": ["all", "parent_exact", "entity", "technique"],
+  "feature_status": "GUIDE descriptor/entity/time research-only; production allowlist empty",
+  "selection_rule": "E1 remains selected unless a complete pipeline passes all original safety and recovery gates; C-only sensitivities cannot replace E1"
+}

@@ -1,0 +1,9 @@
+# Best defensible pipeline and selection
+
+**Retain Phase 10 E1** as the frozen exploratory comparator: C = v2 pair scorer at 0.75 with the 100-alert cap; P = validation-selected 75% child40 + 25% v7 blend; V = existing verification functionality, without claiming empirical GUIDE provenance verification. E1 has 5,066/9,980 Recall@20 (50.7665%), 6,969/9,980 recoverability (69.8297%), P@10 63.8778%, nDCG@20 0.469747, pair precision 90.4148%, 28,606 false grouped pairs, and 4,841 mixed groups.
+
+All stricter C thresholds satisfy the pair precision, false-pair, and mixed-group safety conditions but reduce recoverability by 92–468 labels. The 50/50 ranking blend gives a retrospective +26 Recall@20 and higher P@10 on the full cohort with the same C safety counts; it was **not** the validation-selected candidate and has lower nDCG. It is a useful sensitivity result, not a selected replacement or an independent improvement claim. Prior Phase 10 E2–E5 reconstruction policies fail pair or false-merge safety. No new complete pipeline passes the target contract.
+
+The weak-bridge split is the strongest new C safety trade-off measured here: 91.3767% pair precision, 23,720 false grouped pairs, and 3,347 mixed groups. It still loses 66 net recoverable incidents and has no end-to-end ranking evaluation, so it is not selected.
+
+The single most valuable next experiment is the Stage 3B authorized/controlled cohort with original source-observation IDs, derivation links, receiver-side evidence-availability ledger, and independently adjudicated interleaved incidents. Train a fragment-level complete-and-pure objective with hard cross-incident negatives on its development partition, then freeze and evaluate once on a genuinely sealed test population. This addresses the observed information gap instead of repeatedly tuning exposed GUIDE labels.

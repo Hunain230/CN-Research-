@@ -1,0 +1,18 @@
+{
+  "classification": "label_blind_retrospective_graph_split",
+  "sample": true,
+  "cut_below": 0.8,
+  "base_prediction_freeze_sha256": "288d770d190c255e4b971a85be1683312ea667e66279bb4122548912eb5302db",
+  "code_sha256": "af550f083ce6afe9d50789a776b21ebe49f99b8a0ae1dde2390c8d9b217a7c9d",
+  "prediction_sha256": {
+    "011af72a910ac4acf367eef9e6b761e0980842c30d4e9809840f4141d5163ede": "a28c924179172f4495be7130b358f5d253bcd67267ef71bcee5e0927f4d1aebf",
+    "01299ac65733b5a3d774265fbfe8396b8611e5e3321855dbc541cd301e71fe5e": "c5a274ee6ae31231919f56e95d55cea2adcba5f6aafa2f9dddd7f0f99e8c44bb",
+    "023849c38925e2af028a2eb4e1dc41afd7dc7a238195c1c2ae00438d1dae00e1": "4b5aa67cbc8f5ba12e0b146efe9a241fd5c55b18d3b585e16bfad95ac05ad513"
+  },
+  "bridges_cut": 20,
+  "resource": {
+    "wall_seconds": 0.514045799995074,
+    "peak_process_rss_bytes": 34414592
+  },
+  "evaluator_labels_read": false
+}

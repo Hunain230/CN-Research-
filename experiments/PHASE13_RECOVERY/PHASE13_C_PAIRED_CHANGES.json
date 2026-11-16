@@ -1,0 +1,23 @@
+{
+  "0.8": {
+    "newly_recoverable": 60,
+    "lost_recoverability": 152,
+    "gained_alerts": 85,
+    "lost_alerts": 500,
+    "net": -92
+  },
+  "0.85": {
+    "newly_recoverable": 102,
+    "lost_recoverability": 393,
+    "gained_alerts": 127,
+    "lost_alerts": 1556,
+    "net": -291
+  },
+  "0.9": {
+    "newly_recoverable": 131,
+    "lost_recoverability": 599,
+    "gained_alerts": 143,
+    "lost_alerts": 2186,
+    "net": -468
+  }
+}

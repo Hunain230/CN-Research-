@@ -1,0 +1,25 @@
+{
+  "classification": "label_blind_retrospective_predictions",
+  "sample": true,
+  "code_sha256": "edf8d4911e5bad1bf707782e9ffe0150680dfbc9b23c04707891d70215612f2c",
+  "config_sha256": "364346b3c2b330a61424317e0b47a65e6ccb764957847d3e697854e59d2ac467",
+  "parent_freeze_sha256": {
+    "candidate": "eaa81a87b0e639d93671ccc8a128be5ac6270a4d8c4be19e985acb836ffcd4f8",
+    "group": "819fde15fbf744ee1fd2c0f347c375a40a917bed1dc9b3a074fe66b325fb9b4e"
+  },
+  "prediction_sha256": {
+    "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9": "46088b2bd855e89a1f8f0c4fff713b32be99cffe2989913964fe54e3be1631e0",
+    "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b": "c51222671431c6156c1c46628f65c5216045e865ab1a3d9458c1a5e098e39f55",
+    "4a44dc15364204a80fe80e9039455cc1608281820fe2b24f1e5233ade6af1dd5": "133c557fe9061119ff52f15a86c7da24d81e08a28bada5874bc8d1ed24037644"
+  },
+  "census": {
+    "queues": 3,
+    "alerts": 102918,
+    "edges": 818721
+  },
+  "resource": {
+    "wall_seconds": 26.545964000019012,
+    "peak_process_rss_bytes": 575373312
+  },
+  "evaluator_labels_read": false
+}

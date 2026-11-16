@@ -1,0 +1,49 @@
+{
+  "schema_version": "phase12-stage3b-v1",
+  "track": "controlled_lab",
+  "run_id": "synthetic-fixture-only",
+  "observations": [
+    {"observation_id": "o1", "source_system": "synthetic-edr", "native_ref": "record-1", "event_time": "2026-01-01T00:00:01Z", "collected_at": "2026-01-01T00:00:02Z", "payload_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"},
+    {"observation_id": "o2", "source_system": "synthetic-edr", "native_ref": "record-2", "event_time": "2026-01-01T00:00:03Z", "collected_at": "2026-01-01T00:00:04Z", "payload_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"},
+    {"observation_id": "o3", "source_system": "synthetic-edr", "native_ref": "record-3", "event_time": "2026-01-01T00:00:05Z", "collected_at": "2026-01-01T00:00:06Z", "payload_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"}
+  ],
+  "alerts": [
+    {"alert_id": "a1", "detector": "synthetic-detector", "detector_version": "fixture-1", "generated_at": "2026-01-01T00:00:07Z", "payload_sha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd"},
+    {"alert_id": "a2", "detector": "synthetic-detector", "detector_version": "fixture-1", "generated_at": "2026-01-01T00:00:08Z", "payload_sha256": "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"},
+    {"alert_id": "a3", "detector": "synthetic-detector", "detector_version": "fixture-1", "generated_at": "2026-01-01T00:00:09Z", "payload_sha256": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"}
+  ],
+  "derivations": [
+    {"alert_id": "a1", "observation_id": "o1", "method": "fixture-direct-id", "status": "verified"},
+    {"alert_id": "a2", "observation_id": "o2", "method": "fixture-direct-id", "status": "verified"},
+    {"alert_id": "a3", "observation_id": "o3", "method": "fixture-direct-id", "status": "verified"}
+  ],
+  "availability_events": [
+    {"artifact_type": "observation", "artifact_id": "o1", "kind": "available", "available_at": "2026-01-01T00:00:02Z", "version": 1, "payload_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "sequence": 1},
+    {"artifact_type": "observation", "artifact_id": "o2", "kind": "available", "available_at": "2026-01-01T00:00:04Z", "version": 1, "payload_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb", "sequence": 2},
+    {"artifact_type": "observation", "artifact_id": "o3", "kind": "available", "available_at": "2026-01-01T00:00:06Z", "version": 1, "payload_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc", "sequence": 3},
+    {"artifact_type": "alert", "artifact_id": "a1", "kind": "available", "available_at": "2026-01-01T00:00:10Z", "version": 1, "payload_sha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd", "sequence": 4},
+    {"artifact_type": "alert", "artifact_id": "a2", "kind": "available", "available_at": "2026-01-01T00:00:11Z", "version": 1, "payload_sha256": "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee", "sequence": 5},
+    {"artifact_type": "alert", "artifact_id": "a3", "kind": "available", "available_at": "2026-01-01T00:00:12Z", "version": 1, "payload_sha256": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff", "sequence": 6}
+  ],
+  "incidents": [
+    {"incident_id": "i1", "truth_origin": "lab_oracle", "truth_status": "confirmed"},
+    {"incident_id": "i2", "truth_origin": "lab_oracle", "truth_status": "confirmed"}
+  ],
+  "memberships": [
+    {"alert_id": "a1", "incident_id": "i1", "judgment": "positive", "adjudicator_ref": "fixture-oracle", "decided_at": "2026-01-02T00:00:00Z"},
+    {"alert_id": "a2", "incident_id": "i2", "judgment": "positive", "adjudicator_ref": "fixture-oracle", "decided_at": "2026-01-02T00:00:00Z"},
+    {"alert_id": "a3", "incident_id": null, "judgment": "negative", "adjudicator_ref": "fixture-oracle", "decided_at": "2026-01-02T00:00:00Z"}
+  ],
+  "actions": [
+    {"action_id": "step-i1", "incident_id": "i1", "started_at": "2026-01-01T00:00:00Z", "ended_at": "2026-01-01T00:00:02Z", "observation_ids": ["o1"]},
+    {"action_id": "step-i2", "incident_id": "i2", "started_at": "2026-01-01T00:00:02Z", "ended_at": "2026-01-01T00:00:04Z", "observation_ids": ["o2"]}
+  ],
+  "priority_judgments": [
+    {"queue_id": "q1", "cutoff_at": "2026-01-01T00:00:20Z", "incident_id": "i1", "rank": 1, "adjudicator_ref": "fixture-reviewer", "rationale_ref": "fixture-rationale-1"},
+    {"queue_id": "q1", "cutoff_at": "2026-01-01T00:00:20Z", "incident_id": "i2", "rank": 2, "adjudicator_ref": "fixture-reviewer", "rationale_ref": "fixture-rationale-2"}
+  ],
+  "splits": [
+    {"incident_id": "i1", "scenario_family": "fixture-family", "partition": "development"},
+    {"incident_id": "i2", "scenario_family": "fixture-family", "partition": "development"}
+  ]
+}

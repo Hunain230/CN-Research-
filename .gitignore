@@ -35,6 +35,10 @@ htmlcov/
 # Project data
 data/
 
+# Large generated artifacts (GitHub file-size limit)
+experiments/PHASE12_GROUND_TRUTH/AIT_ADS_PILOT_AUDIT/AIT_ADS_SOURCE_REFERENCE_AUDIT.csv
+experiments/PHASE12_GROUND_TRUTH/AIT_ADS_PILOT_AUDIT/data/raw/ait_ads.zip
+
 # Environment and local configuration
 .env
 .env.*
