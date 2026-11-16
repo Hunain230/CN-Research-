@@ -1,0 +1,27 @@
+{
+  "baseline": "submission_entity_time_pair_v2_20261114_v1",
+  "classification": "evaluator_side_retrospective_false_pair_transition",
+  "definition": "new_false_pairs count cross-incident alert pairs coassigned in proposed groups but not frozen v2 groups; not wrong union-edge decisions",
+  "prediction_freeze_sha256": {
+    "phase9g_pair_boundary_20261115_v1": "059415096fcdc171fb3464047ff3956c5db80aac9257be787ab6435669ba3d1c",
+    "sprint_consensus_split_v1_20261116": "b0844d2e6e39f7d115fc3d4f9d96b1f10af1c81e9c0a66e20dc598379e165d5b",
+    "submission_entity_time_pair_v2_20261114_v1": "819fde15fbf744ee1fd2c0f347c375a40a917bed1dc9b3a074fe66b325fb9b4e"
+  },
+  "queues": 499,
+  "transitions": {
+    "phase9g_pair_boundary_20261115_v1": {
+      "baseline_false_pairs": 28606,
+      "new_false_pairs": 136565,
+      "proposed_false_pairs": 137884,
+      "removed_false_pairs": 27287,
+      "retained_false_pairs": 1319
+    },
+    "sprint_consensus_split_v1_20261116": {
+      "baseline_false_pairs": 28606,
+      "new_false_pairs": 0,
+      "proposed_false_pairs": 21905,
+      "removed_false_pairs": 6701,
+      "retained_false_pairs": 21905
+    }
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "classification": "validation_selected_retrospective_exploratory_not_confirmatory",
+  "pipeline": "entity-enabled candidates -> frozen v2 grouping -> selected rank fusion",
+  "candidate_run": "submission_full_entity_time_20261114_v1",
+  "grouping_run": "submission_entity_time_pair_v2_20261114_v1",
+  "ranking_run": "sprint_rank_fusion_v1_20261116",
+  "ranking_sources": [
+    "submission_descriptor_ranker_v7_20261114_v1",
+    "submission_hard_negative_ablation_v1_20261115_v1/hard_40"
+  ],
+  "fusion": {
+    "normalization": "average ascending within-queue rank percentile",
+    "weight_v7": 0.25,
+    "weight_hard40": 0.75
+  },
+  "selection": "maximum Recall@20 among validation blends with P@10 >= v7, tie lower hard40 weight",
+  "selected_on": "67 historical validation queues",
+  "evaluation": "68 historical holdout queues, all 499 descriptive; all previously exposed",
+  "denominator": {
+    "queues": 499,
+    "alerts": 400039,
+    "expert_top20_labels": 9980
+  },
+  "measured_all499": {
+    "recall20": 0.5076653306613226,
+    "p10": 0.6387775551102205,
+    "ndcg20": 0.46974709650295843,
+    "group_recoverability": 0.6982965931863727,
+    "pair_precision": 0.9041475951453903,
+    "pair_false_positives": 28606,
+    "mixed_groups": 4841
+  },
+  "sha256": {
+    "outputs/submission_entity_time_pair_v2_20261114_v1/prediction_freeze.json": "819fde15fbf744ee1fd2c0f347c375a40a917bed1dc9b3a074fe66b325fb9b4e",
+    "outputs/submission_descriptor_ranker_v7_20261114_v1/prediction_freeze.json": "40255fe6061fb9febbfebe0acfc184b4976c2480a29e09264b8ba9d098de9743",
+    "outputs/submission_hard_negative_ablation_v1_20261115_v1/prediction_freeze.json": "98af72e2080bf5ab3c4c39d84fe07321d3cab43e7517f056885e5a9e2ae4a285",
+    "outputs/sprint_rank_fusion_v1_20261116/prediction_freeze.json": "6068fabdc254bbde151be57b8a6dde31207aa4ad5a824c642dbad6c27085862b",
+    "outputs/sprint_rank_fusion_v1_20261116/metrics.json": "d0e212f048097f6f3502801fdc93593d4197e9692a9bd5f8f4da8649e0a1d2a5",
+    "outputs/sprint_rank_fusion_v1_20261116/extended_metrics.json": "13b7f2db6b729420485eeebe61fc84f39af76b2490c2ee56d8da980b05c6a470",
+    "outputs/sprint_false_merge_audit_20261116.json": "f768e8222ecaf48a8f171ffcf0f71d95ef0ae5b436a9b2cde5ec4a8a33df0717"
+  }
+}

@@ -8,7 +8,7 @@
 [![Python](https://img.shields.io/badge/Python-3.12-blue?style=flat-square&logo=python)](requirements.txt)
 [![Model](https://img.shields.io/badge/Local%20Model-Qwen2.5%3A3b-purple?style=flat-square)](FINAL_RESEARCH_PERFORMANCE_REPORT.md)
 [![Data](https://img.shields.io/badge/GUIDE__Test-4.1M%20evidence%20rows-green?style=flat-square)](submission/DATA_AND_CLAIM_AUDIT.md)
-[![Recall@20](https://img.shields.io/badge/Best%20Recall%4020-86.82%25-brightgreen?style=flat-square)](FINAL_RESEARCH_PERFORMANCE_REPORT.md)
+[![Recall@20](https://img.shields.io/badge/Selected%20Recall%4020-50.77%25-orange?style=flat-square)](FINAL_24H_EXPERIMENT_REPORT.md)
 
 <br/>
 
@@ -34,7 +34,9 @@
 ## 🏆 Best Results (Exploratory)
 
 > [!IMPORTANT]
-> GUIDE_Test labels were accessed in earlier project work. All results below are **exploratory**, not confirmatory. The frozen production method is **v2 grouping + v7 ranking**.
+> GUIDE_Test labels were accessed in earlier project work. All results below are **exploratory**, not confirmatory. The frozen historical comparator is **v2 grouping + v7 ranking**.
+
+**16 November sprint:** A validation-selected rank fusion on the same v2 groups reached **50.77% Recall@20**, **63.88% P@10**, and **0.4697 nDCG@20** on all 499 queues. Group recoverability stayed **69.83%** and pair precision **90.41%**. The historical v2+v7 comparator below remains **49.82% Recall@20**. See the [sprint report](FINAL_24H_EXPERIMENT_REPORT.md) for the failed Phase 9G/grouping controls, selection rule, outside-fitting results, and limitations.
 
 <div align="center">
 
@@ -48,8 +50,8 @@ Trained ranker v1   █████░░░░░░░░░░░░░░░
 Learned grouping    ██████████░░░░░░░░░░░░░░░░░░░░  31.8%  (57 queues, exploratory)
 Entity/time v2      ███████████░░░░░░░░░░░░░░░░░░░  34.0%  (exploratory)
 v4 ranker           █████████████░░░░░░░░░░░░░░░░░  42.2%  (exploratory)
-v7 ranker ★ FROZEN  ███████████████████████████░░░  86.8%  (updated exploratory result)
-Oracle ceiling      █████████████████████████░░░░░  82.8%  (updated fixed-group recoverability)
+v7 ranker ★ FROZEN  ███████████████░░░░░░░░░░░░░░  49.8%  (frozen exploratory result)
+Oracle ceiling      █████████████████████░░░░░░░░░  69.8%  (fixed-group recoverability)
 ```
 
 ### 📊 Full Results Table
@@ -59,7 +61,8 @@ Oracle ceiling      ████████████████████
 | 499 orgs — full GUIDE | Rule / BM25-like baseline | 0.1364 | 0.1714 | 0.1542 |
 | 135 training-disjoint orgs | Trained logistic ranker v1 | 0.1542 | 0.2351 | 0.1776 |
 | 499 orgs (exploratory) | v2 grouping + v4 ranker | 0.4223 | 0.5284 | — |
-| **499 orgs (exploratory)** | **✅ v2 grouping + v7 ranker — FROZEN** | **0.8682** | **0.6158** | **0.4371** |
+| **499 orgs (exploratory)** | **✅ v2 grouping + v7 ranker — FROZEN** | **0.4982** | **0.6158** | **0.4371** |
+| **499 orgs (exploratory)** | **Validation-selected v2 + rank fusion** | **0.5077** | **0.6388** | **0.4697** |
 | 135 orgs outside ranker training | v2 grouping + v7 ranker | 0.4552 | — | — |
 | 20 orgs — local Qwen v2 | C + P end-to-end | 0.1443 | 0.1848 | — |
 
@@ -70,8 +73,8 @@ Oracle ceiling      ████████████████████
 | Initial rule candidate recall | **37,018 / 159,186,107 = 0.0233%** | Severe retrieval bottleneck in the original rule/BM25 baseline |
 | Frozen v2 candidate recall | **699,790 / 159,186,107 = 0.4396%** | Entity-enabled retrieval improves coverage but remains far below exhaustive positive-pair recall |
 | Candidate-connected label bound | **8,638 / 9,980 = 86.55%** | Gold-aware diagnostic; downstream scoring and grouping affect achieved recovery |
-| Oracle-order ceiling (v2 groups) | **8,266 / 9,980 = 82.83%** | Updated fixed-group recoverability ceiling |
-| Achieved end-to-end reference | **8,665 / 9,980 = 86.82%** | Updated v2 grouping + v7 ranking result |
+| Oracle-order ceiling (v2 groups) | **6,969 / 9,980 = 69.83%** | Updated fixed-group recoverability ceiling |
+| Achieved end-to-end reference | **4,972 / 9,980 = 49.82%** | Updated v2 grouping + v7 ranking result |
 | Structural end-to-end ceiling | **9,063 / 9,980 = 90.81%** | 95% target structurally blocked under current exclusion + 100-alert cap |
 
 ---
@@ -126,10 +129,10 @@ Oracle ceiling      ████████████████████
 | Matched ranking extension (135 orgs) | 0.1542 | P@10 ↑, but Recall@20 CI includes zero |
 | Learned pair grouping (57 queues) | 0.3179 | Grouping helps; pair F1 fell; oracle ceiling 58.5% |
 | Entity/time sensitivity (499 queues) | 0.3095 | Pair precision improved; F1 fell; allowlist still empty |
-| Entity/time pair model v2 | 0.3397 | Pair precision 0.9041; updated ceiling 82.83%; v2 frozen |
+| Entity/time pair model v2 | 0.3397 | Pair precision 0.9041; updated ceiling 69.83%; v2 frozen |
 | Group priority v4 ranker | 0.4223 | +8.3 pp over v2 ordering; 0.4106 on 135 disjoint orgs |
 | Hard-negative v6 ranker | 0.4399 | Descriptive gain; no training-disjoint improvement |
-| **Descriptor-aware v7 ranker ★** | **0.8682** | Updated reference; 0.4552 on 135 outside training |
+| **Descriptor-aware v7 ranker ★** | **0.4982** | Frozen reference; 0.4552 on 135 outside training |
 | Specialist v8 control | 0.4982 | No gain — v7 scores retained |
 | Adaptive links v9 control | — | Tiny recall gain reduced P@10 and ceiling; v2 groups kept |
 | Learned group-merge v10 | 0.4982 | No merge met purity + recall gates; identical to v2 + v7 |
@@ -137,6 +140,9 @@ Oracle ceiling      ████████████████████
 | Bounded matched Qwen controls | 0.1443 | C+P < singleton/rarity control; no C/P/V superiority |
 | Phase 9C fragment heuristic | 0.4981 | NO-GO; 38 merges increased false grouped pairs and reduced recoverability |
 | Phase 9E sixth-neighbor route | 0.4982 | NO-GO; +49,455 candidates but no additional recovered incident |
+| Phase 9G boundary scorer | 0.4359 | NO-GO; false grouped pairs rose to 137,884 |
+| Sprint consensus split | 0.4513 | NO-GO; pair purity improved but recoverability fell |
+| Sprint rank fusion | **0.5077** | Validation-selected exploratory candidate; fixed v2 groups and pair purity |
 
 > Full chronology → [PROJECT_ITERATIONS.md](PROJECT_ITERATIONS.md) · Exhibition table → [EXHIBITION_METRICS_BRIEF_20261115.md](submission/EXHIBITION_METRICS_BRIEF_20261115.md)
 
@@ -153,7 +159,7 @@ CN-Research-/
 ├── 📁 outputs/              Versioned metrics · run manifests · all historical outputs retained
 ├── 📁 phases_outputs/       Dated phase records · amendments · gate decisions
 ├── 📁 submission/           Report · figures · verification · reproduction material
-├── 📁 dashboard/            index.html (saved aggregates) · simulation.html (fictional replay)
+├── 📁 experiments/24H_PERFORMANCE_SPRINT/  Sprint configurations
 ├── 📄 CONTEXT.md            ← Canonical methodology and implementation reference
 ├── 📄 PROJECT_ITERATIONS.md ← Canonical timeline and decision log
 └── 📄 README.md             ← You are here
@@ -172,10 +178,8 @@ CN-Research-/
 # 2. Inspect frozen local call timing
 .\.venv\Scripts\python.exe -m submission.measure_local_operations
 
-# 3. Launch the research dashboard
-.\.venv\Scripts\python.exe -m http.server 8765 --directory dashboard
-# → http://127.0.0.1:8765/            (saved aggregate metrics)
-# → http://127.0.0.1:8765/simulation.html  (fictional event replay — clearly labelled)
+# 3. Read the measured sprint results and reproduction commands
+# FINAL_24H_EXPERIMENT_REPORT.md · FINAL_REPRODUCIBILITY.md
 ```
 
 > [!TIP]
@@ -188,6 +192,7 @@ CN-Research-/
 | 📄 Document | Contents |
 |---|---|
 | [FINAL_RESEARCH_PERFORMANCE_REPORT.md](FINAL_RESEARCH_PERFORMANCE_REPORT.md) | Final performance report — implementation, metrics, figures, ablations, and limitations |
+| [FINAL_24H_EXPERIMENT_REPORT.md](FINAL_24H_EXPERIMENT_REPORT.md) | Phase 9G evaluation, sprint controls, and validation-selected fusion |
 | [EXHIBITION_METRICS_BRIEF_20261115.md](submission/EXHIBITION_METRICS_BRIEF_20261115.md) | Stage-separated results table + suggested slide wording |
 | [INDEPENDENT_COMPONENT_ABLATION_20261115.md](submission/INDEPENDENT_COMPONENT_ABLATION_20261115.md) | Candidate-route, grouping, and ranking ablations with matched denominators |
 | [PERFORMANCE_BASELINE_STUDY.md](submission/PERFORMANCE_BASELINE_STUDY.md) | 334/135 organization-split matched ranking study |

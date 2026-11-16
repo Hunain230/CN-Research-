@@ -1,0 +1,10 @@
+{
+  "experiment_id": "rank_fusion_v1",
+  "hypothesis": "Queue-normalized v7 and hard-negative LightGBM scores make complementary top-20 errors on the same frozen groups.",
+  "weights_hard40": [0.25, 0.5, 0.75],
+  "selection_cohort": "67 historical validation queues",
+  "evaluation_cohort": "68 historical holdout queues, previously exposed in earlier research",
+  "normalization": "average ascending rank percentile within each queue",
+  "selection": "maximum validation Recall@20 among blends with validation P@10 at least v7; ties select the lower hard40 weight",
+  "acceptance": "On historical holdout, Recall@20 and P@10 must both improve over v7; group purity is fixed. All-499 descriptive values are reported but not used for selection."
+}

@@ -1,0 +1,16 @@
+{
+  "experiment_id": "consensus_split_v1",
+  "hypothesis": "A second frozen pair model can veto small v2 components that it partitions, recovering impure incidents without adding grouped false pairs.",
+  "reference": "submission_entity_time_pair_v2_20261114_v1 + submission_descriptor_ranker_v7_20261114_v1",
+  "second_partition": "phase9g_pair_boundary_20261115_v1",
+  "maximum_v2_group_size_to_split": 4,
+  "evaluation_scope": "499 exploratory queues; 135 outside-fitting queues reported separately",
+  "acceptance": {
+    "minimum_all499_recall20_gain": 0,
+    "minimum_all499_group_recoverability_gain": 1,
+    "maximum_added_false_grouped_pairs": 0,
+    "maximum_added_mixed_groups": 0,
+    "minimum_pair_precision": 0.9041475951453903,
+    "minimum_p10": 0.6158316633266533
+  }
+}

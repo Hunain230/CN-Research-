@@ -2,8 +2,8 @@
   "classification": "exploratory_phase3_report_pdf",
   "command": ".\\.venv\\Scripts\\python.exe -m submission.build_report_pdf",
   "sha256": {
-    "FINAL_RESEARCH_PERFORMANCE_REPORT.md": "6c372ae32fabb47d690e2da50b9a89c0fafac18f91512708d502b93039d7f429",
-    "FINAL_RESEARCH_PERFORMANCE_REPORT.pdf": "5b725e7aba8604c08a83f9166d15ecb6d59fb36be502cce47cb94597063d8df3",
-    "submission/build_report_pdf.py": "21fce0eb9f414e5618daf3a6aa7535cd6afe2e5df4c0ba3410cddf42743abceb"
+    "FINAL_RESEARCH_PERFORMANCE_REPORT.md": "c7afdd1a7c4a9f0c378d3de50cba1705f2b4cc5be67ffcf2111dcbb5eb74838f",
+    "FINAL_RESEARCH_PERFORMANCE_REPORT.pdf": "11f35046d41820b8fe4c113b4300eaa3f83856bcad4e01d4e72e67a39edb4172",
+    "submission/build_report_pdf.py": "d113c40adb8c2c68ffde5ea0803d6f8fc30067778c8893fd574ae5592b6a4f4e"
   }
 }

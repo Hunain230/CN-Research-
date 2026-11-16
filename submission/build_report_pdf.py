@@ -105,7 +105,7 @@ def footer(canvas, doc) -> None:
     canvas.line(1.8 * cm, 1.45 * cm, width - 1.8 * cm, 1.45 * cm)
     canvas.setFont("DejaVu", 7.5)
     canvas.setFillColor(colors.HexColor("#567082"))
-    canvas.drawString(1.8 * cm, 1.1 * cm, "Exploratory GUIDE_Test implementation | 2026-11-14")
+    canvas.drawString(1.8 * cm, 1.1 * cm, "Exploratory GUIDE_Test implementation | 2026-11-16")
     canvas.drawRightString(width - 1.8 * cm, 1.1 * cm, str(doc.page))
     canvas.restoreState()
 
