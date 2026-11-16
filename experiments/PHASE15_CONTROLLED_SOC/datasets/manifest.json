@@ -1,0 +1,153 @@
+{
+  "schema": "phase15-synthetic-v1",
+  "splits": {
+    "train": [
+      {
+        "queue_id": "train_q00",
+        "alerts": 318,
+        "observations": 304,
+        "incidents": 25,
+        "benign": 100
+      },
+      {
+        "queue_id": "train_q01",
+        "alerts": 321,
+        "observations": 302,
+        "incidents": 25,
+        "benign": 100
+      },
+      {
+        "queue_id": "train_q02",
+        "alerts": 309,
+        "observations": 292,
+        "incidents": 25,
+        "benign": 100
+      },
+      {
+        "queue_id": "train_q03",
+        "alerts": 308,
+        "observations": 290,
+        "incidents": 25,
+        "benign": 100
+      },
+      {
+        "queue_id": "train_q04",
+        "alerts": 307,
+        "observations": 287,
+        "incidents": 25,
+        "benign": 100
+      },
+      {
+        "queue_id": "train_q05",
+        "alerts": 309,
+        "observations": 295,
+        "incidents": 25,
+        "benign": 100
+      }
+    ],
+    "development": [
+      {
+        "queue_id": "development_q00",
+        "alerts": 293,
+        "observations": 280,
+        "incidents": 25,
+        "benign": 100
+      },
+      {
+        "queue_id": "development_q01",
+        "alerts": 319,
+        "observations": 299,
+        "incidents": 25,
+        "benign": 100
+      },
+      {
+        "queue_id": "development_q02",
+        "alerts": 323,
+        "observations": 304,
+        "incidents": 25,
+        "benign": 100
+      }
+    ],
+    "locked_test": [
+      {
+        "queue_id": "locked_test_q00",
+        "alerts": 305,
+        "observations": 292,
+        "incidents": 25,
+        "benign": 100
+      },
+      {
+        "queue_id": "locked_test_q01",
+        "alerts": 314,
+        "observations": 295,
+        "incidents": 25,
+        "benign": 100
+      },
+      {
+        "queue_id": "locked_test_q02",
+        "alerts": 322,
+        "observations": 306,
+        "incidents": 25,
+        "benign": 100
+      }
+    ]
+  },
+  "template_assignment": {
+    "train": [
+      "initial_access:v0",
+      "initial_access:v1",
+      "initial_access:v2",
+      "credential_compromise:v0",
+      "credential_compromise:v1",
+      "credential_compromise:v2",
+      "suspicious_authentication:v0",
+      "suspicious_authentication:v1",
+      "suspicious_authentication:v2",
+      "lateral_movement:v0",
+      "lateral_movement:v1",
+      "lateral_movement:v2",
+      "privilege_escalation:v0",
+      "privilege_escalation:v1",
+      "privilege_escalation:v2",
+      "persistence:v0",
+      "persistence:v1",
+      "persistence:v2",
+      "command_control:v0",
+      "command_control:v1",
+      "command_control:v2",
+      "data_staging:v0",
+      "data_staging:v1",
+      "data_staging:v2",
+      "exfiltration:v0",
+      "exfiltration:v1",
+      "exfiltration:v2",
+      "multi_stage_chain:v0",
+      "multi_stage_chain:v1",
+      "multi_stage_chain:v2"
+    ],
+    "development": [
+      "initial_access:v3",
+      "credential_compromise:v3",
+      "suspicious_authentication:v3",
+      "lateral_movement:v3",
+      "privilege_escalation:v3",
+      "persistence:v3",
+      "command_control:v3",
+      "data_staging:v3",
+      "exfiltration:v3",
+      "multi_stage_chain:v3"
+    ],
+    "locked_test": [
+      "initial_access:v4",
+      "credential_compromise:v4",
+      "suspicious_authentication:v4",
+      "lateral_movement:v4",
+      "privilege_escalation:v4",
+      "persistence:v4",
+      "command_control:v4",
+      "data_staging:v4",
+      "exfiltration:v4",
+      "multi_stage_chain:v4"
+    ]
+  }
+}

@@ -1,0 +1,11 @@
+family,top20,success,ranking_only,incomplete,impure
+command_control,59,39,4,16,0
+credential_compromise,62,36,4,22,0
+data_staging,58,41,4,13,0
+exfiltration,58,36,6,15,1
+initial_access,57,41,5,11,0
+lateral_movement,60,45,5,10,0
+multi_stage_chain,62,43,2,17,0
+persistence,67,49,3,14,1
+privilege_escalation,57,38,3,15,1
+suspicious_authentication,60,39,8,13,0

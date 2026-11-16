@@ -1,0 +1,7 @@
+metric,observed,target,pass,evaluation
+Recall@20,0.0,0.8,False,locked_test_selected_baseline
+Recoverability,0.0,0.85,False,locked_test_selected_baseline
+P@10,0.0,0.6388,False,locked_test_selected_baseline
+Pair precision,0.9266768885735863,0.9,True,locked_test_selected_baseline
+False grouped pairs,6408,6408,True,locked_test_selected_baseline
+Mixed predicted groups,457,457,True,locked_test_selected_baseline

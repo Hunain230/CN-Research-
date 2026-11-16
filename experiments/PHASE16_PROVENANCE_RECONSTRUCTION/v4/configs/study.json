@@ -1,0 +1,14 @@
+{
+  "schema": "phase16-synthetic-provenance-v4",
+  "seeds": {"train": 1641, "development": 1642, "locked_test": 1643},
+  "queues": {"train": 15, "development": 15, "locked_test": 30},
+  "incidents_per_queue": 25,
+  "benign_observations_per_queue": 100,
+  "decision_minute": 100,
+  "component_cap": 100,
+  "completeness": 0.8,
+  "purity": 0.8,
+  "methods": ["source_only", "process_only", "lineage_one", "lineage_two", "lineage_two_v", "lineage_one_context_v"],
+  "ranker": "progression",
+  "selection_rule": "On development only: require >=90% pair precision and no more false pairs or mixed groups than source_only. Among eligible methods choose highest recoverability, then Recall@20, then P@10; otherwise source_only. Freeze code/config/predictions before locked truth."
+}

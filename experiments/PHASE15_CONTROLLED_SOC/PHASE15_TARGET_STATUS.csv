@@ -1,0 +1,7 @@
+metric,target,observed,gap,pass,cohort
+Incident Recall@20,0.8,0.21666666666666667,0.5833333333333334,False,controlled_synthetic_locked_test
+Group recoverability,0.85,0.2833333333333333,0.5666666666666667,False,controlled_synthetic_locked_test
+P@10,0.6388,0.23333333333333334,0.4054666666666667,False,controlled_synthetic_locked_test
+Grouped-pair precision,0.9,0.9917081260364843,0,True,controlled_synthetic_locked_test
+False grouped pairs,10,10,0,True,controlled_synthetic_locked_test
+Mixed predicted groups,6,6,0,True,controlled_synthetic_locked_test

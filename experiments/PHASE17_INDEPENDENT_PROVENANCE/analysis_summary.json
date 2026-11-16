@@ -1,0 +1,111 @@
+{
+  "dataset": [
+    {
+      "split": "train",
+      "queues": 15,
+      "oracle_top20_labels": 300,
+      "alerts": 12602,
+      "source_observations": 12602,
+      "field_versions": 126020,
+      "late_alerts": 64,
+      "delayed_fields": 1139,
+      "sensor_misses": 3898
+    },
+    {
+      "split": "development",
+      "queues": 15,
+      "oracle_top20_labels": 300,
+      "alerts": 12553,
+      "source_observations": 12553,
+      "field_versions": 125530,
+      "late_alerts": 55,
+      "delayed_fields": 1084,
+      "sensor_misses": 3947
+    },
+    {
+      "split": "locked_test",
+      "queues": 30,
+      "oracle_top20_labels": 600,
+      "alerts": 25185,
+      "source_observations": 25185,
+      "field_versions": 251850,
+      "late_alerts": 116,
+      "delayed_fields": 2303,
+      "sensor_misses": 7815
+    }
+  ],
+  "training_candidates": {
+    "positive": 1164,
+    "negative": 457
+  },
+  "development_calibration": {
+    "candidate_pairs": 1561,
+    "brier": 0.0356719738300704,
+    "ece_5bins": 0.014668897926382367
+  },
+  "development_0p8_decisions": {
+    "accepted": 953,
+    "rejected": 251,
+    "abstained": 294,
+    "accepted_pure_same_incident": 942,
+    "accepted_other": 11
+  },
+  "development_selected": {
+    "split": "development",
+    "method": "calibrated_2",
+    "ranker": "progression",
+    "queues": 15,
+    "eligible_alerts": 12498,
+    "expert_top20": 300,
+    "recoverable": 0,
+    "recall20_count": 0,
+    "p10_count": 0,
+    "pair_tp": 40394,
+    "false_grouped_pairs": 3211,
+    "mixed_predicted_groups": 236,
+    "predicted_groups": 2338,
+    "candidate_pairs": 1561,
+    "accepted_merges": 0,
+    "rejected_merges": 0,
+    "abstained": 0,
+    "group_recoverability": 0.0,
+    "incident_recall20": 0.0,
+    "p10": 0.0,
+    "ndcg20": 0.0,
+    "mrr": 0.0,
+    "grouped_pair_precision": 0.9263616557734204,
+    "runtime_seconds": 3.0411051999253687,
+    "prediction_sha256": "a6f508c7dad4f9a12aca74dac507bc406891807231b8e992ec9d3a392db2e0eb",
+    "cohort": "controlled_synthetic_not_guide",
+    "safety_pass": true
+  },
+  "locked_baseline": {
+    "split": "locked_test",
+    "method": "calibrated_2",
+    "ranker": "progression",
+    "queues": 30,
+    "eligible_alerts": 25069,
+    "expert_top20": 600,
+    "recoverable": 0,
+    "recall20_count": 0,
+    "p10_count": 0,
+    "pair_tp": 80986,
+    "false_grouped_pairs": 6408,
+    "mixed_predicted_groups": 457,
+    "predicted_groups": 4681,
+    "candidate_pairs": 3181,
+    "accepted_merges": 0,
+    "rejected_merges": 0,
+    "abstained": 0,
+    "group_recoverability": 0.0,
+    "incident_recall20": 0.0,
+    "p10": 0.0,
+    "ndcg20": 0.0,
+    "mrr": 0.0,
+    "grouped_pair_precision": 0.9266768885735863,
+    "runtime_seconds": 5.9387749001034535,
+    "prediction_sha256": "aa8283e8047f2d40b343deccf24caffe62bd9e7380bde526afc87641441270a3",
+    "cohort": "controlled_synthetic_not_guide"
+  },
+  "hashes": 480
+}

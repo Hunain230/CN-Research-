@@ -1,0 +1,12 @@
+{
+  "schema": "phase17-multisensor-synthetic-v1",
+  "namespace": "phase17a",
+  "seeds": {"train": 1711, "development": 1712, "locked_test": 1713},
+  "queues": {"train": 15, "development": 15, "locked_test": 30},
+  "incidents_per_queue": 25,
+  "benign_actions_per_queue": 50,
+  "decision_minute": 100,
+  "component_cap": 100,
+  "thresholds": [0.8, 0.9, 0.95],
+  "selection_rule": "Train reliability bins on training truth only. On development select among calibrated thresholds passing precision >=0.9, false pairs <= transaction/process baseline and mixed groups <= baseline; maximize recoverability then Recall@20 then P@10. Freeze before locked test."
+}

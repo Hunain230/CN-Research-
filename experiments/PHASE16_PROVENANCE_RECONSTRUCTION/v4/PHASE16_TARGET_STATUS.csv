@@ -1,0 +1,7 @@
+metric,observed,target,pass,gap
+Recall@20,0.6783333333333333,0.8,False,0.1216666666666667
+Recoverability,0.7516666666666667,0.85,False,0.09833333333333327
+P@10,0.63,0.6388,False,0.00880000000000003
+Pair precision,0.9861133028246805,0.9,True,0
+False grouped pairs,440,2402,True,0
+Mixed predicted groups,257,960,True,0

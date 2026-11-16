@@ -1,0 +1,16 @@
+queue_id,accepted,rejected,abstained,accepted_pure_same_incident,accepted_other
+phase17a_development_q000,67,8,19,65,2
+phase17a_development_q001,60,28,7,60,0
+phase17a_development_q002,59,15,21,58,1
+phase17a_development_q003,56,25,18,56,0
+phase17a_development_q004,63,11,13,63,0
+phase17a_development_q005,66,11,11,63,3
+phase17a_development_q006,66,12,29,66,0
+phase17a_development_q007,69,26,24,66,3
+phase17a_development_q008,64,4,18,64,0
+phase17a_development_q009,69,41,29,69,0
+phase17a_development_q010,52,17,20,51,1
+phase17a_development_q011,68,18,24,67,1
+phase17a_development_q012,57,10,20,57,0
+phase17a_development_q013,69,10,23,69,0
+phase17a_development_q014,68,15,18,68,0

@@ -1,0 +1,8 @@
+{
+  "top20_labels": 60,
+  "incomplete": 43,
+  "incomplete_mean_trace_coverage": 0.6657538843585356,
+  "incomplete_mean_fragments": 4.069767441860465,
+  "incomplete_with_less_than_80pct_trace": 37,
+  "incomplete_with_multiple_traces": 17
+}

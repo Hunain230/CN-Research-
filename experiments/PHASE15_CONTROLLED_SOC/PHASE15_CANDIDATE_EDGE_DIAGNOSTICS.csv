@@ -1,0 +1,4 @@
+split,queue_id,candidate_pairs,true_candidate_pairs,false_candidate_pairs,candidate_pair_precision,candidate_pair_recall,true_pair_denominator,status
+development,development_q00,429,385,44,0.8974358974358975,0.5628654970760234,684,evaluator_only_retrospective_diagnostic
+development,development_q01,614,555,59,0.9039087947882736,0.6544811320754716,848,evaluator_only_retrospective_diagnostic
+development,development_q02,547,511,36,0.9341864716636198,0.6054502369668247,844,evaluator_only_retrospective_diagnostic

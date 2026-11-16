@@ -1,0 +1,5 @@
+# Ground truth schema
+
+`datasets/<split>/ground_truth_private/<queue>.jsonl`: one row per generated alert: `alert_id`, `source_id`, `incident_id`, `scenario_id`, `attack_stage`, `malicious`. The simulator assigns membership from its independent scenario controller before any model prediction. Each benign alert receives a unique unrelated singleton ID. `datasets/<split>/ground_truth_private/<queue>_priority.jsonl`: one row per attack incident with scenario/template/family, preregistered impact, urgency, asset criticality, computed simulated priority score, and rank. The model never reads either file. `source_observations` and `generated_alerts` have no membership or priority labels. The JSONL ledger is append-only by sequence and records event, collection, detector, availability, processing, and analyst decision minutes for each alert artifact.
+
+The split unit is the complete scenario instance and its template variant; related alerts and observations cannot cross splits. No human priority judgments are present.

@@ -1,0 +1,4 @@
+queue_id,eligible_alerts,expert_top20,recoverable,recall20_count,p10_count,ndcg20,mrr,pair_tp,false_grouped_pairs,mixed_predicted_groups,predicted_groups,candidate_pairs,accepted_merges,rejected_merges,abstained,runtime_seconds,split,recoverability,recall20,p10,pair_precision
+locked_test_q00,296,20,6,3,1,0.26594519734058153,1.0,387,1,1,178,0,118,0,0,0.012964499997906387,locked_test,0.3,0.15,0.1,0.9974226804123711
+locked_test_q01,309,20,6,5,4,0.2966181721638014,0.5,447,0,0,176,0,133,0,0,0.010055100021418184,locked_test,0.3,0.25,0.4,1.0
+locked_test_q02,307,20,5,5,2,0.23167304758636162,0.5,362,9,5,182,0,125,0,0,0.01186759999836795,locked_test,0.25,0.25,0.2,0.9757412398921833
