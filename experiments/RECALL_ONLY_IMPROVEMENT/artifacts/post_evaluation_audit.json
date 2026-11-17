@@ -1,0 +1,41 @@
+{
+  "development": {
+    "queues": 15,
+    "eligible_alerts": 5466,
+    "unchanged_groups": 1970,
+    "recall_gain": 26,
+    "recall_loss": 2,
+    "p10_gain": 3,
+    "p10_loss": 3,
+    "p10_regression_queues": [
+      "phase16v4_development_q003",
+      "phase16v4_development_q007"
+    ]
+  },
+  "fresh_holdout": {
+    "queues": 30,
+    "eligible_alerts": 10869,
+    "unchanged_groups": 3974,
+    "recall_gain": 34,
+    "recall_loss": 0,
+    "p10_gain": 4,
+    "p10_loss": 7,
+    "p10_regression_queues": [
+      "recallh_locked_test_q003",
+      "recallh_locked_test_q004",
+      "recallh_locked_test_q009",
+      "recallh_locked_test_q019",
+      "recallh_locked_test_q020",
+      "recallh_locked_test_q021",
+      "recallh_locked_test_q027"
+    ]
+  },
+  "visible_fields": [
+    "severity",
+    "asset_criticality",
+    "event_type",
+    "source_id",
+    "event_minute"
+  ],
+  "private_truth_feature_access": false
+}

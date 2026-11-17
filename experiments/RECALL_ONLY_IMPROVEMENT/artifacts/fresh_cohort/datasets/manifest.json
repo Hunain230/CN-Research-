@@ -1,0 +1,171 @@
+{
+  "schema": "recall-only-fresh-phase16-family-v1",
+  "split_templates": {
+    "locked_test": [
+      "initial_access:v6",
+      "credential_compromise:v6",
+      "suspicious_authentication:v6",
+      "lateral_movement:v6",
+      "privilege_escalation:v6",
+      "persistence:v6",
+      "command_control:v6",
+      "data_staging:v6",
+      "exfiltration:v6",
+      "multi_stage_chain:v6"
+    ]
+  },
+  "queues": {
+    "locked_test": [
+      {
+        "queue_id": "recallh_locked_test_q000",
+        "alerts": 361,
+        "incidents": 25
+      },
+      {
+        "queue_id": "recallh_locked_test_q001",
+        "alerts": 361,
+        "incidents": 25
+      },
+      {
+        "queue_id": "recallh_locked_test_q002",
+        "alerts": 361,
+        "incidents": 25
+      },
+      {
+        "queue_id": "recallh_locked_test_q003",
+        "alerts": 367,
+        "incidents": 25
+      },
+      {
+        "queue_id": "recallh_locked_test_q004",
+        "alerts": 368,
+        "incidents": 25
+      },
+      {
+        "queue_id": "recallh_locked_test_q005",
+        "alerts": 368,
+        "incidents": 25
+      },
+      {
+        "queue_id": "recallh_locked_test_q006",
+        "alerts": 366,
+        "incidents": 25
+      },
+      {
+        "queue_id": "recallh_locked_test_q007",
+        "alerts": 367,
+        "incidents": 25
+      },
+      {
+        "queue_id": "recallh_locked_test_q008",
+        "alerts": 361,
+        "incidents": 25
+      },
+      {
+        "queue_id": "recallh_locked_test_q009",
+        "alerts": 362,
+        "incidents": 25
+      },
+      {
+        "queue_id": "recallh_locked_test_q010",
+        "alerts": 364,
+        "incidents": 25
+      },
+      {
+        "queue_id": "recallh_locked_test_q011",
+        "alerts": 363,
+        "incidents": 25
+      },
+      {
+        "queue_id": "recallh_locked_test_q012",
+        "alerts": 377,
+        "incidents": 25
+      },
+      {
+        "queue_id": "recallh_locked_test_q013",
+        "alerts": 367,
+        "incidents": 25
+      },
+      {
+        "queue_id": "recallh_locked_test_q014",
+        "alerts": 364,
+        "incidents": 25
+      },
+      {
+        "queue_id": "recallh_locked_test_q015",
+        "alerts": 351,
+        "incidents": 25
+      },
+      {
+        "queue_id": "recallh_locked_test_q016",
+        "alerts": 366,
+        "incidents": 25
+      },
+      {
+        "queue_id": "recallh_locked_test_q017",
+        "alerts": 357,
+        "incidents": 25
+      },
+      {
+        "queue_id": "recallh_locked_test_q018",
+        "alerts": 365,
+        "incidents": 25
+      },
+      {
+        "queue_id": "recallh_locked_test_q019",
+        "alerts": 360,
+        "incidents": 25
+      },
+      {
+        "queue_id": "recallh_locked_test_q020",
+        "alerts": 364,
+        "incidents": 25
+      },
+      {
+        "queue_id": "recallh_locked_test_q021",
+        "alerts": 379,
+        "incidents": 25
+      },
+      {
+        "queue_id": "recallh_locked_test_q022",
+        "alerts": 357,
+        "incidents": 25
+      },
+      {
+        "queue_id": "recallh_locked_test_q023",
+        "alerts": 373,
+        "incidents": 25
+      },
+      {
+        "queue_id": "recallh_locked_test_q024",
+        "alerts": 368,
+        "incidents": 25
+      },
+      {
+        "queue_id": "recallh_locked_test_q025",
+        "alerts": 357,
+        "incidents": 25
+      },
+      {
+        "queue_id": "recallh_locked_test_q026",
+        "alerts": 366,
+        "incidents": 25
+      },
+      {
+        "queue_id": "recallh_locked_test_q027",
+        "alerts": 372,
+        "incidents": 25
+      },
+      {
+        "queue_id": "recallh_locked_test_q028",
+        "alerts": 361,
+        "incidents": 25
+      },
+      {
+        "queue_id": "recallh_locked_test_q029",
+        "alerts": 355,
+        "incidents": 25
+      }
+    ]
+  }
+}

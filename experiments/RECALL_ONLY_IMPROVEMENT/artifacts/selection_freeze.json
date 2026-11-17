@@ -1,0 +1,15 @@
+{
+  "selected_candidate": "source_depth",
+  "selection_rule": "highest development Recall@20 among candidates passing all gates",
+  "development_recall": "220/300",
+  "development_p10": "93/150",
+  "frozen_files": {
+    "experiments/RECALL_ONLY_IMPROVEMENT/run_development.py": "5507968e7b18fe5e051caf2e0d445a932006eae390906be52c262ae5cd2e673e",
+    "experiments/RECALL_ONLY_IMPROVEMENT/run_holdout.py": "496db687a34d63207fb56256d61605bd7cde14c0044e0cda07a9bcdc22b0f1db",
+    "experiments/PHASE16_PROVENANCE_RECONSTRUCTION/v4/predict.py": "eaedbf92901413c5b6c5ef34a97755f578cee501b670cdf75364ac47a23c7f79",
+    "experiments/PHASE15_CONTROLLED_SOC/evaluation/evaluate.py": "dbc3fbff327400fad9f999e74bb69e1ca1968b34be6d2990effc3438e7dc1dc3",
+    "experiments/RECALL_ONLY_IMPROVEMENT/artifacts/development_source_depth.jsonl": "cad6268808582f51d5f2917a426b124cb1ed2af381c9f42e3c322e2ccef880f5"
+  },
+  "generator_sha256": "28686257cddb48c0c14ce3375f7f1b8965a1f451254799c4a13fcefd65742142",
+  "holdout_config_sha256": "c2e50022929ded459a789a9a53683923b4f6c8525798b6c06d90afa0897d0c23"
+}

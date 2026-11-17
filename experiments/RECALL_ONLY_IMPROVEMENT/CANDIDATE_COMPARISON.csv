@@ -1,0 +1,4 @@
+candidate,recall20_count,recall20_denominator,recoverable,p10_count,p10_denominator,pair_precision,false_grouped_pairs,mixed_groups,queue_safety_regressions,development_gate,prediction_sha256
+source_depth,220,300,233,93,150,0.9857839889163303,236,127,0,True,cad6268808582f51d5f2917a426b124cb1ed2af381c9f42e3c322e2ccef880f5
+diverse_depth,218,300,233,91,150,0.9857839889163303,236,127,0,False,e717312eb1291187ceb0c69c216e165b12e37f8fe1c020cae40896ea1f4a48f5
+temporal_depth,217,300,233,94,150,0.9857839889163303,236,127,0,True,32cbb98301a471afa9901972809b8f10e8ecbe8695952437cb06b86c9410e0cf
