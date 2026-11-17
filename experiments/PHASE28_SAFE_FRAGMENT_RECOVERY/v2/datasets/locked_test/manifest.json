@@ -1,0 +1,199 @@
+{
+  "schema": "phase28-safe-fragment-v1",
+  "namespace": "phase28h",
+  "seed": 282251,
+  "families": [
+    "mobile_identity_path",
+    "serverless_control",
+    "replica_exfiltration",
+    "certificate_replay",
+    "telemetry_agent_abuse",
+    "remote_maintenance",
+    "warehouse_access",
+    "snapshot_collection",
+    "privileged_recovery",
+    "regional_control_access"
+  ],
+  "queues": [
+    {
+      "queue_id": "phase28h_locked_test_q000",
+      "variant": "p28-h-independent",
+      "seed": 282251,
+      "alerts": 353
+    },
+    {
+      "queue_id": "phase28h_locked_test_q001",
+      "variant": "p28-h-delay",
+      "seed": 283282,
+      "alerts": 360
+    },
+    {
+      "queue_id": "phase28h_locked_test_q002",
+      "variant": "p28-h-dense",
+      "seed": 284313,
+      "alerts": 351
+    },
+    {
+      "queue_id": "phase28h_locked_test_q003",
+      "variant": "p28-h-independent",
+      "seed": 285344,
+      "alerts": 346
+    },
+    {
+      "queue_id": "phase28h_locked_test_q004",
+      "variant": "p28-h-delay",
+      "seed": 286375,
+      "alerts": 354
+    },
+    {
+      "queue_id": "phase28h_locked_test_q005",
+      "variant": "p28-h-dense",
+      "seed": 287406,
+      "alerts": 359
+    },
+    {
+      "queue_id": "phase28h_locked_test_q006",
+      "variant": "p28-h-independent",
+      "seed": 288437,
+      "alerts": 361
+    },
+    {
+      "queue_id": "phase28h_locked_test_q007",
+      "variant": "p28-h-delay",
+      "seed": 289468,
+      "alerts": 356
+    },
+    {
+      "queue_id": "phase28h_locked_test_q008",
+      "variant": "p28-h-dense",
+      "seed": 290499,
+      "alerts": 355
+    },
+    {
+      "queue_id": "phase28h_locked_test_q009",
+      "variant": "p28-h-independent",
+      "seed": 291530,
+      "alerts": 342
+    },
+    {
+      "queue_id": "phase28h_locked_test_q010",
+      "variant": "p28-h-delay",
+      "seed": 292561,
+      "alerts": 360
+    },
+    {
+      "queue_id": "phase28h_locked_test_q011",
+      "variant": "p28-h-dense",
+      "seed": 293592,
+      "alerts": 337
+    },
+    {
+      "queue_id": "phase28h_locked_test_q012",
+      "variant": "p28-h-independent",
+      "seed": 294623,
+      "alerts": 349
+    },
+    {
+      "queue_id": "phase28h_locked_test_q013",
+      "variant": "p28-h-delay",
+      "seed": 295654,
+      "alerts": 349
+    },
+    {
+      "queue_id": "phase28h_locked_test_q014",
+      "variant": "p28-h-dense",
+      "seed": 296685,
+      "alerts": 364
+    },
+    {
+      "queue_id": "phase28h_locked_test_q015",
+      "variant": "p28-h-independent",
+      "seed": 297716,
+      "alerts": 339
+    },
+    {
+      "queue_id": "phase28h_locked_test_q016",
+      "variant": "p28-h-delay",
+      "seed": 298747,
+      "alerts": 360
+    },
+    {
+      "queue_id": "phase28h_locked_test_q017",
+      "variant": "p28-h-dense",
+      "seed": 299778,
+      "alerts": 334
+    },
+    {
+      "queue_id": "phase28h_locked_test_q018",
+      "variant": "p28-h-independent",
+      "seed": 300809,
+      "alerts": 356
+    },
+    {
+      "queue_id": "phase28h_locked_test_q019",
+      "variant": "p28-h-delay",
+      "seed": 301840,
+      "alerts": 360
+    },
+    {
+      "queue_id": "phase28h_locked_test_q020",
+      "variant": "p28-h-dense",
+      "seed": 302871,
+      "alerts": 343
+    },
+    {
+      "queue_id": "phase28h_locked_test_q021",
+      "variant": "p28-h-independent",
+      "seed": 303902,
+      "alerts": 342
+    },
+    {
+      "queue_id": "phase28h_locked_test_q022",
+      "variant": "p28-h-delay",
+      "seed": 304933,
+      "alerts": 350
+    },
+    {
+      "queue_id": "phase28h_locked_test_q023",
+      "variant": "p28-h-dense",
+      "seed": 305964,
+      "alerts": 330
+    },
+    {
+      "queue_id": "phase28h_locked_test_q024",
+      "variant": "p28-h-independent",
+      "seed": 306995,
+      "alerts": 338
+    },
+    {
+      "queue_id": "phase28h_locked_test_q025",
+      "variant": "p28-h-delay",
+      "seed": 308026,
+      "alerts": 360
+    },
+    {
+      "queue_id": "phase28h_locked_test_q026",
+      "variant": "p28-h-dense",
+      "seed": 309057,
+      "alerts": 354
+    },
+    {
+      "queue_id": "phase28h_locked_test_q027",
+      "variant": "p28-h-independent",
+      "seed": 310088,
+      "alerts": 344
+    },
+    {
+      "queue_id": "phase28h_locked_test_q028",
+      "variant": "p28-h-delay",
+      "seed": 311119,
+      "alerts": 340
+    },
+    {
+      "queue_id": "phase28h_locked_test_q029",
+      "variant": "p28-h-dense",
+      "seed": 312150,
+      "alerts": 356
+    }
+  ]
+}

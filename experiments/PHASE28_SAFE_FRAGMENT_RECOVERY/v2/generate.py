@@ -1,12 +1,14 @@
 """Fresh Phase 28 scenarios using the frozen Phase 27 simulation infrastructure."""
 import json
+import importlib.util
 import sys
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 PHASE27 = HERE.parents[1] / "PHASE27_RECALL_GRAPH" / "v3"
-sys.path.insert(0, str(PHASE27))
-import generate as simulator  # noqa: E402
+spec = importlib.util.spec_from_file_location("phase27_frozen_generator", PHASE27 / "generate.py")
+simulator = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(simulator)
 
 FAMILIES = ("branch_office_pivot", "token_exchange_abuse", "snapshot_transfer",
             "session_replay", "agent_service_abuse", "remote_admin_execution",

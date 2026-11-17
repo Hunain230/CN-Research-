@@ -1,0 +1,27 @@
+{"family": "serverless_control", "fragment_sizes": [4, 5], "incident_id": "395335431ce2e90d6e86", "mode": "shared_controller"}
+{"family": "replica_exfiltration", "fragment_sizes": [4, 5], "incident_id": "200a38cfa7634f945141", "mode": "late_context"}
+{"family": "certificate_replay", "fragment_sizes": [5, 5], "incident_id": "ebf2c9795d194c77e9fc", "mode": "balanced"}
+{"family": "telemetry_agent_abuse", "fragment_sizes": [5, 5], "incident_id": "341f77d45e750c878b71", "mode": "shared_controller"}
+{"family": "remote_maintenance", "fragment_sizes": [10], "incident_id": "8e987d1c4a0dbd272148", "mode": "full"}
+{"family": "warehouse_access", "fragment_sizes": [5, 6], "incident_id": "0a6f9add042d23dfb3c3", "mode": "balanced"}
+{"family": "snapshot_collection", "fragment_sizes": [9, 1], "incident_id": "e6856ef4ee9ef33202de", "mode": "dominant"}
+{"family": "privileged_recovery", "fragment_sizes": [4, 4], "incident_id": "618821ddd8a2cdb46a71", "mode": "shared_controller"}
+{"family": "regional_control_access", "fragment_sizes": [4, 5], "incident_id": "8e2a19910daa4077b3fc", "mode": "late_context"}
+{"family": "mobile_identity_path", "fragment_sizes": [4, 5], "incident_id": "b5d0dcdc0576afb35330", "mode": "balanced"}
+{"family": "serverless_control", "fragment_sizes": [5, 5], "incident_id": "cd90193fb22ea352a55b", "mode": "shared_controller"}
+{"family": "replica_exfiltration", "fragment_sizes": [8], "incident_id": "47ea8b2baa0fd309dbd6", "mode": "full"}
+{"family": "certificate_replay", "fragment_sizes": [4, 5], "incident_id": "d578b47e72dc4ab33ba4", "mode": "balanced"}
+{"family": "telemetry_agent_abuse", "fragment_sizes": [7, 1], "incident_id": "05740a4e21ee974d158d", "mode": "dominant"}
+{"family": "remote_maintenance", "fragment_sizes": [5, 5], "incident_id": "470c33a0726696aeebb8", "mode": "shared_controller"}
+{"family": "warehouse_access", "fragment_sizes": [5, 5], "incident_id": "6bec2d94670f9be50c44", "mode": "late_context"}
+{"family": "snapshot_collection", "fragment_sizes": [4, 5], "incident_id": "ae3fadd7b3f34712d0d0", "mode": "balanced"}
+{"family": "privileged_recovery", "fragment_sizes": [5, 5], "incident_id": "4cd4bb47a86668c06dfc", "mode": "shared_controller"}
+{"family": "regional_control_access", "fragment_sizes": [9], "incident_id": "4677f19978b8a01de523", "mode": "full"}
+{"family": "mobile_identity_path", "fragment_sizes": [5, 6], "incident_id": "1aa49eddce30205ee05b", "mode": "balanced"}
+{"family": "serverless_control", "fragment_sizes": [11, 1], "incident_id": "4a563fa4e5936ef1636b", "mode": "dominant"}
+{"family": "replica_exfiltration", "fragment_sizes": [4, 5], "incident_id": "c0b49b4a48d949a1ad48", "mode": "shared_controller"}
+{"family": "certificate_replay", "fragment_sizes": [5, 6], "incident_id": "3e1dfc6c5bf04bf7fa50", "mode": "late_context"}
+{"family": "telemetry_agent_abuse", "fragment_sizes": [4, 4], "incident_id": "341e24011ae0eb9fc76c", "mode": "balanced"}
+{"family": "remote_maintenance", "fragment_sizes": [5, 6], "incident_id": "de2f4940bef6a2fbfdbf", "mode": "shared_controller"}
+{"family": "warehouse_access", "fragment_sizes": [9], "incident_id": "671fb0ae78bac04701a6", "mode": "full"}
+{"family": "snapshot_collection", "fragment_sizes": [4, 4], "incident_id": "d645e8a2f1e6b716d653", "mode": "balanced"}

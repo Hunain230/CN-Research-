@@ -1,0 +1,173 @@
+{
+  "development_selection": {
+    "baseline": {
+      "abstentions": 0,
+      "false_grouped_pairs": 0,
+      "mixed_groups": 0,
+      "mode": "baseline",
+      "ndcg20": 0.35368123397927725,
+      "p10_count": 43,
+      "pair_precision": 1.0,
+      "promotions": 0,
+      "queues": 20,
+      "ranker": "phase27_selected",
+      "recall10_count": 107,
+      "recall20_count": 107,
+      "recoverable": 107,
+      "rejections": 0,
+      "true_promotions": 0
+    },
+    "decision": "SELECT",
+    "eligible_candidates": 2,
+    "selected": {
+      "false_grouped_pairs": 0,
+      "mixed_groups": 0,
+      "mode": "component",
+      "p10_count": 78,
+      "passed": true,
+      "queue_safe": true,
+      "ranker": "phase27_selected",
+      "recall20_count": 207,
+      "recoverable": 207
+    }
+  },
+  "locked_result": {
+    "baseline": {
+      "false_grouped_pairs": 41,
+      "mixed_groups": 25,
+      "ndcg20": 0.38764244212650006,
+      "p10_count": 98,
+      "pair_precision": 0.997823779193206,
+      "queues": 30,
+      "recall10_count": 171,
+      "recall20_count": 171,
+      "recoverable": 171
+    },
+    "decision": "NO-GO",
+    "promotions": 180,
+    "queue_safe": false,
+    "selected": {
+      "false_grouped_pairs": 76,
+      "mixed_groups": 25,
+      "ndcg20": 0.53909249842765,
+      "p10_count": 125,
+      "pair_precision": 0.9971360741606059,
+      "queues": 30,
+      "recall10_count": 223,
+      "recall20_count": 291,
+      "recoverable": 291
+    },
+    "true_promotions": 173
+  },
+  "training_model": {
+    "class_counts": {
+      "0": 49,
+      "1": 126
+    },
+    "prior": 0.9321640810304452,
+    "threshold": -8.19855591,
+    "training_guarded_false": 0,
+    "training_guarded_true": 78,
+    "training_hypotheses": 175,
+    "training_true_above_threshold": 78,
+    "weights": {
+      "dual_lineage": [
+        0.8101858916564715,
+        -0.6393022457288892
+      ],
+      "low_duplicate": [
+        -0.020043281251019895,
+        0.6892332812388069
+      ],
+      "low_exposure": [
+        0.011959449835153759,
+        -0.9202046311952935
+      ],
+      "no_shared_root_edges": [
+        2.5376880941434092,
+        -4.77035223290535
+      ],
+      "recent_arrival": [
+        0.011959449835153759,
+        -0.9202046311952935
+      ],
+      "single_context": [
+        0.011959449835153759,
+        -0.9202046311952935
+      ],
+      "two_root_disjoint": [
+        3.44924322127173,
+        -0.9404073385128108
+      ]
+    }
+  },
+  "opportunities": {
+    "E_pending_evidence": 162,
+    "B_edges_insufficient_hypothesis": 122,
+    "F_correlated_or_duplicate_witnesses": 3,
+    "B_hypothesis_incomplete": 5,
+    "C_positive_evidence_needs_commit_check": 1
+  },
+  "development_hypotheses": {
+    "total": 287,
+    "qualifying": 208,
+    "top20_incidents": 166
+  },
+  "locked_hypotheses": {
+    "total": 477,
+    "qualifying": 326,
+    "top20_incidents": 229
+  },
+  "development_promotions": {
+    "calibrated|PROMOTE|0": 79,
+    "calibrated|PROMOTE|1": 208,
+    "component|RETAIN AS HYPOTHESIS|0": 79,
+    "component|RETAIN AS HYPOTHESIS|1": 81,
+    "component|PROMOTE|1": 127,
+    "selective|RETAIN AS HYPOTHESIS|0": 79,
+    "selective|RETAIN AS HYPOTHESIS|1": 85,
+    "selective|PROMOTE|1": 123
+  },
+  "locked_promotions": {
+    "RETAIN AS HYPOTHESIS|0": 144,
+    "RETAIN AS HYPOTHESIS|1": 153,
+    "PROMOTE|1": 173,
+    "PROMOTE|0": 7
+  },
+  "counterfactual": {
+    "promoted": 180,
+    "false_pair_avoiding_skips": 7,
+    "pairs_avoided_total": 35,
+    "injection_touching": 7
+  },
+  "bootstrap": {
+    "development": {
+      "recoverable": [
+        0.2125,
+        0.29
+      ],
+      "recall20_count": [
+        0.2125,
+        0.2875
+      ],
+      "p10_count": [
+        0.125,
+        0.22
+      ]
+    },
+    "locked_test": {
+      "recoverable": [
+        0.18,
+        0.223333
+      ],
+      "recall20_count": [
+        0.18,
+        0.223333
+      ],
+      "p10_count": [
+        0.036667,
+        0.14
+      ]
+    }
+  }
+}
