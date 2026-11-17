@@ -1,0 +1,113 @@
+{
+  "development_cascade": {
+    "('context', 'progression')": {
+      "fragmented_candidate": 215,
+      "recalled": 96,
+      "impure": 14,
+      "candidate_absent": 64,
+      "ranking_only": 11
+    },
+    "('orthogonal_veto', 'linear')": {
+      "fragmented_candidate": 95,
+      "recalled": 214,
+      "candidate_absent": 90,
+      "ranking_only": 1
+    }
+  },
+  "locked_cascade": {
+    "('context', 'progression')": {
+      "recalled": 194,
+      "incomplete": 372,
+      "ranking_only": 25,
+      "impure": 9
+    },
+    "('orthogonal_veto', 'linear')": {
+      "incomplete": 269,
+      "recalled": 331
+    }
+  },
+  "bootstrap_ci": {
+    "development": {
+      "context/progression": {
+        "recoverable": [
+          0.2275,
+          0.3075
+        ],
+        "recall20_count": [
+          0.2025,
+          0.2775
+        ],
+        "p10_count": [
+          0.22,
+          0.32
+        ]
+      },
+      "orthogonal_veto/linear": {
+        "recoverable": [
+          0.49,
+          0.585
+        ],
+        "recall20_count": [
+          0.485,
+          0.585
+        ],
+        "p10_count": [
+          0.365,
+          0.46
+        ]
+      }
+    },
+    "locked_test": {
+      "context/progression": {
+        "recoverable": [
+          0.3233333333333333,
+          0.4066666666666667
+        ],
+        "recall20_count": [
+          0.27666666666666667,
+          0.37
+        ],
+        "p10_count": [
+          0.26,
+          0.37
+        ]
+      },
+      "orthogonal_veto/linear": {
+        "recoverable": [
+          0.5183333333333333,
+          0.585
+        ],
+        "recall20_count": [
+          0.5183333333333333,
+          0.5833333333333334
+        ],
+        "p10_count": [
+          0.4033333333333333,
+          0.49
+        ]
+      }
+    }
+  },
+  "locked_summary": {
+    "context/progression": {
+      "queues": 30,
+      "recoverable": 219,
+      "recall20_count": 194,
+      "p10_count": 95,
+      "ndcg20": 0.3964417551940886,
+      "pair_precision": 0.9515310914897614,
+      "false_grouped_pairs": 1032,
+      "mixed_predicted_groups": 26
+    },
+    "orthogonal_veto/linear": {
+      "queues": 30,
+      "recoverable": 331,
+      "recall20_count": 331,
+      "p10_count": 134,
+      "ndcg20": 0.6131442932925971,
+      "pair_precision": 0.9999601116872756,
+      "false_grouped_pairs": 1,
+      "mixed_predicted_groups": 1
+    }
+  }
+}

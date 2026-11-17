@@ -1,0 +1,7 @@
+# Phase 25 decision
+
+**NO-GO for promotion.** The selected pipeline passed every registered development gate and was frozen before generating a fresh synthetic locked cohort. The one permitted holdout evaluation found a local safety regression: queue `phase25h_locked_test_q009` gained one false grouped pair and one mixed group where its baseline had zero. The strict no-increase-per-queue rule therefore fails. The [machine-readable gate](holdout_gate.json) records this decision. The accepted `process_tree` union is recorded at order 25 in [locked_union_pair_audit.csv](locked_union_pair_audit.csv); its point-in-time evidence is described in [the final report](PHASE25_FINAL_REPORT.md).
+
+The selected holdout's aggregate Recall@20 rose **194/600→331/600**, recoverability **219/600→331/600**, and P@10 **95/300→134/300**, with pair precision above 99.99%. Those gains do not excuse the local failure. The selected result also misses all three absolute recall/recovery/P@10 targets. On fixed development groups, its linear ranker lost 13 P@10 matches relative to progression, despite beating the registered end-to-end P@10 baseline; this is a separate ranking trade-off. No alternative candidate was run against the opened holdout, no gate was relaxed, and no second holdout was generated. The candidate is retained as a failed but informative frozen synthetic result.
+
+Phase 16 v4 remains the best selected historical synthetic holdout result on its separate cohort. Phase 24's 48.44% is development recall only. Phase 19 and Phase 22 locked cohorts remain sealed.

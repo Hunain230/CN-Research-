@@ -45,6 +45,11 @@ def main():
     for name, digest in freeze["hashes"].items():
         assert hashlib.sha256((V/name).read_bytes()).hexdigest() == digest
     assert not freeze["locked_cohort_created"] and not (V / "datasets" / "locked_test").exists()
+    dataset_hashes = {str(path.relative_to(V)): hashlib.sha256(path.read_bytes()).hexdigest()
+                      for path in sorted((V / "datasets").rglob("*.jsonl"))}
+    dataset_hashes["datasets/manifest.json"] = hashlib.sha256(
+        (V / "datasets" / "manifest.json").read_bytes()).hexdigest()
+    (HERE / "dataset_hashes.json").write_text(json.dumps(dataset_hashes, indent=2) + "\n")
     comparisons = read_csv("PHASE24_EXPERIMENT_COMPARISON.csv")
     queues = read_csv("PHASE24_QUEUE_METRICS.csv")
     incidents = read_csv("PHASE24_RECONSTRUCTION_AUDIT.csv")

@@ -1,0 +1,29 @@
+{
+  "development_cascade": {
+    "('context', 'progression')": {
+      "fragmented_candidate": 215,
+      "recalled": 96,
+      "impure": 14,
+      "candidate_absent": 64,
+      "ranking_only": 11
+    },
+    "('orthogonal_veto', 'linear')": {
+      "fragmented_candidate": 95,
+      "recalled": 214,
+      "candidate_absent": 90,
+      "ranking_only": 1
+    }
+  },
+  "locked_cascade": {
+    "('context', 'progression')": {
+      "recalled": 194,
+      "incomplete": 372,
+      "ranking_only": 25,
+      "impure": 9
+    },
+    "('orthogonal_veto', 'linear')": {
+      "incomplete": 269,
+      "recalled": 331
+    }
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "status": "locked_predictions_hashed_before_truth_audit",
+  "selection_sha256": "0ef40d2522e5f7ad36652643423447e4b0995b80c8d67e8679be103bd5d5f195",
+  "locked_manifest_sha256": "aa5d1b9b529d4a39ebcfea1571da75b701aada993b6df82c92390e23b4278de4",
+  "prediction_sha256": "bbc0a8290c229cffa07eaf8f2794fc3b2e28d61a2b8ac8bcae4cc4b42b52e297",
+  "decision_sha256": "d997a218720d45b64bef618470f6a2f80dd011d137205c8cb717f0e1e49cd6f7"
+}

@@ -1,0 +1,171 @@
+[
+  {
+    "order": 223,
+    "new_false_pairs": 42,
+    "cumulative_false_pairs": 42,
+    "left_size": 7,
+    "right_size": 6,
+    "source_field": "auth_session_ref",
+    "ref": "f92354188b952e83",
+    "ref_frequency_initial_components": 2,
+    "left_sources": 7,
+    "right_sources": 6,
+    "left_process_roots": 3,
+    "right_process_roots": 2,
+    "host_agreement": true,
+    "account_agreement": true,
+    "left_time": [
+      5,
+      20
+    ],
+    "right_time": [
+      18,
+      28
+    ],
+    "time_overlap": true,
+    "other_ref_disjoint": true,
+    "physical_same_incident_evaluator_only": false,
+    "left_incidents_evaluator_only": {
+      "phase24d_development_q014_incident_010": 7
+    },
+    "right_incidents_evaluator_only": {
+      "phase24d_development_q014_incident_011": 6
+    }
+  },
+  {
+    "order": 224,
+    "new_false_pairs": 12,
+    "cumulative_false_pairs": 54,
+    "left_size": 13,
+    "right_size": 2,
+    "source_field": "network_flow_ref",
+    "ref": "008f3b67ad9142b7",
+    "ref_frequency_initial_components": 2,
+    "left_sources": 13,
+    "right_sources": 2,
+    "left_process_roots": 5,
+    "right_process_roots": 1,
+    "host_agreement": true,
+    "account_agreement": true,
+    "left_time": [
+      5,
+      28
+    ],
+    "right_time": [
+      24,
+      26
+    ],
+    "time_overlap": true,
+    "other_ref_disjoint": true,
+    "physical_same_incident_evaluator_only": false,
+    "left_incidents_evaluator_only": {
+      "phase24d_development_q014_incident_010": 7,
+      "phase24d_development_q014_incident_011": 6
+    },
+    "right_incidents_evaluator_only": {
+      "phase24d_development_q014_incident_010": 2
+    }
+  },
+  {
+    "order": 225,
+    "new_false_pairs": 6,
+    "cumulative_false_pairs": 60,
+    "left_size": 1,
+    "right_size": 15,
+    "source_field": "auth_session_ref",
+    "ref": "6be338d568bbf00f",
+    "ref_frequency_initial_components": 2,
+    "left_sources": 1,
+    "right_sources": 15,
+    "left_process_roots": 0,
+    "right_process_roots": 6,
+    "host_agreement": true,
+    "account_agreement": true,
+    "left_time": [
+      23,
+      23
+    ],
+    "right_time": [
+      5,
+      28
+    ],
+    "time_overlap": true,
+    "other_ref_disjoint": false,
+    "physical_same_incident_evaluator_only": false,
+    "left_incidents_evaluator_only": {
+      "phase24d_development_q014_incident_010": 1
+    },
+    "right_incidents_evaluator_only": {
+      "phase24d_development_q014_incident_010": 9,
+      "phase24d_development_q014_incident_011": 6
+    }
+  },
+  {
+    "order": 226,
+    "new_false_pairs": 40,
+    "cumulative_false_pairs": 100,
+    "left_size": 4,
+    "right_size": 16,
+    "source_field": "network_flow_ref",
+    "ref": "f31cab3e406d9201",
+    "ref_frequency_initial_components": 2,
+    "left_sources": 3,
+    "right_sources": 16,
+    "left_process_roots": 1,
+    "right_process_roots": 6,
+    "host_agreement": true,
+    "account_agreement": true,
+    "left_time": [
+      13,
+      16
+    ],
+    "right_time": [
+      5,
+      28
+    ],
+    "time_overlap": true,
+    "other_ref_disjoint": true,
+    "physical_same_incident_evaluator_only": false,
+    "left_incidents_evaluator_only": {
+      "phase24d_development_q014_incident_011": 4
+    },
+    "right_incidents_evaluator_only": {
+      "phase24d_development_q014_incident_010": 10,
+      "phase24d_development_q014_incident_011": 6
+    }
+  },
+  {
+    "order": 227,
+    "new_false_pairs": 20,
+    "cumulative_false_pairs": 120,
+    "left_size": 20,
+    "right_size": 2,
+    "source_field": "auth_session_ref",
+    "ref": "f2db1ef227b139ae",
+    "ref_frequency_initial_components": 2,
+    "left_sources": 19,
+    "right_sources": 2,
+    "left_process_roots": 7,
+    "right_process_roots": 1,
+    "host_agreement": true,
+    "account_agreement": true,
+    "left_time": [
+      5,
+      28
+    ],
+    "right_time": [
+      31,
+      32
+    ],
+    "time_overlap": false,
+    "other_ref_disjoint": false,
+    "physical_same_incident_evaluator_only": false,
+    "left_incidents_evaluator_only": {
+      "phase24d_development_q014_incident_010": 10,
+      "phase24d_development_q014_incident_011": 10
+    },
+    "right_incidents_evaluator_only": {
+      "phase24d_development_q014_incident_011": 2
+    }
+  }
+]

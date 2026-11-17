@@ -1,0 +1,182 @@
+{
+  "schema": "phase25-safe-recall-v1",
+  "split_templates": {
+    "locked_test": [
+      "initial_access:v50",
+      "initial_access:v51",
+      "credential_compromise:v50",
+      "credential_compromise:v51",
+      "suspicious_authentication:v50",
+      "suspicious_authentication:v51",
+      "lateral_movement:v50",
+      "lateral_movement:v51",
+      "privilege_escalation:v50",
+      "privilege_escalation:v51",
+      "persistence:v50",
+      "persistence:v51",
+      "command_control:v50",
+      "command_control:v51",
+      "data_staging:v50",
+      "data_staging:v51",
+      "exfiltration:v50",
+      "exfiltration:v51",
+      "multi_stage_chain:v50",
+      "multi_stage_chain:v51"
+    ]
+  },
+  "queues": {
+    "locked_test": [
+      {
+        "queue_id": "phase25h_locked_test_q000",
+        "alerts": 329,
+        "incidents": 25
+      },
+      {
+        "queue_id": "phase25h_locked_test_q001",
+        "alerts": 335,
+        "incidents": 25
+      },
+      {
+        "queue_id": "phase25h_locked_test_q002",
+        "alerts": 352,
+        "incidents": 25
+      },
+      {
+        "queue_id": "phase25h_locked_test_q003",
+        "alerts": 335,
+        "incidents": 25
+      },
+      {
+        "queue_id": "phase25h_locked_test_q004",
+        "alerts": 329,
+        "incidents": 25
+      },
+      {
+        "queue_id": "phase25h_locked_test_q005",
+        "alerts": 336,
+        "incidents": 25
+      },
+      {
+        "queue_id": "phase25h_locked_test_q006",
+        "alerts": 333,
+        "incidents": 25
+      },
+      {
+        "queue_id": "phase25h_locked_test_q007",
+        "alerts": 332,
+        "incidents": 25
+      },
+      {
+        "queue_id": "phase25h_locked_test_q008",
+        "alerts": 325,
+        "incidents": 25
+      },
+      {
+        "queue_id": "phase25h_locked_test_q009",
+        "alerts": 329,
+        "incidents": 25
+      },
+      {
+        "queue_id": "phase25h_locked_test_q010",
+        "alerts": 335,
+        "incidents": 25
+      },
+      {
+        "queue_id": "phase25h_locked_test_q011",
+        "alerts": 345,
+        "incidents": 25
+      },
+      {
+        "queue_id": "phase25h_locked_test_q012",
+        "alerts": 341,
+        "incidents": 25
+      },
+      {
+        "queue_id": "phase25h_locked_test_q013",
+        "alerts": 344,
+        "incidents": 25
+      },
+      {
+        "queue_id": "phase25h_locked_test_q014",
+        "alerts": 349,
+        "incidents": 25
+      },
+      {
+        "queue_id": "phase25h_locked_test_q015",
+        "alerts": 354,
+        "incidents": 25
+      },
+      {
+        "queue_id": "phase25h_locked_test_q016",
+        "alerts": 327,
+        "incidents": 25
+      },
+      {
+        "queue_id": "phase25h_locked_test_q017",
+        "alerts": 316,
+        "incidents": 25
+      },
+      {
+        "queue_id": "phase25h_locked_test_q018",
+        "alerts": 327,
+        "incidents": 25
+      },
+      {
+        "queue_id": "phase25h_locked_test_q019",
+        "alerts": 353,
+        "incidents": 25
+      },
+      {
+        "queue_id": "phase25h_locked_test_q020",
+        "alerts": 356,
+        "incidents": 25
+      },
+      {
+        "queue_id": "phase25h_locked_test_q021",
+        "alerts": 336,
+        "incidents": 25
+      },
+      {
+        "queue_id": "phase25h_locked_test_q022",
+        "alerts": 349,
+        "incidents": 25
+      },
+      {
+        "queue_id": "phase25h_locked_test_q023",
+        "alerts": 338,
+        "incidents": 25
+      },
+      {
+        "queue_id": "phase25h_locked_test_q024",
+        "alerts": 320,
+        "incidents": 25
+      },
+      {
+        "queue_id": "phase25h_locked_test_q025",
+        "alerts": 344,
+        "incidents": 25
+      },
+      {
+        "queue_id": "phase25h_locked_test_q026",
+        "alerts": 332,
+        "incidents": 25
+      },
+      {
+        "queue_id": "phase25h_locked_test_q027",
+        "alerts": 334,
+        "incidents": 25
+      },
+      {
+        "queue_id": "phase25h_locked_test_q028",
+        "alerts": 339,
+        "incidents": 25
+      },
+      {
+        "queue_id": "phase25h_locked_test_q029",
+        "alerts": 338,
+        "incidents": 25
+      }
+    ]
+  },
+  "classification": "controlled_synthetic_independent_holdout_not_real_soc"
+}

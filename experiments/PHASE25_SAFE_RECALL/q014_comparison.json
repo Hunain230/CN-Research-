@@ -1,0 +1,10 @@
+{
+  "true": 786,
+  "true_orthogonal_disjoint": 261,
+  "true_time_overlap": 98,
+  "true_ref_frequency_two": 786,
+  "false": 5,
+  "false_orthogonal_disjoint": 3,
+  "false_time_overlap": 4,
+  "false_ref_frequency_two": 5
+}

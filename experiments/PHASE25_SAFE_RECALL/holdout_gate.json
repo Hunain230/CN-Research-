@@ -1,0 +1,13 @@
+{
+  "queue_safety_pass": false,
+  "queue_violations": [
+    {
+      "queue_id": "phase25h_locked_test_q009",
+      "selected_false_pairs": 1,
+      "baseline_false_pairs": 0,
+      "selected_mixed_groups": 1,
+      "baseline_mixed_groups": 0
+    }
+  ],
+  "decision": "NO-GO"
+}

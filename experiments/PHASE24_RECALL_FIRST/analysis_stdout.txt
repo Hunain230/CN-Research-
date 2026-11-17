@@ -1,0 +1,105 @@
+{
+  "baseline": {
+    "rule": "context",
+    "ranker": "progression",
+    "queues": "16",
+    "recoverable": "106",
+    "recall10_count": "65",
+    "recall20_count": "92",
+    "p10_count": "45",
+    "group_recoverability": "0.33125",
+    "incident_recall10": "0.203125",
+    "incident_recall20": "0.2875",
+    "p10": "0.28125",
+    "ndcg20": "0.3289436868644874",
+    "grouped_pair_precision": "0.9146778042959427",
+    "false_grouped_pairs": "1001",
+    "mixed_predicted_groups": "30",
+    "accepted_unions": "2844",
+    "abstained": "693",
+    "macro_recall20": "0.2875",
+    "queue_safety_pass": true,
+    "acceptance_pass": false
+  },
+  "candidate": {
+    "rule": "coherent_rare",
+    "ranker": "blend",
+    "queues": "16",
+    "recoverable": "165",
+    "recall10_count": "113",
+    "recall20_count": "155",
+    "p10_count": "70",
+    "group_recoverability": "0.515625",
+    "incident_recall10": "0.353125",
+    "incident_recall20": "0.484375",
+    "p10": "0.4375",
+    "ndcg20": "0.5719834564366053",
+    "grouped_pair_precision": "0.9911222904490642",
+    "false_grouped_pairs": "120",
+    "mixed_predicted_groups": "1",
+    "accepted_unions": "3247",
+    "abstained": "1049",
+    "macro_recall20": "0.484375",
+    "queue_safety_pass": false,
+    "acceptance_pass": false
+  },
+  "baseline_failure_counts": {
+    "recalled": 92,
+    "candidate_absent": 49,
+    "fragmented_candidate": 155,
+    "impure": 10,
+    "ranking_only": 14
+  },
+  "baseline_fragmented_reasons": {
+    "missing_context": 454
+  },
+  "baseline_ci": {
+    "recoverable": [
+      0.28125,
+      0.38125
+    ],
+    "recall20_count": [
+      0.234375,
+      0.34375
+    ],
+    "p10_count": [
+      0.23125,
+      0.33125
+    ]
+  },
+  "candidate_ci": {
+    "recoverable": [
+      0.459375,
+      0.571875
+    ],
+    "recall20_count": [
+      0.43125,
+      0.540625
+    ],
+    "p10_count": [
+      0.36875,
+      0.51875
+    ]
+  },
+  "queue_failures": [
+    {
+      "queue_id": "phase24d_development_q014",
+      "rule": "coherent_rare",
+      "ranker": "blend",
+      "eligible_alerts": "339",
+      "expert_top20": "20",
+      "recoverable": "6",
+      "recall10_count": "4",
+      "recall20_count": "6",
+      "p10_count": "3",
+      "ndcg20": "0.3198692251146741",
+      "pair_tp": "888",
+      "false_grouped_pairs": "120",
+      "mixed_predicted_groups": "1",
+      "candidate_proposals": "92",
+      "accepted_unions": "205",
+      "abstained": "40"
+    }
+  ],
+  "queue_worst_union": 42
+}

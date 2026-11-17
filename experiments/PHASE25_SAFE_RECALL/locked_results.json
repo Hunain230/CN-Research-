@@ -1,0 +1,30 @@
+{
+  "selected": {
+    "rule": "orthogonal_veto",
+    "ranker": "linear"
+  },
+  "summary": {
+    "context/progression": {
+      "queues": 30,
+      "recoverable": 219,
+      "recall20_count": 194,
+      "p10_count": 95,
+      "ndcg20": 0.3964417551940886,
+      "pair_precision": 0.9515310914897614,
+      "false_grouped_pairs": 1032,
+      "mixed_predicted_groups": 26
+    },
+    "orthogonal_veto/linear": {
+      "queues": 30,
+      "recoverable": 331,
+      "recall20_count": 331,
+      "p10_count": 134,
+      "ndcg20": 0.6131442932925971,
+      "pair_precision": 0.9999601116872756,
+      "false_grouped_pairs": 1,
+      "mixed_predicted_groups": 1
+    }
+  },
+  "prediction_freeze_sha256": "32b66624bed135025b36c0154cda1511a03fe17cada0bb2d3c200ea5dfffb91f",
+  "audit_completion_note": "same frozen predictions; initial summary failed on missing ranker field"
+}

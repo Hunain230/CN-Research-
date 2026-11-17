@@ -1,0 +1,19 @@
+{
+  "schema": "phase25-safe-recall-v1",
+  "namespace": "phase25a",
+  "seeds": {"train": 250101, "development": 250211},
+  "queues": {"train": 12, "development": 20},
+  "incidents_per_queue": 25,
+  "benign_observations_per_queue": 75,
+  "decision_minute": 100,
+  "component_cap": 100,
+  "completeness": 0.8,
+  "purity": 0.8,
+  "rules": ["context", "dual", "coherent_rare", "orthogonal_veto", "partial_orthogonal",
+    "collision_guard", "receipt_two", "receipt_one_rare"],
+  "rankers": ["progression", "severity", "learned", "blend", "linear"],
+  "development_gates": {"min_pair_precision": 0.90, "max_false_pairs_increase_total": 0,
+    "max_mixed_groups_increase_total": 0, "max_false_pairs_increase_per_queue": 0,
+    "max_mixed_groups_increase_per_queue": 0, "max_p10_count_drop": 1,
+    "require_recall20_improvement": true, "require_recoverability_competitive": true}
+}

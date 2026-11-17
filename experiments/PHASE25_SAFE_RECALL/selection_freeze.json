@@ -1,0 +1,349 @@
+{
+  "status": "frozen_before_locked_generation_or_truth_access",
+  "selected": {
+    "rule": "orthogonal_veto",
+    "ranker": "linear"
+  },
+  "baseline": {
+    "rule": "context",
+    "ranker": "progression"
+  },
+  "development_baseline": {
+    "rule": "context",
+    "ranker": "progression",
+    "queues": "20",
+    "recoverable": "107",
+    "recall10_count": "67",
+    "recall20_count": "96",
+    "p10_count": "54",
+    "group_recoverability": "0.2675",
+    "incident_recall10": "0.1675",
+    "incident_recall20": "0.24",
+    "p10": "0.27",
+    "ndcg20": "0.3193003327138557",
+    "grouped_pair_precision": "0.9084200816971933",
+    "false_grouped_pairs": "1390",
+    "mixed_predicted_groups": "27",
+    "accepted_unions": "3577",
+    "abstained": "687",
+    "macro_recall20": "0.24"
+  },
+  "development_selected": {
+    "rule": "orthogonal_veto",
+    "ranker": "linear",
+    "queues": "20",
+    "recoverable": "215",
+    "recall10_count": "146",
+    "recall20_count": "214",
+    "p10_count": "82",
+    "group_recoverability": "0.5375",
+    "incident_recall10": "0.365",
+    "incident_recall20": "0.535",
+    "p10": "0.41",
+    "ndcg20": "0.5945310719492901",
+    "grouped_pair_precision": "0.9979101948602089",
+    "false_grouped_pairs": "37",
+    "mixed_predicted_groups": "6",
+    "accepted_unions": "4136",
+    "abstained": "1198",
+    "macro_recall20": "0.5349999999999999"
+  },
+  "development_gate_results": [
+    {
+      "rule": "context",
+      "ranker": "progression",
+      "passed": false,
+      "queue_safe": true,
+      "reconciled": true
+    },
+    {
+      "rule": "context",
+      "ranker": "severity",
+      "passed": false,
+      "queue_safe": true,
+      "reconciled": true
+    },
+    {
+      "rule": "context",
+      "ranker": "learned",
+      "passed": true,
+      "queue_safe": true,
+      "reconciled": true
+    },
+    {
+      "rule": "context",
+      "ranker": "blend",
+      "passed": true,
+      "queue_safe": true,
+      "reconciled": true
+    },
+    {
+      "rule": "context",
+      "ranker": "linear",
+      "passed": true,
+      "queue_safe": true,
+      "reconciled": true
+    },
+    {
+      "rule": "dual",
+      "ranker": "progression",
+      "passed": false,
+      "queue_safe": true,
+      "reconciled": true
+    },
+    {
+      "rule": "dual",
+      "ranker": "severity",
+      "passed": false,
+      "queue_safe": true,
+      "reconciled": true
+    },
+    {
+      "rule": "dual",
+      "ranker": "learned",
+      "passed": false,
+      "queue_safe": true,
+      "reconciled": true
+    },
+    {
+      "rule": "dual",
+      "ranker": "blend",
+      "passed": false,
+      "queue_safe": true,
+      "reconciled": true
+    },
+    {
+      "rule": "dual",
+      "ranker": "linear",
+      "passed": false,
+      "queue_safe": true,
+      "reconciled": true
+    },
+    {
+      "rule": "coherent_rare",
+      "ranker": "progression",
+      "passed": true,
+      "queue_safe": true,
+      "reconciled": true
+    },
+    {
+      "rule": "coherent_rare",
+      "ranker": "severity",
+      "passed": false,
+      "queue_safe": true,
+      "reconciled": true
+    },
+    {
+      "rule": "coherent_rare",
+      "ranker": "learned",
+      "passed": true,
+      "queue_safe": true,
+      "reconciled": true
+    },
+    {
+      "rule": "coherent_rare",
+      "ranker": "blend",
+      "passed": true,
+      "queue_safe": true,
+      "reconciled": true
+    },
+    {
+      "rule": "coherent_rare",
+      "ranker": "linear",
+      "passed": true,
+      "queue_safe": true,
+      "reconciled": true
+    },
+    {
+      "rule": "orthogonal_veto",
+      "ranker": "progression",
+      "passed": true,
+      "queue_safe": true,
+      "reconciled": true
+    },
+    {
+      "rule": "orthogonal_veto",
+      "ranker": "severity",
+      "passed": false,
+      "queue_safe": true,
+      "reconciled": true
+    },
+    {
+      "rule": "orthogonal_veto",
+      "ranker": "learned",
+      "passed": true,
+      "queue_safe": true,
+      "reconciled": true
+    },
+    {
+      "rule": "orthogonal_veto",
+      "ranker": "blend",
+      "passed": true,
+      "queue_safe": true,
+      "reconciled": true
+    },
+    {
+      "rule": "orthogonal_veto",
+      "ranker": "linear",
+      "passed": true,
+      "queue_safe": true,
+      "reconciled": true
+    },
+    {
+      "rule": "partial_orthogonal",
+      "ranker": "progression",
+      "passed": false,
+      "queue_safe": false,
+      "reconciled": true
+    },
+    {
+      "rule": "partial_orthogonal",
+      "ranker": "severity",
+      "passed": false,
+      "queue_safe": false,
+      "reconciled": true
+    },
+    {
+      "rule": "partial_orthogonal",
+      "ranker": "learned",
+      "passed": false,
+      "queue_safe": false,
+      "reconciled": true
+    },
+    {
+      "rule": "partial_orthogonal",
+      "ranker": "blend",
+      "passed": false,
+      "queue_safe": false,
+      "reconciled": true
+    },
+    {
+      "rule": "partial_orthogonal",
+      "ranker": "linear",
+      "passed": false,
+      "queue_safe": false,
+      "reconciled": true
+    },
+    {
+      "rule": "collision_guard",
+      "ranker": "progression",
+      "passed": true,
+      "queue_safe": true,
+      "reconciled": true
+    },
+    {
+      "rule": "collision_guard",
+      "ranker": "severity",
+      "passed": false,
+      "queue_safe": true,
+      "reconciled": true
+    },
+    {
+      "rule": "collision_guard",
+      "ranker": "learned",
+      "passed": true,
+      "queue_safe": true,
+      "reconciled": true
+    },
+    {
+      "rule": "collision_guard",
+      "ranker": "blend",
+      "passed": true,
+      "queue_safe": true,
+      "reconciled": true
+    },
+    {
+      "rule": "collision_guard",
+      "ranker": "linear",
+      "passed": true,
+      "queue_safe": true,
+      "reconciled": true
+    },
+    {
+      "rule": "receipt_two",
+      "ranker": "progression",
+      "passed": false,
+      "queue_safe": false,
+      "reconciled": true
+    },
+    {
+      "rule": "receipt_two",
+      "ranker": "severity",
+      "passed": false,
+      "queue_safe": false,
+      "reconciled": true
+    },
+    {
+      "rule": "receipt_two",
+      "ranker": "learned",
+      "passed": false,
+      "queue_safe": false,
+      "reconciled": true
+    },
+    {
+      "rule": "receipt_two",
+      "ranker": "blend",
+      "passed": false,
+      "queue_safe": false,
+      "reconciled": true
+    },
+    {
+      "rule": "receipt_two",
+      "ranker": "linear",
+      "passed": false,
+      "queue_safe": false,
+      "reconciled": true
+    },
+    {
+      "rule": "receipt_one_rare",
+      "ranker": "progression",
+      "passed": false,
+      "queue_safe": false,
+      "reconciled": true
+    },
+    {
+      "rule": "receipt_one_rare",
+      "ranker": "severity",
+      "passed": false,
+      "queue_safe": false,
+      "reconciled": true
+    },
+    {
+      "rule": "receipt_one_rare",
+      "ranker": "learned",
+      "passed": false,
+      "queue_safe": false,
+      "reconciled": true
+    },
+    {
+      "rule": "receipt_one_rare",
+      "ranker": "blend",
+      "passed": false,
+      "queue_safe": false,
+      "reconciled": true
+    },
+    {
+      "rule": "receipt_one_rare",
+      "ranker": "linear",
+      "passed": false,
+      "queue_safe": false,
+      "reconciled": true
+    }
+  ],
+  "locked_cohort_existed_at_freeze": false,
+  "hashes": {
+    "config.json": "a33f2239350c44678ae12f4a5459578aa68224bd23541a9e0bd3fd7fe9cdfc65",
+    "generate.py": "5872640ccea933b7d7ac3b0ee93c5eee4715de0448d857b3cc1faf34e3802408",
+    "generate_locked.py": "171a73cb155830862cfb4c1d469bc2710006d75814ec788649370604f8554dd8",
+    "predict.py": "e1db6567d5037b91b99267ca76fe9cafd9b8b5348a96c21e6856a97a4816e5fd",
+    "run_study.py": "2a659e297695c03ce61f60004fe159f6290d883fda4c4fac8cc1e15920e043ac",
+    "evaluate_locked.py": "eb9592efcc4095298dc69d7dd9e447ff4717271f046e35c4238af8db252298c1",
+    "datasets/manifest.json": "0f53b01af69bc9a6fd1a7253e0eb4b49b525cbbeb12902c84e65e226e2b3ae98",
+    "ranker_model.json": "b7d1365549e1c94f640229f1c70cc2518d3a90c3ecef4e9bf8ea905bc29ddcc2",
+    "development_predictions.jsonl": "e190e2c0bedcce19945df9480451766d115762a7e933925ea7e17ac83ed788e4",
+    "development_decisions.jsonl": "357d5f1bc6abdccfe9a4cbc5a268636022aacd26b638d448edeae22104ec0a77",
+    "PHASE25_EXPERIMENT_COMPARISON.csv": "4131f9577523a7d0abc53a7e38004716c6f50ccfd63d153e3189a478caf72e22",
+    "PHASE25_QUEUE_METRICS.csv": "c3b857fc533112cff9890de73ac8c557fab08c0bfd5e6bb0af3e825e494e9133",
+    "PHASE25_UNION_PAIR_AUDIT.csv": "50cbec050fc5c45e6f33c40aab5603ec1ff617c0f53395fd61865d0291654b8b"
+  }
+}
