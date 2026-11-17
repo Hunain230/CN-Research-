@@ -1,0 +1,23 @@
+{
+  "feature_order": [
+    "source_depth",
+    "severity",
+    "criticality",
+    "event_diversity",
+    "source_count",
+    "time_span"
+  ],
+  "coefficient": [
+    1.0475744354756786,
+    0.36777833127278814,
+    0.7082163995835155,
+    0.26848784222821837,
+    -0.05311336426480454,
+    -0.013196934596809025
+  ],
+  "intercept": [
+    -18.64382214337837
+  ],
+  "train_groups": 1987,
+  "positive": 113
+}

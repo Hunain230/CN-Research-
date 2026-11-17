@@ -1,0 +1,5 @@
+# False merge and queue audit
+
+The matched Phase 16 development `source_depth` reference has 236 false grouped pairs, 127 mixed groups, and 98.5784% grouped-pair precision across 15 queues. All three Phase 30 candidates produced the same 236, 127, and 98.5784%. The direct-evidence recovery candidate and hybrid accepted zero new unions; the rank-only candidate permuted the existing groups. The official evaluator's queue outputs show zero increases in false pairs or mixed groups in all 45 candidate-queue comparisons. `QUEUE_LEVEL_AUDIT.csv` contains each paired queue result.
+
+These values do not imply the existing groups are clean. The gate concerns **additional** contamination. The strict rule's two dual-reference proposals were both rejected before union. Its proposal diagnostics are saved under `artifacts/`; accepted relationships are zero. Because no development candidate passed recall and P@10 gates, no Phase 30 holdout was generated or evaluated, and there is no holdout false-merge claim.

@@ -1,0 +1,33 @@
+{
+  "historical_phase16_recall": "407/600",
+  "historical_phase16_recoverability": "451/600",
+  "prior_fresh_holdout": {
+    "baseline_recall": "410/600",
+    "source_depth_recall": "444/600",
+    "baseline_p10": "193/300",
+    "source_depth_p10": "190/300",
+    "recoverability": "463/600",
+    "false_pairs": 306,
+    "mixed_groups": 252
+  },
+  "source_depth_score": "1.2*max(severity)+0.7*max(asset_criticality)+0.55*distinct(event_type)+0.7*min(distinct(source_id),10)",
+  "source_depth_tie_break": "group's first alert ID ascending",
+  "development_p10_gate_count": 97,
+  "development_p10_denominator": 150,
+  "sha256": {
+    "experiments/RECALL_ONLY_IMPROVEMENT/BASELINE_METRICS.json": "ad8f6ee78643156715c4a6c7f01602710f1d7f3d1c356209c9d36f8bd4e349d7",
+    "experiments/RECALL_ONLY_IMPROVEMENT/BASELINE_FREEZE.md": "fd14469f685a4b2e40c132d6f61b6ea50c133aa65c24fa93f44c1964c5465147",
+    "experiments/RECALL_ONLY_IMPROVEMENT/FINAL_REPORT.md": "a04c784dc24f6c3bfdc85bf6aa245e5d6a88d30710f441d4c59c12bec748aa91",
+    "experiments/RECALL_ONLY_IMPROVEMENT/CANDIDATE_COMPARISON.csv": "67c272f7640c9465686aba7ca4dac34909ef62e2c0bb1292fe5643c1a0b27a7c",
+    "experiments/RECALL_ONLY_IMPROVEMENT/FALSE_MERGE_AUDIT.md": "da6770484862017a6129e29405c8d8115caf534aa1a7d3d90cc27e88d9d54188",
+    "experiments/RECALL_ONLY_IMPROVEMENT/TEMPORAL_PROVENANCE_AUDIT.md": "df27da8cbefadb5ae1f381ffc380ffd586e97c9d10c0db31866996294db8eac6",
+    "experiments/RECALL_ONLY_IMPROVEMENT/run_development.py": "5507968e7b18fe5e051caf2e0d445a932006eae390906be52c262ae5cd2e673e",
+    "experiments/RECALL_ONLY_IMPROVEMENT/artifacts/development_source_depth.jsonl": "cad6268808582f51d5f2917a426b124cb1ed2af381c9f42e3c322e2ccef880f5",
+    "experiments/RECALL_ONLY_IMPROVEMENT/artifacts/development_source_depth_evaluation.json": "abce4226d2ac6e8f018579d1eee8154705a00389f1018a76fbdd53f9968d6396",
+    "experiments/RECALL_ONLY_IMPROVEMENT/artifacts/fresh_candidate_evaluation.json": "5ba230c8ae77631b5603572e9375860c2231f936fce4177386a09911ba68c208",
+    "experiments/RECALL_ONLY_IMPROVEMENT/artifacts/fresh_baseline_evaluation.json": "815bebb7f3cf701e28699eb6442d07b1114edbec14490c64893e3091ca57202d",
+    "experiments/PHASE16_PROVENANCE_RECONSTRUCTION/v4/predict.py": "eaedbf92901413c5b6c5ef34a97755f578cee501b670cdf75364ac47a23c7f79",
+    "experiments/PHASE16_PROVENANCE_RECONSTRUCTION/v4/configs/study.json": "2bfdd2efd70d9bebee571535d5a94dc28819d49e59bdbd6f3862f835d9bc528d",
+    "experiments/PHASE15_CONTROLLED_SOC/evaluation/evaluate.py": "dbc3fbff327400fad9f999e74bb69e1ca1968b34be6d2990effc3438e7dc1dc3"
+  }
+}

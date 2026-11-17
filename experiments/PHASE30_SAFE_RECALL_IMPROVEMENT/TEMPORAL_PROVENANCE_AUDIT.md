@@ -1,0 +1,7 @@
+# Temporal and provenance audit
+
+The unchanged Phase 16 `visible` function verifies alert and ledger coverage, rejects private alert fields, and filters evidence by availability at or before minute 100. The Phase 30 audit independently checked exact eligible-set agreement and timestamp cutoff for every candidate on all 15 development queues, covering 5,466 eligible alerts. No late alert entered inference. Event-time proximity in the recovery proposal uses only those visible alerts; it is not a substitute for evidence-availability time.
+
+The ranker reads severity, asset criticality, event type, source ID for observation counting, and event minute. Training labels come only from the existing train split; private incident membership and priority are never inference features. The recovery rule reads direct auth/flow references, host/account, source IDs, and event minute, with no private labels. Source IDs do not certify independent upstream control; even four distinct IDs may share a corrupted root. No claim of independent attestation is made.
+
+`BASELINE_FREEZE.json` hashes the original evaluator, Phase 16 predictor/config, prior reports, and source-depth artifacts. `audit_results.py` verified those hashes and the historical 407/600 result; the unchanged evaluator was used for all three development candidates. Three focused recovery tests passed, including ambiguous-reference and time-gap abstention. No fresh holdout was opened because the development gate failed.

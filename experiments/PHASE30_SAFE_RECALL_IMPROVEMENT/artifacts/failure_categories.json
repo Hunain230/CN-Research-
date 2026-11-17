@@ -1,0 +1,25 @@
+{
+  "development": {
+    "recalled": 220,
+    "fragmented": 66,
+    "fragmented_with_any_direct_ref": 13,
+    "fragmented_with_dual_lineage": 3,
+    "fragmented_with_context_match": 66,
+    "fragmented_with_contradiction": 0,
+    "fragmented_without_direct_ref": 53,
+    "incidents_with_late_evidence": 24,
+    "impure": 1,
+    "ranking_failure": 13
+  },
+  "opened_prior_holdout_diagnostic_only": {
+    "recalled": 444,
+    "fragmented": 137,
+    "fragmented_with_any_direct_ref": 27,
+    "fragmented_with_dual_lineage": 5,
+    "fragmented_with_context_match": 135,
+    "fragmented_with_contradiction": 0,
+    "fragmented_without_direct_ref": 110,
+    "ranking_failure": 19,
+    "incidents_with_late_evidence": 37
+  }
+}
