@@ -1,0 +1,12 @@
+{
+  "phase33_artifact_files": 116,
+  "phase33_inventory_sha256": "7dd08be2c87c9d24a6d606bbae489fe31e53a2f907fe1c8de3c57a1f350383d6",
+  "phase33_result": "260/300 recall, 281/300 recoverability, 113/150 P@10, zero false pairs/mixed groups",
+  "source_generator_sha256": "30dae0724e8c56945b6ee2cc530c19ddf6b257d85194d1b9815e6fc994719fa2",
+  "copied_generator_sha256": "30dae0724e8c56945b6ee2cc530c19ddf6b257d85194d1b9815e6fc994719fa2",
+  "validator_sha256": "c228baac180916dc34ee60294973f643ea4dccb8cb7eb2c6b25a26da98743f6d",
+  "config_sha256": "2c5fdde851c12782c1fc2a5c6c73f0fcdcabb99388bdb907c0406b2a74e507c7",
+  "phase31_model_sha256": "d42a6a1a8d83acee0ba541a80b1934346260c49eed23faa9c79efb9861bb2d0b",
+  "phase32_model_sha256": "9d52beb006854ece8cb084072cfc21384d98d175ce29ce1f36d29a6beaf76532",
+  "official_evaluator_sha256": "dbc3fbff327400fad9f999e74bb69e1ca1968b34be6d2990effc3438e7dc1dc3"
+}

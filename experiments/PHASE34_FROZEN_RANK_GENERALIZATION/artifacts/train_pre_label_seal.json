@@ -1,0 +1,6 @@
+{
+  "prediction_sha256": "b7a3dc495f954ac89e8b822a4621af8600f7f68b9e48d985b4f544ec28048a6f",
+  "decision_sha256": "e33984536ad9bb313764098bcd5b1232738b5c892c087297ac6935d2eb41a9cc",
+  "ranker_source_sha256": "c915a5d8a58d0ad359afca89d7ddba5d47e581e544ea8b6546e49e31aaefcb68",
+  "phase32_model_sha256": "9d52beb006854ece8cb084072cfc21384d98d175ce29ce1f36d29a6beaf76532"
+}

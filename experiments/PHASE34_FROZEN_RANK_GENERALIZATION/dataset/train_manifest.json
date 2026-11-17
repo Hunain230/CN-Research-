@@ -1,0 +1,57 @@
+{
+  "schema": "phase31-controlled-soc-evidence-v2",
+  "split": "train",
+  "seed": 34101,
+  "template_variant": 3,
+  "queues": [
+    {
+      "queue_id": "p31_train_q000",
+      "alerts": 345,
+      "claims": 178,
+      "incidents": 25
+    },
+    {
+      "queue_id": "p31_train_q001",
+      "alerts": 334,
+      "claims": 184,
+      "incidents": 25
+    },
+    {
+      "queue_id": "p31_train_q002",
+      "alerts": 331,
+      "claims": 188,
+      "incidents": 25
+    },
+    {
+      "queue_id": "p31_train_q003",
+      "alerts": 330,
+      "claims": 187,
+      "incidents": 25
+    },
+    {
+      "queue_id": "p31_train_q004",
+      "alerts": 330,
+      "claims": 183,
+      "incidents": 25
+    },
+    {
+      "queue_id": "p31_train_q005",
+      "alerts": 334,
+      "claims": 180,
+      "incidents": 25
+    },
+    {
+      "queue_id": "p31_train_q006",
+      "alerts": 346,
+      "claims": 180,
+      "incidents": 25
+    },
+    {
+      "queue_id": "p31_train_q007",
+      "alerts": 332,
+      "claims": 184,
+      "incidents": 25
+    }
+  ],
+  "decision_minute": 100
+}
