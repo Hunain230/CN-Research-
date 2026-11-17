@@ -1,0 +1,18 @@
+{
+  "schema": "phase28-safe-fragment-v1",
+  "namespace": "phase28a",
+  "seeds": {"train": 280417, "development": 280829},
+  "queues": {"train": 12, "development": 20},
+  "incidents_per_queue": 25,
+  "benign_sources_per_queue": 48,
+  "cutoff": 100,
+  "component_cap": 100,
+  "hypothesis_bound": 8,
+  "promotion": {"minimum_train_precision": 1.0, "minimum_distinct_lineage_types": 2,
+                "minimum_root_disjoint_witnesses": 2, "maximum_cross_pair_exposure": 100,
+                "component_threshold_margin": 0.0, "selective_threshold_margin": 0.10},
+  "development_gates": {"min_pair_precision": 0.90, "max_false_pair_increase": 0,
+    "max_mixed_group_increase": 0, "max_queue_false_pair_increase": 0,
+    "max_queue_mixed_group_increase": 0, "minimum_p10_change": 0,
+    "require_recoverability_improvement": true, "require_recall20_improvement": true}
+}

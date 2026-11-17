@@ -1,0 +1,198 @@
+{
+  "namespace": "phase27h",
+  "seed": 271909,
+  "scenario_families": [
+    "container_escape",
+    "supply_chain_update",
+    "federated_login",
+    "database_exfiltration",
+    "scheduled_persistence",
+    "api_key_abuse",
+    "cross_region_control",
+    "endpoint_tamper",
+    "backup_access",
+    "service_impersonation"
+  ],
+  "queues": [
+    {
+      "queue_id": "phase27h_locked_test_q000",
+      "variant": "h_path_swap",
+      "seed": 271909,
+      "alerts": 336
+    },
+    {
+      "queue_id": "phase27h_locked_test_q001",
+      "variant": "h_delayed_lineage",
+      "seed": 273132,
+      "alerts": 355
+    },
+    {
+      "queue_id": "phase27h_locked_test_q002",
+      "variant": "h_dense_benign",
+      "seed": 274355,
+      "alerts": 330
+    },
+    {
+      "queue_id": "phase27h_locked_test_q003",
+      "variant": "h_path_swap",
+      "seed": 275578,
+      "alerts": 350
+    },
+    {
+      "queue_id": "phase27h_locked_test_q004",
+      "variant": "h_delayed_lineage",
+      "seed": 276801,
+      "alerts": 330
+    },
+    {
+      "queue_id": "phase27h_locked_test_q005",
+      "variant": "h_dense_benign",
+      "seed": 278024,
+      "alerts": 345
+    },
+    {
+      "queue_id": "phase27h_locked_test_q006",
+      "variant": "h_path_swap",
+      "seed": 279247,
+      "alerts": 327
+    },
+    {
+      "queue_id": "phase27h_locked_test_q007",
+      "variant": "h_delayed_lineage",
+      "seed": 280470,
+      "alerts": 326
+    },
+    {
+      "queue_id": "phase27h_locked_test_q008",
+      "variant": "h_dense_benign",
+      "seed": 281693,
+      "alerts": 349
+    },
+    {
+      "queue_id": "phase27h_locked_test_q009",
+      "variant": "h_path_swap",
+      "seed": 282916,
+      "alerts": 341
+    },
+    {
+      "queue_id": "phase27h_locked_test_q010",
+      "variant": "h_delayed_lineage",
+      "seed": 284139,
+      "alerts": 345
+    },
+    {
+      "queue_id": "phase27h_locked_test_q011",
+      "variant": "h_dense_benign",
+      "seed": 285362,
+      "alerts": 309
+    },
+    {
+      "queue_id": "phase27h_locked_test_q012",
+      "variant": "h_path_swap",
+      "seed": 286585,
+      "alerts": 331
+    },
+    {
+      "queue_id": "phase27h_locked_test_q013",
+      "variant": "h_delayed_lineage",
+      "seed": 287808,
+      "alerts": 335
+    },
+    {
+      "queue_id": "phase27h_locked_test_q014",
+      "variant": "h_dense_benign",
+      "seed": 289031,
+      "alerts": 332
+    },
+    {
+      "queue_id": "phase27h_locked_test_q015",
+      "variant": "h_path_swap",
+      "seed": 290254,
+      "alerts": 363
+    },
+    {
+      "queue_id": "phase27h_locked_test_q016",
+      "variant": "h_delayed_lineage",
+      "seed": 291477,
+      "alerts": 349
+    },
+    {
+      "queue_id": "phase27h_locked_test_q017",
+      "variant": "h_dense_benign",
+      "seed": 292700,
+      "alerts": 336
+    },
+    {
+      "queue_id": "phase27h_locked_test_q018",
+      "variant": "h_path_swap",
+      "seed": 293923,
+      "alerts": 356
+    },
+    {
+      "queue_id": "phase27h_locked_test_q019",
+      "variant": "h_delayed_lineage",
+      "seed": 295146,
+      "alerts": 337
+    },
+    {
+      "queue_id": "phase27h_locked_test_q020",
+      "variant": "h_dense_benign",
+      "seed": 296369,
+      "alerts": 334
+    },
+    {
+      "queue_id": "phase27h_locked_test_q021",
+      "variant": "h_path_swap",
+      "seed": 297592,
+      "alerts": 345
+    },
+    {
+      "queue_id": "phase27h_locked_test_q022",
+      "variant": "h_delayed_lineage",
+      "seed": 298815,
+      "alerts": 348
+    },
+    {
+      "queue_id": "phase27h_locked_test_q023",
+      "variant": "h_dense_benign",
+      "seed": 300038,
+      "alerts": 334
+    },
+    {
+      "queue_id": "phase27h_locked_test_q024",
+      "variant": "h_path_swap",
+      "seed": 301261,
+      "alerts": 339
+    },
+    {
+      "queue_id": "phase27h_locked_test_q025",
+      "variant": "h_delayed_lineage",
+      "seed": 302484,
+      "alerts": 328
+    },
+    {
+      "queue_id": "phase27h_locked_test_q026",
+      "variant": "h_dense_benign",
+      "seed": 303707,
+      "alerts": 353
+    },
+    {
+      "queue_id": "phase27h_locked_test_q027",
+      "variant": "h_path_swap",
+      "seed": 304930,
+      "alerts": 338
+    },
+    {
+      "queue_id": "phase27h_locked_test_q028",
+      "variant": "h_delayed_lineage",
+      "seed": 306153,
+      "alerts": 342
+    },
+    {
+      "queue_id": "phase27h_locked_test_q029",
+      "variant": "h_dense_benign",
+      "seed": 307376,
+      "alerts": 340
+    }
+  ]
+}

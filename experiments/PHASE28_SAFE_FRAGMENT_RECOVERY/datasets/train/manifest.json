@@ -1,0 +1,91 @@
+{
+  "schema": "phase28-safe-fragment-v1",
+  "namespace": "phase28a",
+  "seed": 280417,
+  "families": [
+    "workstation_pivot",
+    "federation_token",
+    "batch_exfiltration",
+    "credential_replay",
+    "service_hijack",
+    "admin_tool_abuse",
+    "database_lateral",
+    "staged_archive",
+    "identity_persistence",
+    "control_plane_access"
+  ],
+  "queues": [
+    {
+      "queue_id": "phase28a_train_q000",
+      "variant": "p28-train-a",
+      "seed": 280417,
+      "alerts": 307
+    },
+    {
+      "queue_id": "phase28a_train_q001",
+      "variant": "p28-train-b",
+      "seed": 281448,
+      "alerts": 315
+    },
+    {
+      "queue_id": "phase28a_train_q002",
+      "variant": "p28-train-a",
+      "seed": 282479,
+      "alerts": 300
+    },
+    {
+      "queue_id": "phase28a_train_q003",
+      "variant": "p28-train-b",
+      "seed": 283510,
+      "alerts": 325
+    },
+    {
+      "queue_id": "phase28a_train_q004",
+      "variant": "p28-train-a",
+      "seed": 284541,
+      "alerts": 317
+    },
+    {
+      "queue_id": "phase28a_train_q005",
+      "variant": "p28-train-b",
+      "seed": 285572,
+      "alerts": 315
+    },
+    {
+      "queue_id": "phase28a_train_q006",
+      "variant": "p28-train-a",
+      "seed": 286603,
+      "alerts": 319
+    },
+    {
+      "queue_id": "phase28a_train_q007",
+      "variant": "p28-train-b",
+      "seed": 287634,
+      "alerts": 311
+    },
+    {
+      "queue_id": "phase28a_train_q008",
+      "variant": "p28-train-a",
+      "seed": 288665,
+      "alerts": 322
+    },
+    {
+      "queue_id": "phase28a_train_q009",
+      "variant": "p28-train-b",
+      "seed": 289696,
+      "alerts": 319
+    },
+    {
+      "queue_id": "phase28a_train_q010",
+      "variant": "p28-train-a",
+      "seed": 290727,
+      "alerts": 328
+    },
+    {
+      "queue_id": "phase28a_train_q011",
+      "variant": "p28-train-b",
+      "seed": 291758,
+      "alerts": 333
+    }
+  ]
+}

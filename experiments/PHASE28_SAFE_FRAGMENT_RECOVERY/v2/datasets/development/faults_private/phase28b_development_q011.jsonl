@@ -1,0 +1,25 @@
+{"family": "session_replay", "fragment_sizes": [6, 6], "incident_id": "36bc5bbd03bde92da7a1", "mode": "late_context"}
+{"family": "agent_service_abuse", "fragment_sizes": [5, 5], "incident_id": "d0127490f2fa775d5503", "mode": "balanced"}
+{"family": "remote_admin_execution", "fragment_sizes": [5, 5], "incident_id": "5083058a4dbe8d902672", "mode": "shared_controller"}
+{"family": "database_service_path", "fragment_sizes": [9], "incident_id": "8b042aba4ae748121501", "mode": "full"}
+{"family": "archive_collection", "fragment_sizes": [4, 4], "incident_id": "df2c9a9aadede97ed83c", "mode": "balanced"}
+{"family": "identity_fallback", "fragment_sizes": [9, 1], "incident_id": "970a8826836f14d0cd03", "mode": "dominant"}
+{"family": "control_api_access", "fragment_sizes": [4, 5], "incident_id": "59025326615295eb19c3", "mode": "shared_controller"}
+{"family": "branch_office_pivot", "fragment_sizes": [5, 5], "incident_id": "e6a61953a3b6e3a05e2b", "mode": "late_context"}
+{"family": "token_exchange_abuse", "fragment_sizes": [6, 6], "incident_id": "d47c7f6a6e0355236a8d", "mode": "balanced"}
+{"family": "snapshot_transfer", "fragment_sizes": [5, 5], "incident_id": "9a20024a62b1aa6bd6b8", "mode": "shared_controller"}
+{"family": "session_replay", "fragment_sizes": [9], "incident_id": "5c5153d8435686a7fe29", "mode": "full"}
+{"family": "agent_service_abuse", "fragment_sizes": [4, 4], "incident_id": "c5f9846482cd41807316", "mode": "balanced"}
+{"family": "remote_admin_execution", "fragment_sizes": [10, 1], "incident_id": "ad3406c8171333a046a1", "mode": "dominant"}
+{"family": "database_service_path", "fragment_sizes": [4, 4], "incident_id": "976245e24b12ec9641ac", "mode": "shared_controller"}
+{"family": "archive_collection", "fragment_sizes": [4, 5], "incident_id": "f16b07918eef601125c4", "mode": "late_context"}
+{"family": "identity_fallback", "fragment_sizes": [4, 4], "incident_id": "92d366a6952ffc2543c2", "mode": "balanced"}
+{"family": "control_api_access", "fragment_sizes": [4, 4], "incident_id": "613e354d94a827c0b447", "mode": "shared_controller"}
+{"family": "branch_office_pivot", "fragment_sizes": [11], "incident_id": "f36b7f4a9d45dc6c6091", "mode": "full"}
+{"family": "token_exchange_abuse", "fragment_sizes": [4, 5], "incident_id": "4962ebc9fbd28218b7a5", "mode": "balanced"}
+{"family": "snapshot_transfer", "fragment_sizes": [8, 1], "incident_id": "53e69ff2c86c0abbc135", "mode": "dominant"}
+{"family": "session_replay", "fragment_sizes": [4, 4], "incident_id": "e425e1c6699bb09ad29e", "mode": "shared_controller"}
+{"family": "agent_service_abuse", "fragment_sizes": [6, 6], "incident_id": "c54f46dee7fa5bd45548", "mode": "late_context"}
+{"family": "remote_admin_execution", "fragment_sizes": [5, 6], "incident_id": "38ba551c6be2cc6b7a72", "mode": "balanced"}
+{"family": "database_service_path", "fragment_sizes": [6, 6], "incident_id": "3adf6be68111c5b7ad55", "mode": "shared_controller"}
+{"family": "archive_collection", "fragment_sizes": [12], "incident_id": "1067905ca834e45a26d6", "mode": "full"}

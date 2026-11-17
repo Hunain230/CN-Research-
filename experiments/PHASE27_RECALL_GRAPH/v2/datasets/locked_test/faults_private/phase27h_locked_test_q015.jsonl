@@ -1,0 +1,27 @@
+{"family": "api_key_abuse", "fragment_sizes": [6, 6], "incident_id": "c831a3c88c66f50fa06c", "mode": "late_context"}
+{"family": "cross_region_control", "fragment_sizes": [6, 6], "incident_id": "645402b347674e9e0af4", "mode": "shared_controller"}
+{"family": "endpoint_tamper", "fragment_sizes": [6, 6], "incident_id": "f81e52460526ae9a89a3", "mode": "balanced"}
+{"family": "backup_access", "fragment_sizes": [11], "incident_id": "90d266108406bc6fbab6", "mode": "full"}
+{"family": "service_impersonation", "fragment_sizes": [7, 1], "incident_id": "e9420b99bb89eca3be68", "mode": "dominant"}
+{"family": "container_escape", "fragment_sizes": [6, 6], "incident_id": "0f1a906f12e7806f9cf3", "mode": "balanced"}
+{"family": "supply_chain_update", "fragment_sizes": [6, 6], "incident_id": "c4806132fee4a2322200", "mode": "late_context"}
+{"family": "federated_login", "fragment_sizes": [6, 6], "incident_id": "3206ddfda38611efdbec", "mode": "shared_controller"}
+{"family": "database_exfiltration", "fragment_sizes": [6, 6], "incident_id": "38c7a58ac209fa68bd76", "mode": "balanced"}
+{"family": "scheduled_persistence", "fragment_sizes": [12], "incident_id": "211b407b413a8aa880f2", "mode": "full"}
+{"family": "api_key_abuse", "fragment_sizes": [11, 1], "incident_id": "c09517325d075ae23855", "mode": "dominant"}
+{"family": "cross_region_control", "fragment_sizes": [5, 5], "incident_id": "87e8a005b2065bc0bc66", "mode": "balanced"}
+{"family": "endpoint_tamper", "fragment_sizes": [5, 5], "incident_id": "04df8a443d18b49dee50", "mode": "late_context"}
+{"family": "backup_access", "fragment_sizes": [5, 6], "incident_id": "6ab0c87e3ab18d853fe9", "mode": "shared_controller"}
+{"family": "service_impersonation", "fragment_sizes": [5, 6], "incident_id": "2f5f6269d869eaad943b", "mode": "balanced"}
+{"family": "container_escape", "fragment_sizes": [12], "incident_id": "ef46a4f2224fad5c8209", "mode": "full"}
+{"family": "supply_chain_update", "fragment_sizes": [7, 1], "incident_id": "b65a4c92d7f26a41aca8", "mode": "dominant"}
+{"family": "federated_login", "fragment_sizes": [4, 4], "incident_id": "84ec60a3252e659635a0", "mode": "balanced"}
+{"family": "database_exfiltration", "fragment_sizes": [5, 5], "incident_id": "1ece08b7777dad2c84df", "mode": "late_context"}
+{"family": "scheduled_persistence", "fragment_sizes": [5, 6], "incident_id": "58f3c0d0ccf1851da3d1", "mode": "shared_controller"}
+{"family": "api_key_abuse", "fragment_sizes": [6, 6], "incident_id": "4126f172c2373979ba7b", "mode": "balanced"}
+{"family": "cross_region_control", "fragment_sizes": [11], "incident_id": "60bbecc00aed30b1092f", "mode": "full"}
+{"family": "endpoint_tamper", "fragment_sizes": [8, 1], "incident_id": "c590cdc4c7b00953bf79", "mode": "dominant"}
+{"family": "backup_access", "fragment_sizes": [5, 5], "incident_id": "91ecdbf28aa225b09a4e", "mode": "balanced"}
+{"family": "service_impersonation", "fragment_sizes": [5, 6], "incident_id": "54c1f4a9017811a9bf83", "mode": "late_context"}
+{"family": "container_escape", "fragment_sizes": [5, 6], "incident_id": "2561567cdafe1ce7d556", "mode": "shared_controller"}
+{"family": "supply_chain_update", "fragment_sizes": [4, 5], "incident_id": "a8f6652be76cda106070", "mode": "balanced"}

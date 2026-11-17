@@ -1,0 +1,7 @@
+mode,ranker,queues,recoverable,recall10_count,recall20_count,p10_count,ndcg20,pair_precision,false_grouped_pairs,mixed_groups,promotions,true_promotions,abstentions,rejections
+baseline,progression,20,110,78,95,52,0.31672814935032645,1.0,0,0,0,0,0,0
+baseline,phase27_selected,20,110,110,110,53,0.37718335424044597,1.0,0,0,0,0,0,0
+baseline,hypothesis_aware,20,110,110,110,53,0.37718335424044597,1.0,0,0,0,0,0,0
+calibrated,phase27_selected,20,110,110,110,53,0.37718335424044597,1.0,0,0,0,0,288,0
+component,phase27_selected,20,110,110,110,53,0.37718335424044597,1.0,0,0,0,0,288,0
+selective,phase27_selected,20,110,110,110,53,0.37718335424044597,1.0,0,0,0,0,288,0

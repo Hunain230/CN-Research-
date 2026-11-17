@@ -1,0 +1,22 @@
+{
+  "schema": "phase27-recall-graph-v1",
+  "namespace": "phase27b",
+  "seeds": {"train": 271103, "development": 271719},
+  "queues": {"train": 12, "development": 20},
+  "incidents_per_queue": 25,
+  "benign_sources_per_queue": 42,
+  "cutoff": 100,
+  "completeness": 0.8,
+  "purity": 0.8,
+  "component_cap": 100,
+  "graph_confidence_thresholds": {"hypothesis": 0.52, "selective_union": 0.86, "risk_union": 0.92},
+  "development_gates": {
+    "min_pair_precision": 0.9,
+    "max_false_pair_increase": 0,
+    "max_mixed_group_increase": 0,
+    "max_queue_false_pair_increase": 0,
+    "max_queue_mixed_group_increase": 0,
+    "require_recall20_improvement": true,
+    "require_recoverability_or_hypothesis_improvement": true
+  }
+}

@@ -1,0 +1,25 @@
+{"family": "data_collection", "fragment_sizes": [7, 1], "incident_id": "cdc9af407ac82014a608", "mode": "dominant"}
+{"family": "control_channel", "fragment_sizes": [5, 6], "incident_id": "3917dd18db5dce259a7c", "mode": "shared_controller"}
+{"family": "privilege_path", "fragment_sizes": [4, 4], "incident_id": "5789befdd3c7aff59c96", "mode": "late_context"}
+{"family": "credential_access", "fragment_sizes": [4, 4], "incident_id": "dd8e401db0b5ab710d7d", "mode": "balanced"}
+{"family": "lateral_path", "fragment_sizes": [5, 5], "incident_id": "cda6f023b307a9da3dc7", "mode": "shared_controller"}
+{"family": "persistence_chain", "fragment_sizes": [11], "incident_id": "7ee32d547cdf2b6ca538", "mode": "full"}
+{"family": "staged_transfer", "fragment_sizes": [4, 5], "incident_id": "b6e34c5c4c384b52c7a5", "mode": "balanced"}
+{"family": "cloud_identity", "fragment_sizes": [7, 1], "incident_id": "dcbf5bd9d4432149e7a9", "mode": "dominant"}
+{"family": "remote_execution", "fragment_sizes": [5, 5], "incident_id": "994d9d24f5f3aa541a09", "mode": "shared_controller"}
+{"family": "service_abuse", "fragment_sizes": [6, 6], "incident_id": "ff4215b120699f3128f5", "mode": "late_context"}
+{"family": "data_collection", "fragment_sizes": [4, 5], "incident_id": "cc2ce827fbac2e6b38f0", "mode": "balanced"}
+{"family": "control_channel", "fragment_sizes": [4, 4], "incident_id": "333b9d528f89479e7e55", "mode": "shared_controller"}
+{"family": "privilege_path", "fragment_sizes": [11], "incident_id": "aacdd87bbe82eb9e9d7c", "mode": "full"}
+{"family": "credential_access", "fragment_sizes": [5, 6], "incident_id": "26909ff96d46d598feed", "mode": "balanced"}
+{"family": "lateral_path", "fragment_sizes": [10, 1], "incident_id": "e88c746fe1331606e84c", "mode": "dominant"}
+{"family": "persistence_chain", "fragment_sizes": [4, 5], "incident_id": "13d57bb17411de3f1514", "mode": "shared_controller"}
+{"family": "staged_transfer", "fragment_sizes": [6, 6], "incident_id": "8e6f184627edf35345c7", "mode": "late_context"}
+{"family": "cloud_identity", "fragment_sizes": [5, 6], "incident_id": "96f9f037165f479120ee", "mode": "balanced"}
+{"family": "remote_execution", "fragment_sizes": [4, 5], "incident_id": "d2796463bb71c6bf3efb", "mode": "shared_controller"}
+{"family": "service_abuse", "fragment_sizes": [9], "incident_id": "c8425fd67636dcd1a74b", "mode": "full"}
+{"family": "data_collection", "fragment_sizes": [5, 5], "incident_id": "4bac54c8484bf930c6a2", "mode": "balanced"}
+{"family": "control_channel", "fragment_sizes": [8, 1], "incident_id": "eb3e9ebd7f63bb9cef7e", "mode": "dominant"}
+{"family": "privilege_path", "fragment_sizes": [6, 6], "incident_id": "8a1ca9a96c04e23bd3e0", "mode": "shared_controller"}
+{"family": "credential_access", "fragment_sizes": [4, 4], "incident_id": "4ce2fb4932d66d0ed507", "mode": "late_context"}
+{"family": "lateral_path", "fragment_sizes": [4, 4], "incident_id": "e51b2b70b340a3c35e6b", "mode": "balanced"}

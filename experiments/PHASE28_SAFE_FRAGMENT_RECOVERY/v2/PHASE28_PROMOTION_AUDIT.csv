@@ -1,0 +1,862 @@
+queue_id,mode,hypothesis_id,decision,reason,score,threshold,qualifies,best_incident,oracle_rank,family,fragments,lineage_types,root_disjoint_witnesses,pair_exposure
+phase28b_development_q000,calibrated,100:145,PROMOTE,calibrated_score,5.65790068,-8.19855591,0,e01203cc28fc1528abf4,99,benign,2,1,0,1
+phase28b_development_q000,calibrated,50:137,PROMOTE,calibrated_score,5.65790068,-8.19855591,0,2e0f03781cc1c7b052ff,99,benign,2,1,0,1
+phase28b_development_q000,calibrated,33:101,PROMOTE,calibrated_score,4.20841254,-8.19855591,0,d1e0a0681039023ce19c,99,benign,2,2,0,1
+phase28b_development_q000,calibrated,0:24:32:59:84:123,PROMOTE,calibrated_score,-1.65013965,-8.19855591,1,2e232993d783768a2709,19,token_exchange_abuse,6,1,1,40
+phase28b_development_q000,calibrated,10:38:92:126:138:159,PROMOTE,calibrated_score,-1.65013965,-8.19855591,1,e6c11e646ae9d9accd22,17,control_api_access,6,1,1,40
+phase28b_development_q000,calibrated,23:30:77:81:90:144:161,PROMOTE,calibrated_score,-1.65013965,-8.19855591,1,201aef3cd248319294fc,18,identity_fallback,7,1,1,45
+phase28b_development_q000,calibrated,11:64:79:93:119:127:147,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,bf8cc0cafc1f5d9e9aaf,14,agent_service_abuse,7,2,2,62
+phase28b_development_q000,calibrated,19:62:104:111:139:160:162,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,8e0f0a548315fdf3d6f5,2,remote_admin_execution,7,2,2,57
+phase28b_development_q000,calibrated,25:48:75:86:102:105:125,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,1d2ad70f17953056032e,3,snapshot_transfer,7,2,2,55
+phase28b_development_q000,calibrated,2:61:65:131:133:150:156,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,9876bd8c5979bc5b24b3,1,snapshot_transfer,7,2,2,51
+phase28b_development_q000,calibrated,31:71:72:97:99:164,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,fc0353e353a35a050cc8,12,identity_fallback,6,2,2,35
+phase28b_development_q000,calibrated,9:20:36:103:106:109,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,4251d2eba8b3f4f532f3,20,token_exchange_abuse,6,2,2,30
+phase28b_development_q000,calibrated,3:45:66:87:95,PROMOTE,calibrated_score,-8.19855491,-8.19855591,1,f1b2d46e5abe99ff48bc,25,remote_admin_execution,5,2,2,53
+phase28b_development_q000,component,100:145,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,5.65790068,-8.19855591,0,e01203cc28fc1528abf4,99,benign,2,1,0,1
+phase28b_development_q000,component,50:137,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,5.65790068,-8.19855591,0,2e0f03781cc1c7b052ff,99,benign,2,1,0,1
+phase28b_development_q000,component,33:101,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,4.20841254,-8.19855591,0,d1e0a0681039023ce19c,99,benign,2,2,0,1
+phase28b_development_q000,component,0:24:32:59:84:123,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,2e232993d783768a2709,19,token_exchange_abuse,6,1,1,40
+phase28b_development_q000,component,10:38:92:126:138:159,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,e6c11e646ae9d9accd22,17,control_api_access,6,1,1,40
+phase28b_development_q000,component,23:30:77:81:90:144:161,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,201aef3cd248319294fc,18,identity_fallback,7,1,1,45
+phase28b_development_q000,component,11:64:79:93:119:127:147,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,bf8cc0cafc1f5d9e9aaf,14,agent_service_abuse,7,2,2,62
+phase28b_development_q000,component,19:62:104:111:139:160:162,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,8e0f0a548315fdf3d6f5,2,remote_admin_execution,7,2,2,57
+phase28b_development_q000,component,25:48:75:86:102:105:125,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,1d2ad70f17953056032e,3,snapshot_transfer,7,2,2,55
+phase28b_development_q000,component,2:61:65:131:133:150:156,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,9876bd8c5979bc5b24b3,1,snapshot_transfer,7,2,2,51
+phase28b_development_q000,component,31:71:72:97:99:164,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,fc0353e353a35a050cc8,12,identity_fallback,6,2,2,35
+phase28b_development_q000,component,9:20:36:103:106:109,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,4251d2eba8b3f4f532f3,20,token_exchange_abuse,6,2,2,30
+phase28b_development_q000,component,3:45:66:87:95,PROMOTE,calibrated_score,-8.19855491,-8.19855591,1,f1b2d46e5abe99ff48bc,25,remote_admin_execution,5,2,2,53
+phase28b_development_q000,selective,100:145,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,5.65790068,-8.19855591,0,e01203cc28fc1528abf4,99,benign,2,1,0,1
+phase28b_development_q000,selective,50:137,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,5.65790068,-8.19855591,0,2e0f03781cc1c7b052ff,99,benign,2,1,0,1
+phase28b_development_q000,selective,33:101,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,4.20841254,-8.19855591,0,d1e0a0681039023ce19c,99,benign,2,2,0,1
+phase28b_development_q000,selective,0:24:32:59:84:123,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,2e232993d783768a2709,19,token_exchange_abuse,6,1,1,40
+phase28b_development_q000,selective,10:38:92:126:138:159,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,e6c11e646ae9d9accd22,17,control_api_access,6,1,1,40
+phase28b_development_q000,selective,23:30:77:81:90:144:161,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,201aef3cd248319294fc,18,identity_fallback,7,1,1,45
+phase28b_development_q000,selective,11:64:79:93:119:127:147,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,bf8cc0cafc1f5d9e9aaf,14,agent_service_abuse,7,2,2,62
+phase28b_development_q000,selective,19:62:104:111:139:160:162,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,8e0f0a548315fdf3d6f5,2,remote_admin_execution,7,2,2,57
+phase28b_development_q000,selective,25:48:75:86:102:105:125,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,1d2ad70f17953056032e,3,snapshot_transfer,7,2,2,55
+phase28b_development_q000,selective,2:61:65:131:133:150:156,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,9876bd8c5979bc5b24b3,1,snapshot_transfer,7,2,2,51
+phase28b_development_q000,selective,31:71:72:97:99:164,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,fc0353e353a35a050cc8,12,identity_fallback,6,2,2,35
+phase28b_development_q000,selective,9:20:36:103:106:109,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,4251d2eba8b3f4f532f3,20,token_exchange_abuse,6,2,2,30
+phase28b_development_q000,selective,3:45:66:87:95,RETAIN AS HYPOTHESIS,selective_abstention,-8.19855491,-8.19855591,1,f1b2d46e5abe99ff48bc,25,remote_admin_execution,5,2,2,53
+phase28b_development_q001,calibrated,106:159,PROMOTE,calibrated_score,5.65790068,-8.19855591,0,2c1fdbfc259f01017aba,99,benign,2,1,0,1
+phase28b_development_q001,calibrated,61:149,PROMOTE,calibrated_score,5.65790068,-8.19855591,0,18f389ed46cb1f5691ec,99,benign,2,1,0,1
+phase28b_development_q001,calibrated,67:161,PROMOTE,calibrated_score,5.65790068,-8.19855591,0,af528ca3d0d47cca8241,99,benign,2,1,0,1
+phase28b_development_q001,calibrated,81:93,PROMOTE,calibrated_score,5.65790068,-8.19855591,0,58ce1321b435c39b5758,99,benign,2,1,0,1
+phase28b_development_q001,calibrated,30:46:56:89:113:120,PROMOTE,calibrated_score,-1.65013965,-8.19855591,1,b5016ba884a540c33602,11,archive_collection,6,1,1,40
+phase28b_development_q001,calibrated,42:59:99:107:148,PROMOTE,calibrated_score,-1.65013965,-8.19855591,1,8777ccbf5d46fa27bad8,4,archive_collection,5,1,1,29
+phase28b_development_q001,calibrated,44:58:65:98:111:152,PROMOTE,calibrated_score,-1.65013965,-8.19855591,1,0ce59892f84da0daf7eb,14,token_exchange_abuse,6,1,1,35
+phase28b_development_q001,calibrated,45:60:82:87:129:130,PROMOTE,calibrated_score,-1.65013965,-8.19855591,0,508d15a33889e17f9b5e,20,agent_service_abuse,6,0,0,15
+phase28b_development_q001,calibrated,8:12:77:116:132,PROMOTE,calibrated_score,-1.65013965,-8.19855591,1,dfdb33f7c03c9490550e,21,branch_office_pivot,5,1,1,22
+phase28b_development_q001,calibrated,14:22:27:78:88:103:139,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,f7cce7532380203e8e50,1,branch_office_pivot,7,2,2,45
+phase28b_development_q001,calibrated,23:69:71:72:119:134,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,e70a7260b85a27125664,8,database_service_path,6,2,2,30
+phase28b_development_q001,calibrated,24:33:66:105:125,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,6a648ffd6cb3c23a94ed,10,session_replay,5,2,2,22
+phase28b_development_q001,calibrated,57:102:112:117:135:141,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,df6c550525d982ce7db0,13,agent_service_abuse,6,2,2,30
+phase28b_development_q001,calibrated,6:37:131:137:155:160,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,043217d39726817934e6,5,session_replay,6,2,2,30
+phase28b_development_q001,calibrated,7:52:83:91:94:146,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,dc7fd58885f6e49de087,12,archive_collection,6,2,2,30
+phase28b_development_q001,component,106:159,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,5.65790068,-8.19855591,0,2c1fdbfc259f01017aba,99,benign,2,1,0,1
+phase28b_development_q001,component,61:149,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,5.65790068,-8.19855591,0,18f389ed46cb1f5691ec,99,benign,2,1,0,1
+phase28b_development_q001,component,67:161,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,5.65790068,-8.19855591,0,af528ca3d0d47cca8241,99,benign,2,1,0,1
+phase28b_development_q001,component,81:93,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,5.65790068,-8.19855591,0,58ce1321b435c39b5758,99,benign,2,1,0,1
+phase28b_development_q001,component,30:46:56:89:113:120,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,b5016ba884a540c33602,11,archive_collection,6,1,1,40
+phase28b_development_q001,component,42:59:99:107:148,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,8777ccbf5d46fa27bad8,4,archive_collection,5,1,1,29
+phase28b_development_q001,component,44:58:65:98:111:152,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,0ce59892f84da0daf7eb,14,token_exchange_abuse,6,1,1,35
+phase28b_development_q001,component,45:60:82:87:129:130,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,0,508d15a33889e17f9b5e,20,agent_service_abuse,6,0,0,15
+phase28b_development_q001,component,8:12:77:116:132,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,dfdb33f7c03c9490550e,21,branch_office_pivot,5,1,1,22
+phase28b_development_q001,component,14:22:27:78:88:103:139,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,f7cce7532380203e8e50,1,branch_office_pivot,7,2,2,45
+phase28b_development_q001,component,23:69:71:72:119:134,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,e70a7260b85a27125664,8,database_service_path,6,2,2,30
+phase28b_development_q001,component,24:33:66:105:125,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,6a648ffd6cb3c23a94ed,10,session_replay,5,2,2,22
+phase28b_development_q001,component,57:102:112:117:135:141,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,df6c550525d982ce7db0,13,agent_service_abuse,6,2,2,30
+phase28b_development_q001,component,6:37:131:137:155:160,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,043217d39726817934e6,5,session_replay,6,2,2,30
+phase28b_development_q001,component,7:52:83:91:94:146,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,dc7fd58885f6e49de087,12,archive_collection,6,2,2,30
+phase28b_development_q001,selective,106:159,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,5.65790068,-8.19855591,0,2c1fdbfc259f01017aba,99,benign,2,1,0,1
+phase28b_development_q001,selective,61:149,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,5.65790068,-8.19855591,0,18f389ed46cb1f5691ec,99,benign,2,1,0,1
+phase28b_development_q001,selective,67:161,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,5.65790068,-8.19855591,0,af528ca3d0d47cca8241,99,benign,2,1,0,1
+phase28b_development_q001,selective,81:93,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,5.65790068,-8.19855591,0,58ce1321b435c39b5758,99,benign,2,1,0,1
+phase28b_development_q001,selective,30:46:56:89:113:120,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,b5016ba884a540c33602,11,archive_collection,6,1,1,40
+phase28b_development_q001,selective,42:59:99:107:148,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,8777ccbf5d46fa27bad8,4,archive_collection,5,1,1,29
+phase28b_development_q001,selective,44:58:65:98:111:152,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,0ce59892f84da0daf7eb,14,token_exchange_abuse,6,1,1,35
+phase28b_development_q001,selective,45:60:82:87:129:130,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,0,508d15a33889e17f9b5e,20,agent_service_abuse,6,0,0,15
+phase28b_development_q001,selective,8:12:77:116:132,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,dfdb33f7c03c9490550e,21,branch_office_pivot,5,1,1,22
+phase28b_development_q001,selective,14:22:27:78:88:103:139,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,f7cce7532380203e8e50,1,branch_office_pivot,7,2,2,45
+phase28b_development_q001,selective,23:69:71:72:119:134,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,e70a7260b85a27125664,8,database_service_path,6,2,2,30
+phase28b_development_q001,selective,24:33:66:105:125,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,6a648ffd6cb3c23a94ed,10,session_replay,5,2,2,22
+phase28b_development_q001,selective,57:102:112:117:135:141,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,df6c550525d982ce7db0,13,agent_service_abuse,6,2,2,30
+phase28b_development_q001,selective,6:37:131:137:155:160,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,043217d39726817934e6,5,session_replay,6,2,2,30
+phase28b_development_q001,selective,7:52:83:91:94:146,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,dc7fd58885f6e49de087,12,archive_collection,6,2,2,30
+phase28b_development_q002,calibrated,0:165,PROMOTE,calibrated_score,5.65790068,-8.19855591,0,9305dca0c93bb7c85db8,99,benign,2,1,0,1
+phase28b_development_q002,calibrated,107:108,PROMOTE,calibrated_score,5.65790068,-8.19855591,0,53f1653d8a8c1dc2abcc,99,benign,2,1,0,1
+phase28b_development_q002,calibrated,139:149,PROMOTE,calibrated_score,4.20841254,-8.19855591,0,7ca41503ea23e96bd3fd,99,benign,2,2,0,1
+phase28b_development_q002,calibrated,33:48,PROMOTE,calibrated_score,4.20841254,-8.19855591,0,f0b6758cea7aca96f58c,99,benign,2,2,0,1
+phase28b_development_q002,calibrated,10:43:66:105:161,PROMOTE,calibrated_score,-1.65013965,-8.19855591,1,3a65e1199feb72c80d9e,15,remote_admin_execution,5,1,1,29
+phase28b_development_q002,calibrated,18:70:75:132:138,PROMOTE,calibrated_score,-1.65013965,-8.19855591,1,921207894f6bf903fbb9,23,snapshot_transfer,5,1,1,22
+phase28b_development_q002,calibrated,20:44:113:129:136:143:144,PROMOTE,calibrated_score,-1.65013965,-8.19855591,1,38ed7c8768d3a20fe435,3,control_api_access,7,1,1,55
+phase28b_development_q002,calibrated,23:35:41:78:98:114:122,PROMOTE,calibrated_score,-1.65013965,-8.19855591,1,af2b23abf2ea34f126c6,17,branch_office_pivot,7,1,1,57
+phase28b_development_q002,calibrated,2:14:62:116:135,PROMOTE,calibrated_score,-1.65013965,-8.19855591,1,47ce44d2fbb84af5754f,19,session_replay,5,1,1,26
+phase28b_development_q002,calibrated,30:100:101:141:156:162,PROMOTE,calibrated_score,-1.65013965,-8.19855591,1,6c3254e0ff7e025b9fd3,24,control_api_access,6,1,1,35
+phase28b_development_q002,calibrated,3:42:45:93:109:119:145,PROMOTE,calibrated_score,-1.65013965,-8.19855591,1,be0ff612b6802c55351a,1,control_api_access,7,1,1,51
+phase28b_development_q002,calibrated,12:38:52:63:87:118,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,cbde63236f4323b0dad2,10,identity_fallback,6,2,2,44
+phase28b_development_q002,calibrated,19:29:54:76:92:112,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,b8136031d75bf43c1eb4,9,snapshot_transfer,6,2,2,38
+phase28b_development_q002,calibrated,1:5:21:58:125:130:140,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,78504fd85797470dbfe7,5,database_service_path,7,2,2,62
+phase28b_development_q002,calibrated,53:91:123:133:137:147,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,ada8ac0daf8c05d3a26d,21,database_service_path,6,2,2,30
+phase28b_development_q002,component,0:165,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,5.65790068,-8.19855591,0,9305dca0c93bb7c85db8,99,benign,2,1,0,1
+phase28b_development_q002,component,107:108,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,5.65790068,-8.19855591,0,53f1653d8a8c1dc2abcc,99,benign,2,1,0,1
+phase28b_development_q002,component,139:149,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,4.20841254,-8.19855591,0,7ca41503ea23e96bd3fd,99,benign,2,2,0,1
+phase28b_development_q002,component,33:48,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,4.20841254,-8.19855591,0,f0b6758cea7aca96f58c,99,benign,2,2,0,1
+phase28b_development_q002,component,10:43:66:105:161,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,3a65e1199feb72c80d9e,15,remote_admin_execution,5,1,1,29
+phase28b_development_q002,component,18:70:75:132:138,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,921207894f6bf903fbb9,23,snapshot_transfer,5,1,1,22
+phase28b_development_q002,component,20:44:113:129:136:143:144,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,38ed7c8768d3a20fe435,3,control_api_access,7,1,1,55
+phase28b_development_q002,component,23:35:41:78:98:114:122,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,af2b23abf2ea34f126c6,17,branch_office_pivot,7,1,1,57
+phase28b_development_q002,component,2:14:62:116:135,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,47ce44d2fbb84af5754f,19,session_replay,5,1,1,26
+phase28b_development_q002,component,30:100:101:141:156:162,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,6c3254e0ff7e025b9fd3,24,control_api_access,6,1,1,35
+phase28b_development_q002,component,3:42:45:93:109:119:145,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,be0ff612b6802c55351a,1,control_api_access,7,1,1,51
+phase28b_development_q002,component,12:38:52:63:87:118,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,cbde63236f4323b0dad2,10,identity_fallback,6,2,2,44
+phase28b_development_q002,component,19:29:54:76:92:112,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,b8136031d75bf43c1eb4,9,snapshot_transfer,6,2,2,38
+phase28b_development_q002,component,1:5:21:58:125:130:140,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,78504fd85797470dbfe7,5,database_service_path,7,2,2,62
+phase28b_development_q002,component,53:91:123:133:137:147,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,ada8ac0daf8c05d3a26d,21,database_service_path,6,2,2,30
+phase28b_development_q002,selective,0:165,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,5.65790068,-8.19855591,0,9305dca0c93bb7c85db8,99,benign,2,1,0,1
+phase28b_development_q002,selective,107:108,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,5.65790068,-8.19855591,0,53f1653d8a8c1dc2abcc,99,benign,2,1,0,1
+phase28b_development_q002,selective,139:149,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,4.20841254,-8.19855591,0,7ca41503ea23e96bd3fd,99,benign,2,2,0,1
+phase28b_development_q002,selective,33:48,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,4.20841254,-8.19855591,0,f0b6758cea7aca96f58c,99,benign,2,2,0,1
+phase28b_development_q002,selective,10:43:66:105:161,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,3a65e1199feb72c80d9e,15,remote_admin_execution,5,1,1,29
+phase28b_development_q002,selective,18:70:75:132:138,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,921207894f6bf903fbb9,23,snapshot_transfer,5,1,1,22
+phase28b_development_q002,selective,20:44:113:129:136:143:144,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,38ed7c8768d3a20fe435,3,control_api_access,7,1,1,55
+phase28b_development_q002,selective,23:35:41:78:98:114:122,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,af2b23abf2ea34f126c6,17,branch_office_pivot,7,1,1,57
+phase28b_development_q002,selective,2:14:62:116:135,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,47ce44d2fbb84af5754f,19,session_replay,5,1,1,26
+phase28b_development_q002,selective,30:100:101:141:156:162,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,6c3254e0ff7e025b9fd3,24,control_api_access,6,1,1,35
+phase28b_development_q002,selective,3:42:45:93:109:119:145,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,be0ff612b6802c55351a,1,control_api_access,7,1,1,51
+phase28b_development_q002,selective,12:38:52:63:87:118,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,cbde63236f4323b0dad2,10,identity_fallback,6,2,2,44
+phase28b_development_q002,selective,19:29:54:76:92:112,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,b8136031d75bf43c1eb4,9,snapshot_transfer,6,2,2,38
+phase28b_development_q002,selective,1:5:21:58:125:130:140,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,78504fd85797470dbfe7,5,database_service_path,7,2,2,62
+phase28b_development_q002,selective,53:91:123:133:137:147,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,ada8ac0daf8c05d3a26d,21,database_service_path,6,2,2,30
+phase28b_development_q003,calibrated,32:109,PROMOTE,calibrated_score,5.65790068,-8.19855591,0,308d89e36be0321ed6d4,99,benign,2,1,0,1
+phase28b_development_q003,calibrated,59:123,PROMOTE,calibrated_score,5.65790068,-8.19855591,0,914efaba23990a9e16a3,99,benign,2,1,0,1
+phase28b_development_q003,calibrated,81:93,PROMOTE,calibrated_score,5.65790068,-8.19855591,0,9d170ddcdaa3544fdf27,99,benign,2,1,0,1
+phase28b_development_q003,calibrated,116:125,PROMOTE,calibrated_score,4.20841254,-8.19855591,0,3847c8cfb33469c8167a,99,benign,2,2,0,1
+phase28b_development_q003,calibrated,17:51:64:117:142,PROMOTE,calibrated_score,-1.65013965,-8.19855591,0,a3fb254b3a95fea0597c,7,token_exchange_abuse,5,0,0,10
+phase28b_development_q003,calibrated,33:60:70:80:96:112,PROMOTE,calibrated_score,-1.65013965,-8.19855591,1,9b33d3f19ec558d767e3,18,agent_service_abuse,6,1,1,40
+phase28b_development_q003,calibrated,3:9:24:25:40:89:90,PROMOTE,calibrated_score,-1.65013965,-8.19855591,1,87e703d715ef884b2a7a,13,remote_admin_execution,7,1,1,55
+phase28b_development_q003,calibrated,5:7:29:44:101:166,PROMOTE,calibrated_score,-1.65013965,-8.19855591,1,29d03557e76869284194,6,agent_service_abuse,6,1,1,44
+phase28b_development_q003,calibrated,12:99:121:128:138:146,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,66087a8d073f033ddea8,2,snapshot_transfer,6,2,2,44
+phase28b_development_q003,calibrated,15:76:77:108:153:165,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,4d07f31a6f940fb63840,10,identity_fallback,6,2,2,35
+phase28b_development_q003,calibrated,23:27:49:52:115:131,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,7803efc4e195d7d7a439,8,branch_office_pivot,6,2,2,50
+phase28b_development_q003,calibrated,2:21:65:67:158:159,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,efa0931fb162a4e55dd7,20,archive_collection,6,2,2,35
+phase28b_development_q003,calibrated,30:53:57:102:148:156,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,7fc76043f65dcdaa2501,5,token_exchange_abuse,6,2,2,50
+phase28b_development_q003,calibrated,31:47:50:82:91:95,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,e848c428208f4025c9b7,22,token_exchange_abuse,6,2,2,40
+phase28b_development_q003,calibrated,8:38:97:103:122:164,PROMOTE,calibrated_score,-8.19855491,-8.19855591,1,6b009cc8fc53f270550b,15,identity_fallback,6,2,2,68
+phase28b_development_q003,component,32:109,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,5.65790068,-8.19855591,0,308d89e36be0321ed6d4,99,benign,2,1,0,1
+phase28b_development_q003,component,59:123,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,5.65790068,-8.19855591,0,914efaba23990a9e16a3,99,benign,2,1,0,1
+phase28b_development_q003,component,81:93,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,5.65790068,-8.19855591,0,9d170ddcdaa3544fdf27,99,benign,2,1,0,1
+phase28b_development_q003,component,116:125,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,4.20841254,-8.19855591,0,3847c8cfb33469c8167a,99,benign,2,2,0,1
+phase28b_development_q003,component,17:51:64:117:142,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,0,a3fb254b3a95fea0597c,7,token_exchange_abuse,5,0,0,10
+phase28b_development_q003,component,33:60:70:80:96:112,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,9b33d3f19ec558d767e3,18,agent_service_abuse,6,1,1,40
+phase28b_development_q003,component,3:9:24:25:40:89:90,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,87e703d715ef884b2a7a,13,remote_admin_execution,7,1,1,55
+phase28b_development_q003,component,5:7:29:44:101:166,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,29d03557e76869284194,6,agent_service_abuse,6,1,1,44
+phase28b_development_q003,component,12:99:121:128:138:146,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,66087a8d073f033ddea8,2,snapshot_transfer,6,2,2,44
+phase28b_development_q003,component,15:76:77:108:153:165,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,4d07f31a6f940fb63840,10,identity_fallback,6,2,2,35
+phase28b_development_q003,component,23:27:49:52:115:131,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,7803efc4e195d7d7a439,8,branch_office_pivot,6,2,2,50
+phase28b_development_q003,component,2:21:65:67:158:159,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,efa0931fb162a4e55dd7,20,archive_collection,6,2,2,35
+phase28b_development_q003,component,30:53:57:102:148:156,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,7fc76043f65dcdaa2501,5,token_exchange_abuse,6,2,2,50
+phase28b_development_q003,component,31:47:50:82:91:95,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,e848c428208f4025c9b7,22,token_exchange_abuse,6,2,2,40
+phase28b_development_q003,component,8:38:97:103:122:164,PROMOTE,calibrated_score,-8.19855491,-8.19855591,1,6b009cc8fc53f270550b,15,identity_fallback,6,2,2,68
+phase28b_development_q003,selective,32:109,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,5.65790068,-8.19855591,0,308d89e36be0321ed6d4,99,benign,2,1,0,1
+phase28b_development_q003,selective,59:123,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,5.65790068,-8.19855591,0,914efaba23990a9e16a3,99,benign,2,1,0,1
+phase28b_development_q003,selective,81:93,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,5.65790068,-8.19855591,0,9d170ddcdaa3544fdf27,99,benign,2,1,0,1
+phase28b_development_q003,selective,116:125,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,4.20841254,-8.19855591,0,3847c8cfb33469c8167a,99,benign,2,2,0,1
+phase28b_development_q003,selective,17:51:64:117:142,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,0,a3fb254b3a95fea0597c,7,token_exchange_abuse,5,0,0,10
+phase28b_development_q003,selective,33:60:70:80:96:112,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,9b33d3f19ec558d767e3,18,agent_service_abuse,6,1,1,40
+phase28b_development_q003,selective,3:9:24:25:40:89:90,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,87e703d715ef884b2a7a,13,remote_admin_execution,7,1,1,55
+phase28b_development_q003,selective,5:7:29:44:101:166,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,29d03557e76869284194,6,agent_service_abuse,6,1,1,44
+phase28b_development_q003,selective,12:99:121:128:138:146,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,66087a8d073f033ddea8,2,snapshot_transfer,6,2,2,44
+phase28b_development_q003,selective,15:76:77:108:153:165,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,4d07f31a6f940fb63840,10,identity_fallback,6,2,2,35
+phase28b_development_q003,selective,23:27:49:52:115:131,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,7803efc4e195d7d7a439,8,branch_office_pivot,6,2,2,50
+phase28b_development_q003,selective,2:21:65:67:158:159,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,efa0931fb162a4e55dd7,20,archive_collection,6,2,2,35
+phase28b_development_q003,selective,30:53:57:102:148:156,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,7fc76043f65dcdaa2501,5,token_exchange_abuse,6,2,2,50
+phase28b_development_q003,selective,31:47:50:82:91:95,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,e848c428208f4025c9b7,22,token_exchange_abuse,6,2,2,40
+phase28b_development_q003,selective,8:38:97:103:122:164,RETAIN AS HYPOTHESIS,selective_abstention,-8.19855491,-8.19855591,1,6b009cc8fc53f270550b,15,identity_fallback,6,2,2,68
+phase28b_development_q004,calibrated,12:54,PROMOTE,calibrated_score,5.65790068,-8.19855591,0,80ae230c572c0616d16d,99,benign,2,1,0,1
+phase28b_development_q004,calibrated,135:142,PROMOTE,calibrated_score,5.65790068,-8.19855591,0,3631c939449860e17d74,99,benign,2,1,0,1
+phase28b_development_q004,calibrated,15:95,PROMOTE,calibrated_score,5.65790068,-8.19855591,0,eb819551545fbfba2f3c,99,benign,2,1,0,1
+phase28b_development_q004,calibrated,41:47,PROMOTE,calibrated_score,4.20841254,-8.19855591,0,e552eb668ac39e1f544f,99,benign,2,2,0,1
+phase28b_development_q004,calibrated,18:42:81:101:104:139:155,PROMOTE,calibrated_score,-1.65013965,-8.19855591,1,b69610fccc0d26f334f1,7,snapshot_transfer,7,1,1,55
+phase28b_development_q004,calibrated,3:13:17:34:48:55:147,PROMOTE,calibrated_score,-1.65013965,-8.19855591,1,88ea16632643f96eb830,4,agent_service_abuse,7,1,1,69
+phase28b_development_q004,calibrated,52:78:80:113:130,PROMOTE,calibrated_score,-1.65013965,-8.19855591,1,0a0d017c0e7444e24106,10,branch_office_pivot,5,1,1,30
+phase28b_development_q004,calibrated,5:71:105:134:137:156,PROMOTE,calibrated_score,-1.65013965,-8.19855591,1,5f215dc0d69ab170631f,22,session_replay,6,1,1,30
+phase28b_development_q004,calibrated,66:69:86:94:132:166,PROMOTE,calibrated_score,-1.65013965,-8.19855591,1,1a49051be1a086181d53,8,archive_collection,6,1,1,35
+phase28b_development_q004,calibrated,6:90:115:124:143:160,PROMOTE,calibrated_score,-1.65013965,-8.19855591,1,6454fa8ddb8a61a0d292,18,database_service_path,6,1,1,35
+phase28b_development_q004,calibrated,0:30:33:76:103:149:162,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,9377a4697657fa0db31e,16,session_replay,7,2,2,62
+phase28b_development_q004,calibrated,10:68:77:112:122:153,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,e8eac339974719461d4b,24,branch_office_pivot,6,2,2,44
+phase28b_development_q004,calibrated,14:28:60:136:138,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,c164dda281c390f76421,6,control_api_access,5,2,2,22
+phase28b_development_q004,calibrated,16:53:92:98:144:145:148,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,0cde1a226cdddd752973,21,database_service_path,7,2,2,45
+phase28b_development_q004,calibrated,45:63:67:74:117:127,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,c4923ce8d712b0278012,9,session_replay,6,2,2,40
+phase28b_development_q004,component,12:54,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,5.65790068,-8.19855591,0,80ae230c572c0616d16d,99,benign,2,1,0,1
+phase28b_development_q004,component,135:142,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,5.65790068,-8.19855591,0,3631c939449860e17d74,99,benign,2,1,0,1
+phase28b_development_q004,component,15:95,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,5.65790068,-8.19855591,0,eb819551545fbfba2f3c,99,benign,2,1,0,1
+phase28b_development_q004,component,41:47,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,4.20841254,-8.19855591,0,e552eb668ac39e1f544f,99,benign,2,2,0,1
+phase28b_development_q004,component,18:42:81:101:104:139:155,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,b69610fccc0d26f334f1,7,snapshot_transfer,7,1,1,55
+phase28b_development_q004,component,3:13:17:34:48:55:147,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,88ea16632643f96eb830,4,agent_service_abuse,7,1,1,69
+phase28b_development_q004,component,52:78:80:113:130,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,0a0d017c0e7444e24106,10,branch_office_pivot,5,1,1,30
+phase28b_development_q004,component,5:71:105:134:137:156,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,5f215dc0d69ab170631f,22,session_replay,6,1,1,30
+phase28b_development_q004,component,66:69:86:94:132:166,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,1a49051be1a086181d53,8,archive_collection,6,1,1,35
+phase28b_development_q004,component,6:90:115:124:143:160,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,6454fa8ddb8a61a0d292,18,database_service_path,6,1,1,35
+phase28b_development_q004,component,0:30:33:76:103:149:162,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,9377a4697657fa0db31e,16,session_replay,7,2,2,62
+phase28b_development_q004,component,10:68:77:112:122:153,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,e8eac339974719461d4b,24,branch_office_pivot,6,2,2,44
+phase28b_development_q004,component,14:28:60:136:138,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,c164dda281c390f76421,6,control_api_access,5,2,2,22
+phase28b_development_q004,component,16:53:92:98:144:145:148,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,0cde1a226cdddd752973,21,database_service_path,7,2,2,45
+phase28b_development_q004,component,45:63:67:74:117:127,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,c4923ce8d712b0278012,9,session_replay,6,2,2,40
+phase28b_development_q004,selective,12:54,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,5.65790068,-8.19855591,0,80ae230c572c0616d16d,99,benign,2,1,0,1
+phase28b_development_q004,selective,135:142,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,5.65790068,-8.19855591,0,3631c939449860e17d74,99,benign,2,1,0,1
+phase28b_development_q004,selective,15:95,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,5.65790068,-8.19855591,0,eb819551545fbfba2f3c,99,benign,2,1,0,1
+phase28b_development_q004,selective,41:47,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,4.20841254,-8.19855591,0,e552eb668ac39e1f544f,99,benign,2,2,0,1
+phase28b_development_q004,selective,18:42:81:101:104:139:155,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,b69610fccc0d26f334f1,7,snapshot_transfer,7,1,1,55
+phase28b_development_q004,selective,3:13:17:34:48:55:147,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,88ea16632643f96eb830,4,agent_service_abuse,7,1,1,69
+phase28b_development_q004,selective,52:78:80:113:130,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,0a0d017c0e7444e24106,10,branch_office_pivot,5,1,1,30
+phase28b_development_q004,selective,5:71:105:134:137:156,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,5f215dc0d69ab170631f,22,session_replay,6,1,1,30
+phase28b_development_q004,selective,66:69:86:94:132:166,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,1a49051be1a086181d53,8,archive_collection,6,1,1,35
+phase28b_development_q004,selective,6:90:115:124:143:160,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,6454fa8ddb8a61a0d292,18,database_service_path,6,1,1,35
+phase28b_development_q004,selective,0:30:33:76:103:149:162,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,9377a4697657fa0db31e,16,session_replay,7,2,2,62
+phase28b_development_q004,selective,10:68:77:112:122:153,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,e8eac339974719461d4b,24,branch_office_pivot,6,2,2,44
+phase28b_development_q004,selective,14:28:60:136:138,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,c164dda281c390f76421,6,control_api_access,5,2,2,22
+phase28b_development_q004,selective,16:53:92:98:144:145:148,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,0cde1a226cdddd752973,21,database_service_path,7,2,2,45
+phase28b_development_q004,selective,45:63:67:74:117:127,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,c4923ce8d712b0278012,9,session_replay,6,2,2,40
+phase28b_development_q005,calibrated,68:74,PROMOTE,calibrated_score,5.65790068,-8.19855591,0,7886002c0d77756cfee6,99,benign,2,1,0,1
+phase28b_development_q005,calibrated,84:130,PROMOTE,calibrated_score,5.65790068,-8.19855591,0,f62cea5464d07d07f5b3,99,benign,2,1,0,1
+phase28b_development_q005,calibrated,88:144,PROMOTE,calibrated_score,4.20841254,-8.19855591,0,d7da671d44228586a2ef,99,benign,2,2,0,1
+phase28b_development_q005,calibrated,98:134,PROMOTE,calibrated_score,4.20841254,-8.19855591,0,b1409778b4193c71dcfc,99,benign,2,2,0,1
+phase28b_development_q005,calibrated,18:79:91:120:129,PROMOTE,calibrated_score,-1.65013965,-8.19855591,1,f21aad4d4f01124032bb,22,token_exchange_abuse,5,1,1,22
+phase28b_development_q005,calibrated,1:33:54:93:124:149:163,PROMOTE,calibrated_score,-1.65013965,-8.19855591,1,0452c845ccc55ab1820a,17,identity_fallback,7,1,1,57
+phase28b_development_q005,calibrated,42:46:57:60:81:122:160,PROMOTE,calibrated_score,-1.65013965,-8.19855591,1,c0d7369a12827cf7fb31,9,snapshot_transfer,7,1,1,69
+phase28b_development_q005,calibrated,7:15:83:141:142,PROMOTE,calibrated_score,-1.65013965,-8.19855591,1,b306441066c4fba2f2ac,19,remote_admin_execution,5,1,1,22
+phase28b_development_q005,calibrated,10:29:69:89:97:125:157,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,fe6636c941d0638d23a3,25,identity_fallback,7,2,2,57
+phase28b_development_q005,calibrated,16:72:76:106:128,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,e974902ae64f5b241e78,24,remote_admin_execution,5,2,2,26
+phase28b_development_q005,calibrated,17:67:101:112:143:150:158,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,2a97dcb952fc8e9411fe,23,control_api_access,7,2,2,51
+phase28b_development_q005,calibrated,21:45:138:146:164,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,a2b59717fbed08cc9b8d,18,database_service_path,5,2,2,22
+phase28b_development_q005,calibrated,23:102:121:137:151:153,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,34ab96ccc836c3b61b63,10,control_api_access,6,2,2,44
+phase28b_development_q005,calibrated,31:37:55:66:118:140,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,b9dac4b221b4d932d7bc,15,remote_admin_execution,6,2,2,47
+phase28b_development_q005,calibrated,47:48:78:86:133,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,978c3c09e3a491dc4852,8,snapshot_transfer,5,2,2,22
+phase28b_development_q005,component,68:74,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,5.65790068,-8.19855591,0,7886002c0d77756cfee6,99,benign,2,1,0,1
+phase28b_development_q005,component,84:130,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,5.65790068,-8.19855591,0,f62cea5464d07d07f5b3,99,benign,2,1,0,1
+phase28b_development_q005,component,88:144,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,4.20841254,-8.19855591,0,d7da671d44228586a2ef,99,benign,2,2,0,1
+phase28b_development_q005,component,98:134,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,4.20841254,-8.19855591,0,b1409778b4193c71dcfc,99,benign,2,2,0,1
+phase28b_development_q005,component,18:79:91:120:129,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,f21aad4d4f01124032bb,22,token_exchange_abuse,5,1,1,22
+phase28b_development_q005,component,1:33:54:93:124:149:163,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,0452c845ccc55ab1820a,17,identity_fallback,7,1,1,57
+phase28b_development_q005,component,42:46:57:60:81:122:160,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,c0d7369a12827cf7fb31,9,snapshot_transfer,7,1,1,69
+phase28b_development_q005,component,7:15:83:141:142,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,b306441066c4fba2f2ac,19,remote_admin_execution,5,1,1,22
+phase28b_development_q005,component,10:29:69:89:97:125:157,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,fe6636c941d0638d23a3,25,identity_fallback,7,2,2,57
+phase28b_development_q005,component,16:72:76:106:128,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,e974902ae64f5b241e78,24,remote_admin_execution,5,2,2,26
+phase28b_development_q005,component,17:67:101:112:143:150:158,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,2a97dcb952fc8e9411fe,23,control_api_access,7,2,2,51
+phase28b_development_q005,component,21:45:138:146:164,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,a2b59717fbed08cc9b8d,18,database_service_path,5,2,2,22
+phase28b_development_q005,component,23:102:121:137:151:153,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,34ab96ccc836c3b61b63,10,control_api_access,6,2,2,44
+phase28b_development_q005,component,31:37:55:66:118:140,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,b9dac4b221b4d932d7bc,15,remote_admin_execution,6,2,2,47
+phase28b_development_q005,component,47:48:78:86:133,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,978c3c09e3a491dc4852,8,snapshot_transfer,5,2,2,22
+phase28b_development_q005,selective,68:74,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,5.65790068,-8.19855591,0,7886002c0d77756cfee6,99,benign,2,1,0,1
+phase28b_development_q005,selective,84:130,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,5.65790068,-8.19855591,0,f62cea5464d07d07f5b3,99,benign,2,1,0,1
+phase28b_development_q005,selective,88:144,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,4.20841254,-8.19855591,0,d7da671d44228586a2ef,99,benign,2,2,0,1
+phase28b_development_q005,selective,98:134,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,4.20841254,-8.19855591,0,b1409778b4193c71dcfc,99,benign,2,2,0,1
+phase28b_development_q005,selective,18:79:91:120:129,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,f21aad4d4f01124032bb,22,token_exchange_abuse,5,1,1,22
+phase28b_development_q005,selective,1:33:54:93:124:149:163,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,0452c845ccc55ab1820a,17,identity_fallback,7,1,1,57
+phase28b_development_q005,selective,42:46:57:60:81:122:160,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,c0d7369a12827cf7fb31,9,snapshot_transfer,7,1,1,69
+phase28b_development_q005,selective,7:15:83:141:142,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,b306441066c4fba2f2ac,19,remote_admin_execution,5,1,1,22
+phase28b_development_q005,selective,10:29:69:89:97:125:157,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,fe6636c941d0638d23a3,25,identity_fallback,7,2,2,57
+phase28b_development_q005,selective,16:72:76:106:128,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,e974902ae64f5b241e78,24,remote_admin_execution,5,2,2,26
+phase28b_development_q005,selective,17:67:101:112:143:150:158,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,2a97dcb952fc8e9411fe,23,control_api_access,7,2,2,51
+phase28b_development_q005,selective,21:45:138:146:164,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,a2b59717fbed08cc9b8d,18,database_service_path,5,2,2,22
+phase28b_development_q005,selective,23:102:121:137:151:153,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,34ab96ccc836c3b61b63,10,control_api_access,6,2,2,44
+phase28b_development_q005,selective,31:37:55:66:118:140,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,b9dac4b221b4d932d7bc,15,remote_admin_execution,6,2,2,47
+phase28b_development_q005,selective,47:48:78:86:133,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,978c3c09e3a491dc4852,8,snapshot_transfer,5,2,2,22
+phase28b_development_q006,calibrated,20:130,PROMOTE,calibrated_score,5.65790068,-8.19855591,0,af59aaf3e0f9f6ebe8d8,99,benign,2,1,0,1
+phase28b_development_q006,calibrated,88:100,PROMOTE,calibrated_score,5.65790068,-8.19855591,0,dbefcd357ae1f9b160a0,99,benign,2,1,0,1
+phase28b_development_q006,calibrated,73:116,PROMOTE,calibrated_score,4.20841254,-8.19855591,0,ad2ab8956d082a442060,99,benign,2,2,0,1
+phase28b_development_q006,calibrated,30:32:39:45:60:128,PROMOTE,calibrated_score,-1.65013965,-8.19855591,1,618ff3b2210cf5b8a101,3,archive_collection,6,1,1,35
+phase28b_development_q006,calibrated,5:36:55:69:110:136,PROMOTE,calibrated_score,-1.65013965,-8.19855591,1,29fe565e4194f35327db,7,branch_office_pivot,6,1,1,44
+phase28b_development_q006,calibrated,6:21:61:72:124:143,PROMOTE,calibrated_score,-1.65013965,-8.19855591,1,44a429badeaa71a0d784,13,agent_service_abuse,6,1,1,50
+phase28b_development_q006,calibrated,0:48:90:138:147,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,7ef89cacc3a93a081914,5,archive_collection,5,2,2,26
+phase28b_development_q006,calibrated,10:37:44:54:134:139,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,bda3731d4810134a8266,18,agent_service_abuse,6,2,2,40
+phase28b_development_q006,calibrated,11:38:52:82:123,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,b54de83b60fc79a5d0e5,10,branch_office_pivot,5,2,2,26
+phase28b_development_q006,calibrated,15:18:43:50:103:107,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,2b0efe7bce737ac24ebb,24,session_replay,6,2,2,40
+phase28b_development_q006,calibrated,19:56:76:118:132:140,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,c8a72c8270cf910aa177,4,token_exchange_abuse,6,2,2,30
+phase28b_development_q006,calibrated,24:77:79:114:120:135:148,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,53291f1104161be84adc,25,identity_fallback,7,2,2,51
+phase28b_development_q006,calibrated,57:85:94:101:127,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,e5c46dc44ec68a8a2a7d,9,token_exchange_abuse,5,2,2,22
+phase28b_development_q006,component,20:130,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,5.65790068,-8.19855591,0,af59aaf3e0f9f6ebe8d8,99,benign,2,1,0,1
+phase28b_development_q006,component,88:100,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,5.65790068,-8.19855591,0,dbefcd357ae1f9b160a0,99,benign,2,1,0,1
+phase28b_development_q006,component,73:116,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,4.20841254,-8.19855591,0,ad2ab8956d082a442060,99,benign,2,2,0,1
+phase28b_development_q006,component,30:32:39:45:60:128,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,618ff3b2210cf5b8a101,3,archive_collection,6,1,1,35
+phase28b_development_q006,component,5:36:55:69:110:136,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,29fe565e4194f35327db,7,branch_office_pivot,6,1,1,44
+phase28b_development_q006,component,6:21:61:72:124:143,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,44a429badeaa71a0d784,13,agent_service_abuse,6,1,1,50
+phase28b_development_q006,component,0:48:90:138:147,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,7ef89cacc3a93a081914,5,archive_collection,5,2,2,26
+phase28b_development_q006,component,10:37:44:54:134:139,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,bda3731d4810134a8266,18,agent_service_abuse,6,2,2,40
+phase28b_development_q006,component,11:38:52:82:123,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,b54de83b60fc79a5d0e5,10,branch_office_pivot,5,2,2,26
+phase28b_development_q006,component,15:18:43:50:103:107,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,2b0efe7bce737ac24ebb,24,session_replay,6,2,2,40
+phase28b_development_q006,component,19:56:76:118:132:140,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,c8a72c8270cf910aa177,4,token_exchange_abuse,6,2,2,30
+phase28b_development_q006,component,24:77:79:114:120:135:148,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,53291f1104161be84adc,25,identity_fallback,7,2,2,51
+phase28b_development_q006,component,57:85:94:101:127,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,e5c46dc44ec68a8a2a7d,9,token_exchange_abuse,5,2,2,22
+phase28b_development_q006,selective,20:130,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,5.65790068,-8.19855591,0,af59aaf3e0f9f6ebe8d8,99,benign,2,1,0,1
+phase28b_development_q006,selective,88:100,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,5.65790068,-8.19855591,0,dbefcd357ae1f9b160a0,99,benign,2,1,0,1
+phase28b_development_q006,selective,73:116,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,4.20841254,-8.19855591,0,ad2ab8956d082a442060,99,benign,2,2,0,1
+phase28b_development_q006,selective,30:32:39:45:60:128,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,618ff3b2210cf5b8a101,3,archive_collection,6,1,1,35
+phase28b_development_q006,selective,5:36:55:69:110:136,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,29fe565e4194f35327db,7,branch_office_pivot,6,1,1,44
+phase28b_development_q006,selective,6:21:61:72:124:143,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,44a429badeaa71a0d784,13,agent_service_abuse,6,1,1,50
+phase28b_development_q006,selective,0:48:90:138:147,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,7ef89cacc3a93a081914,5,archive_collection,5,2,2,26
+phase28b_development_q006,selective,10:37:44:54:134:139,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,bda3731d4810134a8266,18,agent_service_abuse,6,2,2,40
+phase28b_development_q006,selective,11:38:52:82:123,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,b54de83b60fc79a5d0e5,10,branch_office_pivot,5,2,2,26
+phase28b_development_q006,selective,15:18:43:50:103:107,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,2b0efe7bce737ac24ebb,24,session_replay,6,2,2,40
+phase28b_development_q006,selective,19:56:76:118:132:140,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,c8a72c8270cf910aa177,4,token_exchange_abuse,6,2,2,30
+phase28b_development_q006,selective,24:77:79:114:120:135:148,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,53291f1104161be84adc,25,identity_fallback,7,2,2,51
+phase28b_development_q006,selective,57:85:94:101:127,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,e5c46dc44ec68a8a2a7d,9,token_exchange_abuse,5,2,2,22
+phase28b_development_q007,calibrated,6:79,PROMOTE,calibrated_score,5.65790068,-8.19855591,0,e71ef6249b4322193d33,99,benign,2,1,0,1
+phase28b_development_q007,calibrated,13:78,PROMOTE,calibrated_score,4.20841254,-8.19855591,0,0761db55750a2ee2b586,99,benign,2,2,0,1
+phase28b_development_q007,calibrated,71:115,PROMOTE,calibrated_score,4.20841254,-8.19855591,0,07604f66c079ca19ed66,99,benign,2,2,0,1
+phase28b_development_q007,calibrated,14:28:43:120:154:160,PROMOTE,calibrated_score,-1.65013965,-8.19855591,1,42d3761d30b4f1461979,1,database_service_path,6,1,1,44
+phase28b_development_q007,calibrated,20:37:70:116:136:147,PROMOTE,calibrated_score,-1.65013965,-8.19855591,1,ea1b6b769ae0be2a3f75,5,session_replay,6,1,1,35
+phase28b_development_q007,calibrated,30:44:48:112:140:151,PROMOTE,calibrated_score,-1.65013965,-8.19855591,1,2b226f6e0b397e78de83,24,remote_admin_execution,6,1,1,35
+phase28b_development_q007,calibrated,11:61:80:127:130:138,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,e780c7b055b1c228e75a,12,database_service_path,6,2,2,35
+phase28b_development_q007,calibrated,1:10:82:84:123:152:161,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,3143c215124bb5c3b1fa,17,control_api_access,7,2,2,45
+phase28b_development_q007,calibrated,21:39:91:105:139:157,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,f7585c5437a7d1b1320f,18,session_replay,6,2,2,44
+phase28b_development_q007,calibrated,22:57:74:106:153:158,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,9710754b686087c8553b,22,snapshot_transfer,6,2,2,35
+phase28b_development_q007,calibrated,27:69:81:101:126:128,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,16439feb6fc436ed40f6,20,control_api_access,6,2,2,50
+phase28b_development_q007,calibrated,33:64:77:83:113:159,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,4bfb6200c494fd4dab41,2,branch_office_pivot,6,2,2,35
+phase28b_development_q007,calibrated,58:75:94:100:111:146,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,f8f7c6e064ad2cd8f962,19,snapshot_transfer,6,2,2,38
+phase28b_development_q007,component,6:79,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,5.65790068,-8.19855591,0,e71ef6249b4322193d33,99,benign,2,1,0,1
+phase28b_development_q007,component,13:78,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,4.20841254,-8.19855591,0,0761db55750a2ee2b586,99,benign,2,2,0,1
+phase28b_development_q007,component,71:115,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,4.20841254,-8.19855591,0,07604f66c079ca19ed66,99,benign,2,2,0,1
+phase28b_development_q007,component,14:28:43:120:154:160,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,42d3761d30b4f1461979,1,database_service_path,6,1,1,44
+phase28b_development_q007,component,20:37:70:116:136:147,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,ea1b6b769ae0be2a3f75,5,session_replay,6,1,1,35
+phase28b_development_q007,component,30:44:48:112:140:151,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,2b226f6e0b397e78de83,24,remote_admin_execution,6,1,1,35
+phase28b_development_q007,component,11:61:80:127:130:138,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,e780c7b055b1c228e75a,12,database_service_path,6,2,2,35
+phase28b_development_q007,component,1:10:82:84:123:152:161,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,3143c215124bb5c3b1fa,17,control_api_access,7,2,2,45
+phase28b_development_q007,component,21:39:91:105:139:157,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,f7585c5437a7d1b1320f,18,session_replay,6,2,2,44
+phase28b_development_q007,component,22:57:74:106:153:158,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,9710754b686087c8553b,22,snapshot_transfer,6,2,2,35
+phase28b_development_q007,component,27:69:81:101:126:128,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,16439feb6fc436ed40f6,20,control_api_access,6,2,2,50
+phase28b_development_q007,component,33:64:77:83:113:159,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,4bfb6200c494fd4dab41,2,branch_office_pivot,6,2,2,35
+phase28b_development_q007,component,58:75:94:100:111:146,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,f8f7c6e064ad2cd8f962,19,snapshot_transfer,6,2,2,38
+phase28b_development_q007,selective,6:79,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,5.65790068,-8.19855591,0,e71ef6249b4322193d33,99,benign,2,1,0,1
+phase28b_development_q007,selective,13:78,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,4.20841254,-8.19855591,0,0761db55750a2ee2b586,99,benign,2,2,0,1
+phase28b_development_q007,selective,71:115,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,4.20841254,-8.19855591,0,07604f66c079ca19ed66,99,benign,2,2,0,1
+phase28b_development_q007,selective,14:28:43:120:154:160,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,42d3761d30b4f1461979,1,database_service_path,6,1,1,44
+phase28b_development_q007,selective,20:37:70:116:136:147,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,ea1b6b769ae0be2a3f75,5,session_replay,6,1,1,35
+phase28b_development_q007,selective,30:44:48:112:140:151,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,2b226f6e0b397e78de83,24,remote_admin_execution,6,1,1,35
+phase28b_development_q007,selective,11:61:80:127:130:138,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,e780c7b055b1c228e75a,12,database_service_path,6,2,2,35
+phase28b_development_q007,selective,1:10:82:84:123:152:161,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,3143c215124bb5c3b1fa,17,control_api_access,7,2,2,45
+phase28b_development_q007,selective,21:39:91:105:139:157,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,f7585c5437a7d1b1320f,18,session_replay,6,2,2,44
+phase28b_development_q007,selective,22:57:74:106:153:158,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,9710754b686087c8553b,22,snapshot_transfer,6,2,2,35
+phase28b_development_q007,selective,27:69:81:101:126:128,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,16439feb6fc436ed40f6,20,control_api_access,6,2,2,50
+phase28b_development_q007,selective,33:64:77:83:113:159,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,4bfb6200c494fd4dab41,2,branch_office_pivot,6,2,2,35
+phase28b_development_q007,selective,58:75:94:100:111:146,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,f8f7c6e064ad2cd8f962,19,snapshot_transfer,6,2,2,38
+phase28b_development_q008,calibrated,28:113,PROMOTE,calibrated_score,5.65790068,-8.19855591,0,bad9d5d2bbf6f88468d8,99,benign,2,1,0,1
+phase28b_development_q008,calibrated,34:123,PROMOTE,calibrated_score,5.65790068,-8.19855591,0,e5959bcfa8f09ef6727b,99,benign,2,1,0,1
+phase28b_development_q008,calibrated,121:126,PROMOTE,calibrated_score,4.20841254,-8.19855591,0,2b80370593fa2f618430,99,benign,2,2,0,1
+phase28b_development_q008,calibrated,0:52:54:105:129:136:166,PROMOTE,calibrated_score,-1.65013965,-8.19855591,1,6081649a44a2672901e7,5,identity_fallback,7,1,1,55
+phase28b_development_q008,calibrated,15:75:96:99:135:145,PROMOTE,calibrated_score,-1.65013965,-8.19855591,1,2427e9820ae36dafca1c,3,snapshot_transfer,6,1,1,35
+phase28b_development_q008,calibrated,30:35:89:125:127:148:154,PROMOTE,calibrated_score,-1.65013965,-8.19855591,1,01e26c7cd4d3e5dba585,16,token_exchange_abuse,7,1,1,51
+phase28b_development_q008,calibrated,40:53:77:97:107:108,PROMOTE,calibrated_score,-1.65013965,-8.19855591,1,2b01c19a5e4b8ec0bdc7,12,archive_collection,6,1,1,35
+phase28b_development_q008,calibrated,9:36:44:47:72:137,PROMOTE,calibrated_score,-1.65013965,-8.19855591,1,32e30f2db28e6ba6e6a2,11,agent_service_abuse,6,1,1,38
+phase28b_development_q008,calibrated,14:22:27:59:132:146:155,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,f8adb9440b3232eec228,15,remote_admin_execution,7,2,2,55
+phase28b_development_q008,calibrated,16:18:24:112:133:140,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,9058c67a19d5d55cbc06,6,remote_admin_execution,6,2,2,44
+phase28b_development_q008,calibrated,25:33:42:60:61,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,bf162d9cd15620cab4c0,20,agent_service_abuse,5,2,2,22
+phase28b_development_q008,calibrated,32:76:87:92:119:160,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,ff632d731ba7e6ed54e0,24,identity_fallback,6,2,2,44
+phase28b_development_q008,calibrated,48:63:81:157:167,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,53c3d1727330ac8a247b,8,identity_fallback,5,2,2,22
+phase28b_development_q008,calibrated,8:20:50:69:79:124:163,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,13042cffe41beca0f11f,9,token_exchange_abuse,7,2,2,63
+phase28b_development_q008,component,28:113,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,5.65790068,-8.19855591,0,bad9d5d2bbf6f88468d8,99,benign,2,1,0,1
+phase28b_development_q008,component,34:123,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,5.65790068,-8.19855591,0,e5959bcfa8f09ef6727b,99,benign,2,1,0,1
+phase28b_development_q008,component,121:126,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,4.20841254,-8.19855591,0,2b80370593fa2f618430,99,benign,2,2,0,1
+phase28b_development_q008,component,0:52:54:105:129:136:166,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,6081649a44a2672901e7,5,identity_fallback,7,1,1,55
+phase28b_development_q008,component,15:75:96:99:135:145,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,2427e9820ae36dafca1c,3,snapshot_transfer,6,1,1,35
+phase28b_development_q008,component,30:35:89:125:127:148:154,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,01e26c7cd4d3e5dba585,16,token_exchange_abuse,7,1,1,51
+phase28b_development_q008,component,40:53:77:97:107:108,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,2b01c19a5e4b8ec0bdc7,12,archive_collection,6,1,1,35
+phase28b_development_q008,component,9:36:44:47:72:137,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,32e30f2db28e6ba6e6a2,11,agent_service_abuse,6,1,1,38
+phase28b_development_q008,component,14:22:27:59:132:146:155,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,f8adb9440b3232eec228,15,remote_admin_execution,7,2,2,55
+phase28b_development_q008,component,16:18:24:112:133:140,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,9058c67a19d5d55cbc06,6,remote_admin_execution,6,2,2,44
+phase28b_development_q008,component,25:33:42:60:61,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,bf162d9cd15620cab4c0,20,agent_service_abuse,5,2,2,22
+phase28b_development_q008,component,32:76:87:92:119:160,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,ff632d731ba7e6ed54e0,24,identity_fallback,6,2,2,44
+phase28b_development_q008,component,48:63:81:157:167,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,53c3d1727330ac8a247b,8,identity_fallback,5,2,2,22
+phase28b_development_q008,component,8:20:50:69:79:124:163,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,13042cffe41beca0f11f,9,token_exchange_abuse,7,2,2,63
+phase28b_development_q008,selective,28:113,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,5.65790068,-8.19855591,0,bad9d5d2bbf6f88468d8,99,benign,2,1,0,1
+phase28b_development_q008,selective,34:123,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,5.65790068,-8.19855591,0,e5959bcfa8f09ef6727b,99,benign,2,1,0,1
+phase28b_development_q008,selective,121:126,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,4.20841254,-8.19855591,0,2b80370593fa2f618430,99,benign,2,2,0,1
+phase28b_development_q008,selective,0:52:54:105:129:136:166,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,6081649a44a2672901e7,5,identity_fallback,7,1,1,55
+phase28b_development_q008,selective,15:75:96:99:135:145,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,2427e9820ae36dafca1c,3,snapshot_transfer,6,1,1,35
+phase28b_development_q008,selective,30:35:89:125:127:148:154,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,01e26c7cd4d3e5dba585,16,token_exchange_abuse,7,1,1,51
+phase28b_development_q008,selective,40:53:77:97:107:108,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,2b01c19a5e4b8ec0bdc7,12,archive_collection,6,1,1,35
+phase28b_development_q008,selective,9:36:44:47:72:137,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,32e30f2db28e6ba6e6a2,11,agent_service_abuse,6,1,1,38
+phase28b_development_q008,selective,14:22:27:59:132:146:155,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,f8adb9440b3232eec228,15,remote_admin_execution,7,2,2,55
+phase28b_development_q008,selective,16:18:24:112:133:140,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,9058c67a19d5d55cbc06,6,remote_admin_execution,6,2,2,44
+phase28b_development_q008,selective,25:33:42:60:61,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,bf162d9cd15620cab4c0,20,agent_service_abuse,5,2,2,22
+phase28b_development_q008,selective,32:76:87:92:119:160,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,ff632d731ba7e6ed54e0,24,identity_fallback,6,2,2,44
+phase28b_development_q008,selective,48:63:81:157:167,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,53c3d1727330ac8a247b,8,identity_fallback,5,2,2,22
+phase28b_development_q008,selective,8:20:50:69:79:124:163,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,13042cffe41beca0f11f,9,token_exchange_abuse,7,2,2,63
+phase28b_development_q009,calibrated,82:93,PROMOTE,calibrated_score,5.65790068,-8.19855591,0,157f371b83fb37f46559,99,benign,2,1,0,1
+phase28b_development_q009,calibrated,102:131,PROMOTE,calibrated_score,4.20841254,-8.19855591,0,356e5e59c69ec0de79c3,99,benign,2,2,0,1
+phase28b_development_q009,calibrated,35:54,PROMOTE,calibrated_score,4.20841254,-8.19855591,0,0781630abe8c8d896a30,99,benign,2,2,0,1
+phase28b_development_q009,calibrated,0:5:28:134:158,PROMOTE,calibrated_score,-1.65013965,-8.19855591,1,46d9710f87bd30aa234c,13,archive_collection,5,1,1,34
+phase28b_development_q009,calibrated,22:46:61:72:92:118,PROMOTE,calibrated_score,-1.65013965,-8.19855591,1,eea2868ce0d2c758bf40,2,database_service_path,6,1,1,44
+phase28b_development_q009,calibrated,34:47:113:151:155,PROMOTE,calibrated_score,-1.65013965,-8.19855591,0,ec3cba7bc8b468a90c45,25,branch_office_pivot,5,0,0,10
+phase28b_development_q009,calibrated,59:68:73:103:119,PROMOTE,calibrated_score,-1.65013965,-8.19855591,1,b61937ee870f39fccf35,10,session_replay,5,1,1,22
+phase28b_development_q009,calibrated,6:18:56:71:89:115:152,PROMOTE,calibrated_score,-1.65013965,-8.19855591,1,41a80461c923a7272f44,20,agent_service_abuse,7,1,1,69
+phase28b_development_q009,calibrated,9:65:94:156:165,PROMOTE,calibrated_score,-1.65013965,-8.19855591,1,3b8662595476ba1e393b,8,token_exchange_abuse,5,1,1,22
+phase28b_development_q009,calibrated,10:62:83:101:111:121:122,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,9696e2193b69b552d7b1,16,control_api_access,7,2,2,51
+phase28b_development_q009,calibrated,19:41:60:106:130:144:166,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,3602be03d23607ecd012,23,session_replay,7,2,2,55
+phase28b_development_q009,calibrated,1:14:29:55:95:120:150,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,aa13c49e7e6619f7d77d,9,branch_office_pivot,7,2,2,51
+phase28b_development_q009,calibrated,2:30:50:66:124:133:160,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,1d00664691d11a437643,7,archive_collection,7,2,2,51
+phase28b_development_q009,calibrated,8:45:117:135:149:159:161,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,7140d68d6f0433aaacaa,22,branch_office_pivot,7,2,2,45
+phase28b_development_q009,component,82:93,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,5.65790068,-8.19855591,0,157f371b83fb37f46559,99,benign,2,1,0,1
+phase28b_development_q009,component,102:131,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,4.20841254,-8.19855591,0,356e5e59c69ec0de79c3,99,benign,2,2,0,1
+phase28b_development_q009,component,35:54,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,4.20841254,-8.19855591,0,0781630abe8c8d896a30,99,benign,2,2,0,1
+phase28b_development_q009,component,0:5:28:134:158,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,46d9710f87bd30aa234c,13,archive_collection,5,1,1,34
+phase28b_development_q009,component,22:46:61:72:92:118,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,eea2868ce0d2c758bf40,2,database_service_path,6,1,1,44
+phase28b_development_q009,component,34:47:113:151:155,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,0,ec3cba7bc8b468a90c45,25,branch_office_pivot,5,0,0,10
+phase28b_development_q009,component,59:68:73:103:119,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,b61937ee870f39fccf35,10,session_replay,5,1,1,22
+phase28b_development_q009,component,6:18:56:71:89:115:152,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,41a80461c923a7272f44,20,agent_service_abuse,7,1,1,69
+phase28b_development_q009,component,9:65:94:156:165,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,3b8662595476ba1e393b,8,token_exchange_abuse,5,1,1,22
+phase28b_development_q009,component,10:62:83:101:111:121:122,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,9696e2193b69b552d7b1,16,control_api_access,7,2,2,51
+phase28b_development_q009,component,19:41:60:106:130:144:166,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,3602be03d23607ecd012,23,session_replay,7,2,2,55
+phase28b_development_q009,component,1:14:29:55:95:120:150,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,aa13c49e7e6619f7d77d,9,branch_office_pivot,7,2,2,51
+phase28b_development_q009,component,2:30:50:66:124:133:160,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,1d00664691d11a437643,7,archive_collection,7,2,2,51
+phase28b_development_q009,component,8:45:117:135:149:159:161,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,7140d68d6f0433aaacaa,22,branch_office_pivot,7,2,2,45
+phase28b_development_q009,selective,82:93,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,5.65790068,-8.19855591,0,157f371b83fb37f46559,99,benign,2,1,0,1
+phase28b_development_q009,selective,102:131,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,4.20841254,-8.19855591,0,356e5e59c69ec0de79c3,99,benign,2,2,0,1
+phase28b_development_q009,selective,35:54,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,4.20841254,-8.19855591,0,0781630abe8c8d896a30,99,benign,2,2,0,1
+phase28b_development_q009,selective,0:5:28:134:158,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,46d9710f87bd30aa234c,13,archive_collection,5,1,1,34
+phase28b_development_q009,selective,22:46:61:72:92:118,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,eea2868ce0d2c758bf40,2,database_service_path,6,1,1,44
+phase28b_development_q009,selective,34:47:113:151:155,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,0,ec3cba7bc8b468a90c45,25,branch_office_pivot,5,0,0,10
+phase28b_development_q009,selective,59:68:73:103:119,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,b61937ee870f39fccf35,10,session_replay,5,1,1,22
+phase28b_development_q009,selective,6:18:56:71:89:115:152,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,41a80461c923a7272f44,20,agent_service_abuse,7,1,1,69
+phase28b_development_q009,selective,9:65:94:156:165,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,3b8662595476ba1e393b,8,token_exchange_abuse,5,1,1,22
+phase28b_development_q009,selective,10:62:83:101:111:121:122,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,9696e2193b69b552d7b1,16,control_api_access,7,2,2,51
+phase28b_development_q009,selective,19:41:60:106:130:144:166,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,3602be03d23607ecd012,23,session_replay,7,2,2,55
+phase28b_development_q009,selective,1:14:29:55:95:120:150,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,aa13c49e7e6619f7d77d,9,branch_office_pivot,7,2,2,51
+phase28b_development_q009,selective,2:30:50:66:124:133:160,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,1d00664691d11a437643,7,archive_collection,7,2,2,51
+phase28b_development_q009,selective,8:45:117:135:149:159:161,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,7140d68d6f0433aaacaa,22,branch_office_pivot,7,2,2,45
+phase28b_development_q010,calibrated,153:157,PROMOTE,calibrated_score,5.65790068,-8.19855591,0,f9abc02909fb089bdfc5,99,benign,2,1,0,1
+phase28b_development_q010,calibrated,55:162,PROMOTE,calibrated_score,4.20841254,-8.19855591,0,cec056a4abd5918458f1,99,benign,2,2,0,1
+phase28b_development_q010,calibrated,66:101,PROMOTE,calibrated_score,4.20841254,-8.19855591,0,e6205eba53c974db920b,99,benign,2,2,0,1
+phase28b_development_q010,calibrated,32:47:107:125:135:136,PROMOTE,calibrated_score,-1.65013965,-8.19855591,1,44e48846a3050dbe0031,24,session_replay,6,1,1,30
+phase28b_development_q010,calibrated,3:52:59:62:63:78:168,PROMOTE,calibrated_score,-1.65013965,-8.19855591,1,3df7a7f6e67adb180517,22,snapshot_transfer,7,1,1,55
+phase28b_development_q010,calibrated,5:37:57:149:154,PROMOTE,calibrated_score,-1.65013965,-8.19855591,0,62f47b28ef695ade7a2f,7,token_exchange_abuse,5,0,0,10
+phase28b_development_q010,calibrated,64:86:93:96:128,PROMOTE,calibrated_score,-1.65013965,-8.19855591,1,c96040b22b0116a815e2,11,control_api_access,5,1,1,22
+phase28b_development_q010,calibrated,83:84:110:141:145:155:166,PROMOTE,calibrated_score,-1.65013965,-8.19855591,1,deb107b1fdc8267e8577,2,identity_fallback,7,1,1,45
+phase28b_development_q010,calibrated,0:42:46:89:112:140,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,35297f259d9aa2cc78f1,20,control_api_access,6,2,2,44
+phase28b_development_q010,calibrated,21:30:39:51:106:130,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,6eb0948caa593abd6d5f,8,snapshot_transfer,6,2,2,35
+phase28b_development_q010,calibrated,25:44:81:94:102:158,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,c8efd8601b902dcb9b9b,10,remote_admin_execution,6,2,2,35
+phase28b_development_q010,calibrated,28:71:146:147:165:171,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,118a2d17bec1ee562f96,19,remote_admin_execution,6,2,2,30
+phase28b_development_q010,calibrated,29:35:36:58:73:138:151,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,b249905ea054d84af9ac,16,snapshot_transfer,7,2,2,51
+phase28b_development_q010,calibrated,24:31:33:74:75:132:134,PROMOTE,calibrated_score,-8.19855491,-8.19855591,1,23ed8b13acf080d9006d,9,database_service_path,7,2,2,78
+phase28b_development_q010,component,153:157,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,5.65790068,-8.19855591,0,f9abc02909fb089bdfc5,99,benign,2,1,0,1
+phase28b_development_q010,component,55:162,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,4.20841254,-8.19855591,0,cec056a4abd5918458f1,99,benign,2,2,0,1
+phase28b_development_q010,component,66:101,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,4.20841254,-8.19855591,0,e6205eba53c974db920b,99,benign,2,2,0,1
+phase28b_development_q010,component,32:47:107:125:135:136,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,44e48846a3050dbe0031,24,session_replay,6,1,1,30
+phase28b_development_q010,component,3:52:59:62:63:78:168,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,3df7a7f6e67adb180517,22,snapshot_transfer,7,1,1,55
+phase28b_development_q010,component,5:37:57:149:154,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,0,62f47b28ef695ade7a2f,7,token_exchange_abuse,5,0,0,10
+phase28b_development_q010,component,64:86:93:96:128,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,c96040b22b0116a815e2,11,control_api_access,5,1,1,22
+phase28b_development_q010,component,83:84:110:141:145:155:166,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,deb107b1fdc8267e8577,2,identity_fallback,7,1,1,45
+phase28b_development_q010,component,0:42:46:89:112:140,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,35297f259d9aa2cc78f1,20,control_api_access,6,2,2,44
+phase28b_development_q010,component,21:30:39:51:106:130,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,6eb0948caa593abd6d5f,8,snapshot_transfer,6,2,2,35
+phase28b_development_q010,component,25:44:81:94:102:158,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,c8efd8601b902dcb9b9b,10,remote_admin_execution,6,2,2,35
+phase28b_development_q010,component,28:71:146:147:165:171,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,118a2d17bec1ee562f96,19,remote_admin_execution,6,2,2,30
+phase28b_development_q010,component,29:35:36:58:73:138:151,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,b249905ea054d84af9ac,16,snapshot_transfer,7,2,2,51
+phase28b_development_q010,component,24:31:33:74:75:132:134,PROMOTE,calibrated_score,-8.19855491,-8.19855591,1,23ed8b13acf080d9006d,9,database_service_path,7,2,2,78
+phase28b_development_q010,selective,153:157,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,5.65790068,-8.19855591,0,f9abc02909fb089bdfc5,99,benign,2,1,0,1
+phase28b_development_q010,selective,55:162,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,4.20841254,-8.19855591,0,cec056a4abd5918458f1,99,benign,2,2,0,1
+phase28b_development_q010,selective,66:101,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,4.20841254,-8.19855591,0,e6205eba53c974db920b,99,benign,2,2,0,1
+phase28b_development_q010,selective,32:47:107:125:135:136,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,44e48846a3050dbe0031,24,session_replay,6,1,1,30
+phase28b_development_q010,selective,3:52:59:62:63:78:168,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,3df7a7f6e67adb180517,22,snapshot_transfer,7,1,1,55
+phase28b_development_q010,selective,5:37:57:149:154,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,0,62f47b28ef695ade7a2f,7,token_exchange_abuse,5,0,0,10
+phase28b_development_q010,selective,64:86:93:96:128,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,c96040b22b0116a815e2,11,control_api_access,5,1,1,22
+phase28b_development_q010,selective,83:84:110:141:145:155:166,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,deb107b1fdc8267e8577,2,identity_fallback,7,1,1,45
+phase28b_development_q010,selective,0:42:46:89:112:140,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,35297f259d9aa2cc78f1,20,control_api_access,6,2,2,44
+phase28b_development_q010,selective,21:30:39:51:106:130,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,6eb0948caa593abd6d5f,8,snapshot_transfer,6,2,2,35
+phase28b_development_q010,selective,25:44:81:94:102:158,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,c8efd8601b902dcb9b9b,10,remote_admin_execution,6,2,2,35
+phase28b_development_q010,selective,28:71:146:147:165:171,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,118a2d17bec1ee562f96,19,remote_admin_execution,6,2,2,30
+phase28b_development_q010,selective,29:35:36:58:73:138:151,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,b249905ea054d84af9ac,16,snapshot_transfer,7,2,2,51
+phase28b_development_q010,selective,24:31:33:74:75:132:134,RETAIN AS HYPOTHESIS,selective_abstention,-8.19855491,-8.19855591,1,23ed8b13acf080d9006d,9,database_service_path,7,2,2,78
+phase28b_development_q011,calibrated,66:136,PROMOTE,calibrated_score,5.65790068,-8.19855591,0,3cd987fb59b166f25cb4,99,benign,2,1,0,1
+phase28b_development_q011,calibrated,104:110,PROMOTE,calibrated_score,4.20841254,-8.19855591,0,2468686175916d8bc970,99,benign,2,2,0,1
+phase28b_development_q011,calibrated,92:132,PROMOTE,calibrated_score,4.20841254,-8.19855591,0,09bf2649aea01bc662a6,99,benign,2,2,0,1
+phase28b_development_q011,calibrated,1:13:21:25:111:115:150,PROMOTE,calibrated_score,-1.65013965,-8.19855591,1,c54f46dee7fa5bd45548,7,agent_service_abuse,7,1,1,51
+phase28b_development_q011,calibrated,31:65:73:94:116:127:148,PROMOTE,calibrated_score,-1.65013965,-8.19855591,1,d47c7f6a6e0355236a8d,14,token_exchange_abuse,7,1,1,57
+phase28b_development_q011,calibrated,39:42:47:97:125:139,PROMOTE,calibrated_score,-1.65013965,-8.19855591,1,d0127490f2fa775d5503,4,agent_service_abuse,6,1,1,44
+phase28b_development_q011,calibrated,77:95:103:141:153,PROMOTE,calibrated_score,-1.65013965,-8.19855591,0,4962ebc9fbd28218b7a5,3,token_exchange_abuse,5,0,0,10
+phase28b_development_q011,calibrated,7:26:27:46:54:75:79,PROMOTE,calibrated_score,-1.65013965,-8.19855591,1,36bc5bbd03bde92da7a1,2,session_replay,7,1,1,69
+phase28b_development_q011,calibrated,9:12:17:62:130,PROMOTE,calibrated_score,-1.65013965,-8.19855591,1,c5f9846482cd41807316,1,agent_service_abuse,5,1,1,22
+phase28b_development_q011,calibrated,18:59:86:102:137:144,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,f16b07918eef601125c4,9,archive_collection,6,2,2,30
+phase28b_development_q011,calibrated,19:20:45:87:131,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,df2c9a9aadede97ed83c,22,archive_collection,5,2,2,29
+phase28b_development_q011,calibrated,29:33:57:106:151,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,92d366a6952ffc2543c2,24,identity_fallback,5,2,2,22
+phase28b_development_q011,calibrated,3:10:40:93:149:156,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,e6a61953a3b6e3a05e2b,8,branch_office_pivot,6,2,2,45
+phase28b_development_q011,calibrated,48:60:61:88:113:128:138,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,38ba551c6be2cc6b7a72,20,remote_admin_execution,7,2,2,45
+phase28b_development_q011,component,66:136,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,5.65790068,-8.19855591,0,3cd987fb59b166f25cb4,99,benign,2,1,0,1
+phase28b_development_q011,component,104:110,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,4.20841254,-8.19855591,0,2468686175916d8bc970,99,benign,2,2,0,1
+phase28b_development_q011,component,92:132,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,4.20841254,-8.19855591,0,09bf2649aea01bc662a6,99,benign,2,2,0,1
+phase28b_development_q011,component,1:13:21:25:111:115:150,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,c54f46dee7fa5bd45548,7,agent_service_abuse,7,1,1,51
+phase28b_development_q011,component,31:65:73:94:116:127:148,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,d47c7f6a6e0355236a8d,14,token_exchange_abuse,7,1,1,57
+phase28b_development_q011,component,39:42:47:97:125:139,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,d0127490f2fa775d5503,4,agent_service_abuse,6,1,1,44
+phase28b_development_q011,component,77:95:103:141:153,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,0,4962ebc9fbd28218b7a5,3,token_exchange_abuse,5,0,0,10
+phase28b_development_q011,component,7:26:27:46:54:75:79,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,36bc5bbd03bde92da7a1,2,session_replay,7,1,1,69
+phase28b_development_q011,component,9:12:17:62:130,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,c5f9846482cd41807316,1,agent_service_abuse,5,1,1,22
+phase28b_development_q011,component,18:59:86:102:137:144,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,f16b07918eef601125c4,9,archive_collection,6,2,2,30
+phase28b_development_q011,component,19:20:45:87:131,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,df2c9a9aadede97ed83c,22,archive_collection,5,2,2,29
+phase28b_development_q011,component,29:33:57:106:151,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,92d366a6952ffc2543c2,24,identity_fallback,5,2,2,22
+phase28b_development_q011,component,3:10:40:93:149:156,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,e6a61953a3b6e3a05e2b,8,branch_office_pivot,6,2,2,45
+phase28b_development_q011,component,48:60:61:88:113:128:138,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,38ba551c6be2cc6b7a72,20,remote_admin_execution,7,2,2,45
+phase28b_development_q011,selective,66:136,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,5.65790068,-8.19855591,0,3cd987fb59b166f25cb4,99,benign,2,1,0,1
+phase28b_development_q011,selective,104:110,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,4.20841254,-8.19855591,0,2468686175916d8bc970,99,benign,2,2,0,1
+phase28b_development_q011,selective,92:132,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,4.20841254,-8.19855591,0,09bf2649aea01bc662a6,99,benign,2,2,0,1
+phase28b_development_q011,selective,1:13:21:25:111:115:150,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,c54f46dee7fa5bd45548,7,agent_service_abuse,7,1,1,51
+phase28b_development_q011,selective,31:65:73:94:116:127:148,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,d47c7f6a6e0355236a8d,14,token_exchange_abuse,7,1,1,57
+phase28b_development_q011,selective,39:42:47:97:125:139,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,d0127490f2fa775d5503,4,agent_service_abuse,6,1,1,44
+phase28b_development_q011,selective,77:95:103:141:153,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,0,4962ebc9fbd28218b7a5,3,token_exchange_abuse,5,0,0,10
+phase28b_development_q011,selective,7:26:27:46:54:75:79,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,36bc5bbd03bde92da7a1,2,session_replay,7,1,1,69
+phase28b_development_q011,selective,9:12:17:62:130,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,c5f9846482cd41807316,1,agent_service_abuse,5,1,1,22
+phase28b_development_q011,selective,18:59:86:102:137:144,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,f16b07918eef601125c4,9,archive_collection,6,2,2,30
+phase28b_development_q011,selective,19:20:45:87:131,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,df2c9a9aadede97ed83c,22,archive_collection,5,2,2,29
+phase28b_development_q011,selective,29:33:57:106:151,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,92d366a6952ffc2543c2,24,identity_fallback,5,2,2,22
+phase28b_development_q011,selective,3:10:40:93:149:156,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,e6a61953a3b6e3a05e2b,8,branch_office_pivot,6,2,2,45
+phase28b_development_q011,selective,48:60:61:88:113:128:138,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,38ba551c6be2cc6b7a72,20,remote_admin_execution,7,2,2,45
+phase28b_development_q012,calibrated,100:122,PROMOTE,calibrated_score,5.65790068,-8.19855591,0,966ef02c5794c8a60efd,99,benign,2,1,0,1
+phase28b_development_q012,calibrated,125:167,PROMOTE,calibrated_score,5.65790068,-8.19855591,0,77b1e37240b0bc6c4ab3,99,benign,2,1,0,1
+phase28b_development_q012,calibrated,28:75,PROMOTE,calibrated_score,5.65790068,-8.19855591,0,3960337119460abbc806,99,benign,2,1,0,1
+phase28b_development_q012,calibrated,0:14:42:104:121,PROMOTE,calibrated_score,-1.65013965,-8.19855591,1,cc9faa7571200487bfe2,21,database_service_path,5,1,1,22
+phase28b_development_q012,calibrated,15:20:50:79:102:111:132,PROMOTE,calibrated_score,-1.65013965,-8.19855591,1,861fb473738812ed7e36,17,branch_office_pivot,7,1,1,57
+phase28b_development_q012,calibrated,16:44:76:93:127:134,PROMOTE,calibrated_score,-1.65013965,-8.19855591,1,6605c994ee9a17555350,24,database_service_path,6,1,1,50
+phase28b_development_q012,calibrated,22:31:62:91:136:152:161,PROMOTE,calibrated_score,-1.65013965,-8.19855591,1,0e8e25da7d48769a9038,12,snapshot_transfer,7,1,1,57
+phase28b_development_q012,calibrated,3:33:41:92:108:116:139,PROMOTE,calibrated_score,-1.65013965,-8.19855591,1,cf49be5c8c70ffd95380,13,session_replay,7,1,1,69
+phase28b_development_q012,calibrated,52:56:72:106,PROMOTE,calibrated_score,-1.65013965,-8.19855591,0,e1f620cd2d05c227801c,11,branch_office_pivot,4,0,0,6
+phase28b_development_q012,calibrated,78:97:105:110:135:142:145,PROMOTE,calibrated_score,-1.65013965,-8.19855591,1,053a0f55462afdd12dd3,15,control_api_access,7,1,1,45
+phase28b_development_q012,calibrated,10:40:61:81:113:124:150,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,447a5d21c9446be2172b,20,control_api_access,7,2,2,62
+phase28b_development_q012,calibrated,11:30:38:46:47:53:94,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,96e211fd82619890eafe,7,database_service_path,7,2,2,55
+phase28b_development_q012,calibrated,36:54:77:129:151:154:158,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,5740e42e1913ae6df76a,4,session_replay,7,2,2,51
+phase28b_development_q012,calibrated,48:51:70:123:126:141,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,88d232c589c30592ed13,25,archive_collection,6,2,2,35
+phase28b_development_q012,component,100:122,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,5.65790068,-8.19855591,0,966ef02c5794c8a60efd,99,benign,2,1,0,1
+phase28b_development_q012,component,125:167,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,5.65790068,-8.19855591,0,77b1e37240b0bc6c4ab3,99,benign,2,1,0,1
+phase28b_development_q012,component,28:75,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,5.65790068,-8.19855591,0,3960337119460abbc806,99,benign,2,1,0,1
+phase28b_development_q012,component,0:14:42:104:121,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,cc9faa7571200487bfe2,21,database_service_path,5,1,1,22
+phase28b_development_q012,component,15:20:50:79:102:111:132,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,861fb473738812ed7e36,17,branch_office_pivot,7,1,1,57
+phase28b_development_q012,component,16:44:76:93:127:134,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,6605c994ee9a17555350,24,database_service_path,6,1,1,50
+phase28b_development_q012,component,22:31:62:91:136:152:161,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,0e8e25da7d48769a9038,12,snapshot_transfer,7,1,1,57
+phase28b_development_q012,component,3:33:41:92:108:116:139,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,cf49be5c8c70ffd95380,13,session_replay,7,1,1,69
+phase28b_development_q012,component,52:56:72:106,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,0,e1f620cd2d05c227801c,11,branch_office_pivot,4,0,0,6
+phase28b_development_q012,component,78:97:105:110:135:142:145,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,053a0f55462afdd12dd3,15,control_api_access,7,1,1,45
+phase28b_development_q012,component,10:40:61:81:113:124:150,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,447a5d21c9446be2172b,20,control_api_access,7,2,2,62
+phase28b_development_q012,component,11:30:38:46:47:53:94,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,96e211fd82619890eafe,7,database_service_path,7,2,2,55
+phase28b_development_q012,component,36:54:77:129:151:154:158,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,5740e42e1913ae6df76a,4,session_replay,7,2,2,51
+phase28b_development_q012,component,48:51:70:123:126:141,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,88d232c589c30592ed13,25,archive_collection,6,2,2,35
+phase28b_development_q012,selective,100:122,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,5.65790068,-8.19855591,0,966ef02c5794c8a60efd,99,benign,2,1,0,1
+phase28b_development_q012,selective,125:167,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,5.65790068,-8.19855591,0,77b1e37240b0bc6c4ab3,99,benign,2,1,0,1
+phase28b_development_q012,selective,28:75,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,5.65790068,-8.19855591,0,3960337119460abbc806,99,benign,2,1,0,1
+phase28b_development_q012,selective,0:14:42:104:121,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,cc9faa7571200487bfe2,21,database_service_path,5,1,1,22
+phase28b_development_q012,selective,15:20:50:79:102:111:132,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,861fb473738812ed7e36,17,branch_office_pivot,7,1,1,57
+phase28b_development_q012,selective,16:44:76:93:127:134,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,6605c994ee9a17555350,24,database_service_path,6,1,1,50
+phase28b_development_q012,selective,22:31:62:91:136:152:161,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,0e8e25da7d48769a9038,12,snapshot_transfer,7,1,1,57
+phase28b_development_q012,selective,3:33:41:92:108:116:139,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,cf49be5c8c70ffd95380,13,session_replay,7,1,1,69
+phase28b_development_q012,selective,52:56:72:106,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,0,e1f620cd2d05c227801c,11,branch_office_pivot,4,0,0,6
+phase28b_development_q012,selective,78:97:105:110:135:142:145,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,053a0f55462afdd12dd3,15,control_api_access,7,1,1,45
+phase28b_development_q012,selective,10:40:61:81:113:124:150,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,447a5d21c9446be2172b,20,control_api_access,7,2,2,62
+phase28b_development_q012,selective,11:30:38:46:47:53:94,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,96e211fd82619890eafe,7,database_service_path,7,2,2,55
+phase28b_development_q012,selective,36:54:77:129:151:154:158,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,5740e42e1913ae6df76a,4,session_replay,7,2,2,51
+phase28b_development_q012,selective,48:51:70:123:126:141,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,88d232c589c30592ed13,25,archive_collection,6,2,2,35
+phase28b_development_q013,calibrated,41:140,PROMOTE,calibrated_score,5.65790068,-8.19855591,0,8ce3e4e81a4bb18b3d80,99,benign,2,1,0,1
+phase28b_development_q013,calibrated,99:104,PROMOTE,calibrated_score,5.65790068,-8.19855591,0,b024f191fa3c7ecfff66,99,benign,2,1,0,1
+phase28b_development_q013,calibrated,110:155,PROMOTE,calibrated_score,4.20841254,-8.19855591,0,544d603534fc0255f56c,99,benign,2,2,0,1
+phase28b_development_q013,calibrated,113:131,PROMOTE,calibrated_score,4.20841254,-8.19855591,0,637acbe0fdff0f79b431,99,benign,2,2,0,1
+phase28b_development_q013,calibrated,74:94:105:118:132,PROMOTE,calibrated_score,-1.65013965,-8.19855591,1,144c3d8afc1d34787386,6,identity_fallback,5,1,1,26
+phase28b_development_q013,calibrated,13:34:38:63:111:121,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,4b69d878dc9f2538b481,10,token_exchange_abuse,6,2,2,44
+phase28b_development_q013,calibrated,16:66:76:84:102:107:139,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,ae11ed31d783d0eadc68,16,snapshot_transfer,7,2,2,51
+phase28b_development_q013,calibrated,1:80:96:100:128:129:157,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,d6f801e5c2494cc06340,19,remote_admin_execution,7,2,2,62
+phase28b_development_q013,calibrated,21:37:40:52:109:116,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,9d62c6a4f7f87800b1e0,15,snapshot_transfer,6,2,2,30
+phase28b_development_q013,calibrated,27:39:53:55:91:154,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,4f67a5e8ea5f04b7e706,20,control_api_access,6,2,2,40
+phase28b_development_q013,calibrated,31:62:67:71:93:142:146,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,ebf176d3af149bfff9f8,5,token_exchange_abuse,7,2,2,45
+phase28b_development_q013,calibrated,44:46:61:69:90:119:133,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,0bb6a980d982ab051413,18,identity_fallback,7,2,2,55
+phase28b_development_q013,calibrated,4:11:33:57:73:81,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,daaf9a894cbd3da01ebc,17,agent_service_abuse,6,2,2,35
+phase28b_development_q013,calibrated,8:17:26:86:108:147,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,76665eaa991fcd25f537,7,remote_admin_execution,6,2,2,35
+phase28b_development_q013,component,41:140,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,5.65790068,-8.19855591,0,8ce3e4e81a4bb18b3d80,99,benign,2,1,0,1
+phase28b_development_q013,component,99:104,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,5.65790068,-8.19855591,0,b024f191fa3c7ecfff66,99,benign,2,1,0,1
+phase28b_development_q013,component,110:155,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,4.20841254,-8.19855591,0,544d603534fc0255f56c,99,benign,2,2,0,1
+phase28b_development_q013,component,113:131,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,4.20841254,-8.19855591,0,637acbe0fdff0f79b431,99,benign,2,2,0,1
+phase28b_development_q013,component,74:94:105:118:132,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,144c3d8afc1d34787386,6,identity_fallback,5,1,1,26
+phase28b_development_q013,component,13:34:38:63:111:121,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,4b69d878dc9f2538b481,10,token_exchange_abuse,6,2,2,44
+phase28b_development_q013,component,16:66:76:84:102:107:139,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,ae11ed31d783d0eadc68,16,snapshot_transfer,7,2,2,51
+phase28b_development_q013,component,1:80:96:100:128:129:157,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,d6f801e5c2494cc06340,19,remote_admin_execution,7,2,2,62
+phase28b_development_q013,component,21:37:40:52:109:116,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,9d62c6a4f7f87800b1e0,15,snapshot_transfer,6,2,2,30
+phase28b_development_q013,component,27:39:53:55:91:154,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,4f67a5e8ea5f04b7e706,20,control_api_access,6,2,2,40
+phase28b_development_q013,component,31:62:67:71:93:142:146,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,ebf176d3af149bfff9f8,5,token_exchange_abuse,7,2,2,45
+phase28b_development_q013,component,44:46:61:69:90:119:133,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,0bb6a980d982ab051413,18,identity_fallback,7,2,2,55
+phase28b_development_q013,component,4:11:33:57:73:81,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,daaf9a894cbd3da01ebc,17,agent_service_abuse,6,2,2,35
+phase28b_development_q013,component,8:17:26:86:108:147,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,76665eaa991fcd25f537,7,remote_admin_execution,6,2,2,35
+phase28b_development_q013,selective,41:140,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,5.65790068,-8.19855591,0,8ce3e4e81a4bb18b3d80,99,benign,2,1,0,1
+phase28b_development_q013,selective,99:104,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,5.65790068,-8.19855591,0,b024f191fa3c7ecfff66,99,benign,2,1,0,1
+phase28b_development_q013,selective,110:155,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,4.20841254,-8.19855591,0,544d603534fc0255f56c,99,benign,2,2,0,1
+phase28b_development_q013,selective,113:131,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,4.20841254,-8.19855591,0,637acbe0fdff0f79b431,99,benign,2,2,0,1
+phase28b_development_q013,selective,74:94:105:118:132,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,144c3d8afc1d34787386,6,identity_fallback,5,1,1,26
+phase28b_development_q013,selective,13:34:38:63:111:121,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,4b69d878dc9f2538b481,10,token_exchange_abuse,6,2,2,44
+phase28b_development_q013,selective,16:66:76:84:102:107:139,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,ae11ed31d783d0eadc68,16,snapshot_transfer,7,2,2,51
+phase28b_development_q013,selective,1:80:96:100:128:129:157,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,d6f801e5c2494cc06340,19,remote_admin_execution,7,2,2,62
+phase28b_development_q013,selective,21:37:40:52:109:116,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,9d62c6a4f7f87800b1e0,15,snapshot_transfer,6,2,2,30
+phase28b_development_q013,selective,27:39:53:55:91:154,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,4f67a5e8ea5f04b7e706,20,control_api_access,6,2,2,40
+phase28b_development_q013,selective,31:62:67:71:93:142:146,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,ebf176d3af149bfff9f8,5,token_exchange_abuse,7,2,2,45
+phase28b_development_q013,selective,44:46:61:69:90:119:133,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,0bb6a980d982ab051413,18,identity_fallback,7,2,2,55
+phase28b_development_q013,selective,4:11:33:57:73:81,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,daaf9a894cbd3da01ebc,17,agent_service_abuse,6,2,2,35
+phase28b_development_q013,selective,8:17:26:86:108:147,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,76665eaa991fcd25f537,7,remote_admin_execution,6,2,2,35
+phase28b_development_q014,calibrated,102:129,PROMOTE,calibrated_score,5.65790068,-8.19855591,0,de287d55ced522d1b606,99,benign,2,1,0,1
+phase28b_development_q014,calibrated,114:139,PROMOTE,calibrated_score,5.65790068,-8.19855591,0,e920bb45224f503e1d25,99,benign,2,1,0,1
+phase28b_development_q014,calibrated,69:117,PROMOTE,calibrated_score,5.65790068,-8.19855591,0,aca867159214c8a0b1c9,99,benign,2,1,0,1
+phase28b_development_q014,calibrated,1:76,PROMOTE,calibrated_score,4.20841254,-8.19855591,0,ccd42904437033da2ed2,99,benign,2,2,0,1
+phase28b_development_q014,calibrated,10:11:15:83:88:105:156,PROMOTE,calibrated_score,-1.65013965,-8.19855591,1,bb903bf80d774f7fcf64,24,archive_collection,7,1,1,51
+phase28b_development_q014,calibrated,18:20:35:54:59:92:154,PROMOTE,calibrated_score,-1.65013965,-8.19855591,1,243a955ac83b71af064e,19,branch_office_pivot,7,1,1,51
+phase28b_development_q014,calibrated,0:8:39:79:93:132:147,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,f24fffabb46cb4ea8a84,23,session_replay,7,2,2,51
+phase28b_development_q014,calibrated,13:49:55:68:104:116,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,3a4c32271c180a3281ac,4,database_service_path,6,2,2,35
+phase28b_development_q014,calibrated,23:62:85:125:141:153,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,e3938be7719a46920eee,22,token_exchange_abuse,6,2,2,30
+phase28b_development_q014,calibrated,27:31:89:119:131,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,4eeb50b2b6b46f47b44b,15,agent_service_abuse,5,2,2,29
+phase28b_development_q014,calibrated,2:24:33:140:148,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,6dabddbe517a9a683efe,8,archive_collection,5,2,2,29
+phase28b_development_q014,calibrated,3:19:75:137:143:152,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,4fd6db5715e3a660153c,14,agent_service_abuse,6,2,2,35
+phase28b_development_q014,calibrated,5:28:103:111:138,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,aff1f065abc1fe0287d4,13,session_replay,5,2,2,34
+phase28b_development_q014,calibrated,9:30:41:108:146:151,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,9c06e324ba4e06f45bae,16,branch_office_pivot,6,2,2,35
+phase28b_development_q014,component,102:129,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,5.65790068,-8.19855591,0,de287d55ced522d1b606,99,benign,2,1,0,1
+phase28b_development_q014,component,114:139,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,5.65790068,-8.19855591,0,e920bb45224f503e1d25,99,benign,2,1,0,1
+phase28b_development_q014,component,69:117,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,5.65790068,-8.19855591,0,aca867159214c8a0b1c9,99,benign,2,1,0,1
+phase28b_development_q014,component,1:76,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,4.20841254,-8.19855591,0,ccd42904437033da2ed2,99,benign,2,2,0,1
+phase28b_development_q014,component,10:11:15:83:88:105:156,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,bb903bf80d774f7fcf64,24,archive_collection,7,1,1,51
+phase28b_development_q014,component,18:20:35:54:59:92:154,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,243a955ac83b71af064e,19,branch_office_pivot,7,1,1,51
+phase28b_development_q014,component,0:8:39:79:93:132:147,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,f24fffabb46cb4ea8a84,23,session_replay,7,2,2,51
+phase28b_development_q014,component,13:49:55:68:104:116,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,3a4c32271c180a3281ac,4,database_service_path,6,2,2,35
+phase28b_development_q014,component,23:62:85:125:141:153,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,e3938be7719a46920eee,22,token_exchange_abuse,6,2,2,30
+phase28b_development_q014,component,27:31:89:119:131,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,4eeb50b2b6b46f47b44b,15,agent_service_abuse,5,2,2,29
+phase28b_development_q014,component,2:24:33:140:148,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,6dabddbe517a9a683efe,8,archive_collection,5,2,2,29
+phase28b_development_q014,component,3:19:75:137:143:152,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,4fd6db5715e3a660153c,14,agent_service_abuse,6,2,2,35
+phase28b_development_q014,component,5:28:103:111:138,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,aff1f065abc1fe0287d4,13,session_replay,5,2,2,34
+phase28b_development_q014,component,9:30:41:108:146:151,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,9c06e324ba4e06f45bae,16,branch_office_pivot,6,2,2,35
+phase28b_development_q014,selective,102:129,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,5.65790068,-8.19855591,0,de287d55ced522d1b606,99,benign,2,1,0,1
+phase28b_development_q014,selective,114:139,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,5.65790068,-8.19855591,0,e920bb45224f503e1d25,99,benign,2,1,0,1
+phase28b_development_q014,selective,69:117,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,5.65790068,-8.19855591,0,aca867159214c8a0b1c9,99,benign,2,1,0,1
+phase28b_development_q014,selective,1:76,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,4.20841254,-8.19855591,0,ccd42904437033da2ed2,99,benign,2,2,0,1
+phase28b_development_q014,selective,10:11:15:83:88:105:156,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,bb903bf80d774f7fcf64,24,archive_collection,7,1,1,51
+phase28b_development_q014,selective,18:20:35:54:59:92:154,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,243a955ac83b71af064e,19,branch_office_pivot,7,1,1,51
+phase28b_development_q014,selective,0:8:39:79:93:132:147,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,f24fffabb46cb4ea8a84,23,session_replay,7,2,2,51
+phase28b_development_q014,selective,13:49:55:68:104:116,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,3a4c32271c180a3281ac,4,database_service_path,6,2,2,35
+phase28b_development_q014,selective,23:62:85:125:141:153,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,e3938be7719a46920eee,22,token_exchange_abuse,6,2,2,30
+phase28b_development_q014,selective,27:31:89:119:131,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,4eeb50b2b6b46f47b44b,15,agent_service_abuse,5,2,2,29
+phase28b_development_q014,selective,2:24:33:140:148,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,6dabddbe517a9a683efe,8,archive_collection,5,2,2,29
+phase28b_development_q014,selective,3:19:75:137:143:152,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,4fd6db5715e3a660153c,14,agent_service_abuse,6,2,2,35
+phase28b_development_q014,selective,5:28:103:111:138,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,aff1f065abc1fe0287d4,13,session_replay,5,2,2,34
+phase28b_development_q014,selective,9:30:41:108:146:151,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,9c06e324ba4e06f45bae,16,branch_office_pivot,6,2,2,35
+phase28b_development_q015,calibrated,111:153,PROMOTE,calibrated_score,5.65790068,-8.19855591,0,ca1492ec9047080bfab8,99,benign,2,1,0,1
+phase28b_development_q015,calibrated,125:137,PROMOTE,calibrated_score,5.65790068,-8.19855591,0,b0e10f2dd5568a85baef,99,benign,2,1,0,1
+phase28b_development_q015,calibrated,73:146,PROMOTE,calibrated_score,5.65790068,-8.19855591,0,0c0e569f9d11e5defd15,99,benign,2,1,0,1
+phase28b_development_q015,calibrated,82:134,PROMOTE,calibrated_score,5.65790068,-8.19855591,0,4cd7045cf72da13bbf20,99,benign,2,1,0,1
+phase28b_development_q015,calibrated,0:13:45:135:155,PROMOTE,calibrated_score,-1.65013965,-8.19855591,1,da1367aaaf83db6a94d5,5,remote_admin_execution,5,1,1,22
+phase28b_development_q015,calibrated,18:29:34:46:58:66:118,PROMOTE,calibrated_score,-1.65013965,-8.19855591,1,aeafe7ef3c4aad46c3eb,6,database_service_path,7,1,1,55
+phase28b_development_q015,calibrated,7:32:62:86:96:123:138,PROMOTE,calibrated_score,-1.65013965,-8.19855591,1,b9821dc4a2cfe8b24c15,21,snapshot_transfer,7,1,1,62
+phase28b_development_q015,calibrated,11:16:20:63:85:147,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,6a1899580dd72f7ca85d,18,snapshot_transfer,6,2,2,30
+phase28b_development_q015,calibrated,14:80:98:105:160,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,bd4f8808118f69b90aa9,3,session_replay,5,2,2,22
+phase28b_development_q015,calibrated,23:31:51:57:119:129,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,22ed4e87a3e338166e76,1,control_api_access,6,2,2,45
+phase28b_development_q015,calibrated,30:56:59:70:93:128:150,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,78120cd791ef0b813006,22,remote_admin_execution,7,2,2,55
+phase28b_development_q015,calibrated,39:40:42:48:81:88,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,f90d72938f032551895c,23,database_service_path,6,2,2,38
+phase28b_development_q015,calibrated,4:6:17:47:130,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,96b72413f6bc0a0027f9,16,identity_fallback,5,2,2,34
+phase28b_development_q015,calibrated,5:25:61:94:120:145:159,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,2f62d59412a22bc8828e,24,control_api_access,7,2,2,51
+phase28b_development_q015,calibrated,68:84:99:102:144:164,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,cd163ac0ae8e24ede97b,7,control_api_access,6,2,2,40
+phase28b_development_q015,component,111:153,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,5.65790068,-8.19855591,0,ca1492ec9047080bfab8,99,benign,2,1,0,1
+phase28b_development_q015,component,125:137,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,5.65790068,-8.19855591,0,b0e10f2dd5568a85baef,99,benign,2,1,0,1
+phase28b_development_q015,component,73:146,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,5.65790068,-8.19855591,0,0c0e569f9d11e5defd15,99,benign,2,1,0,1
+phase28b_development_q015,component,82:134,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,5.65790068,-8.19855591,0,4cd7045cf72da13bbf20,99,benign,2,1,0,1
+phase28b_development_q015,component,0:13:45:135:155,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,da1367aaaf83db6a94d5,5,remote_admin_execution,5,1,1,22
+phase28b_development_q015,component,18:29:34:46:58:66:118,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,aeafe7ef3c4aad46c3eb,6,database_service_path,7,1,1,55
+phase28b_development_q015,component,7:32:62:86:96:123:138,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,b9821dc4a2cfe8b24c15,21,snapshot_transfer,7,1,1,62
+phase28b_development_q015,component,11:16:20:63:85:147,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,6a1899580dd72f7ca85d,18,snapshot_transfer,6,2,2,30
+phase28b_development_q015,component,14:80:98:105:160,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,bd4f8808118f69b90aa9,3,session_replay,5,2,2,22
+phase28b_development_q015,component,23:31:51:57:119:129,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,22ed4e87a3e338166e76,1,control_api_access,6,2,2,45
+phase28b_development_q015,component,30:56:59:70:93:128:150,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,78120cd791ef0b813006,22,remote_admin_execution,7,2,2,55
+phase28b_development_q015,component,39:40:42:48:81:88,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,f90d72938f032551895c,23,database_service_path,6,2,2,38
+phase28b_development_q015,component,4:6:17:47:130,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,96b72413f6bc0a0027f9,16,identity_fallback,5,2,2,34
+phase28b_development_q015,component,5:25:61:94:120:145:159,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,2f62d59412a22bc8828e,24,control_api_access,7,2,2,51
+phase28b_development_q015,component,68:84:99:102:144:164,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,cd163ac0ae8e24ede97b,7,control_api_access,6,2,2,40
+phase28b_development_q015,selective,111:153,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,5.65790068,-8.19855591,0,ca1492ec9047080bfab8,99,benign,2,1,0,1
+phase28b_development_q015,selective,125:137,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,5.65790068,-8.19855591,0,b0e10f2dd5568a85baef,99,benign,2,1,0,1
+phase28b_development_q015,selective,73:146,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,5.65790068,-8.19855591,0,0c0e569f9d11e5defd15,99,benign,2,1,0,1
+phase28b_development_q015,selective,82:134,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,5.65790068,-8.19855591,0,4cd7045cf72da13bbf20,99,benign,2,1,0,1
+phase28b_development_q015,selective,0:13:45:135:155,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,da1367aaaf83db6a94d5,5,remote_admin_execution,5,1,1,22
+phase28b_development_q015,selective,18:29:34:46:58:66:118,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,aeafe7ef3c4aad46c3eb,6,database_service_path,7,1,1,55
+phase28b_development_q015,selective,7:32:62:86:96:123:138,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,b9821dc4a2cfe8b24c15,21,snapshot_transfer,7,1,1,62
+phase28b_development_q015,selective,11:16:20:63:85:147,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,6a1899580dd72f7ca85d,18,snapshot_transfer,6,2,2,30
+phase28b_development_q015,selective,14:80:98:105:160,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,bd4f8808118f69b90aa9,3,session_replay,5,2,2,22
+phase28b_development_q015,selective,23:31:51:57:119:129,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,22ed4e87a3e338166e76,1,control_api_access,6,2,2,45
+phase28b_development_q015,selective,30:56:59:70:93:128:150,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,78120cd791ef0b813006,22,remote_admin_execution,7,2,2,55
+phase28b_development_q015,selective,39:40:42:48:81:88,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,f90d72938f032551895c,23,database_service_path,6,2,2,38
+phase28b_development_q015,selective,4:6:17:47:130,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,96b72413f6bc0a0027f9,16,identity_fallback,5,2,2,34
+phase28b_development_q015,selective,5:25:61:94:120:145:159,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,2f62d59412a22bc8828e,24,control_api_access,7,2,2,51
+phase28b_development_q015,selective,68:84:99:102:144:164,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,cd163ac0ae8e24ede97b,7,control_api_access,6,2,2,40
+phase28b_development_q016,calibrated,66:146,PROMOTE,calibrated_score,5.65790068,-8.19855591,0,75aea214f36cb98e298f,99,benign,2,1,0,1
+phase28b_development_q016,calibrated,8:108,PROMOTE,calibrated_score,5.65790068,-8.19855591,0,95dd00883c0135bdefe0,99,benign,2,1,0,1
+phase28b_development_q016,calibrated,20:128,PROMOTE,calibrated_score,4.20841254,-8.19855591,0,328f7cf17c63ecb65856,99,benign,2,2,0,1
+phase28b_development_q016,calibrated,86:145,PROMOTE,calibrated_score,4.20841254,-8.19855591,0,4fe04b45d13c9f2ceaf4,99,benign,2,2,0,1
+phase28b_development_q016,calibrated,10:29:64:123:137:149,PROMOTE,calibrated_score,-1.65013965,-8.19855591,1,07addd25e6e9407917b0,3,token_exchange_abuse,6,1,1,38
+phase28b_development_q016,calibrated,1:13:21:57:138,PROMOTE,calibrated_score,-1.65013965,-8.19855591,1,284cba51d1fdf0465bfa,17,identity_fallback,5,1,1,22
+phase28b_development_q016,calibrated,43:44:58:68:81:124,PROMOTE,calibrated_score,-1.65013965,-8.19855591,1,1e49979802f5042d8a4d,11,snapshot_transfer,6,1,1,35
+phase28b_development_q016,calibrated,7:53:63:65:90:102,PROMOTE,calibrated_score,-1.65013965,-8.19855591,1,697a6cc50edf42e8cb39,2,archive_collection,6,1,1,44
+phase28b_development_q016,calibrated,12:36:56:74:104:107,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,848930b20d5499ac58da,16,token_exchange_abuse,6,2,2,35
+phase28b_development_q016,calibrated,17:78:84:94:103:133,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,36aecab99094a7a4c25d,14,remote_admin_execution,6,2,2,40
+phase28b_development_q016,calibrated,22:46:96:140:141:162,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,4bbb5afd1f295e9e2f96,6,token_exchange_abuse,6,2,2,35
+phase28b_development_q016,calibrated,24:54:72:73:111:150:154,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,a9c358ae7fae4b27dcb2,5,agent_service_abuse,7,2,2,55
+phase28b_development_q016,calibrated,4:11:70:98:136:143,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,dbd98eb2e314162e1126,1,identity_fallback,6,2,2,44
+phase28b_development_q016,calibrated,5:30:49:77:118:130:152,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,319e347fe710e9b86db8,25,agent_service_abuse,7,2,2,69
+phase28b_development_q016,calibrated,40:52:80:100:106,PROMOTE,calibrated_score,-8.19855491,-8.19855591,1,e062231a49eddc567d05,13,branch_office_pivot,5,2,2,39
+phase28b_development_q016,component,66:146,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,5.65790068,-8.19855591,0,75aea214f36cb98e298f,99,benign,2,1,0,1
+phase28b_development_q016,component,8:108,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,5.65790068,-8.19855591,0,95dd00883c0135bdefe0,99,benign,2,1,0,1
+phase28b_development_q016,component,20:128,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,4.20841254,-8.19855591,0,328f7cf17c63ecb65856,99,benign,2,2,0,1
+phase28b_development_q016,component,86:145,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,4.20841254,-8.19855591,0,4fe04b45d13c9f2ceaf4,99,benign,2,2,0,1
+phase28b_development_q016,component,10:29:64:123:137:149,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,07addd25e6e9407917b0,3,token_exchange_abuse,6,1,1,38
+phase28b_development_q016,component,1:13:21:57:138,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,284cba51d1fdf0465bfa,17,identity_fallback,5,1,1,22
+phase28b_development_q016,component,43:44:58:68:81:124,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,1e49979802f5042d8a4d,11,snapshot_transfer,6,1,1,35
+phase28b_development_q016,component,7:53:63:65:90:102,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,697a6cc50edf42e8cb39,2,archive_collection,6,1,1,44
+phase28b_development_q016,component,12:36:56:74:104:107,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,848930b20d5499ac58da,16,token_exchange_abuse,6,2,2,35
+phase28b_development_q016,component,17:78:84:94:103:133,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,36aecab99094a7a4c25d,14,remote_admin_execution,6,2,2,40
+phase28b_development_q016,component,22:46:96:140:141:162,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,4bbb5afd1f295e9e2f96,6,token_exchange_abuse,6,2,2,35
+phase28b_development_q016,component,24:54:72:73:111:150:154,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,a9c358ae7fae4b27dcb2,5,agent_service_abuse,7,2,2,55
+phase28b_development_q016,component,4:11:70:98:136:143,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,dbd98eb2e314162e1126,1,identity_fallback,6,2,2,44
+phase28b_development_q016,component,5:30:49:77:118:130:152,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,319e347fe710e9b86db8,25,agent_service_abuse,7,2,2,69
+phase28b_development_q016,component,40:52:80:100:106,PROMOTE,calibrated_score,-8.19855491,-8.19855591,1,e062231a49eddc567d05,13,branch_office_pivot,5,2,2,39
+phase28b_development_q016,selective,66:146,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,5.65790068,-8.19855591,0,75aea214f36cb98e298f,99,benign,2,1,0,1
+phase28b_development_q016,selective,8:108,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,5.65790068,-8.19855591,0,95dd00883c0135bdefe0,99,benign,2,1,0,1
+phase28b_development_q016,selective,20:128,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,4.20841254,-8.19855591,0,328f7cf17c63ecb65856,99,benign,2,2,0,1
+phase28b_development_q016,selective,86:145,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,4.20841254,-8.19855591,0,4fe04b45d13c9f2ceaf4,99,benign,2,2,0,1
+phase28b_development_q016,selective,10:29:64:123:137:149,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,07addd25e6e9407917b0,3,token_exchange_abuse,6,1,1,38
+phase28b_development_q016,selective,1:13:21:57:138,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,284cba51d1fdf0465bfa,17,identity_fallback,5,1,1,22
+phase28b_development_q016,selective,43:44:58:68:81:124,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,1e49979802f5042d8a4d,11,snapshot_transfer,6,1,1,35
+phase28b_development_q016,selective,7:53:63:65:90:102,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,697a6cc50edf42e8cb39,2,archive_collection,6,1,1,44
+phase28b_development_q016,selective,12:36:56:74:104:107,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,848930b20d5499ac58da,16,token_exchange_abuse,6,2,2,35
+phase28b_development_q016,selective,17:78:84:94:103:133,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,36aecab99094a7a4c25d,14,remote_admin_execution,6,2,2,40
+phase28b_development_q016,selective,22:46:96:140:141:162,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,4bbb5afd1f295e9e2f96,6,token_exchange_abuse,6,2,2,35
+phase28b_development_q016,selective,24:54:72:73:111:150:154,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,a9c358ae7fae4b27dcb2,5,agent_service_abuse,7,2,2,55
+phase28b_development_q016,selective,4:11:70:98:136:143,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,dbd98eb2e314162e1126,1,identity_fallback,6,2,2,44
+phase28b_development_q016,selective,5:30:49:77:118:130:152,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,319e347fe710e9b86db8,25,agent_service_abuse,7,2,2,69
+phase28b_development_q016,selective,40:52:80:100:106,RETAIN AS HYPOTHESIS,selective_abstention,-8.19855491,-8.19855591,1,e062231a49eddc567d05,13,branch_office_pivot,5,2,2,39
+phase28b_development_q017,calibrated,119:151,PROMOTE,calibrated_score,5.65790068,-8.19855591,0,b09493827ae766f8abdb,99,benign,2,1,0,1
+phase28b_development_q017,calibrated,159:164,PROMOTE,calibrated_score,5.65790068,-8.19855591,0,c55e42a71e6461494bea,99,benign,2,1,0,1
+phase28b_development_q017,calibrated,145:161,PROMOTE,calibrated_score,4.20841254,-8.19855591,0,45567f1b62113ddf537a,99,benign,2,2,0,1
+phase28b_development_q017,calibrated,88:129,PROMOTE,calibrated_score,4.20841254,-8.19855591,0,fc0098c83f5db1d0e1b0,99,benign,2,2,0,1
+phase28b_development_q017,calibrated,18:31:78:107:117:146:162,PROMOTE,calibrated_score,-1.65013965,-8.19855591,1,e86b3e0472c0201f93fe,16,archive_collection,7,1,1,51
+phase28b_development_q017,calibrated,23:63:67:68:91,PROMOTE,calibrated_score,-1.65013965,-8.19855591,0,ab13992a61b7b2277eea,25,branch_office_pivot,5,0,0,10
+phase28b_development_q017,calibrated,3:36:53:85:92:116,PROMOTE,calibrated_score,-1.65013965,-8.19855591,1,7151a5a0f0198f04b5db,4,session_replay,6,1,1,47
+phase28b_development_q017,calibrated,9:47:49:97:155:156,PROMOTE,calibrated_score,-1.65013965,-8.19855591,1,c7d5e7c21e0c52434af2,8,control_api_access,6,1,1,40
+phase28b_development_q017,calibrated,10:20:25:45:64:99:104,PROMOTE,calibrated_score,-2.35941621,-8.19855591,1,27a463f9ada111327c09,19,database_service_path,7,1,1,76
+phase28b_development_q017,calibrated,0:58:59:80:101:137:153,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,e067a0cd936d6bc3973b,6,session_replay,7,2,2,45
+phase28b_development_q017,calibrated,12:42:57:65:77:140:150,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,35c15db827645afcb461,20,session_replay,7,2,2,51
+phase28b_development_q017,calibrated,16:39:46:70:74:121,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,8de51d27438961647b6a,24,snapshot_transfer,6,2,2,30
+phase28b_development_q017,calibrated,19:26:32:73:90:93:142,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,4a2f87ca7c79c7fa4003,23,database_service_path,7,2,2,51
+phase28b_development_q017,calibrated,35:79:126:131:139:165:167,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,a9dae48045744e192564,18,agent_service_abuse,7,2,2,51
+phase28b_development_q017,calibrated,4:17:30:113:166,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,0ec383424a3182605f61,14,branch_office_pivot,5,2,2,22
+phase28b_development_q017,component,119:151,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,5.65790068,-8.19855591,0,b09493827ae766f8abdb,99,benign,2,1,0,1
+phase28b_development_q017,component,159:164,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,5.65790068,-8.19855591,0,c55e42a71e6461494bea,99,benign,2,1,0,1
+phase28b_development_q017,component,145:161,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,4.20841254,-8.19855591,0,45567f1b62113ddf537a,99,benign,2,2,0,1
+phase28b_development_q017,component,88:129,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,4.20841254,-8.19855591,0,fc0098c83f5db1d0e1b0,99,benign,2,2,0,1
+phase28b_development_q017,component,18:31:78:107:117:146:162,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,e86b3e0472c0201f93fe,16,archive_collection,7,1,1,51
+phase28b_development_q017,component,23:63:67:68:91,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,0,ab13992a61b7b2277eea,25,branch_office_pivot,5,0,0,10
+phase28b_development_q017,component,3:36:53:85:92:116,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,7151a5a0f0198f04b5db,4,session_replay,6,1,1,47
+phase28b_development_q017,component,9:47:49:97:155:156,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,c7d5e7c21e0c52434af2,8,control_api_access,6,1,1,40
+phase28b_development_q017,component,10:20:25:45:64:99:104,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-2.35941621,-8.19855591,1,27a463f9ada111327c09,19,database_service_path,7,1,1,76
+phase28b_development_q017,component,0:58:59:80:101:137:153,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,e067a0cd936d6bc3973b,6,session_replay,7,2,2,45
+phase28b_development_q017,component,12:42:57:65:77:140:150,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,35c15db827645afcb461,20,session_replay,7,2,2,51
+phase28b_development_q017,component,16:39:46:70:74:121,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,8de51d27438961647b6a,24,snapshot_transfer,6,2,2,30
+phase28b_development_q017,component,19:26:32:73:90:93:142,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,4a2f87ca7c79c7fa4003,23,database_service_path,7,2,2,51
+phase28b_development_q017,component,35:79:126:131:139:165:167,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,a9dae48045744e192564,18,agent_service_abuse,7,2,2,51
+phase28b_development_q017,component,4:17:30:113:166,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,0ec383424a3182605f61,14,branch_office_pivot,5,2,2,22
+phase28b_development_q017,selective,119:151,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,5.65790068,-8.19855591,0,b09493827ae766f8abdb,99,benign,2,1,0,1
+phase28b_development_q017,selective,159:164,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,5.65790068,-8.19855591,0,c55e42a71e6461494bea,99,benign,2,1,0,1
+phase28b_development_q017,selective,145:161,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,4.20841254,-8.19855591,0,45567f1b62113ddf537a,99,benign,2,2,0,1
+phase28b_development_q017,selective,88:129,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,4.20841254,-8.19855591,0,fc0098c83f5db1d0e1b0,99,benign,2,2,0,1
+phase28b_development_q017,selective,18:31:78:107:117:146:162,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,e86b3e0472c0201f93fe,16,archive_collection,7,1,1,51
+phase28b_development_q017,selective,23:63:67:68:91,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,0,ab13992a61b7b2277eea,25,branch_office_pivot,5,0,0,10
+phase28b_development_q017,selective,3:36:53:85:92:116,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,7151a5a0f0198f04b5db,4,session_replay,6,1,1,47
+phase28b_development_q017,selective,9:47:49:97:155:156,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,c7d5e7c21e0c52434af2,8,control_api_access,6,1,1,40
+phase28b_development_q017,selective,10:20:25:45:64:99:104,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-2.35941621,-8.19855591,1,27a463f9ada111327c09,19,database_service_path,7,1,1,76
+phase28b_development_q017,selective,0:58:59:80:101:137:153,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,e067a0cd936d6bc3973b,6,session_replay,7,2,2,45
+phase28b_development_q017,selective,12:42:57:65:77:140:150,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,35c15db827645afcb461,20,session_replay,7,2,2,51
+phase28b_development_q017,selective,16:39:46:70:74:121,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,8de51d27438961647b6a,24,snapshot_transfer,6,2,2,30
+phase28b_development_q017,selective,19:26:32:73:90:93:142,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,4a2f87ca7c79c7fa4003,23,database_service_path,7,2,2,51
+phase28b_development_q017,selective,35:79:126:131:139:165:167,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,a9dae48045744e192564,18,agent_service_abuse,7,2,2,51
+phase28b_development_q017,selective,4:17:30:113:166,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,0ec383424a3182605f61,14,branch_office_pivot,5,2,2,22
+phase28b_development_q018,calibrated,125:147,PROMOTE,calibrated_score,5.65790068,-8.19855591,0,31f50b7a836fc7a5cb15,99,benign,2,1,0,1
+phase28b_development_q018,calibrated,19:149,PROMOTE,calibrated_score,5.65790068,-8.19855591,0,c4f75e066bf775802ff4,99,benign,2,1,0,1
+phase28b_development_q018,calibrated,21:122,PROMOTE,calibrated_score,4.20841254,-8.19855591,0,3dc38f609129b21f5a81,99,benign,2,2,0,1
+phase28b_development_q018,calibrated,68:159,PROMOTE,calibrated_score,4.20841254,-8.19855591,0,3be9174d7b977f8d75d2,99,benign,2,2,0,1
+phase28b_development_q018,calibrated,0:26:47:59:97:103:109,PROMOTE,calibrated_score,-1.65013965,-8.19855591,1,3e657a423b24ca31a44d,2,agent_service_abuse,7,1,1,57
+phase28b_development_q018,calibrated,16:43:61:93:104,PROMOTE,calibrated_score,-1.65013965,-8.19855591,1,77ff5d03e3ae6085c8b9,16,identity_fallback,5,1,1,22
+phase28b_development_q018,calibrated,25:39:40:41:51:83:99,PROMOTE,calibrated_score,-1.65013965,-8.19855591,1,00f18f1abab1e2325f83,21,control_api_access,7,1,1,82
+phase28b_development_q018,calibrated,33:37:85:88:144,PROMOTE,calibrated_score,-1.65013965,-8.19855591,1,1a6b8a5d537b7f8d58db,7,snapshot_transfer,5,1,1,29
+phase28b_development_q018,calibrated,3:5:9:111:123:128,PROMOTE,calibrated_score,-1.65013965,-8.19855591,1,0be75f17c5a13e039391,25,token_exchange_abuse,6,1,1,35
+phase28b_development_q018,calibrated,4:64:67:74:92:118:132,PROMOTE,calibrated_score,-1.65013965,-8.19855591,1,ab2ff4f99fea3a46ad6c,17,remote_admin_execution,7,1,1,62
+phase28b_development_q018,calibrated,52:72:84:130:137:154,PROMOTE,calibrated_score,-1.65013965,-8.19855591,1,bc9f2407cf20abe8ddff,3,identity_fallback,6,1,1,35
+phase28b_development_q018,calibrated,13:20:42:53:76:100:113,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,0bc0070d4aeefbb0261d,10,database_service_path,7,2,2,62
+phase28b_development_q018,calibrated,1:2:63:77:115:153,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,ce0ba4ce2dfd953e4731,23,remote_admin_execution,6,2,2,50
+phase28b_development_q018,calibrated,23:24:27:62:66:70:116,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,fb2faf0f21c5108813ec,5,snapshot_transfer,7,2,2,45
+phase28b_development_q018,calibrated,54:79:90:98:112:152,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,ce015047ed4d4490574a,9,remote_admin_execution,6,2,2,47
+phase28b_development_q018,component,125:147,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,5.65790068,-8.19855591,0,31f50b7a836fc7a5cb15,99,benign,2,1,0,1
+phase28b_development_q018,component,19:149,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,5.65790068,-8.19855591,0,c4f75e066bf775802ff4,99,benign,2,1,0,1
+phase28b_development_q018,component,21:122,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,4.20841254,-8.19855591,0,3dc38f609129b21f5a81,99,benign,2,2,0,1
+phase28b_development_q018,component,68:159,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,4.20841254,-8.19855591,0,3be9174d7b977f8d75d2,99,benign,2,2,0,1
+phase28b_development_q018,component,0:26:47:59:97:103:109,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,3e657a423b24ca31a44d,2,agent_service_abuse,7,1,1,57
+phase28b_development_q018,component,16:43:61:93:104,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,77ff5d03e3ae6085c8b9,16,identity_fallback,5,1,1,22
+phase28b_development_q018,component,25:39:40:41:51:83:99,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,00f18f1abab1e2325f83,21,control_api_access,7,1,1,82
+phase28b_development_q018,component,33:37:85:88:144,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,1a6b8a5d537b7f8d58db,7,snapshot_transfer,5,1,1,29
+phase28b_development_q018,component,3:5:9:111:123:128,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,0be75f17c5a13e039391,25,token_exchange_abuse,6,1,1,35
+phase28b_development_q018,component,4:64:67:74:92:118:132,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,ab2ff4f99fea3a46ad6c,17,remote_admin_execution,7,1,1,62
+phase28b_development_q018,component,52:72:84:130:137:154,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,bc9f2407cf20abe8ddff,3,identity_fallback,6,1,1,35
+phase28b_development_q018,component,13:20:42:53:76:100:113,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,0bc0070d4aeefbb0261d,10,database_service_path,7,2,2,62
+phase28b_development_q018,component,1:2:63:77:115:153,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,ce0ba4ce2dfd953e4731,23,remote_admin_execution,6,2,2,50
+phase28b_development_q018,component,23:24:27:62:66:70:116,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,fb2faf0f21c5108813ec,5,snapshot_transfer,7,2,2,45
+phase28b_development_q018,component,54:79:90:98:112:152,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,ce015047ed4d4490574a,9,remote_admin_execution,6,2,2,47
+phase28b_development_q018,selective,125:147,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,5.65790068,-8.19855591,0,31f50b7a836fc7a5cb15,99,benign,2,1,0,1
+phase28b_development_q018,selective,19:149,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,5.65790068,-8.19855591,0,c4f75e066bf775802ff4,99,benign,2,1,0,1
+phase28b_development_q018,selective,21:122,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,4.20841254,-8.19855591,0,3dc38f609129b21f5a81,99,benign,2,2,0,1
+phase28b_development_q018,selective,68:159,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,4.20841254,-8.19855591,0,3be9174d7b977f8d75d2,99,benign,2,2,0,1
+phase28b_development_q018,selective,0:26:47:59:97:103:109,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,3e657a423b24ca31a44d,2,agent_service_abuse,7,1,1,57
+phase28b_development_q018,selective,16:43:61:93:104,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,77ff5d03e3ae6085c8b9,16,identity_fallback,5,1,1,22
+phase28b_development_q018,selective,25:39:40:41:51:83:99,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,00f18f1abab1e2325f83,21,control_api_access,7,1,1,82
+phase28b_development_q018,selective,33:37:85:88:144,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,1a6b8a5d537b7f8d58db,7,snapshot_transfer,5,1,1,29
+phase28b_development_q018,selective,3:5:9:111:123:128,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,0be75f17c5a13e039391,25,token_exchange_abuse,6,1,1,35
+phase28b_development_q018,selective,4:64:67:74:92:118:132,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,ab2ff4f99fea3a46ad6c,17,remote_admin_execution,7,1,1,62
+phase28b_development_q018,selective,52:72:84:130:137:154,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,bc9f2407cf20abe8ddff,3,identity_fallback,6,1,1,35
+phase28b_development_q018,selective,13:20:42:53:76:100:113,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,0bc0070d4aeefbb0261d,10,database_service_path,7,2,2,62
+phase28b_development_q018,selective,1:2:63:77:115:153,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,ce0ba4ce2dfd953e4731,23,remote_admin_execution,6,2,2,50
+phase28b_development_q018,selective,23:24:27:62:66:70:116,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,fb2faf0f21c5108813ec,5,snapshot_transfer,7,2,2,45
+phase28b_development_q018,selective,54:79:90:98:112:152,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,ce015047ed4d4490574a,9,remote_admin_execution,6,2,2,47
+phase28b_development_q019,calibrated,100:152,PROMOTE,calibrated_score,5.65790068,-8.19855591,0,61b7c7c3e850c282a070,99,benign,2,1,0,1
+phase28b_development_q019,calibrated,6:163,PROMOTE,calibrated_score,5.65790068,-8.19855591,0,dc4dbebd0bc8e0722ec2,99,benign,2,1,0,1
+phase28b_development_q019,calibrated,84:160,PROMOTE,calibrated_score,5.65790068,-8.19855591,0,cae3e6f5f63e918bcf5c,99,benign,2,1,0,1
+phase28b_development_q019,calibrated,9:132,PROMOTE,calibrated_score,4.20841254,-8.19855591,0,040dbed3f711c90aebfc,99,benign,2,2,0,1
+phase28b_development_q019,calibrated,15:55:60:119:134:135:143,PROMOTE,calibrated_score,-1.65013965,-8.19855591,1,e8819882593052fffcbd,13,agent_service_abuse,7,1,1,55
+phase28b_development_q019,calibrated,22:102:120:129:137:139,PROMOTE,calibrated_score,-1.65013965,-8.19855591,1,800698cd851caf10c8fa,21,session_replay,6,1,1,35
+phase28b_development_q019,calibrated,14:77:91:127:128:140:157,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,19fc5767d41e7950586f,18,token_exchange_abuse,7,2,2,45
+phase28b_development_q019,calibrated,25:52:74:99:136:151,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,9e44cb3fedbc404c9188,5,identity_fallback,6,2,2,30
+phase28b_development_q019,calibrated,29:53:59:65:87:155,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,d19ec79cb58b0d6d8794,4,archive_collection,6,2,2,44
+phase28b_development_q019,calibrated,2:8:30:43:69:104:109,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,eb95cb18ca7a19b8d950,17,archive_collection,7,2,2,55
+phase28b_development_q019,calibrated,31:34:71:89:112:167,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,ef94436aadb3f148ba34,8,token_exchange_abuse,6,2,2,30
+phase28b_development_q019,calibrated,39:58:64:67:70:144,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,6abfd04c8e734aafb56d,9,agent_service_abuse,6,2,2,44
+phase28b_development_q019,calibrated,3:62:68:92:101,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,7d607fbfedd6fd09753e,6,archive_collection,5,2,2,22
+phase28b_development_q019,calibrated,42:50:90:97:124:131:146,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,93825cc472fe9fa4a823,24,branch_office_pivot,7,2,2,62
+phase28b_development_q019,calibrated,44:54:63:153:162:164,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,db99ccf377dc14645c5d,2,branch_office_pivot,6,2,2,45
+phase28b_development_q019,component,100:152,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,5.65790068,-8.19855591,0,61b7c7c3e850c282a070,99,benign,2,1,0,1
+phase28b_development_q019,component,6:163,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,5.65790068,-8.19855591,0,dc4dbebd0bc8e0722ec2,99,benign,2,1,0,1
+phase28b_development_q019,component,84:160,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,5.65790068,-8.19855591,0,cae3e6f5f63e918bcf5c,99,benign,2,1,0,1
+phase28b_development_q019,component,9:132,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,4.20841254,-8.19855591,0,040dbed3f711c90aebfc,99,benign,2,2,0,1
+phase28b_development_q019,component,15:55:60:119:134:135:143,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,e8819882593052fffcbd,13,agent_service_abuse,7,1,1,55
+phase28b_development_q019,component,22:102:120:129:137:139,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,800698cd851caf10c8fa,21,session_replay,6,1,1,35
+phase28b_development_q019,component,14:77:91:127:128:140:157,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,19fc5767d41e7950586f,18,token_exchange_abuse,7,2,2,45
+phase28b_development_q019,component,25:52:74:99:136:151,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,9e44cb3fedbc404c9188,5,identity_fallback,6,2,2,30
+phase28b_development_q019,component,29:53:59:65:87:155,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,d19ec79cb58b0d6d8794,4,archive_collection,6,2,2,44
+phase28b_development_q019,component,2:8:30:43:69:104:109,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,eb95cb18ca7a19b8d950,17,archive_collection,7,2,2,55
+phase28b_development_q019,component,31:34:71:89:112:167,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,ef94436aadb3f148ba34,8,token_exchange_abuse,6,2,2,30
+phase28b_development_q019,component,39:58:64:67:70:144,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,6abfd04c8e734aafb56d,9,agent_service_abuse,6,2,2,44
+phase28b_development_q019,component,3:62:68:92:101,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,7d607fbfedd6fd09753e,6,archive_collection,5,2,2,22
+phase28b_development_q019,component,42:50:90:97:124:131:146,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,93825cc472fe9fa4a823,24,branch_office_pivot,7,2,2,62
+phase28b_development_q019,component,44:54:63:153:162:164,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,db99ccf377dc14645c5d,2,branch_office_pivot,6,2,2,45
+phase28b_development_q019,selective,100:152,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,5.65790068,-8.19855591,0,61b7c7c3e850c282a070,99,benign,2,1,0,1
+phase28b_development_q019,selective,6:163,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,5.65790068,-8.19855591,0,dc4dbebd0bc8e0722ec2,99,benign,2,1,0,1
+phase28b_development_q019,selective,84:160,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,5.65790068,-8.19855591,0,cae3e6f5f63e918bcf5c,99,benign,2,1,0,1
+phase28b_development_q019,selective,9:132,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,4.20841254,-8.19855591,0,040dbed3f711c90aebfc,99,benign,2,2,0,1
+phase28b_development_q019,selective,15:55:60:119:134:135:143,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,e8819882593052fffcbd,13,agent_service_abuse,7,1,1,55
+phase28b_development_q019,selective,22:102:120:129:137:139,RETAIN AS HYPOTHESIS,insufficient_independent_lineage,-1.65013965,-8.19855591,1,800698cd851caf10c8fa,21,session_replay,6,1,1,35
+phase28b_development_q019,selective,14:77:91:127:128:140:157,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,19fc5767d41e7950586f,18,token_exchange_abuse,7,2,2,45
+phase28b_development_q019,selective,25:52:74:99:136:151,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,9e44cb3fedbc404c9188,5,identity_fallback,6,2,2,30
+phase28b_development_q019,selective,29:53:59:65:87:155,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,d19ec79cb58b0d6d8794,4,archive_collection,6,2,2,44
+phase28b_development_q019,selective,2:8:30:43:69:104:109,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,eb95cb18ca7a19b8d950,17,archive_collection,7,2,2,55
+phase28b_development_q019,selective,31:34:71:89:112:167,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,ef94436aadb3f148ba34,8,token_exchange_abuse,6,2,2,30
+phase28b_development_q019,selective,39:58:64:67:70:144,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,6abfd04c8e734aafb56d,9,agent_service_abuse,6,2,2,44
+phase28b_development_q019,selective,3:62:68:92:101,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,7d607fbfedd6fd09753e,6,archive_collection,5,2,2,22
+phase28b_development_q019,selective,42:50:90:97:124:131:146,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,93825cc472fe9fa4a823,24,branch_office_pivot,7,2,2,62
+phase28b_development_q019,selective,44:54:63:153:162:164,PROMOTE,calibrated_score,-7.48927835,-8.19855591,1,db99ccf377dc14645c5d,2,branch_office_pivot,6,2,2,45

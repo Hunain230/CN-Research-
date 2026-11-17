@@ -1,0 +1,1 @@
+{"baseline":{"abstentions":0,"false_grouped_pairs":0,"mixed_groups":0,"mode":"baseline","ndcg20":0.37718335424044597,"p10_count":53,"pair_precision":1.0,"promotions":0,"queues":20,"ranker":"phase27_selected","recall10_count":110,"recall20_count":110,"recoverable":110,"rejections":0,"true_promotions":0},"decision":"NO-GO","eligible_candidates":0,"selected":null}

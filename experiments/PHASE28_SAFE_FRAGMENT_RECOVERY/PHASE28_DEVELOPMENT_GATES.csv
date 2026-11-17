@@ -1,0 +1,7 @@
+mode,ranker,passed,queue_safe,recoverable,recall20_count,p10_count,false_grouped_pairs,mixed_groups
+baseline,progression,False,True,110,95,52,0,0
+baseline,phase27_selected,False,True,110,110,53,0,0
+baseline,hypothesis_aware,False,True,110,110,53,0,0
+calibrated,phase27_selected,False,True,110,110,53,0,0
+component,phase27_selected,False,True,110,110,53,0,0
+selective,phase27_selected,False,True,110,110,53,0,0

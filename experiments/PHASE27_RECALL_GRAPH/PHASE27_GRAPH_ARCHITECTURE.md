@@ -1,0 +1,7 @@
+# Candidate relationship graph architecture
+
+The `v3/evidence.py` access layer materializes a minute-100 snapshot. Source-observation and alert nodes are separate; an emission edge connects a visible source to its alert. Alert-to-alert edges arise from equal source IDs, process references, auth references and flow references. Every frozen edge records endpoints, type, support, visible contradiction, receiver-visible minute, source provenance, upstream controller roots, independence status, confidence, uncertainty and VERIFIED/CANDIDATE/REJECTED outcome. Private incident and priority labels are absent from inference.
+
+VERIFIED same-source or complete independently rooted process edges may become committed unions. CANDIDATE edges remain available to the discovery and ranking stages without automatic merging. REJECTED visible contradictions block both union and hypothesis joins. Selective and component-risk variants use predeclared high thresholds and context checks; on this cohort they did not improve recoverability.
+
+The hypothesis builder joins committed fragments over candidate paths, bounded at eight fragments and 100 alerts. It does not alter committed groups. Duplicate alert copies from one source pair count once in graph features; multiple independent witnesses require disjoint upstream controller roots. `independent_paths` is a greedy count of root-disjoint visible witness pairs, not proof of causal correctness. Each prediction, graph and hypothesis records the decision cutoff and snapshot hash.

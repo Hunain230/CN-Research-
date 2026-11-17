@@ -1,0 +1,25 @@
+{"family": "staged_archive", "fragment_sizes": [11, 1], "incident_id": "1c144d4ffbd27532498a", "mode": "dominant"}
+{"family": "identity_persistence", "fragment_sizes": [6, 6], "incident_id": "07cc4810f29ff5dc0fc6", "mode": "shared_controller"}
+{"family": "control_plane_access", "fragment_sizes": [5, 5], "incident_id": "25815606db3b54b19761", "mode": "late_context"}
+{"family": "workstation_pivot", "fragment_sizes": [6, 6], "incident_id": "22771bddab2da2046093", "mode": "balanced"}
+{"family": "federation_token", "fragment_sizes": [6, 6], "incident_id": "5ad55ba9639154784ccd", "mode": "shared_controller"}
+{"family": "batch_exfiltration", "fragment_sizes": [12], "incident_id": "2e66b0a48b0cd2d8557f", "mode": "full"}
+{"family": "credential_replay", "fragment_sizes": [5, 6], "incident_id": "214caf7758ebaf0ebc3e", "mode": "balanced"}
+{"family": "service_hijack", "fragment_sizes": [7, 1], "incident_id": "8d986d72db25c00888da", "mode": "dominant"}
+{"family": "admin_tool_abuse", "fragment_sizes": [5, 5], "incident_id": "1f2d399f392b81b6f494", "mode": "shared_controller"}
+{"family": "database_lateral", "fragment_sizes": [5, 6], "incident_id": "2d0fe866e740a908737a", "mode": "late_context"}
+{"family": "staged_archive", "fragment_sizes": [4, 4], "incident_id": "acacdbf23e97001aad8b", "mode": "balanced"}
+{"family": "identity_persistence", "fragment_sizes": [5, 5], "incident_id": "749c055b309281902dda", "mode": "shared_controller"}
+{"family": "control_plane_access", "fragment_sizes": [8], "incident_id": "d5ff5b6cf7f5561c05e2", "mode": "full"}
+{"family": "workstation_pivot", "fragment_sizes": [6, 6], "incident_id": "3c45f74cedb0df78321f", "mode": "balanced"}
+{"family": "federation_token", "fragment_sizes": [8, 1], "incident_id": "f3dd692137d12d3566fd", "mode": "dominant"}
+{"family": "batch_exfiltration", "fragment_sizes": [6, 6], "incident_id": "475099a55e7382748659", "mode": "shared_controller"}
+{"family": "credential_replay", "fragment_sizes": [4, 4], "incident_id": "9b233ea07fe0c780b887", "mode": "late_context"}
+{"family": "service_hijack", "fragment_sizes": [4, 5], "incident_id": "43647d79d1733d953bbb", "mode": "balanced"}
+{"family": "admin_tool_abuse", "fragment_sizes": [5, 5], "incident_id": "14a8c346fb1fa9fb5c9f", "mode": "shared_controller"}
+{"family": "database_lateral", "fragment_sizes": [8], "incident_id": "2cea0ca07cc376a7a593", "mode": "full"}
+{"family": "staged_archive", "fragment_sizes": [4, 5], "incident_id": "73b7db5631ef7987acb4", "mode": "balanced"}
+{"family": "identity_persistence", "fragment_sizes": [11, 1], "incident_id": "3a71fc113ccf940d95b8", "mode": "dominant"}
+{"family": "control_plane_access", "fragment_sizes": [4, 5], "incident_id": "cab9bce22bd290f7c7d4", "mode": "shared_controller"}
+{"family": "workstation_pivot", "fragment_sizes": [5, 6], "incident_id": "efe55531b67b5e8e3df3", "mode": "late_context"}
+{"family": "federation_token", "fragment_sizes": [5, 6], "incident_id": "414af886b0bba52bdf4f", "mode": "balanced"}

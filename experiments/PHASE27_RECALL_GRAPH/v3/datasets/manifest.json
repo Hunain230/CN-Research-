@@ -1,0 +1,206 @@
+{
+  "schema": "phase27-recall-graph-v1",
+  "namespace": "phase27c",
+  "seeds": {
+    "train": 272411,
+    "development": 272923
+  },
+  "queues": {
+    "train": [
+      {
+        "queue_id": "phase27c_train_q000",
+        "variant": "v27-train-a",
+        "seed": 272411,
+        "alerts": 309
+      },
+      {
+        "queue_id": "phase27c_train_q001",
+        "variant": "v27-train-b",
+        "seed": 273420,
+        "alerts": 337
+      },
+      {
+        "queue_id": "phase27c_train_q002",
+        "variant": "v27-train-a",
+        "seed": 274429,
+        "alerts": 311
+      },
+      {
+        "queue_id": "phase27c_train_q003",
+        "variant": "v27-train-b",
+        "seed": 275438,
+        "alerts": 314
+      },
+      {
+        "queue_id": "phase27c_train_q004",
+        "variant": "v27-train-a",
+        "seed": 276447,
+        "alerts": 316
+      },
+      {
+        "queue_id": "phase27c_train_q005",
+        "variant": "v27-train-b",
+        "seed": 277456,
+        "alerts": 304
+      },
+      {
+        "queue_id": "phase27c_train_q006",
+        "variant": "v27-train-a",
+        "seed": 278465,
+        "alerts": 317
+      },
+      {
+        "queue_id": "phase27c_train_q007",
+        "variant": "v27-train-b",
+        "seed": 279474,
+        "alerts": 312
+      },
+      {
+        "queue_id": "phase27c_train_q008",
+        "variant": "v27-train-a",
+        "seed": 280483,
+        "alerts": 321
+      },
+      {
+        "queue_id": "phase27c_train_q009",
+        "variant": "v27-train-b",
+        "seed": 281492,
+        "alerts": 305
+      },
+      {
+        "queue_id": "phase27c_train_q010",
+        "variant": "v27-train-a",
+        "seed": 282501,
+        "alerts": 326
+      },
+      {
+        "queue_id": "phase27c_train_q011",
+        "variant": "v27-train-b",
+        "seed": 283510,
+        "alerts": 307
+      }
+    ],
+    "development": [
+      {
+        "queue_id": "phase27c_development_q000",
+        "variant": "v27-dev-a",
+        "seed": 272923,
+        "alerts": 325
+      },
+      {
+        "queue_id": "phase27c_development_q001",
+        "variant": "v27-dev-b",
+        "seed": 273932,
+        "alerts": 327
+      },
+      {
+        "queue_id": "phase27c_development_q002",
+        "variant": "v27-dev-a",
+        "seed": 274941,
+        "alerts": 313
+      },
+      {
+        "queue_id": "phase27c_development_q003",
+        "variant": "v27-dev-b",
+        "seed": 275950,
+        "alerts": 316
+      },
+      {
+        "queue_id": "phase27c_development_q004",
+        "variant": "v27-dev-a",
+        "seed": 276959,
+        "alerts": 307
+      },
+      {
+        "queue_id": "phase27c_development_q005",
+        "variant": "v27-dev-b",
+        "seed": 277968,
+        "alerts": 325
+      },
+      {
+        "queue_id": "phase27c_development_q006",
+        "variant": "v27-dev-a",
+        "seed": 278977,
+        "alerts": 312
+      },
+      {
+        "queue_id": "phase27c_development_q007",
+        "variant": "v27-dev-b",
+        "seed": 279986,
+        "alerts": 330
+      },
+      {
+        "queue_id": "phase27c_development_q008",
+        "variant": "v27-dev-a",
+        "seed": 280995,
+        "alerts": 314
+      },
+      {
+        "queue_id": "phase27c_development_q009",
+        "variant": "v27-dev-b",
+        "seed": 282004,
+        "alerts": 306
+      },
+      {
+        "queue_id": "phase27c_development_q010",
+        "variant": "v27-dev-a",
+        "seed": 283013,
+        "alerts": 321
+      },
+      {
+        "queue_id": "phase27c_development_q011",
+        "variant": "v27-dev-b",
+        "seed": 284022,
+        "alerts": 321
+      },
+      {
+        "queue_id": "phase27c_development_q012",
+        "variant": "v27-dev-a",
+        "seed": 285031,
+        "alerts": 309
+      },
+      {
+        "queue_id": "phase27c_development_q013",
+        "variant": "v27-dev-b",
+        "seed": 286040,
+        "alerts": 319
+      },
+      {
+        "queue_id": "phase27c_development_q014",
+        "variant": "v27-dev-a",
+        "seed": 287049,
+        "alerts": 305
+      },
+      {
+        "queue_id": "phase27c_development_q015",
+        "variant": "v27-dev-b",
+        "seed": 288058,
+        "alerts": 324
+      },
+      {
+        "queue_id": "phase27c_development_q016",
+        "variant": "v27-dev-a",
+        "seed": 289067,
+        "alerts": 301
+      },
+      {
+        "queue_id": "phase27c_development_q017",
+        "variant": "v27-dev-b",
+        "seed": 290076,
+        "alerts": 323
+      },
+      {
+        "queue_id": "phase27c_development_q018",
+        "variant": "v27-dev-a",
+        "seed": 291085,
+        "alerts": 319
+      },
+      {
+        "queue_id": "phase27c_development_q019",
+        "variant": "v27-dev-b",
+        "seed": 292094,
+        "alerts": 308
+      }
+    ]
+  }
+}
