@@ -1,0 +1,20 @@
+{
+  "schema": "phase26-point-in-time-v1",
+  "namespace": "phase26b",
+  "seeds": {"train": 260501, "development": 260611},
+  "queues": {"train": 12, "development": 20},
+  "incidents_per_queue": 25,
+  "benign_observations_per_queue": 75,
+  "decision_minute": 100,
+  "component_cap": 100,
+  "completeness": 0.8,
+  "purity": 0.8,
+  "rules": ["context", "orthogonal_veto", "pit_complete", "pit_maturity",
+    "pit_selective", "pit_group", "pit_combined", "pit_direct", "pit_direct_mature"],
+  "rankers": ["progression", "linear", "blend"],
+  "development_gates": {"min_pair_precision": 0.90, "max_false_pairs_increase_total": 0,
+    "max_mixed_groups_increase_total": 0, "max_false_pairs_increase_per_queue": 0,
+    "max_mixed_groups_increase_per_queue": 0, "max_p10_count_drop": 1,
+    "require_recall20_improvement": true, "require_recoverability_improvement": true,
+    "require_zero_delayed_contradiction_false_unions": true}
+}
