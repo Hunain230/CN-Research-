@@ -1,0 +1,99 @@
+{
+  "schema": "phase31-controlled-soc-evidence-v2",
+  "split": "locked_test",
+  "seed": 31103,
+  "template_variant": 2,
+  "queues": [
+    {
+      "queue_id": "p31_locked_test_q000",
+      "alerts": 323,
+      "claims": 182,
+      "incidents": 25
+    },
+    {
+      "queue_id": "p31_locked_test_q001",
+      "alerts": 328,
+      "claims": 183,
+      "incidents": 25
+    },
+    {
+      "queue_id": "p31_locked_test_q002",
+      "alerts": 335,
+      "claims": 186,
+      "incidents": 25
+    },
+    {
+      "queue_id": "p31_locked_test_q003",
+      "alerts": 342,
+      "claims": 183,
+      "incidents": 25
+    },
+    {
+      "queue_id": "p31_locked_test_q004",
+      "alerts": 334,
+      "claims": 185,
+      "incidents": 25
+    },
+    {
+      "queue_id": "p31_locked_test_q005",
+      "alerts": 326,
+      "claims": 177,
+      "incidents": 25
+    },
+    {
+      "queue_id": "p31_locked_test_q006",
+      "alerts": 337,
+      "claims": 182,
+      "incidents": 25
+    },
+    {
+      "queue_id": "p31_locked_test_q007",
+      "alerts": 331,
+      "claims": 181,
+      "incidents": 25
+    },
+    {
+      "queue_id": "p31_locked_test_q008",
+      "alerts": 346,
+      "claims": 187,
+      "incidents": 25
+    },
+    {
+      "queue_id": "p31_locked_test_q009",
+      "alerts": 328,
+      "claims": 182,
+      "incidents": 25
+    },
+    {
+      "queue_id": "p31_locked_test_q010",
+      "alerts": 347,
+      "claims": 190,
+      "incidents": 25
+    },
+    {
+      "queue_id": "p31_locked_test_q011",
+      "alerts": 332,
+      "claims": 186,
+      "incidents": 25
+    },
+    {
+      "queue_id": "p31_locked_test_q012",
+      "alerts": 342,
+      "claims": 181,
+      "incidents": 25
+    },
+    {
+      "queue_id": "p31_locked_test_q013",
+      "alerts": 350,
+      "claims": 183,
+      "incidents": 25
+    },
+    {
+      "queue_id": "p31_locked_test_q014",
+      "alerts": 338,
+      "claims": 184,
+      "incidents": 25
+    }
+  ],
+  "decision_minute": 100
+}

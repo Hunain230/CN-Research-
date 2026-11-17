@@ -1,0 +1,42 @@
+{
+  "train": {
+    "cross_incident_reused_process_id": 56,
+    "cross_incident_reused_auth_session_id": 45,
+    "cross_incident_reused_flow_id": 49,
+    "derived_claims": 87,
+    "late_claims": 29,
+    "genuine": 1183,
+    "derived_copy": 87,
+    "missing": 17,
+    "false_independent_looking_claim": 184,
+    "delayed_contradiction": 8,
+    "late_alerts": 12,
+    "duplicate_alerts": 80,
+    "process_events": 888,
+    "authentication_events": 854,
+    "network_flow_events": 904,
+    "queues": 8,
+    "alerts": 2646,
+    "claims": 1462
+  },
+  "development": {
+    "cross_incident_reused_process_id": 57,
+    "cross_incident_reused_auth_session_id": 51,
+    "cross_incident_reused_flow_id": 48,
+    "late_claims": 36,
+    "derived_claims": 129,
+    "genuine": 1471,
+    "derived_copy": 129,
+    "missing": 29,
+    "false_independent_looking_claim": 230,
+    "delayed_contradiction": 10,
+    "late_alerts": 13,
+    "duplicate_alerts": 114,
+    "process_events": 1111,
+    "authentication_events": 1131,
+    "network_flow_events": 1117,
+    "queues": 10,
+    "alerts": 3359,
+    "claims": 1840
+  }
+}

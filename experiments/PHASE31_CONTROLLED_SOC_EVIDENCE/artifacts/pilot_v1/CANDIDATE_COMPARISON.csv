@@ -1,0 +1,4 @@
+split,arm,queues,recall_count,recall_denominator,recoverable,p10_count,p10_denominator,pair_tp,false_pairs,mixed_groups,pair_precision,accepted_unions,queue_safety_regressions,gate,prediction_sha256
+development,original_subset,10,0,200,0,0,100,4090,0,0,1.0,0,0,False,d08dd21a6e71756f06f009da52c7dea7defe9a53ad6756389e428c26adfd5fd6
+development,legacy_rich,10,182,200,197,79,100,13793,0,0,1.0,0,0,True,40808149f4fa0fd8c7084089c5d8aea4a133711b8aef6d5fe2bc470ee2e96480
+development,evidence_aware,10,125,200,131,55,100,10904,0,0,1.0,367,0,False,5edd17007bd7e4ac58b2d240ad541bd73358de6684678bc87cdb7269401c546b

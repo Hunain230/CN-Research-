@@ -1,0 +1,5 @@
+split,arm,queues,recall_count,recall_denominator,recoverable,p10_count,p10_denominator,pair_tp,false_pairs,mixed_groups,pair_precision,accepted_unions,queue_safety_regressions,gate,prediction_sha256
+development,original_subset,10,0,200,0,0,100,4102,0,0,1.0,0,0,False,96213b1027f0d2444ec772168c0d5e6043f9ab1d94f13f961d3605d5549772b1
+development,legacy_rich,10,155,200,160,62,100,13777,2580,22,0.8422693647979458,0,10,False,98bc8e30276a0840cc68517e54e86765bafe283e53d0d4f8c621fde173d7fec7
+development,evidence_aware,10,155,200,166,72,100,12702,0,0,1.0,446,0,False,d1c35e3fe3332668b16bc932aac5f05d1df48ec115429646be566c3d177bb326
+development,evidence_aware_ranked,10,158,200,166,73,100,12702,0,0,1.0,446,0,False,ac53d32fecbece11f2cc37cd3ace01e67501f65da5b081dfdc33487f2e1abfc2

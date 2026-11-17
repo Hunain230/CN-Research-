@@ -1,0 +1,23 @@
+{
+  "locked_test": {
+    "cross_incident_reused_process_id": 98,
+    "cross_incident_reused_auth_session_id": 85,
+    "cross_incident_reused_flow_id": 73,
+    "derived_claims": 170,
+    "late_claims": 55,
+    "genuine": 2222,
+    "derived_copy": 170,
+    "missing": 28,
+    "false_independent_looking_claim": 345,
+    "delayed_contradiction": 15,
+    "false_same_context_relationships": 95,
+    "late_alerts": 21,
+    "duplicate_alerts": 179,
+    "process_events": 1679,
+    "authentication_events": 1691,
+    "network_flow_events": 1669,
+    "queues": 15,
+    "alerts": 5039,
+    "claims": 2752
+  }
+}

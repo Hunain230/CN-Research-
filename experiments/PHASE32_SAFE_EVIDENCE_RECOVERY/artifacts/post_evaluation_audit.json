@@ -1,0 +1,30 @@
+{
+  "endpoint_fallback_bonus1": {
+    "accepted_true_total": 460,
+    "accepted_false_total": 0,
+    "fallback_unions": 14,
+    "fallback_true": 14,
+    "fallback_false": 0,
+    "rejected_true": 36,
+    "rejected_false": 100,
+    "queues": 10,
+    "newly_recoverable": 11,
+    "newly_recalled": 12,
+    "lost_recalled": 1
+  },
+  "endpoint_fallback_bonus2": {
+    "accepted_true_total": 460,
+    "accepted_false_total": 0,
+    "fallback_unions": 14,
+    "fallback_true": 14,
+    "fallback_false": 0,
+    "rejected_true": 36,
+    "rejected_false": 100,
+    "queues": 10,
+    "newly_recoverable": 11,
+    "newly_recalled": 11,
+    "lost_recalled": 1
+  },
+  "temporal_violations": 0,
+  "private_feature_violations": 0
+}

@@ -1,0 +1,17 @@
+{
+  "split": "development",
+  "prediction_sha256": {
+    "original_subset": "96213b1027f0d2444ec772168c0d5e6043f9ab1d94f13f961d3605d5549772b1",
+    "legacy_rich": "98bc8e30276a0840cc68517e54e86765bafe283e53d0d4f8c621fde173d7fec7",
+    "evidence_aware": "d1c35e3fe3332668b16bc932aac5f05d1df48ec115429646be566c3d177bb326"
+  },
+  "decision_sha256": {
+    "original_subset": "ebff141315d176ff34d096ad5563ad008dac5cdefd9c3f66258f57b3269cde96",
+    "legacy_rich": "d2aaa2bc396a8137412da1f27c0ada95461f1992d13f600b1ca5f56a29d81b62",
+    "evidence_aware": "bebe3f4bc279f885f680f71e9f439b1aa6f84c362acdaceacb2da62542b92198"
+  },
+  "model_sha256": "53ae8ab2f35ad4a41332b7be3ddd20a887c41677566d4513eed4ab5b7b498a96",
+  "config_sha256": "85735ccf2162d02dc21470ae3d2e40bdadb2b69da32b2d98a858b486ba4d69bf",
+  "generator_sha256": "30dae0724e8c56945b6ee2cc530c19ddf6b257d85194d1b9815e6fc994719fa2",
+  "evaluator_sha256": "dbc3fbff327400fad9f999e74bb69e1ca1968b34be6d2990effc3438e7dc1dc3"
+}

@@ -1,0 +1,22 @@
+{
+  "category_counts": {
+    "recalled": 260,
+    "unrecoverable": 19,
+    "fragmented": 19,
+    "impure_only": 0,
+    "recoverable_but_unranked": 21
+  },
+  "unranked_first_qualifying_position": {
+    "21": 9,
+    "22": 3,
+    "23": 3,
+    "24": 4,
+    "25": 2
+  },
+  "unrecoverable_missing_family_incidents_overlapping": {
+    "network_flow": 9,
+    "process": 1,
+    "authentication": 10
+  },
+  "use": "diagnostic only; no Phase 34 candidate fitted or selected on this opened holdout"
+}

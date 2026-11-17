@@ -1,0 +1,17 @@
+{
+  "accepted_true": 711,
+  "accepted_false": 0,
+  "fallback_unions": 28,
+  "fallback_true": 28,
+  "rejected_true": 35,
+  "rejected_false": 150,
+  "newly_recoverable": 18,
+  "newly_recalled": 15,
+  "lost_recalled": 5,
+  "queues": 15,
+  "temporal_violations": 0,
+  "private_feature_violations": 0,
+  "seal_valid": true,
+  "metric_gates_pass": true,
+  "decision": "GO_WITHIN_CONTROLLED_SYNTHETIC_COHORT"
+}

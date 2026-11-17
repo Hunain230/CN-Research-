@@ -1,0 +1,7 @@
+# Frozen generator and split audit
+
+Phase 33 copied the Phase 31 v2 `generator.py`, `config.json` and `validate_generator.py` byte-for-byte. `PHASE33_FREEZE.json` records the original and copied SHA-256 hashes. The already specified locked-test configuration was used exactly once: seed **31103**, 15 queues, template variant **2**, 25 incidents and 60 benign events per queue. No generator parameter, model rule or rank coefficient changed after the Phase 32 development result.
+
+The generated holdout contains **5,039 alerts** and **2,752 claim records** across 15 queues. Generator validation passed ground-truth coverage, ledger completeness, provenance and derived-copy consistency, hidden-field absence, scenario diversity, genuine chronology, delayed/missing evidence and same-context false-claim challenges. It counted 55 late claims, 21 late alerts, 170 derived claim copies, 28 missing true claim records, 345 false independent-looking claim records and 95 same-context false relationship tokens. `check_split_isolation.py` verified no hidden incident, scenario or exact template identifier overlaps Phase 31 train or development (200/250/375 incidents respectively).
+
+The split is independent by seed, scenario instances and template variant **within the same controlled generator family**. Its shared simulator assumptions limit any claim about real SOC generalization. The evaluator-only truth directory was used for generator validation and, after prediction sealing, official evaluation and audit; neither frozen inference model reads it.

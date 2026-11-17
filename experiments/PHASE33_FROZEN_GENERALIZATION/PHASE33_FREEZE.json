@@ -1,0 +1,37 @@
+{
+  "candidate": "endpoint_fallback_bonus1",
+  "baseline": "evidence_aware_ranked",
+  "phase32_development": {
+    "recall": "169/200",
+    "recoverability": "177/200",
+    "p10": "73/100",
+    "false_pairs": 0,
+    "mixed_groups": 0,
+    "phase32_go": false
+  },
+  "locked_test": {
+    "seed": 31103,
+    "queues": 15,
+    "template_variant": 2,
+    "generated": false
+  },
+  "historical_hash_verification": "pass",
+  "sha256": {
+    "experiments/PHASE31_CONTROLLED_SOC_EVIDENCE/model.py": "d42a6a1a8d83acee0ba541a80b1934346260c49eed23faa9c79efb9861bb2d0b",
+    "experiments/PHASE32_SAFE_EVIDENCE_RECOVERY/model.py": "9d52beb006854ece8cb084072cfc21384d98d175ce29ce1f36d29a6beaf76532",
+    "experiments/PHASE31_CONTROLLED_SOC_EVIDENCE/generator.py": "30dae0724e8c56945b6ee2cc530c19ddf6b257d85194d1b9815e6fc994719fa2",
+    "experiments/PHASE31_CONTROLLED_SOC_EVIDENCE/config.json": "85735ccf2162d02dc21470ae3d2e40bdadb2b69da32b2d98a858b486ba4d69bf",
+    "experiments/PHASE31_CONTROLLED_SOC_EVIDENCE/validate_generator.py": "c228baac180916dc34ee60294973f643ea4dccb8cb7eb2c6b25a26da98743f6d",
+    "experiments/PHASE31_CONTROLLED_SOC_EVIDENCE/artifacts/development_evidence_aware_ranked_predictions.jsonl": "ac53d32fecbece11f2cc37cd3ace01e67501f65da5b081dfdc33487f2e1abfc2",
+    "experiments/PHASE31_CONTROLLED_SOC_EVIDENCE/artifacts/development_evidence_aware_ranked_evaluation.json": "d50649f586063c93d467bfa09b2e23dd4d9d87c3a581f929d175855f46cd339f",
+    "experiments/PHASE32_SAFE_EVIDENCE_RECOVERY/artifacts/development_endpoint_fallback_bonus1_predictions.jsonl": "23b0b7d10d0d96a4b716e8ece2a4f18d3cf525b6b3197a3173cc82a0ffe002a5",
+    "experiments/PHASE32_SAFE_EVIDENCE_RECOVERY/artifacts/development_endpoint_fallback_bonus1_evaluation.json": "0b46d28d5c78021628ec3881e594d571da4e146e65b19e1e86ceec9202843549",
+    "experiments/PHASE32_SAFE_EVIDENCE_RECOVERY/artifacts/development_pre_evaluation_seal.json": "b04b12453e7eaa8f52494ec8bf598fd21d357f403e1d32f4b3878a64f4ca3e2d",
+    "experiments/PHASE15_CONTROLLED_SOC/evaluation/evaluate.py": "dbc3fbff327400fad9f999e74bb69e1ca1968b34be6d2990effc3438e7dc1dc3",
+    "experiments/PHASE33_FROZEN_GENERALIZATION/PHASE33_PLAN.md": "0f350a24c08119b52f40fb23c256d96faa242ad049127d64dd6b3d5a59c1292e",
+    "experiments/PHASE33_FROZEN_GENERALIZATION/generator.py": "30dae0724e8c56945b6ee2cc530c19ddf6b257d85194d1b9815e6fc994719fa2",
+    "experiments/PHASE33_FROZEN_GENERALIZATION/config.json": "85735ccf2162d02dc21470ae3d2e40bdadb2b69da32b2d98a858b486ba4d69bf",
+    "experiments/PHASE33_FROZEN_GENERALIZATION/validate_generator.py": "c228baac180916dc34ee60294973f643ea4dccb8cb7eb2c6b25a26da98743f6d"
+  },
+  "working_tree_before_generation": "?? experiments/PHASE31_CONTROLLED_SOC_EVIDENCE/\n?? experiments/PHASE32_SAFE_EVIDENCE_RECOVERY/\n?? experiments/PHASE33_FROZEN_GENERALIZATION/"
+}

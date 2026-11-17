@@ -1,0 +1,9 @@
+{
+  "remaining_incidents": 34,
+  "overlapping_missing_family_counts": {
+    "missing_network_flow": 13,
+    "missing_authentication": 13,
+    "missing_process": 14
+  },
+  "incidents_with_endpoint_process_fallback_opportunity": 11
+}

@@ -1,0 +1,3 @@
+candidate,recall20_count,recall_denominator,recoverable,p10_count,p10_denominator,pair_tp,false_pairs,mixed_groups,pair_precision,fallback_unions,queue_safety_regressions,development_gate,prediction_sha256
+endpoint_fallback_bonus1,169,200,177,73,100,13050,0,0,1.0,14,0,False,23b0b7d10d0d96a4b716e8ece2a4f18d3cf525b6b3197a3173cc82a0ffe002a5
+endpoint_fallback_bonus2,168,200,177,73,100,13050,0,0,1.0,14,0,False,3541aa1831e92dafc2b4e1db9279cadaa2f78eff4ecab094bc53c98ed0177b0c

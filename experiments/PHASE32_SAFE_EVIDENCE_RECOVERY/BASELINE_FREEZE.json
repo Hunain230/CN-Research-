@@ -1,0 +1,27 @@
+{
+  "historical_references": {
+    "phase16_recall": "407/600",
+    "later_source_depth_holdout": "444/600",
+    "phase31_v2_development_recall": "158/200",
+    "phase31_v2_development_recoverability": "166/200",
+    "phase31_v2_development_p10": "73/100",
+    "phase31_v2_false_pairs": 0,
+    "phase31_v2_mixed_groups": 0
+  },
+  "historical_hash_verification": "pass",
+  "phase31_locked_test_generated": false,
+  "sha256": {
+    "experiments/PHASE31_CONTROLLED_SOC_EVIDENCE/config.json": "85735ccf2162d02dc21470ae3d2e40bdadb2b69da32b2d98a858b486ba4d69bf",
+    "experiments/PHASE31_CONTROLLED_SOC_EVIDENCE/generator.py": "30dae0724e8c56945b6ee2cc530c19ddf6b257d85194d1b9815e6fc994719fa2",
+    "experiments/PHASE31_CONTROLLED_SOC_EVIDENCE/model.py": "d42a6a1a8d83acee0ba541a80b1934346260c49eed23faa9c79efb9861bb2d0b",
+    "experiments/PHASE31_CONTROLLED_SOC_EVIDENCE/dataset/development_manifest.json": "c8ccce485c6599dd84be75728ddf062f0cfb9ed68917c940b4bae7acbca66f2b",
+    "experiments/PHASE31_CONTROLLED_SOC_EVIDENCE/artifacts/development_evidence_aware_ranked_predictions.jsonl": "ac53d32fecbece11f2cc37cd3ace01e67501f65da5b081dfdc33487f2e1abfc2",
+    "experiments/PHASE31_CONTROLLED_SOC_EVIDENCE/artifacts/development_evidence_aware_ranked_evaluation.json": "d50649f586063c93d467bfa09b2e23dd4d9d87c3a581f929d175855f46cd339f",
+    "experiments/PHASE31_CONTROLLED_SOC_EVIDENCE/artifacts/development_evidence_aware_ranked_decisions.jsonl": "bebe3f4bc279f885f680f71e9f439b1aa6f84c362acdaceacb2da62542b92198",
+    "experiments/PHASE31_CONTROLLED_SOC_EVIDENCE/PHASE31_FINAL_REPORT.md": "443d6dde93c2d0c5b7f0d9054e978471878b552cc3af625c7f81905b2e9af346",
+    "experiments/PHASE32_SAFE_EVIDENCE_RECOVERY/model.py": "9d52beb006854ece8cb084072cfc21384d98d175ce29ce1f36d29a6beaf76532",
+    "experiments/PHASE32_SAFE_EVIDENCE_RECOVERY/PHASE32_PLAN.md": "d2364c22976fac0f960a7bad0566000dd5a37d730c92b372a9582917a0f7c93e",
+    "experiments/PHASE15_CONTROLLED_SOC/evaluation/evaluate.py": "dbc3fbff327400fad9f999e74bb69e1ca1968b34be6d2990effc3438e7dc1dc3"
+  },
+  "working_tree": "?? experiments/PHASE31_CONTROLLED_SOC_EVIDENCE/\n?? experiments/PHASE32_SAFE_EVIDENCE_RECOVERY/"
+}

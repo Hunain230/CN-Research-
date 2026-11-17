@@ -1,0 +1,42 @@
+{
+  "original_subset": {
+    "queues": 10,
+    "accepted_unions": 0,
+    "legacy_lineage_accepts": 0,
+    "rejected_hypotheses": 0,
+    "visible_claims": 1789
+  },
+  "legacy_rich": {
+    "queues": 10,
+    "accepted_unions": 0,
+    "legacy_lineage_accepts": 511,
+    "rejected_hypotheses": 0,
+    "visible_claims": 1789
+  },
+  "evidence_aware": {
+    "queues": 10,
+    "accepted_unions": 446,
+    "legacy_lineage_accepts": 0,
+    "rejected_hypotheses": 150,
+    "visible_claims": 1789,
+    "accepted_true": 446,
+    "accepted_false": 0,
+    "rejected_true": 50,
+    "rejected_false": 100
+  },
+  "evidence_aware_ranked": {
+    "queues": 10,
+    "accepted_unions": 446,
+    "legacy_lineage_accepts": 0,
+    "rejected_hypotheses": 150,
+    "visible_claims": 1789,
+    "accepted_true": 446,
+    "accepted_false": 0,
+    "rejected_true": 50,
+    "rejected_false": 100
+  },
+  "newly_recoverable_verified": 166,
+  "newly_recalled_verified_ranked": 158,
+  "temporal_violations": 0,
+  "private_feature_violations": 0
+}
