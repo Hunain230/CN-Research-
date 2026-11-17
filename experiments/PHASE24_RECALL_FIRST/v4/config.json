@@ -1,0 +1,15 @@
+{
+  "schema": "phase24-recall-first-v1",
+  "namespace": "phase24d",
+  "seeds": {"train": 242301, "development": 242411},
+  "queues": {"train": 10, "development": 16},
+  "incidents_per_queue": 25,
+  "benign_observations_per_queue": 75,
+  "decision_minute": 100,
+  "component_cap": 100,
+  "completeness": 0.8,
+  "purity": 0.8,
+  "p10_floor": 0.63,
+  "rules": ["context", "dual", "expanded", "coherent", "coherent_rare", "partial", "coherent_partial"],
+  "rankers": ["progression", "severity", "learned", "blend"]
+}

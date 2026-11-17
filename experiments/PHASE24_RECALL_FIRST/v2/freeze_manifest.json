@@ -1,0 +1,17 @@
+{
+  "hashes": {
+    "config.json": "c70eea081330ea41b2e24cac09bd213114b0f2aac4aacc4989ae9c3799ea40e8",
+    "datasets/manifest.json": "d9a12080fa41f7758f11df5ec6179e487286b36b658f005ed45a72265fd55c48",
+    "development_decisions.jsonl": "c64e7f949a881ee5616f005e01d25deebe6facefc0a17db9bac4dd206161b978",
+    "development_predictions.jsonl": "67c9c077a27b79cf5ea9625e44020c9716d2f66f1d472829fc31a4ff948433e8",
+    "generate.py": "e9a47982f958bea9930ec34d6d34ec4fb05feb1961f4b992f5d55e7c87f79361",
+    "predict.py": "bff87fd2223c2c699e3a1ff57d2861860fb4a2de6968ed6cb28fd19a10fcfd79",
+    "ranker_model.json": "d7008dc3922c413451c31d73a8126f1d98a121b07a97a3c74df4022fd89d0b34",
+    "run_study.py": "004674cc27b11c1e439d558d465e8658a3322b8b7ee17266fddfabd54e1e25dc",
+    "train_baseline_predictions.jsonl": "79d457126d1160f092a78ab87e05f145ba6f731c04a6cf45811a5e7487f22251"
+  },
+  "locked_cohort_created": false,
+  "phase19_locked_read": false,
+  "phase22_locked_read": false,
+  "status": "development_predictions_frozen_before_private_development_audit"
+}

@@ -1,0 +1,207 @@
+{
+  "schema": "phase24-recall-first-v1",
+  "split_templates": {
+    "train": [
+      "initial_access:v10",
+      "initial_access:v11",
+      "initial_access:v12",
+      "initial_access:v13",
+      "credential_compromise:v10",
+      "credential_compromise:v11",
+      "credential_compromise:v12",
+      "credential_compromise:v13",
+      "suspicious_authentication:v10",
+      "suspicious_authentication:v11",
+      "suspicious_authentication:v12",
+      "suspicious_authentication:v13",
+      "lateral_movement:v10",
+      "lateral_movement:v11",
+      "lateral_movement:v12",
+      "lateral_movement:v13",
+      "privilege_escalation:v10",
+      "privilege_escalation:v11",
+      "privilege_escalation:v12",
+      "privilege_escalation:v13",
+      "persistence:v10",
+      "persistence:v11",
+      "persistence:v12",
+      "persistence:v13",
+      "command_control:v10",
+      "command_control:v11",
+      "command_control:v12",
+      "command_control:v13",
+      "data_staging:v10",
+      "data_staging:v11",
+      "data_staging:v12",
+      "data_staging:v13",
+      "exfiltration:v10",
+      "exfiltration:v11",
+      "exfiltration:v12",
+      "exfiltration:v13",
+      "multi_stage_chain:v10",
+      "multi_stage_chain:v11",
+      "multi_stage_chain:v12",
+      "multi_stage_chain:v13"
+    ],
+    "development": [
+      "initial_access:v20",
+      "initial_access:v21",
+      "credential_compromise:v20",
+      "credential_compromise:v21",
+      "suspicious_authentication:v20",
+      "suspicious_authentication:v21",
+      "lateral_movement:v20",
+      "lateral_movement:v21",
+      "privilege_escalation:v20",
+      "privilege_escalation:v21",
+      "persistence:v20",
+      "persistence:v21",
+      "command_control:v20",
+      "command_control:v21",
+      "data_staging:v20",
+      "data_staging:v21",
+      "exfiltration:v20",
+      "exfiltration:v21",
+      "multi_stage_chain:v20",
+      "multi_stage_chain:v21"
+    ]
+  },
+  "queues": {
+    "train": [
+      {
+        "queue_id": "phase24b_train_q000",
+        "alerts": 338,
+        "incidents": 25
+      },
+      {
+        "queue_id": "phase24b_train_q001",
+        "alerts": 346,
+        "incidents": 25
+      },
+      {
+        "queue_id": "phase24b_train_q002",
+        "alerts": 358,
+        "incidents": 25
+      },
+      {
+        "queue_id": "phase24b_train_q003",
+        "alerts": 335,
+        "incidents": 25
+      },
+      {
+        "queue_id": "phase24b_train_q004",
+        "alerts": 362,
+        "incidents": 25
+      },
+      {
+        "queue_id": "phase24b_train_q005",
+        "alerts": 323,
+        "incidents": 25
+      },
+      {
+        "queue_id": "phase24b_train_q006",
+        "alerts": 325,
+        "incidents": 25
+      },
+      {
+        "queue_id": "phase24b_train_q007",
+        "alerts": 344,
+        "incidents": 25
+      },
+      {
+        "queue_id": "phase24b_train_q008",
+        "alerts": 325,
+        "incidents": 25
+      },
+      {
+        "queue_id": "phase24b_train_q009",
+        "alerts": 337,
+        "incidents": 25
+      }
+    ],
+    "development": [
+      {
+        "queue_id": "phase24b_development_q000",
+        "alerts": 315,
+        "incidents": 25
+      },
+      {
+        "queue_id": "phase24b_development_q001",
+        "alerts": 333,
+        "incidents": 25
+      },
+      {
+        "queue_id": "phase24b_development_q002",
+        "alerts": 330,
+        "incidents": 25
+      },
+      {
+        "queue_id": "phase24b_development_q003",
+        "alerts": 334,
+        "incidents": 25
+      },
+      {
+        "queue_id": "phase24b_development_q004",
+        "alerts": 356,
+        "incidents": 25
+      },
+      {
+        "queue_id": "phase24b_development_q005",
+        "alerts": 334,
+        "incidents": 25
+      },
+      {
+        "queue_id": "phase24b_development_q006",
+        "alerts": 336,
+        "incidents": 25
+      },
+      {
+        "queue_id": "phase24b_development_q007",
+        "alerts": 330,
+        "incidents": 25
+      },
+      {
+        "queue_id": "phase24b_development_q008",
+        "alerts": 328,
+        "incidents": 25
+      },
+      {
+        "queue_id": "phase24b_development_q009",
+        "alerts": 338,
+        "incidents": 25
+      },
+      {
+        "queue_id": "phase24b_development_q010",
+        "alerts": 330,
+        "incidents": 25
+      },
+      {
+        "queue_id": "phase24b_development_q011",
+        "alerts": 312,
+        "incidents": 25
+      },
+      {
+        "queue_id": "phase24b_development_q012",
+        "alerts": 337,
+        "incidents": 25
+      },
+      {
+        "queue_id": "phase24b_development_q013",
+        "alerts": 333,
+        "incidents": 25
+      },
+      {
+        "queue_id": "phase24b_development_q014",
+        "alerts": 349,
+        "incidents": 25
+      },
+      {
+        "queue_id": "phase24b_development_q015",
+        "alerts": 351,
+        "incidents": 25
+      }
+    ]
+  },
+  "classification": "controlled_synthetic_development_only",
+  "locked_test": "not_created"
+}

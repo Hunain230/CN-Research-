@@ -1,0 +1,8 @@
+{
+  "status": "development_only_predictions_frozen_before_private_audit",
+  "phase19_locked_truth_read": false,
+  "phase22_locked_truth_read": false,
+  "phase22_locked_predictions_created": false,
+  "phase22_manifest_sha256": "b7c2062cb30ed4f462718f993e1e725067b64e92994e378fc7b140b33ab2642b",
+  "predictions_sha256": "60faec5af3d29a231b37e1084d0f8ef8644e82e03f71d9f7aec0e6e0ef668978"
+}

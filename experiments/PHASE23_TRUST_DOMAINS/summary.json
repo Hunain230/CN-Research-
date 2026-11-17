@@ -1,0 +1,107 @@
+{
+  "shared_controller": {
+    "phase22_verified": {
+      "queues": 10,
+      "recoverable": 44,
+      "eligible_incidents": 120,
+      "false_pairs": 300,
+      "accepted_unions": 72,
+      "false_pair_creating_unions": 3,
+      "worst_queue_false_pairs": 168,
+      "worst_union_false_pairs": 132,
+      "accepted_invalid_unions": 2
+    },
+    "trust_domains": {
+      "queues": 10,
+      "recoverable": 45,
+      "eligible_incidents": 120,
+      "false_pairs": 0,
+      "accepted_unions": 70,
+      "false_pair_creating_unions": 0,
+      "worst_queue_false_pairs": 0,
+      "worst_union_false_pairs": 0,
+      "accepted_invalid_unions": 0
+    },
+    "trust_domains_cap100": {
+      "queues": 10,
+      "recoverable": 4,
+      "eligible_incidents": 120,
+      "false_pairs": 0,
+      "accepted_unions": 29,
+      "false_pair_creating_unions": 0,
+      "worst_queue_false_pairs": 0,
+      "worst_union_false_pairs": 0,
+      "accepted_invalid_unions": 0
+    }
+  },
+  "independent_corruption": {
+    "phase22_verified": {
+      "queues": 10,
+      "recoverable": 44,
+      "eligible_incidents": 120,
+      "false_pairs": 300,
+      "accepted_unions": 72,
+      "false_pair_creating_unions": 3,
+      "worst_queue_false_pairs": 168,
+      "worst_union_false_pairs": 132,
+      "accepted_invalid_unions": 2
+    },
+    "trust_domains": {
+      "queues": 10,
+      "recoverable": 44,
+      "eligible_incidents": 120,
+      "false_pairs": 300,
+      "accepted_unions": 72,
+      "false_pair_creating_unions": 3,
+      "worst_queue_false_pairs": 168,
+      "worst_union_false_pairs": 132,
+      "accepted_invalid_unions": 2
+    },
+    "trust_domains_cap100": {
+      "queues": 10,
+      "recoverable": 4,
+      "eligible_incidents": 120,
+      "false_pairs": 0,
+      "accepted_unions": 29,
+      "false_pair_creating_unions": 0,
+      "worst_queue_false_pairs": 0,
+      "worst_union_false_pairs": 0,
+      "accepted_invalid_unions": 0
+    }
+  },
+  "missing_root": {
+    "phase22_verified": {
+      "queues": 10,
+      "recoverable": 44,
+      "eligible_incidents": 120,
+      "false_pairs": 300,
+      "accepted_unions": 72,
+      "false_pair_creating_unions": 3,
+      "worst_queue_false_pairs": 168,
+      "worst_union_false_pairs": 132,
+      "accepted_invalid_unions": 2
+    },
+    "trust_domains": {
+      "queues": 10,
+      "recoverable": 0,
+      "eligible_incidents": 120,
+      "false_pairs": 0,
+      "accepted_unions": 0,
+      "false_pair_creating_unions": 0,
+      "worst_queue_false_pairs": 0,
+      "worst_union_false_pairs": 0,
+      "accepted_invalid_unions": 0
+    },
+    "trust_domains_cap100": {
+      "queues": 10,
+      "recoverable": 0,
+      "eligible_incidents": 120,
+      "false_pairs": 0,
+      "accepted_unions": 0,
+      "false_pair_creating_unions": 0,
+      "worst_queue_false_pairs": 0,
+      "worst_union_false_pairs": 0,
+      "accepted_invalid_unions": 0
+    }
+  }
+}
