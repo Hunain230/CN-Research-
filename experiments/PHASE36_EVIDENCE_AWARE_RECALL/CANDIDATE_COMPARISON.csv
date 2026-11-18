@@ -1,0 +1,6 @@
+cohort,method,recall20,recoverability,p10,pair_precision,false_pairs,mixed_groups,interpretation
+phase33_untouched_holdout,phase32_endpoint_fallback_plus1,260/300,281/300,113/150,1.0,0,0,confirmed_historical_reference
+phase34_development,phase34_top20_logistic,267/300,277/300,110/150,1.0,0,0,development_only
+phase35_development,phase35_pairwise_boundary,258/300,273/300,112/150,1.0,0,0,development_only
+phase36_fresh_development,phase32_endpoint_fallback_plus1,265/300,277/300,115/150,1.0,0,0,matched_baseline
+phase36_fresh_development,candidate_a_evidence_aware,262/300,277/300,115/150,1.0,0,0,no_go

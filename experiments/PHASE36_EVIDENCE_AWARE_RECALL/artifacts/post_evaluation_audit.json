@@ -1,0 +1,89 @@
+{
+  "historical_hashes_verified": 497,
+  "prediction_and_input_seals_valid": true,
+  "top10_and_group_partition_preserved": true,
+  "temporal_violations": 0,
+  "private_feature_violations": 0,
+  "holdout_generated": false,
+  "newly_recalled": 4,
+  "lost_recalled": 7,
+  "queues_with_recall_decline": 3,
+  "queues_changed_rank": 15,
+  "queue_details": [
+    {
+      "queue_id": "p31_development_q000",
+      "gained": 0,
+      "lost": 0
+    },
+    {
+      "queue_id": "p31_development_q001",
+      "gained": 0,
+      "lost": 1
+    },
+    {
+      "queue_id": "p31_development_q002",
+      "gained": 0,
+      "lost": 1
+    },
+    {
+      "queue_id": "p31_development_q003",
+      "gained": 0,
+      "lost": 2
+    },
+    {
+      "queue_id": "p31_development_q004",
+      "gained": 0,
+      "lost": 0
+    },
+    {
+      "queue_id": "p31_development_q005",
+      "gained": 0,
+      "lost": 0
+    },
+    {
+      "queue_id": "p31_development_q006",
+      "gained": 1,
+      "lost": 1
+    },
+    {
+      "queue_id": "p31_development_q007",
+      "gained": 0,
+      "lost": 0
+    },
+    {
+      "queue_id": "p31_development_q008",
+      "gained": 1,
+      "lost": 0
+    },
+    {
+      "queue_id": "p31_development_q009",
+      "gained": 0,
+      "lost": 0
+    },
+    {
+      "queue_id": "p31_development_q010",
+      "gained": 0,
+      "lost": 0
+    },
+    {
+      "queue_id": "p31_development_q011",
+      "gained": 0,
+      "lost": 0
+    },
+    {
+      "queue_id": "p31_development_q012",
+      "gained": 1,
+      "lost": 1
+    },
+    {
+      "queue_id": "p31_development_q013",
+      "gained": 0,
+      "lost": 0
+    },
+    {
+      "queue_id": "p31_development_q014",
+      "gained": 1,
+      "lost": 1
+    }
+  ]
+}
