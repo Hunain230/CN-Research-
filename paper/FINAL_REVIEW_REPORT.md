@@ -16,7 +16,7 @@
 | Citations | All 20 cited BibTeX keys resolve. Each entry was checked against a publisher, official conference, author-hosted paper, university publication record or dataset-maintainer page, with details in `REFERENCES_VERIFICATION.md`. |
 | LaTeX and visuals | `pdflatex`/`bibtex`/`pdflatex`/`pdflatex` completed. Final log has no undefined citations/references, overfull boxes or LaTeX warnings. All ten PDF pages were rendered; figure labels, tables, equations and references were visually inspected. |
 | Claim traceability | `CLAIMS_EVIDENCE_LEDGER.csv` has 32 entries; all local source paths in it exist. |
-| Change scope | Working-tree audit showed only `.agents/` and `paper/` as new directories. |
+| Change scope | Final working-tree audit found no changes to historical experiment files or frozen artifacts. |
 
 ## Remaining limits before a real-data claim
 
@@ -24,3 +24,4 @@
 - The simulator supplies trust roots and evidence-availability metadata that the available GUIDE export lacks. An authorized, independently adjudicated, point-in-time SOC export is required for external validation.
 - Phase 29 and Phase 40 experiment directories were not present in this workspace; no results were inferred for them.
 - Author affiliations, funding, acknowledgments, target venue and author contributions were not supplied, so they were omitted. Any future submission should be reviewed and approved by the named authors.
+- Temporary LaTeX build files and page previews remain inside `paper/`. Automatic approval review blocked the cleanup command; it gave no more specific reason. These files do not affect the manuscript or final PDF.
