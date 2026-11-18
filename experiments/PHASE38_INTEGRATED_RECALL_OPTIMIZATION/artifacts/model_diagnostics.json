@@ -1,0 +1,13 @@
+{
+  "train_pair_loss": 0.18884360724991223,
+  "development_pair_loss": 0.2209665982764383,
+  "train_pair_accuracy": 0.9217948717948717,
+  "development_pair_accuracy": 0.9042699724517906,
+  "pair_loss_gap": 0.032122991026526077,
+  "train_pairs": 780,
+  "development_pairs": 1452,
+  "candidate_misses": 38,
+  "candidate_unrecoverable": 21,
+  "candidate_recoverable_unranked": 17,
+  "posthoc_no_candidate_selection": true
+}

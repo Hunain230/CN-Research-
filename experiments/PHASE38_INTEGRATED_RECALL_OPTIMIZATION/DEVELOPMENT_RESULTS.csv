@@ -1,0 +1,3 @@
+method,recall20_count,denominator,recoverable,p10_count,p10_denominator,pair_precision,pair_tp,false_pairs,mixed_groups,prediction_sha256
+baseline,263,300,279,112,150,1.0,19788,0,0,edcc04aff625e15f784dc041b4603d5964bb4749a5475bea23933e4505f7330c
+candidate_b_hard_negative,262,300,279,112,150,1.0,19788,0,0,5c022735515f64c8dd9ade4bd48b07d1c645c84beae1976baf1a4656a327fac3

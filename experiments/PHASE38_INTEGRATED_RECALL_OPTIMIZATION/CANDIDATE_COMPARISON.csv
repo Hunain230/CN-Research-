@@ -1,0 +1,8 @@
+cohort,method,recall20,recoverability,p10,pair_precision,false_pairs,mixed_groups,status
+phase33_untouched_holdout,phase32_endpoint_fallback_plus1,260/300,281/300,113/150,1.0,0,0,confirmed_historical_reference
+phase36_development,phase36_evidence_aware_rank,262/300,277/300,115/150,1.0,0,0,development_only
+phase37_development,phase32_endpoint_fallback_plus1,257/300,267/300,112/150,1.0,0,0,telemetry_reference_different_cohort
+phase38_fresh_development,phase32_endpoint_fallback_plus1,263/300,279/300,112/150,1.0,0,0,matched_baseline
+phase38_fresh_development,candidate_b_hard_negative,262/300,279/300,112/150,1.0,0,0,no_go
+phase38_fresh_development,candidate_a_evidence_integration,,,,,,,unavailable_phase37_no_reconstruction_go
+phase38_fresh_development,candidate_c_integrated_cpv,,,,,,,unavailable_phase37_no_reconstruction_go

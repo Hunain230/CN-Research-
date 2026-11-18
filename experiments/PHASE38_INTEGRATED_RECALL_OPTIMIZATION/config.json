@@ -1,0 +1,12 @@
+{
+  "schema": "phase31-controlled-soc-evidence-v2",
+  "decision_minute": 100,
+  "component_cap": 100,
+  "incidents_per_queue": 25,
+  "benign_events_per_queue": 60,
+  "splits": {
+    "train": {"seed": 38101, "queues": 8, "template_variant": 13},
+    "development": {"seed": 38102, "queues": 15, "template_variant": 14},
+    "locked_test": {"seed": 38103, "queues": 15, "template_variant": 15}
+  }
+}

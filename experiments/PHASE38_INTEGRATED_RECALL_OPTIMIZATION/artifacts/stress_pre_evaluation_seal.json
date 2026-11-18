@@ -1,0 +1,16 @@
+{
+  "params_sha256": "dfbbd9831dd69b8697ecd832bb2367b33506d0ffca38a6347893b7f5b9c18dd6",
+  "ranker_sha256": "b9911c24eba2c5c0450b9c207f00af6eedab9aac07a7d049f17c5a9d10b0655c",
+  "note": "posthoc_on_previously_opened_phase37_development_not_candidate_selection",
+  "predictions_sha256": {
+    "original": "0201b1edae4c56a521a1b1b44877b353c576141b70a7536ea2bc067e5545d554",
+    "claim_delay20": "ec329dcc8f8b38849a1cd515dc01e68efb111e893b5c63d3526155c20068dacc",
+    "snapshot_minute80": "6e3fada714b8f2223cc8ad6449601ef595405fcb13e14c024269fdc5bb8509ca",
+    "drop_process": "63b98e37655a8ab05ef0bedae36179064f747c952687d203dfa19b22f8d233b2",
+    "drop_authentication": "2ec2827fe9ee7f15004c71e6619613ea70be889e28fffff4fbfa98ce4db73895",
+    "drop_network_flow": "83a43eb4c31a1aa7ad3a165febead2fb0fe5455a30a3c068f0af99e59bb690c4",
+    "derived_copies": "f6220f64a9aa637041818f725a37558646be222d747a53b26342d0dbbcf8772d",
+    "collapsed_roots": "01ae0c5b7ee4a5e6e41387925eb249867f5b1e1ddc2ca3ecd045c05f36ef6f86",
+    "contradictory_process": "02d381b7654ff38d7a6efc3d2b11cc270ecd4aee17ad3ba2d7de49872b6a6438"
+  }
+}

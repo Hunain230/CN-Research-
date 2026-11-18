@@ -1,0 +1,23 @@
+{
+  "development": {
+    "cross_incident_reused_process_id": 99,
+    "cross_incident_reused_auth_session_id": 80,
+    "cross_incident_reused_flow_id": 73,
+    "derived_claims": 167,
+    "late_claims": 49,
+    "genuine": 2206,
+    "derived_copy": 167,
+    "missing": 44,
+    "false_independent_looking_claim": 345,
+    "delayed_contradiction": 15,
+    "false_same_context_relationships": 93,
+    "late_alerts": 22,
+    "duplicate_alerts": 192,
+    "process_events": 1676,
+    "authentication_events": 1640,
+    "network_flow_events": 1726,
+    "queues": 15,
+    "alerts": 5042,
+    "claims": 2733
+  }
+}

@@ -1,0 +1,10 @@
+condition,baseline_recall,candidate_recall,baseline_recoverable,candidate_recoverable,baseline_p10,candidate_p10,candidate_false_pairs,candidate_mixed_groups,posthoc_previously_opened
+original,257,254,267,267,112,112,0,0,True
+claim_delay20,250,249,260,260,110,110,0,0,True
+snapshot_minute80,246,246,254,254,109,109,0,0,True
+drop_process,257,256,267,267,112,112,0,0,True
+drop_authentication,0,0,0,0,0,0,0,0,True
+drop_network_flow,0,0,0,0,0,0,0,0,True
+derived_copies,257,254,267,267,112,112,0,0,True
+collapsed_roots,166,168,170,170,80,80,0,0,True
+contradictory_process,168,170,172,172,81,81,0,0,True

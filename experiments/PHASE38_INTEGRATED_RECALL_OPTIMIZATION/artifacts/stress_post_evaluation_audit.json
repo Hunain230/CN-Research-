@@ -1,0 +1,8 @@
+{
+  "conditions": 9,
+  "queue_evaluations": 135,
+  "prediction_seals_valid": true,
+  "group_partitions_and_top10_preserved": true,
+  "previously_opened_phase37_development": true,
+  "used_for_selection": false
+}

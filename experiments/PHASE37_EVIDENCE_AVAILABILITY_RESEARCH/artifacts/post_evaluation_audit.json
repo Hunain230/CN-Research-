@@ -1,0 +1,10 @@
+{
+  "conditions": 9,
+  "queues": 135,
+  "false_pairs": 0,
+  "mixed_groups": 0,
+  "temporal_violations": 0,
+  "private_field_violations": 0,
+  "historical_hashes_verified": 671,
+  "additional_independent_capture_available": false
+}

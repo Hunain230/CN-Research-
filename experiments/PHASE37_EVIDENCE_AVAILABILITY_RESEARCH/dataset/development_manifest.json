@@ -1,0 +1,99 @@
+{
+  "schema": "phase31-controlled-soc-evidence-v2",
+  "split": "development",
+  "seed": 37102,
+  "template_variant": 12,
+  "queues": [
+    {
+      "queue_id": "p31_development_q000",
+      "alerts": 336,
+      "claims": 180,
+      "incidents": 25
+    },
+    {
+      "queue_id": "p31_development_q001",
+      "alerts": 332,
+      "claims": 186,
+      "incidents": 25
+    },
+    {
+      "queue_id": "p31_development_q002",
+      "alerts": 333,
+      "claims": 181,
+      "incidents": 25
+    },
+    {
+      "queue_id": "p31_development_q003",
+      "alerts": 336,
+      "claims": 179,
+      "incidents": 25
+    },
+    {
+      "queue_id": "p31_development_q004",
+      "alerts": 335,
+      "claims": 188,
+      "incidents": 25
+    },
+    {
+      "queue_id": "p31_development_q005",
+      "alerts": 329,
+      "claims": 188,
+      "incidents": 25
+    },
+    {
+      "queue_id": "p31_development_q006",
+      "alerts": 340,
+      "claims": 183,
+      "incidents": 25
+    },
+    {
+      "queue_id": "p31_development_q007",
+      "alerts": 336,
+      "claims": 183,
+      "incidents": 25
+    },
+    {
+      "queue_id": "p31_development_q008",
+      "alerts": 337,
+      "claims": 172,
+      "incidents": 25
+    },
+    {
+      "queue_id": "p31_development_q009",
+      "alerts": 322,
+      "claims": 181,
+      "incidents": 25
+    },
+    {
+      "queue_id": "p31_development_q010",
+      "alerts": 339,
+      "claims": 182,
+      "incidents": 25
+    },
+    {
+      "queue_id": "p31_development_q011",
+      "alerts": 343,
+      "claims": 174,
+      "incidents": 25
+    },
+    {
+      "queue_id": "p31_development_q012",
+      "alerts": 339,
+      "claims": 188,
+      "incidents": 25
+    },
+    {
+      "queue_id": "p31_development_q013",
+      "alerts": 347,
+      "claims": 186,
+      "incidents": 25
+    },
+    {
+      "queue_id": "p31_development_q014",
+      "alerts": 338,
+      "claims": 182,
+      "incidents": 25
+    }
+  ],
+  "decision_minute": 100
+}

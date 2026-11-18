@@ -1,0 +1,11 @@
+template_id_offline_only,opportunities,baseline_recalled,candidate_recalled
+account_takeover:v14,30,26,26
+command_activity:v14,33,30,31
+credential_access:v14,32,26,26
+data_staging:v14,27,22,22
+exfiltration:v14,31,26,28
+lateral_activity:v14,29,28,26
+persistence:v14,28,27,27
+privilege_change:v14,29,26,24
+remote_execution:v14,31,27,27
+service_abuse:v14,30,25,25

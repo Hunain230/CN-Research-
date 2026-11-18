@@ -1,0 +1,11 @@
+condition,status,recall20,recoverable,p10,pair_precision,false_pairs,mixed_groups,accepted_unions,correctly_accepted_unions,incorrectly_accepted_unions,rejected_or_abstained_bundles
+original,evaluated,257,267,112,1.0,0,0,690,690,0,202
+claim_delay20,evaluated,250,260,110,1.0,0,0,679,679,0,213
+snapshot_minute80,evaluated,246,254,109,1.0,0,0,665,665,0,207
+drop_process,evaluated,257,267,112,1.0,0,0,690,690,0,202
+drop_authentication,evaluated,0,0,0,1.0,0,0,0,0,0,892
+drop_network_flow,evaluated,0,0,0,1.0,0,0,0,0,0,890
+derived_copies,evaluated,257,267,112,1.0,0,0,690,690,0,202
+collapsed_roots,evaluated,166,170,80,1.0,0,0,508,508,0,384
+contradictory_process,evaluated,168,172,81,1.0,0,0,512,512,0,380
+additional_independent_capture,unavailable_no_independent_source,,,,,,,,,,
