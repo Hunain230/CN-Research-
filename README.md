@@ -1,243 +1,91 @@
-<div align="center">
+# SOC alert correlation and incident prioritization
 
-# 🛡️ SOC Alert Correlation & Incident Prioritization
+**Status: offline research prototype.** The strongest confirmed result is **86.67% Incident Recall@20 (260/300)** on an untouched **controlled synthetic** holdout in Phase 33. Real-world Recall@20 has **not been measured**. Shadow deployment is **NO-GO**.
 
-**A retrospective AI research pipeline for the Microsoft GUIDE dataset**
+## What this project is building
 
-[![Status](https://img.shields.io/badge/Status-Exploratory%20Phase%203-orange?style=flat-square)](FINAL_RESEARCH_PERFORMANCE_REPORT.md)
-[![Python](https://img.shields.io/badge/Python-3.12-blue?style=flat-square&logo=python)](requirements.txt)
-[![Model](https://img.shields.io/badge/Local%20Model-Qwen2.5%3A3b-purple?style=flat-square)](FINAL_RESEARCH_PERFORMANCE_REPORT.md)
-[![Data](https://img.shields.io/badge/GUIDE__Test-4.1M%20evidence%20rows-green?style=flat-square)](submission/DATA_AND_CLAIM_AUDIT.md)
-[![Recall@20](https://img.shields.io/badge/Selected%20Recall%4020-50.77%25-orange?style=flat-square)](FINAL_24H_EXPERIMENT_REPORT.md)
+The intended product is an analyst-facing incident queue. It would turn many security alerts into proposed incidents, check whether the links have independent supporting evidence, and rank the incidents that deserve attention first. Each proposal should show its supporting records and any missing or contradictory evidence. Uncertain relationships go to human review; the system does not automatically contain threats or force unsupported merges.
 
-<br/>
+The current implementation is an **offline research system**, not a live SOC application. Its best measured pipeline uses deterministic code. The repository also contains C/P/V agent workflow scaffolding and bounded local-model experiments, but the Phase 33 result **does not measure three autonomous AI agents or an LLM C/P/V system**.
 
-*Investigating whether a Correlate → Prioritize → Verify (C/P/V) workflow can recover expert-prioritized incidents from predicted alert groups — faster than matched rule and retrieval baselines.*
+## What has been built
 
-</div>
-
----
-
-## 📖 Start here
-
-> Navigate in this order for the clearest picture of what was built, what worked, and what didn't.
-
-| # | Document | What you'll find |
+| Area | Implemented work | Status |
 |---|---|---|
-| 1 | [**CONTEXT.md**](CONTEXT.md) | Research question, data boundaries, full implemented flow, open gates |
-| 2 | [**PROJECT_ITERATIONS.md**](PROJECT_ITERATIONS.md) | Every stage and decision — including negative results — in chronological order |
-| 3 | [**Final Performance Report (PDF)**](FINAL_RESEARCH_PERFORMANCE_REPORT.pdf) · [Editable](FINAL_RESEARCH_PERFORMANCE_REPORT.md) | Complete implementation, experiments, baselines, ablations, figures, and limitations |
-| 4 | [**REPRODUCE.md**](submission/REPRODUCE.md) · [Experiment register](submission/EXPERIMENT_REGISTER.md) | Commands, immutable run IDs, and output verification |
+| Real-data intake | Microsoft GUIDE schema and key validation, preprocessing, label isolation, ambiguous-alert audit, historical exploratory baselines and ranking studies | The local file contains 4,147,992 **evidence rows**, not 4.1 million independent alerts. Its labels were used in earlier exploratory work. [Data audit](submission/DATA_AND_CLAIM_AUDIT.md) |
+| C/P/V workflow research | Candidate generation, correlation/prioritization/verification interfaces, synthetic checks, local Qwen experiments, matched offline controls, and reproducibility reports | Useful prototypes and exploratory results; no confirmed full multi-agent superiority. [Historical report](FINAL_RESEARCH_PERFORMANCE_REPORT.md) · [reproduction guide](submission/REPRODUCE.md) |
+| Controlled SOC simulator | Separate receiver-visible and evaluator-only data; process, authentication and network observations; independent and shared roots; duplicates, missing/delayed evidence, contradictory and false claims | Enables controlled safety and recall studies, but simulator truth cannot establish real-world sensor independence. [Phase 31](experiments/PHASE31_CONTROLLED_SOC_EVIDENCE/PHASE31_FINAL_REPORT.md) |
+| Frozen C/P/V pipeline | Correlate related alert fragments; verify proposed unions against provenance, causal fields and a decision-time cutoff; rank verified groups | Phase 33 uses [Phase 16 correlation](experiments/PHASE16_PROVENANCE_RECONSTRUCTION/v4/predict.py), [Phase 31 evidence validation](experiments/PHASE31_CONTROLLED_SOC_EVIDENCE/model.py), and the [Phase 32 endpoint fallback and ranking](experiments/PHASE32_SAFE_EVIDENCE_RECOVERY/model.py). In code, verification occurs before final ranking. |
+| Evaluation and audits | Official top-20 evaluator, matched baseline comparisons, queue-level safety checks, prediction seals, hashes, split isolation and post-evaluation truth audits | The [original evaluator](experiments/PHASE15_CONTROLLED_SOC/evaluation/evaluate.py) is unchanged for the Phase 33 result. |
+| External-data readiness | Local/public data source review, frozen-model schema comparison, authorization, provenance and temporal audits, and an export specification | Phase 39 stopped **before real-data prediction**. [Readiness report](experiments/PHASE39_REAL_SOC_VALIDATION/PHASE39_FINAL_REPORT.md) |
 
----
+**C/P/V in plain language:** **C** proposes which alerts belong together; **V** checks the proposed links against original evidence and abstains when proof is insufficient; **P** orders the resulting groups for analysts. This is the current deterministic research pipeline, even though the broader project also proposes agent roles.
 
-## 🏆 Best Results (Exploratory)
+## Best confirmed experiment: Phase 33
 
-> [!IMPORTANT]
-> GUIDE_Test labels were accessed in earlier project work. All results below are **exploratory**, not confirmatory. The frozen historical comparator is **v2 grouping + v7 ranking**.
+The Phase 32 `endpoint_fallback_bonus1` candidate was frozen, then run once on a new 15-queue synthetic holdout alongside the frozen Phase 31 baseline. Both saw the same eligible alerts. Predictions were sealed before evaluator-only truth was opened.
 
-**16 November sprint:** A validation-selected rank fusion on the same v2 groups reached **50.77% Recall@20**, **63.88% P@10**, and **0.4697 nDCG@20** on all 499 queues. Group recoverability stayed **69.83%** and pair precision **90.41%**. The historical v2+v7 comparator below remains **49.82% Recall@20**. See the [sprint report](FINAL_24H_EXPERIMENT_REPORT.md) for the failed Phase 9G/grouping controls, selection rule, outside-fitting results, and limitations.
+| Metric | Matched baseline | Frozen candidate | Meaning |
+|---|---:|---:|---|
+| Incident Recall@20 | 250/300 (83.33%) | **260/300 (86.67%)** | Priority incidents correctly retrieved within the first 20 groups; **+10 on the same cohort** |
+| Group recoverability | 263/300 (87.67%) | **281/300 (93.67%)** | Priority incidents for which at least one sufficiently complete and pure group exists |
+| P@10 | 107/150 (71.33%) | **113/150 (75.33%)** | Top-ten priorities found in the first ten groups across 15 queues |
+| Grouped-pair precision | 100% | **100%** | All grouped alert pairs were correct under simulator truth |
+| False grouped pairs / mixed groups | 0 / 0 | **0 / 0** | No false merge observed in this holdout |
 
-<div align="center">
+All **28 new fallback unions** were genuine under simulator truth. Phase 33 passed its **synthetic** research gate; this is not a real SOC or production-safety claim. The exact metrics, queue audit, code/configuration hashes and limitations are in the [Phase 33 report](experiments/PHASE33_FROZEN_GENERALIZATION/PHASE33_FINAL_REPORT.md) and [holdout summary](experiments/PHASE33_FROZEN_GENERALIZATION/HOLDOUT_SUMMARY.json).
 
-### 🎯 End-to-end Recall@20 Progression
+The evaluator credits a priority incident only when a predicted group contains **at least 80% of that incident's eligible alerts**, at least **80% of the group** belongs to it, and the group appears in the first 20. P@10 uses the first ten groups. These definitions and denominators are not changed between matched arms.
 
-</div>
+## Research history and decisions
 
-```
-BM25-like baseline  ████░░░░░░░░░░░░░░░░░░░░░░░░░░  13.6%
-Trained ranker v1   █████░░░░░░░░░░░░░░░░░░░░░░░░░  15.4%  (135 disjoint orgs)
-Learned grouping    ██████████░░░░░░░░░░░░░░░░░░░░  31.8%  (57 queues, exploratory)
-Entity/time v2      ███████████░░░░░░░░░░░░░░░░░░░  34.0%  (exploratory)
-v4 ranker           █████████████░░░░░░░░░░░░░░░░░  42.2%  (exploratory)
-v7 ranker ★ FROZEN  ███████████████░░░░░░░░░░░░░░  49.8%  (frozen exploratory result)
-Oracle ceiling      █████████████████████░░░░░░░░░  69.8%  (fixed-group recoverability)
-```
+These percentages come from **different populations** unless a matched baseline is shown in the same row or report. They are not one continuous performance curve.
 
-### 📊 Full Results Table
-
-| Scope | Method | Recall@20 | P@10 | nDCG@20 |
-|---|---|:---:|:---:|:---:|
-| 499 orgs — full GUIDE | Rule / BM25-like baseline | 0.1364 | 0.1714 | 0.1542 |
-| 135 training-disjoint orgs | Trained logistic ranker v1 | 0.1542 | 0.2351 | 0.1776 |
-| 499 orgs (exploratory) | v2 grouping + v4 ranker | 0.4223 | 0.5284 | — |
-| **499 orgs (exploratory)** | **✅ v2 grouping + v7 ranker — FROZEN** | **0.4982** | **0.6158** | **0.4371** |
-| **499 orgs (exploratory)** | **Validation-selected v2 + rank fusion** | **0.5077** | **0.6388** | **0.4697** |
-| 135 orgs outside ranker training | v2 grouping + v7 ranker | 0.4552 | — | — |
-| 20 orgs — local Qwen v2 | C + P end-to-end | 0.1443 | 0.1848 | — |
-
-### ⚠️ Hard Limits
-
-| Constraint | Value | Implication |
+| Work | Result or decision | What it established |
 |---|---|---|
-| Initial rule candidate recall | **37,018 / 159,186,107 = 0.0233%** | Severe retrieval bottleneck in the original rule/BM25 baseline |
-| Frozen v2 candidate recall | **699,790 / 159,186,107 = 0.4396%** | Entity-enabled retrieval improves coverage but remains far below exhaustive positive-pair recall |
-| Candidate-connected label bound | **8,638 / 9,980 = 86.55%** | Gold-aware diagnostic; downstream scoring and grouping affect achieved recovery |
-| Oracle-order ceiling (v2 groups) | **6,969 / 9,980 = 69.83%** | Updated fixed-group recoverability ceiling |
-| Achieved end-to-end reference | **4,972 / 9,980 = 49.82%** | Updated v2 grouping + v7 ranking result |
-| Structural end-to-end ceiling | **9,063 / 9,980 = 90.81%** | 95% target structurally blocked under current exclusion + 100-alert cap |
+| [Initial GUIDE research](FINAL_RESEARCH_PERFORMANCE_REPORT.md) and [24-hour sprint](FINAL_24H_EXPERIMENT_REPORT.md) | Best validation-selected exploratory GUIDE ranking: **50.77% Recall@20** on 499 organization queues | Built real-data validation and exploratory grouping/ranking studies. GUIDE labels were previously accessed; this is **not** a confirmatory Phase 33 comparison. |
+| [Phase 16](experiments/PHASE16_PROVENANCE_RECONSTRUCTION/PHASE16_FINAL_REPORT.md) and later `source_depth` experiment | Historical selected synthetic reference **407/600 (67.83%)**; later experimental holdout **444/600 (74.00%)** with a P@10 regression | Established a grouping/ranking reference and exposed the tradeoff between recall and early-queue quality. |
+| [Phases 17–23](experiments/PHASE22_RECEIPT_ROBUSTNESS/PHASE22_FINAL_REPORT.md) | Safety investigations; Phase 22 showed two receipts can share a corrupted upstream source | Led to explicit trust-domain and common-mode checks. These were research findings, not a promotion. |
+| [Phases 24–30](experiments/PHASE30_SAFE_RECALL_IMPROVEMENT/PHASE30_FINAL_REPORT.md) | Recall and reconstruction studies; Phase 30 found a **77.67% development recoverability ceiling** and zero safe new unions | Ranking alone could not overcome missing cross-fragment evidence in that cohort. |
+| [Phase 31](experiments/PHASE31_CONTROLLED_SOC_EVIDENCE/PHASE31_FINAL_REPORT.md) | **158/200 (79.0%) development Recall@20** on a richer synthetic cohort | Added controlled process, identity and network evidence; not directly comparable with earlier populations. |
+| [Phase 32](experiments/PHASE32_SAFE_EVIDENCE_RECOVERY/PHASE32_FINAL_REPORT.md) | **169/200 (84.5%) development Recall@20** | Developed the conservative endpoint fallback +1 candidate; remained development-only. |
+| [Phase 33](experiments/PHASE33_FROZEN_GENERALIZATION/PHASE33_FINAL_REPORT.md) | **260/300 (86.67%) untouched synthetic holdout**, with zero false pairs/mixed groups | Strongest confirmed synthetic generalization result; matched baseline was 250/300. |
+| [Phase 34](experiments/PHASE34_FROZEN_RANK_GENERALIZATION/PHASE34_FINAL_REPORT.md) | **267/300 (89.0%) development-only** | Narrow ranking gain, but missed its 90% gate; no holdout. |
+| [Phase 35](experiments/PHASE35_NEAR_BOUNDARY_RANKING/PHASE35_FINAL_REPORT.md) | **258/300 (86.0%) development-only** | Pairwise near-boundary ranker matched its baseline and failed the gate. |
+| [Phase 36](experiments/PHASE36_EVIDENCE_AWARE_RECALL/PHASE36_FINAL_REPORT.md) | **262/300 (87.33%) development-only**, versus matched baseline 265/300 | Evidence-aware ranker regressed on recall without changing grouping safety. |
+| [Phase 37](experiments/PHASE37_EVIDENCE_AVAILABILITY_RESEARCH/PHASE37_FINAL_REPORT.md) | Reconstruction **NO-GO** | Delayed/missing/correlated telemetry stress tests showed an evidence dependency; no new independent source justified a safe reconstruction rule. |
+| [Phase 38](experiments/PHASE38_INTEGRATED_RECALL_OPTIMIZATION/PHASE38_FINAL_REPORT.md) | **262/300 (87.33%) development-only**, versus matched baseline 263/300 | Hard-negative ranking failed the 90% gate; no holdout. |
+| [Phase 39](experiments/PHASE39_REAL_SOC_VALIDATION/PHASE39_FINAL_REPORT.md) | **Real-world Recall@20 not measured; shadow readiness NO-GO** | Audited available data and specified the authorized export needed for a fair external test. |
 
----
+All phase artifacts and negative results remain in `experiments/`. Historical reports such as [CONTEXT.md](CONTEXT.md) and [PROJECT_ITERATIONS.md](PROJECT_ITERATIONS.md) document the earlier GUIDE work; the Phase 33–39 reports above govern the later synthetic and external-readiness claims.
 
-## 🔄 Pipeline Architecture
+## Why real-world validation is blocked
 
-```
-╔══════════════════════════════════════════════════════════════╗
-║           GUIDE_Test.csv  —  4,147,992 evidence rows         ║
-╚══════════════════════╦═══════════════════════════════════════╝
-                       ║
-                       ▼
-           ┌───────────────────────┐
-           │    Preprocessing      │  composite key dedup · restricted ledger
-           │                       │  evaluator-only labels · field-gate enforcement
-           └───────────┬───────────┘
-                       │
-                       ▼
-           ┌───────────────────────┐
-           │  Candidate Generation │  Category + ATT&CK-technique · ≤20 neighbors
-           │                       │  entity/time routes: local-only amendment
-           └───────────┬───────────┘
-                       │
-           ┌───────────▼───────────┐
-           │   🔗 Agent C          │  LINK / NO_LINK / UNSURE per alert pair
-           │   Correlate           │  cites supporting evidence
-           └───────────┬───────────┘
-                       │
-           ┌───────────▼───────────┐
-           │   📊 Agent P          │  uncalibrated group priority scores
-           │   Prioritize          │  orders groups for top-20 recovery
-           └───────────┬───────────┘
-                       │
-           ┌───────────▼───────────┐
-           │   ✅ Agent V          │  PASS / REVISE / REVIEW per citation
-           │   Verify              │  60% of groups flagged for review
-           └───────────┬───────────┘
-                       │
-           ┌───────────▼───────────┐
-           │   Isolated Evaluator  │  reads labels after prediction freeze
-           │                       │  Pair F1 · P@10 · Recall@20 · nDCG@20
-           └───────────────────────┘
-```
+The local GUIDE file is a real-world research release, but it does not contain the frozen verifier's **original source-observation IDs, upstream trust roots, derivation links, causal process/authentication/network receipts, or evidence-arrival times**. The local audit found **70,702 composite alert keys with conflicting incident assignments**. The ranking file's exact queue scope and judgment completeness remain unresolved. The official real-data field policy currently approves **no model-visible fields**. It would be invalid to fill those gaps from shared host/account values or evaluator labels.
 
----
+Phase 39 therefore produced **no real-data predictions or metrics**. The next milestone is an authorized, evaluation-ready SOC export with original observations and timestamps, independently adjudicated incident membership and priority, explicit queue snapshots, and approved field use. See the [data acquisition specification](experiments/PHASE39_REAL_SOC_VALIDATION/DATA_ACQUISITION_SPEC.md), [schema comparison](experiments/PHASE39_REAL_SOC_VALIDATION/DATASET_SCHEMA.md), and [shadow-readiness assessment](experiments/PHASE39_REAL_SOC_VALIDATION/SHADOW_READINESS_ASSESSMENT.md). The frozen Phase 32 verifier should remain unchanged for this test.
 
-## 📈 Iteration History
+## Repository guide
 
-| Iteration | Recall@20 | Key Finding |
-|---|:---:|---|
-| Full offline BM25-like baseline | 0.1364 | Candidate recall 0.0233% — severe retrieval bottleneck |
-| Matched ranking extension (135 orgs) | 0.1542 | P@10 ↑, but Recall@20 CI includes zero |
-| Learned pair grouping (57 queues) | 0.3179 | Grouping helps; pair F1 fell; oracle ceiling 58.5% |
-| Entity/time sensitivity (499 queues) | 0.3095 | Pair precision improved; F1 fell; allowlist still empty |
-| Entity/time pair model v2 | 0.3397 | Pair precision 0.9041; updated ceiling 69.83%; v2 frozen |
-| Group priority v4 ranker | 0.4223 | +8.3 pp over v2 ordering; 0.4106 on 135 disjoint orgs |
-| Hard-negative v6 ranker | 0.4399 | Descriptive gain; no training-disjoint improvement |
-| **Descriptor-aware v7 ranker ★** | **0.4982** | Frozen reference; 0.4552 on 135 outside training |
-| Specialist v8 control | 0.4982 | No gain — v7 scores retained |
-| Adaptive links v9 control | — | Tiny recall gain reduced P@10 and ceiling; v2 groups kept |
-| Learned group-merge v10 | 0.4982 | No merge met purity + recall gates; identical to v2 + v7 |
-| Component ablation (entity route) | 0.4433 | −5.5 pp when entity route removed; entity is critical |
-| Bounded matched Qwen controls | 0.1443 | C+P < singleton/rarity control; no C/P/V superiority |
-| Phase 9C fragment heuristic | 0.4981 | NO-GO; 38 merges increased false grouped pairs and reduced recoverability |
-| Phase 9E sixth-neighbor route | 0.4982 | NO-GO; +49,455 candidates but no additional recovered incident |
-| Phase 9G boundary scorer | 0.4359 | NO-GO; false grouped pairs rose to 137,884 |
-| Sprint consensus split | 0.4513 | NO-GO; pair purity improved but recoverability fell |
-| Sprint rank fusion | **0.5077** | Validation-selected exploratory candidate; fixed v2 groups and pair purity |
+| Path | Contents |
+|---|---|
+| [`src/`](src) and [`configs/`](configs) | GUIDE validation, preprocessing, exploratory runners, workflow scaffolding and field policies |
+| [`data/raw/`](data/raw) and [`data/derived/`](data/derived) | Local GUIDE inputs and audit/derived artifacts; raw data is not a model-ready Phase 33 cohort |
+| [`experiments/`](experiments) | Controlled synthetic generators, frozen models, phase plans, predictions, evaluations and safety audits |
+| [`experiments/PHASE33_FROZEN_GENERALIZATION/`](experiments/PHASE33_FROZEN_GENERALIZATION) | Best confirmed synthetic holdout, exact result and integrity artifacts |
+| [`experiments/PHASE39_REAL_SOC_VALIDATION/`](experiments/PHASE39_REAL_SOC_VALIDATION) | External-source register, schema/authorization audits and export requirements; **no result CSVs** |
+| [`submission/`](submission) and [`outputs/`](outputs) | Historical exploratory GUIDE studies, reports, figures and immutable run outputs |
 
-> Full chronology → [PROJECT_ITERATIONS.md](PROJECT_ITERATIONS.md) · Exhibition table → [EXHIBITION_METRICS_BRIEF_20261115.md](submission/EXHIBITION_METRICS_BRIEF_20261115.md)
+## Inspect the recorded work
 
----
-
-## 🗂️ Repository Map
-
-```
-CN-Research-/
-├── 📁 src/                  Validation · preprocessing · C/P/V agents · evaluators · runners
-├── 📁 configs/              field_policy.yaml (official — empty) · empirical_field_policy.yaml (local-only)
-├── 📁 data/raw/ & derived/  GUIDE inputs + restricted records  ⚠️ Git-ignored
-├── 📁 fixtures/             Fictional checks · frozen expected outputs
-├── 📁 outputs/              Versioned metrics · run manifests · all historical outputs retained
-├── 📁 phases_outputs/       Dated phase records · amendments · gate decisions
-├── 📁 submission/           Report · figures · verification · reproduction material
-├── 📁 experiments/24H_PERFORMANCE_SPRINT/  Sprint configurations
-├── 📄 CONTEXT.md            ← Canonical methodology and implementation reference
-├── 📄 PROJECT_ITERATIONS.md ← Canonical timeline and decision log
-└── 📄 README.md             ← You are here
-```
-
----
-
-## 🚀 Quick Start
-
-**Prerequisites:** Python 3.12 · `matplotlib==3.11.2` · `numpy==2.5.4` (figures only)
+Use Python 3.12 from the repository root. These commands **verify existing files**; they do not run a new model evaluation:
 
 ```powershell
-# 1. Verify submission package integrity
-.\.venv\Scripts\python.exe -m submission.verify_package
-
-# 2. Inspect frozen local call timing
-.\.venv\Scripts\python.exe -m submission.measure_local_operations
-
-# 3. Read the measured sprint results and reproduction commands
-# FINAL_24H_EXPERIMENT_REPORT.md · FINAL_REPRODUCIBILITY.md
+python experiments/PHASE39_REAL_SOC_VALIDATION/audit_local_sources.py
+Get-Content experiments/PHASE33_FROZEN_GENERALIZATION/HOLDOUT_SUMMARY.json
+Get-Content experiments/PHASE33_FROZEN_GENERALIZATION/POST_EVALUATION_AUDIT.json
 ```
 
-> [!TIP]
-> For a full offline + local Qwen run, follow [REPRODUCE.md](submission/REPRODUCE.md). The Qwen stage can take **several hours on CPU**. No hosted model calls are authorized by the current field policy.
+The Phase 33 prediction runner is intentionally single-use and refuses to overwrite its recorded outputs. The earlier GUIDE workflow has a separate [reproduction guide](submission/REPRODUCE.md) and uses distinct cohorts and assumptions.
 
----
-
-## 📚 Key References
-
-| 📄 Document | Contents |
-|---|---|
-| [FINAL_RESEARCH_PERFORMANCE_REPORT.md](FINAL_RESEARCH_PERFORMANCE_REPORT.md) | Final performance report — implementation, metrics, figures, ablations, and limitations |
-| [FINAL_24H_EXPERIMENT_REPORT.md](FINAL_24H_EXPERIMENT_REPORT.md) | Phase 9G evaluation, sprint controls, and validation-selected fusion |
-| [EXHIBITION_METRICS_BRIEF_20261115.md](submission/EXHIBITION_METRICS_BRIEF_20261115.md) | Stage-separated results table + suggested slide wording |
-| [INDEPENDENT_COMPONENT_ABLATION_20261115.md](submission/INDEPENDENT_COMPONENT_ABLATION_20261115.md) | Candidate-route, grouping, and ranking ablations with matched denominators |
-| [PERFORMANCE_BASELINE_STUDY.md](submission/PERFORMANCE_BASELINE_STUDY.md) | 334/135 organization-split matched ranking study |
-| [DATA_AND_CLAIM_AUDIT.md](submission/DATA_AND_CLAIM_AUDIT.md) | Schema, evidence-row grain, composite keys, field gates, and provenance hashes |
-| [KNOWN_LIMITATIONS.md](submission/KNOWN_LIMITATIONS.md) | 11 open gates — what prevents any operational readiness claim |
-| [FRESH_COHORT_AND_SHADOW_GATE.md](submission/FRESH_COHORT_AND_SHADOW_GATE.md) | Gates required for a confirmatory study + shadow-mode pilot |
-| [REPRODUCE.md](submission/REPRODUCE.md) | Commands · immutable run IDs · output paths |
-
----
-
-## 📋 Submission Status
-
-<div align="center">
-
-**🟡 Exploratory · Partial Phase 3 Submission**
-
-</div>
-
-> [!WARNING]
-> **Do not claim:** 95% recovery, confirmatory model superiority, production SOC readiness, or any certification. No retrospective score increase on previously accessed GUIDE_Test labels satisfies any of these claims.
-
-**Outstanding before a confirmatory study is possible:**
-
-- [ ] 🔒 Fresh, sealed, untouched ranked cohort
-- [ ] 📋 Official point-in-time model-input field allowlist *(currently empty)*
-- [ ] 🔑 Source-validated alert membership rule *(70,702 ambiguous composite keys unresolved)*
-- [ ] ⚖️ Matched B0–B4 / C / P / V held-out comparison with equal budgets
-- [ ] 👁️ Blinded citation review and analyst adjudication
-- [ ] 🏥 Shadow-mode SOC pilot *(live arrival rates, per-alert p50/p95 latency, sustained throughput, false-merge impact)*
-
-The [delivery checklist](submission/DELIVERY_CHECKLIST.md) maps available artifacts to Phase 3 assignment requirements.
-
----
-
-## 🔗 External References
-
-- 📄 [Microsoft GUIDE Dataset Paper](https://arxiv.org/abs/2407.09017) — source data context and investigation/triage framing
-- 📄 [Adaptive Incident Prioritization Paper](https://arxiv.org/abs/2607.16963) — queue-relative expert priority background
-- 📖 [CONTEXT.md](CONTEXT.md) — local methodology, implementation deviations, and current gates
-
----
-
-<div align="center">
-
-*Built as an honest exploratory research prototype — not production software.*
-*Preserving negative results is as important as reporting gains.*
-
-</div>
+**Research prototype only.** No live SOC deployment, automatic incident merge, automatic response action, verified analyst productivity gain, or measured real-world Recall@20 is claimed.
