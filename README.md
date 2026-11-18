@@ -1,12 +1,65 @@
-# SOC alert correlation and incident prioritization
+<div align="center">
 
-**Status: offline research prototype.** The strongest confirmed result is **86.67% Incident Recall@20 (260/300)** on an untouched **controlled synthetic** holdout in Phase 33. Real-world Recall@20 has **not been measured**. Shadow deployment is **NO-GO**.
+# 🛡️ SOC Alert Correlation & Incident Prioritization
+
+### From a flood of alerts to an evidence-backed incident queue
+
+[![Research status](https://img.shields.io/badge/Status-Offline%20research%20prototype-5965b3?style=for-the-badge)](#project-status)
+[![Synthetic holdout](https://img.shields.io/badge/Phase%2033%20Recall%4020-86.67%25-188b67?style=for-the-badge)](#best-confirmed-experiment-phase-33)
+[![Pair precision](https://img.shields.io/badge/Synthetic%20pair%20precision-100%25-188b67?style=for-the-badge)](#best-confirmed-experiment-phase-33)
+[![Real-world validation](https://img.shields.io/badge/Real--world%20recall-Not%20measured-e49b27?style=for-the-badge)](#project-status)
+
+**Correlate → Verify → Prioritize → Analyst review**
+
+[Explore the workflow](#how-the-system-works) · [See the best result](#best-confirmed-experiment-phase-33) · [Browse the research](#research-history-and-decisions) · [Check readiness](#project-status)
+
+</div>
+
+---
+
+## At a glance
+
+| 🧩 What it does | 🏆 Best confirmed result | 🔒 Safety on that holdout | 🚦 Real-world status |
+|---|---|---|---|
+| Proposes incidents from alerts, checks the links, then ranks the groups for an analyst | **260/300 incidents recalled** in the top 20 on a fresh controlled synthetic holdout | **0 false grouped pairs; 0 mixed groups** under simulator truth | **Not evaluated** on a qualified real SOC export; shadow deployment **NO-GO** |
+
+> [!IMPORTANT]
+> The **86.67%** result is from an untouched **synthetic** Phase 33 holdout. It is not a measured real-world SOC result or a claim about autonomous multi-agent performance.
+
+---
+
+## Start here
+
+| If you want to… | Open… |
+|---|---|
+| Understand the product and the C/P/V roles | [What this project is building](#what-this-project-is-building) · [How the system works](#how-the-system-works) |
+| Inspect the strongest experiment | [Phase 33 result](#best-confirmed-experiment-phase-33) · [full report](experiments/PHASE33_FROZEN_GENERALIZATION/PHASE33_FINAL_REPORT.md) |
+| See what has been implemented | [Built components](#what-has-been-built) · [repository guide](#repository-guide) |
+| Follow every major decision, including NO-GOs | [Research history](#research-history-and-decisions) · [experiment archive](experiments) |
+| See what blocks real-world use | [Project status](#project-status) · [Phase 39 readiness report](experiments/PHASE39_REAL_SOC_VALIDATION/PHASE39_FINAL_REPORT.md) |
+
+---
 
 ## What this project is building
 
 The intended product is an analyst-facing incident queue. It would turn many security alerts into proposed incidents, check whether the links have independent supporting evidence, and rank the incidents that deserve attention first. Each proposal should show its supporting records and any missing or contradictory evidence. Uncertain relationships go to human review; the system does not automatically contain threats or force unsupported merges.
 
 The current implementation is an **offline research system**, not a live SOC application. Its best measured pipeline uses deterministic code. The repository also contains C/P/V agent workflow scaffolding and bounded local-model experiments, but the Phase 33 result **does not measure three autonomous AI agents or an LLM C/P/V system**.
+
+## How the system works
+
+```mermaid
+flowchart LR
+    A[Security alerts + source observations] --> C[🔗 C: propose related fragments]
+    C --> V{🛡️ V: enough independent,<br/>timely evidence?}
+    V -->|Yes| G[Verified incident groups]
+    V -->|Unclear| H[Abstain + analyst review]
+    G --> P[📊 P: rank for the queue]
+    P --> Q[Top incidents + evidence trail]
+    Q --> R[Human analyst]
+```
+
+**C/P/V in plain language:** **C** proposes which alerts belong together; **V** checks the proposed links against original evidence and abstains when proof is insufficient; **P** orders the resulting groups for analysts. Verification happens **before final ranking** in the Phase 33 implementation. The letters also name agent roles in earlier workflow prototypes; the measured Phase 33 pipeline is deterministic.
 
 ## What has been built
 
@@ -19,11 +72,16 @@ The current implementation is an **offline research system**, not a live SOC app
 | Evaluation and audits | Official top-20 evaluator, matched baseline comparisons, queue-level safety checks, prediction seals, hashes, split isolation and post-evaluation truth audits | The [original evaluator](experiments/PHASE15_CONTROLLED_SOC/evaluation/evaluate.py) is unchanged for the Phase 33 result. |
 | External-data readiness | Local/public data source review, frozen-model schema comparison, authorization, provenance and temporal audits, and an export specification | Phase 39 stopped **before real-data prediction**. [Readiness report](experiments/PHASE39_REAL_SOC_VALIDATION/PHASE39_FINAL_REPORT.md) |
 
-**C/P/V in plain language:** **C** proposes which alerts belong together; **V** checks the proposed links against original evidence and abstains when proof is insufficient; **P** orders the resulting groups for analysts. This is the current deterministic research pipeline, even though the broader project also proposes agent roles.
-
 ## Best confirmed experiment: Phase 33
 
 The Phase 32 `endpoint_fallback_bonus1` candidate was frozen, then run once on a new 15-queue synthetic holdout alongside the frozen Phase 31 baseline. Both saw the same eligible alerts. Predictions were sealed before evaluator-only truth was opened.
+
+```text
+Matched baseline   █████████████████░░░  83.33%  (250/300)
+Frozen candidate   █████████████████▓░░  86.67%  (260/300)  +10 incidents
+```
+
+*The bars compare only the two arms on the same Phase 33 holdout.*
 
 | Metric | Matched baseline | Frozen candidate | Meaning |
 |---|---:|---:|---|
@@ -40,6 +98,13 @@ The evaluator credits a priority incident only when a predicted group contains *
 ## Research history and decisions
 
 These percentages come from **different populations** unless a matched baseline is shown in the same row or report. They are not one continuous performance curve.
+
+**The short story:** GUIDE established the first exploratory workflow → safety studies exposed false-merge risks → richer controlled evidence enabled Phase 33's confirmed synthetic result → later ranking ideas did not clear their gates → Phase 39 found that available real data cannot yet support the frozen verifier.
+
+<details>
+<summary><strong>📚 Expand the phase-by-phase research record</strong></summary>
+
+<br/>
 
 | Work | Result or decision | What it established |
 |---|---|---|
@@ -59,11 +124,28 @@ These percentages come from **different populations** unless a matched baseline 
 
 All phase artifacts and negative results remain in `experiments/`. Historical reports such as [CONTEXT.md](CONTEXT.md) and [PROJECT_ITERATIONS.md](PROJECT_ITERATIONS.md) document the earlier GUIDE work; the Phase 33–39 reports above govern the later synthetic and external-readiness claims.
 
-## Why real-world validation is blocked
+</details>
+
+## Project status
+
+| Gate | Status | Evidence |
+|---|:---:|---|
+| Fresh synthetic holdout | ✅ Passed | [Phase 33](experiments/PHASE33_FROZEN_GENERALIZATION/PHASE33_FINAL_REPORT.md) |
+| Synthetic false-merge checks | ✅ Passed | 0 false grouped pairs and 0 mixed groups on Phase 33 |
+| Qualified real SOC export | ⏳ Needed | [Data acquisition specification](experiments/PHASE39_REAL_SOC_VALIDATION/DATA_ACQUISITION_SPEC.md) |
+| Real-world Recall@20 | — | Not measured |
+| Shadow deployment | 🚫 NO-GO | [Readiness assessment](experiments/PHASE39_REAL_SOC_VALIDATION/SHADOW_READINESS_ASSESSMENT.md) |
+
+<details>
+<summary><strong>🔎 Why real-world validation is blocked</strong></summary>
+
+<br/>
 
 The local GUIDE file is a real-world research release, but it does not contain the frozen verifier's **original source-observation IDs, upstream trust roots, derivation links, causal process/authentication/network receipts, or evidence-arrival times**. The local audit found **70,702 composite alert keys with conflicting incident assignments**. The ranking file's exact queue scope and judgment completeness remain unresolved. The official real-data field policy currently approves **no model-visible fields**. It would be invalid to fill those gaps from shared host/account values or evaluator labels.
 
 Phase 39 therefore produced **no real-data predictions or metrics**. The next milestone is an authorized, evaluation-ready SOC export with original observations and timestamps, independently adjudicated incident membership and priority, explicit queue snapshots, and approved field use. See the [data acquisition specification](experiments/PHASE39_REAL_SOC_VALIDATION/DATA_ACQUISITION_SPEC.md), [schema comparison](experiments/PHASE39_REAL_SOC_VALIDATION/DATASET_SCHEMA.md), and [shadow-readiness assessment](experiments/PHASE39_REAL_SOC_VALIDATION/SHADOW_READINESS_ASSESSMENT.md). The frozen Phase 32 verifier should remain unchanged for this test.
+
+</details>
 
 ## Repository guide
 
