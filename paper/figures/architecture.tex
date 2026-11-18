@@ -1,12 +1,15 @@
-\begin{tikzpicture}[>=Latex,node distance=7mm, every node/.style={font=\small}, box/.style={draw=blue!55!black,rounded corners,fill=blue!4,align=center,minimum height=9mm,text width=3.7cm}, check/.style={draw=orange!75!black,rounded corners,fill=orange!8,align=center,minimum height=9mm,text width=3.7cm}]
-\node[box] (input) {Visible alerts and source records\\at minute 100};
-\node[box,right=of input] (c) {\textbf{C: Correlate}\\candidate pairs and groups};
-\node[check,right=of c] (v) {\textbf{V: Verify}\\roots, timing, causal fields};
-\node[box,below=11mm of v] (p) {\textbf{P: Prioritize}\\source depth + verified bonus};
-\node[box,left=of p] (queue) {Ranked groups\\for analyst review};
-\draw[->,thick] (input)--(c);
-\draw[->,thick] (c)--(v);
-\draw[->,thick] (v)--node[right,font=\scriptsize]{accepted groups}(p);
-\draw[->,thick] (p)--(queue);
-\draw[->,dashed] (v.south west) to[out=245,in=70] node[above left,font=\scriptsize]{insufficient proof: abstain} (queue.north east);
+\begin{tikzpicture}[>=Latex, every node/.style={font=\sffamily\small},
+  stage/.style={draw=navy,rounded corners=2pt,fill=softblue,align=center,minimum height=13mm,text width=3.0cm},
+  verify/.style={draw=teal,rounded corners=2pt,fill=teal!8,align=center,minimum height=13mm,text width=3.0cm}]
+\node[stage] (input) at (0,0) {\textbf{Receiver snapshot}\\alerts, observations, claims};
+\node[stage] (c) at (3.5,0) {\textbf{C: Correlate}\\candidate links and groups};
+\node[verify] (v) at (7.0,0) {\textbf{V: Verify}\\roots, time, causal fields};
+\node[stage] (p) at (10.5,0) {\textbf{P: Prioritize}\\source depth + union bonus};
+\node[stage] (out) at (14.0,0) {\textbf{Prediction}\\ordered groups};
+\node[draw=amber,rounded corners=2pt,fill=amber!8,align=center,text width=3.8cm,minimum height=9mm] (audit) at (7,-2.0) {Rejected link reasons\\stored in audit};
+\draw[->,thick,navy] (input)--(c);
+\draw[->,thick,navy] (c)--(v);
+\draw[->,thick,teal] (v)--(p);
+\draw[->,thick,navy] (p)--(out);
+\draw[->,dashed,amber] (v)--node[right,font=\scriptsize]{insufficient proof}(audit);
 \end{tikzpicture}

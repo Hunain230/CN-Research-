@@ -4,7 +4,9 @@
 **Editable source:** [main.tex](main.tex)  
 **Authors:** Hunain Shahid and Hammad Ullah Khan
 
-This paper reports the frozen Phase 33 **controlled synthetic** holdout and the failed or blocked follow-up studies. It does not claim a real-world Recall@20 result, a full autonomous multi-agent result, or operational readiness. It uses a clean LaTeX article format because no publisher venue was specified.
+This paper reports the frozen Phase 33 **controlled synthetic** holdout and the failed or blocked follow-up studies. It does not claim a real-world Recall@20 result, a full autonomous multi-agent result, or operational readiness. It uses an original two-column academic layout; no publisher venue, acceptance, or institutional affiliation is claimed. Three user-supplied SOC papers informed the presentation style and were added to related work with verified citations.
+
+The manuscript includes editable vector diagrams for C/V/P inference, provenance and point-in-time verification, and the study progression. A matched holdout plot compares the frozen arms and separates the 40 remaining misses into ranking and recovery cases. Tables keep synthetic holdout, development, and real-data readiness evidence distinct.
 
 ## Files
 

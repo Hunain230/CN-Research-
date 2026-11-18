@@ -1,5 +1,5 @@
-\documentclass[11pt,a4paper]{article}
-\usepackage[margin=23mm]{geometry}
+\documentclass[10pt,a4paper]{article}
+\usepackage[top=19mm,bottom=20mm,left=18mm,right=18mm]{geometry}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{lmodern}
@@ -10,22 +10,43 @@
 \usepackage{tikz}
 \usetikzlibrary{arrows.meta,positioning,shapes.geometric}
 \usepackage{caption}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
 \usepackage[hidelinks]{hyperref}
 \usepackage{url}
 \usepackage{enumitem}
 \setlist{nosep,leftmargin=*}
-\captionsetup{font=small,labelfont=bf}
-\title{Safe Evidence-Aware Incident Reconstruction and Prioritization under Incomplete Telemetry: A Controlled Synthetic Study}
-\author{Hunain Shahid \and Hammad Ullah Khan}
-\date{}
+\definecolor{navy}{HTML}{12315A}
+\definecolor{teal}{HTML}{087F8C}
+\definecolor{softblue}{HTML}{EEF4FA}
+\definecolor{amber}{HTML}{B36516}
+\captionsetup{font=footnotesize,labelfont=bf,justification=raggedright,singlelinecheck=false}
+\setlength{\columnsep}{7mm}
+\setlength{\parskip}{0pt}
+\setlength{\parindent}{1em}
+\setlength{\emergencystretch}{1em}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\footnotesize\sffamily SHAHID AND KHAN \quad / \quad SAFE INCIDENT RECONSTRUCTION}
+\fancyhead[R]{\footnotesize\sffamily RESEARCH MANUSCRIPT}
+\fancyfoot[C]{\footnotesize\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\setlength{\headheight}{13pt}
 
 \begin{document}
-\maketitle
-\begin{abstract}
+\twocolumn[{%
+\begin{center}
+{\color{navy}\rule{\textwidth}{1.4pt}}\\[4mm]
+{\Large\bfseries Safe Evidence-Aware Incident Reconstruction and Prioritization\\[1mm] under Incomplete Telemetry}\par\vspace{3mm}
+{\normalsize Hunain Shahid \qquad Hammad Ullah Khan}\par\vspace{3mm}
+{\color{navy}\rule{\textwidth}{0.4pt}}
+\end{center}
+\noindent\begin{minipage}{\textwidth}
+\small\noindent\textbf{Abstract.}\enspace
 Security operations center (SOC) alerts often describe fragments of a larger incident, while seemingly corroborating records can share a compromised upstream source or arrive after an analyst's decision. We study an offline correlate--verify--prioritize pipeline that combines candidate alert grouping with provenance, causal-field and point-in-time checks before ranking incident groups. On a previously untouched, controlled synthetic 15-queue holdout, a frozen endpoint-observation fallback and verified-union ranking bonus achieved 260/300 (86.67\%) Incident Recall@20, versus 250/300 (83.33\%) for a matched frozen baseline. Group recoverability rose from 263/300 to 281/300 and Precision@10 from 107/150 to 113/150. Under simulator truth, grouped-pair precision was 100\%, with no false grouped pairs or mixed groups; all 28 additional fallback unions were genuine. Subsequent ranking candidates failed their development gates. An audit of the available Microsoft GUIDE release found that its visible fields cannot support an unchanged, provenance- and availability-aware verifier; no real-world prediction or performance result was produced. These findings characterize a promising synthetic mechanism and a concrete external-validation requirement, not operational effectiveness.
-\end{abstract}
-
-\noindent\textbf{Keywords:} security alert correlation; incident reconstruction; provenance; temporal availability; safe abstention; incident prioritization; synthetic evaluation.
+\par\vspace{2mm}\noindent\textbf{Keywords.}\enspace security alert correlation; incident reconstruction; provenance; temporal availability; safe abstention; incident prioritization; synthetic evaluation.
+\end{minipage}\vspace{6mm}
+}]
 
 \section{Introduction}
 SOC analysts must decide which alerts represent the same incident and which incidents warrant early investigation. Alert clustering can reduce volume, but an incorrect union contaminates an entire group; ranking a contaminated group earlier does not repair it. Early alarm-clustering work established the operator-overload problem \cite{julisch2003}; provenance-based reconstruction and triage systems show the value of causal context \cite{hossain2017sleuth,hassan2019nodoze}. Our question is narrower: when fragments have missing or delayed telemetry, can an evidence-aware verifier increase complete, pure incident recovery without accepting false unions in a controlled evaluation?
@@ -46,17 +67,19 @@ Provenance research emphasizes both the explanatory power and the cost or fragil
 
 Microsoft's GUIDE paper describes real-world incident evidence and a guided-response setting \cite{freitas2024guide}. Its released local test file is useful for exploratory research but lacks the original observation-lineage and evidence-availability fields required by the frozen method. The distinction between a valuable dataset and a suitable dataset for a specific causal verification protocol is central to this study.
 
+Recent SOC research also explores LLM-based multi-agent correlation \cite{hmimou2025multiagent}, an agentic security-operations architecture \cite{roy2026agentsoc}, and evidence-orchestrated alert prioritization \cite{guo2026priority}. Those works investigate related but different tasks and evaluation populations. We use them to position the C/V/P stages, not as directly comparable Recall@20 baselines.
+
 \section{Research Objectives and Contributions}
 The primary objective is to improve Incident Recall@20 while retaining recoverability and early queue quality and allowing no increase in false grouped pairs or mixed groups in any matched queue. The secondary objective is to determine which missing-evidence cases must remain unmerged. We use separate development selection, holdout confirmation, and external-readiness questions. A synthetic GO means only that the predeclared gates passed under that generator and evaluator.
 
 \section{Architecture}
 Figure~\ref{fig:architecture} shows the actual inference order. It is a deterministic research pipeline. Earlier repository work contains C/P/V agent interfaces and local-model controls, but the Phase 33 numbers are not an evaluation of a full autonomous multi-agent system.
 
-\begin{figure}[htbp]
-\centering\resizebox{\linewidth}{!}{\input{figures/architecture.tex}}
-\caption{Implemented Phase 33 flow: receiver-visible input, initial correlation, evidence verification, and final ranking. The dashed path denotes withholding unsupported unions for review. Source: Phase 16 v4, Phase 31 and Phase 32 model files in the repository.}
+\begin{figure*}[t]
+\centering\resizebox{0.94\textwidth}{!}{\input{figures/architecture.tex}}
+\caption{Implemented Phase 33 inference flow. Unsupported relationship proposals are recorded in an audit and do not change the partition; final groups are ranked for evaluation. Source: Phase 16 v4, Phase 31 and Phase 32 model files.}
 \label{fig:architecture}
-\end{figure}
+\end{figure*}
 
 \subsection{C: Correlate}
 The frozen Phase 16 v4 correlator constructs candidate links and initial groups using permitted alert fields. Its selected \texttt{lineage\_one\_context\_v} rule relates short process fragments using an authentication-session or network-flow reference across distinct source observations, provided host/account context agrees. It rejects contradictory context and lacks a claim that duplicate copies constitute independent witnesses. Candidate links are not automatically equivalent to verified incident identity. The Phase 31/32 model imports this correlator rather than replacing it.
@@ -66,11 +89,11 @@ Phase 31 collects alerts, a point-in-time evidence ledger, and relationship clai
 
 Phase 32 adds a narrow fallback when the explicit process-family claim is absent. Two timely original authentication/network claims must have different roots. Distinct original endpoint observations must agree on a process-parent relation and provide a third root that differs from both claim roots. Duplicate endpoints, conflicting fields, shared context failure, future claims and over-cap components are rejected. Figure~\ref{fig:provenance} summarizes the three-root test. These are implementable checks in the simulator, not proof that physical sensors in a real SOC are independent.
 
-\begin{figure}[htbp]
-\centering\resizebox{\linewidth}{!}{\input{figures/provenance.tex}}
+\begin{figure*}[t]
+\centering\resizebox{0.88\textwidth}{!}{\input{figures/provenance.tex}}
 \caption{Endpoint-process fallback evidence path. Original endpoint, authentication and flow witnesses must be distinct, timely and mutually consistent; otherwise the proposed union is withheld. Source: \texttt{experiments/PHASE32\_SAFE\_EVIDENCE\_RECOVERY/model.py}.}
 \label{fig:provenance}
-\end{figure}
+\end{figure*}
 
 \subsection{P: Prioritize}
 The Phase 31 baseline uses a fixed \texttt{source\_depth} score combining maximum severity, maximum asset criticality, event-type diversity and bounded source count. The Phase 32 selected candidate adds one point per accepted verified union in a group and sorts by descending score with a deterministic tie break. This is a hand-specified score for the confirmed Phase 33 arm, not a trained neural ranker. Later train-fitted ranker studies kept C/V and the top ten fixed, but none cleared their own development gate.
@@ -78,60 +101,66 @@ The Phase 31 baseline uses a fixed \texttt{source\_depth} score combining maximu
 \section{Methodology and Experimental Design}
 Figure~\ref{fig:progression} maps the sequence without implying that different-cohort percentages form a single learning curve. Phase 16 established a 30-queue synthetic reference at 407/600 Recall@20, with 440 false pairs and 257 mixed groups. Phase 22 exposed common-mode trust failure: locally valid receipts could share a corrupted upstream source. Phase 25's apparent holdout recall improvement failed because one queue gained a false pair and mixed group; Phase 26 showed how delayed contradiction can make a point-in-time union unsafe. Phase 27's uncommitted graph hypotheses aided discovery without increasing official group recoverability. Phase 28's candidate raised a separate holdout's Recall@20 from 171/600 to 291/600 but increased false pairs from 41 to 76, so it too was NO-GO. Phase 30 found 110 of 137 unrecoverable incidents lacked a direct visible cross-fragment reference and accepted no safe new unions. These findings motivated richer evidence generation rather than repeated ranking against the same ceiling.
 
-\begin{figure}[htbp]
-\centering\resizebox{\linewidth}{!}{\input{figures/progression.tex}}
+\begin{figure*}[t]
+\centering\resizebox{0.92\textwidth}{!}{\input{figures/progression.tex}}
 \caption{Research progression and evidence levels. Arrows show decisions, not a pooled performance trajectory. Source: phase final reports 16 and 25--39; no Phase 29 or Phase 40 experiment directory was found in this workspace.}
 \label{fig:progression}
-\end{figure}
+\end{figure*}
 
 Phase 31 v2 created controlled receiver-visible process, authentication and network evidence while storing simulator truth in a separate evaluator-only tree. It used distinct train and development seeds and template variants; its planned holdout was not generated. Rich claims passed through the old one-lineage C produced 2,580 false pairs and 22 mixed groups on development, whereas the three-root verifier produced zero of each but missed its recall gate. Phase 32 tested exactly two fallback bonuses (+1 and +2) on the same development cohort. The +1 variant reached 169/200 Recall@20 and 177/200 recoverability with zero false pairs/mixed groups, one incident short of its 85\% development target; Phase 32 remained NO-GO.
 
 Under the subsequent Phase 33 instruction, the unchanged +1 candidate and frozen Phase 31 baseline were run once on a new 15-queue holdout, generated with a different seed and template variant. Both arms saw the same 5,018 eligible alerts. Prediction files were sealed before private truth was opened, and the original Phase 15 evaluator was unchanged. The official queue audit checks local false-pair/mixed-group non-inferiority. Hashes in the freeze and Phase 39 audit provide a later integrity check. This design reduces direct leakage from the Phase 33 truth into selection, but simulator-family similarity limits external validity.
 
-Phases 34--36 studied fresh development ranking changes while preserving C/V and usually the first ten ranks. Phase 37 stressed evidence availability and found no additional independent data source for a new safe reconstruction rule. Phase 38 tried a hard-negative ranker and again failed its development gate. Phase 39 audited public and local data for external validation and stopped before prediction.
+Phases 34--36 studied fresh development ranking changes while retaining C/V and usually fixing the first ten ranks. Phase 37 stressed evidence availability and found no additional independent data source for a new safe reconstruction rule. Phase 38 tried a hard-negative ranker and again failed its development gate. Phase 39 audited public and local data for external validation and stopped before prediction.
 
 \section{Evaluation Metrics}
 For incident $i$ in queue $q$, let $A_i=\{a\in A_q(t_0):y(a)=i\}$, and let $G_{q,j}$ be predicted group at rank $j$. A group qualifies for $i$ only if both incident completeness and group purity reach 0.8:
 \begin{equation}
 Q(i,G)=\mathbf{1}\left\{\frac{|A_i\cap G|}{|A_i|}\geq0.8\ \land\ \frac{|A_i\cap G|}{|G|}\geq0.8\right\}.
 \end{equation}
-Let $T_{q,20}$ be the 20 highest-priority ground-truth incidents and $R_{q,10}$ the ten highest-priority incidents. For the $N=15$ holdout queues, the denominator of Recall@20 and recoverability is $20N=300$:
+Let $T_{q,20}$ be the 20 highest-priority ground-truth incidents and $R_{q,10}$ the ten highest-priority incidents. Let $U_q$ be the members of $T_{q,20}$ with a qualifying group anywhere in the queue, and $H_q$ those with one in ranks 1--20. For the $N=15$ holdout queues, both denominators are $20N=300$:
 \begin{align}
-\mathrm{Recoverability} &=\frac{\sum_q\sum_{i\in T_{q,20}}\mathbf{1}\{\exists G\in G_q:Q(i,G)=1\}}{20N},\\
-\mathrm{Recall@20} &=\frac{\sum_q\sum_{i\in T_{q,20}}\mathbf{1}\{\exists j\leq20:Q(i,G_{q,j})=1\}}{20N}.
+\mathrm{Recoverability} &= \frac{\sum_q |U_q|}{20N},\\
+\mathrm{Recall@20} &= \frac{\sum_q |H_q|}{20N}.
 \end{align}
-The evaluator's $P@10$ uses positions 1--10 and denominator $10N=150$. At each position $j$, let $c_{q,j}$ be the highest-priority qualifying incident not credited earlier, if one exists. Then
+The evaluator's $P@10$ uses positions 1--10 and denominator $10N=150$. At each position $j$, let $c_{q,j}$ be the highest-priority qualifying incident not credited earlier, or $\varnothing$ if none exists. Then
 \begin{equation}
 P@10=\frac{1}{10N}\sum_q\sum_{j=1}^{10}\mathbf{1}\{c_{q,j}\in R_{q,10}\}.
 \end{equation}
 It is an incident-level queue metric, not pairwise precision.
 
-For each predicted group, the evaluator counts all within-group alert pairs. If $n_{G,i}=|G\cap A_i|$, then $TP_{\rm pair}=\sum_G\sum_i\binom{n_{G,i}}{2}$ and $FP_{\rm pair}=\sum_G[\binom{|G|}{2}-\sum_i\binom{n_{G,i}}{2}]$. Grouped-pair precision is $TP_{\rm pair}/(TP_{\rm pair}+FP_{\rm pair})$, with the implementation defining it as 1 if no within-group pairs exist. The mixed-group count is $\sum_G\mathbf{1}\{|\{i:n_{G,i}>0\}|>1\}$. We report both aggregate false pairs and per-queue regressions, because one unsafe union can create many pair errors. An accepted relationship is a V-approved union token; a rejected relationship token is withheld by a named reason. The post-evaluation audit can classify these against simulator truth. A single global ``abstention rate'' is not reported: candidate edges, tokens, rejected reasons and pre-existing C links have different denominators in the stored artifacts, and combining them would be misleading.
+For each predicted group, the evaluator counts all within-group alert pairs. With $n_{G,i}=|G\cap A_i|$:
+\begin{align}
+TP_{\rm pair}&=\sum_G\sum_i\binom{n_{G,i}}{2},\\
+FP_{\rm pair}&=\sum_G\left[\binom{|G|}{2}-\sum_i\binom{n_{G,i}}{2}\right].
+\end{align}
+Grouped-pair precision is $TP_{\rm pair}/(TP_{\rm pair}+FP_{\rm pair})$, defined as 1 if no within-group pairs exist. A mixed group contains alerts from more than one true incident, and the mixed-group count is $\sum_G\mathbf{1}\{|\{i:n_{G,i}>0\}|>1\}$. We report both aggregate false pairs and per-queue regressions, because one unsafe union can create many pair errors. An accepted relationship is a V-approved union token; a rejected relationship token is withheld by a named reason. The post-evaluation audit can classify these against simulator truth. A single global ``abstention rate'' is not reported: candidate edges, tokens, rejected reasons and pre-existing C links have different denominators in the stored artifacts, and combining them would be misleading.
 
 \section{Results}
 \subsection{Frozen Phase 33 synthetic holdout}
 Table~\ref{tab:phase33} and Fig.~\ref{fig:bars} compare matched arms on exactly the same cohort. The candidate gained ten net recalled incidents, eighteen recoverable incidents and six top-ten credits. The post-evaluation audit resolves the net recall gain as 15 newly recalled and five lost due to the final ordering. The additional 28 fallback unions were all genuine under simulator truth. Of 711 accepted verified unions in the candidate, none was false. The same audit classified 150 false relationship tokens as rejected and 35 genuine tokens as withheld; this shows conservative false rejection as well as error control. It found zero temporal or private-feature violations. These are simulator-truth findings, not measured physical provenance guarantees.
+Of the 40 priority incidents missed at rank 20, 21 had a qualifying group elsewhere in the queue and 19 had no qualifying group. This decomposition follows from 281 recoverable and 260 recalled incidents out of 300; Fig.~\ref{fig:bars} shows the two failure modes separately.
 
-\begin{table}[htbp]
+\begin{table*}[t]
 \centering\small\input{tables/phase33.tex}
 \caption{Matched Phase 33 frozen synthetic holdout, 15 queues. Source: \texttt{HOLDOUT\_SUMMARY.json}; union truth: \texttt{POST\_EVALUATION\_AUDIT.json}. The 683/711 union counts are model decision diagnostics, separate from grouped-pair precision.}
 \label{tab:phase33}
-\end{table}
+\end{table*}
 
-\begin{figure}[htbp]
-\centering\resizebox{\linewidth}{!}{\input{figures/phase33_bars.tex}}
-\caption{Matched Phase 33 holdout rates. Light blue is the frozen Phase 31 baseline; dark blue is the frozen Phase 32 +1 candidate. All three comparisons share the same 15 queues; denominators are 300, 300 and 150 respectively. Source: \texttt{HOLDOUT\_SUMMARY.json}.}
+\begin{figure*}[t]
+\centering\resizebox{0.94\textwidth}{!}{\input{figures/phase33_bars.tex}}
+\caption{Matched Phase 33 synthetic holdout. Each horizontal pair compares the frozen baseline with the frozen +1 candidate on identical queues. Denominators are 300, 300 and 150, respectively. The right panel decomposes the candidate's 40 missed top-20 incidents: 21 had a qualifying group outside rank 20 and 19 had no qualifying group. Source: \texttt{HOLDOUT\_SUMMARY.json}.}
 \label{fig:bars}
-\end{figure}
+\end{figure*}
 
 \subsection{Development and negative findings}
 Table~\ref{tab:levels} separates evidence levels. Phase 34 obtained 267/300 (89\%) Recall@20 on a fresh development cohort, but its 90\% predeclared gate failed; this is not stronger confirmation than Phase 33. Phase 35 matched its development baseline at 258/300 (86\%); Phase 36 scored 262/300 (87.33\%) versus 265/300 for its baseline; and Phase 38 scored 262/300 versus 263/300. Phase 37's unchanged original condition scored 257/300, but no new evidence-supported union rule improved recoverability. No Phase 34--38 holdout promoted a new method. These failures are informative: ranking can move recoverable incidents, but cannot make fragments complete when independent evidence is absent.
 
-\begin{table}[htbp]
+\begin{table*}[t]
 \centering\small\input{tables/evidence_levels.tex}
 \caption{Selected evidence levels, not a pooled progression. Numerators and denominators come from each named phase report; generator, cohort and selection rules differ. The Phase 35--38 row summarizes separate development studies rather than one combined score.}
 \label{tab:levels}
-\end{table}
+\end{table*}
 
 \section{Discussion}
 The controlled simulator made causal relationships visible in process, authentication and flow observations. Under that setting, the three-root V could recover fragments that C alone left separate; merely exposing rich claim tokens to the original one-lineage C caused substantial false grouping in Phase 31 development. This is evidence that the verifier matters for this generator, not proof of general sensor independence. Endpoint fallback +1 expanded support precisely when the endpoint observations supplied the missing process witness, while retaining separate authentication and flow roots. Phase 33's 28 additional true unions and eighteen additional recoverable incidents are consistent with that mechanism; the remaining changes in ranked recall also include ordering losses.
@@ -149,13 +178,13 @@ Common-mode corruption is a central limit. Phase 22 showed why two receipts may 
 The confirmed candidate uses deterministic rules and a fixed ranking score. It does not measure the earlier C/P/V agent workflow as a three-agent language-model system. The verifier can withhold genuine relationships when independent timely evidence is absent; Phase 33 rejected 35 genuine relationship tokens under simulator truth. A physically coordinated attacker might fabricate mutually consistent claims across apparently separate roots. Operational integration, analysts' decisions and real-time service behavior were outside the study. These restrictions define what the observed zero false merges cannot establish.
 
 \section{Real-World Validation Readiness}
-The Phase 39 local GUIDE audit verified 4,147,992 evidence rows, 637,320 composite alert keys, 303,220 composite incident keys and 9,980 ranking rows. It also found 70,702 composite alert keys with conflicting incident assignments. GUIDE's released timestamps were noised, and its \texttt{Timestamp} describes alert creation rather than when a particular observation became available \cite{freitas2024guide}. The local schema lacks source-observation IDs, derivation chains, upstream trust-domain mapping and the process/authentication/flow claim bundles required by the Phase 32 verifier. Queue scope and ranking-judgment completeness were unresolved. The repository's official field policy approved zero model-visible real fields. Table~\ref{tab:readiness} summarizes these blockers.
+The Phase 39 audit confirmed the hashes of the local GUIDE files used in prior validation, which counted 4,147,992 evidence rows, 637,320 composite alert keys, 303,220 composite incident keys and 9,980 ranking rows. That validation also found 70,702 composite alert keys with conflicting incident assignments. GUIDE's released timestamps were noised, and its \texttt{Timestamp} describes alert creation rather than when a particular observation became available \cite{freitas2024guide}. The local schema lacks source-observation IDs, derivation chains, upstream trust-domain mapping and the process, authentication and flow claim bundles required by the Phase 32 verifier. Queue scope and ranking-judgment completeness were unresolved. The repository's official field policy approved zero model-visible real fields. Table~\ref{tab:readiness} summarizes these blockers.
 
-\begin{table}[htbp]
+\begin{table*}[t]
 \centering\small\input{tables/readiness.tex}
 \caption{Qualification of the available local GUIDE export against the unchanged frozen verifier. Source: Phase 39 \texttt{LOCAL\_SOURCE\_AUDIT.json}, schema and temporal audits, field policy and data-acquisition specification. ``Not supplied'' is a schema observation, not a claim that the source systems never recorded the data.}
 \label{tab:readiness}
-\end{table}
+\end{table*}
 
 The Phase 39 investigation also considered LANL multi-source events, Splunk BOTS v3 and AIT-ADS \cite{lanlcyber1,splunkbotsv3,aitads}. LANL publishes process, authentication, DNS and flow records but not the complete analyst-adjudicated incident-priority queues used by this evaluator. BOTS v3 is a mixed investigation/lab corpus; AIT-ADS is generated in a laboratory. None was substituted as a matched production SOC cohort. An authorized export must supply original source observations, root and derivation mapping, availability times, immutable queue snapshots, independently adjudicated membership and priority, an approved field policy and a sealed external split. Phase 39 stopped before any model prediction; its shadow-readiness decision is NO-GO.
 
@@ -163,7 +192,7 @@ The Phase 39 investigation also considered LANL multi-source events, Splunk BOTS
 The next experiment requires a qualified, authorized SOC export and a deterministic adapter that populates the frozen receiver schema without inventing roots, causal IDs or timestamps. A permitted development set should test that adapter and abstention behavior; only then should an untouched external cohort be scored once with a matched baseline and independently adjudicated labels. Future analysis should measure queue-level false merges, coverage under missing feeds, analyst review workload, uncertainty across organizations, latency and resource use. Coordinated false attestations and imperfect root mapping deserve explicit adversarial tests. Any new model or altered evaluator would constitute a separate study rather than a retroactive Phase 33 comparison.
 
 \section{Conclusion}
-On a fresh controlled synthetic holdout, a frozen evidence-aware endpoint fallback improved Incident Recall@20 from 250/300 to 260/300 while the recorded queue-level false-merge checks remained at zero. The result supports a specific mechanism under simulator assumptions: independently rooted, timely evidence can justify some otherwise missing unions. Failed later ranking studies and the Phase 39 data audit define the boundary of that conclusion. Real-world effectiveness remains unmeasured until a provenance-complete, point-in-time, independently labeled SOC cohort is available.
+On a fresh controlled synthetic holdout, a frozen endpoint fallback grounded in independent evidence improved Incident Recall@20 from 250/300 to 260/300 while the recorded queue-level false-merge checks remained at zero. The result supports a specific mechanism under simulator assumptions: independently rooted, timely evidence can justify some otherwise missing unions. Failed later ranking studies and the Phase 39 data audit define the boundary of that conclusion. Real-world effectiveness remains unmeasured until a provenance-complete, point-in-time, independently labeled SOC cohort is available.
 
 \bibliographystyle{plain}
 \bibliography{references}

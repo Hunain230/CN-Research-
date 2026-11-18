@@ -61,6 +61,14 @@ Scott Freitas, Jovan Kalajdjieski, Amir Gharib, and Robert McCann.
 \newblock arXiv preprint, version 4, arXiv:2407.09017;
   \url{https://arxiv.org/abs/2407.09017}.
 
+\bibitem{guo2026priority}
+Tianqi Guo, Yan Chen, Qiang Zhang, Weiguo Wang, Jian Wang, and Shiyin Zhu.
+\newblock Intelligent priority awareness method for alert data in {SOC} threat
+  response.
+\newblock {\em Journal of King Saud University Computer and Information
+  Sciences}, 38, 2026.
+\newblock Article 776; \url{https://doi.org/10.1007/s44443-026-01172-w}.
+
 \bibitem{han2018provenance}
 Xueyuan Han, Thomas Pasquier, and Margo Seltzer.
 \newblock Provenance-based intrusion detection: Opportunities and challenges.
@@ -75,6 +83,13 @@ Wajih~Ul Hassan, Shengjian Guo, Ding Li, Zhengzhang Chen, Kangkook Jee, Zhichun
   triage.
 \newblock In {\em Network and Distributed System Security Symposium}, 2019.
 \newblock \url{https://doi.org/10.14722/ndss.2019.23349}.
+
+\bibitem{hmimou2025multiagent}
+Yasser Hmimou, Mohamed Tabaa, Azeddine Khiat, and Zineb Hidila.
+\newblock A multi-agent system for cybersecurity threat detection and
+  correlation using large language models.
+\newblock {\em IEEE Access}, 13:150199--150215, 2025.
+\newblock \url{https://doi.org/10.1109/ACCESS.2025.3602681}.
 
 \bibitem{hossain2017sleuth}
 Md~Nahid Hossain, Sadegh~M. Milajerdi, Junao Wang, Birhanu Eshete, Rigel
@@ -145,6 +160,14 @@ Peng Ning, Yun Cui, and Douglas~S. Reeves.
   pages 245--254, 2002.
 \newblock
   \url{https://www.engineering.iastate.edu/~daji/seminar/papers/NCR02.ACMCCS.pdf}.
+
+\bibitem{roy2026agentsoc}
+Joyjit Roy and Samaresh~Kumar Singh.
+\newblock {AgentSOC}: A multi-layer agentic {AI} framework for security
+  operations automation.
+\newblock In {\em 2026 IEEE 5th International Conference on AI in
+  Cybersecurity}, 2026.
+\newblock \url{https://arxiv.org/abs/2604.20134}.
 
 \bibitem{splunkbotsv3}
 {Splunk}.

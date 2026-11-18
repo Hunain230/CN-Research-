@@ -1,9 +1,15 @@
-\begin{tikzpicture}[>=Latex, node distance=4mm, every node/.style={font=\small}, b/.style={draw,rounded corners,align=center,fill=gray!5,text width=3.25cm,minimum height=11mm}]
-\node[b] (proc) {Endpoint\\process relation\\root $r_p$};
-\node[b,right=of proc] (auth) {Identity claim\\session match\\root $r_a$};
-\node[b,right=of auth] (flow) {Network claim\\flow match\\root $r_n$};
-\node[b,below=11mm of auth,text width=9.5cm,fill=blue!5] (gate) {At minute 100: $r_p$, $r_a$, $r_n$ distinct\\records visible; causal fields agree; no contradiction};
-\draw[->] (proc.south) -- (gate.north west);
-\draw[->] (auth.south) -- (gate.north);
-\draw[->] (flow.south) -- (gate.north east);
+\begin{tikzpicture}[>=Latex,every node/.style={font=\sffamily\small},
+  witness/.style={draw=navy,rounded corners=2pt,fill=softblue,align=center,text width=3.4cm,minimum height=16mm},
+  gate/.style={draw=teal,rounded corners=2pt,fill=teal!8,align=center,text width=11.5cm,minimum height=12mm}]
+\node[witness] (proc) at (0,0) {\textbf{Endpoint observation}\\process relation; root $r_p$};
+\node[witness] (auth) at (4.5,0) {\textbf{Authentication claim}\\session match; root $r_a$};
+\node[witness] (flow) at (9,0) {\textbf{Network-flow claim}\\flow match; root $r_n$};
+\node[gate] (check) at (4.5,-2.1) {\textbf{At decision minute 100:} all records visible; $r_p$, $r_a$, $r_n$ distinct; process, session, flow, host/account and event context consistent};
+\node[draw=teal,fill=teal!12,rounded corners=2pt,align=center,text width=4cm] (yes) at (1.9,-4) {Pass: accept one union};
+\node[draw=amber,fill=amber!10,rounded corners=2pt,align=center,text width=4cm] (no) at (7.1,-4) {Fail: withhold and record reason};
+\draw[->,navy] (proc.south) -- (check.north west);
+\draw[->,navy] (auth.south) -- (check.north);
+\draw[->,navy] (flow.south) -- (check.north east);
+\draw[->,teal] (check.south west) -- (yes.north);
+\draw[->,amber] (check.south east) -- (no.north);
 \end{tikzpicture}

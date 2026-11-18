@@ -1,6 +1,6 @@
 # Literature verification record
 
-Checked against the linked publisher, official conference, author-hosted paper, university publication record, or dataset-maintainer page on 2026-11-18--19. The BibTeX file contains 20 sources relevant to the claims actually made.
+Checked against the linked publisher, official conference, author-hosted paper, university publication record, or dataset-maintainer page on 2026-11-18--19. The BibTeX file contains 23 sources relevant to the claims actually made.
 
 | BibTeX key | Verified primary source | Used for |
 |---|---|---|
@@ -24,5 +24,8 @@ Checked against the linked publisher, official conference, author-hosted paper, 
 | `liu2018timely` | [Author-hosted paper](https://jhrhee.github.io/pubs/NDSS18.pdf) and [university record](https://collaborate.princeton.edu/en/publications/towards-a-timely-causality-analysis-for-enterprise-security/) | Timely causality; eight authors, venue, year and DOI |
 | `dong2023industrial` | [University publication record](https://asu.elsevierpure.com/en/publications/are-we-there-yet-an-industrial-viewpoint-on-provenance-based-endp/) | Deployment and triage costs of provenance EDR; authors, venue, year and DOI |
 | `inam2023sok` | [Author-lab page](https://sts.cs.illinois.edu/papers/paper/SoKHistoryisaVastEar20230522.html) | Systematization of provenance auditing; nine authors, venue and year |
+| `hmimou2025multiagent` | User-supplied article PDF and [IEEE DOI](https://doi.org/10.1109/ACCESS.2025.3602681) | LLM-based multi-agent correlation; four authors, IEEE Access 13, 150199--150215, 2025 |
+| `roy2026agentsoc` | User-supplied paper PDF and [arXiv record](https://arxiv.org/abs/2604.20134) | Agentic SOC architecture; two authors, 2026 conference reference and related DOI |
+| `guo2026priority` | User-supplied article PDF and [Springer version of record](https://link.springer.com/article/10.1007/s44443-026-01172-w) | Evidence orchestration and priority scoring; six authors, journal volume 38, article 776, 2026 |
 
 The external pages support context and data-source descriptions. All numerical experimental claims in the paper are sourced to local repository artifacts in `CLAIMS_EVIDENCE_LEDGER.csv`.
