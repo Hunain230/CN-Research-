@@ -1,0 +1,9 @@
+# Data authorization and use boundary
+
+The local GUIDE files are from a public research release whose [publisher paper](https://arxiv.org/html/2407.09017v4) states CDLA-Permissive-2.0. Public licensing supports research access, but it does **not** supply missing provenance or timing fields. The repository's own `data/derived/audit/run_manifest.json` records the original download date, source release and license as unverified; only local bytes and the previously verified queue-ranking copy can be confirmed. No organization-specific private export, data-owner approval record, retention terms, privacy transformation approval, or permitted model/provider-use scope is present.
+
+The current project field policy, `configs/field_policy.yaml`, is default deny with `approved_model_fields: []`. It explicitly isolates `IncidentId`, `QueueRank`, `IncidentGrade` and remediation actions as evaluator-only. Phase 39 therefore permits **read-only inventory, hashing, header inspection and prior-audit review**, but no real-data inference under the official policy. This is a project authorization/field-use gate, not a statement that the public GUIDE license forbids research use.
+
+LANL's [2015](https://csr.lanl.gov/data/cyber1/) and [2017](https://csr.lanl.gov/data/2017/) releases state public-use copyright waivers, but their download pages request usage information. No form was submitted or content fetched. BOTS v3 is [CC0](https://github.com/splunk/botsv3); AIT-ADS is a public lab dataset, not a production SOC export. No private systems, authentication controls, or licensing restrictions were bypassed.
+
+An organizational export must arrive with a named owner, written scope for local research use, approved fields and transformations, permitted processing location and providers, retention/deletion terms, privacy review, label access controls, and authorization for a separate untouched evaluation cohort. Until then, the Phase 39 real-data evaluation is blocked.

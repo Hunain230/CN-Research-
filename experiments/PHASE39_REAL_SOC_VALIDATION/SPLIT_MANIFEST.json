@@ -1,0 +1,15 @@
+{
+  "phase": 39,
+  "status": "blocked_before_external_evaluation",
+  "real_data_source_selected_for_frozen_model": null,
+  "train": null,
+  "development": null,
+  "external_evaluation": null,
+  "queue_snapshot_defined": false,
+  "labels_sealed": false,
+  "predictions_generated": false,
+  "holdout_opened": false,
+  "local_guide_status": "public_real_incident_data_present_but_incompatible_and_prior_subsets_exposed",
+  "split_assignment_policy": "future partner cohort must be disjoint by organization and incident, with recorded label exposure and temporal snapshot; freeze before inference",
+  "reason": "no authorized schema-compatible provenance-and-time export, no approved model fields, ambiguous incident mapping and priority-queue semantics"
+}
