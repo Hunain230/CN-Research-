@@ -1,0 +1,12 @@
+{
+  "files": 497,
+  "inventory_sha256": "107d2d21d59556dfd43df81162589eb43baec18bbf7ecfe6df802e5f1e1f9a1e",
+  "phase32_reference": "endpoint_fallback_bonus1",
+  "phase33_confirmed_holdout_recall": "260/300",
+  "phase34_development_recall": "267/300",
+  "phase35_development_recall": "258/300",
+  "phase32_model_sha256": "9d52beb006854ece8cb084072cfc21384d98d175ce29ce1f36d29a6beaf76532",
+  "official_evaluator_sha256": "dbc3fbff327400fad9f999e74bb69e1ca1968b34be6d2990effc3438e7dc1dc3",
+  "generator_sha256": "30dae0724e8c56945b6ee2cc530c19ddf6b257d85194d1b9815e6fc994719fa2",
+  "validator_sha256": "c228baac180916dc34ee60294973f643ea4dccb8cb7eb2c6b25a26da98743f6d"
+}

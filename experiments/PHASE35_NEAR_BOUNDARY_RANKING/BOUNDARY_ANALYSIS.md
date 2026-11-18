@@ -1,0 +1,7 @@
+# Phase 35 boundary analysis
+
+The opened Phase 34 development diagnostic found ten qualifying but unranked groups at positions 21–24: four each at 21 and 22, one each at 23 and 24. There were 32 nonqualifying groups occupying positions 11–20. Their medians overlap on the previously available severity, criticality, source, event-diversity and verified-union features. These observations motivated a single pairwise ranking test; Phase 34 labels were not used for Phase 35 fitting or selection.
+
+The fresh Phase 35 training split supplied 160 groups in positions 11–30 and 776 positive/negative training pairs. A single standardized linear pairwise model was fitted using only receiver-visible features. The fitted weights and training seal are in `artifacts/`. On fresh development, it changed the order in all 15 queues but yielded three newly recalled incidents and three lost recalls. Aggregate recall remained **258/300**. The matched baseline had **273 recoverable** incidents, leaving 15 recoverable but unranked and 27 unrecoverable. Ranking alone could at most lift this cohort to 273/300, but this candidate did not lift any net incidents.
+
+The result does not establish that all ranking methods fail. It shows that this narrowly scoped, predeclared pairwise model did not separate the near-boundary groups well enough on the fresh cohort. No additional model or threshold was tried after development evaluation.

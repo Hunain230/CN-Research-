@@ -1,0 +1,119 @@
+{
+  "historical_phase34_files_unchanged": 179,
+  "prediction_seal_valid": true,
+  "temporal_violations": 0,
+  "private_feature_violations": 0,
+  "top10_group_partition_and_tail_preserved": true,
+  "holdout_generated": false,
+  "newly_recalled": 3,
+  "lost_recalled": 3,
+  "changed_queues": 15,
+  "queues": 15,
+  "queue_details": [
+    {
+      "queue_id": "p31_development_q000",
+      "gains": 1,
+      "losses": 0,
+      "baseline_recall": 16,
+      "candidate_recall": 17
+    },
+    {
+      "queue_id": "p31_development_q001",
+      "gains": 0,
+      "losses": 1,
+      "baseline_recall": 18,
+      "candidate_recall": 17
+    },
+    {
+      "queue_id": "p31_development_q002",
+      "gains": 1,
+      "losses": 1,
+      "baseline_recall": 18,
+      "candidate_recall": 18
+    },
+    {
+      "queue_id": "p31_development_q003",
+      "gains": 0,
+      "losses": 0,
+      "baseline_recall": 18,
+      "candidate_recall": 18
+    },
+    {
+      "queue_id": "p31_development_q004",
+      "gains": 0,
+      "losses": 0,
+      "baseline_recall": 18,
+      "candidate_recall": 18
+    },
+    {
+      "queue_id": "p31_development_q005",
+      "gains": 0,
+      "losses": 0,
+      "baseline_recall": 18,
+      "candidate_recall": 18
+    },
+    {
+      "queue_id": "p31_development_q006",
+      "gains": 0,
+      "losses": 0,
+      "baseline_recall": 16,
+      "candidate_recall": 16
+    },
+    {
+      "queue_id": "p31_development_q007",
+      "gains": 0,
+      "losses": 1,
+      "baseline_recall": 17,
+      "candidate_recall": 16
+    },
+    {
+      "queue_id": "p31_development_q008",
+      "gains": 0,
+      "losses": 0,
+      "baseline_recall": 18,
+      "candidate_recall": 18
+    },
+    {
+      "queue_id": "p31_development_q009",
+      "gains": 0,
+      "losses": 0,
+      "baseline_recall": 19,
+      "candidate_recall": 19
+    },
+    {
+      "queue_id": "p31_development_q010",
+      "gains": 0,
+      "losses": 0,
+      "baseline_recall": 17,
+      "candidate_recall": 17
+    },
+    {
+      "queue_id": "p31_development_q011",
+      "gains": 0,
+      "losses": 0,
+      "baseline_recall": 19,
+      "candidate_recall": 19
+    },
+    {
+      "queue_id": "p31_development_q012",
+      "gains": 1,
+      "losses": 0,
+      "baseline_recall": 15,
+      "candidate_recall": 16
+    },
+    {
+      "queue_id": "p31_development_q013",
+      "gains": 0,
+      "losses": 0,
+      "baseline_recall": 15,
+      "candidate_recall": 15
+    },
+    {
+      "queue_id": "p31_development_q014",
+      "gains": 0,
+      "losses": 0,
+      "baseline_recall": 16,
+      "candidate_recall": 16
+    }
+  ]
+}

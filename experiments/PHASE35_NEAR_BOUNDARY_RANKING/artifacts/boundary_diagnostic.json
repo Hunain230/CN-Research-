@@ -1,0 +1,41 @@
+{
+  "comparison": {
+    "missed_top20": {
+      "groups": 10,
+      "median_features": {
+        "frozen_score": 14.45,
+        "unique_sources": 9.0,
+        "max_severity": 3.0,
+        "mean_severity": 1.5902777777777777,
+        "max_criticality": 2.0,
+        "mean_criticality": 2.0,
+        "event_diversity": 3.0,
+        "group_size": 10.0,
+        "time_span": 25.0,
+        "verified_unions": 2.0
+      }
+    },
+    "nonqualifying_occupant": {
+      "groups": 32,
+      "median_features": {
+        "frozen_score": 15.15,
+        "unique_sources": 11.0,
+        "max_severity": 3.0,
+        "mean_severity": 1.6515151515151516,
+        "max_criticality": 2.0,
+        "mean_criticality": 2.0,
+        "event_diversity": 3.0,
+        "group_size": 11.0,
+        "time_span": 29.0,
+        "verified_unions": 2.0
+      }
+    }
+  },
+  "missed_positions": {
+    "21": 4,
+    "22": 4,
+    "23": 1,
+    "24": 1
+  },
+  "use": "opened Phase 34 development diagnostic only; Phase 35 fitting uses new train"
+}

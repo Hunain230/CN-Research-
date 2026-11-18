@@ -1,0 +1,12 @@
+{
+  "manifest_sha256": "3bf73efa2f0a1867534420b01bb3ca9161f43ddc9060ec325a249966e70e3b49",
+  "config_sha256": "89f3358f95bb137f01208b10375d2cb1b6e6f75260f55522fa32df2a6de1ff52",
+  "generator_sha256": "30dae0724e8c56945b6ee2cc530c19ddf6b257d85194d1b9815e6fc994719fa2",
+  "ranker_sha256": "7ed516a7911625298e890e03c58d1eaafe2a90b74eb79bd1e08ab42586ec46b5",
+  "params_sha256": "68ac8cab8aa53913665f56baaa7c1791bfb0ae131b744783d87bf7d48aec0b32",
+  "phase32_model_sha256": "9d52beb006854ece8cb084072cfc21384d98d175ce29ce1f36d29a6beaf76532",
+  "baseline_prediction_sha256": "fdcc71b0b9825ccb8df228256d347b59f436b8ed3b10841f1675daaddb385cac",
+  "candidate_prediction_sha256": "243b6ec6a5f7e0dbeabce88de182f12eb5bd532d06b317cdafac2ebf6fe5b993",
+  "decisions_sha256": "d30f44c1889ca03a52600a537c6fe20782ae71cf4238162d71c4875728132f94",
+  "evaluator_sha256": "dbc3fbff327400fad9f999e74bb69e1ca1968b34be6d2990effc3438e7dc1dc3"
+}

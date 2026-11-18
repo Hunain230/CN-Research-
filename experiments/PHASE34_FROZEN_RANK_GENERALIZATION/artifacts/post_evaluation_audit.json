@@ -1,0 +1,16 @@
+{
+  "top20_logistic": {
+    "newly_recalled": 6,
+    "lost_recalled": 3,
+    "queues": 15
+  },
+  "priority_ridge": {
+    "newly_recalled": 4,
+    "lost_recalled": 7,
+    "queues": 15
+  },
+  "phase33_historical_hashes_valid": true,
+  "temporal_violations": 0,
+  "private_feature_violations": 0,
+  "holdout_generated": false
+}

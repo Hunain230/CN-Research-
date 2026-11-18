@@ -1,0 +1,12 @@
+{
+  "phase34_files": 179,
+  "phase34_inventory_sha256": "4e0f57f44644c9137026de1ab629f5a24193ba0a80f136c431f089cc778e3369",
+  "confirmed_phase33_holdout_recall": "260/300",
+  "phase34_development_recall": "267/300",
+  "phase34_development_only": true,
+  "generator_sha256": "30dae0724e8c56945b6ee2cc530c19ddf6b257d85194d1b9815e6fc994719fa2",
+  "config_sha256": "89f3358f95bb137f01208b10375d2cb1b6e6f75260f55522fa32df2a6de1ff52",
+  "validator_sha256": "c228baac180916dc34ee60294973f643ea4dccb8cb7eb2c6b25a26da98743f6d",
+  "phase32_model_sha256": "9d52beb006854ece8cb084072cfc21384d98d175ce29ce1f36d29a6beaf76532",
+  "official_evaluator_sha256": "dbc3fbff327400fad9f999e74bb69e1ca1968b34be6d2990effc3438e7dc1dc3"
+}

@@ -1,0 +1,4 @@
+candidate,recall20_count,recall_denominator,recoverable,p10_count,p10_denominator,pair_tp,false_pairs,mixed_groups,pair_precision,queue_safety_regressions,development_gate,prediction_sha256
+baseline,264,300,277,110,150,19459,0,0,1.0,0,False,6cf3fb2e34af5e731a16b303ccdfda14c594f0430f8cbc3226f0537479f77e66
+top20_logistic,267,300,277,110,150,19459,0,0,1.0,0,False,bd2066f1a6dfd9a37bac03896003d4be78403a0ddc69646398a50e7fcdee5022
+priority_ridge,261,300,277,110,150,19459,0,0,1.0,0,False,7966783f969830faf7f38631df1f778b455e31bc2c2df94d3c3c6d034c332e92

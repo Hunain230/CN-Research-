@@ -1,0 +1,6 @@
+{
+  "prediction_sha256": "e9b26fbebabb1e287efd97257de86aa85b05cbe281909d52b6296e19aea17b3b",
+  "decision_sha256": "aa5dd883adcb709430b0c932f4dad2d26bf03caaf7226c1f879bdc3d8a5c3d10",
+  "phase34_feature_source_sha256": "c915a5d8a58d0ad359afca89d7ddba5d47e581e544ea8b6546e49e31aaefcb68",
+  "phase35_ranker_source_sha256": "7ed516a7911625298e890e03c58d1eaafe2a90b74eb79bd1e08ab42586ec46b5"
+}

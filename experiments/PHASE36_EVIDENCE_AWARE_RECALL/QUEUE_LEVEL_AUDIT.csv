@@ -1,0 +1,16 @@
+queue_id,baseline_recall,candidate_recall,baseline_p10,candidate_p10,baseline_recoverable,candidate_recoverable,baseline_pair_tp,candidate_pair_tp,baseline_false_pairs,candidate_false_pairs,baseline_mixed_groups,candidate_mixed_groups,safety_regression
+p31_development_q000,16,16,6,6,16,16,1287,1287,0,0,0,0,False
+p31_development_q001,17,16,8,8,18,18,1228,1228,0,0,0,0,False
+p31_development_q002,19,18,8,8,20,20,1420,1420,0,0,0,0,False
+p31_development_q003,18,16,8,8,18,18,1303,1303,0,0,0,0,False
+p31_development_q004,16,16,10,10,18,18,1314,1314,0,0,0,0,False
+p31_development_q005,16,16,8,8,17,17,1355,1355,0,0,0,0,False
+p31_development_q006,18,18,7,7,19,19,1350,1350,0,0,0,0,False
+p31_development_q007,18,18,7,7,18,18,1385,1385,0,0,0,0,False
+p31_development_q008,17,18,7,7,18,18,1372,1372,0,0,0,0,False
+p31_development_q009,19,19,8,8,20,20,1337,1337,0,0,0,0,False
+p31_development_q010,19,19,9,9,20,20,1261,1261,0,0,0,0,False
+p31_development_q011,18,18,8,8,18,18,1200,1200,0,0,0,0,False
+p31_development_q012,18,18,6,6,19,19,1248,1248,0,0,0,0,False
+p31_development_q013,18,18,7,7,19,19,1248,1248,0,0,0,0,False
+p31_development_q014,18,18,8,8,19,19,1273,1273,0,0,0,0,False

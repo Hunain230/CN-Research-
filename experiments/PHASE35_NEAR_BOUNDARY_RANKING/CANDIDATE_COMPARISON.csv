@@ -1,0 +1,5 @@
+cohort,method,recall20,recoverability,p10,pair_precision,false_pairs,mixed_groups,status
+phase33_untouched_holdout,frozen_phase32_plus1,260/300,281/300,113/150,1.0,0,0,confirmed_historical_reference
+phase34_opened_development,top20_logistic,267/300,277/300,110/150,1.0,0,0,development_only_no_go
+phase35_fresh_development,frozen_phase32_plus1,258/300,273/300,112/150,1.0,0,0,matched_baseline
+phase35_fresh_development,pairwise_boundary,258/300,273/300,112/150,1.0,0,0,no_go
