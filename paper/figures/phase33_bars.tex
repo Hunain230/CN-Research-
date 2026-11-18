@@ -1,0 +1,19 @@
+\begin{tikzpicture}[x=0.105cm,y=0.75cm,every node/.style={font=\small}]
+\draw[->] (0,0)--(102,0) node[right]{percent};
+\foreach \x in {0,20,40,60,80,100} {\draw (\x,0)--(\x,-.12) node[below,font=\scriptsize]{\x};}
+\node[anchor=east] at (-1,1) {Recall@20};
+\fill[blue!35] (0,.70) rectangle (83.33,.92);
+\fill[blue!75] (0,.94) rectangle (86.67,1.16);
+\node[anchor=west,font=\scriptsize] at (87,1.05) {candidate 86.67};
+\node[anchor=west,font=\scriptsize] at (83.5,.76) {baseline 83.33};
+\node[anchor=east] at (-1,2) {Recoverability};
+\fill[blue!35] (0,1.70) rectangle (87.67,1.92);
+\fill[blue!75] (0,1.94) rectangle (93.67,2.16);
+\node[anchor=west,font=\scriptsize] at (94,2.05) {candidate 93.67};
+\node[anchor=west,font=\scriptsize] at (88,1.76) {baseline 87.67};
+\node[anchor=east] at (-1,3) {P@10};
+\fill[blue!35] (0,2.70) rectangle (71.33,2.92);
+\fill[blue!75] (0,2.94) rectangle (75.33,3.16);
+\node[anchor=west,font=\scriptsize] at (76,3.05) {candidate 75.33};
+\node[anchor=west,font=\scriptsize] at (72,2.76) {baseline 71.33};
+\end{tikzpicture}

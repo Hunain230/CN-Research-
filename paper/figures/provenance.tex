@@ -1,0 +1,9 @@
+\begin{tikzpicture}[>=Latex, node distance=4mm, every node/.style={font=\small}, b/.style={draw,rounded corners,align=center,fill=gray!5,text width=3.25cm,minimum height=11mm}]
+\node[b] (proc) {Endpoint\\process relation\\root $r_p$};
+\node[b,right=of proc] (auth) {Identity claim\\session match\\root $r_a$};
+\node[b,right=of auth] (flow) {Network claim\\flow match\\root $r_n$};
+\node[b,below=11mm of auth,text width=9.5cm,fill=blue!5] (gate) {At minute 100: $r_p$, $r_a$, $r_n$ distinct\\records visible; causal fields agree; no contradiction};
+\draw[->] (proc.south) -- (gate.north west);
+\draw[->] (auth.south) -- (gate.north);
+\draw[->] (flow.south) -- (gate.north east);
+\end{tikzpicture}

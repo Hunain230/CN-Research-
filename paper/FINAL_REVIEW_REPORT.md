@@ -1,0 +1,26 @@
+# Final manuscript review
+
+**Result:** the 10-page LaTeX article compiles successfully to `research_paper.pdf`. It is a research manuscript, not an accepted, submitted or peer-reviewed publication. No institution or author contribution was invented.
+
+## Completed checks
+
+| Check | Outcome |
+|---|---|
+| Authors | PDF and source use exactly **Hunain Shahid** and **Hammad Ullah Khan**; no affiliations, emails or credentials were added. |
+| Phase 33 metrics | Rechecked against `HOLDOUT_SUMMARY.json`: Recall@20 250/300 vs 260/300, recoverability 263/300 vs 281/300, P@10 107/150 vs 113/150, zero candidate false pairs/mixed groups and 100% pair precision. |
+| Post-truth union audit | `POST_EVALUATION_AUDIT.json` reports 28/28 true fallback unions, 711/711 true accepted unions, 150 false tokens rejected, 35 true tokens withheld, zero temporal/private-feature violations and a valid seal. |
+| Metric definitions | Checked against the original Phase 15 evaluator: 80% completeness and purity, 20 priority targets per queue, first 20 groups for recall, first ten groups and ten targets for P@10, all within-group pairs for pair precision, and mixed groups by distinct incident IDs. |
+| Evidence levels | Phase 33 is labeled a frozen synthetic holdout; Phase 31--32 and 34--38 are identified as development or stress studies. Phase 34's 89% is not presented as a confirmed holdout result. |
+| External data | Phase 39 is described as stopped before prediction, with no real-world Recall@20 or shadow deployment. GUIDE local counts and field blockers were checked against `LOCAL_SOURCE_AUDIT.json` and the Phase 39 report. |
+| Frozen artifacts | Eight important code/configuration/evaluator/result hashes matched the Phase 39 audit. Both Phase 33 prediction hashes also matched `HOLDOUT_SUMMARY.json`. No historical research file was edited. |
+| Citations | All 20 cited BibTeX keys resolve. Each entry was checked against a publisher, official conference, author-hosted paper, university publication record or dataset-maintainer page, with details in `REFERENCES_VERIFICATION.md`. |
+| LaTeX and visuals | `pdflatex`/`bibtex`/`pdflatex`/`pdflatex` completed. Final log has no undefined citations/references, overfull boxes or LaTeX warnings. All ten PDF pages were rendered; figure labels, tables, equations and references were visually inspected. |
+| Claim traceability | `CLAIMS_EVIDENCE_LEDGER.csv` has 32 entries; all local source paths in it exist. |
+| Change scope | Working-tree audit showed only `.agents/` and `paper/` as new directories. |
+
+## Remaining limits before a real-data claim
+
+- A single 15-queue controlled synthetic holdout does not measure generalization to a real SOC. No Phase 33 holdout confidence interval or significance test was available, so none was invented.
+- The simulator supplies trust roots and evidence-availability metadata that the available GUIDE export lacks. An authorized, independently adjudicated, point-in-time SOC export is required for external validation.
+- Phase 29 and Phase 40 experiment directories were not present in this workspace; no results were inferred for them.
+- Author affiliations, funding, acknowledgments, target venue and author contributions were not supplied, so they were omitted. Any future submission should be reviewed and approved by the named authors.
