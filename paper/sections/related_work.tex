@@ -1,0 +1,19 @@
+\section{Background and related work}
+\subsection{Aggregation, reconstruction, and prioritization}
+Landauer et al. learn domain-independent patterns for aggregating semi-structured alerts \citep{landauer2022}. Wang et al. combine similarity-based aggregation with a Transformer for multi-stage attack prediction \citep{wang2024}. GRAIN discovers potential causal relationships and uses graph learning and reinforcement learning for attack-scenario reconstruction \citep{grain2025}. These systems answer different questions from whether a particular candidate edge has three original, point-in-time, independently rooted observations. Their published evaluation protocols and datasets do not permit a fair numeric comparison with ours.
+
+Sadlek et al. use kill-chain attack graphs to prioritize incidents by severity \citep{sadlek2025}; CyberShapley explains and prioritizes anomaly-detection components \citep{malach2025}. Neither task is identical to reconstructing a correct incident partition and then retrieving an expert-prioritized incident in the top 20. Provenance-based systems such as HOLMES correlate suspicious information flows; POIROT aligns threat-intelligence graphs with kernel audit records; UNICORN models long-running provenance; and CrossHound correlates host and network provenance for APT investigation \citep{holmes2019,poirot2019,unicorn2020,crosshound2026}. Their use of provenance is a substantive antecedent; this study's narrower contribution is an explicit three-root, availability-aware decision gate in its own controlled incident-grouping protocol, not a claim to have introduced provenance reasoning.
+
+\subsection{Evidence assumptions and evaluation}
+The systematic review of security-event correlation \citep{review2022} and the log-correlation review \citep{chuah2025} identify varied data sources, evaluation metrics, missing values, and spurious relationships. In this work, a source identifier alone is not proof of organizational or physical independence. We treat root independence as an assumption of the controlled generator and check derived copies against that assumption. Table~\ref{tab:prior} compares objectives rather than comparing incompatible performance figures.
+
+\begin{table}[ht]\centering\small\caption{Representative research and its relation to the present study. The absence of a specified three-root gate in this summary is not a claim that the cited system lacks other safeguards.}\label{tab:prior}
+\begin{tabularx}{\linewidth}{@{}p{27mm}p{28mm}Y Y@{}}\toprule
+Study & Main task & Method and evidence & Difference in evaluation question\\\midrule
+Landauer et al. \citep{landauer2022} & Alert aggregation & Learned patterns over semi-structured alerts & Alert-group reduction, not point-in-time incident recoverability\\
+Wang et al. \citep{wang2024} & Aggregation and prediction & Similarity grouping, Transformer & Attack prediction after aggregation\\
+GRAIN \citep{grain2025} & Multi-stage reconstruction & Causal alert graph, GNN, RL & Graph/path reconstruction on public attack datasets\\
+Sadlek et al. \citep{sadlek2025} & Incident triage & Kill-chain attack graph & Severity ranking rather than gated fragment unions\\
+CyberShapley \citep{malach2025} & Explanation and triage & Informative graph components & Detector explanation rather than incident partition safety\\
+CrossHound \citep{crosshound2026} & APT investigation & Host/network provenance correlation & Multi-source paths on OpTC/LANL; distinct labels and inputs\\\bottomrule
+\end{tabularx}\end{table}

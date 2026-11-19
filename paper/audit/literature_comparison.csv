@@ -1,0 +1,12 @@
+paper,venue,year,problem,method,dataset,evaluation,limitation_relevant_here
+Landauer et al.,ACM TOPS,2022,alert flooding,learned aggregation,semi-structured alerts,group reduction,not point-in-time incident membership
+Wang et al.,Computers and Security,2024,multistage prediction,similarity plus Transformer,testbed alerts,attack prediction,not original-root gate
+Xiao et al. GRAIN,Computers and Security,2025,scenario reconstruction,GNN plus RL causal graph,four public attack datasets,path accuracy,distinct evidence contract
+Malach et al. CyberShapley,Computers and Security,2025,alert explanation,graph-component attribution,DARPA Engagement 3 and PublicArena,explanation/triage,not incident partition
+Sadlek et al.,JISA,2025,incident severity,kill-chain attack graph,captured alerts,triage severity,requires different labels
+Chuah et al.,JISA,2025,log correlation review,systematic review,62 selected articles,quality attributes,no new partition algorithm
+Landauer review context,IEEE Access,2022,event correlation review,systematic taxonomy,127 studies,methods and datasets,heterogeneous evaluation
+HOLMES,IEEE S&P,2019,APT detection,information-flow correlation,real APT cases,precision/false alarms,not comparable queue protocol
+CrossHound,IEEE TIFS,2026,multisource APT investigation,provenance plus Steiner tree,OpTC and LANL,F1 and path coverage,operational provenance differs
+POIROT,ACM CCS,2019,threat hunting,graph alignment with kernel audit,public reports and DARPA engagement,graph matching,not queue-level ranking
+UNICORN,NDSS,2020,APT detection,runtime provenance graph sketching,APT scenarios,anomaly detection,not three-root attestation

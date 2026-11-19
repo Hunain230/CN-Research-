@@ -1,0 +1,1 @@
+The editable source for all seven figures is `../build_paper.py`. Quantitative panels read CSV under `../figure_data/`, which is generated only after verification of original prediction hashes and summary/queue totals.

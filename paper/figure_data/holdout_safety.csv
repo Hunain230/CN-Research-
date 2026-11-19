@@ -1,0 +1,3 @@
+arm,pair_true,false_grouped_pairs,mixed_groups,queues_with_no_false_pairs_or_mixed_groups
+baseline,19459,0,0,15
+candidate,20117,0,0,15

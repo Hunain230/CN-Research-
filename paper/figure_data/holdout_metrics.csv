@@ -1,0 +1,4 @@
+metric,baseline_n,candidate_n,denominator,artifact
+Incident Recall@20,250,260,300,experiments/PHASE33_FROZEN_GENERALIZATION/HOLDOUT_SUMMARY.json
+Group recoverability,263,281,300,experiments/PHASE33_FROZEN_GENERALIZATION/HOLDOUT_SUMMARY.json
+P@10,107,113,150,experiments/PHASE33_FROZEN_GENERALIZATION/HOLDOUT_SUMMARY.json
