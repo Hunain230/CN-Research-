@@ -1,0 +1,112 @@
+\begin{thebibliography}{12}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Landauer et~al.(2022)Landauer, Skopik, Wurzenberger, and
+  Rauber]{landauer2022}
+Max Landauer, Florian Skopik, Markus Wurzenberger, and Andreas Rauber.
+\newblock Dealing with security alert flooding: Using machine learning for
+  domain-independent alert aggregation.
+\newblock \emph{ACM Transactions on Privacy and Security}, 25\penalty0
+  (3):\penalty0 18:1--18:36, 2022.
+\newblock \doi{10.1145/3510581}.
+
+\bibitem[Wang et~al.(2024)Wang, Yi, Jiang, Zhang, and Chen]{wang2024}
+Wenbo Wang, Peng Yi, Junfang Jiang, Peng Zhang, and Xiang Chen.
+\newblock Transformer-based framework for alert aggregation and attack
+  prediction in a multi-stage attack.
+\newblock \emph{Computers \& Security}, 136:\penalty0 103533, 2024.
+\newblock \doi{10.1016/j.cose.2023.103533}.
+
+\bibitem[Xiao et~al.(2025)Xiao, Chen, Yang, He, Jiang, Tan, and Jin]{grain2025}
+Fengrui Xiao, Shuangwu Chen, Jian Yang, Huasen He, Xiaofeng Jiang, Xiaobin Tan,
+  and Dong Jin.
+\newblock {GRAIN}: Graph neural network and reinforcement learning aided
+  causality discovery for multi-step attack scenario reconstruction.
+\newblock \emph{Computers \& Security}, 148:\penalty0 104180, 2025.
+\newblock \doi{10.1016/j.cose.2024.104180}.
+
+\bibitem[Sadlek et~al.(2025)Sadlek, Yamin, {\v{C}}eleda, and Katt]{sadlek2025}
+Luk{\'a}{\v{s}} Sadlek, Muhammad~Mudassar Yamin, Pavel {\v{C}}eleda, and Basel
+  Katt.
+\newblock Severity-based triage of cybersecurity incidents using kill chain
+  attack graphs.
+\newblock \emph{Journal of Information Security and Applications}, 89:\penalty0
+  103956, 2025.
+\newblock \doi{10.1016/j.jisa.2024.103956}.
+
+\bibitem[Malach et~al.(2025)Malach, Wudali, Momiyama, Furukawa, Araki, Elovici,
+  and Shabtai]{malach2025}
+Alon Malach, Prasanna~N. Wudali, Satoru Momiyama, Jun Furukawa, Toshinori
+  Araki, Yuval Elovici, and Asaf Shabtai.
+\newblock {CyberShapley}: Explanation, prioritization, and triage of
+  cybersecurity alerts using informative graph representation.
+\newblock \emph{Computers \& Security}, 150:\penalty0 104270, 2025.
+\newblock \doi{10.1016/j.cose.2024.104270}.
+
+\bibitem[Chuah et~al.(2025)Chuah, Kalutarage, Tasdemir, Abrham, and
+  Maple]{chuah2025}
+Edward Chuah, Harsha Kalutarage, Kasim Tasdemir, Atnafu Abrham, and Carsten
+  Maple.
+\newblock A systematic literature review of log-correlation tools for
+  cyberattack detection and prediction in large networks.
+\newblock \emph{Journal of Information Security and Applications}, 92:\penalty0
+  104096, 2025.
+\newblock \doi{10.1016/j.jisa.2025.104096}.
+
+\bibitem[Milajerdi et~al.(2019{\natexlab{a}})Milajerdi, Gjomemo, Eshete, Sekar,
+  and Venkatakrishnan]{holmes2019}
+Sadegh~Momeni Milajerdi, Rigel Gjomemo, Birhanu Eshete, R.~Sekar, and V.~N.
+  Venkatakrishnan.
+\newblock {HOLMES}: Real-time {APT} detection through correlation of suspicious
+  information flows.
+\newblock In \emph{2019 IEEE Symposium on Security and Privacy}, pages
+  1137--1152, 2019{\natexlab{a}}.
+\newblock \doi{10.1109/SP.2019.00026}.
+
+\bibitem[Milajerdi et~al.(2019{\natexlab{b}})Milajerdi, Eshete, Gjomemo, and
+  Venkatakrishnan]{poirot2019}
+Sadegh~M. Milajerdi, Birhanu Eshete, Rigel Gjomemo, and V.~N. Venkatakrishnan.
+\newblock {POIROT}: Aligning attack behavior with kernel audit records for
+  cyber threat hunting.
+\newblock In \emph{Proceedings of the 2019 ACM SIGSAC Conference on Computer
+  and Communications Security}, pages 1813--1830, 2019{\natexlab{b}}.
+\newblock \doi{10.1145/3319535.3363217}.
+
+\bibitem[Han et~al.(2020)Han, Pasquier, Bates, Mickens, and
+  Seltzer]{unicorn2020}
+Xueyuan Han, Thomas Pasquier, Adam Bates, James Mickens, and Margo Seltzer.
+\newblock {UNICORN}: Runtime provenance-based detector for advanced persistent
+  threats.
+\newblock In \emph{Proceedings of the Network and Distributed System Security
+  Symposium}, 2020.
+\newblock \doi{10.14722/ndss.2020.24046}.
+
+\bibitem[Gui et~al.(2026)Gui, Zhou, Zhu, Li, Xu, Hua, and Du]{crosshound2026}
+Jiaping Gui, Yixin Zhou, Xianggeng Zhu, Xiaohan Li, Xiaofan Xu, Cunqing Hua,
+  and Ping Du.
+\newblock {CrossHound}: Multi-source provenance correlation for advanced
+  persistent threat detection and investigation.
+\newblock \emph{IEEE Transactions on Information Forensics and Security},
+  21:\penalty0 8750--8765, 2026.
+\newblock \doi{10.1109/TIFS.2026.3734719}.
+
+\bibitem[Kotenko et~al.(2022)Kotenko, Gaifulina, and Zelichenok]{review2022}
+Igor Kotenko, Diana Gaifulina, and Igor Zelichenok.
+\newblock Systematic literature review of security event correlation methods.
+\newblock \emph{IEEE Access}, 10:\penalty0 43387--43420, 2022.
+\newblock \doi{10.1109/ACCESS.2022.3168976}.
+
+\bibitem[{Microsoft}(2024)]{guide2024}
+{Microsoft}.
+\newblock Microsoft security incident prediction ({GUIDE}).
+\newblock
+  \url{https://www.kaggle.com/datasets/Microsoft/microsoft-security-incident-prediction},
+  2024.
+\newblock Dataset and associated documentation; field-semantics audit in
+  repository.
+
+\end{thebibliography}

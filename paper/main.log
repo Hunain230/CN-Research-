@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.5.4)  19 NOV 2026 22:45
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.5.4)  19 NOV 2026 23:27
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -52,6 +52,11 @@ Package: iftex 2024/12/12 v1.0g TeX engine tests
 )) (C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/latex/base\fontenc.sty
 Package: fontenc 2025/07/18 v2.1d Standard LaTeX package
 )
+(C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/latex/base\inputenc.sty
+Package: inputenc 2024/02/08 v1.3d Input encoding file
+\inpenc@prehook=\toks19
+\inpenc@posthook=\toks20
+)
 (C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/latex/lm\lmodern.sty
 Package: lmodern 2015/05/01 v1.6.1 Latin Modern Fonts
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
@@ -95,12 +100,12 @@ Package: microtype 2026/03/01 v3.2d Micro-typographical refinements (RS)
 Package: etoolbox 2025/10/02 v2.5m e-TeX tools for LaTeX (JAW)
 \etb@tempcnta=\count286
 )
-\MT@toks=\toks19
+\MT@toks=\toks21
 \MT@tempbox=\box53
 \MT@count=\count287
 LaTeX Info: Redefining \noprotrusionifhmode on input line 1084.
 LaTeX Info: Redefining \leftprotrusion on input line 1085.
-\MT@prot@toks=\toks20
+\MT@prot@toks=\toks22
 LaTeX Info: Redefining \rightprotrusion on input line 1104.
 LaTeX Info: Redefining \textls on input line 1449.
 \MT@outer@kern=\dimen157
@@ -124,26 +129,122 @@ File: microtype.cfg 2026/03/01 v3.2d microtype main configuration file (RS)
 )
 LaTeX Info: Redefining \microtypesetup on input line 3065.
 )
-(C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/latex/ragged2e\ragged2e.sty
-Package: ragged2e 2023/06/22 v3.6 ragged2e Package
-\CenteringLeftskip=\skip52
-\RaggedLeftLeftskip=\skip53
-\RaggedRightLeftskip=\skip54
-\CenteringRightskip=\skip55
-\RaggedLeftRightskip=\skip56
-\RaggedRightRightskip=\skip57
-\CenteringParfillskip=\skip58
-\RaggedLeftParfillskip=\skip59
-\RaggedRightParfillskip=\skip60
-\JustifyingParfillskip=\skip61
-\CenteringParindent=\skip62
-\RaggedLeftParindent=\skip63
-\RaggedRightParindent=\skip64
-\JustifyingParindent=\skip65
+(C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/latex/xcolor\xcolor.sty
+Package: xcolor 2024/09/29 v3.02 LaTeX color extensions (UK)
+
+(C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\color.cf
+g
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 274.
+
+(C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\pdftex.d
+ef
+File: pdftex.def 2025/09/29 v1.2d Graphics/color driver for pdftex
+)
+(C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/latex/graphics\mathcolor.lt
+x)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1349.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1353.
+Package xcolor Info: Model `RGB' extended on input line 1365.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1367.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1370.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1371.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1372.
+)
+(C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/latex/colortbl\colortbl.sty
+Package: colortbl 2026/05/01 v1.0l Color table columns (DPC)
+(C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/latex/tools\array.sty
+Package: array 2025/09/25 v2.6n Tabular extension package (FMi)
+\col@sep=\dimen158
+\ar@mcellbox=\box54
+\extrarowheight=\dimen159
+\NC@list=\toks23
+\extratabsurround=\skip52
+\backup@length=\skip53
+\ar@cellbox=\box55
+)
+\everycr=\toks24
+\minrowclearance=\skip54
+\rownum=\count289
+)
+(C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/latex/graphics\dvipsnam.def
+File: dvipsnam.def 2016/06/17 v3.0m Driver-dependent file (DPC,SPQR)
 )
 (C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/latex/setspace\setspace.sty
 Package: setspace 2022/12/04 v6.7b set line spacing
 )
+(C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/latex/ragged2e\ragged2e.sty
+Package: ragged2e 2023/06/22 v3.6 ragged2e Package
+\CenteringLeftskip=\skip55
+\RaggedLeftLeftskip=\skip56
+\RaggedRightLeftskip=\skip57
+\CenteringRightskip=\skip58
+\RaggedLeftRightskip=\skip59
+\RaggedRightRightskip=\skip60
+\CenteringParfillskip=\skip61
+\RaggedLeftParfillskip=\skip62
+\RaggedRightParfillskip=\skip63
+\JustifyingParfillskip=\skip64
+\CenteringParindent=\skip65
+\RaggedLeftParindent=\skip66
+\RaggedRightParindent=\skip67
+\JustifyingParindent=\skip68
+) (C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/latex/parskip\parskip.sty
+Package: parskip 2021-03-14 v2.0h non-zero parskip adjustments
+
+(C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/latex/kvoptions\kvoptions.s
+ty
+Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
+
+(C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/generic/ltxcmds\ltxcmds.sty
+Package: ltxcmds 2023-12-04 v1.26 LaTeX kernel commands for general use (HO)
+)
+(C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/latex/kvsetkeys\kvsetkeys.s
+ty
+Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
+)))
+(C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/latex/enumitem\enumitem.sty
+Package: enumitem 2025/02/06 v3.11 Customized lists
+\labelindent=\skip69
+\enit@outerparindent=\dimen160
+\enit@toks=\toks25
+\enit@inbox=\box56
+\enit@count@id=\count290
+\enitdp@description=\count291
+)
+(C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/latex/tcolorbox\tcolorbox.s
+ty
+Package: tcolorbox 2025/11/28 version 6.9.0 text color boxes
+
+(C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/latex/pgf/frontendlayer\tik
+z.sty
+(C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/latex/pgf/basiclayer\pgf.st
+y
+(C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgfrcs.
+sty
+(C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfut
+il-common.tex
+\pgfutil@everybye=\toks26
+\pgfutil@tempdima=\dimen161
+\pgfutil@tempdimb=\dimen162
+)
+(C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfut
+il-latex.def
+\pgfutil@abb=\box57
+)
+(C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfrc
+s.code.tex
+(C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/generic/pgf\pgf.revision.te
+x)
+Package: pgfrcs 2025-08-29 v3.1.11a (3.1.11a)
+))
+Package: pgf 2025-08-29 v3.1.11a (3.1.11a)
+
+(C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/latex/pgf/basiclayer\pgfcor
+e.sty
 (C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.sty
 Package: graphicx 2024/12/31 v1.2e Enhanced LaTeX Graphics (DPC,SPQR)
 
@@ -157,57 +258,442 @@ Package: trig 2023/12/02 v1.11 sin cos tan (DPC)
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: pdftex.def on input line 106.
+)
+\Gin@req@height=\dimen163
+\Gin@req@width=\dimen164
+)
+(C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/latex/pgf/systemlayer\pgfsy
+s.sty
+(C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgf
+sys.code.tex
+Package: pgfsys 2025-08-29 v3.1.11a (3.1.11a)
 
-(C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\pdftex.d
-ef
-File: pdftex.def 2025/09/29 v1.2d Graphics/color driver for pdftex
+(C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfke
+ys.code.tex
+\pgfkeys@pathtoks=\toks27
+\pgfkeys@temptoks=\toks28
+
+(C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfke
+yslibraryfiltered.code.tex
+\pgfkeys@tmptoks=\toks29
 ))
-\Gin@req@height=\dimen158
-\Gin@req@width=\dimen159
+\pgf@x=\dimen165
+\pgf@y=\dimen166
+\pgf@xa=\dimen167
+\pgf@ya=\dimen168
+\pgf@xb=\dimen169
+\pgf@yb=\dimen170
+\pgf@xc=\dimen171
+\pgf@yc=\dimen172
+\pgf@xd=\dimen173
+\pgf@yd=\dimen174
+\w@pgf@writea=\write3
+\r@pgf@reada=\read2
+\c@pgf@counta=\count292
+\c@pgf@countb=\count293
+\c@pgf@countc=\count294
+\c@pgf@countd=\count295
+\t@pgf@toka=\toks30
+\t@pgf@tokb=\toks31
+\t@pgf@tokc=\toks32
+\pgf@sys@id@count=\count296
+
+(C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgf
+.cfg
+File: pgf.cfg 2025-08-29 v3.1.11a (3.1.11a)
+)
+Driver file for pgf: pgfsys-pdftex.def
+
+(C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgf
+sys-pdftex.def
+File: pgfsys-pdftex.def 2025-08-29 v3.1.11a (3.1.11a)
+
+(C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgf
+sys-common-pdf.def
+File: pgfsys-common-pdf.def 2025-08-29 v3.1.11a (3.1.11a)
+)))
+(C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgf
+syssoftpath.code.tex
+File: pgfsyssoftpath.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgfsyssoftpath@smallbuffer@items=\count297
+\pgfsyssoftpath@bigbuffer@items=\count298
+)
+(C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgf
+sysprotocol.code.tex
+File: pgfsysprotocol.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+))
+(C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfc
+ore.code.tex
+Package: pgfcore 2025-08-29 v3.1.11a (3.1.11a)
+
+(C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmath.co
+de.tex
+(C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathuti
+l.code.tex)
+(C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathpar
+ser.code.tex
+\pgfmath@dimen=\dimen175
+\pgfmath@count=\count299
+\pgfmath@box=\box58
+\pgfmath@toks=\toks33
+\pgfmath@stack@operand=\toks34
+\pgfmath@stack@operation=\toks35
+)
+(C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfun
+ctions.code.tex)
+(C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfun
+ctions.basic.code.tex)
+(C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfun
+ctions.trigonometric.code.tex)
+(C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfun
+ctions.random.code.tex)
+(C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfun
+ctions.comparison.code.tex)
+(C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfun
+ctions.base.code.tex)
+(C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfun
+ctions.round.code.tex)
+(C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfun
+ctions.misc.code.tex)
+(C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfun
+ctions.integerarithmetics.code.tex)
+(C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathcal
+c.code.tex)
+(C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathflo
+at.code.tex
+\c@pgfmathroundto@lastzeros=\count300
+))
+(C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfint.cod
+e.tex)
+(C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfc
+orepoints.code.tex
+File: pgfcorepoints.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgf@picminx=\dimen176
+\pgf@picmaxx=\dimen177
+\pgf@picminy=\dimen178
+\pgf@picmaxy=\dimen179
+\pgf@pathminx=\dimen180
+\pgf@pathmaxx=\dimen181
+\pgf@pathminy=\dimen182
+\pgf@pathmaxy=\dimen183
+\pgf@xx=\dimen184
+\pgf@xy=\dimen185
+\pgf@yx=\dimen186
+\pgf@yy=\dimen187
+\pgf@zx=\dimen188
+\pgf@zy=\dimen189
+)
+(C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfc
+orepathconstruct.code.tex
+File: pgfcorepathconstruct.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgf@path@lastx=\dimen190
+\pgf@path@lasty=\dimen191
+)
+(C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfc
+orepathusage.code.tex
+File: pgfcorepathusage.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgf@shorten@end@additional=\dimen192
+\pgf@shorten@start@additional=\dimen193
+)
+(C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfc
+orescopes.code.tex
+File: pgfcorescopes.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgfpic=\box59
+\pgf@hbox=\box60
+\pgf@layerbox@main=\box61
+\pgf@picture@serial@count=\count301
+)
+(C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfc
+oregraphicstate.code.tex
+File: pgfcoregraphicstate.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgflinewidth=\dimen194
+)
+(C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfc
+oretransformations.code.tex
+File: pgfcoretransformations.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgf@pt@x=\dimen195
+\pgf@pt@y=\dimen196
+\pgf@pt@temp=\dimen197
+)
+(C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfc
+orequick.code.tex
+File: pgfcorequick.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+)
+(C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfc
+oreobjects.code.tex
+File: pgfcoreobjects.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+)
+(C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfc
+orepathprocessing.code.tex
+File: pgfcorepathprocessing.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+)
+(C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfc
+orearrows.code.tex
+File: pgfcorearrows.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgfarrowsep=\dimen198
+)
+(C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfc
+oreshade.code.tex
+File: pgfcoreshade.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgf@max=\dimen199
+\pgf@sys@shading@range@num=\count302
+\pgf@shadingcount=\count303
+)
+(C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfc
+oreimage.code.tex
+File: pgfcoreimage.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+)
+(C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfc
+oreexternal.code.tex
+File: pgfcoreexternal.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgfexternal@startupbox=\box62
+)
+(C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfc
+orelayers.code.tex
+File: pgfcorelayers.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+)
+(C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfc
+oretransparency.code.tex
+File: pgfcoretransparency.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+)
+(C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfc
+orepatterns.code.tex
+File: pgfcorepatterns.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+)
+(C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfc
+orerdf.code.tex
+File: pgfcorerdf.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+)))
+(C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmodu
+leshapes.code.tex
+File: pgfmoduleshapes.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgfnodeparttextbox=\box63
+)
+(C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmodu
+leplot.code.tex
+File: pgfmoduleplot.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+)
+(C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/latex/pgf/compatibility\pgf
+comp-version-0-65.sty
+Package: pgfcomp-version-0-65 2025-08-29 v3.1.11a (3.1.11a)
+\pgf@nodesepstart=\dimen256
+\pgf@nodesepend=\dimen257
+)
+(C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/latex/pgf/compatibility\pgf
+comp-version-1-18.sty
+Package: pgfcomp-version-1-18 2025-08-29 v3.1.11a (3.1.11a)
+))
+(C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgffor.
+sty
+(C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgfkeys
+.sty
+(C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfke
+ys.code.tex))
+(C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/latex/pgf/math\pgfmath.sty
+(C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmath.co
+de.tex))
+(C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgffo
+r.code.tex
+Package: pgffor 2025-08-29 v3.1.11a (3.1.11a)
+\pgffor@iter=\dimen258
+\pgffor@skip=\dimen259
+\pgffor@stack=\toks36
+\pgffor@toks=\toks37
+))
+(C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/t
+ikz\tikz.code.tex
+Package: tikz 2025-08-29 v3.1.11a (3.1.11a)
+
+(C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgfli
+braryplothandlers.code.tex
+File: pgflibraryplothandlers.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgf@plot@mark@count=\count304
+\pgfplotmarksize=\dimen260
+)
+\tikz@lastx=\dimen261
+\tikz@lasty=\dimen262
+\tikz@lastxsaved=\dimen263
+\tikz@lastysaved=\dimen264
+\tikz@lastmovetox=\dimen265
+\tikz@lastmovetoy=\dimen266
+\tikzleveldistance=\dimen267
+\tikzsiblingdistance=\dimen268
+\tikz@figbox=\box64
+\tikz@figbox@bg=\box65
+\tikz@tempbox=\box66
+\tikz@tempbox@bg=\box67
+\tikztreelevel=\count305
+\tikznumberofchildren=\count306
+\tikznumberofcurrentchild=\count307
+\tikz@fig@count=\count308
+
+(C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmodu
+lematrix.code.tex
+File: pgfmodulematrix.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgfmatrixcurrentrow=\count309
+\pgfmatrixcurrentcolumn=\count310
+\pgf@matrix@numberofcolumns=\count311
+)
+\tikz@expandcount=\count312
+
+(C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/t
+ikz/libraries\tikzlibrarytopaths.code.tex
+File: tikzlibrarytopaths.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+)))
+(C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/latex/tools\verbatim.sty
+Package: verbatim 2024-01-22 v1.5x LaTeX2e package for verbatim enhancements
+\every@verbatim=\toks38
+\verbatim@line=\toks39
+\verbatim@in@stream=\read3
+)
+(C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/latex/environ\environ.sty
+Package: environ 2014/05/04 v0.3 A new way to define environments
+
+(C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/latex/trimspaces\trimspaces
+.sty
+Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
+)
+\@envbody=\toks40
+)
+\tcb@titlebox=\box68
+\tcb@upperbox=\box69
+\tcb@lowerbox=\box70
+\tcb@phantombox=\box71
+\c@tcbbreakpart=\count313
+\c@tcblayer=\count314
+\c@tcolorbox@number=\count315
+\l__tcobox_tmpa_box=\box72
+\l__tcobox_tmpa_dim=\dimen269
+\tcb@temp=\box73
+\tcb@temp=\box74
+\tcb@temp=\box75
+\tcb@temp=\box76
+)
+(C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/latex/tcolorbox\tcbskins.co
+de.tex
+Library (tcolorbox): 'tcbskins.code.tex' version '6.9.0'
+
+(C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/latex/tikzfill\tikzfill.ima
+ge.sty
+Package: tikzfill.image 2026/04/23 v1.2.0 Image filling library for TikZ
+
+(C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/latex/tikzfill\tikzlibraryf
+ill.image.code.tex
+File: tikzlibraryfill.image.code.tex 2026/04/23 v1.2.0 Image filling library
+\l__tikzfill_tmpa_dim=\dimen270
+\l__tikzfill_tmpb_dim=\dimen271
+\l__tikzfill_img_box=\box77
+))
+(C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/latex/tcolorbox\tcbskinsjig
+saw.code.tex
+Library (tcolorbox): 'tcbskinsjigsaw.code.tex' version '6.9.0'
+))
+(C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/latex/fancyhdr\fancyhdr.sty
+Package: fancyhdr 2025/02/07 v5.2 Extensive control of page headers and footers
+
+\f@nch@headwidth=\skip70
+\f@nch@offset@elh=\skip71
+\f@nch@offset@erh=\skip72
+\f@nch@offset@olh=\skip73
+\f@nch@offset@orh=\skip74
+\f@nch@offset@elf=\skip75
+\f@nch@offset@erf=\skip76
+\f@nch@offset@olf=\skip77
+\f@nch@offset@orf=\skip78
+\f@nch@height=\skip79
+\f@nch@footalignment=\skip80
+\f@nch@widthL=\skip81
+\f@nch@widthC=\skip82
+\f@nch@widthR=\skip83
+\@temptokenb=\toks41
+)
+(C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/latex/titlesec\titlesec.sty
+Package: titlesec 2025/01/04 v2.17 Sectioning titles
+\ttl@box=\box78
+\beforetitleunit=\skip84
+\aftertitleunit=\skip85
+\ttl@plus=\dimen272
+\ttl@minus=\dimen273
+\ttl@toksa=\toks42
+\titlewidth=\dimen274
+\titlewidthlast=\dimen275
+\titlewidthfirst=\dimen276
+) (C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/latex/titling\titling.sty
+Package: titling 2026/10/12 v2.1f maketitle typesetting
+\thanksmarkwidth=\skip86
+\thanksmargin=\skip87
+\droptitle=\skip88
 )
 (C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/latex/booktabs\booktabs.sty
 Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
-\heavyrulewidth=\dimen160
-\lightrulewidth=\dimen161
-\cmidrulewidth=\dimen162
-\belowrulesep=\dimen163
-\belowbottomsep=\dimen164
-\aboverulesep=\dimen165
-\abovetopsep=\dimen166
-\cmidrulesep=\dimen167
-\cmidrulekern=\dimen168
-\defaultaddspace=\dimen169
-\@cmidla=\count289
-\@cmidlb=\count290
-\@aboverulesep=\dimen170
-\@belowrulesep=\dimen171
-\@thisruleclass=\count291
-\@lastruleclass=\count292
-\@thisrulewidth=\dimen172
+\heavyrulewidth=\dimen277
+\lightrulewidth=\dimen278
+\cmidrulewidth=\dimen279
+\belowrulesep=\dimen280
+\belowbottomsep=\dimen281
+\aboverulesep=\dimen282
+\abovetopsep=\dimen283
+\cmidrulesep=\dimen284
+\cmidrulekern=\dimen285
+\defaultaddspace=\dimen286
+\@cmidla=\count316
+\@cmidlb=\count317
+\@aboverulesep=\dimen287
+\@belowrulesep=\dimen288
+\@thisruleclass=\count318
+\@lastruleclass=\count319
+\@thisrulewidth=\dimen289
 ) (C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/latex/tools\tabularx.sty
 Package: tabularx 2023/12/11 v2.12a `tabularx' package (DPC)
-
-(C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/latex/tools\array.sty
-Package: array 2025/09/25 v2.6n Tabular extension package (FMi)
-\col@sep=\dimen173
-\ar@mcellbox=\box54
-\extrarowheight=\dimen174
-\NC@list=\toks21
-\extratabsurround=\skip66
-\backup@length=\skip67
-\ar@cellbox=\box55
+\TX@col@width=\dimen290
+\TX@old@table=\dimen291
+\TX@old@col=\dimen292
+\TX@target=\dimen293
+\TX@delta=\dimen294
+\TX@cols=\count320
+\TX@ftn=\toks43
 )
-\TX@col@width=\dimen175
-\TX@old@table=\dimen176
-\TX@old@col=\dimen177
-\TX@target=\dimen178
-\TX@delta=\dimen179
-\TX@cols=\count293
-\TX@ftn=\toks22
+(C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/latex/multirow\multirow.sty
+Package: multirow 2024/11/12 v2.9 Span multiple rows of a table
+\multirow@colwidth=\skip89
+\multirow@cntb=\count321
+\multirow@dima=\skip90
+\bigstrutjot=\dimen295
+) (C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption.sty
+Package: caption 2023/08/05 v3.6o Customizing captions (AR)
+(C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption3.sty
+Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
+\caption@tempdima=\dimen296
+\captionmargin=\dimen297
+\caption@leftmargin=\dimen298
+\caption@rightmargin=\dimen299
+\caption@width=\dimen300
+\caption@indent=\dimen301
+\caption@parindent=\dimen302
+\caption@hangindent=\dimen303
+Package caption Info: Standard document class detected.
+)
+\c@caption@flags=\count322
+\c@continuedfloat=\count323
+)
+(C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/latex/caption\subcaption.st
+y
+Package: subcaption 2023/07/28 v1.6b Sub-captions (AR)
+Package caption Info: New subtype `subfigure' on input line 238.
+\c@subfigure=\count324
+Package caption Info: New subtype `subtable' on input line 238.
+\c@subtable=\count325
+) (C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/latex/float\float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count326
+\float@exts=\toks44
+\float@box=\box79
+\@float@everytoks=\toks45
+\@floatcapt=\box80
 )
 (C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsmath.sty
 Package: amsmath 2025/07/09 v2.17z AMS math features
-\@mathmargin=\skip68
+\@mathmargin=\skip91
 
 For additional information on amsmath, use the `?' option.
 (C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amstext.sty
@@ -215,61 +701,61 @@ Package: amstext 2024/11/17 v2.01 AMS text
 
 (C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
-\@emptytoks=\toks23
-\ex@=\dimen180
+\@emptytoks=\toks46
+\ex@=\dimen304
 ))
 (C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
-\pmbraise@=\dimen181
+\pmbraise@=\dimen305
 )
 (C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsopn.sty
 Package: amsopn 2022/04/08 v2.04 operator names
 )
-\inf@bad=\count294
+\inf@bad=\count327
 LaTeX Info: Redefining \frac on input line 233.
-\uproot@=\count295
-\leftroot@=\count296
+\uproot@=\count328
+\leftroot@=\count329
 LaTeX Info: Redefining \overline on input line 398.
 LaTeX Info: Redefining \colon on input line 409.
-\classnum@=\count297
-\DOTSCASE@=\count298
+\classnum@=\count330
+\DOTSCASE@=\count331
 LaTeX Info: Redefining \ldots on input line 495.
 LaTeX Info: Redefining \dots on input line 498.
 LaTeX Info: Redefining \cdots on input line 619.
-\Mathstrutbox@=\box56
-\strutbox@=\box57
+\Mathstrutbox@=\box81
+\strutbox@=\box82
 LaTeX Info: Redefining \big on input line 721.
 LaTeX Info: Redefining \Big on input line 722.
 LaTeX Info: Redefining \bigg on input line 723.
 LaTeX Info: Redefining \Bigg on input line 724.
-\big@size=\dimen182
+\big@size=\dimen306
 LaTeX Font Info:    Redeclaring font encoding OML on input line 742.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 743.
-\macc@depth=\count299
+\macc@depth=\count332
 LaTeX Info: Redefining \bmod on input line 904.
 LaTeX Info: Redefining \pmod on input line 909.
 LaTeX Info: Redefining \smash on input line 939.
 LaTeX Info: Redefining \relbar on input line 969.
 LaTeX Info: Redefining \Relbar on input line 970.
-\c@MaxMatrixCols=\count300
+\c@MaxMatrixCols=\count333
 \dotsspace@=\muskip17
-\c@parentequation=\count301
-\dspbrk@lvl=\count302
-\tag@help=\toks24
-\row@=\count303
-\column@=\count304
-\maxfields@=\count305
-\andhelp@=\toks25
-\eqnshift@=\dimen183
-\alignsep@=\dimen184
-\tagshift@=\dimen185
-\tagwidth@=\dimen186
-\totwidth@=\dimen187
-\lineht@=\dimen188
-\@envbody=\toks26
-\multlinegap=\skip69
-\multlinetaggap=\skip70
-\mathdisplay@stack=\toks27
+\c@parentequation=\count334
+\dspbrk@lvl=\count335
+\tag@help=\toks47
+\row@=\count336
+\column@=\count337
+\maxfields@=\count338
+\andhelp@=\toks48
+\eqnshift@=\dimen307
+\alignsep@=\dimen308
+\tagshift@=\dimen309
+\tagwidth@=\dimen310
+\totwidth@=\dimen311
+\lineht@=\dimen312
+\@envbody=\toks49
+\multlinegap=\skip92
+\multlinetaggap=\skip93
+\mathdisplay@stack=\toks50
 LaTeX Info: Redefining \[ on input line 2950.
 LaTeX Info: Redefining \] on input line 2951.
 )
@@ -284,67 +770,9 @@ LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 ))
-(C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption.sty
-Package: caption 2023/08/05 v3.6o Customizing captions (AR)
-
-(C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption3.sty
-Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
-\caption@tempdima=\dimen189
-\captionmargin=\dimen190
-\caption@leftmargin=\dimen191
-\caption@rightmargin=\dimen192
-\caption@width=\dimen193
-\caption@indent=\dimen194
-\caption@parindent=\dimen195
-\caption@hangindent=\dimen196
-Package caption Info: Standard document class detected.
-)
-\c@caption@flags=\count306
-\c@continuedfloat=\count307
-)
-(C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/latex/caption\subcaption.st
-y
-Package: subcaption 2023/07/28 v1.6b Sub-captions (AR)
-Package caption Info: New subtype `subfigure' on input line 238.
-\c@subfigure=\count308
-Package caption Info: New subtype `subtable' on input line 238.
-\c@subtable=\count309
-) (C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/latex/float\float.sty
-Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count310
-\float@exts=\toks28
-\float@box=\box58
-\@float@everytoks=\toks29
-\@floatcapt=\box59
-)
-(C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/latex/xcolor\xcolor.sty
-Package: xcolor 2024/09/29 v3.02 LaTeX color extensions (UK)
-
-(C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\color.cf
-g
-File: color.cfg 2016/01/02 v1.6 sample color configuration
-)
-Package xcolor Info: Driver file: pdftex.def on input line 274.
-
-(C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/latex/graphics\mathcolor.lt
-x)
-Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1349.
-Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1353.
-Package xcolor Info: Model `RGB' extended on input line 1365.
-Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1367.
-Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1368.
-Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1369.
-Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1370.
-Package xcolor Info: Model `Gray' substituted by `gray' on input line 1371.
-Package xcolor Info: Model `wave' substituted by `hsb' on input line 1372.
-)
 (C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hyperref.sty
 Package: hyperref 2025-07-12 v7.01o Hypertext links for LaTeX
 
-(C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/latex/kvsetkeys\kvsetkeys.s
-ty
-Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
-)
 (C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/generic/kvdefinekeys\kvdefi
 nekeys.sty
 Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
@@ -353,9 +781,6 @@ Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
 .sty
 Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
 
-(C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/generic/ltxcmds\ltxcmds.sty
-Package: ltxcmds 2023-12-04 v1.26 LaTeX kernel commands for general use (HO)
-)
 (C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/generic/pdftexcmds\pdftexcm
 ds.sty
 Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
@@ -381,21 +806,17 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 (C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/generic/gettitlestring\gett
 itlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
-
-(C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/latex/kvoptions\kvoptions.s
-ty
-Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
-))
-\c@section@level=\count311
+)
+\c@section@level=\count339
 )
 (C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/generic/stringenc\stringenc
 .sty
 Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO
 )
 )
-\@linkdim=\dimen197
-\Hy@linkcounter=\count312
-\Hy@pagecounter=\count313
+\@linkdim=\dimen313
+\Hy@linkcounter=\count340
+\Hy@pagecounter=\count341
 
 (C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\pd1enc.def
 File: pd1enc.def 2025-07-12 v7.01o Hyperref: PDFDocEncoding definition (HO)
@@ -405,7 +826,7 @@ Now handling font encoding PD1 ...
 (C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/generic/intcalc\intcalc.sty
 Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 )
-\Hy@SavedSpaceFactor=\count314
+\Hy@SavedSpaceFactor=\count342
  (C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\puenc.def
 File: puenc.def 2025-07-12 v7.01o Hyperref: PDF Unicode definition (HO)
 Now handling font encoding PU ...
@@ -418,13 +839,13 @@ Package hyperref Info: Plain pages OFF on input line 4210.
 Package hyperref Info: Backreferencing OFF on input line 4215.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4462.
-\c@Hy@tempcnt=\count315
+\c@Hy@tempcnt=\count343
 (C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/latex/url\url.sty
 \Urlmuskip=\muskip18
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 4801.
-\XeTeXLinkMargin=\dimen198
+\XeTeXLinkMargin=\dimen314
 
 (C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/generic/bitset\bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
@@ -434,9 +855,9 @@ lc.sty
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
 )
 ))
-\Fld@menulength=\count316
-\Field@Width=\dimen199
-\Fld@charsize=\dimen256
+\Fld@menulength=\count344
+\Field@Width=\dimen315
+\Fld@charsize=\dimen316
 Package hyperref Info: Hyper figures OFF on input line 6078.
 Package hyperref Info: Link nesting OFF on input line 6083.
 Package hyperref Info: Hyper index ON on input line 6086.
@@ -444,16 +865,16 @@ Package hyperref Info: backreferencing OFF on input line 6093.
 Package hyperref Info: Link coloring OFF on input line 6098.
 Package hyperref Info: Link coloring with OCG OFF on input line 6103.
 Package hyperref Info: PDF/A mode OFF on input line 6108.
-\Hy@abspage=\count317
-\c@Item=\count318
-\c@Hfootnote=\count319
+\Hy@abspage=\count345
+\c@Item=\count346
+\c@Hfootnote=\count347
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
 
 (C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hpdftex.def
 File: hpdftex.def 2025-07-12 v7.01o Hyperref driver for pdfTeX
-\Fld@listcount=\count320
-\c@bookmark@seq@number=\count321
+\Fld@listcount=\count348
+\c@bookmark@seq@number=\count349
 
 (C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/latex/rerunfilecheck\rerunf
 ilecheck.sty
@@ -466,18 +887,19 @@ Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 84.
 )
-\Hy@SectionHShift=\skip71
+\Hy@SectionHShift=\skip94
 )
+Package hyperref Info: Option `colorlinks' set `true' on input line 103.
+
 (C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/latex/natbib\natbib.sty
 Package: natbib 2010/09/13 8.31b (PWD, AO)
-\bibhang=\skip72
-\bibsep=\skip73
+\bibhang=\skip95
+\bibsep=\skip96
 LaTeX Info: Redefining \cite on input line 694.
-\c@NAT@ctr=\count322
+\c@NAT@ctr=\count350
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 6.
-LaTeX Font Info:    Trying to load font information for T1+lmr on input line 14
-.
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 13
+4.
 
 (C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmr.fd
 File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
@@ -485,29 +907,29 @@ File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 (C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-p
 dftex.def
 File: l3backend-pdftex.def 2025-10-09 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count323
-)
-No file main.aux.
+\l__color_backend_stack_int=\count351
+) (main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 134.
+LaTeX Font Info:    ... okay on input line 134.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 134.
+LaTeX Font Info:    ... okay on input line 134.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 134.
+LaTeX Font Info:    ... okay on input line 134.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 134.
+LaTeX Font Info:    ... okay on input line 134.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 134.
+LaTeX Font Info:    ... okay on input line 134.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 134.
+LaTeX Font Info:    ... okay on input line 134.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 134.
+LaTeX Font Info:    ... okay on input line 134.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 134.
+LaTeX Font Info:    ... okay on input line 134.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 134.
+LaTeX Font Info:    ... okay on input line 134.
+
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -516,16 +938,16 @@ LaTeX Font Info:    ... okay on input line 14.
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: 
-* h-part:(L,W,R)=(76.82243pt, 443.863pt, 76.82243pt)
-* v-part:(T,H,B)=(76.82243pt, 691.40198pt, 76.82243pt)
+* h-part:(L,W,R)=(79.66771pt, 438.17245pt, 79.66771pt)
+* v-part:(T,H,B)=(76.82243pt, 697.09253pt, 71.13188pt)
 * \paperwidth=597.50787pt
 * \paperheight=845.04684pt
-* \textwidth=443.863pt
-* \textheight=691.40198pt
-* \oddsidemargin=4.55244pt
-* \evensidemargin=4.55244pt
-* \topmargin=-32.44756pt
-* \headheight=12.0pt
+* \textwidth=438.17245pt
+* \textheight=697.09253pt
+* \oddsidemargin=7.39772pt
+* \evensidemargin=7.39772pt
+* \topmargin=-42.44756pt
+* \headheight=22.0pt
 * \headsep=25.0pt
 * \topskip=11.0pt
 * \footskip=30.0pt
@@ -542,13 +964,13 @@ LaTeX Font Info:    ... okay on input line 14.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Info: Redefining \microtypecontext on input line 14.
-Package microtype Info: Applying patch `item' on input line 14.
-Package microtype Info: Applying patch `toc' on input line 14.
-Package microtype Info: Applying patch `eqnum' on input line 14.
-Package microtype Info: Applying patch `footnote' on input line 14.
-Package microtype Info: Applying patch `verbatim' on input line 14.
-LaTeX Info: Redefining \microtypesetup on input line 14.
+LaTeX Info: Redefining \microtypecontext on input line 134.
+Package microtype Info: Applying patch `item' on input line 134.
+Package microtype Info: Applying patch `toc' on input line 134.
+Package microtype Info: Applying patch `eqnum' on input line 134.
+Package microtype Info: Applying patch `footnote' on input line 134.
+Package microtype Info: Applying patch `verbatim' on input line 134.
+LaTeX Info: Redefining \microtypesetup on input line 134.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
@@ -566,17 +988,17 @@ File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman
 (C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.
 mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count324
-\scratchdimen=\dimen257
-\scratchbox=\box60
-\nofMPsegments=\count325
-\nofMParguments=\count326
-\everyMPshowfont=\toks30
-\MPscratchCnt=\count327
-\MPscratchDim=\dimen258
-\MPnumerator=\count328
-\makeMPintoPDFobject=\count329
-\everyMPtoPDFconversion=\toks31
+\scratchcounter=\count352
+\scratchdimen=\dimen317
+\scratchbox=\box83
+\nofMPsegments=\count353
+\nofMParguments=\count354
+\everyMPshowfont=\toks51
+\MPscratchCnt=\count355
+\MPscratchDim=\dimen318
+\MPnumerator=\count356
+\makeMPintoPDFobject=\count357
+\everyMPtoPDFconversion=\toks52
 )
 (C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf
 -base.sty
@@ -600,41 +1022,43 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
-Package hyperref Info: Link coloring ON on input line 14.
-\@outlinefile=\write3
-\openout3 = `main.out'.
+Package hyperref Info: Link coloring ON on input line 134.
+ (main.out) (main.out)
+\@outlinefile=\write4
+\openout4 = `main.out'.
 
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 1
-5.
- (C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/latex/lm\ot1lmr.fd
+37.
+
+(C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/latex/lm\ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OML+lmm on input line 1
-5.
+37.
 
 (C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/latex/lm\omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-15.
+137.
 
 (C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/latex/lm\omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-15.
+137.
 
 (C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/latex/lm\omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 15.
+(Font)              <12> on input line 137.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 15.
+(Font)              <8> on input line 137.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 15.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 15.
-
+(Font)              <6> on input line 137.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 137
+.
 
 (C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
@@ -642,195 +1066,21 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 (C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/latex/microtype\mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 15.
-
+LaTeX Font Info:    Trying to load font information for U+msb on input line 137
+.
 (C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 (C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/latex/microtype\mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
-) (sections/abstract.tex
-Overfull \hbox (0.15988pt too wide) in paragraph at lines 2--3
-\T1/lmr/m/n/10 (+13) ci-dent Re-call@20 rose from 250/300 (83.33%) to 260/300 (
-86.67%); group re-cov-er-abil-ity 
- []
-
-
-Overfull \hbox (0.12886pt too wide) in paragraph at lines 2--3
-\T1/lmr/m/n/10 (+2) to 113/150 (75.33%). Both pipelines had zero false grouped 
-pairs and zero mixed groups 
- []
-
-) (sections/introduction.tex
-
-Package natbib Warning: Citation `landauer2022' on page 1 undefined on input li
-ne 2.
-
-
-Package natbib Warning: Citation `wang2024' on page 1 undefined on input line 2
-.
-
-
-Package natbib Warning: Citation `grain2025' on page 1 undefined on input line 
-2.
-
-
-Package natbib Warning: Citation `sadlek2025' on page 1 undefined on input line
- 2.
-
-
-Overfull \hbox (0.14288pt too wide) in paragraph at lines 2--3
-\T1/lmr/m/n/10.95 (+14) and a shared host or ac-count may join un-re-lated ac-t
-iv-ity. Re-search on domain-independent 
- []
-
-
-Package natbib Warning: Citation `malach2025' on page 1 undefined on input line
- 4.
-
-
-Package natbib Warning: Citation `grain2025' on page 1 undefined on input line 
-4.
-
-
-Package natbib Warning: Citation `chuah2025' on page 1 undefined on input line 
-4.
-
-[1
-
-{C:/Users/surface/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/su
-rface/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc}])
-(sections/related_work.tex
-Overfull \hbox (0.10213pt too wide) in paragraph at lines 6--1
-\T1/lmr/m/n/10.95 (+5) and a doc-u-mented ex-ter-nal data-readiness au-dit. We 
-make no claim of su-pe-ri-or-ity over pub- 
- []
-
-
-Package natbib Warning: Citation `landauer2022' on page 2 undefined on input li
-ne 3.
-
-
-Package natbib Warning: Citation `wang2024' on page 2 undefined on input line 3
-.
-
-
-Package natbib Warning: Citation `grain2025' on page 2 undefined on input line 
-3.
-
-
-Package natbib Warning: Citation `sadlek2025' on page 2 undefined on input line
- 5.
-
-
-Package natbib Warning: Citation `malach2025' on page 2 undefined on input line
- 5.
-
-
-Package natbib Warning: Citation `holmes2019' on page 2 undefined on input line
- 5.
-
-
-Package natbib Warning: Citation `poirot2019' on page 2 undefined on input line
- 5.
-
-
-Package natbib Warning: Citation `unicorn2020' on page 2 undefined on input lin
-e 5.
-
-
-Package natbib Warning: Citation `crosshound2026' on page 2 undefined on input 
-line 5.
-
-
-Overfull \hbox (0.18393pt too wide) in paragraph at lines 5--6
-\T1/lmr/m/n/10.95 (+8) re-con-struct-ing a cor-rect in-ci-dent par-ti-tion and 
-then re-triev-ing an expert-prioritized in-ci-dent 
- []
-
-
-Overfull \hbox (0.17587pt too wide) in paragraph at lines 5--6
-\T1/lmr/m/n/10.95 (+19) tion flows; POIROT aligns threat-intelligence graphs wi
-th ker-nel au-dit records; UNI-CORN 
- []
-
-
-Overfull \hbox (0.10184pt too wide) in paragraph at lines 5--6
-\T1/lmr/m/n/10.95 (+19) for APT in-ves-ti-ga-tion [\T1/lmr/bx/n/10.95 (+19) ? ?
- ? ? \T1/lmr/m/n/10.95 (+19) ]. Their use of prove-nance is a sub-stan-tive an-
-tecedent; this 
- []
-
-
-Package natbib Warning: Citation `review2022' on page 2 undefined on input line
- 8.
-
-
-Package natbib Warning: Citation `chuah2025' on page 2 undefined on input line 
-8.
-
-
-LaTeX Warning: Reference `tab:prior' on page 2 undefined on input line 8.
-
-
-Package natbib Warning: Citation `landauer2022' on page 2 undefined on input li
-ne 19.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 19--19
-[]|\T1/lmr/m/n/10 (+20) Landauer et al.
- []
-
-
-Package natbib Warning: Citation `wang2024' on page 2 undefined on input line 1
-9.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 19--19
-[]|\T1/lmr/m/n/10 (+20) Aggregation and
- []
-
-
-Package natbib Warning: Citation `grain2025' on page 2 undefined on input line 
-19.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 19--19
-[]|\T1/lmr/m/n/10 (+20) Multi-stage re-con-
- []
-
-
-Package natbib Warning: Citation `sadlek2025' on page 2 undefined on input line
- 19.
-
-
-Package natbib Warning: Citation `malach2025' on page 2 undefined on input line
- 19.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 19--19
-[]|\T1/lmr/m/n/10 (+20) CyberShapley [\T1/lmr/bx/n/10 (+20) ?
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 19--19
-[]|\T1/lmr/m/n/10 (+20) Explanation and
- []
-
-
-Package natbib Warning: Citation `crosshound2026' on page 2 undefined on input 
-line 19.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 19--19
-[]|\T1/lmr/m/n/10 (+20) APT in-ves-ti-ga-
- []
-
-) (sections/problem_formulation.tex
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 2.
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 2
-.
+)
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 1
+37.
+(C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/latex/lm\ts1lmr.fd
+File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 1
+37.
 
 (C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
@@ -840,228 +1090,369 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 
-[2]
+Overfull \hbox (0.21432pt too wide) in paragraph at lines 178--183
+[]\T1/lmr/bx/n/10.95 (+19) Keywords:[] \T1/lmr/m/n/10.95 (+19) se-cu-rity op-er
+-a-tions; alert cor-re-la-tion; in-ci-dent re-con-struc-tion; ev-i-dence prove-
+ 
+ []
 
-LaTeX Warning: Reference `fig:provenance' on page 3 undefined on input line 8.
+(sections/introduction.tex
+Overfull \hbox (0.12553pt too wide) in paragraph at lines 2--3
+\T1/lmr/m/n/10.95 (+9) view-able in-ci-dents. Ag-gre-ga-tion can re-duce an an-
+a-lyst's work-load, but a plau-si-ble re-la-tion- 
+ []
 
-<figures/evidence_provenance.pdf, id=21, 746.58923pt x 291.28827pt>
+[1{C:/Users/surface/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/
+surface/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc}
+
+{C:/Users/surface/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}]
+<figures/architecture.pdf, id=124, 804.40527pt x 291.28827pt>
+File: figures/architecture.pdf Graphic file (type pdf)
+<use figures/architecture.pdf>
+Package pdftex.def Info: figures/architecture.pdf  used on input line 6.
+(pdftex.def)             Requested size: 438.17245pt x 158.67117pt.
+)
+(sections/related_work.tex
+Overfull \hbox (0.24289pt too wide) in paragraph at lines 8--1
+\T1/lmr/m/n/10.95 (+14) endpoint-based fall-back im-prove re-cov-er-abil-ity an
+d re-trieval on a matched, un-touched syn- 
+ []
+
+
+Overfull \hbox (0.19855pt too wide) in paragraph at lines 8--1
+\T1/lmr/m/n/10.95 (+14) of the ver-i-fier and con-strained fall-back, a paired 
+syn-thetic hold-out com-par-i-son with group- 
+ []
+
+
+Overfull \hbox (0.11378pt too wide) in paragraph at lines 3--4
+\T1/lmr/m/n/10.95 (+8) swer dif-fer-ent ques-tions from whether a par-tic-u-lar
+ can-di-date edge has three orig-i-nal, point- 
+ []
+
+[2 <./figures/architecture.pdf>]
+Overfull \hbox (0.17882pt too wide) in paragraph at lines 5--6
+[]\T1/lmr/m/n/10.95 (+11) Sadlek et al. use kill-chain at-tack graphs to pri-or
+-i-tize in-ci-dents by sever-ity [[]]; Cy-ber-Shap- 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 19--19
+[]|\T1/lmr/m/n/10 (+20) Landauer et al.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 19--19
+[]|\T1/lmr/m/n/10 (+20) Aggregation and
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 19--19
+[]|\T1/lmr/m/n/10 (+20) Multi-stage re-con-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 19--19
+[]|\T1/lmr/m/n/10 (+20) Explanation and
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 19--19
+[]|\T1/lmr/m/n/10 (+20) APT in-ves-ti-ga-
+ []
+
+) (sections/problem_formulation.tex
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10.95> on input line 2.
+ [3]
+<figures/evidence_provenance.pdf, id=181, 496.85625pt x 301.72725pt>
 File: figures/evidence_provenance.pdf Graphic file (type pdf)
 <use figures/evidence_provenance.pdf>
 Package pdftex.def Info: figures/evidence_provenance.pdf  used on input line 9.
 
-(pdftex.def)             Requested size: 421.66849pt x 164.52039pt.
-) (sections/architecture.tex [3{C:/Users/surface/AppData/Local/Programs/MiKTeX/
-fonts/enc/dvips/lm/lm-mathit.enc}{C:/Users/surface/AppData/Local/Programs/MiKTe
-X/fonts/enc/dvips/lm/lm-rm.enc}{C:/Users/surface/AppData/Local/Programs/MiKTeX/
-fonts/enc/dvips/lm/lm-mathsy.enc}]
+(pdftex.def)             Requested size: 416.26248pt x 252.78618pt.
+) (sections/architecture.tex
+<figures/pipeline_overview.pdf, id=185, 877.67903pt x 283.8498pt>
+File: figures/pipeline_overview.pdf Graphic file (type pdf)
+<use figures/pipeline_overview.pdf>
+Package pdftex.def Info: figures/pipeline_overview.pdf  used on input line 5.
+(pdftex.def)             Requested size: 438.17245pt x 141.71231pt.
+)
+(sections/methodology.tex [4{C:/Users/surface/AppData/Local/Programs/MiKTeX/fon
+ts/enc/dvips/lm/lm-mathit.enc}{C:/Users/surface/AppData/Local/Programs/MiKTeX/f
+onts/enc/dvips/lm/lm-rm.enc}{C:/Users/surface/AppData/Local/Programs/MiKTeX/fon
+ts/enc/dvips/lm/lm-mathsy.enc}]
+Overfull \hbox (0.15651pt too wide) in paragraph at lines 3--4
+\T1/lmr/m/n/10.95 (+20) retains alerts and claims available by $\OML/lmm/m/it/1
+0.95 T \OT1/lmr/m/n/10.95 (+20) = 100$\T1/lmr/m/n/10.95 (+20) , including only 
+claims whose two endpoints 
+ []
 
-LaTeX Warning: Reference `fig:arch' on page 4 undefined on input line 2.
-
-<figures/architecture.pdf, id=37, 804.40527pt x 291.28827pt>
-File: figures/architecture.pdf Graphic file (type pdf)
-<use figures/architecture.pdf>
-Package pdftex.def Info: figures/architecture.pdf  used on input line 3.
-(pdftex.def)             Requested size: 443.863pt x 160.7335pt.
-
-Overfull \hbox (0.13487pt too wide) in paragraph at lines 2--4
-\T1/lmr/m/n/10.95 (+16) executes correlation, then verification, then scoring; 
-we describe this actual execution order 
+[5 <./figures/evidence_provenance.pdf> <./figures/pipeline_overview.pdf>]
+Overfull \hbox (0.16148pt too wide) in paragraph at lines 6--7
+\T1/lmr/m/n/10.95 (+10) three dis-tinct up-stream roots, avail-abil-ity by $\OM
+L/lmm/m/it/10.95 T$\T1/lmr/m/n/10.95 (+10) , iden-ti-cal end-point/event iden-t
+i-ties, match- 
  []
 
 
-LaTeX Warning: Reference `sec:method' on page 4 undefined on input line 5.
-
-) (sections/methodology.tex
-Overfull \hbox (0.15552pt too wide) in paragraph at lines 5--1
-\T1/lmr/m/n/10.95 (+12) tion in-tact. This is a con-ser-va-tive de-ci-sion pro-
-ce-dure un-der its as-sumed root se-man-tics, not 
+Overfull \hbox (0.20195pt too wide) in paragraph at lines 12--14
+\T1/lmr/m/n/10.95 (+12) checks must also pass. The verifier logs a failed reaso
+n and leaves the partition unchanged. 
  []
 
-[4 <./figures/evidence_provenance.pdf> <./figures/architecture.pdf>]
-Overfull \hbox (0.134pt too wide) in paragraph at lines 3--4
-\T1/lmr/m/n/10.95 (+18) The re-ceiver checks a con-tigu-ous evidence-ledger se-
-quence, one avail-abil-ity record per alert, 
- []
-
-
-Overfull \hbox (0.10533pt too wide) in paragraph at lines 6--7
-\T1/lmr/m/n/10.95 (+6) host/account, tem-po-ral com-pat-i-bil-ity, and match-in
-g process-parent, ses-sion, and flow iden-ti- 
- []
-
-
-LaTeX Warning: Reference `eq:gate' on page 5 undefined on input line 13.
-
-
-LaTeX Warning: Reference `fig:verify' on page 5 undefined on input line 16.
-
-<figures/verification_methodology.pdf, id=61, 804.40527pt x 291.28827pt>
+<figures/verification_methodology.pdf, id=243, 494.82005pt x 454.39764pt>
 File: figures/verification_methodology.pdf Graphic file (type pdf)
 <use figures/verification_methodology.pdf>
 Package pdftex.def Info: figures/verification_methodology.pdf  used on input li
 ne 17.
-(pdftex.def)             Requested size: 443.863pt x 160.7335pt.
+(pdftex.def)             Requested size: 429.40712pt x 394.33125pt.
 
-Overfull \hbox (0.12665pt too wide) in paragraph at lines 16--18
-\T1/lmr/m/n/10.95 (+16) two orig-i-nal claims, one au-then-ti-ca-tion and one n
-etwork-flow claim, with dis-tinct roots and 
+Overfull \hbox (0.36688pt too wide) in paragraph at lines 16--18
+\T1/lmr/m/n/10.95 (-20) fers from both claim roots. Their host, ac-count, event
+ tim-ing, process-parent, authentication- 
  []
 
-[5]
+[6]
+Underfull \hbox (badness 10000) in paragraph at lines 23--23
+[]|\T1/lmr/m/n/10 (+20) Derived copy of-fered
+ []
 
-LaTeX Warning: Reference `fig:groups' on page 6 undefined on input line 20.
 
-<figures/reconstruction_prioritization.pdf, id=73, 804.40527pt x 291.28827pt>
+Underfull \hbox (badness 10000) in paragraph at lines 23--23
+[]|\T1/lmr/m/n/10 (+20) Two orig-i-nal claim
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--23
+\T1/lmr/m/n/10 (+20) fam-i-lies, pro-cess ab-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--23
+[]|\T1/lmr/m/n/10 (+20) Union only if ev-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--23
+\T1/lmr/m/n/10 (+20) ery fall-back and
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--23
+\T1/lmr/m/n/10 (+20) com-po-nent guard
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--23
+[]|\T1/lmr/m/n/10 (+20) Claim ar-rives af-ter
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--23
+[]|\T1/lmr/m/n/10 (+20) Claim un-avail-able
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--23
+[]|\T1/lmr/m/n/10 (+20) Event or causal iden-ti-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--23
+[]|\T1/lmr/m/n/10 (+20) Verified to-ken ex-ceeds
+ []
+
+
+Overfull \hbox (0.1569pt too wide) in paragraph at lines 22--24
+\T1/lmr/m/n/10.95 (+14) be sub-sti-tuted only af-ter the ex-act au-then-ti-ca-t
+ion/network and end-point con-di-tions above 
+ []
+
+[7 <./figures/verification_methodology.pdf>]
+<figures/reconstruction_prioritization.pdf, id=268, 804.40527pt x 291.28827pt>
 File: figures/reconstruction_prioritization.pdf Graphic file (type pdf)
 <use figures/reconstruction_prioritization.pdf>
 Package pdftex.def Info: figures/reconstruction_prioritization.pdf  used on inp
-ut line 21.
-(pdftex.def)             Requested size: 443.863pt x 160.7335pt.
-) (sections/experimental_design.tex
-Overfull \hbox (0.10939pt too wide) in paragraph at lines 20--1
-\T1/lmr/m/n/10.95 (+11) unions. Groups are sorted by descending score and then 
-first alert identifier. A group never 
- []
-
-
-LaTeX Warning: Reference `fig:protocol' on page 6 undefined on input line 4.
-
-<figures/experimental_protocol.pdf, id=74, 804.40527pt x 291.28827pt>
+ut line 33.
+(pdftex.def)             Requested size: 438.17245pt x 158.67117pt.
+) (sections/experimental_design.tex [8 <./figures/reconstruction_prioritization
+.pdf>]
+<figures/experimental_protocol.pdf, id=285, 804.40527pt x 291.28827pt>
 File: figures/experimental_protocol.pdf Graphic file (type pdf)
 <use figures/experimental_protocol.pdf>
 Package pdftex.def Info: figures/experimental_protocol.pdf  used on input line 
 5.
-(pdftex.def)             Requested size: 443.863pt x 160.7335pt.
-[6 <./figures/verification_methodology.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 7--7
+(pdftex.def)             Requested size: 438.17245pt x 158.67117pt.
+<figures/dev_trajectory.pdf, id=286, 733.13902pt x 258.10555pt>
+File: figures/dev_trajectory.pdf Graphic file (type pdf)
+<use figures/dev_trajectory.pdf>
+Package pdftex.def Info: figures/dev_trajectory.pdf  used on input line 6.
+(pdftex.def)             Requested size: 438.17245pt x 154.26193pt.
+
+Overfull \hbox (0.14319pt too wide) in paragraph at lines 4--7
+\T1/lmr/m/n/10.95 (+11) and 300 expert top-20 opportunities. Baseline and candi
+date predicted the same alert sets. 
+ []
+
+
+Overfull \hbox (0.18344pt too wide) in paragraph at lines 4--7
+\T1/lmr/m/n/10.95 (+9) before the unchanged evaluator accessed private truth. E
+ach arm was evaluated once. The 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 8--8
 []|\T1/lmr/m/n/10 (+20) Controlled de-vel-op-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 7--7
+Underfull \hbox (badness 10000) in paragraph at lines 8--8
 []|\T1/lmr/m/n/10 (+20) 10 queues; 200
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 7--7
+Underfull \hbox (badness 10000) in paragraph at lines 8--8
 \T1/lmr/m/n/10 (+13) top-20 op-por-tu-ni-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 7--7
+Underfull \hbox (badness 10000) in paragraph at lines 8--8
 []|\T1/lmr/m/n/10 (+20) 15 queues; 5,018
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 7--7
+Underfull \hbox (badness 10000) in paragraph at lines 8--8
 \T1/lmr/m/n/10 (+20) el-i-gi-ble alerts;
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 7--7
+Underfull \hbox (badness 10000) in paragraph at lines 8--8
 \T1/lmr/m/n/10 (+9) 300 top-20 op-por-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 7--7
+Underfull \hbox (badness 10000) in paragraph at lines 8--8
 []|\T1/lmr/m/n/10 (+20) Separate de-vel-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 7--7
+Underfull \hbox (badness 10000) in paragraph at lines 8--8
 \T1/lmr/m/n/10 (+20) op-ment co-horts,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 7--7
+Underfull \hbox (badness 10000) in paragraph at lines 8--8
 \T1/lmr/m/n/10 (+20) gen-er-ally 15
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 7--7
+Underfull \hbox (badness 10000) in paragraph at lines 8--8
 []|\T1/lmr/m/n/10 (+20) 4,147,992 ev-i-
  []
 
-) (sections/metrics.tex [7{C:/Users/surface/AppData/Local/Programs/MiKTeX/fonts
-/enc/dvips/lm/lm-mathex.enc} <./figures/reconstruction_prioritization.pdf> <./f
-igures/experimental_protocol.pdf>]
-Overfull \hbox (28.52399pt too wide) detected at line 8
-[][][]\OML/lmm/m/it/10.95 R\OT1/lmr/m/n/10.95 @20 = []\OML/lmm/m/it/10.95 ;  []
- \OT1/lmr/m/n/10.95 = []\OML/lmm/m/it/10.95 :
+) (sections/metrics.tex [9{C:/Users/surface/AppData/Local/Programs/MiKTeX/fonts
+/enc/dvips/lm/lm-mathex.enc} <./figures/experimental_protocol.pdf>])
+(sections/results.tex
+Overfull \hbox (0.13225pt too wide) in paragraph at lines 11--1
+\T1/lmr/m/n/10.95 (+10) containing more than one truth incident, even if it pas
+ses the 80% purity threshold. These 
  []
 
-) (sections/results.tex
-
-LaTeX Warning: Reference `tab:primary' on page 8 undefined on input line 3.
-
-
-LaTeX Warning: Reference `fig:primary' on page 8 undefined on input line 3.
-
-<figures/phase33_results.pdf, id=117, 780.51598pt x 238.49101pt>
+[10 <./figures/dev_trajectory.pdf>]
+<figures/phase33_results.pdf, id=330, 780.51598pt x 238.49101pt>
 File: figures/phase33_results.pdf Graphic file (type pdf)
 <use figures/phase33_results.pdf>
 Package pdftex.def Info: figures/phase33_results.pdf  used on input line 5.
-(pdftex.def)             Requested size: 443.863pt x 135.62468pt.
-[8]
-
-LaTeX Warning: Reference `fig:safety' on page 9 undefined on input line 7.
-
-<figures/safety_results.pdf, id=127, 585.38701pt x 166.22101pt>
+(pdftex.def)             Requested size: 438.17245pt x 133.8852pt.
+<figures/metrics_comparison.pdf, id=331, 640.86589pt x 323.58203pt>
+File: figures/metrics_comparison.pdf Graphic file (type pdf)
+<use figures/metrics_comparison.pdf>
+Package pdftex.def Info: figures/metrics_comparison.pdf  used on input line 6.
+(pdftex.def)             Requested size: 438.17245pt x 221.24254pt.
+<figures/safety_results.pdf, id=333, 585.38701pt x 166.22101pt>
 File: figures/safety_results.pdf Graphic file (type pdf)
 <use figures/safety_results.pdf>
-Package pdftex.def Info: figures/safety_results.pdf  used on input line 8.
-(pdftex.def)             Requested size: 399.47398pt x 113.43205pt.
+Package pdftex.def Info: figures/safety_results.pdf  used on input line 9.
+(pdftex.def)             Requested size: 394.35252pt x 111.9762pt.
+<figures/safety_overview.pdf, id=334, 658.86153pt x 241.52461pt>
+File: figures/safety_overview.pdf Graphic file (type pdf)
+<use figures/safety_overview.pdf>
+Package pdftex.def Info: figures/safety_overview.pdf  used on input line 10.
+(pdftex.def)             Requested size: 438.17245pt x 160.62659pt.
 
-LaTeX Warning: Reference `tab:development' on page 9 undefined on input line 11
+Overfull \hbox (0.15062pt too wide) in paragraph at lines 8--11
+\T1/lmr/m/n/10.95 (+8) false pairs and zero mixed groups in both arms. Queue-le
+vel Recall@20 nevertheless fell by 
+ []
+
+<figures/queue_delta_heatmap.pdf, id=336, 471.78758pt x 409.99309pt>
+File: figures/queue_delta_heatmap.pdf Graphic file (type pdf)
+<use figures/queue_delta_heatmap.pdf>
+Package pdftex.def Info: figures/queue_delta_heatmap.pdf  used on input line 14
 .
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 12--12
+(pdftex.def)             Requested size: 403.11784pt x 350.31625pt.
+<figures/queue_delta_bars.pdf, id=337, 787.32143pt x 280.5629pt>
+File: figures/queue_delta_bars.pdf Graphic file (type pdf)
+<use figures/queue_delta_bars.pdf>
+Package pdftex.def Info: figures/queue_delta_bars.pdf  used on input line 15.
+(pdftex.def)             Requested size: 438.17245pt x 156.14235pt.
+[11 <./figures/phase33_results.pdf>]
+<figures/retrieval_decomposition.pdf, id=355, 471.73459pt x 155.20183pt>
+File: figures/retrieval_decomposition.pdf Graphic file (type pdf)
+<use figures/retrieval_decomposition.pdf>
+Package pdftex.def Info: figures/retrieval_decomposition.pdf  used on input lin
+e 18.
+(pdftex.def)             Requested size: 411.88316pt x 135.5147pt.
+ [12 <./figures/metrics_comparison.pdf> <./figures/safety_results.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 22--22
 []|\T1/lmr/m/n/10 (+20) Ranking fea-ture
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 12--12
+Underfull \hbox (badness 10000) in paragraph at lines 22--22
 []|\T1/lmr/m/n/10 (+20) Near-boundary
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 12--12
+Underfull \hbox (badness 10000) in paragraph at lines 22--22
 []|\T1/lmr/m/n/10 (+20) Evidence-aware
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 12--12
+Underfull \hbox (badness 10000) in paragraph at lines 22--22
 []|\T1/lmr/m/n/10 (+20) Evidence avail-abil-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 12--12
+Underfull \hbox (badness 10000) in paragraph at lines 22--22
 []|\T1/lmr/m/n/10 (+20) Hard-negative
  []
 
-) (sections/discussion.tex [9 <./figures/phase33_results.pdf> <./figures/safety
-_results.pdf>]
-Overfull \hbox (0.19618pt too wide) in paragraph at lines 4--5
-\T1/lmr/m/n/10.95 (+20) at-tempts kept group-ing fixed and failed to es-tab-lis
-h a con-sis-tent top-20 gain. In par-tic-u-lar, 
- []
-
-) (sections/threats_to_validity.tex [10]) (sections/real_world_readiness.tex
-Overfull \hbox (0.24236pt too wide) in paragraph at lines 6--1
-\T1/lmr/m/n/10.95 (+17) were available. We therefore have no estimate of real f
-alse unions, analyst utility, workload, 
+) (sections/discussion.tex
+Overfull \hbox (0.10077pt too wide) in paragraph at lines 21--1
+\T1/lmr/m/n/10.95 (+8) an-other pop-u-la-tion; its scores are not di-rectly com
+-pa-ra-ble. An un-safe richer-claim de-vel-op- 
  []
 
 
-Package natbib Warning: Citation `guide2024' on page 11 undefined on input line
- 2.
+Overfull \hbox (0.15213pt too wide) in paragraph at lines 21--1
+\T1/lmr/m/n/10.95 (+20) ment con-fig-u-ra-tion pro-duced 2,580 false pairs and 
+22 mixed groups, whereas independent- 
+ []
 
+[13 <./figures/safety_overview.pdf>]) (sections/threats_to_validity.tex
+[14 <./figures/queue_delta_heatmap.pdf>]
+Overfull \hbox (0.11711pt too wide) in paragraph at lines 4--5
+\T1/lmr/m/n/10.95 (+6) decision to proceed unchanged was recorded before creati
+ng and opening the fresh holdout, 
+ []
 
-Overfull \hbox (0.16429pt too wide) in paragraph at lines 2--3
-\T1/lmr/m/n/10.95 (+8) time [\T1/lmr/bx/n/10.95 (+8) ? \T1/lmr/m/n/10.95 (+8) ]
-. The avail-able ex-port lacked orig-i-nal source-observation iden-ti-fiers, up
--stream trust 
+[15 <./figures/queue_delta_bars.pdf> <./figures/retrieval_decomposition.pdf>])
+(sections/real_world_readiness.tex
+Overfull \hbox (42.05264pt too wide) in paragraph at lines 2--3
+\T1/lmr/m/n/10.95 (-20) up-stream trust roots, deriva-tion chains, and in-de-pe
+n-dently sup-ported pro-cess/authentication/network 
  []
 
 
@@ -1089,61 +1480,41 @@ Underfull \hbox (badness 10000) in paragraph at lines 4--4
 []|\T1/lmr/m/n/10 (+20) Queue and pri-or-ity
  []
 
-) (sections/limitations.tex) (sections/conclusion.tex [11])
-No file main.bbl.
-(supplementary/detailed_algorithms.tex) (supplementary/additional_tables.tex
-Overfull \hbox (0.14812pt too wide) in paragraph at lines 2--1
-\T1/lmr/m/n/10.95 (+7) three-family at-tes-ta-tions. Re-jected to-kens whose so
-le rea-son is miss-ing fam-ily en-ter the end- 
+) (sections/limitations.tex) (sections/conclusion.tex [16])
+Overfull \hbox (0.1736pt too wide) in paragraph at lines 2--198
+\T1/lmr/m/n/10.95 (+7) unions re-quire orig-i-nal, timely, in-de-pen-dently roo
+ted ev-i-dence and field con-sis-tency. A con- 
  []
 
 
-Overfull \hbox (52.90912pt too wide) in paragraph at lines 2--1
-\T1/lmr/m/n/10.95 (-20) iden-ti-fier. The ex-e-cutable spec-i-fi-ca-tion is \T1
-/lmtt/m/n/10.95 experiments/PHASE31_CONTROLLED_SOC_EVIDENCE/model.py\T1/lmr/m/n
-/10.95 (-20) , 
+Overfull \hbox (0.17pt too wide) in paragraph at lines 2--198
+\T1/lmr/m/n/10.95 (+9) strained end-point fall-back im-proved syn-thetic hold-o
+ut Re-call@20 from 250/300 to 260/300 
  []
 
-)
-Overfull \hbox (74.56625pt too wide) in paragraph at lines 2--32
-\T1/lmr/m/n/10.95 (-20) The ed-itable per-queue counts and figure-generation da
-ta are in \T1/lmtt/m/n/10.95 figure_data/holdout_queue_metrics.csv\T1/lmr/m/n/1
-0.95 (-20) , 
+(main.bbl [17]) (supplementary/detailed_algorithms.tex)
+(supplementary/additional_tables.tex)
+Overfull \hbox (0.16852pt too wide) in paragraph at lines 2--207
+\T1/lmr/m/n/10.95 (+2) rec-tory. The orig-i-nal sealed pre-dic-tions and privat
+e-truth eval-u-a-tion re-main in the re-search 
  []
 
-[12]
-
-Package natbib Warning: There were undefined citations.
-
-[13] (main.aux)
+[18] (main.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2025-12-24>
  ***********
-
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-
-Package rerunfilecheck Warning: File `main.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `main.out':
-(rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  44C5801B65BC519CE669F02961407B9D;4380.
+Package rerunfilecheck Info: File `main.out' has not changed.
+(rerunfilecheck)             Checksum: 4B75453998EFE84BE6320F8105AABB84;4865.
  ) 
 Here is how much of TeX's memory you used:
- 15548 strings out of 467871
- 252402 string characters out of 5417409
- 702367 words of memory out of 5000000
- 43947 multiletter control sequences out of 15000+600000
- 714940 words of font info for 177 fonts, out of 8000000 for 9000
+ 30353 strings out of 467871
+ 593169 string characters out of 5417409
+ 1048680 words of memory out of 5000000
+ 58420 multiletter control sequences out of 15000+600000
+ 722679 words of font info for 194 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,12n,79p,1625b,481s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 116i,13n,121p,1195b,1242s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/surface/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx10.
 pfb><C:/Users/surface/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx1
 2.pfb><C:/Users/surface/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lme
@@ -1154,16 +1525,16 @@ m/lmmi7.pfb><C:/Users/surface/AppData/Local/Programs/MiKTeX/fonts/type1/public/
 lm/lmmi8.pfb><C:/Users/surface/AppData/Local/Programs/MiKTeX/fonts/type1/public
 /lm/lmr10.pfb><C:/Users/surface/AppData/Local/Programs/MiKTeX/fonts/type1/publi
 c/lm/lmr12.pfb><C:/Users/surface/AppData/Local/Programs/MiKTeX/fonts/type1/publ
-ic/lm/lmr17.pfb><C:/Users/surface/AppData/Local/Programs/MiKTeX/fonts/type1/pub
-lic/lm/lmr6.pfb><C:/Users/surface/AppData/Local/Programs/MiKTeX/fonts/type1/pub
-lic/lm/lmr7.pfb><C:/Users/surface/AppData/Local/Programs/MiKTeX/fonts/type1/pub
-lic/lm/lmr8.pfb><C:/Users/surface/AppData/Local/Programs/MiKTeX/fonts/type1/pub
-lic/lm/lmsy10.pfb><C:/Users/surface/AppData/Local/Programs/MiKTeX/fonts/type1/p
-ublic/lm/lmsy8.pfb><C:/Users/surface/AppData/Local/Programs/MiKTeX/fonts/type1/
-public/lm/lmtt10.pfb>
-Output written on main.pdf (13 pages, 408045 bytes).
+ic/lm/lmr6.pfb><C:/Users/surface/AppData/Local/Programs/MiKTeX/fonts/type1/publ
+ic/lm/lmr7.pfb><C:/Users/surface/AppData/Local/Programs/MiKTeX/fonts/type1/publ
+ic/lm/lmr8.pfb><C:/Users/surface/AppData/Local/Programs/MiKTeX/fonts/type1/publ
+ic/lm/lmri10.pfb><C:/Users/surface/AppData/Local/Programs/MiKTeX/fonts/type1/pu
+blic/lm/lmsy10.pfb><C:/Users/surface/AppData/Local/Programs/MiKTeX/fonts/type1/
+public/lm/lmsy8.pfb><C:/Users/surface/AppData/Local/Programs/MiKTeX/fonts/type1
+/public/lm/lmtt10.pfb>
+Output written on main.pdf (18 pages, 620324 bytes).
 PDF statistics:
- 266 PDF objects out of 1000 (max. 8388607)
- 53 named destinations out of 1000 (max. 500000)
- 49700 words of extra memory for PDF output out of 51595 (max. 10000000)
+ 579 PDF objects out of 1000 (max. 8388607)
+ 82 named destinations out of 1000 (max. 500000)
+ 54555 words of extra memory for PDF output out of 61914 (max. 10000000)
 

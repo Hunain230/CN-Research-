@@ -77,4 +77,4 @@ for (i,j),c in t.get_celld().items():c.set_edgecolor('#758495');c.set_facecolor(
 fig.tight_layout();fig.savefig(P/'figures/safety_results.pdf',bbox_inches='tight');plt.close(fig)
 import runpy
 runpy.run_path(str(P/'figure_source/expanded_figures.py'),run_name='__main__')
-print('Verified holdout artifacts and generated nine vector figures.')
+print('Verified holdout artifacts and generated ten vector figures.')

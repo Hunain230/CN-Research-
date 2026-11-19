@@ -137,4 +137,79 @@ ax.text(.2,.15,"Only E, I, and N form distinct eligible roots for the example re
 fig.tight_layout(pad=.1)
 fig.savefig(P / "figures/evidence_provenance.pdf",bbox_inches="tight")
 plt.close(fig)
-print("Generated detailed verification/provenance diagrams and two holdout diagnostic charts.")
+
+# Layered methodology overview inspired by the user's reference layout. This
+# depicts actual sequential C -> V -> P execution, without LLM/agent internals.
+fig, ax = plt.subplots(figsize=(7.1, 8.0))
+ax.set_xlim(0, 10); ax.set_ylim(0, 14); ax.axis("off")
+def panel(x,y,w,h,fill,edge="#40515e",lw=.9,rounding=.09):
+    ax.add_patch(FancyBboxPatch((x,y),w,h,boxstyle=f"round,pad=.04,rounding_size={rounding}",fc=fill,ec=edge,lw=lw))
+def lbl(x,y,t,size=8.5,weight="normal",color="#172a33",ha="center"):
+    ax.text(x,y,t,ha=ha,va="center",fontsize=size,weight=weight,color=color,linespacing=1.22)
+def arrow(p,q,txt=None):
+    ax.add_patch(FancyArrowPatch(p,q,arrowstyle="-|>",mutation_scale=10,lw=1.15,color="#344b56"))
+    if txt: lbl((p[0]+q[0])/2,(p[1]+q[1])/2,txt,7.2,color="#405965")
+cream="#fff4df"; pale="#eaf4f4"; mint="#e8f2e8"; neutral="#f3f5f6"
+
+# Receiver and correlation are sequential: candidate claims cannot appear
+# before availability filtering and the initial fragment partition.
+panel(.45,.25,9.1,2.25,neutral)
+lbl(5,2.16,"MODEL-VISIBLE QUEUE INPUT",9,weight="bold")
+for x,t in [(1.85,"Alert records\nsource / event IDs"),(5,"Process · authentication\nnetwork-flow observations"),(8.15,"Evidence ledger\norigin / available time")]:
+    panel(x-1.31,.79,2.62,.85,"white",lw=.75); lbl(x,1.22,t,8.2)
+lbl(5,.5,"Receiver validates ledger and keeps records available by cutoff T=100",7.7)
+
+panel(.45,2.85,9.1,1.75,pale)
+lbl(1.45,4.28,"C  CORRELATE",9.5,weight="bold",ha="left")
+for x,t in [(2.05,"Same-source / process-tree\ninitial fragments"),(5,"Visible lineage\nrelationships"),(7.95,"Candidate token bundles\n+ current partition")]:
+    panel(x-1.36,3.12,2.72,.79,"white",lw=.75); lbl(x,3.52,t,8.1)
+arrow((3.43,3.52),(3.62,3.52)); arrow((6.37,3.52),(6.57,3.52))
+arrow((5,2.5),(5,2.84)); arrow((7.95,4.62),(7.95,5.15))
+
+panel(.45,5.16,9.1,5.0,mint)
+lbl(1.45,9.89,"V  VERIFY",9.5,weight="bold",ha="left")
+panel(2.68,9.18,4.64,.49,"white",lw=.75)
+lbl(5,9.43,"Accept only when every applicable gate passes",8.3)
+arrow((7.95,5.15),(7.95,5.42))
+arrow((7.95,5.42),(5,5.42))
+arrow((5,5.42),(5,5.65))
+panel(2.7,5.72,4.6,.54,"white",lw=.75)
+lbl(5,5.99,"Candidate token + current incident fragments",8.2)
+arrow((5,6.28),(5,6.48))
+for x,title,body,shade in [
+    (2.78,"Complete bundle","Original process + identity + network\nthree distinct upstream roots",pale),
+    (7.22,"Only missing family","Original identity + network claims\noriginal endpoint supplies third root",cream)]:
+    panel(x-2.01,6.58,4.02,1.0,shade,lw=.8)
+    lbl(x,7.32,title,8.4,weight="bold")
+    lbl(x,6.89,body,7.8)
+arrow((4.7,6.28),(2.78,6.57)); arrow((5.3,6.28),(7.22,6.57))
+lbl(5.05,7.74,"fallback only for reason: missing_family",7.0,color="#865b2e")
+panel(1.1,8.06,7.8,.78,"white",lw=.75)
+lbl(5,8.46,"Shared gates: provenance, availability, endpoint / causal-field agreement,",8.0)
+lbl(5,8.20,"event timing, host/account overlap, and size cap",8.0)
+arrow((2.78,7.59),(2.78,8.04)); arrow((7.22,7.59),(7.22,8.04))
+arrow((5,8.86),(5,9.16))
+panel(7.67,9.23,1.48,.67,cream,lw=.7)
+lbl(8.41,9.57,"Reject / abstain\nno new union",7.4)
+arrow((8.9,8.86),(8.41,9.21))
+
+panel(.75,10.36,8.5,.59,"#d9ebdd")
+lbl(5,10.66,"Accepted tokens unite current components; final incident groups",8.6,weight="bold")
+arrow((5,9.68),(5,10.35))
+
+panel(.45,11.12,9.1,1.4,cream)
+lbl(1.5,12.23,"P  PRIORITIZE",9.5,weight="bold",ha="left")
+panel(1.05,11.38,3.65,.56,"white",lw=.7)
+panel(5.3,11.38,3.65,.56,"white",lw=.7)
+lbl(2.88,11.66,"Score each completed group",8.4)
+lbl(7.12,11.66,"Sort by score; stable tie-break",8.4)
+arrow((4.74,11.66),(5.26,11.66))
+arrow((5,10.97),(5,11.1))
+
+panel(2.2,12.98,5.6,.70,"#deecf1")
+lbl(5,13.33,"RANKED INCIDENT GROUPS FOR SOC ANALYST",9.0,weight="bold")
+arrow((5,12.54),(5,12.95))
+fig.tight_layout(pad=.05)
+fig.savefig(P / "figures/methodology_overview.pdf",bbox_inches="tight")
+plt.close(fig)
+print("Generated layered methodology and detailed verification/provenance diagrams, plus two diagnostic charts.")
