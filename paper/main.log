@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.5.4)  19 NOV 2026 23:27
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.5.4)  20 NOV 2026 00:04
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -8,8 +8,8 @@ LaTeX2e <2025-11-01>
 L3 programming layer <2025-12-24>
 (C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/latex/base\article.cls
 Document Class: article 2025/01/22 v1.4n Standard LaTeX document class
-(C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/latex/base\size11.clo
-File: size11.clo 2025/01/22 v1.4n Standard LaTeX file (size option)
+(C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/latex/base\size10.clo
+File: size10.clo 2025/01/22 v1.4n Standard LaTeX file (size option)
 )
 \c@part=\count275
 \c@section=\count276
@@ -691,7 +691,12 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \@float@everytoks=\toks45
 \@floatcapt=\box80
 )
-(C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsmath.sty
+(C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/latex/sttools\stfloats.sty
+Package: stfloats 2025/06/18 v3.4 Improve float mechanism and baselineskip sett
+ings
+\@dblbotnum=\count327
+\c@dblbotnumber=\count328
+) (C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsmath.sty
 Package: amsmath 2025/07/09 v2.17z AMS math features
 \@mathmargin=\skip91
 
@@ -711,14 +716,14 @@ Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 (C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsopn.sty
 Package: amsopn 2022/04/08 v2.04 operator names
 )
-\inf@bad=\count327
+\inf@bad=\count329
 LaTeX Info: Redefining \frac on input line 233.
-\uproot@=\count328
-\leftroot@=\count329
+\uproot@=\count330
+\leftroot@=\count331
 LaTeX Info: Redefining \overline on input line 398.
 LaTeX Info: Redefining \colon on input line 409.
-\classnum@=\count330
-\DOTSCASE@=\count331
+\classnum@=\count332
+\DOTSCASE@=\count333
 LaTeX Info: Redefining \ldots on input line 495.
 LaTeX Info: Redefining \dots on input line 498.
 LaTeX Info: Redefining \cdots on input line 619.
@@ -731,20 +736,20 @@ LaTeX Info: Redefining \Bigg on input line 724.
 \big@size=\dimen306
 LaTeX Font Info:    Redeclaring font encoding OML on input line 742.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 743.
-\macc@depth=\count332
+\macc@depth=\count334
 LaTeX Info: Redefining \bmod on input line 904.
 LaTeX Info: Redefining \pmod on input line 909.
 LaTeX Info: Redefining \smash on input line 939.
 LaTeX Info: Redefining \relbar on input line 969.
 LaTeX Info: Redefining \Relbar on input line 970.
-\c@MaxMatrixCols=\count333
+\c@MaxMatrixCols=\count335
 \dotsspace@=\muskip17
-\c@parentequation=\count334
-\dspbrk@lvl=\count335
+\c@parentequation=\count336
+\dspbrk@lvl=\count337
 \tag@help=\toks47
-\row@=\count336
-\column@=\count337
-\maxfields@=\count338
+\row@=\count338
+\column@=\count339
+\maxfields@=\count340
 \andhelp@=\toks48
 \eqnshift@=\dimen307
 \alignsep@=\dimen308
@@ -807,7 +812,7 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 itlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count339
+\c@section@level=\count341
 )
 (C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/generic/stringenc\stringenc
 .sty
@@ -815,8 +820,8 @@ Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO
 )
 )
 \@linkdim=\dimen313
-\Hy@linkcounter=\count340
-\Hy@pagecounter=\count341
+\Hy@linkcounter=\count342
+\Hy@pagecounter=\count343
 
 (C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\pd1enc.def
 File: pd1enc.def 2025-07-12 v7.01o Hyperref: PDFDocEncoding definition (HO)
@@ -826,7 +831,7 @@ Now handling font encoding PD1 ...
 (C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/generic/intcalc\intcalc.sty
 Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 )
-\Hy@SavedSpaceFactor=\count342
+\Hy@SavedSpaceFactor=\count344
  (C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\puenc.def
 File: puenc.def 2025-07-12 v7.01o Hyperref: PDF Unicode definition (HO)
 Now handling font encoding PU ...
@@ -839,7 +844,7 @@ Package hyperref Info: Plain pages OFF on input line 4210.
 Package hyperref Info: Backreferencing OFF on input line 4215.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4462.
-\c@Hy@tempcnt=\count343
+\c@Hy@tempcnt=\count345
 (C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/latex/url\url.sty
 \Urlmuskip=\muskip18
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
@@ -855,7 +860,7 @@ lc.sty
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
 )
 ))
-\Fld@menulength=\count344
+\Fld@menulength=\count346
 \Field@Width=\dimen315
 \Fld@charsize=\dimen316
 Package hyperref Info: Hyper figures OFF on input line 6078.
@@ -865,16 +870,16 @@ Package hyperref Info: backreferencing OFF on input line 6093.
 Package hyperref Info: Link coloring OFF on input line 6098.
 Package hyperref Info: Link coloring with OCG OFF on input line 6103.
 Package hyperref Info: PDF/A mode OFF on input line 6108.
-\Hy@abspage=\count345
-\c@Item=\count346
-\c@Hfootnote=\count347
+\Hy@abspage=\count347
+\c@Item=\count348
+\c@Hfootnote=\count349
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
 
 (C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hpdftex.def
 File: hpdftex.def 2025-07-12 v7.01o Hyperref driver for pdfTeX
-\Fld@listcount=\count348
-\c@bookmark@seq@number=\count349
+\Fld@listcount=\count350
+\c@bookmark@seq@number=\count351
 
 (C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/latex/rerunfilecheck\rerunf
 ilecheck.sty
@@ -889,17 +894,17 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 \Hy@SectionHShift=\skip94
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 103.
+Package hyperref Info: Option `colorlinks' set `true' on input line 104.
 
 (C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/latex/natbib\natbib.sty
 Package: natbib 2010/09/13 8.31b (PWD, AO)
 \bibhang=\skip95
 \bibsep=\skip96
 LaTeX Info: Redefining \cite on input line 694.
-\c@NAT@ctr=\count350
+\c@NAT@ctr=\count352
 )
-LaTeX Font Info:    Trying to load font information for T1+lmr on input line 13
-4.
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 11
+7.
 
 (C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmr.fd
 File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
@@ -907,70 +912,70 @@ File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 (C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-p
 dftex.def
 File: l3backend-pdftex.def 2025-10-09 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count351
+\l__color_backend_stack_int=\count353
 ) (main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 134.
-LaTeX Font Info:    ... okay on input line 134.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 134.
-LaTeX Font Info:    ... okay on input line 134.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 134.
-LaTeX Font Info:    ... okay on input line 134.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 134.
-LaTeX Font Info:    ... okay on input line 134.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 134.
-LaTeX Font Info:    ... okay on input line 134.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 134.
-LaTeX Font Info:    ... okay on input line 134.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 134.
-LaTeX Font Info:    ... okay on input line 134.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 134.
-LaTeX Font Info:    ... okay on input line 134.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 134.
-LaTeX Font Info:    ... okay on input line 134.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 117.
+LaTeX Font Info:    ... okay on input line 117.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 117.
+LaTeX Font Info:    ... okay on input line 117.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 117.
+LaTeX Font Info:    ... okay on input line 117.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 117.
+LaTeX Font Info:    ... okay on input line 117.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 117.
+LaTeX Font Info:    ... okay on input line 117.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 117.
+LaTeX Font Info:    ... okay on input line 117.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 117.
+LaTeX Font Info:    ... okay on input line 117.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 117.
+LaTeX Font Info:    ... okay on input line 117.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 117.
+LaTeX Font Info:    ... okay on input line 117.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
 * driver: pdftex
-* paper: a4paper
+* paper: <default>
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: 
-* h-part:(L,W,R)=(79.66771pt, 438.17245pt, 79.66771pt)
-* v-part:(T,H,B)=(76.82243pt, 697.09253pt, 71.13188pt)
-* \paperwidth=597.50787pt
-* \paperheight=845.04684pt
-* \textwidth=438.17245pt
-* \textheight=697.09253pt
-* \oddsidemargin=7.39772pt
-* \evensidemargin=7.39772pt
-* \topmargin=-42.44756pt
-* \headheight=22.0pt
+* h-part:(L,W,R)=(48.36967pt, 517.55565pt, 48.36967pt)
+* v-part:(T,H,B)=(65.44133pt, 664.08733pt, 65.44133pt)
+* \paperwidth=614.295pt
+* \paperheight=794.96999pt
+* \textwidth=517.55565pt
+* \textheight=664.08733pt
+* \oddsidemargin=-23.90031pt
+* \evensidemargin=-23.90031pt
+* \topmargin=-45.82866pt
+* \headheight=14.0pt
 * \headsep=25.0pt
-* \topskip=11.0pt
+* \topskip=10.0pt
 * \footskip=30.0pt
-* \marginparwidth=50.0pt
+* \marginparwidth=4.0pt
 * \marginparsep=10.0pt
-* \columnsep=10.0pt
-* \skip\footins=10.0pt plus 4.0pt minus 2.0pt
+* \columnsep=17.07164pt
+* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
 * \hoffset=0.0pt
 * \voffset=0.0pt
 * \mag=1000
-* \@twocolumnfalse
+* \@twocolumntrue
 * \@twosidefalse
 * \@mparswitchfalse
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Info: Redefining \microtypecontext on input line 134.
-Package microtype Info: Applying patch `item' on input line 134.
-Package microtype Info: Applying patch `toc' on input line 134.
-Package microtype Info: Applying patch `eqnum' on input line 134.
-Package microtype Info: Applying patch `footnote' on input line 134.
-Package microtype Info: Applying patch `verbatim' on input line 134.
-LaTeX Info: Redefining \microtypesetup on input line 134.
+LaTeX Info: Redefining \microtypecontext on input line 117.
+Package microtype Info: Applying patch `item' on input line 117.
+Package microtype Info: Applying patch `toc' on input line 117.
+Package microtype Info: Applying patch `eqnum' on input line 117.
+Package microtype Info: Applying patch `footnote' on input line 117.
+Package microtype Info: Applying patch `verbatim' on input line 117.
+LaTeX Info: Redefining \microtypesetup on input line 117.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
@@ -988,16 +993,16 @@ File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman
 (C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.
 mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count352
+\scratchcounter=\count354
 \scratchdimen=\dimen317
 \scratchbox=\box83
-\nofMPsegments=\count353
-\nofMParguments=\count354
+\nofMPsegments=\count355
+\nofMParguments=\count356
 \everyMPshowfont=\toks51
-\MPscratchCnt=\count355
+\MPscratchCnt=\count357
 \MPscratchDim=\dimen318
-\MPnumerator=\count356
-\makeMPintoPDFobject=\count357
+\MPnumerator=\count358
+\makeMPintoPDFobject=\count359
 \everyMPtoPDFconversion=\toks52
 )
 (C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf
@@ -1022,42 +1027,42 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
-Package hyperref Info: Link coloring ON on input line 134.
+Package hyperref Info: Link coloring ON on input line 117.
  (main.out) (main.out)
 \@outlinefile=\write4
 \openout4 = `main.out'.
 
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 1
-37.
+83.
 
 (C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/latex/lm\ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OML+lmm on input line 1
-37.
+83.
 
 (C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/latex/lm\omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-137.
+183.
 
 (C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/latex/lm\omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-137.
+183.
 
 (C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/latex/lm\omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 137.
+(Font)              <12> on input line 183.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 137.
+(Font)              <8> on input line 183.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 137.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 137
+(Font)              <6> on input line 183.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 183
 .
 
 (C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
@@ -1066,7 +1071,7 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 (C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/latex/microtype\mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 137
+LaTeX Font Info:    Trying to load font information for U+msb on input line 183
 .
 (C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -1075,12 +1080,16 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 1
-37.
+83.
 (C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/latex/lm\ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <9> on input line 183.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 183.
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 1
-37.
+83.
 
 (C:\Users\surface\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
@@ -1090,416 +1099,763 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 
-Overfull \hbox (0.21432pt too wide) in paragraph at lines 178--183
-[]\T1/lmr/bx/n/10.95 (+19) Keywords:[] \T1/lmr/m/n/10.95 (+19) se-cu-rity op-er
--a-tions; alert cor-re-la-tion; in-ci-dent re-con-struc-tion; ev-i-dence prove-
- 
+Underfull \hbox (badness 10000) in paragraph at lines 183--183
+[]\T1/lmr/bx/n/10 (+6) Keywords:[] \T1/lmr/m/n/10 (+6) se-cu-rity op-er-a-tions
+; alert cor-re-la-tion; in-ci-dent re-con-struc-tion; ev-i-dence prove-nance; t
+em-po-ral avail-abil-ity;
  []
 
 (sections/introduction.tex
-Overfull \hbox (0.12553pt too wide) in paragraph at lines 2--3
-\T1/lmr/m/n/10.95 (+9) view-able in-ci-dents. Ag-gre-ga-tion can re-duce an an-
-a-lyst's work-load, but a plau-si-ble re-la-tion- 
- []
-
-[1{C:/Users/surface/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/
-surface/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc}
-
-{C:/Users/surface/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}]
-<figures/architecture.pdf, id=124, 804.40527pt x 291.28827pt>
+<figures/fig1.jpg, id=110, 1862.96pt x 578.16pt>
+File: figures/fig1.jpg Graphic file (type jpg)
+<use figures/fig1.jpg>
+Package pdftex.def Info: figures/fig1.jpg  used on input line 6.
+(pdftex.def)             Requested size: 250.242pt x 77.66006pt.
+<figures/architecture.pdf, id=115, 804.40527pt x 291.28827pt>
 File: figures/architecture.pdf Graphic file (type pdf)
 <use figures/architecture.pdf>
-Package pdftex.def Info: figures/architecture.pdf  used on input line 6.
-(pdftex.def)             Requested size: 438.17245pt x 158.67117pt.
+Package pdftex.def Info: figures/architecture.pdf  used on input line 13.
+(pdftex.def)             Requested size: 250.242pt x 90.614pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
 )
 (sections/related_work.tex
-Overfull \hbox (0.24289pt too wide) in paragraph at lines 8--1
-\T1/lmr/m/n/10.95 (+14) endpoint-based fall-back im-prove re-cov-er-abil-ity an
-d re-trieval on a matched, un-touched syn- 
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+Package fancyhdr Warning: \headheight is too small (14.0pt): 
+(fancyhdr)                Make it at least 19.69997pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.69997pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-5.69997pt}.
+
+[1{C:/Users/surface/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/
+surface/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc}{C:/Users/su
+rface/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}{C:/Users/
+surface/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}
+
+
+ <./figures/fig1.jpg>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Overfull \hbox (1.85164pt too wide) in paragraph at lines 19--19
+[]|\T1/lmr/m/n/9 (-20) Method 
  []
 
 
-Overfull \hbox (0.19855pt too wide) in paragraph at lines 8--1
-\T1/lmr/m/n/10.95 (+14) of the ver-i-fier and con-strained fall-back, a paired 
-syn-thetic hold-out com-par-i-son with group- 
+Overfull \hbox (10.56113pt too wide) in paragraph at lines 19--19
+[]|\T1/lmr/m/n/9 (-20) Difference 
  []
 
 
-Overfull \hbox (0.11378pt too wide) in paragraph at lines 3--4
-\T1/lmr/m/n/10.95 (+8) swer dif-fer-ent ques-tions from whether a par-tic-u-lar
- can-di-date edge has three orig-i-nal, point- 
- []
-
-[2 <./figures/architecture.pdf>]
-Overfull \hbox (0.17882pt too wide) in paragraph at lines 5--6
-[]\T1/lmr/m/n/10.95 (+11) Sadlek et al. use kill-chain at-tack graphs to pri-or
--i-tize in-ci-dents by sever-ity [[]]; Cy-ber-Shap- 
+Overfull \hbox (3.0039pt too wide) in paragraph at lines 19--19
+[]|\T1/lmr/m/n/9 (-20) Learned 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 19--19
-[]|\T1/lmr/m/n/10 (+20) Landauer et al.
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 19--19
-[]|\T1/lmr/m/n/10 (+20) Aggregation and
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 19--19
-[]|\T1/lmr/m/n/10 (+20) Multi-stage re-con-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 19--19
-[]|\T1/lmr/m/n/10 (+20) Explanation and
+Overfull \hbox (12.01074pt too wide) in paragraph at lines 19--19
+\T1/lmr/m/n/9 (-20) structured 
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 19--19
-[]|\T1/lmr/m/n/10 (+20) APT in-ves-ti-ga-
+[]|\T1/lmr/m/n/9 (+20) Aggregation and
  []
+
+
+Overfull \hbox (9.57492pt too wide) in paragraph at lines 19--19
+[]|\T1/lmr/m/n/9 (-20) Similarity 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 19--19
+[]|\T1/lmr/m/n/9 (+20) Multi-stage re-con-
+ []
+
+
+Overfull \hbox (19.05046pt too wide) in paragraph at lines 19--19
+[]|\T1/lmr/m/n/9 (-20) Graph/path 
+ []
+
+
+Overfull \hbox (3.45897pt too wide) in paragraph at lines 19--19
+\T1/lmr/m/n/9 (-20) datasets|  
+ []
+
+
+Overfull \hbox (2.52608pt too wide) in paragraph at lines 19--19
+[]|\T1/lmr/m/n/9 (-20) Severity 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 19--19
+[]|\T1/lmr/m/n/9 (+20) Explanation and
+ []
+
+
+Overfull \hbox (16.96953pt too wide) in paragraph at lines 19--19
+[]|\T1/lmr/m/n/9 (-20) Informative 
+ []
+
+
+Overfull \hbox (5.08415pt too wide) in paragraph at lines 19--19
+[]|\T1/lmr/m/n/9 (-20) Detector 
+ []
+
+
+Overfull \hbox (25.33554pt too wide) in paragraph at lines 19--19
+[]|\T1/lmr/m/n/9 (-20) Host/network 
+ []
+
+
+Overfull \hbox (26.9938pt too wide) in paragraph at lines 19--19
+\T1/lmr/m/n/9 (-20) OpTC/LANL; 
+ []
+
+
+LaTeX Warning: Float too large for page by 43.05154pt on input line 19.
 
 ) (sections/problem_formulation.tex
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 2.
- [3]
-<figures/evidence_provenance.pdf, id=181, 496.85625pt x 301.72725pt>
+(Font)              <10> on input line 2.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 2.
+<figures/evidence_provenance.pdf, id=167, 496.85625pt x 301.72725pt>
 File: figures/evidence_provenance.pdf Graphic file (type pdf)
 <use figures/evidence_provenance.pdf>
 Package pdftex.def Info: figures/evidence_provenance.pdf  used on input line 9.
 
-(pdftex.def)             Requested size: 416.26248pt x 252.78618pt.
+(pdftex.def)             Requested size: 237.72913pt x 144.36702pt.
 ) (sections/architecture.tex
-<figures/pipeline_overview.pdf, id=185, 877.67903pt x 283.8498pt>
+Underfull \hbox (badness 10000) in paragraph at lines 1--1
+|[]\T1/lmr/bx/n/10 (+20) Correlation, ver-i-fi-ca-tion, and pri-or-i-ti-za-tion
+
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+Package fancyhdr Warning: \headheight is too small (14.0pt): 
+(fancyhdr)                Make it at least 19.69997pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.69997pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-5.69997pt}.
+
+[2{C:/Users/surface/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.
+enc}{C:/Users/surface/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.en
+c} <./figures/architecture.pdf>]
+<figures/fig2.jpg, id=195, 1458.44875pt x 722.7pt>
+File: figures/fig2.jpg Graphic file (type jpg)
+<use figures/fig2.jpg>
+Package pdftex.def Info: figures/fig2.jpg  used on input line 6.
+(pdftex.def)             Requested size: 250.242pt x 123.9932pt.
+<figures/pipeline_overview.pdf, id=197, 877.67903pt x 283.8498pt>
 File: figures/pipeline_overview.pdf Graphic file (type pdf)
 <use figures/pipeline_overview.pdf>
-Package pdftex.def Info: figures/pipeline_overview.pdf  used on input line 5.
-(pdftex.def)             Requested size: 438.17245pt x 141.71231pt.
-)
-(sections/methodology.tex [4{C:/Users/surface/AppData/Local/Programs/MiKTeX/fon
-ts/enc/dvips/lm/lm-mathit.enc}{C:/Users/surface/AppData/Local/Programs/MiKTeX/f
-onts/enc/dvips/lm/lm-rm.enc}{C:/Users/surface/AppData/Local/Programs/MiKTeX/fon
-ts/enc/dvips/lm/lm-mathsy.enc}]
-Overfull \hbox (0.15651pt too wide) in paragraph at lines 3--4
-\T1/lmr/m/n/10.95 (+20) retains alerts and claims available by $\OML/lmm/m/it/1
-0.95 T \OT1/lmr/m/n/10.95 (+20) = 100$\T1/lmr/m/n/10.95 (+20) , including only 
-claims whose two endpoints 
- []
-
-[5 <./figures/evidence_provenance.pdf> <./figures/pipeline_overview.pdf>]
-Overfull \hbox (0.16148pt too wide) in paragraph at lines 6--7
-\T1/lmr/m/n/10.95 (+10) three dis-tinct up-stream roots, avail-abil-ity by $\OM
-L/lmm/m/it/10.95 T$\T1/lmr/m/n/10.95 (+10) , iden-ti-cal end-point/event iden-t
-i-ties, match- 
+Package pdftex.def Info: figures/pipeline_overview.pdf  used on input line 12.
+(pdftex.def)             Requested size: 250.242pt x 80.92834pt.
+) (sections/methodology.tex
+Underfull \hbox (badness 1571) in paragraph at lines 6--7
+\T1/lmr/m/n/10 (+20) base-line's ad-di-tional cross-fragment union re- 
  []
 
 
-Overfull \hbox (0.20195pt too wide) in paragraph at lines 12--14
-\T1/lmr/m/n/10.95 (+12) checks must also pass. The verifier logs a failed reaso
-n and leaves the partition unchanged. 
- []
+Package fancyhdr Warning: \headheight is too small (14.0pt): 
+(fancyhdr)                Make it at least 19.69997pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.69997pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-5.69997pt}.
 
-<figures/verification_methodology.pdf, id=243, 494.82005pt x 454.39764pt>
+[3 <./figures/evidence_provenance.pdf> <./figures/fig2.jpg> <./figures/pipeline
+_overview.pdf>]
+<figures/verification_methodology.pdf, id=247, 494.82005pt x 454.39764pt>
 File: figures/verification_methodology.pdf Graphic file (type pdf)
 <use figures/verification_methodology.pdf>
 Package pdftex.def Info: figures/verification_methodology.pdf  used on input li
 ne 17.
-(pdftex.def)             Requested size: 429.40712pt x 394.33125pt.
+(pdftex.def)             Requested size: 245.23608pt x 225.2014pt.
 
-Overfull \hbox (0.36688pt too wide) in paragraph at lines 16--18
-\T1/lmr/m/n/10.95 (-20) fers from both claim roots. Their host, ac-count, event
- tim-ing, process-parent, authentication- 
- []
-
-[6]
 Underfull \hbox (badness 10000) in paragraph at lines 23--23
-[]|\T1/lmr/m/n/10 (+20) Derived copy of-fered
+[]|\T1/lmr/m/n/9 (+20) Derived copy of-fered as
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 23--23
-[]|\T1/lmr/m/n/10 (+20) Two orig-i-nal claim
+[]|\T1/lmr/m/n/9 (+20) Two orig-i-nal claim fam-i-
+ []
+
+
+Overfull \hbox (10.09375pt too wide) in paragraph at lines 23--23
+\T1/lmr/m/n/9 (-20) tion/network 
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 23--23
-\T1/lmr/m/n/10 (+20) fam-i-lies, pro-cess ab-
+[]|\T1/lmr/m/n/9 (+20) Union only if ev-ery
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 23--23
-[]|\T1/lmr/m/n/10 (+20) Union only if ev-
+\T1/lmr/m/n/9 (+20) fall-back and com-po-
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 23--23
-\T1/lmr/m/n/10 (+20) ery fall-back and
+[]|\T1/lmr/m/n/9 (+20) Claim ar-rives af-ter cut-
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 23--23
-\T1/lmr/m/n/10 (+20) com-po-nent guard
+[]|\T1/lmr/m/n/9 (+20) Claim un-avail-able
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 23--23
-[]|\T1/lmr/m/n/10 (+20) Claim ar-rives af-ter
+[]|\T1/lmr/m/n/9 (+20) Event or causal iden-ti-
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 23--23
-[]|\T1/lmr/m/n/10 (+20) Claim un-avail-able
+[]|\T1/lmr/m/n/9 (+20) Verified to-ken ex-ceeds
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 23--23
-[]|\T1/lmr/m/n/10 (+20) Event or causal iden-ti-
+Overfull \hbox (123.48015pt too wide) detected at line 31
+[][][]\OML/lmm/m/it/10 F\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 G\OT1/lmr/m/n/10 ) = 
+1\OML/lmm/m/it/10 :\OT1/lmr/m/n/10 2 [] \OML/lmm/m/it/10 s\OT1/lmr/m/n/10 (\OML
+/lmm/m/it/10 a\OT1/lmr/m/n/10 ) + 0\OML/lmm/m/it/10 :\OT1/lmr/m/n/10 7 [] \OML/
+lmm/m/it/10 c\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 a\OT1/lmr/m/n/10 ) + 0\OML/lmm/m
+/it/10 :\OT1/lmr/m/n/10 55\OMS/lmsy/m/n/10 j\OML/lmm/m/it/10 E\OT1/lmr/m/n/10 (
+\OML/lmm/m/it/10 D\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 G\OT1/lmr/m/n/10 ))\OMS/lms
+y/m/n/10 j \OT1/lmr/m/n/10 + 0\OML/lmm/m/it/10 :\OT1/lmr/m/n/10 7 []\OMS/lmsy/m
+/n/10 fj\OML/lmm/m/it/10 D\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 G\OT1/lmr/m/n/10 )\
+OMS/lmsy/m/n/10 j\OML/lmm/m/it/10 ; \OT1/lmr/m/n/10 10\OMS/lmsy/m/n/10 g \OT1/l
+mr/m/n/10 + \OMS/lmsy/m/n/10 j\OML/lmm/m/it/10 U\OT1/lmr/m/n/10 (\OML/lmm/m/it/
+10 G\OT1/lmr/m/n/10 )\OMS/lmsy/m/n/10 j\OML/lmm/m/it/10 :
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 23--23
-[]|\T1/lmr/m/n/10 (+20) Verified to-ken ex-ceeds
- []
-
-
-Overfull \hbox (0.1569pt too wide) in paragraph at lines 22--24
-\T1/lmr/m/n/10.95 (+14) be sub-sti-tuted only af-ter the ex-act au-then-ti-ca-t
-ion/network and end-point con-di-tions above 
- []
-
-[7 <./figures/verification_methodology.pdf>]
-<figures/reconstruction_prioritization.pdf, id=268, 804.40527pt x 291.28827pt>
+<figures/reconstruction_prioritization.pdf, id=250, 804.40527pt x 291.28827pt>
 File: figures/reconstruction_prioritization.pdf Graphic file (type pdf)
 <use figures/reconstruction_prioritization.pdf>
 Package pdftex.def Info: figures/reconstruction_prioritization.pdf  used on inp
 ut line 33.
-(pdftex.def)             Requested size: 438.17245pt x 158.67117pt.
-) (sections/experimental_design.tex [8 <./figures/reconstruction_prioritization
-.pdf>]
-<figures/experimental_protocol.pdf, id=285, 804.40527pt x 291.28827pt>
+(pdftex.def)             Requested size: 250.242pt x 90.614pt.
+) (sections/experimental_design.tex
+
+Package fancyhdr Warning: \headheight is too small (14.0pt): 
+(fancyhdr)                Make it at least 19.69997pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.69997pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-5.69997pt}.
+
+[4 <./figures/verification_methodology.pdf>]
+<figures/fig3.jpg, id=267, 1381.16pt x 770.88pt>
+File: figures/fig3.jpg Graphic file (type jpg)
+<use figures/fig3.jpg>
+Package pdftex.def Info: figures/fig3.jpg  used on input line 6.
+(pdftex.def)             Requested size: 250.242pt x 139.66989pt.
+<figures/experimental_protocol.pdf, id=270, 804.40527pt x 291.28827pt>
 File: figures/experimental_protocol.pdf Graphic file (type pdf)
 <use figures/experimental_protocol.pdf>
 Package pdftex.def Info: figures/experimental_protocol.pdf  used on input line 
-5.
-(pdftex.def)             Requested size: 438.17245pt x 158.67117pt.
-<figures/dev_trajectory.pdf, id=286, 733.13902pt x 258.10555pt>
+12.
+(pdftex.def)             Requested size: 250.242pt x 90.614pt.
+<figures/dev_trajectory.pdf, id=271, 733.13902pt x 258.10555pt>
 File: figures/dev_trajectory.pdf Graphic file (type pdf)
 <use figures/dev_trajectory.pdf>
-Package pdftex.def Info: figures/dev_trajectory.pdf  used on input line 6.
-(pdftex.def)             Requested size: 438.17245pt x 154.26193pt.
+Package pdftex.def Info: figures/dev_trajectory.pdf  used on input line 13.
+(pdftex.def)             Requested size: 250.242pt x 88.09735pt.
 
-Overfull \hbox (0.14319pt too wide) in paragraph at lines 4--7
-\T1/lmr/m/n/10.95 (+11) and 300 expert top-20 opportunities. Baseline and candi
-date predicted the same alert sets. 
+Underfull \hbox (badness 10000) in paragraph at lines 15--15
+[]|\T1/lmr/m/n/9 (+20) Controlled de-vel-op-
  []
 
 
-Overfull \hbox (0.18344pt too wide) in paragraph at lines 4--7
-\T1/lmr/m/n/10.95 (+9) before the unchanged evaluator accessed private truth. E
-ach arm was evaluated once. The 
+Underfull \hbox (badness 10000) in paragraph at lines 15--15
+[]|\T1/lmr/m/n/9 (+20) 10 queues; 200
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 8--8
-[]|\T1/lmr/m/n/10 (+20) Controlled de-vel-op-
+Underfull \hbox (badness 10000) in paragraph at lines 15--15
+\T1/lmr/m/n/9 (+20) top-20 op-por-tu-ni-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 8--8
-[]|\T1/lmr/m/n/10 (+20) 10 queues; 200
+Underfull \hbox (badness 10000) in paragraph at lines 15--15
+[]|\T1/lmr/m/n/9 (+20) 15 queues; 5,018
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 8--8
-\T1/lmr/m/n/10 (+13) top-20 op-por-tu-ni-
+Underfull \hbox (badness 10000) in paragraph at lines 15--15
+\T1/lmr/m/n/9 (+20) el-i-gi-ble alerts; 300
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 8--8
-[]|\T1/lmr/m/n/10 (+20) 15 queues; 5,018
+Underfull \hbox (badness 10000) in paragraph at lines 15--15
+\T1/lmr/m/n/9 (+20) top-20 op-por-tu-ni-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 8--8
-\T1/lmr/m/n/10 (+20) el-i-gi-ble alerts;
+Underfull \hbox (badness 10000) in paragraph at lines 15--15
+[]|\T1/lmr/m/n/9 (+20) Separate de-vel-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 8--8
-\T1/lmr/m/n/10 (+9) 300 top-20 op-por-
+Underfull \hbox (badness 10000) in paragraph at lines 15--15
+\T1/lmr/m/n/9 (+20) op-ment co-horts,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 8--8
-[]|\T1/lmr/m/n/10 (+20) Separate de-vel-
+Underfull \hbox (badness 10000) in paragraph at lines 15--15
+\T1/lmr/m/n/9 (+20) gen-er-ally 15
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 8--8
-\T1/lmr/m/n/10 (+20) op-ment co-horts,
+Underfull \hbox (badness 10000) in paragraph at lines 15--15
+[]|\T1/lmr/m/n/9 (+20) 4,147,992 ev-i-dence
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 8--8
-\T1/lmr/m/n/10 (+20) gen-er-ally 15
+Overfull \hbox (12.00897pt too wide) in paragraph at lines 15--15
+[]|\T1/lmr/m/n/9 (-20) Schema/readiness 
+ []
+
+) (sections/metrics.tex
+Overfull \hbox (3.93504pt too wide) detected at line 8
+[]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 8--8
-[]|\T1/lmr/m/n/10 (+20) 4,147,992 ev-i-
- []
+Package fancyhdr Warning: \headheight is too small (14.0pt): 
+(fancyhdr)                Make it at least 19.69997pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.69997pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-5.69997pt}.
 
-) (sections/metrics.tex [9{C:/Users/surface/AppData/Local/Programs/MiKTeX/fonts
-/enc/dvips/lm/lm-mathex.enc} <./figures/experimental_protocol.pdf>])
+[5{C:/Users/surface/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathex.
+enc} <./figures/reconstruction_prioritization.pdf> <./figures/fig3.jpg> <./figu
+res/experimental_protocol.pdf> <./figures/dev_trajectory.pdf>])
 (sections/results.tex
-Overfull \hbox (0.13225pt too wide) in paragraph at lines 11--1
-\T1/lmr/m/n/10.95 (+10) containing more than one truth incident, even if it pas
-ses the 80% purity threshold. These 
+
+Package tabularx Warning: X Columns too narrow (table too wide)
+(tabularx)                 on input line 4.
+
+
+Overfull \hbox (16.70827pt too wide) in paragraph at lines 4--4
+[]|\T1/lmr/m/n/9 (-20) Metric|  
  []
 
-[10 <./figures/dev_trajectory.pdf>]
-<figures/phase33_results.pdf, id=330, 780.51598pt x 238.49101pt>
+
+Overfull \hbox (22.72842pt too wide) in paragraph at lines 4--4
+[]|\T1/lmr/m/n/9 (-20) Incident 
+ []
+
+
+Overfull \hbox (2.93105pt too wide) in paragraph at lines 4--4
+\T1/lmr/m/n/9 (-20) Re- 
+ []
+
+
+Overfull \hbox (20.46318pt too wide) in paragraph at lines 4--4
+\T1/lmr/m/n/9 (-20) call@20|  
+ []
+
+
+Overfull \hbox (16.01398pt too wide) in paragraph at lines 4--4
+[]|\T1/lmr/m/n/9 (-20) Group 
+ []
+
+
+Overfull \hbox (5.3157pt too wide) in paragraph at lines 4--4
+\T1/lmr/m/n/9 (-20) cov- 
+ []
+
+
+Overfull \hbox (6.83197pt too wide) in paragraph at lines 4--4
+\T1/lmr/m/n/9 (-20) abil- 
+ []
+
+
+Overfull \hbox (1.32068pt too wide) in paragraph at lines 4--4
+\T1/lmr/m/n/9 (-20) ity|  
+ []
+
+
+Overfull \hbox (13.0343pt too wide) in paragraph at lines 4--4
+[]|\T1/lmr/m/n/9 (-20) P@10|  
+ []
+
+
+Overfull \hbox (26.81627pt too wide) in paragraph at lines 4--4
+[]|\T1/lmr/m/n/9 (-20) Grouped- 
+ []
+
+
+Overfull \hbox (6.19756pt too wide) in paragraph at lines 4--4
+\T1/lmr/m/n/9 (-20) pair 
+ []
+
+
+Overfull \hbox (4.84106pt too wide) in paragraph at lines 4--4
+\T1/lmr/m/n/9 (-20) pre- 
+ []
+
+
+Overfull \hbox (6.41261pt too wide) in paragraph at lines 4--4
+\T1/lmr/m/n/9 (-20) sion|  
+ []
+
+
+Overfull \hbox (10.5545pt too wide) in paragraph at lines 4--4
+[]|\T1/lmr/m/n/9 (-20) False 
+ []
+
+
+Overfull \hbox (22.75853pt too wide) in paragraph at lines 4--4
+\T1/lmr/m/n/9 (-20) grouped 
+ []
+
+
+Overfull \hbox (9.95824pt too wide) in paragraph at lines 4--4
+\T1/lmr/m/n/9 (-20) pairs|  
+ []
+
+
+Overfull \hbox (15.42941pt too wide) in paragraph at lines 4--4
+[]|\T1/lmr/m/n/9 (-20) Mixed 
+ []
+
+
+Overfull \hbox (17.00885pt too wide) in paragraph at lines 4--4
+\T1/lmr/m/n/9 (-20) groups|  
+ []
+
+
+Overfull \hbox (34.47862pt too wide) in alignment at lines 4--4
+[][][][] 
+ []
+
+<figures/fig4.jpg, id=319, 1204.5pt x 899.36pt>
+File: figures/fig4.jpg Graphic file (type jpg)
+<use figures/fig4.jpg>
+Package pdftex.def Info: figures/fig4.jpg  used on input line 8.
+(pdftex.def)             Requested size: 250.242pt x 186.84015pt.
+<figures/phase33_results.pdf, id=320, 780.51598pt x 238.49101pt>
 File: figures/phase33_results.pdf Graphic file (type pdf)
 <use figures/phase33_results.pdf>
-Package pdftex.def Info: figures/phase33_results.pdf  used on input line 5.
-(pdftex.def)             Requested size: 438.17245pt x 133.8852pt.
-<figures/metrics_comparison.pdf, id=331, 640.86589pt x 323.58203pt>
+Package pdftex.def Info: figures/phase33_results.pdf  used on input line 13.
+(pdftex.def)             Requested size: 250.242pt x 76.4606pt.
+<figures/metrics_comparison.pdf, id=321, 640.86589pt x 323.58203pt>
 File: figures/metrics_comparison.pdf Graphic file (type pdf)
 <use figures/metrics_comparison.pdf>
-Package pdftex.def Info: figures/metrics_comparison.pdf  used on input line 6.
-(pdftex.def)             Requested size: 438.17245pt x 221.24254pt.
-<figures/safety_results.pdf, id=333, 585.38701pt x 166.22101pt>
+Package pdftex.def Info: figures/metrics_comparison.pdf  used on input line 14.
+
+(pdftex.def)             Requested size: 250.242pt x 126.34953pt.
+<figures/fig5.jpg, id=323, 1381.16pt x 770.88pt>
+File: figures/fig5.jpg Graphic file (type jpg)
+<use figures/fig5.jpg>
+Package pdftex.def Info: figures/fig5.jpg  used on input line 20.
+(pdftex.def)             Requested size: 250.242pt x 139.66989pt.
+<figures/safety_results.pdf, id=324, 585.38701pt x 166.22101pt>
 File: figures/safety_results.pdf Graphic file (type pdf)
 <use figures/safety_results.pdf>
-Package pdftex.def Info: figures/safety_results.pdf  used on input line 9.
-(pdftex.def)             Requested size: 394.35252pt x 111.9762pt.
-<figures/safety_overview.pdf, id=334, 658.86153pt x 241.52461pt>
+Package pdftex.def Info: figures/safety_results.pdf  used on input line 25.
+(pdftex.def)             Requested size: 225.21626pt x 63.95088pt.
+<figures/safety_overview.pdf, id=325, 658.86153pt x 241.52461pt>
 File: figures/safety_overview.pdf Graphic file (type pdf)
 <use figures/safety_overview.pdf>
-Package pdftex.def Info: figures/safety_overview.pdf  used on input line 10.
-(pdftex.def)             Requested size: 438.17245pt x 160.62659pt.
-
-Overfull \hbox (0.15062pt too wide) in paragraph at lines 8--11
-\T1/lmr/m/n/10.95 (+8) false pairs and zero mixed groups in both arms. Queue-le
-vel Recall@20 nevertheless fell by 
- []
-
-<figures/queue_delta_heatmap.pdf, id=336, 471.78758pt x 409.99309pt>
+Package pdftex.def Info: figures/safety_overview.pdf  used on input line 26.
+(pdftex.def)             Requested size: 250.242pt x 91.73239pt.
+<figures/queue_delta_heatmap.pdf, id=327, 471.78758pt x 409.99309pt>
 File: figures/queue_delta_heatmap.pdf Graphic file (type pdf)
 <use figures/queue_delta_heatmap.pdf>
-Package pdftex.def Info: figures/queue_delta_heatmap.pdf  used on input line 14
+Package pdftex.def Info: figures/queue_delta_heatmap.pdf  used on input line 30
 .
-(pdftex.def)             Requested size: 403.11784pt x 350.31625pt.
-<figures/queue_delta_bars.pdf, id=337, 787.32143pt x 280.5629pt>
+(pdftex.def)             Requested size: 230.22218pt x 200.06631pt.
+<figures/queue_delta_bars.pdf, id=328, 787.32143pt x 280.5629pt>
 File: figures/queue_delta_bars.pdf Graphic file (type pdf)
 <use figures/queue_delta_bars.pdf>
-Package pdftex.def Info: figures/queue_delta_bars.pdf  used on input line 15.
-(pdftex.def)             Requested size: 438.17245pt x 156.14235pt.
-[11 <./figures/phase33_results.pdf>]
-<figures/retrieval_decomposition.pdf, id=355, 471.73459pt x 155.20183pt>
+Package pdftex.def Info: figures/queue_delta_bars.pdf  used on input line 31.
+(pdftex.def)             Requested size: 250.242pt x 89.17404pt.
+<figures/fig7.jpg, id=329, 1381.16pt x 770.88pt>
+File: figures/fig7.jpg Graphic file (type jpg)
+<use figures/fig7.jpg>
+Package pdftex.def Info: figures/fig7.jpg  used on input line 35.
+(pdftex.def)             Requested size: 250.242pt x 139.66989pt.
+<figures/retrieval_decomposition.pdf, id=331, 471.73459pt x 155.20183pt>
 File: figures/retrieval_decomposition.pdf Graphic file (type pdf)
 <use figures/retrieval_decomposition.pdf>
 Package pdftex.def Info: figures/retrieval_decomposition.pdf  used on input lin
-e 18.
-(pdftex.def)             Requested size: 411.88316pt x 135.5147pt.
- [12 <./figures/metrics_comparison.pdf> <./figures/safety_results.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 22--22
-[]|\T1/lmr/m/n/10 (+20) Ranking fea-ture
+e 41.
+(pdftex.def)             Requested size: 235.22809pt x 77.3923pt.
+
+Package fancyhdr Warning: \headheight is too small (14.0pt): 
+(fancyhdr)                Make it at least 19.69997pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.69997pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-5.69997pt}.
+
+[6 <./figures/fig4.jpg> <./figures/phase33_results.pdf> <./figures/metrics_comp
+arison.pdf>]
+
+Package tabularx Warning: X Columns too narrow (table too wide)
+(tabularx)                 on input line 45.
+
+
+Overfull \hbox (26.05669pt too wide) in paragraph at lines 45--45
+[]|\T1/lmr/m/n/9 (-20) Question|  
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 22--22
-[]|\T1/lmr/m/n/10 (+20) Near-boundary
+Underfull \hbox (badness 10000) in paragraph at lines 45--45
+[]|\T1/lmr/m/n/9 (+20) Ranking fea-ture
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 22--22
-[]|\T1/lmr/m/n/10 (+20) Evidence-aware
+Overfull \hbox (9.77193pt too wide) in paragraph at lines 45--45
+[]|\T1/lmr/m/n/9 (-20) Post- 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 22--22
-[]|\T1/lmr/m/n/10 (+20) Evidence avail-abil-
+Overfull \hbox (13.43317pt too wide) in paragraph at lines 45--45
+\T1/lmr/m/n/9 (-20) group 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 22--22
-[]|\T1/lmr/m/n/10 (+20) Hard-negative
+Overfull \hbox (10.46486pt too wide) in paragraph at lines 45--45
+\T1/lmr/m/n/9 (-20) score|  
+ []
+
+
+Overfull \hbox (21.96129pt too wide) in paragraph at lines 45--45
+[]|\T1/lmr/m/n/9 (-20) Reorder 
+ []
+
+
+Overfull \hbox (1.55238pt too wide) in paragraph at lines 45--45
+\T1/lmr/m/n/9 (-20) be- 
+ []
+
+
+Overfull \hbox (3.75764pt too wide) in paragraph at lines 45--45
+\T1/lmr/m/n/9 (-20) low 
+ []
+
+
+Overfull \hbox (6.18294pt too wide) in paragraph at lines 45--45
+\T1/lmr/m/n/9 (-20) first 
+ []
+
+
+Overfull \hbox (3.34357pt too wide) in paragraph at lines 45--45
+\T1/lmr/m/n/9 (-20) ten|  
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 45--45
+[]|\T1/lmr/m/n/9 (+20) Evidence-aware
+ []
+
+
+Overfull \hbox (17.7458pt too wide) in paragraph at lines 45--45
+[]|\T1/lmr/m/n/9 (-20) Visible 
+ []
+
+
+Overfull \hbox (1.04358pt too wide) in paragraph at lines 45--45
+\T1/lmr/m/n/9 (-20) ev- 
+ []
+
+
+Overfull \hbox (12.9157pt too wide) in paragraph at lines 45--45
+\T1/lmr/m/n/9 (-20) dence 
+ []
+
+
+Overfull \hbox (3.56151pt too wide) in paragraph at lines 45--45
+\T1/lmr/m/n/9 (-20) fea- 
+ []
+
+
+Overfull \hbox (10.46487pt too wide) in paragraph at lines 45--45
+\T1/lmr/m/n/9 (-20) tures|  
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 45--45
+[]|\T1/lmr/m/n/9 (+20) Evidence avail-abil-
+ []
+
+
+Overfull \hbox (17.07132pt too wide) in paragraph at lines 45--45
+[]|\T1/lmr/m/n/9 (-20) Frozen 
+ []
+
+
+Overfull \hbox (5.82451pt too wide) in paragraph at lines 45--45
+\T1/lmr/m/n/9 (-20) con- 
+ []
+
+
+Overfull \hbox (7.59436pt too wide) in paragraph at lines 45--45
+\T1/lmr/m/n/9 (-20) tion, 
+ []
+
+
+Overfull \hbox (12.58002pt too wide) in paragraph at lines 45--45
+\T1/lmr/m/n/9 (-20) stress 
+ []
+
+
+Overfull \hbox (8.98376pt too wide) in paragraph at lines 45--45
+\T1/lmr/m/n/9 (-20) tests|  
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 45--45
+[]|\T1/lmr/m/n/9 (+20) Hard-negative rank
+ []
+
+
+Overfull \hbox (23.93086pt too wide) in paragraph at lines 45--45
+[]|\T1/lmr/m/n/9 (-20) Pairwise 
+ []
+
+
+Overfull \hbox (18.97603pt too wide) in paragraph at lines 45--45
+\T1/lmr/m/n/9 (-20) trained 
+ []
+
+
+Overfull \hbox (12.91919pt too wide) in paragraph at lines 45--45
+\T1/lmr/m/n/9 (-20) order- 
+ []
+
+
+Overfull \hbox (2.83693pt too wide) in paragraph at lines 45--45
+\T1/lmr/m/n/9 (-20) ing|  
+ []
+
+
+Overfull \hbox (116.12851pt too wide) in alignment at lines 45--45
+[][][][][] 
  []
 
 ) (sections/discussion.tex
-Overfull \hbox (0.10077pt too wide) in paragraph at lines 21--1
-\T1/lmr/m/n/10.95 (+8) an-other pop-u-la-tion; its scores are not di-rectly com
--pa-ra-ble. An un-safe richer-claim de-vel-op- 
- []
+Underfull \vbox (badness 1694) has occurred while \output is active []
 
 
-Overfull \hbox (0.15213pt too wide) in paragraph at lines 21--1
-\T1/lmr/m/n/10.95 (+20) ment con-fig-u-ra-tion pro-duced 2,580 false pairs and 
-22 mixed groups, whereas independent- 
- []
 
-[13 <./figures/safety_overview.pdf>]) (sections/threats_to_validity.tex
-[14 <./figures/queue_delta_heatmap.pdf>]
-Overfull \hbox (0.11711pt too wide) in paragraph at lines 4--5
-\T1/lmr/m/n/10.95 (+6) decision to proceed unchanged was recorded before creati
-ng and opening the fresh holdout, 
- []
+Package fancyhdr Warning: \headheight is too small (14.0pt): 
+(fancyhdr)                Make it at least 19.69997pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.69997pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-5.69997pt}.
 
-[15 <./figures/queue_delta_bars.pdf> <./figures/retrieval_decomposition.pdf>])
+[7 <./figures/fig5.jpg> <./figures/safety_results.pdf> <./figures/safety_overvi
+ew.pdf> <./figures/queue_delta_heatmap.pdf>]) (sections/threats_to_validity.tex
+
+Underfull \vbox (badness 1231) has occurred while \output is active []
+
+)
 (sections/real_world_readiness.tex
-Overfull \hbox (42.05264pt too wide) in paragraph at lines 2--3
-\T1/lmr/m/n/10.95 (-20) up-stream trust roots, deriva-tion chains, and in-de-pe
-n-dently sup-ported pro-cess/authentication/network 
+Underfull \hbox (badness 10000) in paragraph at lines 4--4
+[]|\T1/lmr/m/n/9 (+20) Original ob-ser-va-tion
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 4--4
-[]|\T1/lmr/m/n/10 (+20) Original ob-ser-va-tion
+[]|\T1/lmr/m/n/9 (+20) Point-in-time avail-abil-
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 4--4
-[]|\T1/lmr/m/n/10 (+20) Causal pro-
+[]|\T1/lmr/m/n/9 (+20) Causal pro-
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 4--4
-\T1/lmr/m/n/10 (+20) cess/auth/network
+\T1/lmr/m/n/9 (+20) cess/auth/network
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 4--4
-[]|\T1/lmr/m/n/10 (+20) Alert and in-ci-dent
+[]|\T1/lmr/m/n/9 (+20) Queue and pri-or-ity se-
+ []
+
+) (sections/limitations.tex
+
+Package fancyhdr Warning: \headheight is too small (14.0pt): 
+(fancyhdr)                Make it at least 19.69997pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.69997pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-5.69997pt}.
+
+[8 <./figures/queue_delta_bars.pdf> <./figures/fig7.jpg> <./figures/retrieval_d
+ecomposition.pdf>]) (sections/conclusion.tex) (main.bbl
+Underfull \vbox (badness 1168) has occurred while \output is active []
+
+
+Underfull \hbox (badness 3965) in paragraph at lines 104--111
+[]\T1/lmr/m/n/10 (+20) Microsoft.  Mi-crosoft se-cu-rity in-ci- 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 4--4
-[]|\T1/lmr/m/n/10 (+20) Queue and pri-or-ity
- []
-
-) (sections/limitations.tex) (sections/conclusion.tex [16])
-Overfull \hbox (0.1736pt too wide) in paragraph at lines 2--198
-\T1/lmr/m/n/10.95 (+7) unions re-quire orig-i-nal, timely, in-de-pen-dently roo
-ted ev-i-dence and field con-sis-tency. A con- 
+Underfull \hbox (badness 2529) in paragraph at lines 104--111
+\T1/lmr/m/n/10 (+20) dent pre-dic-tion (GUIDE).  [][]$\T1/lmtt/m/n/10 https : /
+ / 
  []
 
 
-Overfull \hbox (0.17pt too wide) in paragraph at lines 2--198
-\T1/lmr/m/n/10.95 (+9) strained end-point fall-back im-proved syn-thetic hold-o
-ut Re-call@20 from 250/300 to 260/300 
+Underfull \hbox (badness 1803) in paragraph at lines 104--111
+\T1/lmtt/m/n/10 www . kaggle . com / datasets / Microsoft / 
  []
 
-(main.bbl [17]) (supplementary/detailed_algorithms.tex)
-(supplementary/additional_tables.tex)
-Overfull \hbox (0.16852pt too wide) in paragraph at lines 2--207
-\T1/lmr/m/n/10.95 (+2) rec-tory. The orig-i-nal sealed pre-dic-tions and privat
-e-truth eval-u-a-tion re-main in the re-search 
+
+Package fancyhdr Warning: \headheight is too small (14.0pt): 
+(fancyhdr)                Make it at least 19.69997pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.69997pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-5.69997pt}.
+
+[9]) (supplementary/detailed_algorithms.tex)
+(supplementary/additional_tables.tex
+Underfull \hbox (badness 1242) in paragraph at lines 2--1
+\T1/lmr/m/n/10 (+20) For each queue, the frozen im-ple-men-ta-tion fil- 
  []
 
-[18] (main.aux)
+)
+
+Package fancyhdr Warning: \headheight is too small (14.0pt): 
+(fancyhdr)                Make it at least 19.69997pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.69997pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-5.69997pt}.
+
+[10]
+
+Package fancyhdr Warning: \headheight is too small (14.0pt): 
+(fancyhdr)                Make it at least 19.69997pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.69997pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-5.69997pt}.
+
+[11]
+
+Package fancyhdr Warning: \headheight is too small (14.0pt): 
+(fancyhdr)                Make it at least 19.69997pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.69997pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-5.69997pt}.
+
+[12
+
+] (main.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2025-12-24>
@@ -1508,33 +1864,41 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 4B75453998EFE84BE6320F8105AABB84;4865.
  ) 
 Here is how much of TeX's memory you used:
- 30353 strings out of 467871
- 593169 string characters out of 5417409
- 1048680 words of memory out of 5000000
- 58420 multiletter control sequences out of 15000+600000
- 722679 words of font info for 194 fonts, out of 8000000 for 9000
+ 30477 strings out of 467871
+ 595445 string characters out of 5417409
+ 1081434 words of memory out of 5000000
+ 58537 multiletter control sequences out of 15000+600000
+ 719285 words of font info for 190 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 116i,13n,121p,1195b,1242s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 116i,13n,121p,1195b,1301s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/surface/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx10.
 pfb><C:/Users/surface/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx1
-2.pfb><C:/Users/surface/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lme
-x10.pfb><C:/Users/surface/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/l
-mmi10.pfb><C:/Users/surface/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm
-/lmmi6.pfb><C:/Users/surface/AppData/Local/Programs/MiKTeX/fonts/type1/public/l
-m/lmmi7.pfb><C:/Users/surface/AppData/Local/Programs/MiKTeX/fonts/type1/public/
-lm/lmmi8.pfb><C:/Users/surface/AppData/Local/Programs/MiKTeX/fonts/type1/public
-/lm/lmr10.pfb><C:/Users/surface/AppData/Local/Programs/MiKTeX/fonts/type1/publi
-c/lm/lmr12.pfb><C:/Users/surface/AppData/Local/Programs/MiKTeX/fonts/type1/publ
-ic/lm/lmr6.pfb><C:/Users/surface/AppData/Local/Programs/MiKTeX/fonts/type1/publ
-ic/lm/lmr7.pfb><C:/Users/surface/AppData/Local/Programs/MiKTeX/fonts/type1/publ
-ic/lm/lmr8.pfb><C:/Users/surface/AppData/Local/Programs/MiKTeX/fonts/type1/publ
-ic/lm/lmri10.pfb><C:/Users/surface/AppData/Local/Programs/MiKTeX/fonts/type1/pu
-blic/lm/lmsy10.pfb><C:/Users/surface/AppData/Local/Programs/MiKTeX/fonts/type1/
-public/lm/lmsy8.pfb><C:/Users/surface/AppData/Local/Programs/MiKTeX/fonts/type1
-/public/lm/lmtt10.pfb>
-Output written on main.pdf (18 pages, 620324 bytes).
+2.pfb><C:/Users/surface/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmb
+x9.pfb><C:/Users/surface/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lm
+ex10.pfb><C:/Users/surface/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/
+lmmi10.pfb><C:/Users/surface/AppData/Local/Programs/MiKTeX/fonts/type1/public/l
+m/lmmi5.pfb><C:/Users/surface/AppData/Local/Programs/MiKTeX/fonts/type1/public/
+lm/lmmi6.pfb><C:/Users/surface/AppData/Local/Programs/MiKTeX/fonts/type1/public
+/lm/lmmi7.pfb><C:/Users/surface/AppData/Local/Programs/MiKTeX/fonts/type1/publi
+c/lm/lmmi9.pfb><C:/Users/surface/AppData/Local/Programs/MiKTeX/fonts/type1/publ
+ic/lm/lmr10.pfb><C:/Users/surface/AppData/Local/Programs/MiKTeX/fonts/type1/pub
+lic/lm/lmr12.pfb><C:/Users/surface/AppData/Local/Programs/MiKTeX/fonts/type1/pu
+blic/lm/lmr5.pfb><C:/Users/surface/AppData/Local/Programs/MiKTeX/fonts/type1/pu
+blic/lm/lmr6.pfb><C:/Users/surface/AppData/Local/Programs/MiKTeX/fonts/type1/pu
+blic/lm/lmr7.pfb><C:/Users/surface/AppData/Local/Programs/MiKTeX/fonts/type1/pu
+blic/lm/lmr9.pfb><C:/Users/surface/AppData/Local/Programs/MiKTeX/fonts/type1/pu
+blic/lm/lmri10.pfb><C:/Users/surface/AppData/Local/Programs/MiKTeX/fonts/type1/
+public/lm/lmri9.pfb><C:/Users/surface/AppData/Local/Programs/MiKTeX/fonts/type1
+/public/lm/lmsy10.pfb><C:/Users/surface/AppData/Local/Programs/MiKTeX/fonts/typ
+e1/public/lm/lmsy6.pfb><C:/Users/surface/AppData/Local/Programs/MiKTeX/fonts/ty
+pe1/public/lm/lmsy7.pfb><C:/Users/surface/AppData/Local/Programs/MiKTeX/fonts/t
+ype1/public/lm/lmsy8.pfb><C:/Users/surface/AppData/Local/Programs/MiKTeX/fonts/
+type1/public/lm/lmsy9.pfb><C:/Users/surface/AppData/Local/Programs/MiKTeX/fonts
+/type1/public/lm/lmtt10.pfb><C:/Users/surface/AppData/Local/Programs/MiKTeX/fon
+ts/type1/public/lm/lmtt9.pfb>
+Output written on main.pdf (12 pages, 2913098 bytes).
 PDF statistics:
- 579 PDF objects out of 1000 (max. 8388607)
+ 612 PDF objects out of 1000 (max. 8388607)
  82 named destinations out of 1000 (max. 500000)
- 54555 words of extra memory for PDF output out of 61914 (max. 10000000)
+ 52537 words of extra memory for PDF output out of 61914 (max. 10000000)
 

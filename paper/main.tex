@@ -1,13 +1,13 @@
 % ============================================================
-%  CN Research Paper — Improved Design
+%  CN Research Paper — IEEE/Springer Two-Column Style
 %  Evidence-Aware Correlation and Constrained Reconstruction
 %  of Cybersecurity Incidents under Incomplete Telemetry
 %  Authors: Hunain Shahid & Hammad Ullah Khan
 % ============================================================
-\documentclass[11pt,a4paper,onecolumn]{article}
+\documentclass[10pt,twocolumn]{article}
 
 % ── Page geometry ────────────────────────────────────────────
-\usepackage[top=27mm,bottom=25mm,left=28mm,right=28mm,headheight=22pt]{geometry}
+\usepackage[top=23mm,bottom=23mm,left=17mm,right=17mm,columnsep=6mm,headheight=14pt]{geometry}
 
 % ── Fonts & encoding ─────────────────────────────────────────
 \usepackage[T1]{fontenc}
@@ -38,7 +38,7 @@
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 \fancyhf{}
-\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\headrulewidth}{0.4pt}
 \renewcommand{\headrule}{%
   \hbox to\headwidth{\color{cnrule}\leaders\hrule height\headrulewidth\hfill}}
 \fancyhead[L]{\small\color{cngray}\textit{Evidence-Aware Correlation under Incomplete Telemetry}}
@@ -48,14 +48,14 @@
 % ── Section styling ──────────────────────────────────────────
 \usepackage{titlesec}
 \titleformat{\section}
-  {\large\bfseries\color{cnblue}}
-  {\thesection}{0.8em}{}
-  [\vspace{-2pt}{\color{cnrule}\rule{\linewidth}{0.5pt}}]
+  {\normalsize\bfseries\color{cnblue}}
+  {\thesection}{0.6em}{}
+  [\vspace{-2pt}{\color{cnrule}\rule{\linewidth}{0.4pt}}]
 \titleformat{\subsection}
-  {\normalsize\bfseries\color{cnteal}}
-  {\thesubsection}{0.6em}{}
-\titlespacing*{\section}{0pt}{14pt}{6pt}
-\titlespacing*{\subsection}{0pt}{10pt}{4pt}
+  {\small\bfseries\color{cnteal}}
+  {\thesubsection}{0.5em}{}
+\titlespacing*{\section}{0pt}{10pt}{4pt}
+\titlespacing*{\subsection}{0pt}{6pt}{2pt}
 
 % ── Title helpers ────────────────────────────────────────────
 \usepackage{titling}
@@ -80,11 +80,12 @@
   labelfont={bf,color=cnblue},
   justification=raggedright,
   singlelinecheck=false,
-  skip=4pt
+  skip=3pt
 }
 
 % ── Floats ───────────────────────────────────────────────────
 \usepackage{float}
+\usepackage{stfloats}
 
 % ── Math ─────────────────────────────────────────────────────
 \usepackage{amsmath}
@@ -106,49 +107,49 @@
 \usepackage[numbers,sort&compress]{natbib}
 
 % ── Global text settings ─────────────────────────────────────
-\setstretch{1.12}
 \setlength{\parindent}{0pt}
+\setlength{\parskip}{3pt}
 \AtBeginDocument{\RaggedRight}
 
 % ============================================================
-%  Title, authors, date
-% ============================================================
-\title{%
-  \vspace{-6pt}
-  {\color{cnblue}\rule{\linewidth}{2.5pt}}\\[8pt]
-  \LARGE\bfseries\color{cnblue}
-  Evidence-Aware Correlation and Constrained Reconstruction\\
-  of Cybersecurity Incidents under Incomplete Telemetry\\[8pt]
-  {\color{cnrule}\rule{\linewidth}{1pt}}
-}
-\author{%
-  \large\textbf{Hunain Shahid}\quad\textbullet\quad\textbf{Hammad Ullah Khan}\\[3pt]
-  \small\color{cngray}Department of AI \& Data Science\\[1pt]
-  \small\color{cngray}
-  Repository: \href{https://github.com/Hunain230/CN-Research-}{%
-    \texttt{github.com/Hunain230/CN-Research-}}
-}
-\date{}
-
+%  Title block (spans full width via \twocolumn[...])
 % ============================================================
 \begin{document}
 
-\maketitle
-\thispagestyle{fancy}
+\twocolumn[{%
+%% ── Top rule + Title ──────────────────────────────────────
+\begin{center}
+{\color{cnblue}\rule{\linewidth}{2pt}}\\[6pt]
+{\LARGE\bfseries\color{cnblue}
+  Evidence-Aware Correlation and Constrained Reconstruction\\[2pt]
+  of Cybersecurity Incidents under Incomplete Telemetry}\\[4pt]
+{\color{cnrule}\rule{\linewidth}{0.8pt}}\\[8pt]
+%% ── Authors ───────────────────────────────────────────────
+{\large\textbf{Hunain Shahid}$^{*\dagger}$\quad\textbullet\quad\textbf{Hammad Ullah Khan}$^{\dagger}$}\\[4pt]
+{\small\color{cngray}Department of Computer Science, National University of Computer and Emerging Sciences}\\
+{\small\color{cngray}(FAST-NUCES), Islamabad, 44000, Pakistan}\\[3pt]
+{\small
+  $^{*}$Corresponding author.~E-mail:
+  \href{mailto:i240127@nu.edu.pk}{\texttt{i240127@nu.edu.pk}}~~
+  Contributing author:
+  \href{mailto:i242539@nu.edu.pk}{\texttt{i242539@nu.edu.pk}}
+}\\[1pt]
+{\small\color{cngray}$^\dagger$These authors contributed equally to this work.}
+\end{center}
+\vspace{6pt}
 
-% ── Abstract (tcolorbox) ─────────────────────────────────────
+%% ── Abstract box ─────────────────────────────────────────
 \begin{tcolorbox}[
   enhanced,
   colback  = cnlight,
   colframe = cnblue,
-  arc      = 4pt,
-  boxrule  = 0.7pt,
-  left     = 8pt, right  = 8pt,
-  top      = 7pt, bottom = 7pt,
+  arc      = 3pt,
+  boxrule  = 0.6pt,
+  left=7pt, right=7pt, top=6pt, bottom=6pt,
   title    = {\bfseries\color{white}Abstract},
   fonttitle= \small,
   attach boxed title to top left={yshift=-2mm, xshift=4mm},
-  boxed title style={colback=cnblue, arc=3pt, boxrule=0pt}
+  boxed title style={colback=cnblue, arc=2pt, boxrule=0pt}
 ]
 \small\RaggedRight
 Security alert grouping is risky when multiple apparent corroborating claims
@@ -174,12 +175,14 @@ external performance evaluation was conducted. The findings characterize a
 synthetic evidence model, not operational SOC validity.
 \end{tcolorbox}
 
-\vspace{4pt}
-\noindent
-\textbf{\color{cnblue}Keywords:}~security operations; alert correlation;
-incident reconstruction; evidence provenance; temporal availability; incident
-prioritization
-\vspace{6pt}
+\vspace{3pt}
+\noindent\textbf{\color{cnblue}Keywords:}~security operations; alert
+correlation; incident reconstruction; evidence provenance; temporal
+availability; incident prioritization
+\vspace{8pt}
+}]
+
+\thispagestyle{fancy}
 
 % ── Sections ─────────────────────────────────────────────────
 \input{sections/introduction}
