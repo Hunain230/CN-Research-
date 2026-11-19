@@ -75,4 +75,6 @@ cells=[[r['arm'].capitalize(),f"{int(r['pair_true']):,}/{int(r['pair_true'])+int
 t=ax.table(cellText=cells,colLabels=['Method','True / grouped pairs','False pairs','Mixed groups','Safe queues'],loc='center',cellLoc='center');t.auto_set_font_size(False);t.set_fontsize(10);t.scale(1,1.9)
 for (i,j),c in t.get_celld().items():c.set_edgecolor('#758495');c.set_facecolor('#e9f2f5' if i==0 else 'white')
 fig.tight_layout();fig.savefig(P/'figures/safety_results.pdf',bbox_inches='tight');plt.close(fig)
-print('Verified holdout artifacts and generated seven vector figures.')
+import runpy
+runpy.run_path(str(P/'figure_source/expanded_figures.py'),run_name='__main__')
+print('Verified holdout artifacts and generated nine vector figures.')

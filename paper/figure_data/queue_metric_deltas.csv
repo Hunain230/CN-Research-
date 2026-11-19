@@ -1,0 +1,16 @@
+queue_id,Recall@20_candidate_minus_baseline,Recoverability_candidate_minus_baseline,P@10_candidate_minus_baseline,original_artifact
+p31_locked_test_q000,1,1,0,experiments/PHASE33_FROZEN_GENERALIZATION/HOLDOUT_RESULTS.csv
+p31_locked_test_q001,-1,0,0,experiments/PHASE33_FROZEN_GENERALIZATION/HOLDOUT_RESULTS.csv
+p31_locked_test_q002,0,1,0,experiments/PHASE33_FROZEN_GENERALIZATION/HOLDOUT_RESULTS.csv
+p31_locked_test_q003,0,0,0,experiments/PHASE33_FROZEN_GENERALIZATION/HOLDOUT_RESULTS.csv
+p31_locked_test_q004,1,1,-1,experiments/PHASE33_FROZEN_GENERALIZATION/HOLDOUT_RESULTS.csv
+p31_locked_test_q005,3,3,1,experiments/PHASE33_FROZEN_GENERALIZATION/HOLDOUT_RESULTS.csv
+p31_locked_test_q006,1,1,2,experiments/PHASE33_FROZEN_GENERALIZATION/HOLDOUT_RESULTS.csv
+p31_locked_test_q007,-1,1,1,experiments/PHASE33_FROZEN_GENERALIZATION/HOLDOUT_RESULTS.csv
+p31_locked_test_q008,2,2,0,experiments/PHASE33_FROZEN_GENERALIZATION/HOLDOUT_RESULTS.csv
+p31_locked_test_q009,2,2,2,experiments/PHASE33_FROZEN_GENERALIZATION/HOLDOUT_RESULTS.csv
+p31_locked_test_q010,1,2,2,experiments/PHASE33_FROZEN_GENERALIZATION/HOLDOUT_RESULTS.csv
+p31_locked_test_q011,0,1,0,experiments/PHASE33_FROZEN_GENERALIZATION/HOLDOUT_RESULTS.csv
+p31_locked_test_q012,0,1,0,experiments/PHASE33_FROZEN_GENERALIZATION/HOLDOUT_RESULTS.csv
+p31_locked_test_q013,1,2,-1,experiments/PHASE33_FROZEN_GENERALIZATION/HOLDOUT_RESULTS.csv
+p31_locked_test_q014,0,0,0,experiments/PHASE33_FROZEN_GENERALIZATION/HOLDOUT_RESULTS.csv
