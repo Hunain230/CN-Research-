@@ -5,23 +5,19 @@ import re
 root=Path(__file__).resolve().parent
 parts=[
  ('introduction','Introduction','section'),
- ('research_scope','Study scope and evidence hierarchy','subsection'),
  ('related_work','Related work','section'),
  ('problem_formulation','Proposed methodology','section'),
  ('agent_framework','Agent framework and executable contracts','subsection'),
  ('architecture','Architecture and data flow','subsection'),
  ('methodology','Evidence verification and endpoint fallback','subsection'),
- ('implementation','Implementation and decision procedure','subsection'),
  ('experimental_design','Experimental setup','section'),
  ('metrics','Evaluation metrics','subsection'),
  ('results','Results and analysis','section'),
  ('base_comparison','Comparison with base papers and state of the art','section'),
- ('extended_analysis','Ablation study and cross-track diagnostics','section'),
+ ('ablation','Ablation study','section'),
  ('discussion','Discussion','section'),
  ('threats_to_validity','Threats to validity','subsection'),
  ('real_world_readiness','External evaluation readiness','subsection'),
- ('validation_protocol','External validation protocol','subsection'),
- ('limitations','Limitations','subsection'),
  ('conclusion','Conclusion and future work','section'),
  ('declarations','Declarations and acknowledgements','section'),
 ]
@@ -78,7 +74,21 @@ def transform(name, heading, level):
     return s
 
 body='\n\n'.join(transform(*p) for p in parts)
-app='\n\n'.join((root/'supplementary'/f).read_text(encoding='utf-8') for f in ['detailed_algorithms.tex','additional_tables.tex'])
-full=head+'\n'+body+'\n\\begin{appendices}\n'+app+'\n\\end{appendices}\n\\bibliography{references}\n\\end{document}\n'
+# The short submission version retains six reader-scale figures and six centered
+# tables. The fuller editable research account stays in sections/ for expansion.
+drop_labels={'fig:pipeline','fig:groups','fig:provenance','fig:safety','fig:decomp',
+             'tab:notation','tab:decisions','tab:cohorts','tab:development','tab:readiness'}
+for kind in ('figure','table'):
+    pattern=r'\\begin\{'+kind+r'\}(?:\[[^]]*\])?.*?\\end\{'+kind+r'\}'
+    body=re.sub(pattern,lambda m:'' if any('\\label{'+k+'}' in m.group(0) for k in drop_labels) else m.group(0),body,flags=re.S)
+for k,phrase in {'fig:pipeline':'the data-flow summary','fig:groups':'the grouping/retrieval distinction',
+                 'fig:provenance':'the evidence-timing example','fig:safety':'the all-group safety audit',
+                 'fig:decomp':'the retrieval decomposition','tab:decisions':'the logical decision cases',
+                 'tab:development':'the separate development studies'}.items():
+    body=re.sub(r'(?:Figure|Fig\.|Table)~\\ref\{'+re.escape(k)+r'\}',phrase,body)
+for figure in ('architecture','agent_contracts','verification_methodology','phase33_results','queue_delta_heatmap'):
+    body=re.sub(r'\\includegraphics\[width=[^]]+\](?=\{figures/'+figure+r'\.pdf\})',
+                lambda _:r'\includegraphics[width=\textwidth]',body)
+full=head+'\n'+body+'\n\\bibliography{references}\n\\end{document}\n'
 (root/'main.tex').write_text(full,encoding='utf-8')
 print('Wrote main.tex:',len(full.split()),'words')

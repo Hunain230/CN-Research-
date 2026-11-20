@@ -1,4 +1,4 @@
-"""Rebuild reader-scale vector diagrams used by the IEEE manuscript."""
+"""Rebuild reader-scale vector diagrams used by the Springer manuscript."""
 from pathlib import Path
 import matplotlib
 matplotlib.use("Agg")
@@ -36,7 +36,7 @@ def save(fig,name):
 # Main pipeline: three large columns and a second row of evidence/safety outcomes.
 fig,ax=canvas(5.5); header(ax,"Evidence-gated C/V/P execution","The frozen predictor is deterministic; evaluator truth is held outside the receiver boundary")
 box(ax,.35,3.36,3.25,2.03,"01  CORRELATE","Visible alerts at T=100\nSame-source and process-tree\nfragments; candidate tokens",BLUE)
-box(ax,4.38,3.36,3.25,2.03,"02  VERIFY","Original roots and availability\nIdentity, time and causal fields\nOptional guarded endpoint fallback",GREEN,TEAL)
+box(ax,4.38,3.36,3.25,2.03,"02  VERIFY","Original roots and arrival time\nIdentity and causal fields\nGuarded endpoint fallback",GREEN,TEAL)
 box(ax,8.42,3.36,3.25,2.03,"03  PRIORITIZE","Accepted unions form groups\nSource score + union bonus\nSorted top-20 analyst queue",LAV)
 arrow(ax,3.62,4.35,4.34,4.35); arrow(ax,7.66,4.35,8.38,4.35)
 box(ax,.55,.65,3.00,1.67,"INPUT BOUNDARY","Receiver-visible alerts, claims,\norigins and arrival times",fc="#F3F6F9")
@@ -46,10 +46,12 @@ arrow(ax,2.05,2.35,2.05,3.30); arrow(ax,5.8,3.30,5.8,2.35); arrow(ax,10.0,3.30,1
 save(fig,"architecture.pdf")
 
 fig,ax=canvas(5.2); header(ax,"Verifier decision workflow","A rejected token never becomes a union merely because a group is plausible")
-box(ax,.42,3.52,3.15,1.85,"BASE RULE  3 CLAIMS","Original process + auth + network\nThree distinct upstream roots",BLUE)
-box(ax,4.42,3.52,3.15,1.85,"FALLBACK  2 + ENDPOINT","Only for missing-family rejection\nOriginal auth + network + endpoint\nThree roots; no contradiction",GREEN,TEAL)
-box(ax,8.42,3.52,3.15,1.85,"COMMON SAFETY GATES","Available by cutoff; same IDs\nTime and causal fields agree\nHost/account and size cap",LAV)
+box(ax,.42,3.52,3.15,1.85,"BASE: 3 CLAIMS","Process + auth + network\nThree distinct original roots",BLUE)
+box(ax,4.42,3.52,3.15,1.85,"FALLBACK RULE","Only if process claim missing\nAuth + network + endpoint\nThree roots; no conflict",GREEN,TEAL)
+box(ax,8.42,3.52,3.15,1.85,"COMMON GATES","Available by cutoff; same IDs\nTime and causal fields agree\nHost/account and size cap",LAV)
 arrow(ax,3.61,4.42,4.38,4.42,"if process missing"); arrow(ax,7.61,4.42,8.38,4.42)
+ax.plot([2.7,2.7,10.0],[5.39,5.62,5.62],color=GREY,lw=1.35)
+arrow(ax,10.0,5.62,10.0,5.41,"3 claims present")
 box(ax,1.05,.72,4.5,1.62,"ACCEPTED TOKEN","If components differ and guards pass:\nunion once; preserve trace",GREEN,TEAL)
 box(ax,6.5,.72,4.5,1.62,"INSUFFICIENT / CONFLICTING","Keep partition unchanged; log exact\nreason and abstention",AMBER,ORANGE)
 arrow(ax,9.3,3.47,4.48,2.42); arrow(ax,10.15,3.47,9.45,2.42)
@@ -61,8 +63,8 @@ box(ax,4.38,3.55,3.28,1.75,"P   PRIORITIZATION","Relative score for a group\nRat
 box(ax,8.43,3.55,3.28,1.75,"V   VERIFICATION","PASS / REVISE / REVIEW\nSupport check on same snapshot",GREEN,TEAL)
 arrow(ax,3.65,4.44,4.34,4.44); arrow(ax,7.70,4.44,8.39,4.44)
 box(ax,.45,.67,3.08,1.63,"REQUEST GATE","Approved fields; org and pair scope;\nfixed evidence/token budgets",fc="#F3F6F9")
-box(ax,4.5,.67,3.00,1.63,"DETERMINISTIC BUILDER","Validated LINK-only components;\ncap and stable ordering",fc="#F3F6F9")
-box(ax,8.53,.67,3.00,1.63,"CONTROLLED REVIEW","One revision maximum; preserve\ntrace; unresolved -> REVIEW",AMBER,ORANGE)
+box(ax,4.5,.67,3.00,1.63,"COMPONENT BUILDER","Join validated LINK edges\nCap size; stable order",fc="#F3F6F9")
+box(ax,8.53,.67,3.00,1.63,"CONTROLLED REVIEW","One revision; retain trace\nUnresolved -> REVIEW",AMBER,ORANGE)
 arrow(ax,2.0,2.34,2.0,3.5); arrow(ax,6.0,3.51,6.0,2.34); arrow(ax,10.0,3.51,10.0,2.34)
 save(fig,"agent_contracts.pdf")
 
@@ -79,7 +81,7 @@ box(ax,.4,3.26,3.22,1.91,"DEVELOPMENT","8 train + 10 dev queues\nCandidate: 169/
 box(ax,4.39,3.26,3.22,1.91,"PROTOCOL DECISION","Proceed unchanged, documented\nbefore holdout generation\nFreeze source and config",AMBER,ORANGE)
 box(ax,8.39,3.26,3.22,1.91,"FRESH HOLDOUT","Seed 31103; variant 2\n15 queues, 5,018 alerts\nBoth arms same inputs",GREEN,TEAL)
 arrow(ax,3.65,4.18,4.35,4.18); arrow(ax,7.65,4.18,8.35,4.18)
-box(ax,3.07,.66,5.84,1.55,"SEAL BEFORE OPENING PRIVATE TRUTH","Prediction and decisions hashed; one unchanged evaluator pass; matched queue audit.",fc="#F3F6F9")
+box(ax,3.07,.66,5.84,1.55,"SEALED EVALUATION","Hash predictions before truth; one unchanged evaluator pass.",fc="#F3F6F9")
 arrow(ax,10,3.20,8.55,2.25)
 save(fig,"experimental_protocol.pdf")
 print("Wrote 5 vector diagrams to",OUT)
