@@ -6,6 +6,10 @@ Upload the contents of this folder (or the accompanying ZIP) to Overleaf. Set `m
 
 The title is **A Multi-Agent LLM Framework for SOC Threat Correlation and Alert Prioritization**. The manuscript distinguishes the bounded local LLM prototype and retrospective GUIDE work from the deterministic fresh synthetic holdout. The latter is the measured 260/300 result; it is not presented as an LLM performance result.
 
+The primary base paper is Hmimou et al., *A Multi-Agent System for Cybersecurity Threat Detection and Correlation Using Large Language Models* (IEEE Access, 2025, DOI: 10.1109/ACCESS.2025.3602681). Guo et al. and AgentSOC are related prioritization comparisons. Published metrics are explicitly distinguished from the project's own metrics; they are not claimed to be results on the same dataset.
+
 The teacher's Phase 4 brief requires a roughly 8–12 page venue-appropriate paper, explicit base-paper comparison, ablation, reproducibility, declarations, and honest evidence boundaries. This source includes those elements, but the exact page count and visual layout must be checked after Overleaf compilation. No margin, type-size or spacing overrides were added to the Springer class. Author metadata, funding/competing-interest declarations, repository URL, and target venue requirements require author confirmation.
+
+The accompanying ZIP is curated for direct Overleaf upload: it includes the generated `main.tex`, bibliography, Springer class and bibliography style, and the six referenced vector figures. It also includes editable section sources and diagram-generation code. Python is only needed if you later regenerate `main.tex` or redraw a diagram; Overleaf compiles the supplied `main.tex` directly.
 
 Local command-line LaTeX could not be used for a final typeset check in this environment: MiKTeX was blocked by Windows registry access, and Tectonic could not fetch its uncached bundle. Static checks found no missing figure, citation key, or cross-reference.

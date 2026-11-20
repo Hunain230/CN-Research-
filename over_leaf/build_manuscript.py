@@ -23,20 +23,20 @@ parts=[
 ]
 
 title='A Multi-Agent LLM Framework for SOC Threat Correlation and Alert Prioritization'
-abstract=('Security operations centers need to reconstruct incidents from fragmented alerts and prioritize review '
-'without mistaking copied, late, or contradictory evidence for independent corroboration. This study specifies '
-'a bounded correlation (C), prioritization (P), and verification (V) agent framework, implements offline role '
-'contracts and a small local Qwen prototype, and separately evaluates a deterministic provenance-constrained '
-'C/V/P realization. These tracks have distinct populations and cannot be pooled. On a fresh controlled synthetic '
-'holdout of 15 queues and 5,018 eligible alerts, a frozen endpoint fallback increased Incident Recall@20 from '
-'250/300 (83.33\\%) to 260/300 (86.67\\%), recoverability from 263/300 (87.67\\%) to 281/300 '
-'(93.67\\%), and P@10 from 107/150 (71.33\\%) to 113/150 (75.33\\%), with zero observed false '
-'grouped pairs in either arm. A post-seal audit found 711 genuine accepted relationship tokens, zero false '
-'accepts, 35 genuine rejections, and 150 false rejections. The candidate missed its development gate by one '
-'incident; an unchanged fresh-holdout test followed a documented protocol decision. On a separate retrospective '
-'GUIDE track, the full-queue statistical reference achieved 49.82\\% Recall@20 on 499 queues. The local '
-'LLM prototype does not establish an LLM performance advantage. GUIDE lacks the provenance and arrival-time '
-'fields needed for external evaluation of the frozen verifier; operational efficacy remains unmeasured.')
+abstract=('A SOC analyst has to decide which alerts describe the same incident before deciding what to inspect first. '
+'That decision can be distorted by copied observations, late-arriving evidence, and claims that disagree about '
+'an endpoint. We specify bounded correlation (C), prioritization (P), and verification (V) agent roles and test '
+'their software contracts with an offline adapter and a small local Qwen prototype. The measured experiment is '
+'separate: a frozen, deterministic C/V/P pipeline with a provenance gate. On a fresh synthetic holdout of 15 '
+'queues and 5,018 eligible alerts, its endpoint fallback raised incident Recall@20 from 250/300 (83.33\\%) '
+'to 260/300 (86.67\\%), recoverability from 263/300 (87.67\\%) to 281/300 (93.67\\%), and P@10 '
+'from 107/150 (71.33\\%) to 113/150 (75.33\\%). Neither arm formed a false grouped pair under simulator '
+'truth. After prediction files were sealed, an audit found 711 accepted genuine relationship tokens, no accepted '
+'false tokens, 35 genuine rejections, and 150 false rejections. The candidate had missed its development gate '
+'by one incident; testing it unchanged on the fresh holdout followed a documented protocol adjustment. A separate '
+'retrospective GUIDE reference reached 49.82\\% Recall@20 on 499 queues. The local LLM run does not establish '
+'a model advantage, and the available GUIDE export lacks the original roots and evidence-arrival times required '
+'to test the frozen verifier on operational data.')
 
 head=r'''% Springer Nature manuscript source, generated from the editable sections in this folder.
 % Template version 3.1 (December 2024); no margin, font or spacing overrides.
