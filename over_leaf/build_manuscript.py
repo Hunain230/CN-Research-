@@ -11,6 +11,7 @@ parts=[
  ('architecture','Architecture and data flow','subsection'),
  ('methodology','Evidence verification and endpoint fallback','subsection'),
  ('experimental_design','Experimental setup','section'),
+ ('reproducibility','Dataset, parameters, and reproducibility','subsection'),
  ('metrics','Evaluation metrics','subsection'),
  ('results','Results and analysis','section'),
  ('base_comparison','Comparison with base papers and state of the art','section'),

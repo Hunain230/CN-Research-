@@ -12,4 +12,6 @@ The teacher's Phase 4 brief requires a roughly 8–12 page venue-appropriate pap
 
 The accompanying ZIP is curated for direct Overleaf upload: it includes the generated `main.tex`, bibliography, Springer class and bibliography style, and the six referenced vector figures. It also includes editable section sources and diagram-generation code. Python is only needed if you later regenerate `main.tex` or redraw a diagram; Overleaf compiles the supplied `main.tex` directly.
 
+The package includes `analysis/holdout_queue_results.csv` and `analysis/paired_queue_bootstrap.py` for the paired 10,000-resample intervals quoted in the Results. Run `python analysis/paired_queue_bootstrap.py` from the project folder to verify them. `RUBRIC_REVIEW.md` maps the paper to the teacher's criteria and records author checks; it does not appear in the compiled manuscript.
+
 Local command-line LaTeX could not be used for a final typeset check in this environment: MiKTeX was blocked by Windows registry access, and Tectonic could not fetch its uncached bundle. Static checks found no missing figure, citation key, or cross-reference.
