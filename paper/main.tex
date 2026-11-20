@@ -1,190 +1,27 @@
-% ============================================================
-%  CN Research Paper — IEEE/Springer Two-Column Style
-%  Evidence-Aware Correlation and Constrained Reconstruction
-%  of Cybersecurity Incidents under Incomplete Telemetry
-%  Authors: Hunain Shahid & Hammad Ullah Khan
-% ============================================================
-\documentclass[10pt,twocolumn]{article}
-
-% ── Page geometry ────────────────────────────────────────────
-\usepackage[top=23mm,bottom=23mm,left=17mm,right=17mm,columnsep=6mm,headheight=14pt]{geometry}
-
-% ── Fonts & encoding ─────────────────────────────────────────
+% IEEE conference manuscript; numerical claims are traced to the frozen holdout.
+\documentclass[conference]{IEEEtran}
 \usepackage[T1]{fontenc}
-\usepackage[utf8]{inputenc}
-\usepackage{lmodern}
-\usepackage{microtype}
-
-% ── Colour ───────────────────────────────────────────────────
-\usepackage[table,dvipsnames]{xcolor}
-\definecolor{cnblue}{RGB}{31,78,121}
-\definecolor{cnteal}{RGB}{46,139,142}
-\definecolor{cngray}{RGB}{77,95,107}
-\definecolor{cnlight}{RGB}{232,238,244}
-\definecolor{cnrule}{RGB}{180,200,215}
-\definecolor{cnamber}{RGB}{199,116,42}
-
-% ── Layout helpers ───────────────────────────────────────────
-\usepackage{setspace}
-\usepackage{ragged2e}
-\usepackage{parskip}
-\usepackage{enumitem}
-
-% ── Coloured boxes ───────────────────────────────────────────
-\usepackage{tcolorbox}
-\tcbuselibrary{skins}
-
-% ── Headers / footers ────────────────────────────────────────
-\usepackage{fancyhdr}
-\pagestyle{fancy}
-\fancyhf{}
-\renewcommand{\headrulewidth}{0.4pt}
-\renewcommand{\headrule}{%
-  \hbox to\headwidth{\color{cnrule}\leaders\hrule height\headrulewidth\hfill}}
-\fancyhead[L]{\small\color{cngray}\textit{Evidence-Aware Correlation under Incomplete Telemetry}}
-\fancyhead[R]{\small\color{cngray}Shahid \& Khan}
-\fancyfoot[C]{\small\color{cngray}\thepage}
-
-% ── Section styling ──────────────────────────────────────────
-\usepackage{titlesec}
-\titleformat{\section}
-  {\normalsize\bfseries\color{cnblue}}
-  {\thesection}{0.6em}{}
-  [\vspace{-2pt}{\color{cnrule}\rule{\linewidth}{0.4pt}}]
-\titleformat{\subsection}
-  {\small\bfseries\color{cnteal}}
-  {\thesubsection}{0.5em}{}
-\titlespacing*{\section}{0pt}{10pt}{4pt}
-\titlespacing*{\subsection}{0pt}{6pt}{2pt}
-
-% ── Title helpers ────────────────────────────────────────────
-\usepackage{titling}
-\setlength{\droptitle}{-30pt}
-
-% ── Graphics ─────────────────────────────────────────────────
 \usepackage{graphicx}
+\usepackage{booktabs,tabularx,array}
+\usepackage{amsmath,amssymb}
+\usepackage{url}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{pdftitle={Evidence-Aware Correlation and Constrained Reconstruction of Cybersecurity Incidents under Incomplete Telemetry},pdfauthor={Hunain Shahid and Hammad Ullah Khan}}
 \graphicspath{{figures/}}
-
-% ── Tables ───────────────────────────────────────────────────
-\usepackage{booktabs}
-\usepackage{tabularx}
-\usepackage{array}
-\usepackage{multirow}
-\newcolumntype{Y}{>{\RaggedRight\arraybackslash}X}
-
-% ── Captions ─────────────────────────────────────────────────
-\usepackage{caption}
-\usepackage{subcaption}
-\captionsetup{
-  font=small,
-  labelfont={bf,color=cnblue},
-  justification=raggedright,
-  singlelinecheck=false,
-  skip=3pt
-}
-
-% ── Floats ───────────────────────────────────────────────────
-\usepackage{float}
-\usepackage{stfloats}
-
-% ── Math ─────────────────────────────────────────────────────
-\usepackage{amsmath}
-\usepackage{amssymb}
-
-% ── Hyperlinks ───────────────────────────────────────────────
-\usepackage{hyperref}
-\hypersetup{
-  colorlinks = true,
-  citecolor  = cnblue,
-  linkcolor  = cnblue,
-  urlcolor   = cnteal,
-  pdftitle   = {Evidence-Aware Correlation and Constrained Reconstruction
-                of Cybersecurity Incidents under Incomplete Telemetry},
-  pdfauthor  = {Hunain Shahid; Hammad Ullah Khan},
-}
-
-% ── Bibliography ─────────────────────────────────────────────
-\usepackage[numbers,sort&compress]{natbib}
-
-% ── Global text settings ─────────────────────────────────────
-\setlength{\parindent}{0pt}
-\setlength{\parskip}{3pt}
-\AtBeginDocument{\RaggedRight}
-
-% ============================================================
-%  Title block (spans full width via \twocolumn[...])
-% ============================================================
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\newcommand{\tabhead}[1]{\textbf{#1}}
 \begin{document}
-
-\twocolumn[{%
-%% ── Top rule + Title ──────────────────────────────────────
-\begin{center}
-{\color{cnblue}\rule{\linewidth}{2pt}}\\[6pt]
-{\LARGE\bfseries\color{cnblue}
-  Evidence-Aware Correlation and Constrained Reconstruction\\[2pt]
-  of Cybersecurity Incidents under Incomplete Telemetry}\\[4pt]
-{\color{cnrule}\rule{\linewidth}{0.8pt}}\\[8pt]
-%% ── Authors ───────────────────────────────────────────────
-{\large\textbf{Hunain Shahid}$^{*\dagger}$\quad\textbullet\quad\textbf{Hammad Ullah Khan}$^{\dagger}$}\\[4pt]
-{\small\color{cngray}Department of Computer Science, National University of Computer and Emerging Sciences}\\
-{\small\color{cngray}(FAST-NUCES), Islamabad, 44000, Pakistan}\\[3pt]
-{\small
-  $^{*}$Corresponding author.~E-mail:
-  \href{mailto:i240127@nu.edu.pk}{\texttt{i240127@nu.edu.pk}}~~
-  Contributing author:
-  \href{mailto:i242539@nu.edu.pk}{\texttt{i242539@nu.edu.pk}}
-}\\[1pt]
-{\small\color{cngray}$^\dagger$These authors contributed equally to this work.}
-\end{center}
-\vspace{6pt}
-
-%% ── Abstract box ─────────────────────────────────────────
-\begin{tcolorbox}[
-  enhanced,
-  colback  = cnlight,
-  colframe = cnblue,
-  arc      = 3pt,
-  boxrule  = 0.6pt,
-  left=7pt, right=7pt, top=6pt, bottom=6pt,
-  title    = {\bfseries\color{white}Abstract},
-  fonttitle= \small,
-  attach boxed title to top left={yshift=-2mm, xshift=4mm},
-  boxed title style={colback=cnblue, arc=2pt, boxrule=0pt}
-]
-\small\RaggedRight
-Security alert grouping is risky when multiple apparent corroborating claims
-descend from one observation, arrive after the decision time, or disagree about
-event identity. We examine a constrained correlation, verification, and
-prioritization pipeline that forms initial alert fragments, accepts
-cross-fragment relationships only under explicit provenance and consistency
-checks, and ranks the resulting groups. A narrowly scoped endpoint fallback
-substitutes original endpoint process context for a missing process claim only
-when timely, independent authentication and network observations support the
-same relationship. We compare this frozen candidate against a matched frozen
-baseline on an untouched, controlled synthetic holdout of 15 queues and 5,018
-eligible alerts. Incident Recall@20 rose from 250/300 (83.33\%) to 260/300
-(86.67\%); group recoverability rose from 263/300 (87.67\%) to 281/300
-(93.67\%); and P@10 rose from 107/150 (71.33\%) to 113/150 (75.33\%). Both
-pipelines had zero false grouped pairs and zero mixed groups under simulator
-truth. The candidate had missed its development gate by one incident, and the
-subsequent decision to evaluate it unchanged on fresh holdout data was
-documented before the test. Later ranking studies on separate development
-cohorts did not establish a reliable improvement. An audit of public real-world
-evidence found missing provenance and point-in-time fields; consequently no
-external performance evaluation was conducted. The findings characterize a
-synthetic evidence model, not operational SOC validity.
-\end{tcolorbox}
-
-\vspace{3pt}
-\noindent\textbf{\color{cnblue}Keywords:}~security operations; alert
-correlation; incident reconstruction; evidence provenance; temporal
-availability; incident prioritization
-\vspace{8pt}
-}]
-
-\thispagestyle{fancy}
-
-% ── Sections ─────────────────────────────────────────────────
+\title{Evidence-Aware Correlation and Constrained Reconstruction of Cybersecurity Incidents under Incomplete Telemetry}
+\author{\IEEEauthorblockN{Hunain Shahid\IEEEauthorrefmark{1} and Hammad Ullah Khan\IEEEauthorrefmark{1}}
+\IEEEauthorblockA{\IEEEauthorrefmark{1}Department of Computer Science, National University of Computer and Emerging Sciences (FAST-NUCES), Islamabad, Pakistan\\
+\href{mailto:i240127@nu.edu.pk}{i240127@nu.edu.pk}; \href{mailto:i242539@nu.edu.pk}{i242539@nu.edu.pk}}}
+\maketitle
+\begin{abstract}
+Security alert grouping is risky when apparently corroborating claims descend from one observation, arrive after the decision time, or disagree about event identity. We examine a constrained correlation, verification, and prioritization pipeline that forms initial alert fragments, accepts cross-fragment relationships only under provenance and consistency checks, and ranks the resulting groups. A narrowly scoped endpoint fallback substitutes original endpoint process context for a missing process claim only when timely, independent authentication and network observations support the same relationship. On an untouched controlled synthetic holdout of 15 queues and 5,018 eligible alerts, Incident Recall@20 rose from 250/300 (83.33\%) to 260/300 (86.67\%), group recoverability from 263/300 (87.67\%) to 281/300 (93.67\%), and P@10 from 107/150 (71.33\%) to 113/150 (75.33\%). Both frozen arms had zero false grouped pairs and zero mixed groups under simulator truth. The candidate missed its development gate by one incident; the decision to evaluate it unchanged on fresh holdout data was documented before testing. A public dataset audit found missing provenance and point-in-time fields, so no external performance evaluation was possible. These findings describe a synthetic evidence model, not operational SOC validity.
+\end{abstract}
+\begin{IEEEkeywords}
+security operations, alert correlation, incident reconstruction, evidence provenance, temporal availability, incident prioritization
+\end{IEEEkeywords}
 \input{sections/introduction}
 \input{sections/related_work}
 \input{sections/problem_formulation}
@@ -198,14 +35,9 @@ availability; incident prioritization
 \input{sections/real_world_readiness}
 \input{sections/limitations}
 \input{sections/conclusion}
-
-% ── Bibliography ─────────────────────────────────────────────
-\bibliographystyle{unsrtnat}
+\bibliographystyle{IEEEtran}
 \bibliography{references}
-
-% ── Appendix ─────────────────────────────────────────────────
-\appendix
+\appendices
 \input{supplementary/detailed_algorithms}
 \input{supplementary/additional_tables}
-
 \end{document}

@@ -1,0 +1,1 @@
+Primary paired holdout: 250/300 versus 260/300 Recall@20; 263/300 versus 281/300 recoverability; 107/150 versus 113/150 P@10. Separate historical and development studies are not pooled. Original artifacts: `experiments/PHASE33_FROZEN_GENERALIZATION/`.

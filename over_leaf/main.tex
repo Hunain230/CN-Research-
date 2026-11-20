@@ -1,0 +1,46 @@
+% IEEE conference manuscript; numerical claims are traced to the frozen holdout.
+\documentclass[conference]{IEEEtran}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{booktabs,tabularx,array}
+\usepackage{amsmath,amssymb}
+\usepackage[table]{xcolor}
+\usepackage{microtype}
+\usepackage{url}
+\usepackage[colorlinks=true,citecolor=blue!45!black,linkcolor=blue!45!black,urlcolor=blue!45!black]{hyperref}
+\hypersetup{pdftitle={Evidence-Aware Correlation and Constrained Reconstruction of Cybersecurity Incidents under Incomplete Telemetry},pdfauthor={Hunain Shahid and Hammad Ullah Khan}}
+\graphicspath{{figures/}}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\newcommand{\tabhead}[1]{\textbf{#1}}
+\newcommand{\gaincell}[1]{\cellcolor{teal!13}#1}
+\begin{document}
+\title{Evidence-Aware Correlation and Constrained Reconstruction of Cybersecurity Incidents under Incomplete Telemetry}
+\author{\IEEEauthorblockN{Hunain Shahid\IEEEauthorrefmark{1} and Hammad Ullah Khan\IEEEauthorrefmark{1}}
+\IEEEauthorblockA{\IEEEauthorrefmark{1}Department of Computer Science, National University of Computer and Emerging Sciences (FAST-NUCES), Islamabad, Pakistan\\
+\href{mailto:i240127@nu.edu.pk}{i240127@nu.edu.pk}; \href{mailto:i242539@nu.edu.pk}{i242539@nu.edu.pk}}}
+\maketitle
+\begin{abstract}
+Security alert grouping is risky when apparently corroborating claims descend from one observation, arrive after the decision time, or disagree about event identity. We examine a constrained correlation, verification, and prioritization pipeline that forms initial alert fragments, accepts cross-fragment relationships only under provenance and consistency checks, and ranks the resulting groups. A narrowly scoped endpoint fallback substitutes original endpoint process context for a missing process claim only when timely, independent authentication and network observations support the same relationship. On an untouched controlled synthetic holdout of 15 queues and 5,018 eligible alerts, Incident Recall@20 rose from 250/300 (83.33\%) to 260/300 (86.67\%), group recoverability from 263/300 (87.67\%) to 281/300 (93.67\%), and P@10 from 107/150 (71.33\%) to 113/150 (75.33\%). Both frozen arms had zero false grouped pairs and zero mixed groups under simulator truth. The candidate missed its development gate by one incident; the decision to evaluate it unchanged on fresh holdout data was documented before testing. A public dataset audit found missing provenance and point-in-time fields, so no external performance evaluation was possible. These findings describe a synthetic evidence model, not operational SOC validity.
+\end{abstract}
+\begin{IEEEkeywords}
+security operations, alert correlation, incident reconstruction, evidence provenance, temporal availability, incident prioritization
+\end{IEEEkeywords}
+\input{sections/introduction}
+\input{sections/related_work}
+\input{sections/problem_formulation}
+\input{sections/architecture}
+\input{sections/methodology}
+\input{sections/experimental_design}
+\input{sections/metrics}
+\input{sections/results}
+\input{sections/discussion}
+\input{sections/threats_to_validity}
+\input{sections/real_world_readiness}
+\input{sections/limitations}
+\input{sections/conclusion}
+\bibliographystyle{IEEEtran}
+\bibliography{references}
+\appendices
+\input{supplementary/detailed_algorithms}
+\input{supplementary/additional_tables}
+\end{document}
