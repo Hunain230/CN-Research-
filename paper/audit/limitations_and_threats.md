@@ -1,1 +1,0 @@
-Synthetic trust roots, 15 queues, generator-family holdout, missed development gate and documented protocol adjustment, evaluator-specific 80/80 qualification, unverified real trust-domain independence, missing point-in-time real evidence, and no authorized SOC score are material threats. See manuscript Sections 10--12.

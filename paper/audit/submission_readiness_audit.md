@@ -1,1 +1,0 @@
-Status: NOT submission-ready. Scientific blockers: no authorized real SOC validation, limited holdout size, no compatible published-method baseline, and novelty positioning against recent multi-source provenance work. Administrative blockers: affiliation, corresponding author, author approvals, journal-specific formatting and declarations require author confirmation.

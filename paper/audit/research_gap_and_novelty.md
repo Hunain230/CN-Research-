@@ -1,3 +1,0 @@
-# Research gap and novelty boundary
-
-Published aggregation, causal graph reconstruction, provenance-based APT detection and severity triage are established. This paper addresses a narrower operational question: when can a specific cross-fragment relationship be accepted from original, timely, independently rooted process/auth/network evidence, and when may endpoint context replace the missing process witness? This is a tested design choice within one synthetic generator, not proof of first invention or superiority over prior work. CrossHound is especially relevant prior multi-source provenance work. A head-to-head comparison on compatible real data is unavailable.

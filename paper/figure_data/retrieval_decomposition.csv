@@ -1,3 +1,0 @@
-arm,recalled_top20,recoverable_outside_top20,not_recoverable,denominator,original_artifact
-baseline,250,13,37,300,experiments/PHASE33_FROZEN_GENERALIZATION/HOLDOUT_SUMMARY.json
-candidate,260,21,19,300,experiments/PHASE33_FROZEN_GENERALIZATION/HOLDOUT_SUMMARY.json
