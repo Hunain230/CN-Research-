@@ -1,22 +1,29 @@
 % Springer Nature manuscript source, generated from the editable sections in this folder.
 % Template version 3.1 (December 2024); no margin, font or spacing overrides.
-\documentclass[pdflatex,sn-mathphys-num]{sn-jnl}
+\documentclass[pdflatex,sn-mathphys-num,iicol]{sn-jnl}
 \usepackage{graphicx}
 \usepackage{booktabs,tabularx,array}
 \usepackage{amsmath,amssymb}
 \usepackage{microtype}
 \usepackage[title]{appendix}
 \graphicspath{{figures/}}
+% Allow compact, single-column floats to occupy available page space.
+\setcounter{topnumber}{3}
+\setcounter{bottomnumber}{2}
+\setcounter{totalnumber}{5}
+\setcounter{dbltopnumber}{3}
+\renewcommand{\floatpagefraction}{.62}
+\renewcommand{\dblfloatpagefraction}{.65}
 \newcolumntype{Y}{>{\raggedright\arraybackslash}X}
 \newcommand{\tabhead}[1]{\textbf{#1}}
-\newcommand{\gaincell}[1]{#1}
+\newcommand{\gaincell}[1]{\textbf{#1}}
 \hypersetup{pdftitle={A Multi-Agent LLM Framework for SOC Threat Correlation and Alert Prioritization},pdfauthor={Hunain Shahid and Hammad Ullah Khan}}
 \begin{document}
 \title[A Multi-Agent LLM Framework for SOC Threat Correlation]{A Multi-Agent LLM Framework for SOC Threat Correlation and Alert Prioritization}
 \author*[1]{\fnm{Hunain} \sur{Shahid}}\email{i240127@nu.edu.pk}
 \author[1]{\fnm{Hammad Ullah} \sur{Khan}}\email{i242539@nu.edu.pk}
-\affil*[1]{\orgdiv{Department of Computer Science}, \orgname{National University of Computer and Emerging Sciences (FAST-NUCES)}, \orgaddress{\city{Islamabad}, \country{Pakistan}}}
-\abstract{A SOC analyst has to decide which alerts describe the same incident before deciding what to inspect first. That decision can be distorted by copied observations, late-arriving evidence, and claims that disagree about an endpoint. We specify bounded correlation (C), prioritization (P), and verification (V) agent roles and test their software contracts with an offline adapter and a small local Qwen prototype. The measured experiment is separate: a frozen, deterministic C/V/P pipeline with a provenance gate. On a fresh synthetic holdout of 15 queues and 5,018 eligible alerts, its endpoint fallback raised incident Recall@20 from 250/300 (83.33\%) to 260/300 (86.67\%), recoverability from 263/300 (87.67\%) to 281/300 (93.67\%), and P@10 from 107/150 (71.33\%) to 113/150 (75.33\%). Neither arm formed a false grouped pair under simulator truth. After prediction files were sealed, an audit found 711 accepted genuine relationship tokens, no accepted false tokens, 35 genuine rejections, and 150 false rejections. The candidate had missed its development gate by one incident; testing it unchanged on the fresh holdout followed a documented protocol adjustment. A separate retrospective GUIDE reference reached 49.82\% Recall@20 on 499 queues. The local LLM run does not establish a model advantage, and the available GUIDE export lacks the original roots and evidence-arrival times required to test the frozen verifier on operational data.}
+\affil*[1]{\orgdiv{Department of Artificial Intelligence and Data Science}, \orgname{National University of Computer and Emerging Sciences (FAST-NUCES)}, \orgaddress{\city{Islamabad}, \country{Pakistan}}}
+\abstract{A SOC analyst has to decide which alerts describe the same incident before deciding what to inspect first. That decision can be distorted by copied observations, late-arriving evidence, and claims that disagree about an endpoint. We specify bounded correlation (C), prioritization (P), and verification (V) agent roles and test their software contracts with an offline adapter and a small local Qwen prototype. The measured experiment is separate: a frozen, deterministic C/V/P pipeline with a provenance gate. On a fresh synthetic holdout of 15 queues and 5,018 eligible alerts, its endpoint fallback raised incident Recall@20 from 250/300 (83.33\%) to \textbf{260/300 (86.67\%)}, recoverability from 263/300 (87.67\%) to \textbf{281/300 (93.67\%)}, and P@10 from 107/150 (71.33\%) to \textbf{113/150 (75.33\%)}. Neither arm formed a false grouped pair under simulator truth. After prediction files were sealed, an audit found 711 accepted genuine relationship tokens, no accepted false tokens, 35 genuine rejections, and 150 false rejections. The candidate had missed its development gate by one incident; testing it unchanged on the fresh holdout followed a documented protocol adjustment. A separate retrospective GUIDE reference reached 49.82\% Recall@20 on 499 queues. The local LLM run does not establish a model advantage, and the available GUIDE export lacks the original roots and evidence-arrival times required to test the frozen verifier on operational data.}
 \keywords{security operations center, alert correlation, large language models, evidence provenance, multi-agent systems, incident prioritization}
 \maketitle
 
@@ -24,7 +31,7 @@
 An analyst opening a SOC queue sees detector alerts, not neatly bounded incidents. Several alerts may describe one attack, but deciding which ones belong together is harder than finding a shared host or account. A second log entry, for example, may be a copy of the first; its event time may be early even though the entry reached the SOC after the decision was made. Treating either as independent, timely confirmation can merge two unrelated investigations. Existing work has studied aggregation, attack reconstruction, and triage from several angles \cite{landauer2022,wang2024,grain2025,sadlek2025}. Our starting point is the evidence behind an individual merge.
 
 We therefore ask what can be joined using only evidence available at a fixed decision time. Correlation builds initial fragments and proposes further links. Verification checks whether each cross-fragment proposal has the required original observations and consistent fields. Only then does prioritization order the resulting groups for review. A better rank cannot recover an incident whose alerts were never grouped. This distinction matters because alert reduction, path reconstruction, severity prediction, and queue retrieval use different targets \cite{malach2025,grain2025,chuah2025}. Figure~\ref{fig:arch} shows the actual execution order.
-\begin{figure}[t]\centering\includegraphics[width=\textwidth]{figures/architecture.pdf}\caption{Implemented C/V/P architecture. Receiver-visible alerts and claims enter initial correlation (C); independent-root, identity and temporal verification (V) controls additional fragment unions; prioritization (P) ranks the final groups. Rejected or insufficient bundles do not add a union. Private evaluator labels never enter prediction.}\label{fig:arch}\end{figure}
+\begin{figure*}[!tbp]\centering\includegraphics[width=.86\textwidth]{figures/architecture.pdf}\caption{Implemented C/V/P architecture. Receiver-visible alerts and claims enter initial correlation (C); independent-root, identity and temporal verification (V) controls additional fragment unions; prioritization (P) ranks the final groups. Rejected or insufficient bundles do not add a union. Private evaluator labels never enter prediction.}\label{fig:arch}\end{figure*}
 
 Three questions guide the study. First, what does the verifier accept or refuse when claims are copied, late, missing, or inconsistent? Second, on the same untouched synthetic queues, does a narrowly defined endpoint fallback recover more incidents without an observed increase in incorrect groupings? Third, which missing data prevent the same test on a real SOC export? We contribute:
 \begin{itemize}
@@ -42,18 +49,7 @@ Landauer et al. learn aggregation patterns from semi-structured alerts \cite{lan
 Other work starts from the triage decision itself: Sadlek et al. use kill-chain graphs to order incidents by severity \cite{sadlek2025}, while CyberShapley identifies informative parts of an anomaly graph \cite{malach2025}. In our evaluation, an incident must first have a sufficiently complete and pure group, and that group must then reach the first 20 queue positions. Provenance is also well established. HOLMES, POIROT, UNICORN, and CrossHound use information flows, audit trails, or host/network relationships for investigation \cite{holmes2019,poirot2019,unicorn2020,crosshound2026}. We build on that line of work by specifying a three-root decision gate with evidence-arrival time for this controlled grouping task; we do not claim to introduce provenance reasoning.
 
 \subsection{Evidence assumptions and evaluation}
-Reviews of security-event and log correlation document differences in data sources, missingness, and metrics \cite{review2022,chuah2025}. These differences are material here. A source ID does not prove that two real sensors are independent; the controlled generator supplies root identities, and the verifier rejects copies that trace back to the same root. Table~\ref{tab:prior} records the respective tasks without turning unlike performance numbers into a league table.
-
-\begin{table}[t]\centering\footnotesize\caption{Representative research and its relation to the present study. The absence of a specified three-root gate in this summary is not a claim that the cited system lacks other safeguards.}\label{tab:prior}
-\begin{tabularx}{\textwidth}{@{}p{0.16\textwidth}p{0.19\textwidth}Y Y@{}}\toprule
-Study & Main task & Method and evidence & Difference in evaluation question\\\midrule
-Landauer et al. \cite{landauer2022} & Alert aggregation & Learned patterns over semi-structured alerts & Alert-group reduction, not point-in-time incident recoverability\\
-Wang et al. \cite{wang2024} & Aggregation and prediction & Similarity grouping, Transformer & Attack prediction after aggregation\\
-GRAIN \cite{grain2025} & Multi-stage reconstruction & Causal alert graph, GNN, RL & Graph/path reconstruction on public attack datasets\\
-Sadlek et al. \cite{sadlek2025} & Incident triage & Kill-chain attack graph & Severity ranking rather than gated fragment unions\\
-CyberShapley \cite{malach2025} & Explanation and triage & Informative graph components & Detector explanation rather than incident partition safety\\
-CrossHound \cite{crosshound2026} & APT investigation & Host/network provenance correlation & Multi-source paths on OpTC/LANL; distinct labels and inputs\\\bottomrule
-\end{tabularx}\end{table}
+Reviews of security-event and log correlation document differences in data sources, missingness, and metrics \cite{review2022,chuah2025}. These differences are material here. A source ID does not prove that two real sensors are independent; the controlled generator supplies root identities, and the verifier rejects copies that trace back to the same root. The cited studies address aggregation, prediction, reconstruction, triage, or investigation with distinct labels and inputs; their published scores are not a same-data comparison with this experiment.
 
 
 \section{Proposed methodology}
@@ -63,36 +59,31 @@ The algorithm outputs a partition $\mathcal G_q=(G_1,\ldots,G_m)$ of $A_q(T)$, o
 
 
 
-Event time represents when the activity occurred; availability time represents when its supporting observation reached the receiver. the evidence-timing example depicts the distinction. A claim at minute 105 is excluded at the minute-100 decision even if its event refers to minute 60.
+Event time represents when the activity occurred; availability time represents when its supporting observation reached the receiver. A claim available at minute 105 is excluded at the minute-100 decision even if its event refers to minute 60.
 
 
 
 \subsection{Agent framework and executable contracts}\label{sec:agents}
-\subsubsection{Roles, boundaries, and evidence budget}
-We defined the three agents by what they may read and return. A request carries opaque IDs, an approved and bounded evidence set $E$, schema and prompt versions, and limits on candidate pairs and tokens. The request validator rejects evaluator labels (including aliases and lineage), records from another organization, unknown citation IDs, non-finite scores, oversized evidence, duplicate keys, and unexpected output fields. It also treats text inside an observation as evidence, never as an instruction. Checking roles receive the same snapshot; otherwise a later observation could quietly enter verification.
+\subsubsection{Roles and evidence boundary}
+A request contains opaque alert IDs, one approved evidence snapshot $E_T$, and explicit candidate, token, schema, prompt, and model-version budgets. The receiver rejects evaluator labels or lineage, cross-organization records, invalid citation IDs, duplicate keys, non-finite scores, excessive evidence, and unexpected JSON fields. Observation text is treated as data rather than an instruction. All roles receive the same cutoff-time snapshot.
 
-For a supplied same-organization pair $(a,b)$, C returns $d_{ab}\in\{\mathrm{LINK},\mathrm{NO\_LINK},\mathrm{UNSURE}\}$, a reason, uncertainty, and IDs for supporting and conflicting observations. C cannot search for new pairs. A deterministic builder joins validated LINK edges under organization and component-size limits. P scores a provisional group $G$ against the other supplied groups and cites evidence for its rationale; the score is a ranking signal, not a calibrated probability of attack. V checks the substantive C/P claims against that same evidence set and marks each as supported, unsupported, unverifiable, or contradicted. Its overall decision is PASS, REVISE, or REVIEW. One revision is allowed. Conflicts left unresolved, unsupported high scores, invalid output, and provider failures go to review.
+For a supplied pair $(a,b)$, correlation (C) returns LINK, NO\_LINK, or UNSURE, with uncertainty, reason, and supporting/conflicting evidence IDs. It cannot search for new pairs. A bounded builder joins validated LINK edges; prioritization (P) scores the resulting candidate against other groups and cites its rationale. Verification (V) marks substantive claims supported, unsupported, unverifiable, or contradicted and returns PASS, REVISE, or REVIEW. At most one revision is allowed. Unresolved conflict, unsupported priority, invalid output, and provider failure route to review. The score is a ranking signal, not a calibrated attack probability.
 
-For a model request $x$ and allowed evidence $E_T$, define the auditability predicate
+For a request $x$, the contract requires $\mathcal A(x,E_T)=1$ only when every claim cites receiver-visible evidence that substantively supports it:
 \begin{equation}\label{eq:citationgate}
-\mathcal{A}(x,E_T)=\mathbf1\!\left[\forall c\in\operatorname{claims}(x),\;
-\operatorname{cite}(c)\subseteq E_T\;\land\;\operatorname{support}(c,E_T)\right].
+\begin{aligned}
+\mathcal A(x,E_T)=\mathbf1\bigl[\forall c\in\operatorname{claims}(x):{}&\\
+\operatorname{cite}(c)\subseteq E_T\ \land\ {}&\operatorname{support}(c,E_T)\bigr].
+\end{aligned}
 \end{equation}
-Merely naming an evidence ID does not satisfy (\ref{eq:citationgate}); the observation must support the actual assertion. This is an interface rule, not an empirically calibrated truth test. PASS says that the supplied observations support the claims under this contract. It does not certify the incident label. Hallucinated interpretations, malicious text in evidence, and several sensors sharing one compromised upstream source remain risks.
+A cited ID alone is insufficient. PASS verifies this contract, not incident ground truth. Shared compromised sources and deceptive evidence text remain possible.
 
-\subsubsection{Executable state machine}
-The orchestrator processes pairs in a stable order. For each pair it checks lineage and budgets, calls the role adapter, validates the returned JSON and citations, and records the first decision. It permits one revision before writing the final LINK, NO\_LINK, UNSURE, or REVIEW status and reason. Idempotency keys include the input and role, schema, prompt, and model versions. Failed and abstained candidates remain in the trace. Figure~\ref{fig:agentflow} shows these software contracts, which should not be confused with the predictor evaluated on the synthetic holdout.
-\begin{figure}[t]\centering\includegraphics[width=\textwidth]{figures/agent_contracts.pdf}
-\caption{Bounded C/P/V role contracts. The request gate restricts fields, candidate scope, evidence and budgets; C proposes links, the component builder forms groups, P assigns relative scores, and V checks cited claims. The revision branch is capped at one attempt; unresolved cases enter human review. This depicts implemented orchestration and a local prototype, not the deterministic holdout predictor or evidence of LLM superiority.}\label{fig:agentflow}\end{figure}
-
-\subsubsection{What was executed and what remains unmeasured}
-The offline adapter uses fixed responses to exercise validation and orchestration without a model provider. In one synthetic run, it processed four pairs into four components through ten role calls, with one revision and one review route. The configured 2,500-token amount was a budget estimate, not recorded token usage. We also ran 34 synthetic assertions covering decision states, citations, label leakage, malformed JSON, source limits, group caps, and replay; another 59 assertions checked evaluation calculations and ranking boundaries. These checks test the software and evaluator. They do not estimate detection accuracy in a SOC.
-
-We separately ran a bounded local \texttt{qwen2.5:3b} prototype through Ollama for 20 organizations. Its candidates and scope differed from those of the full-queue statistical reference, so it cannot demonstrate an LLM advantage. Rules (B0) and BM25 (B1) have synthetic interfaces; the single-call (B2) and repeated three-call (B3) LLM controls currently use offline stubs. We do not count those outputs as measured model baselines. A comparison of agent count would need the same approved evidence, query and pair universe, abstention policy, and measured model/token budget in every arm, frozen before a fresh test.
+\subsubsection{Execution and measured scope}
+The orchestrator validates pairs in stable order, records decisions and abstentions, permits one revision, and keys replay to input, role, schema, prompt, and model versions. Offline-adapter tests exercised four synthetic pairs, ten role calls, one revision, and one review; 34 assertions checked roles, citations, leakage, malformed output, caps, and replay, while 59 more checked evaluation and ranking boundaries. A bounded local \texttt{qwen2.5:3b} Ollama prototype ran on 20 organizations, but its pair universe differed from the statistical reference. Rules and BM25 have synthetic interfaces; single-call and repeated-call LLM controls use offline stubs. None of these contract tests establishes an LLM performance gain. The measured holdout instead uses the deterministic C/V/P path in Fig.~\ref{fig:arch}.
 
 
 \subsection{Architecture and data flow}
-Fig.~\ref{fig:arch} shows the computational order and the data-flow summary provides a data-flow summary with alert counts. The correlation routine first groups same-source alerts, process-tree references, and eligible lineage references with host/account guards and a component-size cap of 100. It returns a partition and candidate diagnostics. Verification then inspects each visible relationship-token bundle before any additional cross-fragment union. Finally the ranking routine orders the resulting groups for the analyst. The repository's earlier code labels this as C--P--V in places, but the frozen prediction call executes correlation, then verification, then scoring; we describe this actual execution order as C/V/P.
+Fig.~\ref{fig:arch} shows the computational order. The correlation routine first groups same-source alerts, process-tree references, and eligible lineage references with host/account guards and a component-size cap of 100. It returns a partition and candidate diagnostics. Verification then inspects each visible relationship-token bundle before any additional cross-fragment union. Finally the ranking routine orders the resulting groups for the analyst. The repository's earlier code labels this as C--P--V in places, but the frozen prediction call executes correlation, then verification, then scoring; we describe this actual execution order as C/V/P.
 
 Verification outcomes in the implementation are reason-coded. A mismatched event or causal field, late claim, shared root, derived-only family, excessive component size, or incompatible component host/account context prevents union. An absent process claim may be considered by the constrained fallback in Section~\ref{sec:method}; its extra check uses receiver-visible endpoint fields, not truth labels. Rejected and insufficient proposals leave the existing partition intact. This is a conservative decision procedure under its assumed root semantics, not a formal guarantee against adversarially coordinated false observations.
 
@@ -107,27 +98,32 @@ For each proposed relationship, the baseline inspects a bundle of claims. To joi
 
 The root and visibility checks are necessary conditions:
 \begin{equation}\label{eq:gate}
-\left|\{\rho(c):c\in B_r,\;c\text{ original}\}\right|=3,\qquad
-\max_{c\in B_r}t_{\mathrm{available}}(c)\leq T.
+\begin{aligned}
+\left|\{\rho(c):c\in B_r,\;c\text{ original}\}\right|&=3,\\
+\max_{c\in B_r}t_{\mathrm{available}}(c)&\leq T.
+\end{aligned}
 \end{equation}
 The two conditions in (\ref{eq:gate}) are only part of the decision. Identity, context, event time, and component guards must also pass. On failure the verifier records a reason and makes no union. It checks each token against original alert fields; a newly enlarged group cannot serve as a new witness for the next token. Group membership is nevertheless transitive after independently checked unions, so one final group may contain several fragments.
 
 \subsubsection{Constrained endpoint fallback}
 The candidate revisits just one failure reason: \texttt{missing\_family}. If the process claim is absent, it may use original endpoint observations alongside one original authentication and one original network-flow claim. The two claims must have different roots and be available by minute 100. The endpoints must be original, have different source and observation IDs, and share an endpoint-origin root distinct from both claim roots. Host, account, event timing, process parent, session, and flow must agree between endpoints and claims. The existing component guards still apply. Thus the endpoint context fills the missing process-family role; it cannot excuse a contradiction, a late claim, or another failure. Figure~\ref{fig:verify} shows the branches.
-\begin{figure}[t]\centering\includegraphics[width=\textwidth]{figures/verification_methodology.pdf}\caption{Frozen verifier workflow. The baseline requires original process, authentication and network claims from three distinct roots. Only \texttt{missing\_family} can trigger the fallback: original authentication and network claims plus a distinct original endpoint root. Identity, event-time, availability, causal fields, component context and size gates still apply. Failure leaves the partition intact. Evaluator truth is unavailable to prediction.}\label{fig:verify}\end{figure}
+\begin{figure*}[!tbp]\centering\includegraphics[width=.88\textwidth]{figures/verification_methodology.pdf}\caption{Frozen verifier workflow. The baseline requires original process, authentication and network claims from three distinct roots. Only \texttt{missing\_family} can trigger the fallback: original authentication and network claims plus a distinct original endpoint root. Identity, event-time, availability, causal fields, component context and size gates still apply. Failure leaves the partition intact. Evaluator truth is unavailable to prediction.}\label{fig:verify}\end{figure*}
 
 \subsubsection{Decision semantics and component state}
 Claim validity and permission to merge are separate checks. A valid token may point to alerts already in one component; then there is nothing to join. It may also pass its claim checks but fail because the proposed combined group would exceed 100 alerts or the components have no host/account overlap. Existing groups stay intact in either case. Bundles are processed in sorted order, with union--find tracking the additional verified joins. The three-root requirement counts the original observations for a token, not alerts accumulated in its component.
 
-the logical decision cases gives logical decision cases, not extra measured experiments. An authentication claim copied into a second derived record still has one upstream root; a future-dated claim cannot be used at the decision cutoff even if its underlying event happened earlier. A contradiction is not repaired by the endpoint rule. Conversely, an absent process claim can be substituted only after the exact authentication/network and endpoint conditions above succeed. These distinctions explain why missing evidence may cause abstention while conflicting evidence blocks an otherwise plausible relationship.
+An authentication copy retains its upstream root; a late claim is unavailable even when its event time is early. Contradictory causal fields block a union. Only an absent process-family witness can trigger the guarded endpoint substitution.
 
 
 \subsubsection{Grouping and scoring}
-Both arms rank by source depth: $1.2$ times maximum severity, $0.7$ times maximum asset criticality, $0.55$ times distinct event types among source representatives, and $0.7$ times the number of distinct sources capped at 10. The code first constructs a dictionary keyed by source ID and retains one representative alert per source. The frozen baseline adds one point per accepted token whose left endpoint is in the group. The candidate uses the same bonus coefficient of one and includes fallback unions. Groups are sorted by descending score and then first alert identifier. A group never becomes recoverable merely because its rank changes; the grouping/retrieval distinction separates grouping from top-20 retrieval.
+Both arms retain one representative per source, apply the same fixed score, and sort by descending score then first alert ID. Each accepted token whose left endpoint belongs to the group adds one point. Fallback can alter the partition and token count; ranking alone cannot make an unrecoverable incident recoverable.
 For group $G$, let $D(G)$ denote the code's one-alert-per-source representatives, $s(a)$ and $c(a)$ the alert severity and criticality, $E(D)$ the distinct event types in those representatives, and $U(G)$ the accepted tokens whose left endpoint belongs to $G$. The implemented score in both primary arms is
 \begin{equation}\label{eq:score}
-F(G)=1.2\max_{a\in D(G)}s(a)+0.7\max_{a\in D(G)}c(a)
-+0.55|E(D(G))|+0.7\min\{|D(G)|,10\}+|U(G)|.
+\begin{aligned}
+F(G)={}&1.2\max_{a\in D(G)}s(a)+0.7\max_{a\in D(G)}c(a)\\
+&+0.55|E(D(G))|+0.7\min\{|D(G)|,10\}\\
+&+|U(G)|.
+\end{aligned}
 \end{equation}
 The fallback can change both $G$ and $U(G)$, so a changed rank is not isolated evidence of a superior ranking function. The fixed ranking expression is a deterministic heuristic, not a learned probability of incident severity.
 
@@ -136,8 +132,7 @@ The fallback can change both $G$ and $U(G)$, so a changed rank is not isolated e
 \section{Experimental setup}
 We generated queues with process, authentication, and network-flow claims. The generator also recorded whether an observation was original or derived, when it became available, and whether fields were missing or contradictory. Eight training queues and ten development queues informed the method. On the latter, the candidate recalled 169 of 200 expert top-20 incidents, recovered 177, and credited 73 of 100 P@10 positions; it had no false grouped pairs or mixed groups. The planned gate was 170/200 Recall@20, so the candidate missed it by one incident. The team documented a decision to test the candidate unchanged on a new holdout. We report this as a protocol adjustment, not a gate pass.
 
-The new sample used seed 31103 and template variant 2: 15 queues containing 5,018 alerts eligible by the cutoff, or 300 expert top-20 incident opportunities. Both methods received the same alerts. Source and configuration hashes were fixed, and predictions and decision files were SHA-256 sealed before the evaluator opened private truth. We evaluated each arm once. Variant 2 changes the synthetic template, but the holdout still comes from the same generator family. Figure~\ref{fig:protocol} records the order of these steps.
-\begin{figure}[ht]\centering\includegraphics[width=\linewidth]{figures/experimental_protocol.pdf}\caption{Experimental order: training and development, the missed 170/200 development gate, the documented authorization to test the unchanged candidate, a fresh synthetic holdout, SHA-256 sealing, and one subsequent private-truth evaluation. No post-result holdout tuning is represented.}\label{fig:protocol}\end{figure}
+The fresh sample used seed 31103 and template variant 2: \textbf{15 queues}, \textbf{5,018 cutoff-eligible alerts}, and 300 expert top-20 incident opportunities. Both methods received identical inputs. Source/configuration hashes were fixed and prediction files SHA-256 sealed before private truth was opened. Each arm ran once; the holdout remains within the generator family. Its audit recorded 345 false independent-looking claims, 170 derived copies, 95 false same-context tokens, 55 late claims, and 28 missing true claims. These overlapping challenge categories are not a partition.
 
 
 
@@ -146,16 +141,18 @@ The controlled evidence generator is the dataset source for the primary experime
 
 The predictor uses the thresholds in Sections~\ref{sec:method} and the fixed coefficients in (\ref{eq:score}); it does not fit a model on the test split. Both methods start from the same 2,685 candidate pairs. The comparator is the frozen \texttt{evidence\_aware\_ranked} pipeline; the candidate adds the \texttt{missing\_family} endpoint rule and retains the verified-token score bonus of 1. Prediction runs with Python 3.12 standard-library code. The repository pins Matplotlib 3.11.2 and NumPy 2.5.4 for figures; neither library is needed by the frozen predictor. We do not infer portable latency from the single recorded executions, whose hardware specification was not archived.
 
-The source repository is \url{https://github.com/Hunain230/CN-Research-}. Within it, \path{experiments/PHASE33_FROZEN_GENERALIZATION/} contains \texttt{config.json}, \texttt{PHASE33\_FREEZE.json}, the generator, \texttt{run\_holdout.py}, the original queue CSV, prediction and evaluation artifacts, and the pre-evaluation SHA-256 seal. The models reside in the Phase 31 and 32 experiment directories; the unchanged evaluator is in \path{experiments/PHASE15_CONTROLLED_SOC/evaluation/evaluate.py}. The one-shot runner refuses to overwrite existing predictions. Replaying generation and evaluation therefore requires an isolated checkout with its original frozen inputs and output paths prepared according to the repository protocol; the archived artifacts permit direct audit without rerunning the holdout. The paired queue CSV and a dependency-free bootstrap script are also included under \texttt{analysis/} in this Overleaf package.
+The source repository is \url{https://github.com/Hunain230/CN-Research-}. Within it, \path{experiments/PHASE33_FROZEN_GENERALIZATION/} contains \texttt{config.json}, \texttt{PHASE33\_FREEZE.json}, the generator, \texttt{run\_holdout.py}, the original queue CSV, prediction and evaluation artifacts, and the pre-evaluation SHA-256 seal. The models reside in the Phase 31 and 32 experiment directories; the unchanged evaluator is in \path{experiments/PHASE15_CONTROLLED_SOC/evaluation/evaluate.py}. The one-shot runner refuses to overwrite existing predictions. We also ran a same-seed replay in an isolated temporary directory: its manifest and all 15 per-queue recall, recoverability, and P@10 counts matched the archive, as did the aggregate grouping-safety counts. This is a reproducibility check of the original cohort, not a second independent holdout. The replay and paired bootstrap scripts are included under \texttt{analysis/} in this package.
 
 
 \subsection{Evaluation metrics}
 The evaluator has 25 expert-priority incidents per queue and takes ranks 1--20 as the target set. Let $n_i$ be the number of eligible alerts for incident $i$, $h_{iG}$ the number of those in predicted group $G$, and $|G|$ its size. A group qualifies for $i$ if
 \begin{equation}\label{eq:qualify}Q(i,G)=\mathbf{1}\left[\frac{h_{iG}}{n_i}\geq0.8\;\land\;\frac{h_{iG}}{|G|}\geq0.8\right].\end{equation}
-The denominator $n_i$ concerns eligible alerts, not all generated alerts. Every expert incident must have at least one eligible alert. If any group qualifies, $i$ is recoverable; if any qualifying group has rank at most 20, it is recalled. For $N$ queues, the implementation micro-aggregates counts:
+The denominator $n_i$ concerns eligible alerts, not all generated alerts. Every expert incident must have at least one eligible alert. If any group qualifies, $i$ is recoverable; if any qualifying group has rank at most 20, it is recalled. For $N$ queues, let $\mathcal G_q^{20}$ be the groups ranked at most 20 and $I_q^{20}$ the 20 expert-priority incidents. The implementation micro-aggregates counts:
 \begin{align}\label{eq:recall}
-R@20&=\frac{1}{20N}\sum_q\sum_{i\in I_q^{20}}\mathbf1[\exists G:\,Q(i,G)=1,\ \operatorname{rank}(G)\leq20],\\
-\operatorname{Recov}&=\frac{1}{20N}\sum_q\sum_{i\in I_q^{20}}\mathbf1[\exists G:\,Q(i,G)=1].
+R@20&=\frac{1}{20N}\sum_q\sum_{i\in I_q^{20}}
+\max_{G\in\mathcal G_q^{20}} Q(i,G),\\
+\operatorname{Recov}&=\frac{1}{20N}\sum_q\sum_{i\in I_q^{20}}
+\max_{G\in\mathcal G_q} Q(i,G).
 \end{align}
 For P@10 the evaluator scans the first 20 groups, credits at most one previously uncredited qualifying incident per group (lowest expert rank if several qualify), and counts a credit only when the group is within positions 1--10 and the incident's expert rank is at most 10. The aggregate denominator is $10N$. This assignment rule is more specific than ordinary binary relevance precision.
 
@@ -164,100 +161,80 @@ For each group, the evaluator counts true within-group pairs $\sum_i\binom{h_{iG
 
 \section{Results and analysis}
 \subsection{Primary frozen synthetic holdout}
-Table~\ref{tab:primary} compares the two methods on the same 15 queues. Eighteen more expert-priority incidents had a qualifying group anywhere in the candidate output; ten more had one among the first 20 groups. The first ten positions gained six credited incidents. These correspond to 6.00 points in recoverability, 3.33 in Recall@20, and 4.00 in P@10. Figure~\ref{fig:primary} plots the three denominators separately. With one holdout and no repeated independent samples, we make no significance claim.
+Table~\ref{tab:primary} compares matched predictions. The fallback recovers 18 more expert incidents somewhere in the output, retrieves ten more by rank 20, and credits six more in the first ten positions: \textbf{+6.00 points recoverability}, \textbf{+3.33 points Recall@20}, and \textbf{+4.00 points P@10}. These measures use distinct denominators.
 
-To show the uncertainty across queues, we resampled the 15 \emph{paired queues} with replacement 10,000 times (seed 31103), recomputed each candidate-minus-baseline percentage-point difference, and took the 2.5th and 97.5th empirical percentiles. The resulting intervals were [0.67, 6.00] for Recall@20, [4.00, 8.00] for recoverability, and [-0.67, 8.67] for P@10. This is a descriptive cluster bootstrap conditional on the controlled queue generator; the P@10 interval includes zero. The supplied script and queue CSV reproduce the arithmetic. It does not establish significance or an error bound for operational SOC queues.
-\begin{table}[t]\centering\footnotesize\caption{Frozen paired holdout results. Fractions use evaluator opportunity denominators. Differences are candidate minus baseline; percentage differences are percentage points.}\label{tab:primary}\begin{tabularx}{\textwidth}{@{}Yrrr@{}}\toprule Metric & Frozen baseline & Endpoint fallback & Difference\\\midrule Incident Recall@20 & 250/300 (83.33\%) & 260/300 (86.67\%) & +10 (+3.33 pp)\\ Group recoverability & 263/300 (87.67\%) & 281/300 (93.67\%) & +18 (+6.00 pp)\\ P@10 & 107/150 (71.33\%) & 113/150 (75.33\%) & +6 (+4.00 pp)\\ Grouped-pair precision & 19,459/19,459 (100\%) & 20,117/20,117 (100\%) & 0 pp\\ False grouped pairs & 0 & 0 & 0\\ Mixed groups & 0 & 0 & 0\\\bottomrule\end{tabularx}\end{table}
+Figure~\ref{fig:bootstrap} reports a descriptive paired-queue bootstrap. For metric $M$, the effect is $\hat\Delta_M=15^{-1}\sum_{q=1}^{15}(M_{q,\mathrm{fallback}}-M_{q,\mathrm{base}})$ in percentage points; 10,000 queue resamples with replacement (seed 31103) yield percentile intervals. The 95\% intervals are \textbf{[0.67, 6.00]} for Recall@20, \textbf{[4.00, 8.00]} for recoverability, and [-0.67, 8.67] for P@10. The last crosses zero. These conditional intervals do not establish a real-SOC error bound or a second independent holdout.
+\begin{table*}[!tbp]\centering\footnotesize\caption{Frozen paired holdout results. Fractions use evaluator opportunity denominators. Differences are candidate minus baseline; percentage differences are percentage points.}\label{tab:primary}\begin{tabularx}{\textwidth}{@{}Yrrr@{}}\toprule Metric & Frozen baseline & Endpoint fallback & Difference\\\midrule Incident Recall@20 & 250/300 (83.33\%) & \gaincell{260/300 (86.67\%)} & \gaincell{+10 (+3.33 pp)}\\ Group recoverability & 263/300 (87.67\%) & \gaincell{281/300 (93.67\%)} & \gaincell{+18 (+6.00 pp)}\\ P@10 & 107/150 (71.33\%) & \gaincell{113/150 (75.33\%)} & \gaincell{+6 (+4.00 pp)}\\ Grouped-pair precision & 19,459/19,459 (100\%) & 20,117/20,117 (100\%) & 0 pp\\ False grouped pairs & 0 & \gaincell{0} & 0\\ Mixed groups & 0 & \gaincell{0} & 0\\\bottomrule\end{tabularx}\end{table*}
 
-\begin{figure}[t]\centering\includegraphics[width=\textwidth]{figures/phase33_results.pdf}\caption{Frozen synthetic holdout metrics from the verified summary, with exact counts and denominators. Zero-based axes permit direct comparison; the three panels have different evaluation opportunities and must not be summed.}\label{fig:primary}\end{figure}
-After predictions were sealed, the truth audit found that all 28 new fallback unions, and all 711 accepted candidate tokens overall, were genuine under simulator labels. The verifier rejected 150 false tokens and also abstained on 35 genuine ones. Tokens are proposals; they should not be confused with the much larger set of pairs inside final groups. Both arms had zero false grouped pairs and zero mixed groups in all 15 queues. That clean grouping result did not prevent local ranking losses: two queues each lost one recalled incident, and P@10 decreased in two queues.
+\begin{figure}[!htbp]\centering\includegraphics[width=.98\columnwidth]{figures/paired_bootstrap_intervals.pdf}\caption{\textbf{Paired-queue effects and uncertainty.} Point estimates are candidate minus baseline; lines are descriptive percentile intervals from 10,000 queue resamples. Recall/recoverability use 300 incident opportunities and P@10 uses 150 rank positions. The dashed line denotes zero effect.}\label{fig:bootstrap}\end{figure}
+Figure~\ref{fig:rankpanels} shows the full rank-cutoff behavior. Both arms retrieved 75/300 expert incidents by rank five; the counts were 143 versus 148 by rank ten and 250 versus 260 by rank 20. The interval bars show where newly qualifying incidents entered the reviewed queue.
+\begin{figure*}[!tbp]\centering\includegraphics[width=.83\textwidth]{figures/rank_retrieval_panels.pdf}\caption{\textbf{Ranked incident retrieval on the paired holdout.} Left: cumulative expert-incident Recall@$k$ from the sealed ranked groups. Right: newly retrieved incidents by first qualifying group position. Each arm has the same 300 expert top-20 opportunities; bars partition its own Recall@20 count.}\label{fig:rankpanels}\end{figure*}
+After predictions were sealed, the truth audit found that \textbf{all 28 new fallback unions}, and all 711 accepted candidate tokens overall, were genuine under simulator labels. The verifier rejected 150 false tokens and also abstained on 35 genuine ones. Tokens are proposals; they should not be confused with the much larger set of pairs inside final groups. Both arms had \textbf{zero false grouped pairs and zero mixed groups} in all 15 queues. That clean grouping result did not prevent local ranking losses: two queues each lost one recalled incident, and P@10 decreased in two queues.
 
 
 \subsection{Decision confusion matrix and paired outcomes}
 Table~\ref{tab:confusion} gives the 896 token decisions in the sealed candidate run. Here ``positive'' means that the verifier accepted a proposed relationship, not that a detector labeled an alert malicious. Of the 711 accepted proposals, 28 are unions admitted by the fallback; none was false under simulator truth. Thirty-five genuine proposals were rejected or left unresolved because the evidence did not satisfy the rule, while 150 false proposals were rejected. Conditional acceptance precision is $711/(711+0)=100\%$, recall among genuine proposed tokens is $711/(711+35)=95.31\%$, and rejection specificity among false proposed tokens is $150/(150+0)=100\%$. These denominators cover submitted tokens only, not every alert pair or an operational population.
-\begin{table}[t]
-\centering\caption{Candidate token-decision confusion matrix on the frozen synthetic holdout; truth opened only after predictions were sealed. Rows are verifier decisions; columns are simulator truth.}\label{tab:confusion}
+\begin{table}[!htbp]
+\centering\footnotesize\caption{Candidate token-decision confusion matrix on the frozen synthetic holdout; truth opened only after predictions were sealed. Rows are verifier decisions; columns are simulator truth.}\label{tab:confusion}
 \begin{tabular}{@{}lrr@{}}\toprule
- & Genuine relation & False relation\\\midrule
+ & Genuine & False\\\midrule
 Accepted & \gaincell{711 (TP)} & 0 (FP)\\
 Rejected/abstained & 35 (FN) & \gaincell{150 (TN)}\\\bottomrule
 \end{tabular}
 \end{table}
-The paired incident table uses another denominator: 300 expert top-20 opportunities (Table~\ref{tab:paired}). Both methods retrieved 245; the candidate alone retrieved 15, while the baseline alone retrieved five. That is the net gain of ten. There are no designated negative incident opportunities in this table, so it cannot yield classification accuracy or true negatives. Nor does the archived summary contain the denominator for all eligible same-incident alert pairs. We therefore report grouped-pair precision without inventing pair recall.
-\begin{table}[t]
-\centering\caption{Paired incident retrieval at rank 20 (300 expert opportunities).}\label{tab:paired}
-\begin{tabular}{@{}lrr@{}}\toprule
- & Candidate recalled & Candidate missed\\\midrule
-Baseline recalled & 245 & 5\\
-Baseline missed & \gaincell{15} & 35\\\bottomrule
-\end{tabular}
-\end{table}
+Figure~\ref{fig:outcomepanels} separates group recoverability from rank placement and shows the paired incident transitions. Both arms retrieved 245 incidents; the candidate alone retrieved \textbf{15}, the baseline alone five, and neither retrieved 35. There are no designated negative incident opportunities, so these counts do not yield classification accuracy or true negatives. We also do not infer pair recall without the eligible same-incident pair denominator.
+\begin{figure}[!htbp]\centering\includegraphics[width=.98\columnwidth]{figures/incident_outcome_column.pdf}\caption{\textbf{What changed for the same 300 expert incidents.} Top: each arm's disjoint top-20, below-20 but recoverable, and unrecoverable outcomes. Bottom: paired Recall@20 decisions, where off-diagonal cells expose gains and losses. The matrix is incident retrieval, not token-decision confusion.}\label{fig:outcomepanels}\end{figure}
 The frozen summary additionally reports nDCG@20 of 0.8852 versus 0.9201 and MRR of 1.0 in both arms. It records 1,333 versus 1,305 predicted groups and 683 versus 711 accepted merges. Its recorded run durations of 0.696 and 0.656 seconds are single execution measurements, with no repeated-run uncertainty or hardware-normalized latency claim.
 \subsection{Where the aggregate gains arose}
 The heatmap in Figure~\ref{fig:queueheat} shows integer differences for each queue. Recall improved in eight queues, tied in five, and fell by one in two. Recoverability improved in twelve and tied in three. P@10 improved in five, tied in eight, and fell in two. Each queue contributes 20 possible incidents to Recall@20 and recoverability, but only ten possible credits to P@10. The plot makes visible the cases hidden by an aggregate gain.
-\begin{figure}[t]\centering\includegraphics[width=\textwidth]{figures/queue_delta_heatmap.pdf}\caption{Per-queue change on the paired synthetic holdout. Each cell is candidate minus baseline, from the archived queue CSV. Blue-green marks gains, brown losses and white no change; printed integers remain readable without color. Queue numbering is display order, not a time series.}\label{fig:queueheat}\end{figure}
-the retrieval decomposition separates the reconstruction and ranking conditions for the 300 expert top-20 incident opportunities. The baseline's 263 recoverable incidents comprise 250 retrieved within the first 20 groups and 13 with a qualifying group outside that range. The candidate's 281 recoverable incidents comprise 260 retrieved and 21 outside. Consequently, the fallback reduced the number without any qualifying group from 37 to 19, while the number recoverable but not retrieved rose from 13 to 21. This arithmetic does not identify a causal ranking failure for an individual incident: the group partition and resulting score order both change under the fallback. It does show why recoverability cannot be substituted for Recall@20.
-
+\begin{figure*}[!tbp]\centering\includegraphics[width=.76\textwidth]{figures/queue_delta_heatmap.pdf}\caption{\textbf{Paired queue differences:} each cell is candidate minus baseline, from the archived queue CSV. Blue-green marks gains, brown losses and white no change; integers remain readable without color. Queue numbering is display order, not a time series.}\label{fig:queueheat}\end{figure*}
+The baseline's 263 recoverable incidents split into 250 retrieved by rank 20 and 13 below it; the candidate's 281 split into 260 and 21. Thus the count lacking any qualifying group fell \textbf{37 to 19}, but recoverable incidents below the retrieval cutoff rose 13 to 21. Group reconstruction and score order both changed, so this does not isolate an individual ranking failure.
 
 \subsection{Development-only and historical evidence}
-the separate development studies summarizes separate ranking and evidence studies. Later development scores are not substituted for the frozen holdout or construed as a performance trajectory. The earlier historical synthetic holdout had 407/600 Recall@20 and 451/600 recoverability on another population; its scores are not directly comparable. An unsafe richer-claim development configuration produced 2,580 false pairs and 22 mixed groups, whereas independent-claim verification on that development cohort preserved zero false pairs and recovered 166/200 incidents.
+Separate development studies examined ranking and evidence rules. Their scores are not substituted for the frozen holdout or construed as a performance trajectory. The earlier historical synthetic holdout had 407/600 Recall@20 and 451/600 recoverability on another population; its scores are not directly comparable. An unsafe richer-claim development configuration produced 2,580 false pairs and 22 mixed groups, whereas independent-claim verification on that development cohort preserved zero false pairs and recovered 166/200 incidents.
 
 
 
 \section{Comparison with base papers and state of the art}\label{sec:base}
 We chose Hmimou et al. \cite{hmimou2025} as the primary base paper in the Phase 1 review because it puts specialized LLM agents to work on threat correlation. Its email, log, and IP agents combine LLaMA 3.3-70B with retrieval and security tools. On the authors' evaluation, the reported figures are 93.6\% system accuracy, 87.0\% correlation precision, 41.3\% fewer false positives, and 38.5\% less analyst triage time than their SIEM control. Their question is broader than ours, but their study does not test whether a sufficiently complete expert-priority incident reaches the top 20 of a ranked queue. The four figures belong to their experiment and are not our results.
 
-Guo et al. \cite{guo2026} helps frame the other half of our topic, alert priority. Their system combines an FFT--PCC risk gate, BERT-assisted evidence handling, graph context, and AHP ranking; they report F1 of 0.910 for false-positive identification and a separate 45.2\% response-time reduction. Its online components are function-specific rather than an autoregressive generative LLM pipeline. AgentSOC by Roy and Singh \cite{agentsoc2026} instead generates hypotheses and ranks response actions after structural simulation. Neither paper reports the expert-labeled top-20 incident-queue outcome used here. Table~\ref{tab:base_papers} keeps these evaluation objects visible.
-
-\begin{table}[t]\centering\footnotesize\caption{Phase 1 base-paper summary. Asterisks mark values reported by the original authors on their own data, not reproduced here.}\label{tab:base_papers}
-\begin{tabularx}{\textwidth}{@{}p{.16\textwidth}p{.22\textwidth}p{.25\textwidth}Y@{}}\toprule
-Study & Input and method & Published outcome* & Gap relative to this project\\\midrule
-Hmimou et al. (2025) \cite{hmimou2025} & Email, logs, IP; specialized LLM agents, RAG and tools & 93.6\% system accuracy; 87.0\% correlation precision & No expert-ranked incident queue or matched top-20 recovery\\
-Guo et al. (2026) \cite{guo2026} & SOC alerts; FFT--PCC, BERT agents, graphs, AHP & F1 0.910 for false-positive identification; 45.2\% response-time reduction & No generative LLM correlation ablation; different priority target\\
-AgentSOC (2026) \cite{agentsoc2026} & LANL authentication sample and synthetic topology; LLM hypotheses, simulation & Proof-of-concept and action ranking & Ranks response actions, not a labeled incident queue\\
-This work & Controlled synthetic alert evidence; bounded C/P/V contracts and deterministic verifier & 260/300 R@20; 0 false grouped pairs on fresh synthetic holdout & LLM comparative and real SOC performance unmeasured\\\bottomrule
-\end{tabularx}\end{table}
+Guo et al. \cite{guo2026} helps frame the other half of our topic, alert priority. Their system combines an FFT--PCC risk gate, BERT-assisted evidence handling, graph context, and AHP ranking; they report F1 of 0.910 for false-positive identification and a separate 45.2\% response-time reduction. Its online components are function-specific rather than an autoregressive generative LLM pipeline. AgentSOC by Roy and Singh \cite{agentsoc2026} instead generates hypotheses and ranks response actions after structural simulation. Neither paper reports the expert-labeled top-20 incident-queue outcome used here.
 
 Our extension makes the evidence gate explicit at receiver time and evaluates both grouping and queue retrieval. Against our own matched synthetic baseline, endpoint fallback adds 3.33 percentage points to R@20 (4.0\% relative), 6.00 points to recoverability, and 4.00 points to P@10. This is not a numerical improvement over Hmimou et al.: we did not run their implementation on the same observations, candidate universe, labels, or metrics. The small local prototype also cannot tell us whether three LLM roles outperform one. A shared-data comparison remains a separate experiment.
 
 
 \section{Ablation study}\label{sec:ablation}
-The ten development queues let us vary the evidence rule while holding the cohort fixed (Table~\ref{tab:ablation}). The permissive rich-claim version connected more fragments, but it produced 2,580 false within-group pairs and 22 mixed groups. Requiring original independent claims eliminated those observed errors in this cohort and reached 158/200 R@20 with the fixed rank bonus. The endpoint fallback then moved R@20 to 169/200 and recoverability from 166/200 to 177/200 on the \emph{same} queues; 14 new unions were genuine under generator truth. It still fell one short of the planned 170/200 gate. None of these counts belongs to the later fresh holdout.
-\begin{table}[t]\centering\footnotesize\caption{Matched controlled development ablation (10 queues; 200 top-20 opportunities). All rows use simulator truth; the unsafe variant fails the pair-safety condition.}\label{tab:ablation}
-\begin{tabularx}{\textwidth}{@{}Yrrr@{}}\toprule Method & R@20 & Recoverable & False pairs\\\midrule
-Rich claims, single lineage & 155/200 & 160/200 & 2,580\\
-Independent evidence, rank bonus & 158/200 & 166/200 & 0\\
-Independent evidence + endpoint fallback & 169/200 & 177/200 & 0\\\bottomrule
-\end{tabularx}\end{table}
+The ten development queues hold the cohort fixed while varying the evidence rule (Fig.~\ref{fig:ablation}). Rich claims connected more fragments but produced \textbf{2,580 false within-group pairs} and 22 mixed groups. Independent-root verification removed those observed errors and yielded 158/200 Recall@20 with a fixed rank bonus. Endpoint fallback then raised Recall@20 to \textbf{169/200} and recoverability from 166/200 to \textbf{177/200} on the same queues; its 14 new unions were genuine under generator truth. It missed the planned 170/200 development gate by one. No development count is added to the fresh holdout.
+\begin{figure*}[!tbp]\centering\includegraphics[width=.72\textwidth]{figures/development_ablation.pdf}\caption{\textbf{Matched development ablation on ten queues.} Left: incident Recall@20 and group recoverability (denominator 200). Right: false within-group pairs across all predicted groups. The rich-claim variant is unsafe; the last two variants have zero observed false pairs. These are development results, separate from the 15-queue holdout.}\label{fig:ablation}\end{figure*}
 Other investigations used separate development cohorts. One hard-negative ranker left groups unchanged but moved matched R@20 from 263/300 to 262/300. Delaying or removing independent evidence also reduced reconstruction. We do not pool those trials with the primary holdout or describe them as holdout ablations. There is still no eligible real-queue comparison of C/P/V against a single LLM, so the contribution of LLM agent count has not been measured.
 
 
 \section{Discussion}
-The fallback recovered cases for which the process claim was missing but the original endpoints, authentication claim, and network claim agreed. It added 18 qualifying groups anywhere in the queue, but only ten additional top-20 recalls. The eight-incident gap is a reminder to look at ranking after reconstruction. Perfect observed grouped-pair precision on this sample also says nothing about whether real upstream sources would be independent.
+The guarded endpoint substitution added 18 recoverable incidents but ten top-20 recalls. The eight-incident difference shows that reconstruction and ranking are separate bottlenecks. Zero observed false pairs does not establish independence of real upstream sources.
 
-Two details drove the evidence rule: a copied record retains its upstream root, and a claim is usable only after it arrives, regardless of its event timestamp. Separate development stress tests lost recovery when evidence was delayed, absent, corrupted, or contradictory. A fourth independent source was unavailable, so we did not invent one to fill the gap. Ranking-only trials were also inconclusive. For example, a pairwise-trained score moved development recall from 263/300 to 262/300 with identical groups; its training objective did not match the evaluator's top-20 target.
+Copies retain their root and late evidence is invisible regardless of event time. Delayed, missing, or contradictory observations reduced recovery in development. A pairwise-trained ranker moved matched development Recall@20 from 263/300 to 262/300 with unchanged groups, illustrating objective mismatch.
 
-There is a cost to the strict rule. It abstained on 35 genuine proposed relationships in the holdout even though no false grouped pairs were observed. Whether an analyst would prefer this tradeoff depends on missed-incident costs, telemetry quality, and the review process. We did not measure any of those operational quantities.
+The strict rule rejected or abstained on 35 genuine proposed tokens. Analyst preference for this tradeoff depends on telemetry and missed-incident cost, neither measured here.
 
 
 \subsection{Threats to validity}
-The largest uncertainty is transfer to a real SOC. Our generator provides the incident labels, root IDs, causal fields, and difficult counterexamples. Three different simulated roots are easy to identify; three real telemetry feeds may still depend on one controller or be compromised together. The 15 holdout queues use a different template variant but the same generator family as development. They cannot estimate an operational error rate.
+The generator supplies truth, roots, and causal fields. Three simulated roots may correspond to dependent or compromised real feeds; the fresh template variant remains within the development generator family. Fifteen queues cannot bound an operational error rate.
 
-The missed development gate is another qualification. The decision to continue with unchanged code was recorded before the fresh holdout was made and opened, yet it remains a change to the planned selection protocol. Our incident scores also depend on an 80\% completeness and purity threshold and on the simulator's priority labels. A large correct group can dominate grouped-pair precision. Initial within-source groups do not pass through the same three-root test as additional cross-fragment joins. Finally, later diagnostic cohorts have different seeds and challenge mixes; their percentages cannot be read as paired improvements.
+Testing despite a one-incident development-gate miss was a recorded protocol adjustment before holdout generation. Results depend on the 80\% completeness/purity rule and simulated priority labels. Large groups dominate pair counts, and initial within-source groups bypass the later three-root verifier. Distinct diagnostic cohorts are not paired with this holdout.
 
-We had neither authorized external SOC truth nor a real point-in-time provenance ledger. Real false unions, analyst benefit, workload, latency distribution, and the cost of abstaining therefore remain unknown.
+Real false unions, analyst benefit, workload, latency distribution, and abstention cost remain unmeasured.
 
 
 \subsection{External evaluation readiness}
-We inspected the local Microsoft GUIDE export before attempting an external run. It contains 4,147,992 evidence rows, 637,320 composite alert keys, 303,220 composite incident keys, and 9,980 ranking rows. We also found 70,702 composite alert keys with conflicting incident assignments. The published data description notes timestamp perturbation \cite{guide2024}; an alert-creation timestamp cannot stand in for the time evidence arrived at our receiver. The export does not supply the original observation IDs, trust roots, derivation chains, or independently supported process/authentication/network bundles used by the frozen verifier. Queue scope, rank direction, and complete priority semantics were unresolved, and no real fields had been approved for model visibility.
+The local Microsoft GUIDE export contains 4,147,992 evidence rows, 637,320 composite alert keys, and 9,980 ranking rows. Of the alert keys, 70,702 have conflicting incident assignments. Timestamp perturbation \cite{guide2024} and the absence of evidence-arrival times, original roots, derivation chains, and causal claim bundles prevent an equivalent point-in-time verifier evaluation. Queue/rank semantics and approved model-visible fields also remain unresolved.
 
 
 
-We stopped before predicting on GUIDE. There is therefore no real-data Recall@20, pair precision, or deployment measurement to report. The failed readiness check tells us which inputs an external test would need; it does not say whether the approach would work in a real queue.
+No GUIDE prediction or real-data performance result is attributed to the frozen verifier.
 
 
 \section{Conclusion and future work}
-In this controlled study, an endpoint observation could sometimes stand in for a missing process claim without relaxing the checks for timely, original, mutually consistent evidence. On the fresh synthetic queues, that rule raised Recall@20 from 250/300 to 260/300 and recoverability from 263/300 to 281/300; neither arm produced a false grouped pair or mixed group under simulator truth. The candidate missed its development gate, and we have disclosed the decision that allowed its unchanged holdout test. These results establish a bounded synthetic finding, not a measured LLM or real-SOC advantage. The next useful test would collect authorized point-in-time evidence with documented upstream roots and predeclare the comparison before new queue labels are opened.
+In this controlled study, an endpoint observation could sometimes stand in for a missing process claim without relaxing the checks for timely, original, mutually consistent evidence. On the fresh synthetic queues, that rule raised \textbf{Recall@20 from 250/300 to 260/300} and \textbf{recoverability from 263/300 to 281/300}; neither arm produced a false grouped pair or mixed group under simulator truth. The candidate missed its development gate, and we have disclosed the decision that allowed its unchanged holdout test. These results establish a bounded synthetic finding, not a measured LLM or real-SOC advantage. The next useful test would collect authorized point-in-time evidence with documented upstream roots and predeclare the comparison before new queue labels are opened.
 
 
 \section{Declarations and acknowledgements}

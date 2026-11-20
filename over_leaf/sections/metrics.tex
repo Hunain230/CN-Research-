@@ -1,10 +1,12 @@
 \section{Evaluation metrics}
 The evaluator has 25 expert-priority incidents per queue and takes ranks 1--20 as the target set. Let $n_i$ be the number of eligible alerts for incident $i$, $h_{iG}$ the number of those in predicted group $G$, and $|G|$ its size. A group qualifies for $i$ if
 \begin{equation}\label{eq:qualify}Q(i,G)=\mathbf{1}\left[\frac{h_{iG}}{n_i}\geq0.8\;\land\;\frac{h_{iG}}{|G|}\geq0.8\right].\end{equation}
-The denominator $n_i$ concerns eligible alerts, not all generated alerts. Every expert incident must have at least one eligible alert. If any group qualifies, $i$ is recoverable; if any qualifying group has rank at most 20, it is recalled. For $N$ queues, the implementation micro-aggregates counts:
+The denominator $n_i$ concerns eligible alerts, not all generated alerts. Every expert incident must have at least one eligible alert. If any group qualifies, $i$ is recoverable; if any qualifying group has rank at most 20, it is recalled. For $N$ queues, let $\mathcal G_q^{20}$ be the groups ranked at most 20 and $I_q^{20}$ the 20 expert-priority incidents. The implementation micro-aggregates counts:
 \begin{align}\label{eq:recall}
-R@20&=\frac{1}{20N}\sum_q\sum_{i\in I_q^{20}}\mathbf1[\exists G:\,Q(i,G)=1,\ \operatorname{rank}(G)\leq20],\\
-\operatorname{Recov}&=\frac{1}{20N}\sum_q\sum_{i\in I_q^{20}}\mathbf1[\exists G:\,Q(i,G)=1].
+R@20&=\frac{1}{20N}\sum_q\sum_{i\in I_q^{20}}
+\max_{G\in\mathcal G_q^{20}} Q(i,G),\\
+\operatorname{Recov}&=\frac{1}{20N}\sum_q\sum_{i\in I_q^{20}}
+\max_{G\in\mathcal G_q} Q(i,G).
 \end{align}
 For P@10 the evaluator scans the first 20 groups, credits at most one previously uncredited qualifying incident per group (lowest expert rank if several qualify), and counts a credit only when the group is within positions 1--10 and the incident's expert rank is at most 10. The aggregate denominator is $10N$. This assignment rule is more specific than ordinary binary relevance precision.
 

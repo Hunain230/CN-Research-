@@ -30,8 +30,8 @@ abstract=('A SOC analyst has to decide which alerts describe the same incident b
 'their software contracts with an offline adapter and a small local Qwen prototype. The measured experiment is '
 'separate: a frozen, deterministic C/V/P pipeline with a provenance gate. On a fresh synthetic holdout of 15 '
 'queues and 5,018 eligible alerts, its endpoint fallback raised incident Recall@20 from 250/300 (83.33\\%) '
-'to 260/300 (86.67\\%), recoverability from 263/300 (87.67\\%) to 281/300 (93.67\\%), and P@10 '
-'from 107/150 (71.33\\%) to 113/150 (75.33\\%). Neither arm formed a false grouped pair under simulator '
+'to \\textbf{260/300 (86.67\\%)}, recoverability from 263/300 (87.67\\%) to \\textbf{281/300 (93.67\\%)}, and P@10 '
+'from 107/150 (71.33\\%) to \\textbf{113/150 (75.33\\%)}. Neither arm formed a false grouped pair under simulator '
 'truth. After prediction files were sealed, an audit found 711 accepted genuine relationship tokens, no accepted '
 'false tokens, 35 genuine rejections, and 150 false rejections. The candidate had missed its development gate '
 'by one incident; testing it unchanged on the fresh holdout followed a documented protocol adjustment. A separate '
@@ -41,22 +41,29 @@ abstract=('A SOC analyst has to decide which alerts describe the same incident b
 
 head=r'''% Springer Nature manuscript source, generated from the editable sections in this folder.
 % Template version 3.1 (December 2024); no margin, font or spacing overrides.
-\documentclass[pdflatex,sn-mathphys-num]{sn-jnl}
+\documentclass[pdflatex,sn-mathphys-num,iicol]{sn-jnl}
 \usepackage{graphicx}
 \usepackage{booktabs,tabularx,array}
 \usepackage{amsmath,amssymb}
 \usepackage{microtype}
 \usepackage[title]{appendix}
 \graphicspath{{figures/}}
+% Allow compact, single-column floats to occupy available page space.
+\setcounter{topnumber}{3}
+\setcounter{bottomnumber}{2}
+\setcounter{totalnumber}{5}
+\setcounter{dbltopnumber}{3}
+\renewcommand{\floatpagefraction}{.62}
+\renewcommand{\dblfloatpagefraction}{.65}
 \newcolumntype{Y}{>{\raggedright\arraybackslash}X}
 \newcommand{\tabhead}[1]{\textbf{#1}}
-\newcommand{\gaincell}[1]{#1}
+\newcommand{\gaincell}[1]{\textbf{#1}}
 \hypersetup{pdftitle={A Multi-Agent LLM Framework for SOC Threat Correlation and Alert Prioritization},pdfauthor={Hunain Shahid and Hammad Ullah Khan}}
 \begin{document}
 \title[A Multi-Agent LLM Framework for SOC Threat Correlation]{A Multi-Agent LLM Framework for SOC Threat Correlation and Alert Prioritization}
 \author*[1]{\fnm{Hunain} \sur{Shahid}}\email{i240127@nu.edu.pk}
 \author[1]{\fnm{Hammad Ullah} \sur{Khan}}\email{i242539@nu.edu.pk}
-\affil*[1]{\orgdiv{Department of Computer Science}, \orgname{National University of Computer and Emerging Sciences (FAST-NUCES)}, \orgaddress{\city{Islamabad}, \country{Pakistan}}}
+\affil*[1]{\orgdiv{Department of Artificial Intelligence and Data Science}, \orgname{National University of Computer and Emerging Sciences (FAST-NUCES)}, \orgaddress{\city{Islamabad}, \country{Pakistan}}}
 \abstract{'''+abstract+r'''}
 \keywords{security operations center, alert correlation, large language models, evidence provenance, multi-agent systems, incident prioritization}
 \maketitle
@@ -70,26 +77,23 @@ def transform(name, heading, level):
         s=s.replace(r'\subsection{',r'\subsubsection{')
     old_label=re.search(r'\\label\{[^}]+\}',m.group(0))
     s=s[:m.start()]+f'\\{level}{{{heading}}}'+(old_label.group(0) if old_label else '')+s[m.end():]
-    s=s.replace(r'\begin{figure*}',r'\begin{figure}').replace(r'\end{figure*}',r'\end{figure}')
-    s=s.replace(r'\begin{table*}',r'\begin{table}').replace(r'\end{table*}',r'\end{table}')
+    s=re.sub(r'\\begin\{(figure|table)(\*)?\}(?:\[[^]]*\])?',
+             lambda m:r'\begin{'+m.group(1)+(m.group(2) or '')+r'}'+
+             ('[!tbp]' if m.group(2) else '[!htbp]'),s)
     return s
 
 body='\n\n'.join(transform(*p) for p in parts)
-# The short submission version retains six reader-scale figures and six centered
-# tables. The fuller editable research account stays in sections/ for expansion.
-drop_labels={'fig:pipeline','fig:groups','fig:provenance','fig:safety','fig:decomp',
+# Keep the main account focused; extended investigations remain in sections/.
+drop_labels={'fig:pipeline','fig:groups','fig:provenance','fig:safety',
              'tab:notation','tab:decisions','tab:cohorts','tab:development','tab:readiness'}
 for kind in ('figure','table'):
-    pattern=r'\\begin\{'+kind+r'\}(?:\[[^]]*\])?.*?\\end\{'+kind+r'\}'
+    pattern=r'\\begin\{'+kind+r'\*?\}(?:\[[^]]*\])?.*?\\end\{'+kind+r'\*?\}'
     body=re.sub(pattern,lambda m:'' if any('\\label{'+k+'}' in m.group(0) for k in drop_labels) else m.group(0),body,flags=re.S)
 for k,phrase in {'fig:pipeline':'the data-flow summary','fig:groups':'the grouping/retrieval distinction',
                  'fig:provenance':'the evidence-timing example','fig:safety':'the all-group safety audit',
-                 'fig:decomp':'the retrieval decomposition','tab:decisions':'the logical decision cases',
+                 'tab:decisions':'the logical decision cases',
                  'tab:development':'the separate development studies'}.items():
     body=re.sub(r'(?:Figure|Fig\.|Table)~\\ref\{'+re.escape(k)+r'\}',phrase,body)
-for figure in ('architecture','agent_contracts','verification_methodology','phase33_results','queue_delta_heatmap'):
-    body=re.sub(r'\\includegraphics\[width=[^]]+\](?=\{figures/'+figure+r'\.pdf\})',
-                lambda _:r'\includegraphics[width=\textwidth]',body)
 full=head+'\n'+body+'\n\\bibliography{references}\n\\end{document}\n'
 (root/'main.tex').write_text(full,encoding='utf-8')
 print('Wrote main.tex:',len(full.split()),'words')

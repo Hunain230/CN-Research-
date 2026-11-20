@@ -5,15 +5,4 @@ Landauer et al. learn aggregation patterns from semi-structured alerts \cite{lan
 Other work starts from the triage decision itself: Sadlek et al. use kill-chain graphs to order incidents by severity \cite{sadlek2025}, while CyberShapley identifies informative parts of an anomaly graph \cite{malach2025}. In our evaluation, an incident must first have a sufficiently complete and pure group, and that group must then reach the first 20 queue positions. Provenance is also well established. HOLMES, POIROT, UNICORN, and CrossHound use information flows, audit trails, or host/network relationships for investigation \cite{holmes2019,poirot2019,unicorn2020,crosshound2026}. We build on that line of work by specifying a three-root decision gate with evidence-arrival time for this controlled grouping task; we do not claim to introduce provenance reasoning.
 
 \subsection{Evidence assumptions and evaluation}
-Reviews of security-event and log correlation document differences in data sources, missingness, and metrics \cite{review2022,chuah2025}. These differences are material here. A source ID does not prove that two real sensors are independent; the controlled generator supplies root identities, and the verifier rejects copies that trace back to the same root. Table~\ref{tab:prior} records the respective tasks without turning unlike performance numbers into a league table.
-
-\begin{table*}[t]\centering\footnotesize\caption{Representative research and its relation to the present study. The absence of a specified three-root gate in this summary is not a claim that the cited system lacks other safeguards.}\label{tab:prior}
-\begin{tabularx}{\textwidth}{@{}p{0.16\textwidth}p{0.19\textwidth}Y Y@{}}\toprule
-Study & Main task & Method and evidence & Difference in evaluation question\\\midrule
-Landauer et al. \cite{landauer2022} & Alert aggregation & Learned patterns over semi-structured alerts & Alert-group reduction, not point-in-time incident recoverability\\
-Wang et al. \cite{wang2024} & Aggregation and prediction & Similarity grouping, Transformer & Attack prediction after aggregation\\
-GRAIN \cite{grain2025} & Multi-stage reconstruction & Causal alert graph, GNN, RL & Graph/path reconstruction on public attack datasets\\
-Sadlek et al. \cite{sadlek2025} & Incident triage & Kill-chain attack graph & Severity ranking rather than gated fragment unions\\
-CyberShapley \cite{malach2025} & Explanation and triage & Informative graph components & Detector explanation rather than incident partition safety\\
-CrossHound \cite{crosshound2026} & APT investigation & Host/network provenance correlation & Multi-source paths on OpTC/LANL; distinct labels and inputs\\\bottomrule
-\end{tabularx}\end{table*}
+Reviews of security-event and log correlation document differences in data sources, missingness, and metrics \cite{review2022,chuah2025}. These differences are material here. A source ID does not prove that two real sensors are independent; the controlled generator supplies root identities, and the verifier rejects copies that trace back to the same root. The cited studies address aggregation, prediction, reconstruction, triage, or investigation with distinct labels and inputs; their published scores are not a same-data comparison with this experiment.
