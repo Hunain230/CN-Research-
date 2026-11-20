@@ -1,7 +1,11 @@
-# Overleaf source
+# Springer Nature Overleaf manuscript
 
-Upload the entire `over_leaf` folder contents to a new Overleaf project, or upload `over_leaf.zip` and extract it there. Set `main.tex` as the main document, pdfLaTeX as the compiler, and use Overleaf's normal BibTeX bibliography pass. The PDF figures are vector artwork and must remain in `figures/`.
+Upload the contents of this folder (or the accompanying ZIP) to Overleaf. Set `main.tex` as the main document, select pdfLaTeX, and compile with BibTeX. This is Springer Nature `sn-jnl.cls` template version 3.1 using the numbered math/physical-sciences reference style. Keep `sn-jnl.cls`, `sn-mathphys-num.bst`, `references.bib`, and `figures/` alongside `main.tex`.
 
-The tables are each single centered floats; wide tables use the full two-column text width. Numeric results come from `experiments/PHASE33_FROZEN_GENERALIZATION/HOLDOUT_SUMMARY.json` and `POST_EVALUATION_AUDIT.json`. The token confusion matrix comes from the audit's accepted and rejected decisions. The incident matched table comes from the audit's 15 newly recalled and 5 lost recalled incidents. Development and GUIDE results are presented with separate evidence boundaries.
+`main.tex` is a complete single-file manuscript, as the template requests. The editable section sources and `build_manuscript.py` are included for future revision; after editing a section, run `python build_manuscript.py` and upload the regenerated `main.tex`. The vector architecture diagrams can be rebuilt with `python figure_source/redraw.py`.
 
-Before submission, confirm the author metadata and the target IEEE venue's exact template/declaration rules. This project uses the IEEEtran conference template. The local command-line MiKTeX compiler cannot access its Windows user registry in this sandbox, so this source was checked for missing figures, citation keys and references but not freshly compiled here.
+The title is **A Multi-Agent LLM Framework for SOC Threat Correlation and Alert Prioritization**. The manuscript distinguishes the bounded local LLM prototype and retrospective GUIDE work from the deterministic fresh synthetic holdout. The latter is the measured 260/300 result; it is not presented as an LLM performance result.
+
+The teacher's Phase 4 brief requires a roughly 8–12 page venue-appropriate paper, explicit base-paper comparison, ablation, reproducibility, declarations, and honest evidence boundaries. This source includes those elements, but the exact page count and visual layout must be checked after Overleaf compilation. No margin, type-size or spacing overrides were added to the Springer class. Author metadata, funding/competing-interest declarations, repository URL, and target venue requirements require author confirmation.
+
+Local command-line LaTeX could not be used for a final typeset check in this environment: MiKTeX was blocked by Windows registry access, and Tectonic could not fetch its uncached bundle. Static checks found no missing figure, citation key, or cross-reference.
