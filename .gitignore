@@ -35,6 +35,9 @@ htmlcov/
 # Project data
 data/
 
+# Local command-center uploads, run outputs and SQLite metadata
+dashboard/runtime/
+
 # Large generated artifacts (GitHub file-size limit)
 experiments/PHASE12_GROUND_TRUTH/AIT_ADS_PILOT_AUDIT/AIT_ADS_SOURCE_REFERENCE_AUDIT.csv
 experiments/PHASE12_GROUND_TRUTH/AIT_ADS_PILOT_AUDIT/data/raw/ait_ads.zip
