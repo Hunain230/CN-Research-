@@ -1,13 +1,10 @@
 from __future__ import annotations
 
 import asyncio
-import csv
 import hashlib
 import importlib.util
 import json
 import os
-import platform
-import shutil
 import sqlite3
 import sys
 import threading
@@ -18,9 +15,9 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
-from fastapi import FastAPI, File, HTTPException, UploadFile, WebSocket, WebSocketDisconnect
+from fastapi import FastAPI, HTTPException, WebSocket, WebSocketDisconnect
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import FileResponse, JSONResponse
+from fastapi.responses import FileResponse
 from pydantic import BaseModel
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -28,16 +25,14 @@ PHASE31 = ROOT / "experiments/PHASE31_CONTROLLED_SOC_EVIDENCE"
 PHASE32 = ROOT / "experiments/PHASE32_SAFE_EVIDENCE_RECOVERY"
 PHASE33 = ROOT / "experiments/PHASE33_FROZEN_GENERALIZATION"
 RUNTIME = ROOT / "dashboard/runtime"
-UPLOADS = RUNTIME / "uploads"
 RUNS = RUNTIME / "runs"
 DB = RUNTIME / "command_center.sqlite3"
-MAX_UPLOAD = 50 * 1024 * 1024
 ARMS = ("baseline", "candidate_bonus1", "candidate_bonus2")
 
-for folder in (UPLOADS, RUNS):
+for folder in (RUNS,):
     folder.mkdir(parents=True, exist_ok=True)
 
-app = FastAPI(title="CPV Research Command Center", version="1.0.0")
+app = FastAPI(title="CPV Recorded Evidence Console", version="2.0.0")
 cors_origins = [origin.strip() for origin in os.environ.get(
     "CPV_ALLOWED_ORIGINS", "http://localhost:5173,http://127.0.0.1:5173"
 ).split(",") if origin.strip()]
@@ -77,12 +72,6 @@ def init_db() -> None:
             seq INTEGER PRIMARY KEY AUTOINCREMENT, run_id TEXT NOT NULL,
             at TEXT NOT NULL, kind TEXT NOT NULL, payload TEXT NOT NULL
         );
-        CREATE TABLE IF NOT EXISTS datasets(
-            id TEXT PRIMARY KEY, name TEXT NOT NULL, stored_name TEXT NOT NULL,
-            uploaded_at TEXT NOT NULL, bytes INTEGER NOT NULL, sha256 TEXT NOT NULL,
-            format TEXT NOT NULL, rows INTEGER, columns_json TEXT,
-            profile_json TEXT, validation_json TEXT, error TEXT
-        );
         """)
 
 
@@ -106,10 +95,6 @@ def sha256(path: Path) -> str:
     return digest.hexdigest()
 
 
-def phase33_summary() -> dict[str, Any]:
-    return read_json(PHASE33 / "HOLDOUT_SUMMARY.json")
-
-
 def phase33_runs() -> dict[str, dict[str, list[dict[str, Any]]]]:
     artifacts = PHASE33 / "artifacts"
     result: dict[str, dict[str, list[dict[str, Any]]]] = {}
@@ -121,10 +106,26 @@ def phase33_runs() -> dict[str, dict[str, list[dict[str, Any]]]]:
     return result
 
 
-def latest_run() -> dict[str, Any] | None:
-    with connect() as db:
-        row = db.execute("SELECT * FROM runs ORDER BY created_at DESC LIMIT 1").fetchone()
-    return run_row(row) if row else None
+def phase33_replay_paths(arm: str, queue_id: str | None = None) -> dict[str, str]:
+    artifacts = PHASE33 / "artifacts"
+    paths = {
+        "predictions": artifacts / f"{arm}_predictions.jsonl",
+        "decisions": artifacts / f"{arm}_decisions.jsonl",
+    }
+    if queue_id is not None:
+        visible = PHASE33 / "dataset/receiver_visible/locked_test"
+        paths.update({
+            "alerts": visible / "alerts" / f"{queue_id}.jsonl",
+            "claims": visible / "claims" / f"{queue_id}.jsonl",
+            "ledger": visible / "evidence_ledger" / f"{queue_id}.jsonl",
+        })
+    return {key: path.relative_to(ROOT).as_posix() for key, path in paths.items()}
+
+
+def require_replay_artifacts(paths: dict[str, str]) -> None:
+    for relative in paths.values():
+        if not (ROOT / relative).is_file():
+            raise HTTPException(503, f"Missing saved replay artifact: {relative}")
 
 
 def run_row(row: sqlite3.Row) -> dict[str, Any]:
@@ -170,70 +171,30 @@ def health() -> dict[str, Any]:
     paths = {
         "phase31_model": PHASE31 / "model.py",
         "phase32_model": PHASE32 / "model.py",
-        "phase33_summary": PHASE33 / "HOLDOUT_SUMMARY.json",
-        "phase33_predictions": PHASE33 / "artifacts/candidate_predictions.jsonl",
-        "phase33_decisions": PHASE33 / "artifacts/candidate_decisions.jsonl",
+        "phase33_candidate_predictions": PHASE33 / "artifacts/candidate_predictions.jsonl",
+        "phase33_candidate_decisions": PHASE33 / "artifacts/candidate_decisions.jsonl",
+        "phase33_baseline_predictions": PHASE33 / "artifacts/baseline_predictions.jsonl",
+        "phase33_baseline_decisions": PHASE33 / "artifacts/baseline_decisions.jsonl",
         "development_manifest": PHASE31 / "dataset/development_manifest.json",
     }
     return {"status": "ready" if all(path.is_file() for path in paths.values()) else "degraded",
-            "checkedAt": utc_now(), "python": platform.python_version(),
+            "checkedAt": utc_now(),
             "checks": {key: path.is_file() for key, path in paths.items()},
-            "realDataPrediction": "blocked_by_research_gate",
             "lockedTestReplay": "recorded_artifacts_only"}
-
-
-@app.get("/api/overview")
-def overview() -> dict[str, Any]:
-    summary = phase33_summary()
-    audit = read_json(PHASE33 / "POST_EVALUATION_AUDIT.json")
-    candidate = summary["candidate"]
-    baseline = summary["baseline"]
-    active = latest_run()
-    system: dict[str, Any] = {"cpuPercent": None, "memoryPercent": None}
-    try:
-        import psutil  # type: ignore
-        system = {"cpuPercent": psutil.cpu_percent(interval=0.05),
-                  "memoryPercent": psutil.virtual_memory().percent}
-    except ImportError:
-        pass
-    return {
-        "systemStatus": "ready" if health()["status"] == "ready" else "degraded",
-        "activeRun": active,
-        "benchmark": {"id": "phase33_locked_test", "name": "Phase 33 · frozen synthetic holdout",
-                       "cohort": "controlled_synthetic_not_guide", "classification": "synthetic_holdout",
-                       "candidate": candidate, "baseline": baseline,
-                       "fallbackUnions": audit["fallback_unions"], "fallbackTrue": audit["fallback_true"],
-                       "runTimeRecordedSeconds": candidate["runtime_seconds"],
-                       "candidateAlertsPerSecond": candidate["eligible_alerts"] / candidate["runtime_seconds"],
-                       "baselineAlertsPerSecond": baseline["eligible_alerts"] / baseline["runtime_seconds"],
-                       "runtimeNote": "Saved Phase 33 aggregate runtime; host-specific and not a live or deployment benchmark."},
-        "readiness": {"decision": "NO-GO", "realRecallMeasured": False,
-                       "approvedModelFields": 0,
-                       "note": "Phase 39 stopped before external prediction; a qualified authorized export is still required."},
-        "availableExperiment": {"name": "Phase 32 development comparison",
-                                "cohort": "controlled_synthetic_development",
-                                "queues": 10, "arms": list(ARMS),
-                                "classification": "development_only_previously_accessed"},
-        "systemResources": system,
-        "dataset": {"name": "Phase 33 locked test", "rows": candidate["eligible_alerts"],
-                    "format": "receiver-visible JSONL bundle", "status": "completed · read-only replay"},
-        "labels": {"attackClasses": "not exposed by this model output",
-                   "confidence": "not emitted by the frozen pipeline"},
-        "lastChecked": utc_now(),
-    }
 
 
 @app.get("/api/replay/{arm}/queues")
 def replay_queues(arm: str) -> dict[str, Any]:
     if arm not in ("baseline", "candidate"):
         raise HTTPException(404, "Unknown Phase 33 arm")
+    require_replay_artifacts(phase33_replay_paths(arm))
     data = phase33_runs()[arm]
     decisions = {row["queue_id"]: row for row in data["decisions"]}
-    summary = phase33_summary()[arm]
     return {"arm": arm, "classification": "recorded_synthetic_holdout_replay",
-            "summary": summary, "queues": [
-                {"queueId": row["queue_id"], "alerts": len(row["eligible_alert_ids"]),
-                 "groups": len(row["groups_ranked"]), "accepted": decisions[row["queue_id"]]["decision_counts"].get("accepted", 0),
+            "queues": [
+                {"queueId": row["queue_id"],
+                 "alerts": len(read_jsonl(PHASE33 / "dataset/receiver_visible/locked_test/alerts" / f"{row['queue_id']}.jsonl")),
+                 "groups": len(row["groups_ranked"]), "accepted": len(decisions[row["queue_id"]]["accepted"]),
                  "visibleClaims": decisions[row["queue_id"]].get("visible_claims", 0)}
                 for row in data["predictions"]]}
 
@@ -242,11 +203,14 @@ def replay_queues(arm: str) -> dict[str, Any]:
 def replay_queue(arm: str, queue_id: str) -> dict[str, Any]:
     if arm not in ("baseline", "candidate"):
         raise HTTPException(404, "Unknown Phase 33 arm")
+    require_replay_artifacts(phase33_replay_paths(arm))
     data = phase33_runs()[arm]
     pred = next((x for x in data["predictions"] if x["queue_id"] == queue_id), None)
     decisions = next((x for x in data["decisions"] if x["queue_id"] == queue_id), None)
     if pred is None or decisions is None:
         raise HTTPException(404, "Queue is not part of this recorded split")
+    artifact_paths = phase33_replay_paths(arm, queue_id)
+    require_replay_artifacts(artifact_paths)
     visible = PHASE33 / "dataset/receiver_visible/locked_test"
     alert_path = visible / "alerts" / f"{queue_id}.jsonl"
     claims_path = visible / "claims" / f"{queue_id}.jsonl"
@@ -260,7 +224,8 @@ def replay_queue(arm: str, queue_id: str) -> dict[str, Any]:
             "alerts": alerts, "claims": claims, "ledger": ledger,
             "groupByAlert": group_by_alert,
             "evidence": {"alertRows": len(alerts), "claimRows": len(claims),
-                         "ledgerRows": len(ledger), "source": "receiver_visible only"}}
+                         "ledgerRows": len(ledger), "source": "receiver_visible only",
+                         "artifactPaths": artifact_paths}}
 
 
 @app.get("/api/architecture")
@@ -514,206 +479,6 @@ def export_run(run_id: str) -> FileResponse:
             if path.is_file():
                 zf.write(path, path.relative_to(folder))
     return FileResponse(archive, media_type="application/zip", filename=f"{run_id}-evidence.zip")
-
-
-def analyze_csv(path: Path) -> dict[str, Any]:
-    rows = 0
-    missing: dict[str, int] = {}
-    types: dict[str, set[str]] = {}
-    preview: list[dict[str, str]] = []
-    with path.open("r", encoding="utf-8-sig", newline="") as stream:
-        reader = csv.DictReader(stream)
-        headers = reader.fieldnames or []
-        if not headers or len(headers) > 500:
-            raise ValueError("CSV must have a header row with no more than 500 columns.")
-        missing = {key: 0 for key in headers}
-        types = {key: set() for key in headers}
-        for row in reader:
-            rows += 1
-            if rows <= 100:
-                preview.append({k: (v or "")[:500] for k, v in row.items() if k is not None})
-            for key in headers:
-                value = (row.get(key) or "").strip()
-                if not value:
-                    missing[key] += 1
-                else:
-                    if value.lower() in ("true", "false"):
-                        kind = "boolean"
-                    else:
-                        try:
-                            int(value)
-                            kind = "integer"
-                        except ValueError:
-                            try:
-                                float(value)
-                                kind = "number"
-                            except ValueError:
-                                kind = "string"
-                    types[key].add(kind)
-            if rows > 5_000_000:
-                raise ValueError("CSV exceeds the 5,000,000 row validation limit.")
-    return {"rows": rows, "columns": len(headers), "headers": headers,
-            "features": [{"name": key, "types": sorted(types[key]) or ["empty"], "missing": missing[key]}
-                         for key in headers], "preview": preview}
-
-
-def analyze_json(path: Path, suffix: str) -> dict[str, Any]:
-    if suffix == ".jsonl":
-        rows: list[dict[str, Any]] = []
-        count = 0
-        keys: set[str] = set()
-        missing: dict[str, int] = {}
-        types: dict[str, set[str]] = {}
-        preview: list[dict[str, Any]] = []
-        with path.open(encoding="utf-8-sig") as stream:
-            for line_no, line in enumerate(stream, 1):
-                if not line.strip():
-                    continue
-                try:
-                    item = json.loads(line)
-                except json.JSONDecodeError as exc:
-                    raise ValueError(f"Invalid JSON on line {line_no}: {exc.msg}") from exc
-                if not isinstance(item, dict):
-                    raise ValueError(f"Line {line_no} must be a JSON object.")
-                count += 1
-                keys.update(item.keys())
-                if count <= 100:
-                    preview.append(item)
-                if count > 5_000_000:
-                    raise ValueError("JSONL exceeds the 5,000,000 row validation limit.")
-        headers = sorted(keys)
-        for key in headers:
-            seen_types: set[str] = set()
-            nulls = 0
-            for item in preview:
-                if key not in item or item[key] is None:
-                    nulls += 1
-                else:
-                    seen_types.add(json_value_type(item[key]))
-            types[key] = seen_types or {"empty"}
-            missing[key] = nulls
-        return {"rows": count, "columns": len(headers), "headers": headers,
-                "features": [{"name": k, "types": sorted(types[k]), "missing_in_preview": missing[k]}
-                             for k in headers], "preview": preview}
-    try:
-        payload = json.loads(path.read_text(encoding="utf-8-sig"))
-    except json.JSONDecodeError as exc:
-        raise ValueError(f"Invalid JSON: {exc.msg} at line {exc.lineno}.") from exc
-    if isinstance(payload, dict) and isinstance(payload.get("data"), list):
-        payload = payload["data"]
-    if not isinstance(payload, list) or any(not isinstance(row, dict) for row in payload[:100]):
-        raise ValueError("JSON must be an array of objects, or an object with a 'data' array.")
-    headers = sorted({key for row in payload[:100] for key in row})
-    return {"rows": len(payload), "columns": len(headers), "headers": headers,
-            "features": [{"name": key, "types": sorted({json_value_type(row[key]) for row in payload[:100] if key in row}),
-                          "missing_in_preview": sum(key not in row or row[key] is None for row in payload[:100])}
-                         for key in headers], "preview": payload[:100]}
-
-
-def json_value_type(value: Any) -> str:
-    if value is None:
-        return "null"
-    if isinstance(value, bool):
-        return "boolean"
-    if isinstance(value, int):
-        return "integer"
-    if isinstance(value, float):
-        return "number"
-    if isinstance(value, str):
-        return "string"
-    if isinstance(value, list):
-        return "array"
-    return "object"
-
-
-@app.post("/api/datasets/upload", status_code=201)
-async def upload_dataset(file: UploadFile = File(...)) -> dict[str, Any]:
-    name = Path(file.filename or "upload").name
-    suffix = Path(name).suffix.lower()
-    if suffix not in (".csv", ".json", ".jsonl"):
-        raise HTTPException(415, "Supported upload formats are CSV, JSON and JSONL.")
-    dataset_id = uuid.uuid4().hex[:12]
-    stored_name = f"{dataset_id}{suffix}"
-    target = UPLOADS / stored_name
-    digest = hashlib.sha256()
-    size = 0
-    try:
-        with target.open("wb") as stream:
-            while True:
-                chunk = await file.read(1024 * 1024)
-                if not chunk:
-                    break
-                size += len(chunk)
-                if size > MAX_UPLOAD:
-                    raise HTTPException(413, "Upload exceeds the 50 MiB limit.")
-                digest.update(chunk)
-                stream.write(chunk)
-        profile = analyze_csv(target) if suffix == ".csv" else analyze_json(target, suffix)
-        # This is a schema preview only. The frozen models require a complete
-        # receiver-visible bundle, provenance, trust roots and a fixed split.
-        validation = {"validTabularFile": True, "modelCompatible": False,
-                      "reason": "A single CSV/JSON file cannot satisfy the receiver-visible bundle, provenance and fixed-split contract required by the frozen models.",
-                      "inferenceAllowed": False}
-        with connect() as db:
-            db.execute("""INSERT INTO datasets(id,name,stored_name,uploaded_at,bytes,sha256,format,rows,columns_json,profile_json,validation_json)
-                          VALUES(?,?,?,?,?,?,?,?,?,?,?)""",
-                       (dataset_id, name, stored_name, utc_now(), size, digest.hexdigest(), suffix[1:],
-                        profile["rows"], json.dumps(profile["headers"]), json.dumps(profile), json.dumps(validation)))
-        return {"id": dataset_id, "name": name, "bytes": size, "sha256": digest.hexdigest(),
-                "format": suffix[1:], "profile": profile, "validation": validation}
-    except HTTPException:
-        target.unlink(missing_ok=True)
-        raise
-    except (UnicodeDecodeError, ValueError, csv.Error) as exc:
-        target.unlink(missing_ok=True)
-        raise HTTPException(422, f"Dataset validation failed: {exc}") from exc
-    finally:
-        await file.close()
-
-
-@app.get("/api/datasets")
-def datasets() -> dict[str, Any]:
-    with connect() as db:
-        rows = db.execute("SELECT * FROM datasets ORDER BY uploaded_at DESC").fetchall()
-    return {"datasets": [{"id": row["id"], "name": row["name"], "uploadedAt": row["uploaded_at"],
-                           "bytes": row["bytes"], "sha256": row["sha256"], "format": row["format"],
-                           "rows": row["rows"], "columns": json.loads(row["columns_json"] or "[]"),
-                           "profile": json.loads(row["profile_json"] or "{}"),
-                           "validation": json.loads(row["validation_json"] or "{}"), "error": row["error"]}
-                          for row in rows]}
-
-
-@app.get("/api/datasets/{dataset_id}/export")
-def export_dataset(dataset_id: str) -> FileResponse:
-    with connect() as db:
-        row = db.execute("SELECT * FROM datasets WHERE id=?", (dataset_id,)).fetchone()
-    if not row:
-        raise HTTPException(404, "Dataset not found")
-    return FileResponse(UPLOADS / row["stored_name"], filename=row["name"])
-
-
-@app.get("/api/metrics/export")
-def export_metrics() -> JSONResponse:
-    return JSONResponse(phase33_summary(), headers={"Content-Disposition": "attachment; filename=phase33-holdout-metrics.json"})
-
-
-@app.get("/api/decisions/export/{arm}/{queue_id}", response_model=None)
-def export_decisions(arm: str, queue_id: str, format: str = "json") -> Any:
-    payload = replay_queue(arm, queue_id)
-    if format == "json":
-        return JSONResponse(payload, headers={"Content-Disposition": f"attachment; filename={queue_id}-{arm}-replay.json"})
-    if format == "csv":
-        from fastapi.responses import Response
-        from io import StringIO
-        output = StringIO()
-        writer = csv.writer(output)
-        writer.writerow(["queue_id", "alert_id", "group_rank", "event_minute", "severity", "asset_criticality"])
-        alert_by_id = {row["alert_id"]: row for row in payload["alerts"]}
-        for alert_id, rank in payload["groupByAlert"].items():
-            alert = alert_by_id[alert_id]
-            writer.writerow([queue_id, alert_id, rank, alert.get("event_minute"), alert.get("severity"), alert.get("asset_criticality")])
-        return Response(output.getvalue(), media_type="text/csv", headers={"Content-Disposition": f"attachment; filename={queue_id}-{arm}-groups.csv"})
-    raise HTTPException(422, "Export format must be json or csv")
 
 
 @app.websocket("/ws")

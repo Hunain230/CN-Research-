@@ -4,7 +4,8 @@
     "module": "ESNext", "skipLibCheck": true, "moduleResolution": "Bundler", "allowImportingTsExtensions": true,
     "resolveJsonModule": true, "isolatedModules": true, "noEmit": true, "jsx": "react-jsx", "strict": true,
     "noUnusedLocals": true, "noUnusedParameters": true, "noFallthroughCasesInSwitch": true,
-    "baseUrl": ".", "paths": { "@/*": ["./src/*"] }
+    "baseUrl": ".", "paths": { "@/*": ["./src/*"] },
+    "tsBuildInfoFile": "./node_modules/.cache/tsconfig.tsbuildinfo"
   },
   "include": ["src"],
   "references": [{ "path": "./tsconfig.node.json" }]

@@ -1,91 +1,84 @@
-# CPV Research Command Center
+# CPV Recorded Evidence Console
 
-This local application exposes the repository's recorded Phase 33 benchmark,
-the Phase 33 receiver-visible alert and decision records, and a repeatable
-Phase 32 development comparison. It is an offline research tool. It is not a
-live SOC monitor or a real-data prediction service.
+A local research instrument for replaying the Phase 33 locked-test evidence,
+walking reviewers through the implemented CPV pipeline, and starting the
+repository's fixed Phase 31 / Phase 32 development comparison. This is not a
+SOC product or an external event-ingestion service.
 
 ## Start
 
-From the repository root, install the API requirements and frontend packages:
+From the repository root:
 
 ```powershell
 python -m pip install -r dashboard/requirements.txt
 cd dashboard/frontend
 npm install
-```
-
-Start the API in one terminal:
-
-```powershell
-cd C:\path\to\CN-Research-
-python -m uvicorn dashboard.backend.app:app --host 127.0.0.1 --port 8000
-```
-
-Start Vite in another terminal:
-
-```powershell
-cd C:\path\to\CN-Research-\dashboard\frontend
 npm run dev
 ```
 
-Open <http://127.0.0.1:5173>. The frontend proxies `/api` and `/ws` to the
-local FastAPI server. For a separate static frontend host, set `VITE_API_BASE`
-to the API origin when building and set `CPV_ALLOWED_ORIGINS` to the exact
-frontend origin before starting FastAPI.
+In a second terminal, from the repository root:
 
-## Operations console
+```powershell
+python -m uvicorn dashboard.backend.app:app --host 127.0.0.1 --port 8000
+```
 
-The default Operations screen is an accelerated replay of a saved Phase 33
-queue. Its signal plots use recorded event minutes. The decision queue has
-Incoming, Verified, and Human review lanes: incoming rows follow the replay
-cursor; verified rows show the accepted relationship endpoints and emitted
-provenance roots; human review rows show rejected or abstained relationship
-tokens and the recorded reason. Selecting a handoff opens a troubleshooting
-note. Dataset and architecture workspaces are under the top-bar More menu;
-the primary rail is limited to Operations, Research results, Experiments, and
-Run records.
+Open <http://127.0.0.1:5173>. Vite proxies `/api` and `/ws` to FastAPI. For a
+separate frontend origin, set `VITE_API_BASE` at build time and set
+`CPV_ALLOWED_ORIGINS` to the exact origin before starting the API.
 
-The replay artifacts do not include alert IDs or event times for rejected and
-abstained relationships. Those outcomes therefore appear as per-queue reason
-counts and cannot be painted onto a specific waveform or linked to a sample.
-The troubleshooting note explains the recorded reason and calls out the
-missing trace fields. The WebSocket carries experiment lifecycle events only;
-it is not an external sensor or live-ingestion feed.
+## Modes
 
-The frontend uses shadcn/ui's Vite/Tailwind setup with locally owned Button
-and Badge primitives and project-specific zinc design tokens.
+- **Recorded replay:** reads the saved Phase 33 baseline or candidate artifacts
+  and the receiver-visible locked-test input. Rows advance in saved file order;
+  chart buckets use the row's recorded event minute. These fields are not
+  monotonic, so the playhead can move backwards on the chart?s minute axis.
+- **Guided walkthrough:** reads the component labels, purposes, and source
+  names from `GET /api/architecture`, then replays actual saved queue rows. It
+  adds no simulated events.
+- **Experiment run:** starts the real Phase 31 baseline and Phase 32 +1 / +2
+  functions on the fixed 10-queue development split (`seed=31102`). The WebSocket
+  and persisted event endpoint expose lifecycle events such as queue completion;
+  they do not stream predictions per sample.
 
-## Research boundary
+Accepted relationship markers are shown only after the saved endpoint rows are
+reached and are placed using their joined `event_minute` values. Rejected
+relationships are static handoff items: their saved record contains a reason
+and relationship token, but no endpoint IDs or event time. The reviewer mark is
+local to the open browser session and is not written to research artifacts.
+The saved schema does not contain an explicit item-level abstention status.
 
-| Capability | Source and current limit |
-| --- | --- |
-| Recorded replay | Phase 33 `artifacts/*_predictions.jsonl`, `*_decisions.jsonl` and only the `dataset/receiver_visible/locked_test` input tree. Private evaluator truth is not returned by replay APIs. |
-| New experiment | Runs the Phase 31 baseline and Phase 32 +1 / +2 functions on the fixed 10-queue development split (`seed=31102`). That split has already been used for candidate selection; results are development evidence, not confirmation. New files are isolated under `dashboard/runtime/runs/<run-id>/`. |
-| Final metrics | The original Phase 15 evaluator reads development truth only after the new predictions and decision logs are written and sealed. Metrics include denominators and paired development comparisons. |
-| Uploads | CSV, JSON arrays, JSON objects with a `data` array, and JSONL are accepted up to 50 MiB. CSV/JSON parsing happens on the backend; the browser receives at most a 100-row preview. A valid file is not considered model-compatible. |
-| Real SOC inference | Not implemented and blocked by the Phase 39 readiness finding. The available GUIDE schema cannot provide the frozen verifier's trust roots, derivation links, causal evidence bundle, point-in-time evidence availability and approved fields. |
-| Scores and labels | The frozen pipeline does not emit confidence scores or attack-class labels. Neither is generated by the application. |
-| Response | The pipeline returns proposed groups for analyst review. There is no automated containment or remediation stage. |
+The data contract and known gaps are documented in
+[`docs/DATA_CONTRACT.md`](../docs/DATA_CONTRACT.md). Private evaluator truth is
+never included in Recorded replay or its export. The Phase 33 result is limited
+to the controlled synthetic holdout; development run results are not independent
+confirmation.
 
-The Phase 33 locked-test data are already a completed, previously evaluated
-holdout. The interface only replays its saved predictions; it does not rerun
-inference or re-open its evaluator-only labels.
+## Evidence export
 
-## API contract
+The replay export is assembled from the validated API response and includes the
+selected queue name, model arm, source artifact paths, saved prediction,
+saved decisions, receiver-visible alert rows, claims, and evidence ledger.
+No evaluator-only files or browser-generated sample values are added.
 
-- `GET /api/health`, `GET /api/overview`
+## API retained for the rebuilt application
+
+- `GET /api/health`
 - `GET /api/replay/{baseline|candidate}/queues`
 - `GET /api/replay/{baseline|candidate}/{queue_id}`
 - `GET /api/architecture`
-- `POST /api/runs` starts the fixed development comparison; `GET /api/runs` and `GET /api/runs/{id}` inspect run state.
-- `POST /api/runs/{id}/{pause|resume|stop}` controls a job between queue evaluations.
-- `GET /api/runs/{id}/events?after=<sequence>` reads persisted events; `/ws` streams job events.
-- `GET /api/runs/{id}/export` downloads a ZIP with predictions, decisions, metrics, configuration, and seals.
-- `POST /api/datasets/upload` validates and stores a bounded upload; `GET /api/datasets` lists profiles.
-- `GET /api/metrics/export` and `GET /api/decisions/export/{arm}/{queue_id}?format=csv|json` export evidence.
+- `POST /api/runs`, `GET /api/runs`, `GET /api/runs/{id}`
+- `GET /api/runs/{id}/events?after=<sequence>` and `/ws`
+- `POST /api/runs/{id}/{pause|resume|stop}`
+- `GET /api/runs/{id}/export`
 
-SQLite metadata and uploaded source files are stored under `dashboard/runtime/`.
-They are local workspace data and should not be committed. To remove an
-uploaded dataset, delete the corresponding row from that local SQLite file and
-its stored upload file.
+Local run records and files are stored under `dashboard/runtime/` and are not
+source-controlled.
+
+## Frontend checks
+
+```powershell
+cd dashboard/frontend
+npm run lint
+npm run test
+npm run build
+```

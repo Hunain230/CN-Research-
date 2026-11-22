@@ -28,6 +28,7 @@ htmlcov/
 .pytest_cache/
 .mypy_cache/
 .ruff_cache/
+*.tsbuildinfo
 
 # Jupyter
 .ipynb_checkpoints/
@@ -37,6 +38,15 @@ data/
 
 # Local command-center uploads, run outputs and SQLite metadata
 dashboard/runtime/
+
+# One-off validation scratch files (reproducible via fixtures/stage1/edge_cases.py)
+/.tmp-stage1-fixture/
+/.tmp-stage1-out/
+/.tmp-phase2-leak-check.json
+
+# TypeScript-generated Vite config output; Vite loads the checked-in .ts config
+/dashboard/frontend/vite.config.js
+/dashboard/frontend/vite.config.d.ts
 
 # Large generated artifacts (GitHub file-size limit)
 experiments/PHASE12_GROUND_TRUTH/AIT_ADS_PILOT_AUDIT/AIT_ADS_SOURCE_REFERENCE_AUDIT.csv
