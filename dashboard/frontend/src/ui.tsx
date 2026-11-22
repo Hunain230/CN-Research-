@@ -1,12 +1,14 @@
 import { lazy, Suspense, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 const ScientificChart = lazy(() => import('./chart'));
 import {
-  Activity, AlertTriangle, ArrowDownToLine, Check, ChevronDown,
+  Activity, AlertTriangle, ArrowDownToLine, Check, ChevronDown, Ellipsis,
   CircleHelp, CirclePause, CirclePlay, Clock3, CloudUpload, Database, Download,
   FileCheck2, FileJson2, GitBranch, HardDrive, Layers3, ListFilter,
   LoaderCircle, Pause, Play, Radio, RefreshCw, Search, ShieldCheck,
   Square, X,
 } from 'lucide-react';
+import { Button } from './components/ui/button';
+import { Badge } from './components/ui/badge';
 
 type View = 'command' | 'replay' | 'experiments' | 'datasets' | 'architecture' | 'history';
 type Overview = {
@@ -42,16 +44,14 @@ const formatBytes = (value: number) => value >= 1_048_576 ? `${(value / 1_048_57
 const arms = ['baseline', 'candidate'] as const;
 
 const nav: { id: View; label: string; icon: typeof Activity }[] = [
-  { id: 'command', label: 'Command', icon: Activity },
-  { id: 'replay', label: 'Recorded replay', icon: Radio },
+  { id: 'replay', label: 'Operations', icon: Activity },
+  { id: 'command', label: 'Research results', icon: Radio },
   { id: 'experiments', label: 'Experiments', icon: GitBranch },
-  { id: 'datasets', label: 'Dataset lab', icon: Database },
-  { id: 'architecture', label: 'Architecture', icon: Layers3 },
-  { id: 'history', label: 'Run history', icon: Clock3 },
+  { id: 'history', label: 'Run records', icon: Clock3 },
 ];
 
 export default function App() {
-  const [view, setView] = useState<View>('command');
+  const [view, setView] = useState<View>('replay');
   const [overview, setOverview] = useState<Overview | null>(null);
   const [health, setHealth] = useState<any>(null);
   const [socketLive, setSocketLive] = useState(false);
@@ -61,6 +61,7 @@ export default function App() {
   const [searchOpen, setSearchOpen] = useState(false);
   const [globalQuery, setGlobalQuery] = useState('');
   const [demoOpen, setDemoOpen] = useState(false);
+  const [moreOpen, setMoreOpen] = useState(false);
   const wsRef = useRef<WebSocket | null>(null);
 
   const load = useCallback(async () => {
@@ -114,7 +115,8 @@ export default function App() {
         <div className="top-actions">
           <button className="demo-trigger" onClick={() => setDemoOpen(true)}><Play size={12}/> Guided demo</button>
           <button className="search-trigger" onClick={() => setSearchOpen(true)}><Search size={15}/><span>Search runs, queues, datasets</span><kbd>Ctrl K</kbd></button>
-          <span className={`connection ${socketLive ? 'online' : ''}`}><i />{socketLive ? 'stream connected' : 'stream offline'}</span>
+          <span className={`connection ${socketLive ? 'online' : ''}`} title="This WebSocket carries experiment lifecycle events, not external sensor telemetry."><i />{socketLive ? 'job events connected' : 'job events offline'}</span>
+          <div className="more-wrap"><button className="icon-button" aria-label="More workspaces" aria-expanded={moreOpen} title="Dataset and architecture tools" onClick={() => setMoreOpen(x => !x)}><Ellipsis size={17}/></button>{moreOpen && <div className="more-menu" role="menu"><button role="menuitem" onClick={() => { setView('datasets'); setMoreOpen(false); }}><Database size={15}/> Dataset lab</button><button role="menuitem" onClick={() => { setView('architecture'); setMoreOpen(false); }}><Layers3 size={15}/> Architecture</button></div>}</div>
           <button className="icon-button" aria-label="Refresh data" title="Refresh backend data" onClick={() => setRefresh(x => x + 1)}><RefreshCw size={16}/></button>
         </div>
       </header>
@@ -184,6 +186,16 @@ function CommandView({ overview, go }: { overview: Overview | null; go: (v: View
 }
 function healthCheckText(value?: string) { return value ? `Checked ${new Date(value).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}` : 'Awaiting API'; }
 
+function isAbstention(reason: string) { return /abstain|missing|not_exact|endpoint_unavailable|insufficient/i.test(reason); }
+function humanizeReason(reason: string) { return reason.replaceAll('_', ' ').replace(/\b\w/g, letter => letter.toUpperCase()); }
+function diagnosticHint(reason: string) {
+  if (/missing_family/i.test(reason)) return 'Inspect the source-family mapping in a development trace. This saved audit keeps the reason and token but omits the linked alert IDs.';
+  if (/time_conflict|temporal|minute|cutoff/i.test(reason)) return 'Check the pair’s event and evidence-availability times in a development trace; this saved audit has no pair IDs or event times.';
+  if (/causal_fields_conflict/i.test(reason)) return 'Compare the causal provenance fields in a development trace. The saved holdout audit does not include the paired input records.';
+  if (/not_exact_auth_network_pair/i.test(reason)) return 'Inspect the exact authentication and network evidence pair in a development trace; the locked audit does not identify either alert.';
+  return 'Use this reason and relationship token to locate the originating development trace. The saved holdout audit omits alert endpoints and event times.';
+}
+
 function ReplayView({ notify }: { notify: (s: string) => void }) {
   const [arm, setArm] = useState<'baseline' | 'candidate'>('candidate');
   const [index, setIndex] = useState<ReplayIndex | null>(null);
@@ -194,53 +206,114 @@ function ReplayView({ notify }: { notify: (s: string) => void }) {
   const [speed, setSpeed] = useState(12);
   const [filter, setFilter] = useState('all');
   const [selectedAlert, setSelectedAlert] = useState('');
+  const [selectedReason, setSelectedReason] = useState('');
+  const [reviewLane, setReviewLane] = useState<'incoming' | 'accepted' | 'handoff'>('incoming');
   const [loadError, setLoadError] = useState('');
   useEffect(() => { api<ReplayIndex>(`/api/replay/${arm}/queues`).then(x => { setIndex(x); setQueueId(x.queues[0]?.queueId || ''); setData(null); setCursor(0); setSelectedAlert(''); }).catch(e => setLoadError(e.message)); }, [arm]);
-  useEffect(() => { if (!queueId) return; api<Replay>(`/api/replay/${arm}/${queueId}`).then(x => { setData(x); setCursor(0); setSelectedAlert(x.alerts[0]?.alert_id || ''); setLoadError(''); }).catch(e => setLoadError(e.message)); }, [arm, queueId]);
+  useEffect(() => { if (!queueId) return; api<Replay>(`/api/replay/${arm}/${queueId}`).then(x => { setData(x); const initial = x.alerts[0]?.alert_id || ''; setSelectedAlert(initial); setSelectedReason(x.decisions.rejected[0]?.reason || ''); setCursor(0); setLoadError(''); }).catch(e => setLoadError(e.message)); }, [arm, queueId]);
   useEffect(() => { if (!playing || !data) return; const interval = Math.max(30, 1000 / speed); const timer = window.setInterval(() => setCursor(x => { if (x + 1 >= data.alerts.length) { setPlaying(false); return data.alerts.length; } return x + 1; }), interval); return () => clearInterval(timer); }, [playing, speed, data]);
-  const current = data?.alerts[Math.max(0, Math.min(cursor - 1, (data?.alerts.length || 1) - 1))];
+  const current = cursor > 0 ? data?.alerts[Math.min(cursor - 1, (data?.alerts.length || 1) - 1)] : undefined;
+  useEffect(() => { if (playing && current) setSelectedAlert(current.alert_id); }, [playing, current]);
   const visibleAlerts = useMemo(() => {
     if (!data) return [];
     const chosen = filter === 'all' ? data.alerts : data.alerts.filter(x => filter === 'grouped' ? data.groupByAlert[x.alert_id] : !data.groupByAlert[x.alert_id]);
     return chosen.slice(0, 1200);
   }, [data, filter]);
   const eventMarkers = useMemo(() => {
-    if (!data) return { accepted: [] as number[], rejected: [] as number[], abstained: [] as number[] };
+    if (!data) return { accepted: [] as number[] };
     const alertMap = new Map(data.alerts.map(x => [x.alert_id, x.event_minute]));
     const accepted = data.decisions.accepted.map((x: any) => alertMap.get(x.left_alert_id)).filter((x: any) => typeof x === 'number');
-    const reasons = data.decisions.rejected.map((x: any) => alertMap.get(x.left_alert_id)).filter((x: any) => typeof x === 'number');
-    const abstained = data.decisions.rejected.filter((x: any) => /abstain|missing|not_exact|endpoint_unavailable|insufficient/i.test(x.reason || '')).map((x: any) => alertMap.get(x.left_alert_id)).filter((x: any) => typeof x === 'number');
-    return { accepted, rejected: reasons.filter((x: number) => !abstained.includes(x)), abstained };
+    return { accepted };
   }, [data]);
-  const chartOption = useMemo(() => {
-    if (!data) return {};
-    const buckets = new Map<number, { count: number; severity: number; criticality: number }>();
-    for (const row of data.alerts) { const key = row.event_minute; const prev = buckets.get(key) || { count: 0, severity: 0, criticality: 0 }; prev.count++; prev.severity = Math.max(prev.severity, row.severity || 0); prev.criticality = Math.max(prev.criticality, row.asset_criticality || 0); buckets.set(key, prev); }
-    const times = [...buckets.keys()].sort((a, b) => a - b); const rows = times.map(t => buckets.get(t)!);
+  const chartOptions = useMemo(() => {
+    if (!data) return [];
+    const buckets = new Map<number, { count: number; severity: number }>();
+    for (const row of data.alerts) { const bucket = buckets.get(row.event_minute) || { count: 0, severity: 0 }; bucket.count++; bucket.severity = Math.max(bucket.severity, row.severity || 0); buckets.set(row.event_minute, bucket); }
+    const times = [...buckets.keys()].sort((a, b) => a - b);
+    const acceptedByMinute = new Map<number, number>();
+    eventMarkers.accepted.forEach((minute: number) => acceptedByMinute.set(minute, (acceptedByMinute.get(minute) || 0) + 1));
     const shownMinute = current?.event_minute ?? -1;
-    const mark = (values: number[], color: string, name: string) => ({ name, type: 'scatter', symbolSize: 8, data: values.map((minute, i) => [minute, buckets.get(minute)?.count || 0.3, i]), itemStyle: { color }, tooltip: { formatter: (p: any) => `${name}<br/>minute ${p.value[0]} · ${p.value[2]} recorded decision(s)` } });
-    return { animation: false, tooltip: { trigger: 'axis', backgroundColor: '#111a22', borderColor: '#30404b', textStyle: { color: '#e7edf1' } }, legend: { show: false }, grid: { left: 42, right: 42, top: 18, bottom: 32 },
-      xAxis: { type: 'value', name: 'event minute', nameTextStyle: { color: '#75848d', fontSize: 10 }, axisLine: { lineStyle: { color: '#26333d' } }, axisLabel: { color: '#82909a', fontSize: 10 }, splitLine: { show: false } },
-      yAxis: [{ type: 'value', name: 'alerts / minute', nameTextStyle: { color: '#75848d', fontSize: 10 }, axisLabel: { color: '#82909a', fontSize: 10 }, splitLine: { lineStyle: { color: '#202b34', type: 'dashed' } } }, { type: 'value', min: 0, max: 5, show: false }],
-      series: [{ name: 'Recorded alerts / min', type: 'line', data: times.map((t, i) => [t, rows[i].count]), showSymbol: false, smooth: false, lineStyle: { color: '#16c784', width: 1.6 }, areaStyle: { color: 'rgba(22,199,132,.09)' }, markLine: { symbol: 'none', label: { color: '#ffc66d', formatter: 'current sample' }, lineStyle: { color: '#ffc66d', type: 'dashed', opacity: .65 }, data: shownMinute < 0 ? [] : [{ xAxis: shownMinute }] } },
-        { name: 'Max source severity', type: 'line', yAxisIndex: 1, data: times.map((t, i) => [t, rows[i].severity]), showSymbol: false, lineStyle: { color: '#47b8e8', width: 1.1, opacity: .8 } },
-        mark(eventMarkers.accepted, '#16c784', 'Accepted relationship'), mark(eventMarkers.rejected, '#ff4055', 'Rejected relationship'), mark(eventMarkers.abstained, '#f0b34f', 'Abstention / insufficient evidence')],
-    };
+    const axis = { axisLine: { lineStyle: { color: '#363b41' } }, axisLabel: { color: '#818a92', fontSize: 9 }, splitLine: { lineStyle: { color: '#292e33', type: 'dashed' } } };
+    const cursorLine = { symbol: 'none', label: { color: '#aab3ba', formatter: 'cursor' }, lineStyle: { color: '#aab3ba', type: 'dashed', opacity: .55 }, data: shownMinute < 0 ? [] : [{ xAxis: shownMinute }] };
+    const activity = { animation: false, tooltip: { trigger: 'axis', backgroundColor: '#181b1f', borderColor: '#363b41', textStyle: { color: '#e7eaed' } }, grid: { left: 52, right: 16, top: 14, bottom: 27 }, dataZoom: [{ type: 'inside', xAxisIndex: 0, filterMode: 'none' }], xAxis: { type: 'value', name: 'event minute', nameTextStyle: { color: '#818a92', fontSize: 9 }, ...axis, splitLine: { show: false } }, yAxis: { type: 'value', name: 'alerts / min', min: 0, nameTextStyle: { color: '#818a92', fontSize: 9 }, ...axis }, series: [
+      { name: 'Receiver-visible alerts', type: 'line', data: times.map(t => [t, buckets.get(t)!.count]), showSymbol: false, lineStyle: { color: '#a855f7', width: 1.7 }, areaStyle: { color: 'rgba(168,85,247,.12)' }, markLine: cursorLine },
+      { name: 'Accepted relationships', type: 'scatter', data: [...acceptedByMinute].map(([minute, count]) => [minute, buckets.get(minute)?.count || 0.3, count]), symbolSize: 6, itemStyle: { color: '#8ec6a4' }, tooltip: { formatter: (x: any) => `Accepted relationships<br/>minute ${x.value[0]}<br/>records ${x.value[2]}` } },
+    ] };
+    const severity = { animation: false, tooltip: { trigger: 'axis', backgroundColor: '#181b1f', borderColor: '#363b41', textStyle: { color: '#e7eaed' } }, grid: { left: 52, right: 16, top: 14, bottom: 27 }, dataZoom: [{ type: 'inside', xAxisIndex: 0, filterMode: 'none' }], xAxis: { type: 'value', name: 'event minute', nameTextStyle: { color: '#818a92', fontSize: 9 }, ...axis, splitLine: { show: false } }, yAxis: { type: 'value', name: 'source severity', min: 0, max: Math.max(1, ...[...buckets.values()].map(x => x.severity)), nameTextStyle: { color: '#818a92', fontSize: 9 }, ...axis }, series: [{ name: 'Maximum recorded source severity', type: 'line', data: times.map(t => [t, buckets.get(t)!.severity]), showSymbol: false, lineStyle: { color: '#9a87cb', width: 1.5 }, areaStyle: { color: 'rgba(154,135,203,.08)' }, markLine: cursorLine }] };
+    return [activity, severity];
   }, [data, current, eventMarkers]);
   const groupRows: { rank: number; members: string[]; count: number }[] = (data?.prediction.groups_ranked || []).map((group: string[], i: number) => ({ rank: i + 1, members: group, count: group.length }));
   const selected = data?.alerts.find(x => x.alert_id === selectedAlert);
+  const selectedDecision = data?.decisions.rejected.find((x: any) => x.reason === selectedReason);
+  const decisionIsAbstention = !!selectedReason && isAbstention(selectedReason);
+  const acceptedCount = data?.decisions.decision_counts.accepted || 0;
+  const rejectedCount = data?.decisions.rejected.filter((x: any) => !isAbstention(x.reason || '')).length || 0;
+  const abstainedCount = data?.decisions.rejected.filter((x: any) => isAbstention(x.reason || '')).length || 0;
+  const decisionReasonRows = [...(data?.decisions.rejected || []).reduce((map: Map<string, number>, row: any) => map.set(row.reason || 'reason_not_emitted', (map.get(row.reason || 'reason_not_emitted') || 0) + 1), new Map<string, number>())].map(([reason, count]) => ({ reason, count, state: isAbstention(reason) ? 'abstained' : 'rejected' })).sort((a, b) => b.count - a.count);
+  const incomingRows = data?.alerts.slice(Math.max(0, cursor - 1), Math.max(0, cursor - 1) + 6) || [];
+  const acceptedRows = data?.decisions.accepted || [];
+  const handoffRows = data?.decisions.rejected || [];
   const changeQueue = (value: string) => { setPlaying(false); setQueueId(value); };
   const download = (format: 'csv' | 'json') => { if (!data) return; window.open(apiPath(`/api/decisions/export/${arm}/${queueId}?format=${format}`), '_blank'); notify(`${format.toUpperCase()} replay evidence exported`); };
-  return <div className="page-content">
-    <PageHeading title="Recorded signal replay" subtitle="Scrub receiver-visible synthetic alerts against the frozen C/V/P decisions. Wall-clock live telemetry is not connected." right={<SourceTag tone="amber">ACCELERATED RECORDED REPLAY</SourceTag>}/>
+  return <div className="page-content ops-page">
+    <PageHeading title="Operations" subtitle="Recorded CPV research replay" right={<Badge variant="outline" className="mode-badge"><span className="signal-dot amber"/> Recorded replay / no live sensor feed</Badge>}/>
     {loadError && <div className="inline-error"><AlertTriangle size={15}/>{loadError}</div>}
-    <section className="panel replay-controls"><div className="control-cluster"><label>Experiment arm<select value={arm} onChange={e => setArm(e.target.value as 'baseline' | 'candidate')}><option value="candidate">Phase 32 candidate · endpoint fallback +1</option><option value="baseline">Phase 31 baseline · evidence aware</option></select></label><label>Queue<select value={queueId} onChange={e => changeQueue(e.target.value)}>{index?.queues.map(q => <option key={q.queueId} value={q.queueId}>{q.queueId} · {q.alerts} alerts</option>)}</select></label><label>Chart filter<select value={filter} onChange={e => setFilter(e.target.value)}><option value="all">All alerts</option><option value="grouped">Grouped alerts</option><option value="ungrouped">Ungrouped alerts</option></select></label></div><div className="playback-cluster"><button className="control-round" title={playing ? 'Pause replay' : 'Play replay'} onClick={() => { if (data && cursor >= data.alerts.length) setCursor(0); setPlaying(x => !x); }}>{playing ? <Pause size={15}/> : <Play size={15}/>}</button><button className="control-round" title="Reset to first alert" onClick={() => { setPlaying(false); setCursor(0); }}><Square size={13}/></button><label>Speed<select value={speed} onChange={e => setSpeed(Number(e.target.value))}><option value={4}>4 samples/s</option><option value={12}>12 samples/s</option><option value={30}>30 samples/s</option><option value={60}>60 samples/s</option></select></label><div className="replay-position"><b>{Math.min(cursor, data?.alerts.length || 0).toLocaleString()}</b><span> / {formatNum(data?.alerts.length)}</span></div></div></section>
-    <div className="replay-grid"><section className="panel replay-chart-panel"><SectionTitle side={<SourceTag tone="green">{data?.classification || 'loading'}</SourceTag>}>Alert activity and verifier outcomes</SectionTitle><div className="chart-legend-note"><span className="legend-line green"/> Alerts / minute <span className="legend-line cyan"/> Source severity <span className="legend-dot green"/> Accepted <span className="legend-dot red"/> Rejected <span className="legend-dot amber"/> Abstained</div>{data ? <Suspense fallback={<LoadingLine/>}><ScientificChart option={chartOption} style={{ height: 310, width: '100%' }}/></Suspense> : <LoadingLine/>}<div className="scrubber"><input aria-label="Replay position" type="range" min="0" max={Math.max(0, (data?.alerts.length || 1) - 1)} value={Math.min(cursor, Math.max(0, (data?.alerts.length || 1) - 1))} onChange={e => { setPlaying(false); setCursor(Number(e.target.value)); }} style={{ '--progress': `${data && data.alerts.length ? (cursor / data.alerts.length) * 100 : 0}%` } as React.CSSProperties}/><span>sample index</span></div><div className="chart-caption"><span>Activity counts use receiver-visible alert event minutes. Marker positions show actual saved relationship decisions.</span><span>Source severity is an input field, not a model confidence score.</span></div></section>
-      <section className="panel current-alert-panel"><SectionTitle side={<SourceTag>{data?.evidence.alertRows || 0} alerts</SourceTag>}>Selected sample</SectionTitle>{selected ? <div className="selected-sample"><div className="sample-id"><span>ALERT ID</span><code>{selected.alert_id}</code></div><div className="sample-fields"><div><span>event minute</span><b>{selected.event_minute}</b></div><div><span>group rank</span><b>{data?.groupByAlert[selected.alert_id] ? `#${data.groupByAlert[selected.alert_id]}` : 'ungrouped'}</b></div><div><span>source severity</span><b>{selected.severity}</b></div><div><span>asset criticality</span><b>{selected.asset_criticality}</b></div><div><span>event type</span><b>{selected.event_type || 'not recorded'}</b></div><div><span>host</span><b>{selected.host || 'not recorded'}</b></div></div><div className="sample-decision"><span>Model output</span><b>{data?.groupByAlert[selected.alert_id] ? 'In ranked group' : 'No accepted group membership'}</b><small>Attack class and confidence are not emitted by this model.</small></div></div> : <div className="empty-state">Select a sample in the table below.</div>}</section>
-      <section className="panel group-panel"><SectionTitle side={<SourceTag>{data?.prediction.groups_ranked.length || 0} groups</SourceTag>}>Ranked groups</SectionTitle><div className="scroll-table"><table><thead><tr><th>Rank</th><th>Members</th><th>First member</th><th>In view</th></tr></thead><tbody>{groupRows.slice(0, 60).map(row => <tr key={row.rank} className={selected && row.members.includes(selected.alert_id) ? 'selected' : ''} onClick={() => setSelectedAlert(row.members[0])}><td>{String(row.rank).padStart(2, '0')}</td><td>{row.count}</td><td><code>{row.members[0]}</code></td><td>{row.members.some((x: string) => visibleAlerts.slice(0, cursor || 120).some((a: AlertRow) => a.alert_id === x)) ? <span className="table-dot green"/> : <span className="table-dot muted-dot"/>}</td></tr>)}</tbody></table></div><div className="table-note">Group order is the pipeline’s ranking output. Group truth is shown only in the recorded evaluation summary.</div></section>
-      <section className="panel alert-table-panel"><SectionTitle side={<div className="table-actions"><span>{visibleAlerts.length.toLocaleString()} rows (preview capped at 1,200)</span><button className="icon-button small" title="Export CSV" onClick={() => download('csv')}><Download size={14}/></button><button className="icon-button small" title="Export JSON" onClick={() => download('json')}><FileJson2 size={14}/></button></div>}>Receiver-visible alert records</SectionTitle><div className="scroll-table alert-scroll"><table><thead><tr><th>Sample</th><th>Minute</th><th>Event</th><th>Severity</th><th>Criticality</th><th>Group</th></tr></thead><tbody>{visibleAlerts.map((row, i) => <tr key={row.alert_id} className={selectedAlert === row.alert_id ? 'selected' : ''} onClick={() => { setSelectedAlert(row.alert_id); if (cursor < i + 1) setCursor(i + 1); }}><td><code>{row.alert_id}</code></td><td>{row.event_minute}</td><td>{row.event_type || '—'}</td><td>{row.severity}</td><td>{row.asset_criticality}</td><td>{data?.groupByAlert[row.alert_id] ? `#${data.groupByAlert[row.alert_id]}` : '—'}</td></tr>)}</tbody></table></div><div className="table-note">Files read from the synthetic receiver_visible split. Evaluator-only labels are never returned by this endpoint.</div></section>
-      <section className="panel decision-panel"><SectionTitle side={<SourceTag tone="amber">model evidence</SourceTag>}>Relationship decisions</SectionTitle><div className="decision-counts"><div><span className="signal-dot green"/><b>{data?.decisions.decision_counts.accepted || 0}</b><small>accepted</small></div><div><span className="signal-dot red"/><b>{data?.decisions.rejected.length || 0}</b><small>rejected</small></div><div><span className="signal-dot amber"/><b>{data?.decisions.decision_counts.endpoint_process_attested || data?.decisions.decision_counts.fallback_accepted || 0}</b><small>endpoint attestations</small></div></div><div className="decision-list">{[...(data?.decisions.accepted || []).slice(0, 3).map((x: any) => ({ ...x, state: 'accepted' })), ...(data?.decisions.rejected || []).slice(0, 3).map((x: any) => ({ ...x, state: /abstain|missing|not_exact|endpoint_unavailable|insufficient/i.test(x.reason || '') ? 'abstained' : 'rejected' }))].map((x: any, i) => <button key={`${x.relationship_token || x.left_alert_id}-${i}`} className="decision-entry" onClick={() => setSelectedAlert(x.left_alert_id)}><span className={`decision-mark ${x.state}`}>{x.state === 'accepted' ? <Check size={12}/> : x.state === 'abstained' ? <CircleHelp size={12}/> : <X size={12}/>}</span><span><b>{x.state === 'accepted' ? 'Relationship accepted' : x.state === 'abstained' ? 'Verifier abstained' : 'Relationship rejected'}</b><small>{x.reason || x.evidence_kind || 'Verified receiver-visible evidence'}</small></span><code>{(x.left_alert_id || '').slice(0, 8)}</code></button>)}</div><div className="decision-foot">Decision reasons are sourced from the frozen model’s audit output.</div></section>
+    <section className="ops-stat-grid" aria-label="Selected queue summary">
+      <div className="ops-stat"><span>Records in queue</span><b>{formatNum(data?.alerts.length)}</b><small>{queueId || 'Loading queue'}</small></div>
+      <div className="ops-stat"><span>Accepted relationships</span><b className="stat-good">{formatNum(acceptedCount)}</b><small>Verifier accepted</small></div>
+      <div className="ops-stat"><span>Rejected relationships</span><b className="stat-bad">{formatNum(rejectedCount)}</b><small>Rule failed</small></div>
+      <div className="ops-stat"><span>Abstentions</span><b className="stat-warn">{formatNum(abstainedCount)}</b><small>Evidence incomplete</small></div>
+    </section>
+    <section className="panel replay-controls ops-toolbar">
+      <div className="control-cluster">
+        <label>Model<select value={arm} onChange={e => setArm(e.target.value as 'baseline' | 'candidate')}><option value="candidate">Phase 33 candidate · Phase 32 +1</option><option value="baseline">Phase 31 baseline</option></select></label>
+        <label>Queue<select value={queueId} onChange={e => changeQueue(e.target.value)}>{index?.queues.map(q => <option key={q.queueId} value={q.queueId}>{q.queueId} ({q.alerts} alerts)</option>)}</select></label>
+      </div>
+      <div className="playback-cluster">
+        <Button variant="outline" size="icon-sm" title={playing ? 'Pause replay' : 'Play replay'} aria-label={playing ? 'Pause replay' : 'Play replay'} onClick={() => { if (data && cursor >= data.alerts.length) setCursor(0); setPlaying(x => !x); }}>{playing ? <Pause size={15}/> : <Play size={15}/>}</Button>
+        <Button variant="ghost" size="icon-sm" title="Reset replay" aria-label="Reset replay" onClick={() => { setPlaying(false); setCursor(0); }}><Square size={13}/></Button>
+        <label>Speed<select value={speed} onChange={e => setSpeed(Number(e.target.value))}><option value={4}>4 / sec</option><option value={12}>12 / sec</option><option value={30}>30 / sec</option><option value={60}>60 / sec</option></select></label>
+        <span className="replay-position"><b>{Math.min(cursor, data?.alerts.length || 0).toLocaleString()}</b><span> / {formatNum(data?.alerts.length)}</span></span>
+      </div>
+    </section>
+    <div className="ops-grid">
+      <section className="panel ops-signal-panel">
+        <SectionTitle side={<span className="ops-queue-tag">{queueId || 'Loading queue'}</span>}>Signal history</SectionTitle>
+        <div className="ops-legend"><span><i className="violet-key"/>Alert volume</span><span><i className="green-key"/>Accepted link markers</span><span className="ops-zoom-note">Scroll to zoom</span></div>
+        {data ? <div className="ops-chart-stack">
+          <div className="ops-chart-lane"><div className="ops-chart-label"><b>Receiver-visible alerts</b><span>alerts / minute</span></div><Suspense fallback={<LoadingLine/>}><ScientificChart option={chartOptions[0]} style={{ height: 225, width: '100%' }}/></Suspense></div>
+          <div className="ops-chart-lane severity-lane"><div className="ops-chart-label"><b>Source severity</b><span>maximum observed</span></div><Suspense fallback={<LoadingLine/>}><ScientificChart option={chartOptions[1]} style={{ height: 112, width: '100%' }}/></Suspense></div>
+        </div> : <LoadingLine/>}
+        <div className="scrubber"><input aria-label="Replay position" type="range" min="0" max={Math.max(0, (data?.alerts.length || 1) - 1)} value={Math.min(cursor, Math.max(0, (data?.alerts.length || 1) - 1))} onChange={e => { setPlaying(false); setCursor(Number(e.target.value)); }} style={{ '--progress': `${data && data.alerts.length ? (cursor / data.alerts.length) * 100 : 0}%` } as React.CSSProperties}/><span>sample</span></div>
+      </section>
+      <section className="panel ops-review-panel">
+        <SectionTitle side={<span className="ops-queue-tag">{formatNum(acceptedRows.length + handoffRows.length)} relationships</span>}>Decision queue</SectionTitle>
+        <p className="ops-panel-note">Recorded receiver-visible events flow through the saved verifier decisions.</p>
+        <div className="review-lanes" role="tablist" aria-label="Replay decision queue">
+          <button role="tab" aria-selected={reviewLane === 'incoming'} className={reviewLane === 'incoming' ? 'active' : ''} onClick={() => setReviewLane('incoming')}>Incoming <b>{formatNum(data?.alerts.length)}</b></button>
+          <button role="tab" aria-selected={reviewLane === 'accepted'} className={reviewLane === 'accepted' ? 'active accepted' : ''} onClick={() => setReviewLane('accepted')}>Verified <b>{formatNum(acceptedRows.length)}</b></button>
+          <button role="tab" aria-selected={reviewLane === 'handoff'} className={reviewLane === 'handoff' ? 'active handoff' : ''} onClick={() => setReviewLane('handoff')}>Human review <b>{formatNum(handoffRows.length)}</b></button>
+        </div>
+        <div className="review-lane-caption">{reviewLane === 'incoming' ? 'Alert rows at the replay cursor · recorded sample order' : reviewLane === 'accepted' ? 'Accepted evidence relationships · verifier audit' : 'Rejected or abstained relationships · analyst follow-up'}</div>
+        <div className="review-queue" role="tabpanel">
+          {reviewLane === 'incoming' && incomingRows.map(row => <button key={row.alert_id} className={`queue-entry ${selectedAlert === row.alert_id ? 'selected' : ''}`} onClick={() => { setSelectedAlert(row.alert_id); setCursor(data?.alerts.findIndex(x => x.alert_id === row.alert_id)! + 1); }}>
+            <span className="queue-state-dot incoming"/><span className="queue-entry-main"><b>{row.event_type || 'Receiver-visible alert'}</b><small>{row.alert_id} · minute {row.event_minute}</small></span><span className="queue-entry-meta">S{row.severity}</span>
+          </button>)}
+          {reviewLane === 'accepted' && acceptedRows.slice(0, 24).map((row: any) => <div key={row.relationship_token} className="queue-entry static"><span className="queue-state-dot accepted"/><span className="queue-entry-main"><b>Verified relationship</b><small>{row.left_alert_id} ↔ {row.right_alert_id}</small><small className="roots-line">Roots: {(row.upstream_roots || []).join(' · ') || 'not emitted'}</small></span><span className="queue-entry-meta accepted-text">accepted</span></div>)}
+          {reviewLane === 'handoff' && handoffRows.slice(0, 24).map((row: any) => <button key={row.relationship_token} className={`queue-entry handoff-entry ${selectedReason === row.reason ? 'selected' : ''}`} onClick={() => setSelectedReason(row.reason)}><span className={`queue-state-dot ${isAbstention(row.reason) ? 'abstained' : 'rejected'}`}/><span className="queue-entry-main"><b>{humanizeReason(row.reason || 'reason_not_emitted')}</b><small>{isAbstention(row.reason) ? 'Abstained · review evidence gap' : 'Rejected · verifier rule not satisfied'}</small><small className="roots-line">Token {row.relationship_token || 'not emitted'}</small></span><span className="queue-entry-meta">{isAbstention(row.reason) ? 'review' : 'inspect'}</span></button>)}
+          {reviewLane === 'incoming' && !incomingRows.length && <div className="queue-empty">Replay cursor is at the end of this queue.</div>}
+          {reviewLane === 'accepted' && !acceptedRows.length && <div className="queue-empty">No accepted relationships in this queue.</div>}
+          {reviewLane === 'handoff' && !handoffRows.length && <div className="queue-empty">No rejected or abstained relationships in this queue.</div>}
+        </div>
+        {reviewLane === 'handoff' && selectedReason && <div className={`ops-diagnosis ${decisionIsAbstention ? 'amber' : 'red'}`}><div className="diagnosis-title"><span className={`signal-dot ${decisionIsAbstention ? 'amber' : 'red'}`}/><b>{decisionIsAbstention ? 'Abstention' : 'Rejected link'} / {humanizeReason(selectedReason)}</b></div><p>{decisionReasonRows.find(row => row.reason === selectedReason)?.count || 0} decisions in this queue.</p>{selectedDecision?.relationship_token && <div className="diagnosis-token"><span>Relationship token</span><code>{selectedDecision.relationship_token}</code></div>}<div className="diagnosis-next"><b>Analyst check</b><span>{diagnosticHint(selectedReason)}</span></div><small>Recorded verifier output has no endpoint IDs or event times for these decisions. Use this as a reason-level handoff, not a sample-linked incident ticket.</small></div>}
+        {selected && <div className="ops-sample-peek"><span>Replay cursor sample</span><code>{selected.alert_id}</code><small>Minute {selected.event_minute} | severity {selected.severity} | {data?.groupByAlert[selected.alert_id] ? `group #${data.groupByAlert[selected.alert_id]}` : 'ungrouped'}</small></div>}
+      </section>
     </div>
+    <details className="evidence-details ops-records"><summary><span>Evidence records</span><small>Open ranked groups and source rows</small><ChevronDown size={15}/></summary>
+      <div className="records-toolbar"><label>Show records<select value={filter} onChange={e => setFilter(e.target.value)}><option value="all">All</option><option value="grouped">Grouped</option><option value="ungrouped">Ungrouped</option></select></label><div><button className="text-link" onClick={() => download('csv')}>Export CSV <Download size={13}/></button><button className="text-link" onClick={() => download('json')}>Export JSON <FileJson2 size={13}/></button></div></div>
+      <section className="panel group-panel"><SectionTitle side={<SourceTag>{data?.prediction.groups_ranked.length || 0} groups</SourceTag>}>Ranked groups</SectionTitle><div className="scroll-table"><table><thead><tr><th>Rank</th><th>Members</th><th>First member</th></tr></thead><tbody>{groupRows.slice(0, 60).map(row => <tr key={row.rank} className={selected && row.members.includes(selected.alert_id) ? 'selected' : ''} onClick={() => setSelectedAlert(row.members[0])}><td>{String(row.rank).padStart(2, '0')}</td><td>{row.count}</td><td><code>{row.members[0]}</code></td></tr>)}</tbody></table></div></section>
+      <section className="panel alert-table-panel"><SectionTitle side={<span>{visibleAlerts.length.toLocaleString()} rows ? preview capped at 1,200</span>}>Receiver-visible records</SectionTitle><div className="scroll-table alert-scroll"><table><thead><tr><th>Sample</th><th>Minute</th><th>Event</th><th>Severity</th><th>Criticality</th><th>Group</th></tr></thead><tbody>{visibleAlerts.map((row, i) => <tr key={row.alert_id} className={selectedAlert === row.alert_id ? 'selected' : ''} onClick={() => { setSelectedAlert(row.alert_id); const realIndex = data?.alerts.findIndex(item => item.alert_id === row.alert_id) ?? i; if (realIndex >= 0) setCursor(realIndex + 1); }}><td><code>{row.alert_id}</code></td><td>{row.event_minute}</td><td>{row.event_type || '?'}</td><td>{row.severity}</td><td>{row.asset_criticality}</td><td>{data?.groupByAlert[row.alert_id] ? `#${data.groupByAlert[row.alert_id]}` : '?'}</td></tr>)}</tbody></table></div><div className="table-note">Replay input includes receiver-visible data only. Evaluator labels remain private.</div></section>
+    </details>
   </div>;
 }
 function LoadingLine() { return <div className="loading-line"><LoaderCircle size={16}/> Loading saved receiver-visible records…</div>; }

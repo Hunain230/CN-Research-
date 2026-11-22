@@ -34,6 +34,28 @@ local FastAPI server. For a separate static frontend host, set `VITE_API_BASE`
 to the API origin when building and set `CPV_ALLOWED_ORIGINS` to the exact
 frontend origin before starting FastAPI.
 
+## Operations console
+
+The default Operations screen is an accelerated replay of a saved Phase 33
+queue. Its signal plots use recorded event minutes. The decision queue has
+Incoming, Verified, and Human review lanes: incoming rows follow the replay
+cursor; verified rows show the accepted relationship endpoints and emitted
+provenance roots; human review rows show rejected or abstained relationship
+tokens and the recorded reason. Selecting a handoff opens a troubleshooting
+note. Dataset and architecture workspaces are under the top-bar More menu;
+the primary rail is limited to Operations, Research results, Experiments, and
+Run records.
+
+The replay artifacts do not include alert IDs or event times for rejected and
+abstained relationships. Those outcomes therefore appear as per-queue reason
+counts and cannot be painted onto a specific waveform or linked to a sample.
+The troubleshooting note explains the recorded reason and calls out the
+missing trace fields. The WebSocket carries experiment lifecycle events only;
+it is not an external sensor or live-ingestion feed.
+
+The frontend uses shadcn/ui's Vite/Tailwind setup with locally owned Button
+and Badge primitives and project-specific zinc design tokens.
+
 ## Research boundary
 
 | Capability | Source and current limit |
