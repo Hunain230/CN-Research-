@@ -1,9 +1,0 @@
-# Evidence availability at minute 100
-
-The Phase 35 matched baseline had 42 missed oracle top-20 incidents out of 300. Its predictions and decision ledger were sealed before the Phase 35 evaluator opened truth. This Phase 36 diagnostic used that opened development truth only to label failures; its incident IDs and oracle ranks remain in `MISS_ANALYSIS.csv` for offline analysis and are never supplied to a model.
-
-Fifteen misses were already recoverable as groups but ranked below position 20. Twenty-seven lacked an 80%-complete, 80%-pure qualifying group. The latter comprise 14 with insufficient independent visible support, 12 with a late related claim (some also have rejections), and one with a missing visible evidence family. Categories are a single descriptive assignment, not proof that the late claim caused the miss. `MISS_ANALYSIS.csv` records each incident's eligible alert count, largest fragment, qualifying position, timely original and derived claims, distinct root IDs, absent process/authentication/network-flow families, late claims and rejected relationship reasons.
-
-The existing receiver-visible data can support a ranking-only test: independently originated, timely claims and their evidence families vary across groups. Duplicate observations and shared upstream roots must be counted once. These signals may help order the 15 recoverable but unranked incidents. The diagnostic does not justify new unions for the 27 fragmented incidents: a shared host, account, timestamp or process context is not independent proof, and future claims cannot justify a minute-100 decision. The frozen Phase 32 verifier should therefore remain unchanged.
-
-Distinct root IDs are only an approximation of trust-domain diversity in this synthetic dataset; they cannot prove operational independence across controllers. This limits any safety claim beyond the controlled simulator.

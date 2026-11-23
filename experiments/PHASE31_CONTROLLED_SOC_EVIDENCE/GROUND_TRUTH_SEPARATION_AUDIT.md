@@ -1,7 +1,0 @@
-# Ground-truth separation audit
-
-The generator writes `dataset/receiver_visible/{split}/` and `dataset/evaluator_only/{split}/` as separate physical directory trees. The receiver tree contains alerts, availability ledgers and relationship claims. The evaluator tree contains alert-to-incident truth, priority ranks, scenario/template IDs and relationship correctness/corruption labels. Opaque visible IDs do not embed hidden incident IDs. The generator shuffles records before writing.
-
-`model.py` takes a receiver-visible directory only. It imports the frozen Phase 16 predictor for C, projects the original evidence subset for the baseline, and uses visible claims for rich and verified arms. It does not import or read evaluator-only files. `run_study.py` writes and hashes **all three initial development prediction files before loading the official evaluator**; `run_candidate3.py` separately seals its prediction before evaluation. The post-evaluation audit checked every prediction's eligible set, group partition, 100-alert cap and absence of private fields. Four controlled leakage/provenance tests passed.
-
-The directory split is enforced by code interfaces and validation, not operating-system access control: all files remain in the same research workspace for reproducibility. This is a limitation of the local experiment, not permission to use private data in inference. No locked-test files were generated.

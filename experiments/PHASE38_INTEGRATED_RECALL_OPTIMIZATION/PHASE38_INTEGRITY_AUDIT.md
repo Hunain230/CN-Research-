@@ -1,7 +1,0 @@
-# Phase 38 reproducibility and integrity audit
-
-Phase 38 froze 1,216 Phase 32–37 files before generating fresh train (38101/v13) and development (38102/v14) cohorts. Generator validation passed for both. Hidden incident IDs, scenario IDs and exact template IDs were disjoint across 12 checked cohorts. The source Phase 31 v2 generator/validator, Phase 32 endpoint-fallback +1 model and Phase 15 evaluator retained their frozen hashes.
-
-The Phase 38 train baseline predictions were sealed before train labels were read for the one pairwise fit. Development matched baseline and candidate predictions, model parameters, and 45 receiver-visible input files were sealed before the original evaluator read development truth. Post-evaluation audit verified all hashes, group partitions, eligible alerts, top-ten order and minute-100 claim availability. No private fields entered predictions or model features. The candidate added no union and maintained 19,788 true grouped pairs, zero false pairs and zero mixed groups in each matched arm. Queue-level recoverability and P@10 remained identical; three queues lost recall.
-
-The post-hoc Phase 37 telemetry sensitivity test used already opened Phase 37 development truth; it was never used for Phase 38 model selection. Its candidate predictions were hashed before its evaluator run, but the cohort was **not untouched** at that point. The planned Phase 38 locked-test split (38103/v15) was neither generated nor opened. No holdout result exists for Phase 38.

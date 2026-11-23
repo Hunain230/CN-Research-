@@ -1,9 +1,0 @@
-# Phase 30 focused plan and gate
-
-Freeze the Phase 16 historical 407/600 (67.83%) reference and the opened recall-only study. The previous `source_depth` holdout result, 444/600 (74.00%), is an unpromoted research candidate because P@10 fell from 193/300 to 190/300. Use its exact score and grouping as the development reference. All new work stays in this directory; `BASELINE_FREEZE.json` records source bytes and hashes.
-
-Diagnose the 137 unrecoverable and 19 rank-limited incidents on the **already opened prior holdout for explanation only**. Use Phase 16 train for fitting and its development split for all Phase 30 candidate selection. The previous holdout is excluded from tuning. The exact Phase 15 evaluator, 80% completeness/purity, minute-100 visibility, top-20 denominator and group cap remain unchanged.
-
-Three fixed candidates: (1) source-depth plus a logistic top-10 rank signal fitted on train; (2) source-depth plus a noncascading, direct dual-reference recovery rule requiring four distinct observations, unique references, matching host/account, time proximity, and the 100-alert cap; (3) their hybrid. Source IDs count observations, not independent trust domains. No candidate may treat host/account agreement or two correlated values as proof of independence. A proposed merge must also pass measured false-pair and mixed-group gates.
-
-On 15 development queues, demand Recall@20 above the source-depth 220/300 reference, recoverability at least 233/300, P@10 at least 64.33% (integer threshold **97/150**), pair precision at least 98.5784%, no additional false pairs or mixed groups in aggregate or any queue, and temporal/provenance checks. Select the highest-recall passing candidate. Only then freeze and generate one fresh holdout. If none passes, stop before holdout and report NO-GO.

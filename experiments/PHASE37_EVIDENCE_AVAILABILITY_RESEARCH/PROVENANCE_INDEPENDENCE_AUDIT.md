@@ -1,7 +1,0 @@
-# Provenance and independence audit
-
-The controlled transformations used receiver-visible fields only. `derived_copies` duplicated original claims with a new observation ID but `derived_from` pointing to the original and the same upstream root. It did not increase accepted unions, recoverability, or recall. `collapsed_roots` made a deterministic quarter of claim bundles share one upstream root, and `contradictory_process` altered a deterministic quarter of original process fields. The unchanged verifier reduced accepted unions from 690 to 508 and 512 respectively, with **zero incorrect accepted unions** under simulator truth. The original generator also contained 345 false independent-looking claims and 15 delayed contradictory claims; no false grouped pair was produced by the frozen pipeline.
-
-Simulator relationship truth was opened **after all condition predictions were sealed** solely to count correctly and incorrectly accepted tokens. It was not used to create telemetry variants or make decisions. Across nine evaluated conditions and 135 queue evaluations, the official evaluator found zero false pairs and zero mixed groups. The post-evaluation audit rechecked 671 frozen historical file hashes, every input/prediction seal, minute-100 eligibility and absence of private fields.
-
-This is an audit of simulated provenance rules, not proof of real-world independence. Common controller compromise could make distinct named roots correlated; the current schema cannot establish that risk empirically.

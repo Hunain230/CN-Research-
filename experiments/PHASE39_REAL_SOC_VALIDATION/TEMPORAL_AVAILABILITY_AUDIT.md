@@ -1,7 +1,0 @@
-# Temporal availability audit
-
-The GUIDE `Timestamp` field denotes alert creation time according to the [publisher's field table](https://arxiv.org/html/2407.09017v4). The publisher also says timestamps were noised for privacy. The local CSV has no separate event occurrence, sensor observation, ingestion, evidence attachment, field revision, queue-entry or decision-time columns. Its local preprocessing ledger records CSV row lineage and the source file hash, but not when a source observation became available to an analyst or model.
-
-The frozen Phase 32 model filters alerts and relationship claims by `evidence_available_minute <= 100`, checks ledger/alert consistency, and rejects future claims. There is no defensible conversion from GUIDE's noised alert-creation timestamp to that availability field. Assigning every row availability at creation time would be an unverified assumption and could admit evidence attached later. **Temporal gate: fail for the primary external evaluation.** No Phase 39 prediction was attempted.
-
-For a future export, retain event, observation, sensor send, ingestion, alert creation, evidence attachment, decision, and adjudication times with timezone/clock semantics and corrections. Derive the decision snapshot from an immutable receipt ledger. Treat late or missing evidence as unavailable at that snapshot, even if it appears in a later export. Audit clock skew, replays, duplicates and revision history before any metric is calculated.

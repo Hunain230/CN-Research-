@@ -1,9 +1,0 @@
-# Phase 24 feature and leakage audit
-
-`v4/predict.py` accepts only alert ID, source ID, queue ID, event time, receiver-available alert time, and the nine named telemetry fields. `visible()` checks the alert ledger, drops alerts arriving after minute 100, and sets late or unpermitted fields to `None`. The development population has 58 late alerts and 352 late fields on otherwise visible alerts. The model never reads `ground_truth_private`, `faults_private`, priority ranks, incident IDs, family labels or template IDs.
-
-Source IDs in the synthetic files contain a generator index, so they must never be parsed as predictive features. The predictor uses source ID only for exact duplicate grouping and distinct-source counting; the ranking feature extractor deduplicates by source ID and does not inspect its substrings. Opaque lineage reference equality supplies candidate edges. Queue and scenario IDs are not features. Training opens train truth only after train grouping, fits a small linear ranker, then writes and hashes the model before any development truth is read. All development rules and rankers are predicted and hashed together before evaluation.
-
-The generator uses private scenario-derived tokens to construct lineage references. This creates a synthetic correlation signal, not an authorized real SOC field or independent causal attestation. The simulator's `registry_error` tag does not instantiate a full registry error, and its sensor-corruption tag does not provide independently auditable receipts. The separate trust fixture demonstrates the limitations of controller-domain identity but is not integrated into the final candidate. Consequently no independent provenance safety claim is made.
-
-`v4/freeze_manifest.json` and `dataset_hashes.json` record hashes. Unit/integration tests cover point-in-time masking, prediction scope and exact union accounting. This audit is an internal synthetic methodology check, not external validation.

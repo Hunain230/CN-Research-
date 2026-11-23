@@ -1,3 +1,0 @@
-# Phase 18 tests
-
-`python -m unittest discover -s experiments/PHASE18_FAILURE_MECHANISM_AUDIT/tests -p 'test_*.py' -v` ran **five tests; all passed**. They verify frozen input hashes, 1,200 top-20 incident rows and zero complete groups on every split, the all-raw-field counterfactual, exact 953-merge TP/FP reconciliation (82,646/986), field-availability population, and confirmation that Phase 17 evaluated only its frozen baseline on locked test. The final suite ran in about 0.10 seconds. The full audit separately checked every frozen development and locked baseline partition against a code replay.

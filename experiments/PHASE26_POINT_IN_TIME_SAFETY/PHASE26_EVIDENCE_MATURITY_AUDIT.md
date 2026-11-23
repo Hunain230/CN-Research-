@@ -1,7 +1,0 @@
-# Evidence maturity and abstention audit
-
-The reconstruction candidates compute maturity from visible critical host/account fields, distinct provenance, verified independence, duplicate ratio and contradictions. `pit_complete` requires critical fields; `pit_maturity` adds a maturity threshold; `pit_selective` permits incomplete context only with separately rooted direct witnesses; `pit_group` recomputes component maturity after each proposed union; `pit_combined` and `pit_direct_mature` tighten these conditions. Scores use neither private labels nor future atoms. Missing evidence is an uncertainty state, not a contradictory observation or positive corroboration.
-
-On the authoritative development cohort, orthogonal_veto/blend accepts 4,064 unions and abstains 1,223 times, recovering 205/400 incidents with 125 false pairs and 81 mixed groups. `pit_selective/blend` accepts 3,234 unions and abstains 2,189 times, recovering 115/400 with 3 false pairs and 1 mixed group. `pit_complete/blend` accepts 3,037 unions and abstains 2,331 times, recovering 90/400. These counts show the recall cost of the current maturity rules. `PHASE26_QUEUE_METRICS.csv`, `PHASE26_FAMILY_FAILURE_METRICS.csv`, and `PHASE26_RECONSTRUCTION_AUDIT.csv` expose queue and family breakdowns.
-
-The maturity weights and threshold are experimental heuristics, not calibrated risk probabilities. A strong source count can still be common-mode; the correlated false-receipt stress demonstrates this limitation.

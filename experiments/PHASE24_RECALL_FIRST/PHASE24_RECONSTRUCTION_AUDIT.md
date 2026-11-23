@@ -1,9 +1,0 @@
-# Phase 24 reconstruction audit
-
-Candidate generation uses only available process-tree, auth-session and network-flow references across source-deduplicated alert fragments. Source IDs are equality keys only. A candidate is rejected for visible component context contradiction, accepted when the rule's support condition holds, or otherwise abstained. Process grouping in the final rare rule requires one coherent visible host and account per process reference; lineage union requires context agreement and a reference touching no more than two initial components. The rule is conservative but does not verify the asserted relationship against independent physical evidence.
-
-All accepted unions have a decision record. The evaluator starts from singleton alerts, replays each accepted union in order, counts new true and false grouped pairs, and asserts exact agreement with the final partition. The final candidate has **3,247 accepted unions and 1,049 abstentions** across 16 queues. Its **120 false pairs** arise from five accepted unions in one queue; the worst single union adds 42 false pairs. The baseline has **2,844 accepted unions**, **693 abstentions**, **1,001 false pairs**, and **30 mixed groups**.
-
-The candidate's aggregate recoverability gain is 59 incidents, but q014 violates queue-level nonincrease. The process-context expansion alone makes components larger; a later false lineage join then contaminates more alert pairs. A per-union exposure limit cannot certify purity, as Phase 19–23 also showed. The next safe reconstruction hypothesis needs an independently auditable relationship signal or a rejection signal for false but internally consistent receipts, tested on new development data.
-
-See [union audit](PHASE24_UNION_PAIR_AUDIT.csv), [failure cascade](PHASE24_FAILURE_CASCADE.csv), and [per-incident audit](PHASE24_RECONSTRUCTION_AUDIT.csv).

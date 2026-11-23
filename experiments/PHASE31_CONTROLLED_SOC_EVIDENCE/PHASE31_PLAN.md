@@ -1,9 +1,0 @@
-# Phase 31 plan and frozen decision rule
-
-Build one new controlled SOC generator under this directory and leave Phase 16, the recall-only experiment, and Phase 30 read-only. Use the original Phase 15 evaluator, with 80% completeness/purity, minute-100 eligibility, the same top-20 denominator and tie handling. The new cohort is separate from all historical scores.
-
-Generate scenario-template-disjoint train (8 queues), development (10), and planned locked test (15), using frozen seeds 31101/31102/31103 and template variants 0/1/2. Each queue has 25 simultaneous incidents and 60 interleaved benign events. Generate only train/development before candidate selection; create locked test only if a development candidate reaches at least 80% Recall@20 with P@10 non-inferior to the matched baseline, pair precision at least 90%, zero additional false pairs/mixed groups in every queue, and no leakage. The matched baseline is original Phase 16 C with the original evidence subset and the frozen `source_depth` rank score.
-
-Compare the baseline with three development approaches: richer claims passed through original one-lineage C; a verifier requiring receiver-visible independent process, identity-provider and network attestations; and that verified grouping with a fixed +1 rank bonus per accepted attested union. No parameter sweep. The last candidate was added after observing that the verified groups had an 83% recoverability ceiling but only 77.5% recall; it is the third and final candidate. No further development candidate or holdout evaluation is authorized by this plan if it fails.
-
-The initial generator v1 pilot was archived before holdout because enhanced validation exposed too few same-context false relationships and inconsistent genuine event ordering. The authoritative v2 generator was repaired and rerun once; pilot metrics are exploratory and excluded from selection. Its archive is `artifacts/pilot_v1/`. All authoritative results use v2 only.

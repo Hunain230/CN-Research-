@@ -1,5 +1,0 @@
-# Ranking is a separate failure mechanism
-
-Phase 17's frozen baseline has **zero recoverable top-20 groups** on train, development and locked test. Its Recall@20 and P@10 are consequently zero for **every** ranker; they cannot diagnose P-stage quality. No Phase 17 candidate was evaluated on locked test. The rejected development candidate's progression ranker scored 187/300 Recall@20 and 98/150 P@10; the sensor-priority ranker on identical groups scored 164/300 and 87/150. This development comparison favors the existing progression rule within the rejected C policy, but cannot redeem its false-pair increase.
-
-Phase 16 v4 is the only prior selected safe synthetic pipeline with meaningful recovered groups. Its **44** ranking-only misses were separately audited in `../PHASE17_INDEPENDENT_PROVENANCE/PHASE17_PHASE16_RANKING_MISSES.csv`; their median first qualifying group position was **24**. This is retrospective diagnosis on an opened test, not a basis to select a new ranker. A future P experiment should hold C groups fixed, select on a new development cohort, and require gains in Recall@20 while preserving P@10 and nDCG@20 before a fresh locked evaluation.

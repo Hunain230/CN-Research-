@@ -1,7 +1,0 @@
-# Combined Phase 37–38 research summary
-
-**Decision: NO-GO for promotion.** Phase 37 tested existing telemetry availability and verifier robustness. Its frozen baseline achieved 267/300 recoverability and 257/300 recall on a new synthetic development cohort, with zero false pairs. Delays, missing identity/network telemetry, common-root corruption and contradictory fields reduced recovery. Derived copies did not help. No actual fourth independent source was available, so no new reconstruction rule qualified for integration.
-
-Phase 38 kept reconstruction frozen and tested one hard-negative ranker on another fresh matched development cohort. It reached **262/300 recall**, below the **263/300 baseline** and the **270/300** target, while preserving zero false pairs/mixed groups and non-inferior recoverability/P@10. Its candidate was not selected. No Phase 37 or Phase 38 holdout was generated. The strongest confirmed synthetic holdout remains Phase 33 at **260/300 (86.67%)**.
-
-The evidence ceiling is concrete: independent timely identity and network observations are necessary for this verifier, but the available dataset has no independently supplied new source to recover fragmented incidents safely. Ranking features show useful pairwise signal but did not translate to net top-20 recall improvement. Future work would need a genuinely independent telemetry source or an authorized historical SOC validation dataset, with a fresh preregistered evaluation and unchanged safety gates.

@@ -1,7 +1,0 @@
-# Leakage test results
-
-**Pass:** `validate_generator.py train development` verified separate receiver/evaluator trees, no private fields in visible alerts/claims/ledgers, opaque alert IDs, no hidden incident ID appearing in visible queue files, split-disjoint incident and exact template IDs, complete ledger/truth coverage, and shuffled visible records. `test_evidence.py` passed four controlled tests, including rejection of an injected `incident_id` field and exclusion of a minute-120 alert at a minute-100 decision. `audit_phase31.py` checked every development prediction and decision artifact for private fields and exact eligible partitions: zero violations.
-
-The model's inference entry point receives only `dataset/receiver_visible/{split}`; it has no evaluator-truth input or import. All initial development predictions and SHA-256 hashes were written before the evaluator was imported. The third candidate was separately sealed before its official evaluation. The evaluator-only truth was used for generator validation and post-prediction scoring/audits, never as an inference feature.
-
-The visible relationship token and endpoint event IDs are legitimate evidence of a claimed relationship, not encoded incident IDs; false claims with the same structures are generated. The study does not implement OS-level read permissions between the two trees, and deterministic synthetic generation cannot prove the absence of every possible statistical artifact. These limits are stated in `GROUND_TRUTH_SEPARATION_AUDIT.md`.
