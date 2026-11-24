@@ -1,0 +1,774 @@
+Computer Networks Research Project
+Phases 1 and 2
+Literature Review, Research Gap, and Methodology
+Proposed Research Topic: Multi-Agent LLM Framework for SOC Threat Correlation and Alert Prioritization.
+Group Members: Hammad Ullah Khan (24i-2539), Hunain Shahid (24i-0127).
+Selected Papers
+• Paper 1 (Hmimou et al., 2025): “A Multi-Agent System for Cybersecurity Threat Detection and Correlation
+Using Large Language Models” [1].
+• Paper 2 (Guo et al., 2026): “Intelligent priority awareness method for alert data in SOC threat response” [2].
+• Paper 3 (Roy and Singh, 2026): “AgentSOC: A Multi-Layer Agentic AI Framework for Security Operations
+Automation” [3].
+1
+Critical Summary
+Limitations explicitly acknowledged by the authors
+• Paper 1 (Hmimou et al.): Third-party tools and APIs may introduce latency or failure. LLM explanations
+add computational cost and may vary with prompt or model updates. Older benchmark datasets limit conclusions
+about emerging threats. The authors propose continuous-log and distributed deployment as future work [1].
+• Paper 2 (Guo et al.): The complete operational alert dataset cannot be publicly released. Evaluation spans
+four SOC environments, so transfer to IoT/OT, cloud, and encrypted-traffic settings remains open. External
+queries, BERT errors, knowledge-graph maintenance, and deterministic routing policies create operational
+constraints [2].
+• Paper 3 (Roy and Singh): The prototype uses a fixed LANL sample and synthetic 50-node enterprise graph.
+ATT&CK mapping is rule-based, response actions run only in dry-run mode, and business-impact scores use
+simplified heuristics. LLM latency may limit throughput [3].
+Research gaps identified for the proposed topic
+• Paper 1: The reported cross-domain correlation results do not establish a calibrated priority order for an
+operational SOC queue. The 60-task full-pipeline study does not validate priority against analyst-labelled
+severity, investigate abstention, or measure ranking under incomplete and conflicting evidence.
+• Paper 2: This is a strong alert-prioritization baseline, but its online decision path uses deterministic orchestration
+and BERT rather than a generative LLM. It does not isolate the added value, error, latency, and cost of LLM
+agents for cross-source threat correlation. The private full dataset also limits independent replication.
+• Paper 3: The risk module ranks response actions, not alerts in a queue. One illustrated incident cannot
+establish correlation precision, priority-ranking quality, high-risk recall, or analyst outcomes at SOC scale.
+Potential direction: Evaluate a shared-evidence multi-agent LLM system that correlates email, identity, endpoint,
+and network alerts into incidents and assigns an evidence-backed alert priority. Compare it with single-agent LLM
+and non-generative ranking baselines on the same held-out alerts, including missing or contradictory evidence.
+Measure correlation precision/recall, priority ranking, high-risk recall, calibration, abstention, analyst effort, latency,
+and cost.
+1
+
+2
+Cross-Paper Comparison Table
+#
+Title
+Year
+Dataset Used
+Preprocessing Techniques
+Models and Techniques Used
+Evaluation Metrics Used
+Results
+Limitations
+and
+Research
+Gap
+1
+Hmimou
+et
+al.:
+Multi-Agent
+Cy-
+bersecurity
+Threat
+Detection
+and
+Correlation
+2025
+SpamAssassin (about 6,000
+emails),
+CIC-IDS2017
+logs/flows,
+about
+2,000
+synthetic
+phishing
+emails,
+simulated
+IP
+scans;
+60
+anonymized integrated tasks.
+Parse email and URLs; nor-
+malize/tokenize logs and ex-
+tract IPs, timestamps, ports,
+and attack labels; clean am-
+biguous cases; map IP scans
+to CVE data; unify tasks as
+JSON.
+Three specialized email, log,
+and IP agents; LLaMA 3.3-
+70B,
+RAG,
+FAISS,
+Suri-
+cata/ELK, Nmap/NVD; con-
+textual cross-agent correla-
+tion.
+Agent accuracy, false-positive
+rate, explanation success; sys-
+tem accuracy, correlation pre-
+cision,
+false-positive reduc-
+tion, analyst triage time, an-
+alyst trust.
+93.6%
+system
+accuracy;
+87.0% correlation precision;
+41.3% fewer false positives
+and 38.5% less analyst triage
+time versus a baseline SIEM.
+No
+calibrated
+SOC
+alert-
+priority ranking or labelled
+priority evaluation.
+Third-
+party
+dependencies,
+LLM
+cost/variance,
+older
+pub-
+lic
+datasets,
+and
+limited
+integrated-task evaluation.
+2
+Guo et al.:
+Intelli-
+gent Priority Aware-
+ness for SOC Alert
+Data
+2026
+100,000 expert-labelled alerts
+from four SOC environments
+over six months (30,000 false
+positives); separate 100,000-
+alert production stream for
+usability.
+Anonymize identifiers; expert
+annotation/adjudication;
+chronological 70/10/20 split,
+isolated event triplets, and
+unseen-environment testing;
+FFT-PCC periodicity filter-
+ing with a high-risk retention
+gate.
+Deterministic
+multi-agent
+evidence
+orchestration
+with
+BERT;
+FFT-PCC;
+threat/asset-vulnerability
+knowledge graphs; semantic
+integrity checks; AHP-based
+dynamic risk ranking.
+False-positive identification
+AUC, accuracy, precision, re-
+call,
+F1;
+ranking
+Kendall
+tau
+and
+high-risk
+recall;
+noise
+reduction,
+response
+time,
+throughput,
+NASA-
+TLX workload.
+AUC 0.973, F1 0.910 for false-
+positive identification; rank-
+ing Kendall tau 0.85; in 30-
+day replay, 45.2% faster mean
+response
+and
+103%
+more
+throughput
+versus
+Splunk
+ES.
+Online path has no gener-
+ative
+LLM.
+Full
+data
+re-
+stricted; four environments;
+external-query/BERT errors
+and graph upkeep.
+Cross-
+source LLM correlation con-
+tribution is untested.
+3
+Roy
+and
+Singh:
+AgentSOC
+2026
+5,000 LANL authentication
+events; one demonstrated in-
+cident; synthetic 50-node en-
+terprise topology.
+Normalize and enrich authen-
+tication anomalies; map ev-
+idence
+to
+ATT&CK;
+con-
+struct identity/topology con-
+text and candidate attack hy-
+potheses.
+GPT-4 hypothesis generation
+(NCE),
+graph-based
+struc-
+tural simulation (SSE), and
+risk scoring of response ac-
+tions (RSEM).
+Demonstration of hypothe-
+sis feasibility, action score,
+and stage/end-to-end process-
+ing time; no labelled alert-
+ranking metrics.
+Approximately 506 ms for the
+illustrated reasoning loop; ex-
+ample ranks host isolation
+highest among three actions.
+Small fixed proof of concept,
+synthetic graph, dry-run re-
+sponses,
+simplified
+impact
+scores. No queue-level alert
+priority or broad correlation
+evaluation.
+Note: Reported percentages describe different datasets, outcomes, and baselines; they are not directly comparable. Paper 2’s “multi-agent” components are function-specific software components, not
+generative LLM agents. Paper 3’s ranked object is a response action, not an alert.
+2
+
+3
+Research Gap Synthesis
+Research Gap
+Evidence from Paper 1
+Evidence from Paper 2
+Evidence from Paper 3
+Proposed
+Research
+Opportunity
+End-to-end correla-
+tion and priority
+are not jointly vali-
+dated.
+Cross-domain
+correla-
+tion is measured, but
+queue-level priority is
+not.
+Alert priority is eval-
+uated, but generative-
+LLM correlation is ab-
+sent from the online
+path.
+Hypotheses are corre-
+lated in a demonstra-
+tion; scores rank actions
+rather than alerts.
+Build
+incident-level
+correlation and cali-
+brated alert ranking
+in one pipeline; evalu-
+ate both labels on the
+same cases.
+Evidence
+quality
+and
+uncertainty
+need
+stronger
+tests.
+Cross-agent evidence is
+fused, but priority un-
+der missing/conflicting
+inputs is not reported.
+A risk gate and seman-
+tic checks protect high-
+risk evidence, yet graph
+incompleteness
+lowers
+ranking quality.
+Topology validation fil-
+ters infeasible hypothe-
+ses, but only in a small
+synthetic graph.
+Test complete, miss-
+ing, stale, and con-
+tradictory
+evidence;
+measure unsupported
+claims, confidence, ab-
+stention,
+and
+high-
+risk misses.
+Operational value
+of multiple LLM
+agents remains un-
+certain.
+Multiple LLM modules
+improve reported per-
+formance, but cost and
+prompt stability remain
+limitations.
+Useful
+non-generative
+operational
+baseline
+with analyst/workload
+metrics.
+LLM hypothesis genera-
+tion dominates latency
+in a limited dry-run pro-
+totype.
+Compare
+matched
+single-agent,
+multi-
+agent,
+and
+non-
+generative
+baselines
+at the same evidence
+and compute budget;
+measure
+analyst
+benefit,
+throughput,
+latency, and cost.
+3
+
+Phase 2: Extended Literature and Research
+Methodology
+Research topic: Multi-Agent LLM Framework for SOC Threat Correlation and Alert Prioritization. The unit of analysis
+is a security alert within an organization; the operational output is a ranked list of correlated incidents with evidence and a
+review flag. The study is an offline, reproducible comparison, not a live autonomous response deployment.
+Deliverable 1 — Extended Literature Review
+The three Phase 1 papers above establish the starting point. Table 1 adds eight 2025–2026 peer-reviewed studies. It
+records what each actually evaluates, so detection, evidence retrieval, correlation, and queue ranking are not treated as
+interchangeable. Preprints discussed below help define novelty, but are not counted among the eight.
+4
+
+Table 1: Eight additional studies relevant to SOC evidence, correlation, and priority.
+Results retain each paper’s own task and denominator.
+#
+Title
+Year
+Dataset Used
+Preprocessing Techniques
+Models and Techniques Used
+Evaluation Metrics
+Used
+Results
+Limitations and Research Gap
+4
+Rieger et al., Possibilities
+and limitations of using
+LLMs for alert classification
+and prioritisation in SOCs
+[4]
+2026
+178 manually labelled
+SOC alerts.
+Alert-text preparation
+and manual ground-truth
+labels; binary class and
+priority tasks.
+Eight LLMs versus logistic
+regression, random forest, and
+linear SVM.
+Precision, recall, F1
+for alert classification
+and priority.
+Linear SVM led binary
+classification; priority
+precision remained weak.
+Small alert sample; individual
+alerts, with no incident
+grouping or calibrated queue
+ranking.
+5
+Gong et al., GARNET:
+GoT-Based Alert Reduction
+and Narrative Event
+Tracing [5]
+2026
+Six attack scenarios
+represented as alert and
+log graphs.
+Link alerts with log
+context and form graphs
+for contrastive learning.
+Graph–log contrastive learning
+and graph-of-thought LLM
+reasoning.
+False-positive
+reduction and
+false-positive rate.
+Average false-positive
+reduction of 80%;
+false-positive rate below
+0.0037 in reported tests.
+Strong noise filtering, but no
+expert incident-priority labels
+or complete ranked queue.
+6
+Zhang et al., GRAL: A
+GNN-RAG-LLM
+Framework for Intelligent
+Cybersecurity Alert
+Correlation and Analysis [6]
+2026
+1,000 proprietary
+nuclear-power alerts plus
+CICIDS2017 and
+UNSW-NB15 subsets.
+72-hour temporal
+heterogeneous graphs;
+retrieved context.
+Temporal graph neural
+network, retrieval
+augmentation, and LLM
+interpretation.
+Macro recall, binary
+false-positive rate,
+alert compression.
+97.0% macro recall, 9.1%
+binary false-positive rate,
+and 92.5% compression as
+reported.
+Domain-specific private alerts;
+compression and detection do
+not establish correct ordering
+of a SOC queue.
+7
+Lv and Wang, RACE-SOC:
+Risk-Constrained Auditable
+Coordination Evaluation for
+LLM-Based Multi-Agent
+Security Operations [7]
+2026
+Five public security
+datasets; 54 unique
+alert-set signatures and
+84 seed observations.
+Standardize alert sets and
+hold input evidence
+constant across
+conditions.
+Role-conditioned LLM agents
+with one, five, or ten agents;
+repeated single-agent control.
+Net score across task
+measures, condition
+comparisons.
+Repeating the
+same-temperature
+single-agent configuration
+scored higher in five of six
+reported comparisons.
+Shows agent count alone is
+insufficient; lacks incident
+grouping and expert queue
+ranking.
+8
+Zhang et al., From
+Ambiguous Queries to
+Verifiable Insights: A
+Task-Driven Framework for
+LLM-Powered SOC
+Analysis [8]
+2026
+34 million SOC records
+and 12,500
+question–answer pairs.
+Schema alignment, task
+recognition, hybrid
+retrieval, evidence
+organization.
+LLM-backed task routing and
+verifiable evidence retrieval.
+Question-answering
+and task-specific
+accuracy.
+Up to 34.36% improvement
+for reported comparisons.
+Evaluates analyst questions;
+does not test alert-to-incident
+grouping or priority-order
+quality.
+9
+Sheikhi et al., Cognitive
+SOC: Evidence-Backed
+Narrative Generation for
+Security Operations with
+Multi-Agent LLM
+Architecture [9]
+2025
+1,000 alerts based on
+UNSW-NB15.
+Enrich alert evidence and
+link observations for an
+incident narrative.
+Triage, enrichment, and
+StoryWeaver LLM agents.
+Evidence linkage,
+citation coverage,
+hallucination,
+latency.
+99.6% evidence linkage,
+100% citation coverage,
+0.1% hallucination, 1.86 s
+mean recommendation
+time.
+Useful evidence controls; no
+expert-labelled incident queue
+ranking or joint
+ranking/correlation test.
+10
+An LLM-Augmented SIEM
+Architecture for Automated
+Incident Handling and
+Knowledge-Graph-
+Grounded False-Positive
+Triage [10]
+2026
+3,500 historical cases;
+1,000 production
+incidents in A/B
+evaluation; 150-case
+pilot.
+Case retrieval and
+ATT&CK
+knowledge-graph
+grounding.
+GPT-4o mini, BERT retrieval,
+Neo4j graph, false-positive
+triage.
+Handling time,
+recommendation
+quality, pilot
+suppression errors.
+74 s mean handling; 77%
+good/excellent quality;
+pilot suppression 86.7%
+with zero observed false
+negatives.
+Single site and short pilot; no
+shared gold labels for both
+correlation and queue priority.
+11
+A leakage-free benchmark
+of offline policy learning for
+SOC alert triage [11]
+2026
+UNSW-NB15 and
+CICIDS2017
+flow-derived pseudo
+trajectories.
+Chronological splits,
+training-only scaling,
+leakage audit.
+Seven reinforcement/imitation
+policy learners.
+Matthews correlation
+coefficient (MCC)
+and policy
+comparisons.
+Recurrent behavior cloning
+MCC 0.752 and 0.621 on
+the two reported datasets.
+Valuable leakage controls, but
+pseudo episodes do not
+represent analyst incident
+queues.
+5
+
+Direct novelty checks. AIDA [12], a 2026 preprint, studies multi-agent binary alert triage; it does not provide an expert
+ranked incident queue. AIP [13], another 2026 preprint, ranks already formed incidents and releases top-20 expert ranks for
+499 organizations; it does not solve alert-to-incident correlation. Their narrower boundaries mean the proposed contribution
+must be tested as a joint grouping-and-ranking pipeline, with matched compute baselines, rather than claimed as the first
+use of LLM agents or the first incident ranker. Venue index or quartile status has not been verified here.
+Deliverable 2 — Refined Research Gap
+Six-part justification
+1. What has already been done? Hmimou et al. correlate email, logs, and IP findings; Guo et al. rank alerts with graph
+and risk features; AgentSOC combines hypotheses, feasibility checks, and action risk. Newer work adds graph-assisted
+noise filtering, evidence-grounded agents, and incident ranking [1, 2, 3, 5, 9, 13].
+2. What approaches exist? Rule and detector severity queues; graph and knowledge-graph ranking; classical classifiers;
+single LLM classification; multiple LLM roles; retrieval-grounded evidence; offline policy learning [4, 6, 7, 8, 11].
+3. What are their limitations?
+Studies use different tasks and datasets.
+Most report classification, suppression,
+compression, or recommendation quality. Even AIP starts from incident IDs; it does not measure the effect of incorrect
+correlation on its ranking. Many agent studies lack a repeated single-agent control at comparable token use [13, 7].
+4. What remains insufficiently investigated? Whether an evidence-grounded multi-agent system can group alerts into
+incidents and recover an expert top-20 priority list on held-out organization queues, especially when evidence is missing
+or contradictory, while controlling latency, cost, and abstention.
+5. Why does it matter? A false merge can hide two attacks under one case; a false split can flood the queue; a missed
+high-priority incident can delay review. A usable SOC result must therefore show grouping quality, rank retrieval, evidence
+support, and resource cost together.
+6. How will this study address it? Use Microsoft GUIDE alert/evidence records with incident IDs as grouping gold
+labels and the AIP top-20 expert ranks as ranking labels [14, 13]. Hold organizations out, hide all outcome fields from the
+model, compare four matched baselines, perturb evidence, and report end-to-end recovery with queue-level uncertainty.
+Focused research question. On held-out organization queues, does an evidence-grounded correlation–priority–verification
+agent workflow improve incident grouping F1 and recovery of expert top-20 incidents over rule, retrieval, and matched
+single-LLM baselines, without unacceptable latency or unsupported decisions?
+Research gap selected. The combined gap is joint, evidence-auditable alert correlation and incident prioritization under
+realistic evidence defects. The agent structure is a testable method, not an assumed benefit. This is a valid research domain
+because it has a concrete input (alerts plus evidence), two separate gold outcomes (incident membership and expert top-20
+rank), explicit controls, measurable errors, and reproducible offline experiments. It supports a methodology paper and later
+prototype, subject to verifying the downloadable GUIDE/AIP join fields and queue counts before model training.
+Candidate gap
+Why it matters
+Decision
+Joint correlation and
+priority
+Tests whether ranking remains useful after real
+grouping errors; directly matches the topic.
+Primary gap.
+Evidence uncertainty
+Missing or conflicting fields can change both
+merges and rank; evidence support is measur-
+able.
+Integrate as robustness and verifier study.
+Value
+of
+multiple
+agents
+Multiple roles add latency/tokens and may not
+beat repeated single-agent calls.
+Integrate as matched-compute ablation.
+Live SOC productivity
+Analyst time, trust, and workload are important
+but need a partner SOC and approval.
+Future field study; do not claim a live benefit
+from offline tests.
+Deliverable 3 — Proposed Research Methodology
+Design: retrospective, offline, paired evaluation. The model sees alert facts and evidence but never gold incident membership
+or gold rank. The same held-out organization queues, evidence budget, and ranking labels are used for every method. No
+automated containment action is performed.
+Step 1 — Define the Research Input
+One record is an alert identified by (OrgId, AlertId) with event time, detector ID, title/category, ATT&CK tags where
+available, and linked evidence entities (IP, account, host, URL, process). Candidate decisions are alert pairs within the same
+organization. The output is a set of predicted incidents, each with priority score s ∈[0, 1], rank, cited evidence IDs, and
+review flag. IncidentId and expert Rank are labels only.
+6
+
+Step 2 — Data Collection
+Download a versioned Microsoft GUIDE release [14] and AIP’s released 499-organization top-20 incident labels [13]; record
+URL, license, date, checksums, and exact row counts. Join by (OrgId, IncidentId); retain organizations with at least
+50 incident IDs, at least 10 detector IDs, and complete expert top-20 labels. Freeze 10 organizations for a pilot, 10 for
+development, and 30 for final test using a published hash of OrgId; do not select by outcomes. If fewer than 50 qualified
+organizations survive the join, revise this split before any test results are viewed and report the change. Keep all incident
+alerts for each selected organization.
+Step 3 — Data Preprocessing
+Join evidence to alerts by (OrgId, AlertId); remove exact duplicate rows and alerts with no stable ID; convert timestamps
+to UTC; normalize IP, host, account, and technique strings; keep original evidence-row IDs for citation. Mark absent fields
+explicitly. Construct gold incident sets from IncidentId. Remove IncidentId, Rank, incident grade, analyst outcome, and
+response fields from every prompt and model feature. Split by organization before fitting scalers, retrieval indexes, or
+calibration. Run a column-name and value-leakage audit; publish excluded columns and reasons.
+Step 4 — Feature Engineering / Representation
+For each alert create a structured evidence ledger: time, detector, ATT&CK tags, normalized entities, and source row IDs.
+Create candidate pairs only inside one organization: shared entity within 48 hours or matching ATT&CK technique within
+one hour; keep at most the 20 nearest candidates per alert, with ties resolved by alert ID. Tune these windows and cap
+on development organizations, then freeze them. Represent a predicted incident by its member alerts, earliest/latest time,
+distinct entities/detectors, evidence citations, and a short retrieved ATT&CK context passage. Store all retrieval passages
+with source IDs and timestamps.
+Step 5 — Proposed Model / Method
+Agent C (correlate) reads one candidate pair and its evidence ledger, then returns LINK, NO_LINK, or UNSURE, a structured
+reason, and cited row IDs. Connect LINK edges into incident components; never link across organizations. Agent P
+(prioritize) reads each component and returns score s, supporting and contradicting evidence IDs, and a short rationale.
+Agent V (verify) independently checks citations against the ledger and returns PASS, REVISE, or REVIEW. Permit one
+revision only; unsupported or conflicting high-score cases go to review. Fit a logistic calibration map on development queues
+to estimate whether a component belongs in the expert top 20; use the original score for ordering and show calibrated
+probability as an uncertainty aid. Fix model version, prompts, temperature, retrieval corpus, and token caps before final
+test.
+Step 6 — Baseline Methods
+B0: deterministic entity/time clustering plus maximum detector severity. B1: the same deterministic clustering plus BM25
+incident-text ranking, a reproducible public analogue of AIP retrieval (without proprietary priors). B2: one LLM prompt
+that groups and scores using the same evidence and token cap. B3: three independent single-LLM runs with majority pair
+decisions and median score, matched to the proposed method’s total token budget. B4: the proposed C+P roles without V.
+The B3 control is essential because RACE-SOC found repeated single-agent calls can beat larger role ensembles [7].
+Step 7 — Experimental Design
+On each of 30 held-out organizations, run every method on the same complete alert set. Use three independent inference
+seeds for stochastic methods, recording prompt/model hashes. Evaluate clean evidence; then remove 20% and 40% of
+non-key evidence rows, and separately insert one conflicting low-trust entity row drawn from a different incident in the same
+organization. Use five fixed perturbation seeds per condition. Keep gold groups and ranks unchanged in these controlled
+tests. Tune prompts and thresholds only on pilot/development organizations; test organizations remain sealed until the
+protocol is frozen.
+Step 8 — Evaluation Metrics
+Correlation: positive-pair precision, recall, and F1 across alert pairs, plus false-merge and false-split counts per organization.
+Ranking with gold groups: precision@10, recall@20, and nDCG@20 against expert top-20 labels. Use gain 21 −Rank
+for ranks 1–20 and zero otherwise; interpret scores only as top-20 retrieval, not full incident severity. End-to-end: a gold
+top-20 incident is recovered if a predicted top-20 component contains at least 80% of its alerts and at least 80% of that
+component’s alerts belong to the gold incident; report recall@20. Trust/operations: blinded two-reviewer citation-support
+rate on 200 sampled outputs, conflict-detection recall, fraction sent to review, high-priority misses among auto-decided cases,
+p50/p95 latency, input/output tokens, and estimated API cost using the recorded tariff.
+7
+
+Step 9 — Statistical / Comparative Analysis
+Use organization as the independent unit. Report per-organization results, mean/median, and 95% confidence intervals
+from 10,000 paired bootstrap resamples of organizations for primary pair-F1 and end-to-end recall@20 differences. Apply a
+paired permutation test for comparisons with B0–B3 and Holm-adjust the four primary p values. Show all three inference
+seeds separately and their mean; do not treat alert pairs or seeds as independent organizations. Predeclare the primary
+comparison against B3.
+Step 10 — Ablation and Component Analysis
+Repeat the held-out evaluation after removing (A1) entity links, (A2) ATT&CK context, (A3) verifier V, and (A4)
+calibration/review logic. Also give P gold incident groups to measure the ranking ceiling and isolate correlation error.
+Compare quality, high-priority misses, unsupported claims, tokens, and latency under each removal.
+Step 11 — Error / Failure Analysis
+Inspect every missed expert top-20 incident and up to 100 sampled false merges, false splits, and false elevations per category.
+Two reviewers code causes using a fixed codebook: missing evidence, stale time, shared benign entity, misleading ATT&CK
+tag, unsupported citation, prompt instability, candidate-generation miss, or expert-label ambiguity. Resolve disagreements
+and report counts and examples with sensitive identifiers masked.
+Step 12 — Final Research Output
+Release preprocessing and evaluation scripts, prompt templates, configuration and model hashes, data-field schema, split IDs
+or hashes where licensing permits, aggregate tables, robustness plots, ablations, error codebook, and a model card. State
+the observed trade-off between ranking quality and cost. Report negative results. The intended decision support is a cited
+ranked queue with review flags, not autonomous incident closure.
+8
+
+Deliverable 4 — Research Methodology Diagram
+Figure 1 is the Phase 2 workflow. The dashed labels indicate information hidden from every model component and used only by the evaluator.
+Figure 1: Self-contained, evidence-grounded research workflow. Agent V may request one revision; unresolved cases enter analyst review. The evaluator alone uses hidden
+labels.
+9
+
+References
+[1] Y. Hmimou, M. Tabaa, A. Khiat, and Z. Hdidla, “A Multi-Agent System for Cybersecurity Threat Detection and
+Correlation Using Large Language Models,” IEEE Access, vol. 13, 2025, doi: 10.1109/ACCESS.2025.3602681.
+[2] T. Guo, Y. Chen, Q. Zhang, W. Wang, J. Wang, and S. Zhu, “Intelligent priority awareness method for alert data in
+SOC threat response,” Journal of King Saud University Computer and Information Sciences, vol. 38, article 776, 2026,
+doi: 10.1007/s44443-026-01172-w.
+[3] J. Roy and S. K. Singh, “AgentSOC: A Multi-Layer Agentic AI Framework for Security Operations Automation,” 5th
+IEEE International Conference on AI in Cybersecurity, 2026. arXiv:2604.20134.
+[4] Rieger et al., "Possibilities and limitations of using LLMs for alert classification and prioritisation in SOCs," Expert
+Systems with Applications, 2026, doi: 10.1016/j.eswa.2026.133194.
+[5] Y. Gong et al., "GARNET: GoT-Based Alert Reduction and Narrative Event Tracing," Proceedings of the AAAI
+Conference on Artificial Intelligence, vol. 40, no. 1, pp. 327–335, 2026, doi: 10.1609/aaai.v40i1.36994.
+[6] D. Zhang et al., "GRAL: A GNN-RAG-LLM Framework for Intelligent Cybersecurity Alert Correlation and Analysis,"
+Symmetry, vol. 18, no. 8, article 1334, 2026, doi: 10.3390/sym18081334.
+[7] Y. Lv and C. Wang, "RACE-SOC: Risk-Constrained Auditable Coordination Evaluation for LLM-Based Multi-Agent
+Security Operations," Computers, Materials & Continua, 2026, doi: 10.32604/cmc.2026.088835.
+[8] Zhang et al., "From Ambiguous Queries to Verifiable Insights: A Task-Driven Framework for LLM-Powered SOC
+Analysis," CAAI Transactions on Intelligence Technology, 2026, doi: 10.1049/cit2.70138.
+[9] Sheikhi et al., "Cognitive SOC: Evidence-Backed Narrative Generation for Security Operations with Multi-Agent LLM
+Architecture," 2025 IEEE International Conference on Big Data, doi: 10.1109/BigData66926.2025.11401968.
+[10] "An LLM-Augmented SIEM Architecture for Automated Incident Handling and Knowledge-Graph-Grounded False-
+Positive Triage," IEEE IMSA, 2026, doi: 10.1109/IMSA70415.2026.11700270.
+[11] "A leakage-free benchmark of offline policy learning for SOC alert triage," Machine Learning with Applications, 2026,
+doi: 10.1016/j.mlwa.2026.100984.
+[12] "AIDA," preprint, 2026. arXiv:2610.10608.
+[13] "AIP: Agentic Incident Prioritization," preprint, 2026. arXiv:2607.16963.
+[14] Microsoft, "Microsoft Security Incident Prediction (GUIDE)" dataset. Dataset release page.
+10
